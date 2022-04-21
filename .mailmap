@@ -1,77 +1,186 @@
-Alex K. Wolfe <alexkwolfe@gmail.com>
-Andrew Bradley <cspotcode@gmail.com>
-Andrew Lunny <alunny@gmail.com>
-Arlo Breault <arlolra@gmail.com>
-Ashley Williams <ashley@npmjs.com> <ashley666ashley@gmail.com>
-Ashley Williams <ashley@npmjs.com> <ashley@bocoup.com>
-Benjamin Coe <bencoe@gmail.com>
-Benjamin Coe <bencoe@gmail.com> <ben@npmjs.com>
-Brian White <mscdex@mscdex.net> <mscdex@gmail.com>
-Cedric Nelson <cedric.nelson@gmail.com>
-Charlie Robbins <charlie.robbins@gmail.com>
-Claudia Hernández <cghr1990@gmail.com>
-Dalmais Maxence <root@ip-10-195-202-5.ec2.internal>
-Danila Gerasimov <danila.gerasimov@gmail.com>
-Dave Galbraith <dave@jut.io>
-David Beitey <david@davidjb.com>
-David Rousselie <guido.dassori@gmail.com>
-Domenic Denicola <domenic@domenicdenicola.com>
-Einar Otto Stangvik <einaros@gmail.com>
-Emma Ramirez <ramirez.emma.g@gmail.com>
-Erik Wienhold <git@ewie.name>
-Evan Lucas <evan@btc.com> <evan.lucas@hattiesburgclinic.com>
-Evan Lucas <evan@btc.com> <evanlucas@me.com>
-Faiq Raza <faiqrazarizvi@gmail.com>
-Forbes Lindesay <forbes@lindesay.co.uk>
-Forrest L Norvell <ogd@aoaioxxysz.net> <forrest@npmjs.com>
-Forrest L Norvell <ogd@aoaioxxysz.net> <othiym23@gmail.com>
-Gabriel Barros <descartavel1@gmail.com>
-Geoff Flarity <geoff.flarity@gmail.com> <gflarity@raptvm-x02.(none)>
-Gregers Gram Rygg <gregers.gram.rygg@finn.no>
-Ifeanyi Oraelosi <ifeanyioraelosi@gmail.com>
-isaacs <i@izs.me> <i@foohack.com>
-isaacs <i@izs.me> <nope@not.real>
-isaacs <i@izs.me> <isaacs@npmjs.com>
-Jake Verbaten <raynos2@gmail.com>
-James Sanders <jimmyjazz14@gmail.com>
-James Treworgy <jamietre@gmail.com>
-Jason Smith <jhs@iriscouch.com>
-Jed Fox <git@twopointzero.us>
-Jonas Weber <github@jonasw.de>
-Joshua Bennett <legodudejb@gmail.com>
-Joshua Bennett <legodudejb@gmail.com> <legodude17@users.noreply.github.com>
-Julien Meddah <julien.meddah@deveryware.com>
-Kat Marchán <kzm@zkat.tech> <kzm@sykosomatic.org>
-Kevin Lorenz <mail@kevinlorenz.com>
-Kris Windham <kriswindham@gmail.com>
-Leonardo Rojas <leonardo.rojas@shopify.com>
-Lin Clark <lin.w.clark@gmail.com>
-Luke Arduini <luke.arduini@gmail.com> <luke.arduini@me.com>
-Maciej Małecki <me@mmalecki.com> <maciej.malecki@notimplemented.org>
-Martin Ek <mail@ekmartin.com>
-Max Goodman <c@chromakode.com>
-Maxim Bogushevich <boga1@mail.ru>
-Maximilian Antoni <mail@maxantoni.de> <maximilian.antoni@juliusbaer.com>
-Michael Hayes <michael@hayes.io> <mhayes@newrelic.com>
-Misha Kaletsky <misha.kaletsky@gmail.com>
-Nicolas Morel <marsup@gmail.com>
-Olivier Melcher <olivier.melcher@gmail.com>
-Ra'Shaun Stovall <rashaunstovall@gmail.com>
-Rebecca Turner <me@re-becca.org> <rebecca@npmjs.com>
-Rebecca Turner <me@re-becca.org> <turner@mikomi.org>
-Ryan Emery <seebees@gmail.com>
-Sam Mikes <smikes@cubane.com>
-Sreenivas Alapati <sreenivas9alapati@gmail.com>
-Stephanie Snopek <stephaniesnopek@gmail.com>
-Takaya Kobayashi <jigsaw@live.jp>
-Ted Yavuzkurt <hello@TedY.io> <davidteoman@gmail.com>
-Thomas Reggi <thomas@reggi.com>
-Timo Weiß <timoweiss@Timo-MBP.local>
-Tony <zearin@gonk.net>
-Trent Mick <trentm@gmail.com> <trent.mick@joyent.com>
-Visnu Pitiyanuvath <visnupx@gmail.com>
-Will Elwood <w.elwood08@gmail.com>
-Wout Mertens <Wout.Mertens@gmail.com>
-Yeonghoon Park <sola92@gmail.com>
-Zeke Sikelianos <zeke@sikelianos.com>
-Zoujie Wzj <zoujie.wzj@alibaba-inc.com>
+%YAML 1.2
+---
+map:
+  main:
+    - name: npm
+      e-mail:
+        0: copyright@npmjs.com
+        1: press@npmjs.com
+  maintainer:
+    - name: isaacs
+      e-mail:
+        0: i@izs.me
+        1: i@foohack.com
+        2: nope@not.real
+        3: isaacs@npmjs.com
+  contributor:
+    - name: Alex K. Wolfe
+      e-mail: alexkwolfe@gmail.com
+    - name: Andrew Bradley
+      e-mail: cspotcode@gmail.com
+    - name: Andrew Lunny
+      e-mail: alunny@gmail.com
+    - name: Arlo Breault
+      e-mail: arlolra@gmail.com
+    - name: Ashley Williams
+      e-mail:
+        0: ashley@npmjs.com
+        1: ashley666ashley@gmail.com
+        2: ashley@bocoup.com
+    - name: Benjamin Coe
+      e-mail:
+        0: bencoe@gmail.com
+        1: ben@npmjs.com
+    - name: Brian White
+      e-mail:
+        0: mscdex@mscdex.net
+        1: mscdex@gmail.com
+    - name: Cedric Nelson
+      e-mail: cedric.nelson@gmail.com
+    - name: Charlie Robbins
+      e-mail: charlie.robbins@gmail.com
+    - name: Claudia Hernández
+      e-mail: cghr1990@gmail.com
+    - name: Dalmais Maxence
+      e-mail: root@ip-10-195-202-5.ec2.internal
+    - name: Danila Gerasimov
+      e-mail: danila.gerasimov@gmail.com
+    - name: Dave Galbraith
+      e-mail: dave@jut.io
+    - name: David Beitey
+      e-mail: david@davidjb.com
+    - name: David Rousselie
+      e-mail: guido.dassori@gmail.com
+    - name: Domenic Denicola
+      e-mail: domenic@domenicdenicola.com
+    - name: Einar Otto Stangvik
+      e-mail: einaros@gmail.com
+    - name: Emma Ramirez
+      e-mail: ramirez.emma.g@gmail.com
+    - name: Erik Wienhold
+      e-mail: git@ewie.name
+    - name: Evan Lucas
+      e-mail:
+        0: evan@btc.com
+        1: evan.lucas@hattiesburgclinic.com
+        2: evanlucas@me.com
+    - name: Faiq Raza
+      e-mail: faiqrazarizvi@gmail.com
+    - name: Forbes Lindesay
+      e-mail: forbes@lindesay.co.uk
+    - name: Forrest L Norvell
+      e-mail:
+        0: ogd@aoaioxxysz.net
+        1: forrest@npmjs.com
+        2: othiym23@gmail.com
+    - name: Gabriel Barros
+      e-mail: descartavel1@gmail.com
+    - name: Geoff Flarity
+      e-mail:
+        0: geoff.flarity@gmail.com
+        1: gflarity@raptvm-x02.(none)
+    - name: Gregers Gram Rygg
+      e-mail: gregers.gram.rygg@finn.no
+    - name: Ifeanyi Oraelosi
+      e-mail: ifeanyioraelosi@gmail.com
+    - name: Jake Verbaten
+      e-mail: raynos2@gmail.com
+    - name: James Sanders
+      e-mail: jimmyjazz14@gmail.com
+    - name: James Treworgy
+      e-mail: jamietre@gmail.com
+    - name: Jason Smith
+      e-mail: jhs@iriscouch.com
+    - name: Jed Fox
+      e-mail: git@twopointzero.us
+    - name: Jonas Weber
+      e-mail: github@jonasw.de
+    - name: Joshua Bennett
+      e-mail:
+        0: legodudejb@gmail.com
+        1: legodude17@users.noreply.github.com
+    - name: Julien Meddah
+      e-mail: julien.meddah@deveryware.com
+    - name: Kat Marchán
+      e-mail:
+        0: kzm@zkat.tech
+        1: kzm@sykosomatic.org
+    - name: Kevin Lorenz
+      e-mail: mail@kevinlorenz.com
+    - name: Kris Windham
+      e-mail: kriswindham@gmail.com
+    - name: Leonardo Rojas
+      e-mail: leonardo.rojas@shopify.com
+    - name: Lin Clark
+      e-mail: lin.w.clark@gmail.com
+    - name: Luke Arduini
+      e-mail:
+        0: luke.arduini@gmail.com
+        1: luke.arduini@me.com
+    - name: Maciej Małecki
+      e-mail:
+        0: me@mmalecki.com
+        1: maciej.malecki@notimplemented.org
+    - name: Martin Ek
+      e-mail: mail@ekmartin.com
+    - name: Max Goodman
+      e-mail: c@chromakode.com
+    - name: Maxim Bogushevich
+      e-mail: boga1@mail.ru
+    - name: Maximilian Antoni
+      e-mail:
+        0: mail@maxantoni.de
+        1: maximilian.antoni@juliusbaer.com
+    - name: Michael Hayes
+      e-mail:
+        0: michael@hayes.io
+        1: mhayes@newrelic.com
+    - name: Misha Kaletsky
+      e-mail: misha.kaletsky@gmail.com
+    - name: Nicolas Morel
+      e-mail: marsup@gmail.com
+    - name: Olivier Melcher
+      e-mail: olivier.melcher@gmail.com
+    - name: Ra'Shaun Stovall
+      e-mail: rashaunstovall@gmail.com
+    - name: Rebecca Turner
+      e-mail:
+        0: me@re-becca.org
+        1: rebecca@npmjs.com
+        2: turner@mikomi.org
+    - name: Ryan Emery
+      e-mail: seebees@gmail.com
+    - name: Sam Mikes
+      e-mail: smikes@cubane.com
+    - name: Sreenivas Alapati
+      e-mail: sreenivas9alapati@gmail.com
+    - name: Stephanie Snopek
+      e-mail: stephaniesnopek@gmail.com
+    - name: Takaya Kobayashi
+      e-mail: jigsaw@live.jp
+    - name: Ted Yavuzkurt
+      e-mail:
+        0: hello@TedY.io
+        1: davidteoman@gmail.com
+    - name: Thomas Reggi
+      e-mail: thomas@reggi.com
+    - name: Timo Weiß
+      e-mail: timoweiss@Timo-MBP.local
+    - name: Tony
+      e-mail: zearin@gonk.net
+    - name: Trent Mick
+      e-mail:
+        0: trentm@gmail.com
+        1: trent.mick@joyent.com
+    - name: Visnu Pitiyanuvath
+      e-mail: visnupx@gmail.com
+    - name: Will Elwood
+      e-mail: w.elwood08@gmail.com
+    - name: Wout Mertens
+      e-mail: Wout.Mertens@gmail.com
+    - name: Yeonghoon Park
+      e-mail: sola92@gmail.com
+    - name: Zeke Sikelianos
+      e-mail: zeke@sikelianos.com
+    - name: Zoujie Wzj
+      e-mail: zoujie.wzj@alibaba-inc.com
