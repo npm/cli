@@ -626,6 +626,33 @@ t.test('_auth config default registry', async t => {
   t.matchSnapshot(joinedOutput(), 'new package version')
 })
 
+t.test('bare _auth and registry config', async t => {
+  const spec = npa('@npm/test-package')
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    config: {
+      registry: alternateRegistry,
+      _auth: basic,
+    },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: '@npm/test-package',
+        version: '1.0.0',
+      }, null, 2),
+    },
+    globals: ({ prefix }) => ({
+      'process.cwd': () => prefix,
+    }),
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: alternateRegistry,
+    basic,
+  })
+  registry.nock.put(`/${spec.escapedName}`).reply(200, {})
+  await npm.exec('publish', [])
+  t.matchSnapshot(joinedOutput(), 'new package version')
+})
+
 t.test('bare _auth config scoped registry', async t => {
   const { npm } = await loadMockNpm(t, {
     config: {

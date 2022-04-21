@@ -9,6 +9,10 @@ exports[`test/lib/commands/publish.js TAP _auth config default registry > new pa
 + test-package@1.0.0
 `
 
+exports[`test/lib/commands/publish.js TAP bare _auth and registry config > new package version 1`] = `
++ @npm/test-package@1.0.0
+`
+
 exports[`test/lib/commands/publish.js TAP dry-run > must match snapshot 1`] = `
 Array [
   Array [
