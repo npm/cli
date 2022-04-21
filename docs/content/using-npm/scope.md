@@ -91,10 +91,11 @@ with the appropriate permisssions. For example, if you'd like to
 publish to `@org`, you would  need to create the `org` organization 
 on npmjs.com prior to trying to publish.
 
-Once you will need to 
-specify `--access public` with the initial `npm publish` command.
-This will publish the package and set access to `public` as if 
-you had run `npm access public` after publishing.
+Scoped packages are not public by default.  You will need to specify
+`--access public` with the initial `npm publish` command.  This will publish
+the package and set access to `public` as if you had run `npm access public`
+after publishing.  You do not need to do this when publishing new versions of
+an existing scoped package.
 
 #### Publishing private scoped packages to the npm registry
 
