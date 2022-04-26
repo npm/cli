@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.0.4](https://github.com/npm/cli/compare/libnpmversion-v3.0.3...libnpmversion-v3.0.4) (2022-04-26)
+
+
+### Dependencies
+
+* semver@7.3.7 ([c51e553](https://github.com/npm/cli/commit/c51e553a32315e4f1b703ca9030eb7ade91d1a85))
+
 ### [3.0.3](https://github.com/npm/cli/compare/libnpmversion-v3.0.2...libnpmversion-v3.0.3) (2022-04-12)
 
 
