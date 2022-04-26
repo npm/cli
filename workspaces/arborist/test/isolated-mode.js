@@ -928,7 +928,7 @@ tap.test('nested bundled dependencies of internal packages', async t => {
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-console.log(dir)
+
   debugger
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
   await arborist.reify({ isolated: true })
@@ -947,7 +947,7 @@ console.log(dir)
   t.equals(isexePath, fs.realpathSync(isexePath))
 })
 
-tap.only('nested bundled dependencies of workspaces', async t => {
+tap.test('nested bundled dependencies of workspaces', async t => {
   const graph = {
     registry: [
       { name: 'which', version: '2.0.0', dependencies: { isexe: '^1.0.0' } },
@@ -991,9 +991,68 @@ tap.only('nested bundled dependencies of workspaces', async t => {
 
   const isexePath = path.join(dir,'node_modules','isexe')
   t.equals(isexePath, fs.realpathSync(isexePath))
+  const whichPath = path.join(dir,'node_modules','which')
+  t.equals(whichPath, fs.realpathSync(whichPath))
 })
 
-// TODO: add a test for bundled dependencies of workspaces
+tap.only('nested bundled dependencies of workspaces with conflicting isolated dep', async t => {
+  const graph = {
+    registry: [
+      { name: 'which', version: '3.0.0', dependencies: { isexe: '^2.0.0' } },
+      { name: 'isexe', version: '2.0.0' },
+      { name: 'which', version: '2.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'isexe', version: '1.0.0' }
+    ] ,
+    root: {
+      name: 'dog', version: '1.2.3', dependencies: { which: '3.0.0' },
+    },
+    workspaces: [
+      { name: 'bar', version: '1.0.0', dependencies: { which: '2.0.0' }, bundleDependencies: ['which'] },
+    ]
+  }
+
+
+  // the isexe that is bundled is hoisted
+  // the 'which' that is bundled is not hoisted due to a conflaict
+  const resolved = {
+    'dog@1.2.3 (root)': {
+      'bar@1.0.0 (workspace)': {
+	'which@2.0.0': {
+	  'isexe@1.0.0': {},
+	},
+	'isexe@1.0.0': {},
+      },
+      'which@3.0.0': {
+	'isexe@2.0.0': {}
+      }
+    },
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  // Note that we override this cache to prevent interference from other tests
+  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  await arborist.reify({ isolated: true })
+  
+  const asserted = new Set()
+  rule1.apply(t, dir, resolved, asserted)
+  rule2.apply(t, dir, resolved, asserted)
+  rule3.apply(t, dir, resolved, asserted)
+  rule4.apply(t, dir, resolved, asserted)
+  rule5.apply(t, dir, resolved, asserted)
+  // I think that duplicated versions are okay in the case of bundled deps
+  //  rule6.apply(t, dir, resolved, asserted)
+  rule7.apply(t, dir, resolved, asserted)
+
+  const isexePath = path.join(dir,'packages','bar','node_modules','isexe')
+  t.equals(isexePath, fs.realpathSync(isexePath))
+  const whichPath = path.join(dir,'packages','bar','node_modules','which')
+  t.equals(whichPath, fs.realpathSync(whichPath))
+
+})
+
 
 tap.test('adding a dependency', async t => {
   // Input of arborist
