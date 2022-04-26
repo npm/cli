@@ -17,23 +17,23 @@ const Arborist = require('../lib/arborist')
 const { getRepo } = require('./nock')
 
 /**
-  * The testing framework here is work in progress, in particular it does not have nice ergonomics.
-  * The syntactic suggar for this framework will be introduced over time as we add more features.
-  *
-  * The framework has two parts:
-  * - Mocking: The tool generates a test repo based on a declarative list of packages.
-  * - Asserting: Some generic rules are defined which assert a particular contract of a resolved dependency graph.
-  *     For each test we declaratively define the expected resolved dependency graph and apply all the rules to it.
-  *     This validates that arborist produced the expected dependency graph and respect all the contracts set by the rules.
-  *
-  * The automatic assertions aims to make new tests easy.
-  * A rule needs to be written only once and can be asserted against many graphs cheaply.
-  * The only part that needs to be produced by hand is the conversion from the list of packages to a resolved dependency graph.
-  * Automating this part would mean reimplementing the full resolution algorithm for the tests, this would be error prone.
-  * Manually defining declaratively the input and the output of arborist is what gives us confidence that the tests do what
-  * we want.
-  *
-  **/
+ * The testing framework here is work in progress, in particular it does not have nice ergonomics.
+ * The syntactic suggar for this framework will be introduced over time as we add more features.
+ *
+ * The framework has two parts:
+ * - Mocking: The tool generates a test repo based on a declarative list of packages.
+ * - Asserting: Some generic rules are defined which assert a particular contract of a resolved dependency graph.
+ *     For each test we declaratively define the expected resolved dependency graph and apply all the rules to it.
+ *     This validates that arborist produced the expected dependency graph and respect all the contracts set by the rules.
+ *
+ * The automatic assertions aims to make new tests easy.
+ * A rule needs to be written only once and can be asserted against many graphs cheaply.
+ * The only part that needs to be produced by hand is the conversion from the list of packages to a resolved dependency graph.
+ * Automating this part would mean reimplementing the full resolution algorithm for the tests, this would be error prone.
+ * Manually defining declaratively the input and the output of arborist is what gives us confidence that the tests do what
+ * we want.
+ *
+ **/
 
 
 const rule1 = {
@@ -47,7 +47,7 @@ const rule1 = {
       if (alreadyAsserted.has(key)) { return }
       alreadyAsserted.add(key)
       t.ok(setupRequire(path.join(dir, p.initialDir))(...resolveChain),
-        `Rule 1: Package "${[p.initialDir.replace('packages/',''), ...p.chain].join(' => ')}" should have access to itself using its own name.`)
+           `Rule 1: Package "${[p.initialDir.replace('packages/',''), ...p.chain].join(' => ')}" should have access to itself using its own name.`)
     })
   }
 }
@@ -64,7 +64,7 @@ const rule2 = {
         if (alreadyAsserted.has(key)) { return }
         alreadyAsserted.add(key)
         t.ok(path.join(dir, p.initialDir),
-          `Rule 2: ${p.chain.length === 0 && p.initialDir === '.' ? "The root" : `Package "${[p.initialDir.replace('packages/',''), ...p.chain].join(' => ')}"`} should have access to "${n}" because it has it as a resolved dependency.`)
+             `Rule 2: ${p.chain.length === 0 && p.initialDir === '.' ? "The root" : `Package "${[p.initialDir.replace('packages/',''), ...p.chain].join(' => ')}"`} should have access to "${n}" because it has it as a resolved dependency.`)
       })
     })
     // testing circular deps
@@ -77,7 +77,7 @@ const rule2 = {
         if (alreadyAsserted.has(key)) { return }
         alreadyAsserted.add(key)
         t.ok(setupRequire(path.join(dir, p.initialDir))(...resolveChain),
-          `Rule 2: ${p.chain.length === 0 && p.initialDir === '.' ? "The root" : `Package "${[p.initialDir.replace('packages/',''), ...p.chain].join(' => ')}"`} should have access to "${n}" because it has it as a resolved dependency.`)
+             `Rule 2: ${p.chain.length === 0 && p.initialDir === '.' ? "The root" : `Package "${[p.initialDir.replace('packages/',''), ...p.chain].join(' => ')}"`} should have access to "${n}" because it has it as a resolved dependency.`)
       })
     })
   }
@@ -96,7 +96,7 @@ const rule3 = {
         if (alreadyAsserted.has(key)) { return }
         alreadyAsserted.add(key)
         t.ok(setupRequire(path.join(dir, p.initialDir))(...resolveChain),
-          `Rule 3: ${p.chain.length === 0 && p.initialDir === '.' ? "The root" : `Package "${[p.initialDir.replace('packages/',''), ...p.chain].join(" => ")}"`} should have access to "${d}" because it is a root dependency.`)
+             `Rule 3: ${p.chain.length === 0 && p.initialDir === '.' ? "The root" : `Package "${[p.initialDir.replace('packages/',''), ...p.chain].join(" => ")}"`} should have access to "${d}" because it is a root dependency.`)
       })
     })
   }
@@ -111,14 +111,14 @@ const rule4 ={
     const rootDependencyNames = graph.root.dependencies.map(o => o.name)
     allPackages.forEach(p => {
       const resolvedDependencyNames = (p.dependencies || [])
-      .filter(d => !isLoopToken(d))
-      .map(d => d.name)
-      .concat((p.dependencies || [])
-        .filter(d => isLoopToken(d))
-        .map(t => {
-          const back = parseLoopToken(t)
-          return p.chain.slice(-1 - back)[0] // getting the name of the circular dep by going back in the chain
-        }))
+	    .filter(d => !isLoopToken(d))
+	    .map(d => d.name)
+	    .concat((p.dependencies || [])
+		    .filter(d => isLoopToken(d))
+		    .map(t => {
+		      const back = parseLoopToken(t)
+		      return p.chain.slice(-1 - back)[0] // getting the name of the circular dep by going back in the chain
+		    }))
       allPackageNames.filter(n => !rootDependencyNames.includes(n))
         .filter(n => !resolvedDependencyNames.includes(n))
         .filter(n => n !== p.name)
@@ -128,7 +128,7 @@ const rule4 ={
           if (alreadyAsserted.has(key)) { return }
           alreadyAsserted.add(key)
           t.notOk(setupRequire(path.join(dir, p.initialDir))(...resolveChain),
-            `Rule 4: ${p.chain.length === 0 && p.initialDir === '.' ? "The root" : `Package "${[p.initialDir.replace('packages/',''), ...p.chain].join(" => ")}"`} should not have access to "${n}" because it not a root dependency, not in its resolved dependencies and not itself.`)
+		  `Rule 4: ${p.chain.length === 0 && p.initialDir === '.' ? "The root" : `Package "${[p.initialDir.replace('packages/',''), ...p.chain].join(" => ")}"`} should not have access to "${n}" because it not a root dependency, not in its resolved dependencies and not itself.`)
         })
     })
   }
@@ -144,7 +144,7 @@ const rule5 = {
         const chain = p.chain
         const parentChain = chain.slice(0, -2).concat([p.name])
         t.same(setupRequire(path.join(dir, p.initialDir))(...parentChain), setupRequire(path.join(dir, p.initialDir))(...chain),
-          `Rule 5: Package "${[p.initialDir.replace('packages/',''), ...chain.slice(0, -1)].join(' => ')}" should get the same instance of "${p.name}" as its parent`)
+               `Rule 5: Package "${[p.initialDir.replace('packages/',''), ...chain.slice(0, -1)].join(' => ')}" should get the same instance of "${p.name}" as its parent`)
       })
   }
 }
@@ -192,8 +192,8 @@ const rule7 = {
         const loopStartChain = p.chain.slice(0, -back)
         const loopEndChain = [...p.chain, name]
         t.same(setupRequire(path.join(dir, p.initialDir))(...loopStartChain),
-          setupRequire(path.join(dir, p.initialDir))(...loopEndChain),
-          `The two ends of this dependency loop should resolve to the same location: "${[p.initialDir.replace('packages/',''), ...loopEndChain].join(" => ")}"`)
+               setupRequire(path.join(dir, p.initialDir))(...loopEndChain),
+               `The two ends of this dependency loop should resolve to the same location: "${[p.initialDir.replace('packages/',''), ...loopEndChain].join(" => ")}"`)
       })
     })
   }
@@ -201,12 +201,12 @@ const rule7 = {
 
 tap.test('most simple happy scenario', async t => {
   /*
-    *
-    * Dependency graph:
-    * 
-    * foo -> which -> isexe
-    *
-    */
+   *
+   * Dependency graph:
+   * 
+   * foo -> which -> isexe
+   *
+   */
 
   // Input of arborist
   const graph = {
@@ -247,22 +247,22 @@ tap.test('most simple happy scenario', async t => {
 
 tap.test('simple peer dependencies scenarios', async t => {
   /*
-    * Dependencies:
-    *
-    * foo -> tsutils
-    *        tsutils -> typescript (peer dep)
-    *                   typescript -> baz
-    * foo -> typescript
-    *        typescript -> baz
-    *
-    */
+   * Dependencies:
+   *
+   * foo -> tsutils
+   *        tsutils -> typescript (peer dep)
+   *                   typescript -> baz
+   * foo -> typescript
+   *        typescript -> baz
+   *
+   */
 
   const graph = {
     registry: [
-        { name: 'tsutils', version: '1.0.0', dependencies: {}, peerDependencies: { typescript: "*" } },
-        { name: 'typescript', version: '1.0.0', dependencies: { baz: "*" } },
-        { name: 'baz', version: '2.0.0'},
-      ] ,
+      { name: 'tsutils', version: '1.0.0', dependencies: {}, peerDependencies: { typescript: "*" } },
+      { name: 'typescript', version: '1.0.0', dependencies: { baz: "*" } },
+      { name: 'baz', version: '2.0.0'},
+    ] ,
     root: {
       name: 'foo', version: '1.2.3', dependencies: { tsutils: '1.0.0', typescript: '1.0.0' }
     }
@@ -302,10 +302,10 @@ tap.test('simple peer dependencies scenarios', async t => {
 
 tap.test('Lock file is same in hoisted and in isolated mode', async t => {
   const graph = {
-  registry: [
+    registry: [
       { name: 'which', version: '2.0.2' }
-      ],
-      root: { name: 'foo', version: '1.2.3', dependencies: { 'which': '2.0.2' } }
+    ],
+    root: { name: 'foo', version: '1.2.3', dependencies: { 'which': '2.0.2' } }
   }
 
   const { dir: hoistedModeDir , registry } = await getRepo(graph)
@@ -331,10 +331,10 @@ tap.test('Lock file is same in hoisted and in isolated mode', async t => {
 tap.test('Basic workspaces setup', async t => {
   const graph = {
     registry: [
-        { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
-        { name: 'which', version: '2.0.0', dependencies: { isexe: '^1.0.0' } },
-        { name: 'isexe', version: '1.0.0' }
-      ] ,
+      { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'which', version: '2.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'isexe', version: '1.0.0' }
+    ] ,
     root: {
       name: 'dog', version: '1.2.3', dependencies: { bar: '*' }
     },
@@ -404,10 +404,10 @@ tap.test('Basic workspaces setup', async t => {
 tap.test('resolved versions are the same on isolated and in hoisted mode', async t => {
   const graph = {
     registry: [
-        { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
-        { name: 'which', version: '2.0.0', dependencies: { isexe: '^1.0.0' } },
-        { name: 'isexe', version: '1.0.0' }
-      ] ,
+      { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'which', version: '2.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'isexe', version: '1.0.0' }
+    ] ,
     root: {
       name: 'dog', version: '1.2.3', dependencies: { bar: '*' }
     },
@@ -710,53 +710,53 @@ tap.test('shrinkwrap install dev deps (like hoisting does)', async t => {
 })
 
 tap.test('shrinkwrap with peer dependencies', async t => {
-    const shrinkwrap = JSON.stringify({
+  const shrinkwrap = JSON.stringify({
+    "name": "which",
+    "version": "1.0.0",
+    "lockfileVersion": 2,
+    "requires": true,
+    "packages": {
+      "": {
         "name": "which",
         "version": "1.0.0",
-        "lockfileVersion": 2,
-        "requires": true,
-        "packages": {
-        "": {
-          "name": "which",
-          "version": "1.0.0",
-          "dependencies": {
-            "isexe": "^1.0.0"
-          },
-          "devDependencies": {
-            "bar": "1.0.0"
-          },
-          "peerDependencies": {
-            "bar": "*"
-          }
-        },
-        "node_modules/bar": {
-          "version": "1.0.0",
-          "resolved": "##REG##/bar/1.0.0.tar",
-          "dev": true,
-          "bin": {
-            "bar": "bin.js"
-          }
-        },
-        "node_modules/isexe": {
-          "version": "1.0.0",
-          "resolved": "##REG##/isexe/1.0.0.tar",
-          "bin": {
-            "isexe": "bin.js"
-          }
-        }
-        },
         "dependencies": {
-          "bar": {
-            "version": "1.0.0",
-            "resolved": "##REG##/bar/1.0.0.tar",
-            "dev": true
-          },
-          "isexe": {
-            "version": "1.0.0",
-            "resolved": "##REG##/isexe/1.0.0.tar"
-          }
+          "isexe": "^1.0.0"
+        },
+        "devDependencies": {
+          "bar": "1.0.0"
+        },
+        "peerDependencies": {
+          "bar": "*"
         }
-    })
+      },
+      "node_modules/bar": {
+        "version": "1.0.0",
+        "resolved": "##REG##/bar/1.0.0.tar",
+        "dev": true,
+        "bin": {
+          "bar": "bin.js"
+        }
+      },
+      "node_modules/isexe": {
+        "version": "1.0.0",
+        "resolved": "##REG##/isexe/1.0.0.tar",
+        "bin": {
+          "isexe": "bin.js"
+        }
+      }
+    },
+    "dependencies": {
+      "bar": {
+        "version": "1.0.0",
+        "resolved": "##REG##/bar/1.0.0.tar",
+        "dev": true
+      },
+      "isexe": {
+        "version": "1.0.0",
+        "resolved": "##REG##/isexe/1.0.0.tar"
+      }
+    }
+  })
   // expected output
   const resolved = {
     'foo@1.0.0 (root)': {
@@ -773,12 +773,12 @@ tap.test('shrinkwrap with peer dependencies', async t => {
   const graph = {
     registry: [
       {
-         name: 'which',
-         version: '1.0.0',
-         dependencies: { isexe: '^1.0.0' },
-         peerDependencies: { 'bar': '*' },
-         devDependencies: { 'bar': '1.0.0' },
-         shrinkwrap, _hasShrinkwrap: true,
+        name: 'which',
+        version: '1.0.0',
+        dependencies: { isexe: '^1.0.0' },
+        peerDependencies: { 'bar': '*' },
+        devDependencies: { 'bar': '1.0.0' },
+        shrinkwrap, _hasShrinkwrap: true,
       },
       { name: 'isexe', version: '1.1.0' },
       { name: 'isexe', version: '1.0.0' },
@@ -786,10 +786,10 @@ tap.test('shrinkwrap with peer dependencies', async t => {
       { name: 'bar', version: '1.0.0' },
     ] ,
     root: {
-         name: 'foo',
-         version: '1.0.0',
-         dependencies: { isexe: '^1.0.0', bar: '^1.0.0', which: '1.0.0' },
-      },
+      name: 'foo',
+      version: '1.0.0',
+      dependencies: { isexe: '^1.0.0', bar: '^1.0.0', which: '1.0.0' },
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
@@ -797,7 +797,7 @@ tap.test('shrinkwrap with peer dependencies', async t => {
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
   await arborist.reify({ isolated: true })
 
-// TODO: greate the resolved object  
+  // TODO: greate the resolved object  
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
   rule2.apply(t, dir, resolved, asserted)
@@ -807,7 +807,7 @@ tap.test('shrinkwrap with peer dependencies', async t => {
   rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
 })
- 
+
 tap.test('bundled dependencies of external packages', async t => {
 
   // Input of arborist
@@ -849,7 +849,7 @@ tap.test('bundled dependencies of external packages', async t => {
   rule7.apply(t, dir, resolved, asserted)
 })
 
-tap.only('bundled dependencies of internal packages', async t => {
+tap.test('bundled dependencies of internal packages', async t => {
 
   // Input of arborist
   const graph = {
@@ -859,8 +859,8 @@ tap.only('bundled dependencies of internal packages', async t => {
       { name: 'isexe', version: '1.1.0' },
     ] ,
     root: {
-	name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', isexe: '^1.0.0' },
-	bundleDependencies: [ 'isexe' ]
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', isexe: '^1.0.0' },
+      bundleDependencies: [ 'isexe' ]
     }
   }
 
@@ -870,7 +870,7 @@ tap.only('bundled dependencies of internal packages', async t => {
       'which@1.0.0': {
         'isexe@1.1.0': {}
       },
-     'isexe@1.1.0': {}
+      'isexe@1.1.0': {}
     }
   }
 
@@ -887,15 +887,112 @@ tap.only('bundled dependencies of internal packages', async t => {
   rule3.apply(t, dir, resolved, asserted)
   rule4.apply(t, dir, resolved, asserted)
   rule5.apply(t, dir, resolved, asserted)
-  rule6.apply(t, dir, resolved, asserted)
+  // I think that duplicated versions are okay in the case of bundled deps
+  //  rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
 
-    const isexePath = path.join(dir,'node_modules','isexe')
-    t.equals(isexePath, fs.realpathSync(isexePath))
-  // TODO: assert that the bundled dependency is hoisted
+  const isexePath = path.join(dir,'node_modules','isexe')
+  t.equals(isexePath, fs.realpathSync(isexePath))
 })
 
-// TODO: add a test for bundled dependencies that have dependencies themselves
+tap.test('nested bundled dependencies of internal packages', async t => {
+
+  // Input of arborist
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' },
+      },
+      { name: 'isexe', version: '1.1.0', dependencies: { bar: '*' }},
+      { name: 'bar', version: '3.0.0' },
+    ] ,
+    root: {
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', isexe: '^1.0.0' },
+      bundleDependencies: [ 'isexe' ]
+    }
+  }
+
+  // expected output
+  const resolved = {
+    'foo@1.2.3 (root)': {
+      'which@1.0.0': {
+	'isexe@1.1.0': {
+	  'bar@3.0.0': {}
+	}
+      },
+      'isexe@1.1.0': {},
+      'bar@3.0.0': {} // The bundled bar is hoisted      
+    }
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  // Note that we override this cache to prevent interference from other tests
+  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+console.log(dir)
+  debugger
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  await arborist.reify({ isolated: true })
+  
+  const asserted = new Set()
+  rule1.apply(t, dir, resolved, asserted)
+  rule2.apply(t, dir, resolved, asserted)
+  rule3.apply(t, dir, resolved, asserted)
+  rule4.apply(t, dir, resolved, asserted)
+  rule5.apply(t, dir, resolved, asserted)
+  // I think that duplicated versions are okay in the case of bundled deps
+  //  rule6.apply(t, dir, resolved, asserted)
+  rule7.apply(t, dir, resolved, asserted)
+
+  const isexePath = path.join(dir,'node_modules','isexe')
+  t.equals(isexePath, fs.realpathSync(isexePath))
+})
+
+tap.only('nested bundled dependencies of workspaces', async t => {
+  const graph = {
+    registry: [
+      { name: 'which', version: '2.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'isexe', version: '1.0.0' }
+    ] ,
+    root: {
+      name: 'dog', version: '1.2.3'
+    },
+    workspaces: [
+      { name: 'bar', version: '1.0.0', dependencies: { which: '2.0.0' }, bundleDependencies: ['which'] },
+    ]
+  }
+
+
+  const resolved = {
+    'dog@1.2.3 (root)': {
+      'bar@1.0.0 (workspace)': {},
+      'which@2.0.0': {},
+      'isexe@1.0.0': {}
+    },
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  // Note that we override this cache to prevent interference from other tests
+  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  await arborist.reify({ isolated: true })
+  debugger
+  
+  const asserted = new Set()
+  rule1.apply(t, dir, resolved, asserted)
+  rule2.apply(t, dir, resolved, asserted)
+  rule3.apply(t, dir, resolved, asserted)
+  rule4.apply(t, dir, resolved, asserted)
+  rule5.apply(t, dir, resolved, asserted)
+  // I think that duplicated versions are okay in the case of bundled deps
+  //  rule6.apply(t, dir, resolved, asserted)
+  rule7.apply(t, dir, resolved, asserted)
+
+  const isexePath = path.join(dir,'node_modules','isexe')
+  t.equals(isexePath, fs.realpathSync(isexePath))
+})
+
 // TODO: add a test for bundled dependencies of workspaces
 
 tap.test('adding a dependency', async t => {
@@ -915,7 +1012,7 @@ tap.test('adding a dependency', async t => {
   const resolved = {
     'foo@1.2.3 (root)': {
       'which@1.0.0': {
-        'isexe@1.0.0': {}
+	'isexe@1.0.0': {}
       },
       'bar@2.2.0': {}
     }
@@ -995,7 +1092,7 @@ tap.test('circular dependencies', async t => {
   const resolved = {
     'foo@1.2.3 (root)': {
       'which@1.0.0': {
-        'isexe@1.0.0': '(back 1)' 
+	'isexe@1.0.0': '(back 1)' 
       },
       'bar@1.2.6': {}
     }
@@ -1035,10 +1132,10 @@ tap.test('circular peer dependencies', async t => {
   const resolved = {
     'foo@1.2.3 (root)': {
       'cat@1.0.0': {
-        'bar@1.0.0': '(back 1)' 
+	'bar@1.0.0': '(back 1)' 
       },
       'bar@1.0.0': {
-        'cat@1.0.0': '(back 1)'
+	'cat@1.0.0': '(back 1)'
       }
     }
   }
@@ -1077,7 +1174,7 @@ tap.test('peer dependency on parent', async t => {
   const resolved = {
     'foo@1.2.3 (root)': {
       'cat@1.0.0': {
-        'bar@1.0.0': '(back 1)' 
+	'bar@1.0.0': '(back 1)' 
       }
     }
   }
@@ -1101,12 +1198,12 @@ tap.test('peer dependency on parent', async t => {
 
 tap.test('scoped package', async t => {
   /*
-    *
-    * Dependency graph:
-    * 
-    * foo -> which -> isexe
-    *
-    */
+   *
+   * Dependency graph:
+   * 
+   * foo -> which -> isexe
+   *
+   */
 
   // Input of arborist
   const graph = {
@@ -1123,7 +1220,7 @@ tap.test('scoped package', async t => {
   const resolved = {
     'foo@1.2.3 (root)': {
       'which@1.0.0': {
-        '@foo/isexe@1.0.0': {}
+	'@foo/isexe@1.0.0': {}
       }
     }
   }
@@ -1188,16 +1285,16 @@ tap.test('virtual packages', async t => {
     'toor@1.2.3 (root)': {
       'foo@1.0.0': {},
       'bar@1.0.0': {
-        'foo@2.0.0': {
-          'cat@2.0.0 (peer)': {}
-        },
-        'cat@2.0.0': {}
+	'foo@2.0.0': {
+	  'cat@2.0.0 (peer)': {}
+	},
+	'cat@2.0.0': {}
       },
       'baz@1.0.0': {
-        'foo@2.0.0': {
-          'cat@1.0.0 (peer)': {}
-        },
-        'cat@1.0.0': {}
+	'foo@2.0.0': {
+	  'cat@1.0.0 (peer)': {}
+	},
+	'cat@1.0.0': {}
       },
       'cat@1.0.0': {}
     }
@@ -1290,7 +1387,7 @@ function setupRequire(cwd) {
   return function requireChain(...chain) {
     return chain.reduce((path, name) => {
       if (path === undefined) {
-        return undefined
+	return undefined
       }
       return resolvePackage(name, path)
     }, cwd)
@@ -1328,16 +1425,16 @@ function resolvePackage(name, from) {
 
 function getAllPackages(resolvedGraph) {
   return [...getAllPackagesRecursive(resolvedGraph.root),
-    ...(resolvedGraph.workspaces?.map(w => getAllPackagesRecursive(w)) || []).reduce((a,n) => ([...a, ...n]), [])]
+	  ...(resolvedGraph.workspaces?.map(w => getAllPackagesRecursive(w)) || []).reduce((a,n) => ([...a, ...n]), [])]
 }
 
 function getAllPackagesRecursive(resolvedGraph) {
   return [
     resolvedGraph,
     ...(resolvedGraph.dependencies
-      ?.filter(d => !isLoopToken(d))
-      .map(d => getAllPackagesRecursive(d)) || [])
-    .reduce((a,n) => ([...a, ...n]), [])
+	?.filter(d => !isLoopToken(d))
+	.map(d => getAllPackagesRecursive(d)) || [])
+      .reduce((a,n) => ([...a, ...n]), [])
   ]
 }
 
@@ -1348,15 +1445,15 @@ function withRequireChain(resolvedGraph) {
       chain: [],
       initialDir: '.',
       dependencies: resolvedGraph.root.dependencies?.map(d => 
-        withRequireChainRecursive(d, [], '.'))
+	withRequireChainRecursive(d, [], '.'))
     },
     workspaces: resolvedGraph.workspaces?.map(w => {
       const initialDir = `packages/${w.name}`
       return {
-        ...w,
-        chain: [],
-        initialDir,
-        dependencies: w.dependencies?.map(d => withRequireChainRecursive(d, [], initialDir))
+	...w,
+	chain: [],
+	initialDir,
+	dependencies: w.dependencies?.map(d => withRequireChainRecursive(d, [], initialDir))
       }
     })
   } 
@@ -1384,7 +1481,7 @@ function parseGraph(graph) {
   Object.entries(graph).filter(([key]) => key.includes('(workspace)'))
     .forEach(([key, value]) => {
       result.workspaces.push(parseGraphRecursive(key, value))
-  })
+    })
   return result
 }
 
@@ -1407,14 +1504,14 @@ function parseGraphRecursive(key, deps) {
   const normalizedDeps = typeof deps === 'string' ? { [deps]: {} } : deps
   const dependencies = Object.entries(normalizedDeps).map(([key, value]) => parseGraphRecursive(key, value))
   return { name, version, workspace, peer, dependencies }
-  }
+}
 
 
 /*
-  * TO TEST:
-  *   --------------------------------------
-  * - rollbacks
-  * - scoped installs
-  * - overrides?
-  * - changing repo from isolated to hoisted and from hoisted to isolated
-  */
+ * TO TEST:
+ *   --------------------------------------
+ * - rollbacks
+ * - scoped installs
+ * - overrides?
+ * - changing repo from isolated to hoisted and from hoisted to isolated
+ */

@@ -46,8 +46,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     root.localPath = idealTree.path
     root.workspaces = await Promise.all([...idealTree.fsChildren.values()].map(this.workspaceProxyMemo))
     const processed = new Set()
-      const queue = [idealTree,...idealTree.fsChildren]
-      debugger
+    const queue = [idealTree,...idealTree.fsChildren]
     while(queue.length !== 0) {
       const next = queue.pop()
       if (processed.has(next.location)) {
