@@ -1,5 +1,17 @@
 # Changelog
 
+### [6.0.4](https://github.com/npm/cli/compare/libnpmpublish-v6.0.3...libnpmpublish-v6.0.4) (2022-04-26)
+
+
+### Bug Fixes
+
+* **libnpmpublish:** unpublish from custom reg ([#4657](https://github.com/npm/cli/issues/4657)) ([e9163b4](https://github.com/npm/cli/commit/e9163b48d8e46a80d2a4cc98c492b94dfa152cb8))
+
+
+### Dependencies
+
+* semver@7.3.7 ([c51e553](https://github.com/npm/cli/commit/c51e553a32315e4f1b703ca9030eb7ade91d1a85))
+
 ### [6.0.3](https://github.com/npm/cli/compare/libnpmpublish-v6.0.2...libnpmpublish-v6.0.3) (2022-04-06)
 
 
