@@ -1,5 +1,12 @@
 # Changelog
 
+### [4.0.5](https://github.com/npm/cli/compare/libnpmexec-v4.0.4...libnpmexec-v4.0.5) (2022-04-26)
+
+
+### Dependencies
+
+* npmlog@6.0.2 ([5e31322](https://github.com/npm/cli/commit/5e313223100db1207818d756b081eaba3468b273))
+
 ### [4.0.4](https://github.com/npm/cli/compare/libnpmexec-v4.0.3...libnpmexec-v4.0.4) (2022-04-19)
 
 
