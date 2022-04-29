@@ -13,7 +13,7 @@
 !/tap-snapshots/
 !/test/
 !/workspaces/
-
+/.history
 !/.eslintrc.js
 !/.eslintrc.local.json
 !/.gitattributes
