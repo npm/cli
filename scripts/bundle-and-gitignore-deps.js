@@ -33,6 +33,7 @@ CHANGELOG*
 changelog*
 README*
 readme*
+__pycache__
 .editorconfig
 .idea/
 .npmignore
