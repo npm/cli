@@ -44,7 +44,7 @@ jobs:
             PR="${{ github.event.issue.number }}"
             SENDER="${{ github.event.issue.sender.login }}"
             ROLE=$(gh api repos/${OWNER}/${REPO}/collaborators/${SENDER}/permission -q '.permission')
-            if [[ "$ROLE" != "admin"]]; then
+            if [[ "$ROLE" != "admin" ]]; then
               echo "${SENDER} is ${ROLE}, not an admin, exiting"
               exit 0
             fi
