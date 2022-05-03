@@ -230,8 +230,13 @@
     ],
     "color": 1,
     "files": "test/{lib,bin,index.js}",
-    "coverage-map": "test/coverage-map.js",
-    "timeout": 600
+    "timeout": 600,
+    "nyc-arg": [
+      "--exclude",
+      "workspaces/**",
+      "--exclude",
+      "tap-snapshots/**"
+    ]
   },
   "templateOSS": {
     "rootRepo": false,
