@@ -213,7 +213,7 @@
     "test": "tap",
     "test-all": "npm run test --if-present --workspaces --include-workspace-root",
     "snap": "tap",
-    "postsnap": "make -s mandocs",
+    "postsnap": "make -s docs",
     "test:nocleanup": "NO_TEST_CLEANUP=1 npm run test --",
     "sudotest": "sudo npm run test --",
     "sudotest:nocleanup": "sudo NO_TEST_CLEANUP=1 npm run test --",
