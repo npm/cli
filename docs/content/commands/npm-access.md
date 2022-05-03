@@ -36,7 +36,7 @@ in the current working directory if no package name is passed to the
 subcommand.
 
 * public / restricted:
-  Set a package to be either publicly accessible or restricted.
+  Set a package to be either publicly-accessible or restricted.
 
 * grant / revoke:
   Add or remove the ability of users and teams to have read-only or read-write
