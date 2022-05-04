@@ -169,7 +169,7 @@ const parseArgs = raw => {
     // look for that heading level with a match for the portion after
     section: '### .*cli.*',
     release:
-      'https://raw.githubusercontent.com/wiki/npm/cli/Release-Process.md',
+      'https://raw.githubusercontent.com/wiki/npm/cli/Release-Process-(v8).md',
   }
 
   const replacements = {}
