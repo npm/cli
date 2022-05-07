@@ -46,6 +46,19 @@ class MockRegistry {
     this.#nock = nock
   }
 
+  search ({ responseCode = 200, results = [], error }) {
+    // the flags, score, and searchScore parts of the response are never used
+    // by npm, only package is used
+    const response = results.map(p => ({ package: p }))
+    this.nock = this.nock.get('/-/v1/search').query(true)
+    if (error) {
+      this.nock = this.nock.replyWithError(error)
+    } else {
+      this.nock = this.nock.reply(responseCode, { objects: response })
+    }
+    return this.nock
+  }
+
   whoami ({ username, body, responseCode = 200, times = 1 }) {
     if (username) {
       this.nock = this.nock.get('/-/whoami').times(times).reply(responseCode, { username })
