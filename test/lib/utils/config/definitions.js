@@ -457,13 +457,6 @@ t.test('retry options', t => {
 })
 
 t.test('search options', t => {
-  const vals = {
-    description: 'test description',
-    exclude: 'test search exclude',
-    limit: 99,
-    staleneess: 99,
-
-  }
   const obj = {}
   // <config>: flat.search[<option>]
   const mapping = {
@@ -476,9 +469,9 @@ t.test('search options', t => {
   for (const [config, option] of Object.entries(mapping)) {
     const msg = `${config} -> search.${option}`
     const flat = {}
-    obj[config] = vals[option]
+    obj[config] = 99
     definitions[config].flatten(config, obj, flat)
-    t.strictSame(flat, { search: { limit: 20, [option]: vals[option] } }, msg)
+    t.strictSame(flat, { search: { limit: 20, [option]: 99 } }, msg)
     delete obj[config]
   }
 

@@ -1,11 +1,22 @@
 const t = require('tap')
-const { load: _loadMockNpm } = require('../../fixtures/mock-npm.js')
 
 t.cleanSnapshot = str => str
   .replace(/(published ).*?( ago)/g, '$1{TIME}$2')
 
 // run the same as tap does when running directly with node
 process.stdout.columns = undefined
+
+const { fake: mockNpm } = require('../../fixtures/mock-npm')
+
+let logs
+const cleanLogs = () => {
+  logs = ''
+  const fn = (...args) => {
+    logs += '\n'
+    args.map(el => logs += el)
+  }
+  console.log = fn
+}
 
 // 3 days. its never yesterday and never a week ago
 const yesterday = new Date(Date.now() - 1000 * 60 * 60 * 24 * 3)
@@ -60,7 +71,7 @@ const packument = (nv, opts) => {
             tarball: 'http://hm.blue.com/1.0.1.tgz',
             integrity: '---',
             fileCount: 1,
-            unpackedSize: 1000,
+            unpackedSize: 1,
           },
         },
       },
@@ -83,7 +94,7 @@ const packument = (nv, opts) => {
             tarball: 'http://hm.cyan.com/1.0.0.tgz',
             integrity: '---',
             fileCount: 1,
-            unpackedSize: 1000000,
+            unpackedSize: 1,
           },
         },
         '1.0.1': {},
@@ -169,7 +180,7 @@ const packument = (nv, opts) => {
             tarball: 'http://hm.green.com/1.0.0.tgz',
             integrity: '---',
             fileCount: 1,
-            unpackedSize: 1000000000,
+            unpackedSize: 1,
           },
         },
         '1.0.1': {},
@@ -260,212 +271,289 @@ const packument = (nv, opts) => {
   return mocks[nv.name]
 }
 
-const loadMockNpm = async function (t, opts = {}) {
-  const consoleLogs = []
-  const mockNpm = await _loadMockNpm(t, {
-    mocks: {
-      pacote: {
-        packument,
-      },
+t.beforeEach(cleanLogs)
+
+t.test('should log package info', async t => {
+  const View = t.mock('../../../lib/commands/view.js', {
+    pacote: {
+      packument,
     },
-    globals: {
-      'console.log': (...args) => {
-        consoleLogs.push(args)
-      },
-    },
-    ...opts,
   })
-  return { ...mockNpm, consoleLogs }
-}
+  const npm = mockNpm({
+    config: { unicode: false },
+  })
+  const view = new View(npm)
 
-t.test('package from git', async t => {
-  const { npm, consoleLogs } = await loadMockNpm(t, { config: { unicode: false } })
-  await npm.exec('view', ['https://github.com/npm/green'])
-  t.matchSnapshot(consoleLogs.join('\n'))
+  const ViewJson = t.mock('../../../lib/commands/view.js', {
+    pacote: {
+      packument,
+    },
+  })
+  const jsonNpm = mockNpm({
+    config: {
+      json: true,
+      tag: 'latest',
+    },
+  })
+  const viewJson = new ViewJson(jsonNpm)
+
+  const ViewUnicode = t.mock('../../../lib/commands/view.js', {
+    pacote: {
+      packument,
+    },
+  })
+  const unicodeNpm = mockNpm({
+    config: { unicode: true },
+  })
+  const viewUnicode = new ViewUnicode(unicodeNpm)
+
+  t.test('package from git', async t => {
+    await view.exec(['https://github.com/npm/green'])
+    t.matchSnapshot(logs)
+  })
+
+  t.test('package with license, bugs, repository and other fields', async t => {
+    await view.exec(['green@1.0.0'])
+    t.matchSnapshot(logs)
+  })
+
+  t.test('package with more than 25 deps', async t => {
+    await view.exec(['black@1.0.0'])
+    t.matchSnapshot(logs)
+  })
+
+  t.test('package with maintainers info as object', async t => {
+    await view.exec(['pink@1.0.0'])
+    t.matchSnapshot(logs)
+  })
+
+  t.test('package with homepage', async t => {
+    await view.exec(['orange@1.0.0'])
+    t.matchSnapshot(logs)
+  })
+
+  t.test('package with no versions', async t => {
+    await view.exec(['brown'])
+    t.equal(logs, '', 'no info to display')
+  })
+
+  t.test('package with no repo or homepage', async t => {
+    await view.exec(['blue@1.0.0'])
+    t.matchSnapshot(logs)
+  })
+
+  t.test('package with semver range', async t => {
+    await view.exec(['blue@^1.0.0'])
+    t.matchSnapshot(logs)
+  })
+
+  t.test('package with no modified time', async t => {
+    await viewUnicode.exec(['cyan@1.0.0'])
+    t.matchSnapshot(logs)
+  })
+
+  t.test('package with --json and semver range', async t => {
+    await viewJson.exec(['cyan@^1.0.0'])
+    t.matchSnapshot(logs)
+  })
+
+  t.test('package with --json and no versions', async t => {
+    await viewJson.exec(['brown'])
+    t.equal(logs, '', 'no info to display')
+  })
 })
 
-t.test('deprecated package with license, bugs, repository and other fields', async t => {
-  const { npm, consoleLogs } = await loadMockNpm(t, { config: { unicode: false } })
-  await npm.exec('view', ['green@1.0.0'])
-  t.matchSnapshot(consoleLogs.join('\n'))
-})
-
-t.test('deprecated package with unicode', async t => {
-  const { npm, consoleLogs } = await loadMockNpm(t, { config: { unicode: true } })
-  await npm.exec('view', ['green@1.0.0'])
-  t.matchSnapshot(consoleLogs.join('\n'))
-})
-
-t.test('package with more than 25 deps', async t => {
-  const { npm, consoleLogs } = await loadMockNpm(t, { config: { unicode: false } })
-  await npm.exec('view', ['black@1.0.0'])
-  t.matchSnapshot(consoleLogs.join('\n'))
-})
-
-t.test('package with maintainers info as object', async t => {
-  const { npm, consoleLogs } = await loadMockNpm(t, { config: { unicode: false } })
-  await npm.exec('view', ['pink@1.0.0'])
-  t.matchSnapshot(consoleLogs.join('\n'))
-})
-
-t.test('package with homepage', async t => {
-  const { npm, consoleLogs } = await loadMockNpm(t, { config: { unicode: false } })
-  await npm.exec('view', ['orange@1.0.0'])
-  t.matchSnapshot(consoleLogs.join('\n'))
-})
-
-t.test('package with no versions', async t => {
-  const { npm, consoleLogs } = await loadMockNpm(t, { config: { unicode: false } })
-  await npm.exec('view', ['brown'])
-  t.equal(consoleLogs.join('\n'), '', 'no info to display')
-})
-
-t.test('package with no repo or homepage', async t => {
-  const { npm, consoleLogs } = await loadMockNpm(t, { config: { unicode: false } })
-  await npm.exec('view', ['blue@1.0.0'])
-  t.matchSnapshot(consoleLogs.join('\n'))
-})
-
-t.test('package with semver range', async t => {
-  const { npm, consoleLogs } = await loadMockNpm(t, { config: { unicode: false } })
-  await npm.exec('view', ['blue@^1.0.0'])
-  t.matchSnapshot(consoleLogs.join('\n'))
-})
-
-t.test('package with no modified time', async t => {
-  const { npm, consoleLogs } = await loadMockNpm(t, { config: { unicode: false } })
-  await npm.exec('view', ['cyan@1.0.0'])
-  t.matchSnapshot(consoleLogs.join('\n'))
-})
-
-t.test('package with --json and semver range', async t => {
-  const { npm, consoleLogs } = await loadMockNpm(t, { config: { json: true } })
-  await npm.exec('view', ['cyan@^1.0.0'])
-  t.matchSnapshot(consoleLogs.join('\n'))
-})
-
-t.test('package with --json and no versions', async t => {
-  const { npm, consoleLogs } = await loadMockNpm(t, { config: { json: true } })
-  await npm.exec('view', ['brown'])
-  t.equal(consoleLogs.join('\n'), '', 'no info to display')
-})
-
-t.test('package in cwd', async t => {
-  const prefixDir = {
+t.test('should log info of package in current working dir', async t => {
+  const testDir = t.testdir({
     'package.json': JSON.stringify({
       name: 'blue',
       version: '1.0.0',
     }, null, 2),
-  }
+  })
+
+  const View = t.mock('../../../lib/commands/view.js', {
+    pacote: {
+      packument,
+    },
+  })
+  const npm = mockNpm({
+    prefix: testDir,
+    config: {
+      tag: '1.0.0',
+    },
+  })
+  const view = new View(npm)
 
   t.test('specific version', async t => {
-    const { npm, consoleLogs } = await loadMockNpm(t, { prefixDir })
-    await npm.exec('view', ['.@1.0.0'])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    await view.exec(['.@1.0.0'])
+    t.matchSnapshot(logs)
   })
 
   t.test('non-specific version', async t => {
-    const { npm, consoleLogs } = await loadMockNpm(t, { prefixDir })
-    await npm.exec('view', ['.'])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    await view.exec(['.'])
+    t.matchSnapshot(logs)
   })
 
   t.test('directory', async t => {
-    const { npm, consoleLogs } = await loadMockNpm(t, { prefixDir })
-    await npm.exec('view', ['./blue'])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    await view.exec(['./blue'])
+    t.matchSnapshot(logs)
   })
 })
 
-t.test('specific field names', async t => {
-  const { npm, consoleLogs } = await loadMockNpm(t)
-  t.afterEach(() => {
-    consoleLogs.length = 0
+t.test('should log info by field name', async t => {
+  const ViewJson = t.mock('../../../lib/commands/view.js', {
+    pacote: {
+      packument,
+    },
   })
+  const jsonNpm = mockNpm({
+    config: {
+      tag: 'latest',
+      json: true,
+    },
+  })
+
+  const viewJson = new ViewJson(jsonNpm)
+
+  const View = t.mock('../../../lib/commands/view.js', {
+    pacote: {
+      packument,
+    },
+  })
+  const npm = mockNpm()
+  const view = new View(npm)
+
   t.test('readme', async t => {
-    await npm.exec('view', ['yellow@1.0.0', 'readme'])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    await view.exec(['yellow@1.0.0', 'readme'])
+    t.matchSnapshot(logs)
   })
 
   t.test('several fields', async t => {
-    await npm.exec('view', ['yellow@1.0.0', 'name', 'version', 'foo[bar]'])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    await viewJson.exec(['yellow@1.0.0', 'name', 'version', 'foo[bar]'])
+    t.matchSnapshot(logs)
   })
 
   t.test('several fields with several versions', async t => {
-    await npm.exec('view', ['yellow@1.x.x', 'author'])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    await view.exec(['yellow@1.x.x', 'author'])
+    t.matchSnapshot(logs)
   })
 
   t.test('nested field with brackets', async t => {
-    await npm.exec('view', ['orange@1.0.0', 'dist[shasum]'])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    await viewJson.exec(['orange@1.0.0', 'dist[shasum]'])
+    t.matchSnapshot(logs)
   })
 
   t.test('maintainers with email', async t => {
-    await npm.exec('view', ['yellow@1.0.0', 'maintainers', 'name'])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    await viewJson.exec(['yellow@1.0.0', 'maintainers', 'name'])
+    t.matchSnapshot(logs)
   })
 
   t.test('maintainers with url', async t => {
-    await npm.exec('view', ['pink@1.0.0', 'maintainers'])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    await viewJson.exec(['pink@1.0.0', 'maintainers'])
+    t.matchSnapshot(logs)
   })
 
   t.test('unknown nested field ', async t => {
-    await npm.exec('view', ['yellow@1.0.0', 'dist.foobar'])
-    t.equal(consoleLogs.join('\n'), '', 'no info to display')
+    await view.exec(['yellow@1.0.0', 'dist.foobar'])
+    t.equal(logs, '', 'no info to display')
   })
 
   t.test('array field - 1 element', async t => {
-    await npm.exec('view', ['purple@1.0.0', 'maintainers.name'])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    await view.exec(['purple@1.0.0', 'maintainers.name'])
+    t.matchSnapshot(logs)
   })
 
   t.test('array field - 2 elements', async t => {
-    await npm.exec('view', ['yellow@1.x.x', 'maintainers.name'])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    await view.exec(['yellow@1.x.x', 'maintainers.name'])
+    t.matchSnapshot(logs)
   })
 })
 
 t.test('throw error if global mode', async t => {
-  const { npm } = await loadMockNpm(t, { config: { global: true } })
+  const View = t.mock('../../../lib/commands/view.js')
+  const npm = mockNpm({
+    config: {
+      global: true,
+      tag: 'latest',
+    },
+  })
+  const view = new View(npm)
   await t.rejects(
-    npm.exec('view', []),
+    view.exec([]),
     /Cannot use view command in global mode./
   )
 })
 
 t.test('throw ENOENT error if package.json missing', async t => {
-  const { npm } = await loadMockNpm(t)
+  const testDir = t.testdir({})
+
+  const View = t.mock('../../../lib/commands/view.js')
+  const npm = mockNpm({
+    prefix: testDir,
+  })
+  const view = new View(npm)
   await t.rejects(
-    npm.exec('view', []),
+    view.exec([]),
     { code: 'ENOENT' }
   )
 })
 
-t.test('throw error if package.json has no name', async t => {
-  const { npm } = await loadMockNpm(t, {
-    prefixDir: {
-      'package.json': '{}',
-    },
+t.test('throw EJSONPARSE error if package.json not json', async t => {
+  const testDir = t.testdir({
+    'package.json': 'not json, nope, not even a little bit!',
   })
+
+  const View = t.mock('../../../lib/commands/view.js')
+  const npm = mockNpm({
+    prefix: testDir,
+  })
+  const view = new View(npm)
   await t.rejects(
-    npm.exec('view', []),
+    view.exec([]),
+    { code: 'EJSONPARSE' }
+  )
+})
+
+t.test('throw error if package.json has no name', async t => {
+  const testDir = t.testdir({
+    'package.json': '{}',
+  })
+
+  const View = t.mock('../../../lib/commands/view.js')
+  const npm = mockNpm({
+    prefix: testDir,
+  })
+  const view = new View(npm)
+  await t.rejects(
+    view.exec([]),
     /Invalid package.json, no "name" field/
   )
 })
 
 t.test('throws when unpublished', async t => {
-  const { npm } = await loadMockNpm(t)
+  const View = t.mock('../../../lib/commands/view.js', {
+    pacote: {
+      packument,
+    },
+  })
+  const npm = mockNpm({
+    config: {
+      tag: '1.0.1',
+    },
+  })
+  const view = new View(npm)
   await t.rejects(
-    npm.exec('view', ['red']),
+    view.exec(['red']),
     { code: 'E404', pkgid: 'red@1.0.1', message: 'Unpublished on 2012-12-20T00:00:00.000Z' }
   )
 })
 
 t.test('workspaces', async t => {
-  const prefixDir = {
+  t.beforeEach(() => {
+    warnMsg = undefined
+    config.json = false
+  })
+  const testDir = t.testdir({
     'package.json': JSON.stringify({
       name: 'workspaces-test-package',
       version: '1.2.3',
@@ -483,103 +571,106 @@ t.test('workspaces', async t => {
         version: '1.2.3',
       }),
     },
+  })
+  const View = t.mock('../../../lib/commands/view.js', {
+    pacote: {
+      packument,
+    },
+    'proc-log': {
+      warn: (msg) => {
+        warnMsg = msg
+      },
+      silly: () => {},
+    },
+  })
+  const config = {
+    unicode: false,
+    tag: 'latest',
   }
+  let warnMsg
+  const npm = mockNpm({
+    config,
+    localPrefix: testDir,
+  })
+  const view = new View(npm)
 
   t.test('all workspaces', async t => {
-    const { npm, consoleLogs } = await loadMockNpm(t, {
-      prefixDir,
-      config: { unicode: false, workspaces: true },
-    })
-    await npm.exec('view', [])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    await view.execWorkspaces([], [])
+    t.matchSnapshot(logs)
   })
 
   t.test('one specific workspace', async t => {
-    const { npm, consoleLogs } = await loadMockNpm(t, {
-      prefixDir,
-      config: { unicode: false, workspace: ['green'] },
-    })
-    await npm.exec('view', [])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    await view.execWorkspaces([], ['green'])
+    t.matchSnapshot(logs)
   })
 
   t.test('all workspaces --json', async t => {
-    const { npm, consoleLogs } = await loadMockNpm(t, {
-      prefixDir,
-      config: { unicode: false, workspaces: true, json: true },
-    })
-    await npm.exec('view', [])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    config.json = true
+    await view.execWorkspaces([], [])
+    t.matchSnapshot(logs)
   })
 
   t.test('all workspaces single field', async t => {
-    const { npm, consoleLogs } = await loadMockNpm(t, {
-      prefixDir,
-      config: { unicode: false, workspaces: true },
-    })
-    await npm.exec('view', ['.', 'name'])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    await view.execWorkspaces(['.', 'name'], [])
+    t.matchSnapshot(logs)
   })
 
   t.test('all workspaces nonexistent field', async t => {
-    const { npm, consoleLogs } = await loadMockNpm(t, {
-      prefixDir,
-      config: { unicode: false, workspaces: true },
-    })
-    await npm.exec('view', ['.', 'foo'])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    await view.execWorkspaces(['.', 'foo'], [])
+    t.matchSnapshot(logs)
   })
 
   t.test('all workspaces nonexistent field --json', async t => {
-    const { npm, consoleLogs } = await loadMockNpm(t, {
-      prefixDir,
-      config: { unicode: false, workspaces: true, json: true },
-    })
-    await npm.exec('view', ['.', 'foo'])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    config.json = true
+    await view.execWorkspaces(['.', 'foo'], [])
+    t.matchSnapshot(logs)
   })
 
   t.test('all workspaces single field --json', async t => {
-    const { npm, consoleLogs } = await loadMockNpm(t, {
-      prefixDir,
-      config: { unicode: false, workspaces: true, json: true },
-    })
-    await npm.exec('view', ['.', 'name'])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    config.json = true
+    await view.execWorkspaces(['.', 'name'], [])
+    t.matchSnapshot(logs)
   })
 
   t.test('single workspace --json', async t => {
-    const { npm, consoleLogs } = await loadMockNpm(t, {
-      prefixDir,
-      config: { unicode: false, workspace: ['green'], json: true },
-    })
-    await npm.exec('view', [])
-    t.matchSnapshot(consoleLogs.join('\n'))
+    config.json = true
+    await view.execWorkspaces([], ['green'])
+    t.matchSnapshot(logs)
   })
 
   t.test('remote package name', async t => {
-    const { npm, logs, consoleLogs } = await loadMockNpm(t, {
-      prefixDir,
-      config: { unicode: false, workspaces: true },
-    })
-    await npm.exec('view', ['pink'])
-    t.matchSnapshot(consoleLogs.join('\n'))
-    t.matchSnapshot(logs.warn, 'should have warning of ignoring workspaces')
+    await view.execWorkspaces(['pink'], [])
+    t.matchSnapshot(warnMsg)
+    t.matchSnapshot(logs)
   })
 })
 
 t.test('completion', async t => {
-  const { npm } = await loadMockNpm(t)
-  const view = await npm.cmd('view')
+  const View = t.mock('../../../lib/commands/view.js', {
+    pacote: {
+      packument,
+    },
+  })
+  const npm = mockNpm({
+    config: {
+      tag: '1.0.1',
+    },
+  })
+  const view = new View(npm)
   const res = await view.completion({
     conf: { argv: { remain: ['npm', 'view', 'green@1.0.0'] } },
   })
   t.ok(res, 'returns back fields')
 })
 
-t.test('no package completion', async t => {
-  const { npm } = await loadMockNpm(t)
-  const view = await npm.cmd('view')
+t.test('no registry completion', async t => {
+  const View = t.mock('../../../lib/commands/view.js')
+  const npm = mockNpm({
+    config: {
+      tag: '1.0.1',
+    },
+  })
+  const view = new View(npm)
   const res = await view.completion({ conf: { argv: { remain: ['npm', 'view'] } } })
   t.notOk(res, 'there is no package completion')
   t.end()
