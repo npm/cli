@@ -1770,6 +1770,8 @@ t.test('running lifecycle scripts of unchanged link nodes on reify', async t => 
 
   t.ok(fs.lstatSync(resolve(path, 'a/a-prepare')).isFile(),
     'should run prepare lifecycle scripts for links directly linked to the tree')
+  t.ok(fs.lstatSync(resolve(path, 'a/a-post-install')).isFile(),
+    'should run postinstall lifecycle scripts for links directly linked to the tree')
 })
 
 t.test('save-prod, with optional', async t => {
