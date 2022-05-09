@@ -183,6 +183,15 @@ class MockRegistry {
     }
   }
 
+  star (manifest, users) {
+    const spec = npa(manifest.name)
+    this.nock = this.nock.put(`/${spec.escapedName}`, {
+      _id: manifest._id,
+      _rev: manifest._rev,
+      users,
+    }).reply(200, { ...manifest, users })
+  }
+
   async package ({ manifest, times = 1, query, tarballs }) {
     let nock = this.nock
     const spec = npa(manifest.name)
@@ -206,7 +215,7 @@ class MockRegistry {
   // either pass in packuments if you need to set specific attributes besides version,
   // or an array of versions
   // the last packument in the packuments or versions array will be tagged latest
-  manifest ({ name = 'test-package', packuments, versions } = {}) {
+  manifest ({ name = 'test-package', users, packuments, versions } = {}) {
     packuments = this.packuments(packuments, name)
     const latest = packuments.slice(-1)[0]
     const manifest = {
@@ -219,6 +228,9 @@ class MockRegistry {
       time: {},
       'dist-tags': { latest: latest.version },
       ...latest,
+    }
+    if (users) {
+      manifest.users = users
     }
     if (versions) {
       packuments = versions.map(version => ({ version }))

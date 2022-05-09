@@ -862,7 +862,7 @@ All commands:
                     npm star [<pkg>...]
                     
                     Options:
-                    [--registry <registry>] [--unicode]
+                    [--registry <registry>] [--unicode] [--otp <otp>]
                     
                     Run "npm help star" for more info
 
