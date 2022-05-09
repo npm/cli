@@ -68,6 +68,7 @@ The following shorthands are parsed on the command-line:
 * `--desc`: `--description`
 * `-f`: `--force`
 * `-g`: `--global`
+* `--iwr`: `--include-workspace-root`
 * `-L`: `--location`
 * `-d`: `--loglevel info`
 * `-s`: `--loglevel silent`
