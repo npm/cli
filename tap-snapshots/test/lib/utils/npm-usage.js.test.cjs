@@ -840,7 +840,7 @@ All commands:
                     
                     Run "npm help set" for more info
 
-    set-script      Set tasks in the scripts section of package.json
+    set-script      Set tasks in the scripts section of package.json, deprecated
                     
                     Usage:
                     npm set-script [<script>] [<command>]
