@@ -21,22 +21,22 @@ jobs:
           fetch-depth: 0
           ref: master
           repository: npm/node
-          token: ${{ secrets.NPM_ROBOT_USER_PAT }}
+          token: ${{ secrets.NODE_PULL_REQUEST_TOKEN }}
       - name: Setup git user
         run: |
-          git config --global user.email "npm team"
-          git config --global user.name "ops+robot@npmjs.com"
+          git config --global user.email "npm CLI robot"
+          git config --global user.name "npm-cli+bot@github.com"
       - name: Sync upstream changes
         uses: aormsby/Fork-Sync-With-Upstream-action@v3.2
         with:
           target_sync_branch: master
-          target_repo_token: ${{ secrets.NPM_ROBOT_USER_PAT }}
+          target_repo_token: ${{ secrets.NODE_PULL_REQUEST_TOKEN }}
           upstream_sync_branch: master
           upstream_sync_repo: nodejs/node
           upstream_pull_args: --ff-only
       - name: Run dependency updates and create PR
         env:
-          GITHUB_TOKEN: ${{ secrets.NPM_ROBOT_USER_PAT }}
+          GITHUB_TOKEN: ${{ secrets.NODE_PULL_REQUEST_TOKEN }}
         run: |
           base_dir="$( pwd )"/ 
           dry_run="${{ github.event.inputs.dryRun }}"
