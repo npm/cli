@@ -459,6 +459,51 @@ t.test('do not rebuild node-gyp dependencies with gypfile:false', async t => {
   await arb.rebuild()
 })
 
+// ref: https://github.com/npm/cli/issues/2905
+t.test('do not run lifecycle scripts of linked deps twice', async t => {
+  const testdir = t.testdir({
+    project: {
+      'package.json': JSON.stringify({
+        name: 'my-project',
+        version: '1.0.0',
+        dependencies: {
+          foo: 'file:../foo',
+        },
+      }),
+      node_modules: {
+        foo: t.fixture('symlink', '../../foo'),
+      },
+    },
+    foo: {
+      'package.json': JSON.stringify({
+        name: 'foo',
+        version: '1.0.0',
+        scripts: {
+          postinstall: 'echo "ok"',
+        },
+      }),
+    },
+  })
+
+  const path = resolve(testdir, 'project')
+  const RUNS = []
+  const Arborist = t.mock('../../lib/arborist/index.js', {
+    '@npmcli/run-script': opts => {
+      RUNS.push(opts)
+      return require('@npmcli/run-script')(opts)
+    },
+  })
+  const arb = new Arborist({ path, registry })
+  await arb.rebuild()
+  t.equal(RUNS.length, 1, 'should run postinstall script only once')
+  t.match(RUNS, [
+    {
+      event: 'postinstall',
+      pkg: { name: 'foo' },
+    },
+  ])
+})
+
 t.test('workspaces', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
