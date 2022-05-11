@@ -5,7 +5,7 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/lib/utils/npm-usage.js TAP usage basic usage > must match snapshot 1`] = `
+exports[`test/lib/npm.js TAP usage basic usage > must match snapshot 1`] = `
 npm <command>
 
 Usage:
@@ -41,7 +41,7 @@ Configuration fields: npm help 7 config
 npm@{VERSION} {BASEDIR}
 `
 
-exports[`test/lib/utils/npm-usage.js TAP usage set process.stdout.columns columns=0 > must match snapshot 1`] = `
+exports[`test/lib/npm.js TAP usage set process.stdout.columns columns=0 > must match snapshot 1`] = `
 npm <command>
 
 Usage:
@@ -77,7 +77,7 @@ Configuration fields: npm help 7 config
 npm@{VERSION} {BASEDIR}
 `
 
-exports[`test/lib/utils/npm-usage.js TAP usage set process.stdout.columns columns=90 > must match snapshot 1`] = `
+exports[`test/lib/npm.js TAP usage set process.stdout.columns columns=90 > must match snapshot 1`] = `
 npm <command>
 
 Usage:
@@ -113,7 +113,7 @@ Configuration fields: npm help 7 config
 npm@{VERSION} {BASEDIR}
 `
 
-exports[`test/lib/utils/npm-usage.js TAP usage with browser > must match snapshot 1`] = `
+exports[`test/lib/npm.js TAP usage with browser > must match snapshot 1`] = `
 npm <command>
 
 Usage:
@@ -149,7 +149,7 @@ Configuration fields: npm help 7 config
 npm@{VERSION} {BASEDIR}
 `
 
-exports[`test/lib/utils/npm-usage.js TAP usage with long > must match snapshot 1`] = `
+exports[`test/lib/npm.js TAP usage with long > must match snapshot 1`] = `
 npm <command>
 
 Usage:
