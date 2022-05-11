@@ -1,5 +1,32 @@
 # Changelog
 
+## v8.10.0 (2022-05-11)
+
+### Features
+
+  * [`911f55d`](https://github.com/npm/cli/commit/911f55dc6ac3672f48740d0675f67c934c01aaf4) [#4864](https://github.com/npm/cli/pull/4864) feat: add --iwr alias for --include-workspace-root ([@fritzy](https://github.com/fritzy))
+  * [`bfb8bcc`](https://github.com/npm/cli/commit/bfb8bccbe83753e527b43c8a3889696087dbe8f1) [#4874](https://github.com/npm/cli/pull/4874) feat: add flag --omit-lockfile-registry-resolved ([@fritzy](https://github.com/fritzy)) ([Caleb ツ Everett](mailto:calebev@amazon.com))
+
+### Bug Fixes
+
+  * [`48d2db6`](https://github.com/npm/cli/commit/48d2db6037487fd782f67bbcd2cf12e009ece17b) [#4862](https://github.com/npm/cli/pull/4862) fix: remove test coverage map ([@wraithgar](https://github.com/wraithgar))
+  * [`38cf29a`](https://github.com/npm/cli/commit/38cf29a0054544c575b6bce953f1d433dbb6a3b5) [#4868](https://github.com/npm/cli/pull/4868) fix: cleanup star/unstar ([@wraithgar](https://github.com/wraithgar))
+  * [`5baa4a7`](https://github.com/npm/cli/commit/5baa4a7c64319485604982f9060702a7cee8a85c) [#4857](https://github.com/npm/cli/pull/4857) fix: consolidate bugs, docs, repo command logic ([@wraithgar](https://github.com/wraithgar))
+  * [`5a50762`](https://github.com/npm/cli/commit/5a50762faa37ae5964ae6f12595b20b367056c0a) [#4875](https://github.com/npm/cli/pull/4875) fix(arborist): link deps lifecycle scripts ([@ruyadorno](https://github.com/ruyadorno))
+
+### Dependencies
+
+  * [`d58bf40`](https://github.com/npm/cli/commit/d58bf40abf7c3ff8ae400f50e5e5a19c33138707) [#4856](https://github.com/npm/cli/pull/4856) deps: `npm-packlist@5.0.3`
+  * [`86f443e`](https://github.com/npm/cli/commit/86f443e97aa58c1a06b8eb6f523656274234bb71) [#4872](https://github.com/npm/cli/pull/4872) deps: `make-fetch-happen@10.1.3`
+  * [`f9984e6`](https://github.com/npm/cli/commit/f9984e64e714937fa69f14850a1d3ed7ccfc934c) [#4880](https://github.com/npm/cli/pull/4880) deps: `@npmcli/arborist@5.2.0`
+  * [`ba59915`](https://github.com/npm/cli/commit/ba599154dc8ea9f424410fb7dc382d5829215920) [#4881](https://github.com/npm/cli/pull/4881) deps: `socks-proxy-agent@6.2.0`
+  * [`c0806ba`](https://github.com/npm/cli/commit/c0806ba2b325456199069b245446c8a86e7feae2) [#4881](https://github.com/npm/cli/pull/4881) deps: `http-proxy-agent@5.0.1`
+  * [`cc7be6b`](https://github.com/npm/cli/commit/cc7be6b8b63a7314066e8763589a57e5a6e77d30) [#4881](https://github.com/npm/cli/pull/4881) deps: `is-core-module@2.9.0`
+  * [`0432c7d`](https://github.com/npm/cli/commit/0432c7d8a22ddbfdf238c2b22dd3c7bd263e2d6c) [#4881](https://github.com/npm/cli/pull/4881) deps: `lru-cache@7.9.0`
+  * [`5778820`](https://github.com/npm/cli/commit/57788204646a6aa5a384630a5640bf00efa25ce0) [#4881](https://github.com/npm/cli/pull/4881) deps: `just-diff@5.0.2`
+  * [`893dd00`](https://github.com/npm/cli/commit/893dd0066e2315f0d9937fe05879957e1446b755) [#4881](https://github.com/npm/cli/pull/4881) deps: `ip@1.1.8`
+  * [`6ab85bd`](https://github.com/npm/cli/commit/6ab85bd5df88ade023f7e4895d07a39228d23a33) [#4881](https://github.com/npm/cli/pull/4881) deps: `builtins@5.0.1`
+
 ## v8.9.0 (2022-05-04)
 
 ### Features
