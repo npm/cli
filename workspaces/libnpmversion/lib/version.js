@@ -51,7 +51,7 @@ module.exports = async (newversion, opts) => {
     })
   }
 
-  const isGitDir = newversion === 'from-git' || await git.is(opts)
+  const isGitDir = newversion === 'from-git' || Boolean(await git.find(opts))
 
   // ok!  now we know the new version, and the old version is in pkg
 
