@@ -486,7 +486,7 @@ All commands:
                     Options:
                     [-y|--yes] [-f|--force]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces] [--include-workspace-root]
+                    [-ws|--workspaces] [--no-workspaces-update] [--include-workspace-root]
                     
                     aliases: create, innit
                     
