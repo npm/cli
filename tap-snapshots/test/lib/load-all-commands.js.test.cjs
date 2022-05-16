@@ -155,6 +155,22 @@ alias: c
 Run "npm help config" for more info
 `
 
+exports[`test/lib/load-all-commands.js TAP load each command copy > must match snapshot 1`] = `
+Copy package to new location
+
+Usage:
+npm copy <destination>
+
+Options:
+[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+[-ws|--workspaces] [--include-workspace-root]
+
+alias: cp
+
+Run "npm help copy" for more info
+`
+
 exports[`test/lib/load-all-commands.js TAP load each command dedupe > must match snapshot 1`] = `
 Reduce duplication in the package tree
 

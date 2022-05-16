@@ -110,6 +110,7 @@ Array [
       version
       view
       whoami
+      copy
       login
       author
       home
@@ -144,6 +145,7 @@ Array [
       x
       why
       la
+      cp
       verison
       ic
       innit

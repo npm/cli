@@ -29,7 +29,8 @@ All commands:
     pkg, prefix, profile, prune, publish, rebuild, repo,
     restart, root, run-script, search, set, set-script,
     shrinkwrap, star, stars, start, stop, team, test, token,
-    uninstall, unpublish, unstar, update, version, view, whoami
+    uninstall, unpublish, unstar, update, version, view, whoami,
+    copy
 
 Specify configs in the ini-formatted file:
     /some/config/file/.npmrc
@@ -65,7 +66,8 @@ All commands:
     pkg, prefix, profile, prune, publish, rebuild, repo,
     restart, root, run-script, search, set, set-script,
     shrinkwrap, star, stars, start, stop, team, test, token,
-    uninstall, unpublish, unstar, update, version, view, whoami
+    uninstall, unpublish, unstar, update, version, view, whoami,
+    copy
 
 Specify configs in the ini-formatted file:
     /some/config/file/.npmrc
@@ -101,7 +103,8 @@ All commands:
     pkg, prefix, profile, prune, publish, rebuild, repo,
     restart, root, run-script, search, set, set-script,
     shrinkwrap, star, stars, start, stop, team, test, token,
-    uninstall, unpublish, unstar, update, version, view, whoami
+    uninstall, unpublish, unstar, update, version, view, whoami,
+    copy
 
 Specify configs in the ini-formatted file:
     /some/config/file/.npmrc
@@ -137,7 +140,8 @@ All commands:
     pkg, prefix, profile, prune, publish, rebuild, repo,
     restart, root, run-script, search, set, set-script,
     shrinkwrap, star, stars, start, stop, team, test, token,
-    uninstall, unpublish, unstar, update, version, view, whoami
+    uninstall, unpublish, unstar, update, version, view, whoami,
+    copy
 
 Specify configs in the ini-formatted file:
     /some/config/file/.npmrc
@@ -287,6 +291,20 @@ All commands:
                     alias: c
                     
                     Run "npm help config" for more info
+
+    copy            Copy package to new location
+                    
+                    Usage:
+                    npm copy <destination>
+                    
+                    Options:
+                    [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces] [--include-workspace-root]
+                    
+                    alias: cp
+                    
+                    Run "npm help copy" for more info
 
     dedupe          Reduce duplication in the package tree
                     
