@@ -192,6 +192,10 @@ class MockRegistry {
     }).reply(200, { ...manifest, users })
   }
 
+  ping ({ body = {}, responseCode = 200 } = {}) {
+    this.nock = this.nock.get('/-/ping?write=true').reply(responseCode, body)
+  }
+
   async package ({ manifest, times = 1, query, tarballs }) {
     let nock = this.nock
     const spec = npa(manifest.name)
