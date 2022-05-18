@@ -251,7 +251,7 @@ All commands:
                     
                     Run "npm help cache" for more info
 
-    ci              Install a project with a clean slate
+    ci              Clean install a project
                     
                     Usage:
                     npm ci
@@ -840,7 +840,7 @@ All commands:
                     
                     Run "npm help set" for more info
 
-    set-script      Set tasks in the scripts section of package.json
+    set-script      Set tasks in the scripts section of package.json, deprecated
                     
                     Usage:
                     npm set-script [<script>] [<command>]

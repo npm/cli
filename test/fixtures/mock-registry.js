@@ -206,14 +206,19 @@ class MockRegistry {
     nock = nock.reply(200, manifest)
     if (tarballs) {
       for (const version in tarballs) {
-      // for (const version in manifest.versions) {
-        const packument = manifest.versions[version]
-        const dist = new URL(packument.dist.tarball)
-        const tarball = await pacote.tarball(tarballs[version])
-        nock.get(dist.pathname).reply(200, tarball)
+        const m = manifest.versions[version]
+        nock = await this.tarball({ manifest: m, tarball: tarballs[version] })
       }
     }
     this.nock = nock
+  }
+
+  async tarball ({ manifest, tarball }) {
+    const nock = this.nock
+    const dist = new URL(manifest.dist.tarball)
+    const tar = await pacote.tarball(tarball)
+    nock.get(dist.pathname).reply(200, tar)
+    return nock
   }
 
   // either pass in packuments if you need to set specific attributes besides version,
