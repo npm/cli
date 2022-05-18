@@ -113,7 +113,7 @@ Run "npm help cache" for more info
 `
 
 exports[`test/lib/load-all-commands.js TAP load each command ci > must match snapshot 1`] = `
-Install a project with a clean slate
+Clean install a project
 
 Usage:
 npm ci

@@ -43,10 +43,24 @@ npm {CWD}
 `
 
 exports[`test/index.js TAP npm ci > should throw mismatch deps in lock file error 1`] = `
+npm ERR! code EUSAGE
+npm ERR! 
 npm ERR! \`npm ci\` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with \`npm install\` before continuing.
 npm ERR! 
 npm ERR! Invalid: lock file's abbrev@1.0.4 does not satisfy abbrev@1.1.1
 npm ERR! 
+npm ERR! Clean install a project
+npm ERR! 
+npm ERR! Usage:
+npm ERR! npm ci
+npm ERR! 
+npm ERR! Options:
+npm ERR! [--no-audit] [--foreground-scripts] [--ignore-scripts]
+npm ERR! [--script-shell <script-shell>]
+npm ERR! 
+npm ERR! aliases: clean-install, ic, install-clean, isntall-clean
+npm ERR! 
+npm ERR! Run "npm help ci" for more info
 
 npm ERR! A complete log of this run can be found in:
 
