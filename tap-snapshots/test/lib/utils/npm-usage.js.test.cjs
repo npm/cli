@@ -251,7 +251,7 @@ All commands:
                     
                     Run "npm help cache" for more info
 
-    ci              Install a project with a clean slate
+    ci              Clean install a project
                     
                     Usage:
                     npm ci
