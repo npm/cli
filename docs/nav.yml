@@ -132,6 +132,9 @@
   - title: npm publish
     url: /commands/npm-publish
     description: Publish a package
+  - title: npm query
+    url: /commands/npm-query
+    description: Retrieve a filtered list of packages
   - title: npm rebuild
     url: /commands/npm-rebuild
     description: Rebuild a package
@@ -253,6 +256,9 @@
   - title: Organizations
     url: /using-npm/orgs
     description: Working with teams & organizations
+  - title: Dependency Selectors
+    url: /using-npm/dependency-selectors
+    description: Dependency Selector Syntax & Querying
   - title: Developers
     url: /using-npm/developers
     description: Developer guide
