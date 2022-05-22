@@ -657,7 +657,7 @@ t.test('no prompt if CI, multiple packages', async t => {
       warn (title, msg) {
         t.equal(title, 'exec', 'should warn exec title')
         const expected = 'The following packages were not found and will be ' +
-          'installed: @ruyadorno/create-index, @ruyadorno/create-test'
+          'installed: @ruyadorno/create-index@1.0.0, @ruyadorno/create-test@1.0.0'
         t.equal(msg, expected, 'should warn installing pkg')
       },
     },
