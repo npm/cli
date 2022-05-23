@@ -1726,6 +1726,17 @@ Show short usage output about the command specified.
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->
 
+#### `use-webauth`
+
+* Default: false
+* Type: Boolean
+
+When set to true, npm authenticates with a web browser. When false, it uses
+username and password via the terminal.
+
+<!-- automatically generated, do not edit manually -->
+<!-- see lib/utils/config/definitions.js -->
+
 #### `user-agent`
 
 * Default: "npm/{npm-version} node/{node-version} {platform} {arch}
