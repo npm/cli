@@ -1069,7 +1069,7 @@
 
 ### DOCUMENTATION
 
-* [`efdd7dd44`](https://github.com/npm/cli/commit/efdd7dd4427a0ee856c18aab1df2d3d30a307997)
+* [`72a7eeb49`](https://github.com/npm/cli/commit/72a7eeb493e0e71cba3af36490cb245030ed31a3)
   Remove unused and incorrectly documented `--always-auth` config definition
   ([@isaacs](https://github.com/isaacs))
 
