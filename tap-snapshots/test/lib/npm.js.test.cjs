@@ -189,7 +189,7 @@ All commands:
                     npm adduser
                     
                     Options:
-                    [--registry <registry>] [--scope <@scope>]
+                    [--registry <registry>] [--scope <@scope>] [--use-webauth]
                     
                     aliases: login, add-user
                     
@@ -600,7 +600,7 @@ All commands:
                     npm adduser
                     
                     Options:
-                    [--registry <registry>] [--scope <@scope>]
+                    [--registry <registry>] [--scope <@scope>] [--use-webauth]
                     
                     aliases: login, add-user
                     

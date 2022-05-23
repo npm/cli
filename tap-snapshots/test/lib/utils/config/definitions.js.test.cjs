@@ -146,6 +146,7 @@ Array [
   "unicode",
   "update-notifier",
   "usage",
+  "use-webauth",
   "user-agent",
   "userconfig",
   "version",
@@ -1843,6 +1844,16 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for usage
 * Type: Boolean
 
 Show short usage output about the command specified.
+`
+
+exports[`test/lib/utils/config/definitions.js TAP > config description for use-webauth 1`] = `
+#### \`use-webauth\`
+
+* Default: false
+* Type: Boolean
+
+When set to true, npm authenticates with a web browser. When false, it uses
+username and password via the terminal.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for user-agent 1`] = `
