@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.1.0](https://github.com/npm/cli/compare/libnpmpack-v4.0.3...libnpmpack-v4.1.0) (2022-05-25)
+
+
+### Features
+
+* **libnpmpack:** bump pacote for better workspace awareness ([7307c8d](https://github.com/npm/cli/commit/7307c8de388cd14c96c42d70b7e567ec343ad084))
+
+
+### Dependencies
+
+* pacote@13.5.0 npm-packlist@5.1.0 ([353e2f9](https://github.com/npm/cli/commit/353e2f9dc60a5d319d4105822a9e0b2ddbf82bc0))
+
 ### [4.0.3](https://github.com/npm/cli/compare/libnpmpack-v4.0.2...libnpmpack-v4.0.3) (2022-04-06)
 
 
