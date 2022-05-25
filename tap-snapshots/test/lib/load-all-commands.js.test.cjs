@@ -32,7 +32,8 @@ Usage:
 npm adduser
 
 Options:
-[--registry <registry>] [--scope <@scope>] [--use-webauth]
+[--registry <registry>] [--scope <@scope>]
+[--auth-type <legacy|webauthn|sso|saml|oauth>]
 
 aliases: login, add-user
 
@@ -522,7 +523,8 @@ Usage:
 npm adduser
 
 Options:
-[--registry <registry>] [--scope <@scope>] [--use-webauth]
+[--registry <registry>] [--scope <@scope>]
+[--auth-type <legacy|webauthn|sso|saml|oauth>]
 
 aliases: login, add-user
 

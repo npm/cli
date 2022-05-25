@@ -1726,17 +1726,6 @@ Show short usage output about the command specified.
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->
 
-#### `use-webauth`
-
-* Default: false
-* Type: Boolean
-
-When set to true, npm authenticates with a web browser. When false, it uses
-username and password via the terminal.
-
-<!-- automatically generated, do not edit manually -->
-<!-- see lib/utils/config/definitions.js -->
-
 #### `user-agent`
 
 * Default: "npm/{npm-version} node/{node-version} {platform} {arch}
@@ -1902,11 +1891,13 @@ When set to `dev` or `development`, this is an alias for `--include=dev`.
 #### `auth-type`
 
 * Default: "legacy"
-* Type: "legacy", "sso", "saml", or "oauth"
-* DEPRECATED: This method of SSO/SAML/OAuth is deprecated and will be removed
-  in a future version of npm in favor of web-based login.
+* Type: "legacy", "webauthn", "sso", "saml", or "oauth"
+* DEPRECATED: The SSO/SAML/OAuth methods are deprecated and will be removed in
+  a future version of npm in favor of web-based login.
 
 What authentication strategy to use with `adduser`/`login`.
+
+Pass `webauthn` to use a web-based login.
 
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->

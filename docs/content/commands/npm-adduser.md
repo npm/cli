@@ -90,13 +90,16 @@ npm init --scope=@foo --yes
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->
 
-#### `use-webauth`
+#### `auth-type`
 
-* Default: false
-* Type: Boolean
+* Default: "legacy"
+* Type: "legacy", "webauthn", "sso", "saml", or "oauth"
+* DEPRECATED: The SSO/SAML/OAuth methods are deprecated and will be removed in
+  a future version of npm in favor of web-based login.
 
-When set to true, npm authenticates with a web browser. When false, it uses
-username and password via the terminal.
+What authentication strategy to use with `adduser`/`login`.
+
+Pass `webauthn` to use a web-based login.
 
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->
