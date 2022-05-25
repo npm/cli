@@ -26,7 +26,7 @@ jobs:
         env:
           # gh cli uses these env vars for owner/repo/token
           GH_REPO: "npm/benchmarks"
-          GITHUB_TOKEN: ${{ secrets.BENCHMARKS_DISPATCH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.BENCHMARK_DISPATCH_TOKEN }}
         run: |
           if [[ "$GITHUB_TOKEN" == "" ]]; then
             echo "No auth - from fork pull request, exiting"
@@ -71,7 +71,7 @@ jobs:
           startsWith(github.event.comment.body, '@npm-cli-bot benchmark this')
         env:
           # gh cli uses this env var as the token
-          GITHUB_TOKEN: ${{ secrets.NPM_BENCHMARKS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.BENCHMARK_DISPATCH_TOKEN }}
         run: |
           OWNER="${{ github.event.repository.owner.login }}"
           REPO="${{ github.event.repository.name }}"
