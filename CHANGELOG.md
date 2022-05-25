@@ -1,5 +1,35 @@
 # Changelog
 
+## v8.11.0 (2022-05-25)
+
+### Features
+
+  * [`8898710`](https://github.com/npm/cli/commit/8898710220a3d84b0a9ea2a6d9cf880e50b94c9e) [#4879](https://github.com/npm/cli/pull/4879) feat: deprecated set-script, birthday, --global, and --local ([@fritzy](https://github.com/fritzy))
+  * [`7307c8d`](https://github.com/npm/cli/commit/7307c8de388cd14c96c42d70b7e567ec343ad084) [#4940](https://github.com/npm/cli/pull/4940) feat(libnpmpack): bump pacote for better workspace awareness ([@nlf](https://github.com/nlf))
+
+### Bug Fixes
+
+  * [`400c80f`](https://github.com/npm/cli/commit/400c80f570228a2c0ffe09d6564cc88dc2f356c3) [#4913](https://github.com/npm/cli/pull/4913) fix(ci): remove node_modules post-validation ([@wraithgar](https://github.com/wraithgar))
+  * [`124df81`](https://github.com/npm/cli/commit/124df81391ea5810b29d2af9500ed597f076d597) [#4910](https://github.com/npm/cli/pull/4910) fix: clean up npm cache tests ([@wraithgar](https://github.com/wraithgar))
+  * [`ee3308a`](https://github.com/npm/cli/commit/ee3308a7a08799ec7e86237165ebaf278d9a4f9f) fix: remove dead code from get-identity ([@wraithgar](https://github.com/wraithgar))
+  * [`357b0af`](https://github.com/npm/cli/commit/357b0af2af2b07a58d2d837043d1d77c9495d8b5) [#4917](https://github.com/npm/cli/pull/4917) fix: pass prefix and workspaces to libnpmpack ([@nlf](https://github.com/nlf))
+  * [`0f89e07`](https://github.com/npm/cli/commit/0f89e0750f2ac9b5b4794b5718d047b5286283c8) [#4935](https://github.com/npm/cli/pull/4935) fix: add global getter to npm class ([@nlf](https://github.com/nlf))
+
+### Documentation
+
+  * [`83ed8d0`](https://github.com/npm/cli/commit/83ed8d0d4fb51716fa58608fa3c1ee8eb0a93571) [#4922](https://github.com/npm/cli/pull/4922) docs: update roadmap link in readme ([@OmriBarZik](https://github.com/OmriBarZik))
+  * [`ed054d4`](https://github.com/npm/cli/commit/ed054d477093be3da96968d217c244cf2efd3ef1) [#4933](https://github.com/npm/cli/pull/4933) docs: fix broken link in changelog ([@yonran](https://github.com/yonran))
+
+### Dependencies
+
+  * [`632ce87`](https://github.com/npm/cli/commit/632ce87bbd23707cba2c49b95d5db755b3d68638) [#4915](https://github.com/npm/cli/pull/4915) deps: `cacache@16.1.0`
+  * [`7b2b77a`](https://github.com/npm/cli/commit/7b2b77adca730e516c1b187092374a01de7f0f56) [#4915](https://github.com/npm/cli/pull/4915) deps: `make-fetch-happen@10.1.5`
+  * [`f3b0a24`](https://github.com/npm/cli/commit/f3b0a2407c7e213b1660ef7024c861dcb0eacb50) [#4915](https://github.com/npm/cli/pull/4915) deps: `pacote@13.4.1`
+  * [`0df3011`](https://github.com/npm/cli/commit/0df3011ec59ba76c12fb8fbfb29ff4d601cc4bdb) [#4915](https://github.com/npm/cli/pull/4915) deps: `ssri@9.0.1`
+  * [`dc38ab9`](https://github.com/npm/cli/commit/dc38ab96fca99069449e6c5e492062b94a1264b6) [#4919](https://github.com/npm/cli/pull/4919) deps: `npm-packlist@5.0.4`
+  * [`353e2f9`](https://github.com/npm/cli/commit/353e2f9dc60a5d319d4105822a9e0b2ddbf82bc0) [#4940](https://github.com/npm/cli/pull/4940) deps: `pacote@13.5.0 npm-packlist@5.1.0`
+  * [`f4d4126`](https://github.com/npm/cli/commit/f4d41265931c3c2eee433e27f4535c7a209e69fa) [#4941](https://github.com/npm/cli/pull/4941) deps: `libnpmpack@4.1.0`
+
 ## v8.10.0 (2022-05-11)
 
 ### Features
