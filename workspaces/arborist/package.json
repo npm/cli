@@ -15,7 +15,7 @@
     "bin-links": "^3.0.0",
     "cacache": "^16.0.6",
     "common-ancestor-path": "^1.0.1",
-    "hash-graph-nodes": "^1.0.5",
+    "hash-graph-nodes": "^1.0.6",
     "json-parse-even-better-errors": "^2.3.1",
     "json-stringify-nice": "^1.1.4",
     "mkdirp": "^1.0.4",
