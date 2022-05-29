@@ -61,6 +61,12 @@ When in local mode, executables are linked into
 through npm.  (For example, so that a test runner will be in the path
 when you run `npm test`.)
 
+#npm install 
+[<@scope>/]<pkg> npm install [<@scope>/]<pkg>@<tag> npm install [<@scope>/]<pkg>@<version> npm install [<@scope>/]<pkg>@<version range> npm install <alias>@npm:<name> npm install <folder> npm install <tarball file> npm install <tarball url> npm install <git:// url> npm install <github username>/<github project> aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
+
+#npm access public
+[<package>] npm access restricted [<package>] npm access grant <read-only|read-write> <scope:team> [<package>] npm access revoke <scope:team> [<package>] npm access 2fa-required [<package>] npm access 2fa-not-required [<package>] npm access ls-packages [<user>|<scope>|<scope:team>] npm access ls-collaborators [<package> [<user>]] npm access edit [<package>]
+
 #### Man Pages
 
 When in global mode, man pages are linked into `{prefix}/share/man`.
