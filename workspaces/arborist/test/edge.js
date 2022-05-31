@@ -808,3 +808,113 @@ t.same(bundledEdge.explain(), {
   bundled: true,
   from: bundleParent.explain(),
 }, 'bundled edge.explain as expected')
+
+t.test('shrinkwrapped and bundled deps are not overridden and remain valid', (t) => {
+  const overrides = new OverrideSet({
+    overrides: {
+      bar: '^2.0.0',
+    },
+  })
+
+  const root = {
+    name: 'root',
+    packageName: 'root',
+    edgesOut: new Map(),
+    edgesIn: new Set(),
+    explain: () => 'root node explanation',
+    package: {
+      name: 'root',
+      version: '1.2.3',
+      dependencies: {
+        foo: '^1.0.0',
+      },
+      overrides: {
+        bar: '^2.0.0',
+      },
+    },
+    get version () {
+      return this.package.version
+    },
+    isTop: true,
+    parent: null,
+    overrides,
+    resolve (n) {
+      return n === 'foo' ? foo : null
+    },
+    addEdgeOut (edge) {
+      this.edgesOut.set(edge.name, edge)
+    },
+    addEdgeIn (edge) {
+      this.edgesIn.add(edge)
+    },
+  }
+
+  const foo = {
+    name: 'foo',
+    packageName: 'foo',
+    edgesOut: new Map(),
+    edgesIn: new Set(),
+    explain: () => 'foo node explanation',
+    hasShrinkwrap: true,
+    package: {
+      name: 'foo',
+      version: '1.2.3',
+      dependencies: {
+        bar: '^1.0.0',
+      },
+    },
+    get version () {
+      return this.package.version
+    },
+    parent: root,
+    resolve (n) {
+      return n === 'bar' ? bar : this.parent.resolve(n)
+    },
+    addEdgeOut (edge) {
+      this.edgesOut.set(edge.name, edge)
+    },
+    addEdgeIn (edge) {
+      this.edgesIn.add(edge)
+    },
+  }
+  foo.overrides = overrides.getNodeRule(foo)
+
+  const bar = {
+    name: 'bar',
+    packageName: 'bar',
+    edgesOut: new Map(),
+    edgesIn: new Set(),
+    explain: () => 'bar node explanation',
+    inShrinkwrap: true,
+    package: {
+      name: 'bar',
+      version: '1.2.3',
+      dependencies: {},
+    },
+    get version () {
+      return this.package.version
+    },
+    parent: foo,
+    resolve (n) {
+      return this.parent.resolve(n)
+    },
+    addEdgeOut (edge) {
+      this.edgesOut.set(edge.name, edge)
+    },
+    addEdgeIn (edge) {
+      this.edgesIn.add(edge)
+    },
+  }
+  bar.overrides = foo.overrides.getNodeRule(bar)
+
+  const edge = new Edge({
+    from: foo,
+    type: 'prod',
+    spec: '^1.0.0',
+    name: 'bar',
+    overrides: overrides.getEdgeRule({ name: 'bar', spec: '^1.0.0' }),
+  })
+
+  t.ok(edge.valid, 'edge is valid')
+  t.end()
+})
