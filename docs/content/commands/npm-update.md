@@ -13,7 +13,7 @@ description: Update packages
 ```bash
 npm update [<pkg>...]
 
-aliases: up, upgrade, udpate
+aliases: up, upgrade, update
 ```
 
 <!-- automatically generated, do not edit manually -->
