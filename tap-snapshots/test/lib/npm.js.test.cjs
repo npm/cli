@@ -190,6 +190,7 @@ All commands:
                     
                     Options:
                     [--registry <registry>] [--scope <@scope>]
+                    [--auth-type <legacy|webauthn|sso|saml|oauth>]
                     
                     aliases: login, add-user
                     
@@ -601,6 +602,7 @@ All commands:
                     
                     Options:
                     [--registry <registry>] [--scope <@scope>]
+                    [--auth-type <legacy|webauthn|sso|saml|oauth>]
                     
                     aliases: login, add-user
                     
