@@ -276,9 +276,7 @@ const generateRelease = async (args) => {
     // so we try to grab it from the end of the commit title
     // since thats where it goes by default
     const [, titleNumber] = title.match(/\s+\(#(\d+)\)$/) || []
-    console.log(prs, titleNumber)
     if (titleNumber && !prs.find((pr) => pr.number === +titleNumber)) {
-      console.log('no title')
       try {
         // it could also reference an issue so we do one extra check
         // to make sure it is really a pr that has been merged
