@@ -7,15 +7,15 @@ const output = (...args) => OUTPUT.push(args)
 const npm = {
   _config: {
     json: false,
-    browser: true
+    browser: true,
   },
   config: {
     get: k => npm._config[k],
     set: (k, v) => {
       npm._config[k] = v
-    }
+    },
   },
-  output
+  output,
 }
 
 let openerUrl = null
@@ -35,18 +35,18 @@ const readline = {
         cb()
       }
     },
-    close: () => {}
-  })
+    close: () => {},
+  }),
 }
 
 const openUrlPrompt = t.mock('../../../lib/utils/open-url-prompt.js', {
   opener,
-  readline
+  readline,
 })
 
 mockGlobals(t, {
   'process.stdin.isTTY': true,
-  'process.stdout.isTTY': true
+  'process.stdout.isTTY': true,
 })
 
 t.test('does not open a url in non-interactive environments', async t => {
@@ -58,7 +58,7 @@ t.test('does not open a url in non-interactive environments', async t => {
 
   mockGlobals(t, {
     'process.stdin.isTTY': false,
-    'process.stdout.isTTY': false
+    'process.stdout.isTTY': false,
   })
 
   await openUrlPrompt(npm, 'https://www.npmjs.com', 'npm home', 'prompt')
@@ -77,20 +77,20 @@ t.test('opens a url', async t => {
   npm._config.browser = 'browser'
   await openUrlPrompt(npm, 'https://www.npmjs.com', 'npm home', 'prompt')
   t.equal(openerUrl, 'https://www.npmjs.com', 'opened the given url')
-  t.same(openerOpts, {command: 'browser'}, 'passed command as null (the default)')
+  t.same(openerOpts, { command: 'browser' }, 'passed command as null (the default)')
   t.matchSnapshot(OUTPUT)
 })
 
 t.test('prints json output', async t => {
-	t.teardown(() => {
+  t.teardown(() => {
     openerUrl = null
     openerOpts = null
     OUTPUT.length = 0
     npm._config.json = false
   })
 
-	npm._config.json = true
-	await openUrlPrompt(npm, 'https://www.npmjs.com', 'npm home', 'prompt')
+  npm._config.json = true
+  await openUrlPrompt(npm, 'https://www.npmjs.com', 'npm home', 'prompt')
   t.matchSnapshot(OUTPUT)
 })
 
