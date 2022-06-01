@@ -12,7 +12,7 @@ on:
       - edited
 
 jobs:
-  pull-request:
+  trigger-benchmark:
     runs-on: ubuntu-latest
     steps:
       - name: Incoming Pull Request
@@ -21,33 +21,51 @@ jobs:
             github.event_name == 'issue_comment' &&
             github.event.issue.pull_request &&
             github.event.issue.state == 'open' &&
-            startsWith(github.event.comment.body, '@npm-robot benchmark this')
+            startsWith(github.event.comment.body, '@npm-cli-bot benchmark this')
           )
         env:
           # gh cli uses these env vars for owner/repo/token
           GH_REPO: "npm/benchmarks"
           GITHUB_TOKEN: ${{ secrets.BENCHMARK_DISPATCH_TOKEN }}
         run: |
-          if [[ "$GITHUB_TOKEN" == "" ]]; then
-            echo "No auth - from fork pull request, exiting"
-            exit 0
-          fi
-
           EVENT_NAME="${{ github.event_name }}"
           OWNER="${{ github.event.repository.owner.login }}"
           REPO="${{ github.event.repository.name }}"
           PR=""
 
           if [[ "$EVENT_NAME" == "pull_request" ]]; then
+            if [[ "$GITHUB_TOKEN" == "" ]]; then
+              echo "No auth - from fork pull request, exiting"
+              exit 0
+            fi
             PR="${{ github.event.pull_request.number }}"
           else
             PR="${{ github.event.issue.number }}"
-            SENDER="${{ github.event.issue.sender.login }}"
+            SENDER="${{ github.event.comment.user.login }}"
             ROLE=$(gh api repos/${OWNER}/${REPO}/collaborators/${SENDER}/permission -q '.permission')
+
             if [[ "$ROLE" != "admin" ]]; then
               echo "${SENDER} is ${ROLE}, not an admin, exiting"
               exit 0
             fi
+
+            # add emoji to comment if user is an admin to signal
+            # benchmark is running
+            COMMENT_NODE_ID="${{ github.event.comment.node_id }}"
+            QUERY='mutation ($inputData:AddReactionInput!) {
+              addReaction (input:$inputData) {
+                reaction { content }
+              }
+            }'
+            echo '{
+              "query": "'${QUERY}'",
+              "variables": {
+                "inputData": {
+                  "subjectId": "'"${COMMENT_NODE_ID}"'",
+                  "content": "ROCKET"
+                }
+              }
+            }' | gh api graphql --input -
           fi
 
           EVENT="${EVENT_NAME} ${OWNER}/${REPO}#${PR}"
@@ -59,42 +77,3 @@ jobs:
               "owner": "'"$OWNER"'"
             }
           }' | gh api repos/{owner}/{repo}/dispatches --input -
-
-  comment:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Incoming Comment
-        if: |
-          github.event_name == 'issue_comment' &&
-          github.event.issue.pull_request &&
-          github.event.issue.state == 'open' &&
-          startsWith(github.event.comment.body, '@npm-cli-bot benchmark this')
-        env:
-          # gh cli uses this env var as the token
-          GITHUB_TOKEN: ${{ secrets.BENCHMARK_DISPATCH_TOKEN }}
-        run: |
-          OWNER="${{ github.event.repository.owner.login }}"
-          REPO="${{ github.event.repository.name }}"
-          SENDER="${{ github.event.issue.sender.login }}"
-          ROLE=$(gh api repos/${OWNER}/${REPO}/collaborators/${SENDER}/permission -q '.permission')
-          if [[ "$ROLE" != "admin"]]; then
-            echo "${SENDER} is ${ROLE}, not an admin, exiting"
-            exit 0
-          fi
-
-          COMMENT_NODE_ID="${{ github.event.comment.node_id }}"
-          QUERY='mutation ($inputData:AddReactionInput!) {
-            addReaction (input:$inputData) {
-              reaction { content }
-            }
-          }'
-          echo '{
-            "query": "'${QUERY}'",
-            "variables": {
-              "inputData": {
-                "subjectId": "'"${COMMENT_NODE_ID}"'",
-                "content": "ROCKET"
-              }
-            }
-          }' | gh api graphql --input -
-
