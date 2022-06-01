@@ -1,5 +1,27 @@
 # Changelog
 
+## v8.12.0 (2022-06-01)
+
+### Features
+
+  * [`aee6fc8`](https://github.com/npm/cli/commit/aee6fc857458ac660bf90ecd0af94212c7269fd7) [#4892](https://github.com/npm/cli/pull/4892) feat(init): reify on init new workspace ([@ruyadorno](https://github.com/ruyadorno))
+  * [`a8ae177`](https://github.com/npm/cli/commit/a8ae17775a24ccbaf4570530d7433e0d290b3793) [#4931](https://github.com/npm/cli/pull/4931) feat: Add `--auth-type=webauthn` flag ([@jumoel](https://github.com/jumoel))
+
+### Bug Fixes
+
+  * [`646b6b5`](https://github.com/npm/cli/commit/646b6b5d05de937beb8202e5fd8b8daf3e58e902) [#4963](https://github.com/npm/cli/pull/4963) fix(arborist): use rawSpec for bundled and shrinkwrapped deps ([@nlf](https://github.com/nlf))
+  * [`fcc72dd`](https://github.com/npm/cli/commit/fcc72dd8791187f4b3d8705fb23c2744c83ef943) [#4929](https://github.com/npm/cli/pull/4929) fix(libnpmexec): fix bug not install latest pkg ([@jihunleekr](https://github.com/jihunleekr))
+
+### Dependencies
+
+  * [`a6b62b2`](https://github.com/npm/cli/commit/a6b62b2b0a3a22c4039b41b527ebdf8d06b0e1f1) [#4949](https://github.com/npm/cli/pull/4949) deps: `make-fetch-happen@10.1.6`
+  * [`fb4cc24`](https://github.com/npm/cli/commit/fb4cc249a413af1ecfe6b2be14b1d376f787a03d) [#4969](https://github.com/npm/cli/pull/4969) deps: `pacote@13.6.0`
+  * [`5b9688c`](https://github.com/npm/cli/commit/5b9688cfd832ae72071a89ee7a7c3a939df91c58) [#4971](https://github.com/npm/cli/pull/4971) deps: `glob@8.0.3`
+  * [`a8bfdd8`](https://github.com/npm/cli/commit/a8bfdd8e8f3939f9be1d61567ee19ed4834e64be) [#4972](https://github.com/npm/cli/pull/4972) deps: `minimatch@5.1.0`
+  * [`66981ec`](https://github.com/npm/cli/commit/66981ecf08b888fde9188c162cc928fff7d6d9d6) [#4973](https://github.com/npm/cli/pull/4973) deps: `tap@16.2.0`
+  * [`180a7e4`](https://github.com/npm/cli/commit/180a7e4647ded3d3bca5cd9a2fa8d264b7d2104a) [#4975](https://github.com/npm/cli/pull/4975) deps: `@npmcli/arborist@5.2.1`
+  * [`0886f7f`](https://github.com/npm/cli/commit/0886f7fa5ac641137052782698407ada230c611c) [#4976](https://github.com/npm/cli/pull/4976) deps: `libnpmexec@4.0.6`
+
 ## v8.11.0 (2022-05-25)
 
 ### Features
