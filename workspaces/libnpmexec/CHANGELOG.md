@@ -1,5 +1,12 @@
 # Changelog
 
+### [4.0.6](https://github.com/npm/cli/compare/libnpmexec-v4.0.5...libnpmexec-v4.0.6) (2022-06-01)
+
+
+### Bug Fixes
+
+* **libnpmexec:** fix bug not install latest pkg ([#4929](https://github.com/npm/cli/issues/4929)) ([fcc72dd](https://github.com/npm/cli/commit/fcc72dd8791187f4b3d8705fb23c2744c83ef943))
+
 ### [4.0.5](https://github.com/npm/cli/compare/libnpmexec-v4.0.4...libnpmexec-v4.0.5) (2022-04-26)
 
 
