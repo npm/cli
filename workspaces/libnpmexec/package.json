@@ -39,7 +39,6 @@
     "snap": "tap",
     "preversion": "npm test",
     "postversion": "npm publish",
-    "prepublishOnly": "git push origin --follow-tags",
     "postlint": "template-oss-check",
     "lintfix": "npm run lint -- --fix",
     "template-oss-apply": "template-oss-apply --force"

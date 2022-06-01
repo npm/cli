@@ -13,7 +13,6 @@
     "test": "tap",
     "postlint": "template-oss-check",
     "lintfix": "npm run lint -- --fix",
-    "prepublishOnly": "git push origin --follow-tags",
     "snap": "tap",
     "posttest": "npm run lint",
     "template-oss-apply": "template-oss-apply --force"

@@ -16,7 +16,6 @@
     "lintfix": "npm run lint -- --fix",
     "preversion": "npm test",
     "postversion": "npm publish",
-    "prepublishOnly": "git push origin --follow-tags",
     "snap": "tap",
     "posttest": "npm run lint",
     "template-oss-apply": "template-oss-apply --force"
