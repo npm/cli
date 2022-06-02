@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.12.1 (2022-06-02)
+
+### Bug Fixes
+
+  * [`40c823c`](https://github.com/npm/cli/commit/40c823cc7d33d22f659a1ccceed440baacaaff1d) [#4982](https://github.com/npm/cli/pull/4982) fix: undeprecate and remove warnings for --global, -g, --local ([@fritzy](https://github.com/fritzy))
+
 ## v8.12.0 (2022-06-01)
 
 ### Features
