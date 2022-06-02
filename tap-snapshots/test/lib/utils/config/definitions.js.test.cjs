@@ -733,8 +733,6 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for globa
 
 * Default: false
 * Type: Boolean
-* DEPRECATED: \`--global\`, \`--local\` are deprecated. Use \`--location=global\`
-  instead.
 
 Operates in "global" mode, so that packages are installed into the \`prefix\`
 folder instead of the current working directory. See
