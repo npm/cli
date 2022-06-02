@@ -198,6 +198,9 @@ function getProxy (proxyUrl, opts, isHttps) {
       return new HttpsProxyAgent(popts)
     }
   } else if (proxyUrl.protocol.startsWith('socks')) {
+    // socks-proxy-agent uses hostname not host
+    popts.hostname = popts.host
+    delete popts.host
     return new SocksProxyAgent(popts)
   } else {
     throw Object.assign(
