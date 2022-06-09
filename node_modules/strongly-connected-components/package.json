@@ -1,0 +1,35 @@
+{
+  "name": "strongly-connected-components",
+  "version": "1.0.1",
+  "description": "Computes strongly connected components of a directed graph",
+  "main": "scc.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "tape": "~2.1.0",
+    "tap": "~0.4.4"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikolalysenko/strongly-connected-components.git"
+  },
+  "keywords": [
+    "strongly",
+    "connected",
+    "component",
+    "directed",
+    "graph",
+    "tarjan"
+  ],
+  "author": "Mikola Lysenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikolalysenko/strongly-connected-components/issues"
+  }
+}
