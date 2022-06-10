@@ -46,7 +46,8 @@ class Results {
   }
 }
 
-const retrieveNodesFromParsedAst = ({
+const parentCache = new Map()
+const retrieveNodesFromParsedAst = async ({
   initialItems,
   inventory,
   rootAstNode,
@@ -87,71 +88,91 @@ const retrieveNodesFromParsedAst = ({
   }))
   const classesMap = new Map(Object.entries({
     '.prod' (prevResults) {
-      return prevResults.filter(node =>
-        [...node.edgesIn].some(edge => edge.prod))
+      return Promise.resolve(prevResults.filter(node =>
+        [...node.edgesIn].some(edge => edge.prod)))
     },
     '.dev' (prevResults) {
-      return prevResults.filter(node =>
-        [...node.edgesIn].some(edge => edge.dev))
+      return Promise.resolve(prevResults.filter(node =>
+        [...node.edgesIn].some(edge => edge.dev)))
     },
     '.optional' (prevResults) {
-      return prevResults.filter(node =>
-        [...node.edgesIn].some(edge => edge.optional))
+      return Promise.resolve(prevResults.filter(node =>
+        [...node.edgesIn].some(edge => edge.optional)))
     },
     '.peer' (prevResults) {
-      return prevResults.filter(node =>
-        [...node.edgesIn].some(edge => edge.peer))
+      return Promise.resolve(prevResults.filter(node =>
+        [...node.edgesIn].some(edge => edge.peer)))
     },
     '.workspace' (prevResults) {
-      return prevResults.filter(node => node.isWorkspace)
+      return Promise.resolve(
+        prevResults.filter(node => node.isWorkspace))
     },
     '.bundled' (prevResults) {
-      return prevResults.filter(node => node.inBundle)
+      return Promise.resolve(
+        prevResults.filter(node => node.inBundle))
     },
   }))
 
-  const hasParent = (node, compareNodes) =>
-    compareNodes.some(compareNode =>
+  const hasParent = (node, compareNodes) => {
+    if (parentCache.has(node) && parentCache.get(node).has(compareNodes)) {
+      return Promise.resolve(true)
+    }
+    const parentFound = compareNodes.some(compareNode => {
       // follows logical parent for link anscestors
-      (node.isTop && node.resolveParent) === compareNode ||
+      return (node.isTop && node.resolveParent) === compareNode ||
       // follows edges-in to check if they match a possible parent
       [...node.edgesIn].some(edge =>
-        edge && edge.from === compareNode))
+        edge && edge.from === compareNode)
+    })
+
+    if (parentFound) {
+      if (!parentCache.has(node)) {
+        parentCache.set(node, new Set())
+      }
+      parentCache.get(node).add(compareNodes)
+    }
+
+    return Promise.resolve(parentFound)
+  }
 
   // checks if a given node is a descendant of any
   // of the nodes provided in the compare nodes array
-  const ancestorCache = new Map()
-  const hasAscendant = (node, compareNodes) => {
-    const key = [node.pkgid, ':', ...compareNodes.map(n => n.pkgid)].join(' ')
-    if (ancestorCache.has(key)) {
-      return ancestorCache.get(key)
-    }
-
-    if (hasParent(node, compareNodes)) {
-      ancestorCache.set(key, true)
+  const hasAscendant = async (node, compareNodes) => {
+    const hasP = await hasParent(node, compareNodes)
+    if (hasP) {
       return true
     }
 
+    const lookupEdgesIn = async (node) => {
+      const edgesIn = [...node.edgesIn]
+      const p = await Promise.all(
+        edgesIn.map(edge =>
+          edge && edge.from && hasAscendant(edge.from, compareNodes))
+      )
+      return edgesIn.some((edge, index) => p[index])
+    }
     const ancestorFound = (node.isTop && node.resolveParent)
-      ? hasAscendant(node.resolveParent, compareNodes)
-      : [...node.edgesIn].some(edge =>
-      edge && edge.from && hasAscendant(edge.from, compareNodes))
+      ? await hasAscendant(node.resolveParent, compareNodes)
+      : await lookupEdgesIn(node)
 
-    ancestorCache.set(key, ancestorFound)
     return ancestorFound
   }
 
   const combinatorsMap = new Map(Object.entries({
-    '>' (prevResults, nextResults) {
-      return nextResults.filter(nextItem =>
-        hasParent(nextItem, prevResults))
+    async '>' (prevResults, nextResults) {
+      const p = await Promise.all(
+        nextResults.map(i => hasParent(i, prevResults))
+      )
+      return nextResults.filter((nextItem, index) => p[index])
     },
-    ' ' (prevResults, nextResults) {
-      return nextResults.filter(nextItem =>
-        hasAscendant(nextItem, prevResults))
+    async ' ' (prevResults, nextResults) {
+      const p = await Promise.all(
+        nextResults.map(i => hasAscendant(i, prevResults))
+      )
+      return nextResults.filter((nextItem, index) => p[index])
     },
-    '~' (prevResults, nextResults) {
-      return nextResults.filter(nextItem => {
+    async '~' (prevResults, nextResults) {
+      const p = await Promise.all(nextResults.map(nextItem => {
         const seenNodes = new Set()
         const possibleParentNodes =
           prevResults
@@ -164,11 +185,12 @@ const retrieveNodesFromParsedAst = ({
 
         return !seenNodes.has(nextItem) &&
           hasParent(nextItem, [...possibleParentNodes])
-      })
+      }))
+      return nextResults.filter((nextItem, index) => p[index])
     },
   }))
   const pseudoMap = new Map(Object.entries({
-    ':attr' () {
+    async ':attr' () {
       const initialItems = getInitialItems()
       const { lookupProperties, attributeMatcher } = currentAstNode
 
@@ -232,17 +254,17 @@ const retrieveNodesFromParsedAst = ({
         return objs.some(obj => match(attributeMatcher, obj))
       })
     },
-    ':empty' () {
+    async ':empty' () {
       return getInitialItems().filter(node => node.edgesOut.size === 0)
     },
-    ':extraneous' () {
+    async ':extraneous' () {
       return getInitialItems().filter(node => node.extraneous)
     },
-    ':has' () {
+    async ':has' () {
       const initialItems = getInitialItems()
       const hasResults = new Map()
       for (const item of initialItems) {
-        const res = retrieveNodesFromParsedAst({
+        const res = await retrieveNodesFromParsedAst({
           initialItems: [item],
           inventory,
           rootAstNode: currentAstNode.nestedNode,
@@ -252,23 +274,24 @@ const retrieveNodesFromParsedAst = ({
       }
       return initialItems.filter(node => hasResults.get(node).size > 0)
     },
-    ':invalid' () {
+    async ':invalid' () {
       return getInitialItems().filter(node =>
         [...node.edgesIn].some(edge => edge.invalid))
     },
-    ':is' () {
+    async ':is' () {
       const initialItems = getInitialItems()
-      return [...retrieveNodesFromParsedAst({
+      const res = await retrieveNodesFromParsedAst({
         initialItems,
         inventory,
         rootAstNode: currentAstNode.nestedNode,
         targetNode: currentAstNode,
-      })]
+      })
+      return [...res]
     },
-    ':link' () {
+    async ':link' () {
       return getInitialItems().filter(node => node.isLink || (node.isTop && !node.isRoot))
     },
-    ':missing' () {
+    async ':missing' () {
       return inventory.reduce((res, node) => {
         for (const edge of node.edgesOut.values()) {
           if (edge.missing) {
@@ -279,20 +302,19 @@ const retrieveNodesFromParsedAst = ({
         return res
       }, [])
     },
-    ':not' () {
+    async ':not' () {
       const initialItems = getInitialItems()
-      const internalSelector = new Set(
-        retrieveNodesFromParsedAst({
-          initialItems,
-          inventory: initialItems,
-          rootAstNode: currentAstNode.nestedNode,
-          targetNode: currentAstNode,
-        })
-      )
+      const res = await retrieveNodesFromParsedAst({
+        initialItems,
+        inventory: initialItems,
+        rootAstNode: currentAstNode.nestedNode,
+        targetNode: currentAstNode,
+      })
+      const internalSelector = new Set(res)
       return initialItems.filter(node =>
         !internalSelector.has(node))
     },
-    ':path' () {
+    async ':path' () {
       return getInitialItems().filter(node =>
         currentAstNode.pathValue
           ? minimatch(
@@ -302,22 +324,22 @@ const retrieveNodesFromParsedAst = ({
           : true
       )
     },
-    ':private' () {
+    async ':private' () {
       return getInitialItems().filter(node => node.package.private)
     },
-    ':root' () {
+    async ':root' () {
       return getInitialItems().filter(node => node === targetNode.root)
     },
-    ':scope' () {
+    async ':scope' () {
       return getInitialItems().filter(node => node === targetNode)
     },
-    ':semver' () {
+    async ':semver' () {
       return currentAstNode.semverValue
         ? getInitialItems().filter(node =>
           semver.satisfies(node.version, currentAstNode.semverValue))
         : getInitialItems()
     },
-    ':type' () {
+    async ':type' () {
       return currentAstNode.typeValue
         ? getInitialItems()
           .flatMap(node => [...node.edgesIn])
@@ -353,9 +375,9 @@ const retrieveNodesFromParsedAst = ({
   // with info of the items parsed / retrieved from the selector right
   // past the combinator, for this reason combinators are stored and
   // only ran as the last part of each selector logic
-  const processPendingCombinator = (prevResults, nextResults) => {
+  const processPendingCombinator = async (prevResults, nextResults) => {
     if (pendingCombinator) {
-      const res = pendingCombinator(prevResults, nextResults)
+      const res = await pendingCombinator(prevResults, nextResults)
       pendingCombinator = null
       return res
     }
@@ -364,7 +386,7 @@ const retrieveNodesFromParsedAst = ({
 
   // below are the functions containing the logic to
   // parse each of the recognized css selectors types
-  const attribute = () => {
+  const attribute = async () => {
     const {
       qualifiedAttribute: attribute,
       operator = '',
@@ -389,9 +411,10 @@ const retrieveNodesFromParsedAst = ({
         value,
         pkg: node.package,
       })})
-    results.currentResult = processPendingCombinator(prevResults, nextResults)
+    results.currentResult =
+      await processPendingCombinator(prevResults, nextResults)
   }
-  const classType = () => {
+  const classType = async () => {
     const classFn = classesMap.get(String(currentAstNode))
     if (!classFn) {
       throw Object.assign(
@@ -400,21 +423,23 @@ const retrieveNodesFromParsedAst = ({
       )
     }
     const prevResults = results.currentResult
-    const nextResults = classFn(getInitialItems())
-    results.currentResult = processPendingCombinator(prevResults, nextResults)
+    const nextResults = await classFn(getInitialItems())
+    results.currentResult =
+      await processPendingCombinator(prevResults, nextResults)
   }
-  const combinator = () => {
+  const combinator = async () => {
     pendingCombinator = combinatorsMap.get(String(currentAstNode))
   }
-  const id = () => {
+  const id = async () => {
     const spec = npa(currentAstNode.value)
     const prevResults = results.currentResult
     const nextResults = getInitialItems().filter(node =>
       (node.name === spec.name || node.package.name === spec.name) &&
       (semver.satisfies(node.version, spec.fetchSpec) || !spec.rawSpec))
-    results.currentResult = processPendingCombinator(prevResults, nextResults)
+    results.currentResult =
+      await processPendingCombinator(prevResults, nextResults)
   }
-  const pseudo = () => {
+  const pseudo = async () => {
     const pseudoFn = pseudoMap.get(currentAstNode.value)
     if (!pseudoFn) {
       throw Object.assign(
@@ -424,10 +449,11 @@ const retrieveNodesFromParsedAst = ({
       )
     }
     const prevResults = results.currentResult
-    const nextResults = pseudoFn()
-    results.currentResult = processPendingCombinator(prevResults, nextResults)
+    const nextResults = await pseudoFn()
+    results.currentResult =
+      await processPendingCombinator(prevResults, nextResults)
   }
-  const selector = () => {
+  const selector = async () => {
     results.currentAstSelector = currentAstNode
     // starts a new array in which resulting items
     // can be stored for each given ast selector
@@ -435,10 +461,11 @@ const retrieveNodesFromParsedAst = ({
       results.currentResult = []
     }
   }
-  const universal = () => {
+  const universal = async () => {
     const prevResults = results.currentResult
     const nextResults = getInitialItems()
-    results.currentResult = processPendingCombinator(prevResults, nextResults)
+    results.currentResult =
+      await processPendingCombinator(prevResults, nextResults)
   }
 
   // maps each of the recognized css selectors
@@ -455,17 +482,19 @@ const retrieveNodesFromParsedAst = ({
 
   // walks through the parsed css query and update the
   // current result after parsing / executing each ast node
-  // console.error(require('util').inspect(astNode, { depth: 10 }))
+  const astNodeQueue = new Set()
   rootAstNode.walk((nextAstNode) => {
+    astNodeQueue.add(nextAstNode)
+  })
+
+  for (const nextAstNode of astNodeQueue) {
     prevAstNode = currentAstNode
     currentAstNode = nextAstNode
-    // console.error('prevAstNode', prevAstNode.type, String(prevAstNode))
-    // console.error('currentAstNode', currentAstNode.type, String(currentAstNode))
 
     const updateResult =
       retrieveByType.get(currentAstNode.type)
-    updateResult()
-  })
+    await updateResult()
+  }
 
   return results.collect(rootAstNode)
 }
@@ -476,7 +505,7 @@ const querySelectorAll = async (targetNode, query) => {
   // results is going to be a Map in which its values are the
   // resulting items returned for each parsed css ast selector
   const inventory = [...targetNode.root.inventory.values()]
-  const res = retrieveNodesFromParsedAst({
+  const res = await retrieveNodesFromParsedAst({
     initialItems: inventory,
     inventory,
     rootAstNode,
