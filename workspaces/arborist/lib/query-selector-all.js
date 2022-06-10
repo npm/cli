@@ -20,6 +20,7 @@ class Results {
     this.#currentAstSelector = rootAstNode.nodes[0]
   }
 
+  /* eslint-disable-next-line accessor-pairs */
   set currentAstSelector (value) {
     this.#currentAstSelector = value
   }
@@ -35,7 +36,7 @@ class Results {
   // when collecting results to a root astNode, we traverse the list of
   // child selector nodes and collect all of their resulting arborist nodes
   // into a single/flat Set of items, this ensures we also deduplicate items
-  collect(rootAstNode) {
+  collect (rootAstNode) {
     const acc = new Set()
     for (const n of rootAstNode.nodes) {
       for (const node of this.#results.get(n)) {
@@ -51,7 +52,7 @@ const retrieveNodesFromParsedAst = async ({
   initialItems,
   inventory,
   rootAstNode,
-  targetNode
+  targetNode,
 }) => {
   if (!rootAstNode.nodes) {
     return new Set()
@@ -59,17 +60,20 @@ const retrieveNodesFromParsedAst = async ({
 
   const ArboristNode = targetNode.constructor
 
-  let results = new Results(rootAstNode)
+  const results = new Results(rootAstNode)
   let currentAstNode = rootAstNode
-  let prevAstNode = null
   let pendingCombinator = null
 
   results.currentResult = initialItems
 
   // maps containing the logic to parse each of the supported css selectors
   const attributeOperatorsMap = new Map(Object.entries({
-    '' ({ attribute, value, pkg }) { return Boolean(pkg[attribute]) },
-    '=' ({ attribute, value, pkg }) { return String(pkg[attribute] || '') === value },
+    '' ({ attribute, value, pkg }) {
+      return Boolean(pkg[attribute])
+    },
+    '=' ({ attribute, value, pkg }) {
+      return String(pkg[attribute] || '') === value
+    },
     '~=' ({ attribute, value, pkg }) {
       return (String(pkg[attribute] || '').match(/\w+/g) || []).includes(value)
     },
@@ -318,8 +322,8 @@ const retrieveNodesFromParsedAst = async ({
       return getInitialItems().filter(node =>
         currentAstNode.pathValue
           ? minimatch(
-            node.realpath,
-            resolve(node.root.realpath, currentAstNode.pathValue)
+            node.realpath.replace(/\\+/g, '/'),
+            resolve(node.root.realpath, currentAstNode.pathValue).replace(/\\+/g, '/')
           )
           : true
       )
@@ -356,7 +360,7 @@ const retrieveNodesFromParsedAst = async ({
   // of filtered results, for example a query for `.workspace` actually
   // means the same as `*.workspace` so we want to start with the full
   // inventory if that's the first ast node we're reading but if it appears
-  // in the middle of a query it should respect the previous filtered 
+  // in the middle of a query it should respect the previous filtered
   // results, combinators are a special case in which we always want to
   // have the complete inventory list in order to use the left-hand side
   // ast node as a filter combined with the element on its right-hand side
@@ -410,7 +414,8 @@ const retrieveNodesFromParsedAst = async ({
         attribute,
         value,
         pkg: node.package,
-      })})
+      })
+    })
     results.currentResult =
       await processPendingCombinator(prevResults, nextResults)
   }
@@ -472,7 +477,7 @@ const retrieveNodesFromParsedAst = async ({
   // to a function that parses it
   const retrieveByType = new Map(Object.entries({
     attribute,
-    'class': classType,
+    class: classType,
     combinator,
     id,
     pseudo,
@@ -488,7 +493,6 @@ const retrieveNodesFromParsedAst = async ({
   })
 
   for (const nextAstNode of astNodeQueue) {
-    prevAstNode = currentAstNode
     currentAstNode = nextAstNode
 
     const updateResult =
@@ -509,7 +513,7 @@ const querySelectorAll = async (targetNode, query) => {
     initialItems: inventory,
     inventory,
     rootAstNode,
-    targetNode
+    targetNode,
   })
 
   // returns nodes ordered by realpath

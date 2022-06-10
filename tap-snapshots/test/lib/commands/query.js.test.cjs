@@ -13,8 +13,8 @@ exports[`test/lib/commands/query.js TAP global > should return expected linked n
     "_id": "lorem@2.0.0",
     "pkgid": "lorem@2.0.0",
     "location": "node_modules/lorem",
-    "path": "/Users/ruyadorno/Documents/workspace/cli/main/test/lib/commands/tap-testdir-query-global/globalDir/lib/node_modules/lorem",
-    "realpath": "/Users/ruyadorno/Documents/workspace/cli/main/test/lib/commands/tap-testdir-query-global/globalDir/lib/node_modules/lorem",
+    "path": "{CWD}/test/lib/commands/tap-testdir-query-global/globalDir/lib/node_modules/lorem",
+    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-global/globalDir/lib/node_modules/lorem",
     "resolved": null,
     "isLink": false,
     "isWorkspace": false
@@ -30,8 +30,8 @@ exports[`test/lib/commands/query.js TAP linked node > should return expected lin
     "_id": "a@1.0.0",
     "pkgid": "a@1.0.0",
     "location": "a",
-    "path": "/Users/ruyadorno/Documents/workspace/cli/main/test/lib/commands/tap-testdir-query-linked-node/a",
-    "realpath": "/Users/ruyadorno/Documents/workspace/cli/main/test/lib/commands/tap-testdir-query-linked-node/a",
+    "path": "{CWD}/test/lib/commands/tap-testdir-query-linked-node/a",
+    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-linked-node/a",
     "resolved": null,
     "isLink": false,
     "isWorkspace": false
@@ -49,8 +49,8 @@ exports[`test/lib/commands/query.js TAP simple query > should return expected ob
     },
     "pkgid": "project@",
     "location": "",
-    "path": "/Users/ruyadorno/Documents/workspace/cli/main/test/lib/commands/tap-testdir-query-simple-query",
-    "realpath": "/Users/ruyadorno/Documents/workspace/cli/main/test/lib/commands/tap-testdir-query-simple-query",
+    "path": "{CWD}/test/lib/commands/tap-testdir-query-simple-query",
+    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-simple-query",
     "resolved": null,
     "isLink": false,
     "isWorkspace": false
@@ -58,8 +58,8 @@ exports[`test/lib/commands/query.js TAP simple query > should return expected ob
   {
     "pkgid": "a@",
     "location": "node_modules/a",
-    "path": "/Users/ruyadorno/Documents/workspace/cli/main/test/lib/commands/tap-testdir-query-simple-query/node_modules/a",
-    "realpath": "/Users/ruyadorno/Documents/workspace/cli/main/test/lib/commands/tap-testdir-query-simple-query/node_modules/a",
+    "path": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/node_modules/a",
+    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/node_modules/a",
     "resolved": null,
     "isLink": false,
     "isWorkspace": false
@@ -67,8 +67,8 @@ exports[`test/lib/commands/query.js TAP simple query > should return expected ob
   {
     "pkgid": "b@",
     "location": "node_modules/b",
-    "path": "/Users/ruyadorno/Documents/workspace/cli/main/test/lib/commands/tap-testdir-query-simple-query/node_modules/b",
-    "realpath": "/Users/ruyadorno/Documents/workspace/cli/main/test/lib/commands/tap-testdir-query-simple-query/node_modules/b",
+    "path": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/node_modules/b",
+    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/node_modules/b",
     "resolved": null,
     "isLink": false,
     "isWorkspace": false
@@ -84,8 +84,8 @@ exports[`test/lib/commands/query.js TAP workspace query > should return expected
     "_id": "c@1.0.0",
     "pkgid": "c@1.0.0",
     "location": "c",
-    "path": "/Users/ruyadorno/Documents/workspace/cli/main/test/lib/commands/tap-testdir-query-workspace-query/c",
-    "realpath": "/Users/ruyadorno/Documents/workspace/cli/main/test/lib/commands/tap-testdir-query-workspace-query/c",
+    "path": "{CWD}/test/lib/commands/tap-testdir-query-workspace-query/c",
+    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-workspace-query/c",
     "resolved": null,
     "isLink": false,
     "isWorkspace": true

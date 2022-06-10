@@ -26,7 +26,7 @@ All commands:
     edit, exec, explain, explore, find-dupes, fund, get, help,
     hook, init, install, install-ci-test, install-test, link,
     ll, login, logout, ls, org, outdated, owner, pack, ping,
-    pkg, prefix, profile, prune, publish, rebuild, repo,
+    pkg, prefix, profile, prune, publish, query, rebuild, repo,
     restart, root, run-script, search, set, set-script,
     shrinkwrap, star, stars, start, stop, team, test, token,
     uninstall, unpublish, unstar, update, version, view, whoami

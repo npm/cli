@@ -3,6 +3,15 @@ const t = require('tap')
 const { fake: mockNpm } = require('../../fixtures/mock-npm')
 const Query = require('../../../lib/commands/query.js')
 
+const redactCwd = (path) => {
+  const normalizePath = p => p
+    .replace(/\\+/g, '/')
+    .replace(/\r\n/g, '\n')
+  return normalizePath(path)
+    .replace(new RegExp(normalizePath(process.cwd()), 'g'), '{CWD}')
+}
+
+t.cleanSnapshot = (str) => redactCwd(str)
 const config = {
   global: false,
 }
