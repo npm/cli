@@ -6,7 +6,7 @@ const os = require('os')
 const oldMap = Map
 
 class newMap extends oldMap {
-  get(prop) {
+  get (prop) {
     const newThis = this.__target || this
     return oldMap.prototype.get.bind(newThis)(prop)
   }
@@ -35,7 +35,6 @@ const { getRepo } = require('./nock')
  *
  **/
 
-
 const rule1 = {
   description: 'Any package (except root package and workspace) should be able to require itself.',
   apply: (t, dir, resolvedGraph, alreadyAsserted) => {
@@ -44,12 +43,14 @@ const rule1 = {
     allPackages.filter(p => p.chain.length !== 0).forEach(p => {
       const resolveChain = [...p.chain, p.name]
       const key = p.initialDir + ' => ' + resolveChain.join(' => ')
-      if (alreadyAsserted.has(key)) { return }
+      if (alreadyAsserted.has(key)) {
+        return
+      }
       alreadyAsserted.add(key)
       t.ok(setupRequire(path.join(dir, p.initialDir))(...resolveChain),
-           `Rule 1: Package "${[p.initialDir.replace('packages/',''), ...p.chain].join(' => ')}" should have access to itself using its own name.`)
+           `Rule 1: Package "${[p.initialDir.replace('packages/', ''), ...p.chain].join(' => ')}" should have access to itself using its own name.`)
     })
-  }
+  },
 }
 
 const rule2 = {
@@ -61,10 +62,12 @@ const rule2 = {
       (p.dependencies || []).filter(d => !isLoopToken(d)).map(d => d.name).forEach(n => {
         const resolveChain = [...p.chain, n]
         const key = p.initialDir + ' => ' + resolveChain.join(' => ')
-        if (alreadyAsserted.has(key)) { return }
+        if (alreadyAsserted.has(key)) {
+          return
+        }
         alreadyAsserted.add(key)
         t.ok(path.join(dir, p.initialDir),
-             `Rule 2: ${p.chain.length === 0 && p.initialDir === '.' ? "The root" : `Package "${[p.initialDir.replace('packages/',''), ...p.chain].join(' => ')}"`} should have access to "${n}" because it has it as a resolved dependency.`)
+             `Rule 2: ${p.chain.length === 0 && p.initialDir === '.' ? 'The root' : `Package "${[p.initialDir.replace('packages/', ''), ...p.chain].join(' => ')}"`} should have access to "${n}" because it has it as a resolved dependency.`)
       })
     })
     // testing circular deps
@@ -74,13 +77,15 @@ const rule2 = {
         const n = p.chain.slice(-1 - back)[0] // getting the name of the circular dep by going back in the chain
         const resolveChain = [...p.chain, n]
         const key = p.initialDir + ' => ' + resolveChain.join(' => ')
-        if (alreadyAsserted.has(key)) { return }
+        if (alreadyAsserted.has(key)) {
+          return
+        }
         alreadyAsserted.add(key)
         t.ok(setupRequire(path.join(dir, p.initialDir))(...resolveChain),
-             `Rule 2: ${p.chain.length === 0 && p.initialDir === '.' ? "The root" : `Package "${[p.initialDir.replace('packages/',''), ...p.chain].join(' => ')}"`} should have access to "${n}" because it has it as a resolved dependency.`)
+             `Rule 2: ${p.chain.length === 0 && p.initialDir === '.' ? 'The root' : `Package "${[p.initialDir.replace('packages/', ''), ...p.chain].join(' => ')}"`} should have access to "${n}" because it has it as a resolved dependency.`)
       })
     })
-  }
+  },
 }
 
 const rule3 = {
@@ -93,16 +98,18 @@ const rule3 = {
       rootDependencies.forEach(d => {
         const resolveChain = [...p.chain, d]
         const key = p.initialDir + ' => ' + resolveChain.join(' => ')
-        if (alreadyAsserted.has(key)) { return }
+        if (alreadyAsserted.has(key)) {
+          return
+        }
         alreadyAsserted.add(key)
         t.ok(setupRequire(path.join(dir, p.initialDir))(...resolveChain),
-             `Rule 3: ${p.chain.length === 0 && p.initialDir === '.' ? "The root" : `Package "${[p.initialDir.replace('packages/',''), ...p.chain].join(" => ")}"`} should have access to "${d}" because it is a root dependency.`)
+             `Rule 3: ${p.chain.length === 0 && p.initialDir === '.' ? 'The root' : `Package "${[p.initialDir.replace('packages/', ''), ...p.chain].join(' => ')}"`} should have access to "${d}" because it is a root dependency.`)
       })
     })
-  }
+  },
 }
 
-const rule4 ={
+const rule4 = {
   description: 'Packages cannot require packages that are not in their dependencies, not root dependencies or not themselves.',
   apply: (t, dir, resolvedGraph, alreadyAsserted) => {
     const graph = parseGraph(resolvedGraph)
@@ -125,13 +132,15 @@ const rule4 ={
         .forEach(n => {
           const resolveChain = [...p.chain, n]
           const key = p.initialDir + ' => ' + resolveChain.join(' => ')
-          if (alreadyAsserted.has(key)) { return }
+          if (alreadyAsserted.has(key)) {
+            return
+          }
           alreadyAsserted.add(key)
           t.notOk(setupRequire(path.join(dir, p.initialDir))(...resolveChain),
-		  `Rule 4: ${p.chain.length === 0 && p.initialDir === '.' ? "The root" : `Package "${[p.initialDir.replace('packages/',''), ...p.chain].join(" => ")}"`} should not have access to "${n}" because it not a root dependency, not in its resolved dependencies and not itself.`)
+		  `Rule 4: ${p.chain.length === 0 && p.initialDir === '.' ? 'The root' : `Package "${[p.initialDir.replace('packages/', ''), ...p.chain].join(' => ')}"`} should not have access to "${n}" because it not a root dependency, not in its resolved dependencies and not itself.`)
         })
     })
-  }
+  },
 }
 
 const rule5 = {
@@ -144,9 +153,9 @@ const rule5 = {
         const chain = p.chain
         const parentChain = chain.slice(0, -2).concat([p.name])
         t.same(setupRequire(path.join(dir, p.initialDir))(...parentChain), setupRequire(path.join(dir, p.initialDir))(...chain),
-               `Rule 5: Package "${[p.initialDir.replace('packages/',''), ...chain.slice(0, -1)].join(' => ')}" should get the same instance of "${p.name}" as its parent`)
+               `Rule 5: Package "${[p.initialDir.replace('packages/', ''), ...chain.slice(0, -1)].join(' => ')}" should get the same instance of "${p.name}" as its parent`)
       })
-  }
+  },
 }
 
 const rule6 = {
@@ -170,7 +179,7 @@ const rule6 = {
       const same = value.every(l => l === value[0])
       t.ok(same, `Rule 6: Even though it is referenced multiple times, package "${key}" should be installed only once`)
     })
-  }
+  },
 }
 
 const rule7 = {
@@ -179,12 +188,12 @@ const rule7 = {
     const graph = parseGraph(resolvedGraph)
     const allPackages = getAllPackages(withRequireChain(graph))
     allPackages.forEach(p => {
-      const ppath = setupRequire(path.join(dir, p.initialDir))(...p.chain) 
+      const ppath = setupRequire(path.join(dir, p.initialDir))(...p.chain)
       p.dependencies.filter(d => !isLoopToken(d)).forEach(d => {
         const dname = d.name
         const dversion = JSON.parse(fs.readFileSync(`${resolvePackage(dname, ppath)}/package.json`).toString()).version
 
-        t.ok(dversion === d.version, `Rule 7: The version of ${dname} (${dversion}) provided to ${p.chain.length === 0 && p.initialDir === '.' ? "the root" : `package "${[p.initialDir.replace('packages/',''), ...p.chain].join(" => ")}"`} should be "${d.version}"`)
+        t.ok(dversion === d.version, `Rule 7: The version of ${dname} (${dversion}) provided to ${p.chain.length === 0 && p.initialDir === '.' ? 'the root' : `package "${[p.initialDir.replace('packages/', ''), ...p.chain].join(' => ')}"`} should be "${d.version}"`)
       })
       p.dependencies.filter(d => isLoopToken(d)).forEach(token => {
         const back = parseLoopToken(token)
@@ -192,18 +201,18 @@ const rule7 = {
         const loopStartChain = p.chain.slice(0, -back)
         const loopEndChain = [...p.chain, name]
         t.same(setupRequire(path.join(dir, p.initialDir))(...loopStartChain),
-               setupRequire(path.join(dir, p.initialDir))(...loopEndChain),
-               `The two ends of this dependency loop should resolve to the same location: "${[p.initialDir.replace('packages/',''), ...loopEndChain].join(" => ")}"`)
+          setupRequire(path.join(dir, p.initialDir))(...loopEndChain),
+               `The two ends of this dependency loop should resolve to the same location: "${[p.initialDir.replace('packages/', ''), ...loopEndChain].join(' => ')}"`)
       })
     })
-  }
+  },
 }
 
 tap.test('most simple happy scenario', async t => {
   /*
    *
    * Dependency graph:
-   * 
+   *
    * foo -> which -> isexe
    *
    */
@@ -212,27 +221,27 @@ tap.test('most simple happy scenario', async t => {
   const graph = {
     registry: [
       { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
-      { name: 'isexe', version: '1.0.0' }
-    ] ,
+      { name: 'isexe', version: '1.0.0' },
+    ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' }
-    }
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' },
+    },
   }
 
   // expected output
   const resolved = {
     'foo@1.2.3 (root)': {
       'which@1.0.0': {
-        'isexe@1.0.0': {}
-      }
-    }
+        'isexe@1.0.0': {},
+      },
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
   const asserted = new Set()
@@ -259,34 +268,33 @@ tap.test('simple peer dependencies scenarios', async t => {
 
   const graph = {
     registry: [
-      { name: 'tsutils', version: '1.0.0', dependencies: {}, peerDependencies: { typescript: "*" } },
-      { name: 'typescript', version: '1.0.0', dependencies: { baz: "*" } },
-      { name: 'baz', version: '2.0.0'},
-    ] ,
+      { name: 'tsutils', version: '1.0.0', dependencies: {}, peerDependencies: { typescript: '*' } },
+      { name: 'typescript', version: '1.0.0', dependencies: { baz: '*' } },
+      { name: 'baz', version: '2.0.0' },
+    ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { tsutils: '1.0.0', typescript: '1.0.0' }
-    }
+      name: 'foo', version: '1.2.3', dependencies: { tsutils: '1.0.0', typescript: '1.0.0' },
+    },
   }
-  
+
   const resolved = {
     'foo@1.2.3 (root)': {
       'tsutils@1.0.0': {
         'typescript@1.0.0 (peer)': {
-          'baz@2.0.0': {}
-        }
+          'baz@2.0.0': {},
+        },
       },
       'typescript@1.0.0': {
-        'baz@2.0.0': {}
-      }
-    }
+        'baz@2.0.0': {},
+      },
+    },
   }
-
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
   const asserted = new Set()
@@ -299,21 +307,20 @@ tap.test('simple peer dependencies scenarios', async t => {
   rule7.apply(t, dir, resolved, asserted)
 })
 
-
 tap.test('Lock file is same in hoisted and in isolated mode', async t => {
   const graph = {
     registry: [
-      { name: 'which', version: '2.0.2' }
+      { name: 'which', version: '2.0.2' },
     ],
-    root: { name: 'foo', version: '1.2.3', dependencies: { 'which': '2.0.2' } }
+    root: { name: 'foo', version: '1.2.3', dependencies: { which: '2.0.2' } },
   }
 
-  const { dir: hoistedModeDir , registry } = await getRepo(graph)
+  const { dir: hoistedModeDir, registry } = await getRepo(graph)
   const { dir: isolatedModeDir } = await getRepo(graph)
 
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arboristHoisted  = new Arborist({ path: hoistedModeDir, registry, packumentCache: new Map(), cache  })
-  const arboristIsolated  = new Arborist({ path: isolatedModeDir , registry, packumentCache: new Map(), cache  })
+  const arboristHoisted = new Arborist({ path: hoistedModeDir, registry, packumentCache: new Map(), cache })
+  const arboristIsolated = new Arborist({ path: isolatedModeDir, registry, packumentCache: new Map(), cache })
 
   await Promise.all([
     arboristHoisted.reify({ isolated: false }),
@@ -333,62 +340,61 @@ tap.test('Basic workspaces setup', async t => {
     registry: [
       { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
       { name: 'which', version: '2.0.0', dependencies: { isexe: '^1.0.0' } },
-      { name: 'isexe', version: '1.0.0' }
-    ] ,
+      { name: 'isexe', version: '1.0.0' },
+    ],
     root: {
-      name: 'dog', version: '1.2.3', dependencies: { bar: '*' }
+      name: 'dog', version: '1.2.3', dependencies: { bar: '*' },
     },
     workspaces: [
       { name: 'bar', version: '1.0.0', dependencies: { which: '2.0.0' } },
-      { name: 'baz', version: '1.0.0', dependencies: { which: '2.0.0', bar: "*" } },
+      { name: 'baz', version: '1.0.0', dependencies: { which: '2.0.0', bar: '*' } },
       { name: 'cat', version: '1.0.0', dependencies: { which: '1.0.0' } },
-      { name: 'fish', version: '1.0.0', dependencies: { which: '1.0.0', cat: "*" } },
+      { name: 'fish', version: '1.0.0', dependencies: { which: '1.0.0', cat: '*' } },
       { name: 'catfish', version: '1.0.0' },
-    ]
+    ],
   }
-
 
   const resolved = {
     'dog@1.2.3 (root)': {
       'bar@1.0.0 (workspace)': {
         'which@2.0.0': {
-          'isexe@1.0.0': {}
-        }
+          'isexe@1.0.0': {},
+        },
       },
       'baz@1.0.0 (workspace)': {
         'bar@1.0.0 (workspace)': {
           'which@2.0.0': {
-            'isexe@1.0.0': {}
-          }
+            'isexe@1.0.0': {},
+          },
         },
         'which@2.0.0': {
-          'isexe@1.0.0': {}
-        }
+          'isexe@1.0.0': {},
+        },
       },
       'cat@1.0.0 (workspace)': {
         'which@1.0.0': {
-          'isexe@1.0.0': {}
-        }
+          'isexe@1.0.0': {},
+        },
       },
       'fish@1.0.0 (workspace)': {
         'cat@1.0.0 (workspace)': {
           'which@1.0.0': {
-            'isexe@1.0.0': {}
-          }
+            'isexe@1.0.0': {},
+          },
         },
         'which@1.0.0': {
-          'isexe@1.0.0': {}
-        }
+          'isexe@1.0.0': {},
+        },
       },
-      'catfish@1.0.0': {}
-    }
+      'catfish@1.0.0': {},
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
   const asserted = new Set()
@@ -406,67 +412,66 @@ tap.test('resolved versions are the same on isolated and in hoisted mode', async
     registry: [
       { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
       { name: 'which', version: '2.0.0', dependencies: { isexe: '^1.0.0' } },
-      { name: 'isexe', version: '1.0.0' }
-    ] ,
+      { name: 'isexe', version: '1.0.0' },
+    ],
     root: {
-      name: 'dog', version: '1.2.3', dependencies: { bar: '*' }
+      name: 'dog', version: '1.2.3', dependencies: { bar: '*' },
     },
     workspaces: [
       { name: 'bar', version: '1.0.0', dependencies: { which: '2.0.0' } },
-      { name: 'baz', version: '1.0.0', dependencies: { which: '2.0.0', bar: "*" } },
+      { name: 'baz', version: '1.0.0', dependencies: { which: '2.0.0', bar: '*' } },
       { name: 'cat', version: '1.0.0', dependencies: { which: '1.0.0' } },
-      { name: 'fish', version: '1.0.0', dependencies: { which: '1.0.0', cat: "*" } },
+      { name: 'fish', version: '1.0.0', dependencies: { which: '1.0.0', cat: '*' } },
       { name: 'catfish', version: '1.0.0' },
-    ]
+    ],
   }
-
 
   const resolved = {
     'dog@1.2.3 (root)': {
       'bar@1.0.0 (workspace)': {
         'which@2.0.0': {
-          'isexe@1.0.0': {}
-        }
-      }
+          'isexe@1.0.0': {},
+        },
+      },
     },
     'bar@1.0.0 (workspace)': {
       'which@2.0.0': {
-        'isexe@1.0.0': {}
-      }
+        'isexe@1.0.0': {},
+      },
     },
     'baz@1.0.0 (workspace)': {
       'bar@1.0.0 (workspace)': {
         'which@2.0.0': {
-          'isexe@1.0.0': {}
-        }
+          'isexe@1.0.0': {},
+        },
       },
       'which@2.0.0': {
-        'isexe@1.0.0': {}
-      }
+        'isexe@1.0.0': {},
+      },
     },
     'cat@1.0.0 (workspace)': {
       'which@1.0.0': {
-        'isexe@1.0.0': {}
-      }
+        'isexe@1.0.0': {},
+      },
     },
     'fish@1.0.0 (workspace)': {
       'cat@1.0.0 (workspace)': {
         'which@1.0.0': {
-          'isexe@1.0.0': {}
-        }
+          'isexe@1.0.0': {},
+        },
       },
       'which@1.0.0': {
-        'isexe@1.0.0': {}
-      }
+        'isexe@1.0.0': {},
+      },
     },
-    'catfish@1.0.0': {}
+    'catfish@1.0.0': {},
   }
 
   let { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   let cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  let arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  let arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
   rule7.apply(t, dir, resolved, new Set())
@@ -477,7 +482,7 @@ tap.test('resolved versions are the same on isolated and in hoisted mode', async
 
   // Note that we override this cache to prevent interference from other tests
   cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: false })
 
   // checking that the resolved graph is the same in hoisting and in isolated mode
@@ -488,13 +493,13 @@ tap.test('peer dependency chain', async t => {
   // Input of arborist
   const graph = {
     registry: [
-      { name: 'bar', version: '1.0.0', dependencies: { baz: '^1.0.0' }, peerDependencies: { boat : '*' } },
-      { name: 'baz', version: '1.0.0', peerDependencies: { boat : '*' } },
-      { name: 'boat', version: '3.0.0' }
-    ] ,
+      { name: 'bar', version: '1.0.0', dependencies: { baz: '^1.0.0' }, peerDependencies: { boat: '*' } },
+      { name: 'baz', version: '1.0.0', peerDependencies: { boat: '*' } },
+      { name: 'boat', version: '3.0.0' },
+    ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { bar: '1.0.0', boat: '^3.0.0' }
-    }
+      name: 'foo', version: '1.2.3', dependencies: { bar: '1.0.0', boat: '^3.0.0' },
+    },
   }
 
   // expected output
@@ -502,19 +507,19 @@ tap.test('peer dependency chain', async t => {
     'foo@1.2.3 (root)': {
       'bar@1.0.0': {
         'baz@1.0.0': {
-          'boat@3.0.0 (peer)': {}
+          'boat@3.0.0 (peer)': {},
         },
-        'boat@3.0.0 (peer)': {}
+        'boat@3.0.0 (peer)': {},
       },
-      'boat@3.0.0': {}
-    }
+      'boat@3.0.0': {},
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
   const asserted = new Set()
@@ -531,20 +536,20 @@ tap.test('failing optional deps are not installed', async t => {
   // Input of arborist
   const graph = {
     registry: [
-      { name: 'which', version: '1.0.0', os: [ '!linux' ] }
-    ] ,
+      { name: 'which', version: '1.0.0', os: ['!linux'] },
+    ],
     root: {
-      name: 'foo', version: '1.2.3', optionalDependencies: { which: '1.0.0' }
-    }
+      name: 'foo', version: '1.2.3', optionalDependencies: { which: '1.0.0' },
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
-  
+
   t.notOk(setupRequire(dir)('which'), 'Failing optional deps should not be installed')
 
   t.notOk(fs.existsSync(path.join(dir, 'node_modules', '.bin', 'which')))
@@ -554,20 +559,20 @@ tap.test('Optional deps are installed when possible', async t => {
   // Input of arborist
   const graph = {
     registry: [
-      { name: 'which', version: '1.0.0' }
-    ] ,
+      { name: 'which', version: '1.0.0' },
+    ],
     root: {
-      name: 'foo', version: '1.2.3', optionalDependencies: { which: '1.0.0' }
-    }
+      name: 'foo', version: '1.2.3', optionalDependencies: { which: '1.0.0' },
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
-  
+
   t.ok(setupRequire(dir)('which'), 'Optional deps should be installed when possible')
 
   // TODO: make sure that existsSync is not deprecated
@@ -576,29 +581,29 @@ tap.test('Optional deps are installed when possible', async t => {
 
 tap.test('shrinkwrap', async t => {
   const shrinkwrap = JSON.stringify({
-    "name": "which",
-    "version": "1.0.0",
-    "lockfileVersion": 2,
-    "requires": true,
-    "packages": {
-      "": {
-        "name": "which",
-        "version": "1.0.0",
-        "dependencies": {
-          "isexe": "^1.0.0"
-        }
+    name: 'which',
+    version: '1.0.0',
+    lockfileVersion: 2,
+    requires: true,
+    packages: {
+      '': {
+        name: 'which',
+        version: '1.0.0',
+        dependencies: {
+          isexe: '^1.0.0',
+        },
       },
-      "node_modules/isexe": {
-        "version": "1.0.0",
-        "resolved": "##REG##/isexe/1.0.0.tar"
-      }
+      'node_modules/isexe': {
+        version: '1.0.0',
+        resolved: '##REG##/isexe/1.0.0.tar',
+      },
     },
-    "dependencies": {
-      "isexe": {
-        "version": "1.0.0",
-        "resolved": "##REG##/isexe/1.0.0.tar"
-      }
-    }
+    dependencies: {
+      isexe: {
+        version: '1.0.0',
+        resolved: '##REG##/isexe/1.0.0.tar',
+      },
+    },
   })
 
   // Input of arborist
@@ -607,27 +612,27 @@ tap.test('shrinkwrap', async t => {
       { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' }, shrinkwrap, _hasShrinkwrap: true },
       { name: 'isexe', version: '1.1.0' },
       { name: 'isexe', version: '1.0.0' },
-    ] ,
+    ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', isexe: '^1.0.0' }
-    }
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', isexe: '^1.0.0' },
+    },
   }
 
   // expected output
   const resolved = {
     'foo@1.2.3 (root)': {
       'which@1.0.0': {
-        'isexe@1.0.0': {}
+        'isexe@1.0.0': {},
       },
-      'isexe@1.1.0': {}
-    }
+      'isexe@1.1.0': {},
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
   const asserted = new Set()
@@ -642,31 +647,31 @@ tap.test('shrinkwrap', async t => {
 
 tap.test('shrinkwrap install dev deps (like hoisting does)', async t => {
   const shrinkwrap = JSON.stringify({
-    "name": "which",
-    "version": "1.0.0",
-    "lockfileVersion": 2,
-    "requires": true,
-    "packages": {
-      "": {
-        "name": "which",
-        "version": "1.0.0",
-        "devDependencies": {
-          "isexe": "^1.0.0"
-        }
+    name: 'which',
+    version: '1.0.0',
+    lockfileVersion: 2,
+    requires: true,
+    packages: {
+      '': {
+        name: 'which',
+        version: '1.0.0',
+        devDependencies: {
+          isexe: '^1.0.0',
+        },
       },
-      "node_modules/isexe": {
-        "version": "1.0.0",
-        "dev": true,
-        "resolved": "##REG##/isexe/1.0.0.tar"
-      }
+      'node_modules/isexe': {
+        version: '1.0.0',
+        dev: true,
+        resolved: '##REG##/isexe/1.0.0.tar',
+      },
     },
-    "dependencies": {
-      "isexe": {
-        "version": "1.0.0",
-        "dev": true,
-        "resolved": "##REG##/isexe/1.0.0.tar"
-      }
-    }
+    dependencies: {
+      isexe: {
+        version: '1.0.0',
+        dev: true,
+        resolved: '##REG##/isexe/1.0.0.tar',
+      },
+    },
   })
 
   // Input of arborist
@@ -675,27 +680,27 @@ tap.test('shrinkwrap install dev deps (like hoisting does)', async t => {
       { name: 'which', version: '1.0.0', devDependencies: { isexe: '^1.0.0' }, shrinkwrap, _hasShrinkwrap: true },
       { name: 'isexe', version: '1.1.0' },
       { name: 'isexe', version: '1.0.0' },
-    ] ,
+    ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', isexe: '^1.0.0' }
-    }
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', isexe: '^1.0.0' },
+    },
   }
 
   // expected output
   const resolved = {
     'foo@1.2.3 (root)': {
       'which@1.0.0': {
-        'isexe@1.0.0': {}
+        'isexe@1.0.0': {},
       },
-      'isexe@1.1.0': {}
-    }
+      'isexe@1.1.0': {},
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
   const asserted = new Set()
@@ -706,67 +711,66 @@ tap.test('shrinkwrap install dev deps (like hoisting does)', async t => {
   rule5.apply(t, dir, resolved, asserted)
   rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
-
 })
 
 tap.test('shrinkwrap with peer dependencies', async t => {
   const shrinkwrap = JSON.stringify({
-    "name": "which",
-    "version": "1.0.0",
-    "lockfileVersion": 2,
-    "requires": true,
-    "packages": {
-      "": {
-        "name": "which",
-        "version": "1.0.0",
-        "dependencies": {
-          "isexe": "^1.0.0"
+    name: 'which',
+    version: '1.0.0',
+    lockfileVersion: 2,
+    requires: true,
+    packages: {
+      '': {
+        name: 'which',
+        version: '1.0.0',
+        dependencies: {
+          isexe: '^1.0.0',
         },
-        "devDependencies": {
-          "bar": "1.0.0"
+        devDependencies: {
+          bar: '1.0.0',
         },
-        "peerDependencies": {
-          "bar": "*"
-        }
+        peerDependencies: {
+          bar: '*',
+        },
       },
-      "node_modules/bar": {
-        "version": "1.0.0",
-        "resolved": "##REG##/bar/1.0.0.tar",
-        "dev": true,
-        "bin": {
-          "bar": "bin.js"
-        }
+      'node_modules/bar': {
+        version: '1.0.0',
+        resolved: '##REG##/bar/1.0.0.tar',
+        dev: true,
+        bin: {
+          bar: 'bin.js',
+        },
       },
-      "node_modules/isexe": {
-        "version": "1.0.0",
-        "resolved": "##REG##/isexe/1.0.0.tar",
-        "bin": {
-          "isexe": "bin.js"
-        }
-      }
+      'node_modules/isexe': {
+        version: '1.0.0',
+        resolved: '##REG##/isexe/1.0.0.tar',
+        bin: {
+          isexe: 'bin.js',
+        },
+      },
     },
-    "dependencies": {
-      "bar": {
-        "version": "1.0.0",
-        "resolved": "##REG##/bar/1.0.0.tar",
-        "dev": true
+    dependencies: {
+      bar: {
+        version: '1.0.0',
+        resolved: '##REG##/bar/1.0.0.tar',
+        dev: true,
       },
-      "isexe": {
-        "version": "1.0.0",
-        "resolved": "##REG##/isexe/1.0.0.tar"
-      }
-    }
+      isexe: {
+        version: '1.0.0',
+        resolved: '##REG##/isexe/1.0.0.tar',
+      },
+    },
   })
   // expected output
   const resolved = {
     'foo@1.0.0 (root)': {
       'which@1.0.0': {
         'isexe@1.0.0': {},
-        'bar@1.0.0': {}
+        'bar@1.0.0': {},
       },
       'isexe@1.1.0': {},
-      'bar@1.1.0': {}
-    }
+      'bar@1.1.0': {},
+    },
   }
 
   // Input of arborist
@@ -776,15 +780,16 @@ tap.test('shrinkwrap with peer dependencies', async t => {
         name: 'which',
         version: '1.0.0',
         dependencies: { isexe: '^1.0.0' },
-        peerDependencies: { 'bar': '*' },
-        devDependencies: { 'bar': '1.0.0' },
-        shrinkwrap, _hasShrinkwrap: true,
+        peerDependencies: { bar: '*' },
+        devDependencies: { bar: '1.0.0' },
+        shrinkwrap,
+        _hasShrinkwrap: true,
       },
       { name: 'isexe', version: '1.1.0' },
       { name: 'isexe', version: '1.0.0' },
       { name: 'bar', version: '1.1.0' },
       { name: 'bar', version: '1.0.0' },
-    ] ,
+    ],
     root: {
       name: 'foo',
       version: '1.0.0',
@@ -794,10 +799,10 @@ tap.test('shrinkwrap with peer dependencies', async t => {
 
   const { dir, registry } = await getRepo(graph)
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
-  // TODO: greate the resolved object  
+  // TODO: greate the resolved object
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
   rule2.apply(t, dir, resolved, asserted)
@@ -809,34 +814,36 @@ tap.test('shrinkwrap with peer dependencies', async t => {
 })
 
 tap.test('bundled dependencies of external packages', async t => {
-
   // Input of arborist
   const graph = {
     registry: [
-      { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' }, bundleDependencies: [ 'isexe' ],
-        bundledDeps: [{ name: 'isexe', version: '1.0.0' }]
+      { name: 'which',
+        version: '1.0.0',
+        dependencies: { isexe: '^1.0.0' },
+        bundleDependencies: ['isexe'],
+        bundledDeps: [{ name: 'isexe', version: '1.0.0' }],
       },
       { name: 'isexe', version: '1.1.0' },
-    ] ,
+    ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' }
-    }
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' },
+    },
   }
 
   // expected output
   const resolved = {
     'foo@1.2.3 (root)': {
       'which@1.0.0': {
-        'isexe@1.0.0': {}
-      }
-    }
+        'isexe@1.0.0': {},
+      },
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
   const asserted = new Set()
@@ -850,35 +857,36 @@ tap.test('bundled dependencies of external packages', async t => {
 })
 
 tap.test('bundled dependencies of internal packages', async t => {
-
   // Input of arborist
   const graph = {
     registry: [
       { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' },
       },
       { name: 'isexe', version: '1.1.0' },
-    ] ,
+    ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', isexe: '^1.0.0' },
-      bundleDependencies: [ 'isexe' ]
-    }
+      name: 'foo',
+      version: '1.2.3',
+      dependencies: { which: '1.0.0', isexe: '^1.0.0' },
+      bundleDependencies: ['isexe'],
+    },
   }
 
   // expected output
   const resolved = {
     'foo@1.2.3 (root)': {
       'which@1.0.0': {
-        'isexe@1.1.0': {}
+        'isexe@1.1.0': {},
       },
-      'isexe@1.1.0': {}
-    }
+      'isexe@1.1.0': {},
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
   const asserted = new Set()
@@ -891,37 +899,38 @@ tap.test('bundled dependencies of internal packages', async t => {
   //  rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
 
-  const isexePath = path.join(dir,'node_modules','isexe')
+  const isexePath = path.join(dir, 'node_modules', 'isexe')
   t.equals(isexePath, fs.realpathSync(isexePath))
 })
 
 tap.test('nested bundled dependencies of internal packages', async t => {
-
   // Input of arborist
   const graph = {
     registry: [
       { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' },
       },
-      { name: 'isexe', version: '1.1.0', dependencies: { bar: '*' }},
+      { name: 'isexe', version: '1.1.0', dependencies: { bar: '*' } },
       { name: 'bar', version: '3.0.0' },
-    ] ,
+    ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', isexe: '^1.0.0' },
-      bundleDependencies: [ 'isexe' ]
-    }
+      name: 'foo',
+      version: '1.2.3',
+      dependencies: { which: '1.0.0', isexe: '^1.0.0' },
+      bundleDependencies: ['isexe'],
+    },
   }
 
   // expected output
   const resolved = {
     'foo@1.2.3 (root)': {
       'which@1.0.0': {
-	'isexe@1.1.0': {
-	  'bar@3.0.0': {}
-	}
+        'isexe@1.1.0': {
+	  'bar@3.0.0': {},
+        },
       },
       'isexe@1.1.0': {},
-      'bar@3.0.0': {} // The bundled bar is hoisted      
-    }
+      'bar@3.0.0': {}, // The bundled bar is hoisted
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
@@ -930,9 +939,9 @@ tap.test('nested bundled dependencies of internal packages', async t => {
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
 
   debugger
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
-  
+
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
   rule2.apply(t, dir, resolved, asserted)
@@ -943,7 +952,7 @@ tap.test('nested bundled dependencies of internal packages', async t => {
   //  rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
 
-  const isexePath = path.join(dir,'node_modules','isexe')
+  const isexePath = path.join(dir, 'node_modules', 'isexe')
   t.equals(isexePath, fs.realpathSync(isexePath))
 })
 
@@ -951,22 +960,21 @@ tap.test('nested bundled dependencies of workspaces', async t => {
   const graph = {
     registry: [
       { name: 'which', version: '2.0.0', dependencies: { isexe: '^1.0.0' } },
-      { name: 'isexe', version: '1.0.0' }
-    ] ,
+      { name: 'isexe', version: '1.0.0' },
+    ],
     root: {
-      name: 'dog', version: '1.2.3'
+      name: 'dog', version: '1.2.3',
     },
     workspaces: [
       { name: 'bar', version: '1.0.0', dependencies: { which: '2.0.0' }, bundleDependencies: ['which'] },
-    ]
+    ],
   }
-
 
   const resolved = {
     'dog@1.2.3 (root)': {
       'bar@1.0.0 (workspace)': {},
       'which@2.0.0': {},
-      'isexe@1.0.0': {}
+      'isexe@1.0.0': {},
     },
   }
 
@@ -975,10 +983,10 @@ tap.test('nested bundled dependencies of workspaces', async t => {
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
 
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
   debugger
-  
+
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
   rule2.apply(t, dir, resolved, asserted)
@@ -989,9 +997,9 @@ tap.test('nested bundled dependencies of workspaces', async t => {
   //  rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
 
-  const isexePath = path.join(dir,'node_modules','isexe')
+  const isexePath = path.join(dir, 'node_modules', 'isexe')
   t.equals(isexePath, fs.realpathSync(isexePath))
-  const whichPath = path.join(dir,'node_modules','which')
+  const whichPath = path.join(dir, 'node_modules', 'which')
   t.equals(whichPath, fs.realpathSync(whichPath))
 })
 
@@ -1001,30 +1009,29 @@ tap.only('nested bundled dependencies of workspaces with conflicting isolated de
       { name: 'which', version: '3.0.0', dependencies: { isexe: '^2.0.0' } },
       { name: 'isexe', version: '2.0.0' },
       { name: 'which', version: '2.0.0', dependencies: { isexe: '^1.0.0' } },
-      { name: 'isexe', version: '1.0.0' }
-    ] ,
+      { name: 'isexe', version: '1.0.0' },
+    ],
     root: {
       name: 'dog', version: '1.2.3', dependencies: { which: '3.0.0' },
     },
     workspaces: [
       { name: 'bar', version: '1.0.0', dependencies: { which: '2.0.0' }, bundleDependencies: ['which'] },
-    ]
+    ],
   }
-
 
   // the isexe that is bundled is hoisted
   // the 'which' that is bundled is not hoisted due to a conflaict
   const resolved = {
     'dog@1.2.3 (root)': {
       'bar@1.0.0 (workspace)': {
-	'which@2.0.0': {
+        'which@2.0.0': {
 	  'isexe@1.0.0': {},
-	},
-	'isexe@1.0.0': {},
+        },
+        'isexe@1.0.0': {},
       },
       'which@3.0.0': {
-	'isexe@2.0.0': {}
-      }
+        'isexe@2.0.0': {},
+      },
     },
   }
 
@@ -1033,9 +1040,9 @@ tap.only('nested bundled dependencies of workspaces with conflicting isolated de
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
 
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
-  
+
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
   rule2.apply(t, dir, resolved, asserted)
@@ -1046,13 +1053,11 @@ tap.only('nested bundled dependencies of workspaces with conflicting isolated de
   //  rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
 
-  const isexePath = path.join(dir,'packages','bar','node_modules','isexe')
+  const isexePath = path.join(dir, 'packages', 'bar', 'node_modules', 'isexe')
   t.equals(isexePath, fs.realpathSync(isexePath))
-  const whichPath = path.join(dir,'packages','bar','node_modules','which')
+  const whichPath = path.join(dir, 'packages', 'bar', 'node_modules', 'which')
   t.equals(whichPath, fs.realpathSync(whichPath))
-
 })
-
 
 tap.test('adding a dependency', async t => {
   // Input of arborist
@@ -1060,33 +1065,33 @@ tap.test('adding a dependency', async t => {
     registry: [
       { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
       { name: 'isexe', version: '1.0.0' },
-      { name: 'bar', version: '2.2.0' }
-    ] ,
+      { name: 'bar', version: '2.2.0' },
+    ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' }
-    }
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' },
+    },
   }
 
   // expected output
   const resolved = {
     'foo@1.2.3 (root)': {
       'which@1.0.0': {
-	'isexe@1.0.0': {}
+        'isexe@1.0.0': {},
       },
-      'bar@2.2.0': {}
-    }
+      'bar@2.2.0': {},
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
   // Add a new dependency
   const cache2 = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache: cache2, add: [ 'bar@^2.0.0' ]  })
+  const arborist2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache: cache2, add: ['bar@^2.0.0'] })
   await arborist2.reify({ isolated: true })
 
   // Note that the 'resolved' dependency graph contains 'bar'
@@ -1098,7 +1103,6 @@ tap.test('adding a dependency', async t => {
   rule5.apply(t, dir, resolved, asserted)
   rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
-
 })
 
 tap.test('removing a dependency', async t => {
@@ -1107,20 +1111,20 @@ tap.test('removing a dependency', async t => {
     registry: [
       { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
       { name: 'isexe', version: '1.0.0' },
-      { name: 'bar', version: '2.2.0' }
-    ] ,
+      { name: 'bar', version: '2.2.0' },
+    ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', bar: '^2.0.0' }
-    }
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', bar: '^2.0.0' },
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
-  
+
   // checking that bar is installed
   t.ok(setupRequire(dir)('bar'), 'bar should be installed initially')
 
@@ -1134,34 +1138,33 @@ tap.test('removing a dependency', async t => {
 })
 
 tap.test('circular dependencies', async t => {
-
   // Input of arborist
   const graph = {
     registry: [
       { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
       { name: 'isexe', version: '1.0.0', dependencies: { which: '1.0.0' } },
-      { name: 'bar', version: '1.2.6' }
-    ] ,
+      { name: 'bar', version: '1.2.6' },
+    ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', bar: '1.2.6' }
-    }
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', bar: '1.2.6' },
+    },
   }
 
   // expected output
   const resolved = {
     'foo@1.2.3 (root)': {
       'which@1.0.0': {
-	'isexe@1.0.0': '(back 1)' 
+        'isexe@1.0.0': '(back 1)',
       },
-      'bar@1.2.6': {}
-    }
+      'bar@1.2.6': {},
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
   const asserted = new Set()
@@ -1175,35 +1178,34 @@ tap.test('circular dependencies', async t => {
 })
 
 tap.test('circular peer dependencies', async t => {
-
   // Input of arborist
   const graph = {
     registry: [
       { name: 'cat', version: '1.0.0', peerDependencies: { bar: '*' } },
-      { name: 'bar', version: '1.0.0', peerDependencies: { cat: '*' } }
-    ] ,
+      { name: 'bar', version: '1.0.0', peerDependencies: { cat: '*' } },
+    ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { cat: '1.0.0', bar: '1.0.0' }
-    }
+      name: 'foo', version: '1.2.3', dependencies: { cat: '1.0.0', bar: '1.0.0' },
+    },
   }
 
   // expected output
   const resolved = {
     'foo@1.2.3 (root)': {
       'cat@1.0.0': {
-	'bar@1.0.0': '(back 1)' 
+        'bar@1.0.0': '(back 1)',
       },
       'bar@1.0.0': {
-	'cat@1.0.0': '(back 1)'
-      }
-    }
+        'cat@1.0.0': '(back 1)',
+      },
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
   const asserted = new Set()
@@ -1217,32 +1219,31 @@ tap.test('circular peer dependencies', async t => {
 })
 
 tap.test('peer dependency on parent', async t => {
-
   // Input of arborist
   const graph = {
     registry: [
       { name: 'cat', version: '1.0.0', dependencies: { bar: '*' } },
-      { name: 'bar', version: '1.0.0', peerDependencies: { cat: '*' } }
-    ] ,
+      { name: 'bar', version: '1.0.0', peerDependencies: { cat: '*' } },
+    ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { cat: '1.0.0' }
-    }
+      name: 'foo', version: '1.2.3', dependencies: { cat: '1.0.0' },
+    },
   }
 
   // expected output
   const resolved = {
     'foo@1.2.3 (root)': {
       'cat@1.0.0': {
-	'bar@1.0.0': '(back 1)' 
-      }
-    }
+        'bar@1.0.0': '(back 1)',
+      },
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
   const asserted = new Set()
@@ -1259,7 +1260,7 @@ tap.test('scoped package', async t => {
   /*
    *
    * Dependency graph:
-   * 
+   *
    * foo -> which -> isexe
    *
    */
@@ -1267,28 +1268,28 @@ tap.test('scoped package', async t => {
   // Input of arborist
   const graph = {
     registry: [
-      { name: 'which', version: '1.0.0', dependencies: { ['@foo/isexe']: '^1.0.0' } },
-      { name: '@foo/isexe', version: '1.0.0' }
-    ] ,
+      { name: 'which', version: '1.0.0', dependencies: { '@foo/isexe': '^1.0.0' } },
+      { name: '@foo/isexe', version: '1.0.0' },
+    ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' }
-    }
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' },
+    },
   }
 
   // expected output
   const resolved = {
     'foo@1.2.3 (root)': {
       'which@1.0.0': {
-	'@foo/isexe@1.0.0': {}
-      }
-    }
+        '@foo/isexe@1.0.0': {},
+      },
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
   const asserted = new Set()
@@ -1303,21 +1304,21 @@ tap.test('failing optional peer deps are not installed', async t => {
   // Input of arborist
   const graph = {
     registry: [
-      { name: 'which', version: '1.0.0', os: [ 'npmOS' ] },
-      { name: 'bar', version: '1.0.0', peerDependencies: { which: "*" }, peerDependenciesMeta: { which: { optional: true } } }
-    ] ,
+      { name: 'which', version: '1.0.0', os: ['npmOS'] },
+      { name: 'bar', version: '1.0.0', peerDependencies: { which: '*' }, peerDependenciesMeta: { which: { optional: true } } },
+    ],
     root: {
-      name: 'foo', version: '1.2.3', optionalDependencies: { which: '1.0.0', bar: '*' }
-    }
+      name: 'foo', version: '1.2.3', optionalDependencies: { which: '1.0.0', bar: '*' },
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
-  
+
   t.notOk(setupRequire(dir)('bar', 'which'), 'Failing optional peer deps should not be installed')
 })
 
@@ -1331,12 +1332,12 @@ tap.test('virtual packages', async t => {
       { name: 'foo', version: '2.0.0', peerDependencies: { cat: '*' } },
       { name: 'cat', version: '1.0.0' },
       { name: 'cat', version: '2.0.0' },
-      { name: 'bar', version: '1.0.0' , dependencies: { foo: '2.0.0', cat: '2.0.0' } },
-      { name: 'baz', version: '1.0.0' , dependencies: { foo: '2.0.0', cat: '1.0.0' } },
-    ] ,
+      { name: 'bar', version: '1.0.0', dependencies: { foo: '2.0.0', cat: '2.0.0' } },
+      { name: 'baz', version: '1.0.0', dependencies: { foo: '2.0.0', cat: '1.0.0' } },
+    ],
     root: {
-      name: 'toor', version: '1.2.3', dependencies: { foo: '1.0.0', bar: '*', baz: '*', cat: '1.0.0' }
-    }
+      name: 'toor', version: '1.2.3', dependencies: { foo: '1.0.0', bar: '*', baz: '*', cat: '1.0.0' },
+    },
   }
 
   // expected output
@@ -1344,28 +1345,28 @@ tap.test('virtual packages', async t => {
     'toor@1.2.3 (root)': {
       'foo@1.0.0': {},
       'bar@1.0.0': {
-	'foo@2.0.0': {
-	  'cat@2.0.0 (peer)': {}
-	},
-	'cat@2.0.0': {}
+        'foo@2.0.0': {
+	  'cat@2.0.0 (peer)': {},
+        },
+        'cat@2.0.0': {},
       },
       'baz@1.0.0': {
-	'foo@2.0.0': {
-	  'cat@1.0.0 (peer)': {}
-	},
-	'cat@1.0.0': {}
+        'foo@2.0.0': {
+	  'cat@1.0.0 (peer)': {},
+        },
+        'cat@1.0.0': {},
       },
-      'cat@1.0.0': {}
-    }
+      'cat@1.0.0': {},
+    },
   }
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
-  
+
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
   rule2.apply(t, dir, resolved, asserted)
@@ -1381,21 +1382,20 @@ tap.test('postinstall scripts are run', async t => {
   const graph = {
     registry: [
       { name: 'which', version: '1.0.0', scripts: { postinstall: 'touch postInstallRanWhich' } },
-    ] ,
+    ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' }
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' },
     },
     workspaces: [
       { name: 'bar', version: '1.0.0', scripts: { postinstall: 'touch postInstallRanBar' } },
-    ]
+    ],
   }
-
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
   const postInstallRanWhich = pathExists(`${setupRequire(dir)('which')}/postInstallRanWhich`)
@@ -1410,21 +1410,20 @@ tap.test('bins are installed', async t => {
   const graph = {
     registry: [
       { name: 'which', version: '1.0.0', bin: './bin.js' },
-    ] ,
+    ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' }
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' },
     },
     workspaces: [
-      { name: 'bar', version: '1.0.0', dependencies: { which: '1.0.0' }, bin: './bin.js' }
-    ]
+      { name: 'bar', version: '1.0.0', dependencies: { which: '1.0.0' }, bin: './bin.js' },
+    ],
   }
-
 
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ isolated: true })
 
   // TODO: make the test not assume folder structure
@@ -1438,22 +1437,21 @@ tap.test('bins are installed', async t => {
   t.ok(binFromRootToBar)
 
   const binFromBarToWhich = pathExists(`${setupRequire(dir)('bar')}/node_modules/.bin/which`)
-  t.ok(binFromBarToWhich )
+  t.ok(binFromBarToWhich)
 })
 
-
-function setupRequire(cwd) {
-  return function requireChain(...chain) {
+function setupRequire (cwd) {
+  return function requireChain (...chain) {
     return chain.reduce((path, name) => {
       if (path === undefined) {
-	return undefined
+        return undefined
       }
       return resolvePackage(name, path)
     }, cwd)
   }
 }
 
-function pathExists(path) {
+function pathExists (path) {
   try {
     fs.statSync(path)
     return true
@@ -1467,11 +1465,11 @@ function pathExists(path) {
  * one that is implemented in nodejs memoizes the resolution which
  * asserts interfering with each others
  **/
-function resolvePackage(name, from) {
+function resolvePackage (name, from) {
   try {
     const loc = `${from}/node_modules/${name}`
-    fs.statSync(loc);
-    return fs.realpathSync(loc) 
+    fs.statSync(loc)
+    return fs.realpathSync(loc)
   } catch (_) {
     const next = path.dirname(from)
     if (next === from) {
@@ -1482,44 +1480,44 @@ function resolvePackage(name, from) {
   }
 }
 
-function getAllPackages(resolvedGraph) {
+function getAllPackages (resolvedGraph) {
   return [...getAllPackagesRecursive(resolvedGraph.root),
-	  ...(resolvedGraph.workspaces?.map(w => getAllPackagesRecursive(w)) || []).reduce((a,n) => ([...a, ...n]), [])]
+	  ...(resolvedGraph.workspaces?.map(w => getAllPackagesRecursive(w)) || []).reduce((a, n) => ([...a, ...n]), [])]
 }
 
-function getAllPackagesRecursive(resolvedGraph) {
+function getAllPackagesRecursive (resolvedGraph) {
   return [
     resolvedGraph,
     ...(resolvedGraph.dependencies
-	?.filter(d => !isLoopToken(d))
-	.map(d => getAllPackagesRecursive(d)) || [])
-      .reduce((a,n) => ([...a, ...n]), [])
+      ?.filter(d => !isLoopToken(d))
+      .map(d => getAllPackagesRecursive(d)) || [])
+      .reduce((a, n) => ([...a, ...n]), []),
   ]
 }
 
-function withRequireChain(resolvedGraph) {
+function withRequireChain (resolvedGraph) {
   return {
     root: {
       ...resolvedGraph.root,
       chain: [],
       initialDir: '.',
-      dependencies: resolvedGraph.root.dependencies?.map(d => 
-	withRequireChainRecursive(d, [], '.'))
+      dependencies: resolvedGraph.root.dependencies?.map(d =>
+        withRequireChainRecursive(d, [], '.')),
     },
     workspaces: resolvedGraph.workspaces?.map(w => {
       const initialDir = `packages/${w.name}`
       return {
-	...w,
-	chain: [],
-	initialDir,
-	dependencies: w.dependencies?.map(d => withRequireChainRecursive(d, [], initialDir))
+        ...w,
+        chain: [],
+        initialDir,
+        dependencies: w.dependencies?.map(d => withRequireChainRecursive(d, [], initialDir)),
       }
-    })
-  } 
+    }),
+  }
 }
 
-function withRequireChainRecursive(resolvedGraph, chain, initialDir) {
-  if ( isLoopToken(resolvedGraph)) {
+function withRequireChainRecursive (resolvedGraph, chain, initialDir) {
+  if (isLoopToken(resolvedGraph)) {
     return resolvedGraph
   }
 
@@ -1528,12 +1526,12 @@ function withRequireChainRecursive(resolvedGraph, chain, initialDir) {
     ...resolvedGraph,
     chain: newChain,
     initialDir,
-    dependencies: resolvedGraph.dependencies?.map(d => 
-      withRequireChainRecursive(d, newChain, initialDir))
-  } 
+    dependencies: resolvedGraph.dependencies?.map(d =>
+      withRequireChainRecursive(d, newChain, initialDir)),
+  }
 }
 
-function parseGraph(graph) {
+function parseGraph (graph) {
   const root = Object.entries(graph).find(([key]) => key.includes('(root)'))
   const result = { root: parseGraphRecursive(...root), workspaces: [] }
 
@@ -1544,15 +1542,15 @@ function parseGraph(graph) {
   return result
 }
 
-function isLoopToken(obj) {
+function isLoopToken (obj) {
   return typeof obj === 'string' && /^\(back \d+\)$/.test(obj)
 }
 
-function parseLoopToken(t) {
+function parseLoopToken (t) {
   return parseInt(/\d+/.exec(t)[0])
 }
 
-function parseGraphRecursive(key, deps) {
+function parseGraphRecursive (key, deps) {
   if (isLoopToken(key)) {
     return key
   }
@@ -1564,7 +1562,6 @@ function parseGraphRecursive(key, deps) {
   const dependencies = Object.entries(normalizedDeps).map(([key, value]) => parseGraphRecursive(key, value))
   return { name, version, workspace, peer, dependencies }
 }
-
 
 /*
  * TO TEST:

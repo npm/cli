@@ -138,9 +138,7 @@ module.exports = cls => class Reifier extends cls {
     this[_nmValidated] = new Set()
   }
 
-
-  async [_createBundledTree]() {
-
+  async [_createBundledTree] () {
     // What structure do I want to return?
     // The structure should contain a list of packages
     // With the dependencies between then and their location in the
@@ -153,49 +151,48 @@ module.exports = cls => class Reifier extends cls {
     const idealTree = this.idealTree
     // TODO: test workspaces having bundled deps
     const queue = []
-    debugger
 
-    for (const [name, e] of idealTree.edgesOut) {
-      if ( e.to && (idealTree.package.bundleDependencies || idealTree.package.bundledDependencies || []).includes(e.to.name)) {
-	queue.push({from: idealTree, to: e.to})
+    for (const [, edge] of idealTree.edgesOut) {
+      if (edge.to && (idealTree.package.bundleDependencies || idealTree.package.bundledDependencies || []).includes(edge.to.name)) {
+        queue.push({ from: idealTree, to: edge.to })
       }
     }
     for (const child of idealTree.fsChildren) {
-      for (const [name, e] of child.edgesOut) {
-	if (e.to && ( child.package.bundleDependencies || child.package.bundledDependencies || []).includes(e.to.name)) {
-	  queue.push({from: child, to: e.to})
-	}
+      for (const [, edge] of child.edgesOut) {
+        if (edge.to && (child.package.bundleDependencies || child.package.bundledDependencies || []).includes(edge.to.name)) {
+          queue.push({ from: child, to: edge.to })
+        }
       }
     }
 
     const processed = new Set()
     const nodes = new Map()
     const edges = []
-    while(queue.length !== 0) {
+    while (queue.length !== 0) {
       const nextEdge = queue.pop()
       const key = `${nextEdge.from.location}=>${nextEdge.to.location}`
       if (processed.has(key)) {
-	continue
+        continue
       }
       processed.add(key)
       const from = nextEdge.from
       if (!from.isRoot && !from.isWorkspace) {
-	nodes.set(from.location, {location: from.location, resolved: from.resolved, name: from.name, optional: from.optional, pkg: {...from.package, bundleDependencies: undefined} })
+        nodes.set(from.location, { location: from.location, resolved: from.resolved, name: from.name, optional: from.optional, pkg: { ...from.package, bundleDependencies: undefined } })
       }
       const to = nextEdge.to
-      nodes.set(to.location, {location: to.location, resolved: to.resolved, name: to.name, optional: to.optional, pkg: {...to.package, bundleDependencies: undefined}})
-      edges.push({from: from.isRoot ? 'root' : from.location, to: to.location})
-      
+      nodes.set(to.location, { location: to.location, resolved: to.resolved, name: to.name, optional: to.optional, pkg: { ...to.package, bundleDependencies: undefined } })
+      edges.push({ from: from.isRoot ? 'root' : from.location, to: to.location })
+
       to.edgesOut.forEach(e => {
-	if (e.to) {
-	  queue.push({from: e.from, to: e.to})
-	}
+        if (e.to) {
+          queue.push({ from: e.from, to: e.to })
+        }
       })
     }
     return { edges, nodes }
-  }	
+  }
 
-  async [_createIsolatedTree](idealTree) {
+  async [_createIsolatedTree] (idealTree) {
     await this[_makeIdealGraph](this.options)
 
     const proxiedIdealTree = this.idealGraph
@@ -214,7 +211,7 @@ module.exports = cls => class Reifier extends cls {
           id = locationToId.size
           idToLocation.set(id, node.id)
           locationToId.set(node.id, id)
-          graph.nodes.push({ contentHash: `${node.name}@${node.version}`, id})
+          graph.nodes.push({ contentHash: `${node.name}@${node.version}`, id })
         } else {
           id = locationToId.get(node.id)
         }
@@ -222,7 +219,7 @@ module.exports = cls => class Reifier extends cls {
           graph.links.push({ source: parentId, target: id })
         }
         if (!visited.has(node.id)) {
-          visited.add(node.id);
+          visited.add(node.id)
           node.dependencies.forEach(d => {
             visit(d, id)
           })
@@ -231,11 +228,11 @@ module.exports = cls => class Reifier extends cls {
       visit(proxiedIdealTree)
       const nodeHashes = getNodeHashes(graph)
       nodeHashes.forEach((value, key) => {
-          result.set(idToLocation.get(key), value)
-          })
+        result.set(idToLocation.get(key), value)
+      })
 
       return result
-        })()
+    })()
     const getKey = (idealTreeNode) => {
       const hash = hasher.get(idealTreeNode.id)
       return `${idealTreeNode.name}@${idealTreeNode.version}-${hash.substring(hash.length - 5)}`
@@ -259,12 +256,14 @@ module.exports = cls => class Reifier extends cls {
       meta: { loadedFromDisk: false },
       global: false,
       isProjectRoot: true,
-      children: []
+      children: [],
     }
-   // t.inventory.set('', t)
-    //t.meta = this.idealTree.meta
+    // t.inventory.set('', t)
+    // t.meta = this.idealTree.meta
     // We should mock better the inventory object because it is used by audit-report.js ... maybe
-    t.inventory.query = () => { return [] }
+    t.inventory.query = () => {
+      return []
+    }
     const processed = new Set()
     proxiedIdealTree.workspaces.forEach(c => {
       const workspace = {
@@ -275,41 +274,45 @@ module.exports = cls => class Reifier extends cls {
         binPaths: [],
         package: c.package,
         location: c.localLocation,
-        path: c.localPath
+        path: c.localPath,
       }
       t.fsChildren.push(workspace)
       t.inventory.set(workspace.location, workspace)
     })
     proxiedIdealTree.external.forEach(c => {
       const key = getKey(c)
-      if (processed.has(key)) { return }
+      if (processed.has(key)) {
+        return
+      }
       processed.add(key)
       const location = `node_modules/.store/${key}/node_modules/${c.name}`
       const newChild = {
-          global: false,
-          globalTop: false,
-          isProjectRoot: false,
-          isTop: false,
-          location,
-          name: c.name,
-          optional: c.optional,
-          top: { path: proxiedIdealTree.root.localPath },
-          children: [],
-          edgesIn: new Set(),
-          edgesOut: new Map(),
-          binPaths: [],
-          fsChildren: [],
-          getBundler() { return null },
-          hasShrinkwrap: false,
-          inDepBundle: false,
-          integrity: null,
-          isLink: false,
-          isRoot: false,
-          path: `${proxiedIdealTree.root.localPath}/${location}`,
-          realpath: `${proxiedIdealTree.root.localPath}/${location}`,
-          resolved: c.resolved,
-          package: c.package,
-        }
+        global: false,
+        globalTop: false,
+        isProjectRoot: false,
+        isTop: false,
+        location,
+        name: c.name,
+        optional: c.optional,
+        top: { path: proxiedIdealTree.root.localPath },
+        children: [],
+        edgesIn: new Set(),
+        edgesOut: new Map(),
+        binPaths: [],
+        fsChildren: [],
+        getBundler () {
+          return null
+        },
+        hasShrinkwrap: false,
+        inDepBundle: false,
+        integrity: null,
+        isLink: false,
+        isRoot: false,
+        path: `${proxiedIdealTree.root.localPath}/${location}`,
+        realpath: `${proxiedIdealTree.root.localPath}/${location}`,
+        resolved: c.resolved,
+        package: c.package,
+      }
       newChild.target = newChild
       t.children.push(newChild)
       t.inventory.set(newChild.location, newChild)
@@ -317,30 +320,32 @@ module.exports = cls => class Reifier extends cls {
     bundledTree.nodes.forEach(n => {
       const { location, resolved, name, optional, pkg } = n
       const newChild = {
-          global: false,
-          globalTop: false,
-          isProjectRoot: false,
-          isTop: false,
-          location,
-          name,
-          optional,
-          top: { path: proxiedIdealTree.root.localPath },
-          children: [],
-          edgesIn: new Set(),
-          edgesOut: new Map(),
-          binPaths: [],
-          fsChildren: [],
-          getBundler() { return null },
-          hasShrinkwrap: false,
-          inDepBundle: false,
-          integrity: null,
-          isLink: false,
-          isRoot: false,
-          path: `${proxiedIdealTree.root.localPath}/${location}`,
-          realpath: `${proxiedIdealTree.root.localPath}/${location}`,
-          resolved,
+        global: false,
+        globalTop: false,
+        isProjectRoot: false,
+        isTop: false,
+        location,
+        name,
+        optional,
+        top: { path: proxiedIdealTree.root.localPath },
+        children: [],
+        edgesIn: new Set(),
+        edgesOut: new Map(),
+        binPaths: [],
+        fsChildren: [],
+        getBundler () {
+          return null
+        },
+        hasShrinkwrap: false,
+        inDepBundle: false,
+        integrity: null,
+        isLink: false,
+        isRoot: false,
+        path: `${proxiedIdealTree.root.localPath}/${location}`,
+        realpath: `${proxiedIdealTree.root.localPath}/${location}`,
+        resolved,
         package: pkg,
-        }
+      }
       newChild.target = newChild
       t.children.push(newChild)
       t.inventory.set(newChild.location, newChild)
@@ -354,15 +359,17 @@ module.exports = cls => class Reifier extends cls {
       to.edgesIn.add(edge)
     })
     const memo = new Set()
-    function processExternalEdges(node) {
+    function processExternalEdges (node) {
       const key = getKey(node)
-      if (memo.has(key)) { return }
+      if (memo.has(key)) {
+        return
+      }
       memo.add(key)
-      const fromLocation = `node_modules/.store/${key}/node_modules/${node.name}` 
+      const fromLocation = `node_modules/.store/${key}/node_modules/${node.name}`
       const from = t.children.find(c => c.location === fromLocation)
-      const node_modules_folder = `node_modules/.store/${key}/node_modules` 
+      const nmFolder = `node_modules/.store/${key}/node_modules`
 
-      for(const target of node.localDependencies) {
+      for (const target of node.localDependencies) {
         processLocalEdges(dep)
 
         const binNames = dep.package.bin && Object.keys(dep.package.bin) || []
@@ -373,31 +380,31 @@ module.exports = cls => class Reifier extends cls {
         // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
 
         binNames.forEach(bn => {
-            target.binPaths.push(`${from.realpath}/node_modules/.bin/${bn}`)
-            })
+          target.binPaths.push(`${from.realpath}/node_modules/.bin/${bn}`)
+        })
 
         const link = {
-            global: false,
-            globalTop: false,
-            isProjectRoot: false,
-            edgesIn: new Set(),
-            edgesOut: new Map(),
-            binPaths: [],
-            isTop: false,
-            optional: false,
-            location: `${node_modules_folder}/${dep.name}`,
-            path: `${dep.root.localPath}/${node_modules_folder}/${dep.name}`,
-            realpath: target.path,
-            name: toKey,
-            resolved:toKey,
-            top: { path: dep.root.localPath },
-            children: [],
-            fsChildren: [],
-            isLink: true,
-            isRoot: false,
-            package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined, bin: target.package.bin },
-            target
-          }
+          global: false,
+          globalTop: false,
+          isProjectRoot: false,
+          edgesIn: new Set(),
+          edgesOut: new Map(),
+          binPaths: [],
+          isTop: false,
+          optional: false,
+          location: `${nmFolder}/${dep.name}`,
+          path: `${dep.root.localPath}/${nmFolder}/${dep.name}`,
+          realpath: target.path,
+          name: toKey,
+          resolved: toKey,
+          top: { path: dep.root.localPath },
+          children: [],
+          fsChildren: [],
+          isLink: true,
+          isRoot: false,
+          package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined, bin: target.package.bin },
+          target,
+        }
         const newEdge1 = { optional: false, from, to: link }
         from.edgesOut.set(dep.name, newEdge1)
         link.edgesIn.add(newEdge1)
@@ -406,86 +413,86 @@ module.exports = cls => class Reifier extends cls {
         target.edgesIn.add(newEdge2)
         t.children.push(link)
       }
-      for(const dep of node.externalDependencies) {
+      for (const dep of node.externalDependencies) {
         processExternalEdges(dep)
 
         const binNames = dep.package.bin && Object.keys(dep.package.bin) || []
 
         const toKey = getKey(dep)
-        const toLocation = `node_modules/.store/${toKey}/node_modules/${dep.name}` 
-        const target = t.children.find(c => c.location === toLocation)
-        // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
-
-          binNames.forEach(bn => {
-            target.binPaths.push(`${from.realpath}/node_modules/.bin/${bn}`)
-            })
-
-        const link = {
-            global: false,
-            globalTop: false,
-            isProjectRoot: false,
-            edgesIn: new Set(),
-            edgesOut: new Map(),
-            binPaths: [],
-            isTop: false,
-            optional: false,
-            location: `${node_modules_folder}/${dep.name}`,
-            path: `${dep.root.localPath}/${node_modules_folder}/${dep.name}`,
-            realpath: target.path,
-            name: toKey,
-            resolved:toKey,
-            top: { path: dep.root.localPath },
-            children: [],
-            fsChildren: [],
-            isLink: true,
-            isRoot: false,
-            package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined, bin: target.package.bin },
-            target
-          }
-        const newEdge1 = { optional: false, from, to: link }
-        from.edgesOut.set(dep.name, newEdge1)
-        link.edgesIn.add(newEdge1)
-        const newEdge2 = { optional: false, from: link, to: target }
-        link.edgesOut.set(dep.name, newEdge2)
-        target.edgesIn.add(newEdge2)
-        t.children.push(link)
-      }
-      for(const dep of node.externalOptionalDependencies) {
-        processExternalEdges(dep)
-
-        const binNames = dep.package.bin && Object.keys(dep.package.bin) || []
-
-        const toKey = getKey(dep)
-        const toLocation = `node_modules/.store/${toKey}/node_modules/${dep.name}` 
+        const toLocation = `node_modules/.store/${toKey}/node_modules/${dep.name}`
         const target = t.children.find(c => c.location === toLocation)
         // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
 
         binNames.forEach(bn => {
-            target.binPaths.push(`${from.realpath}/node_modules/.bin/${bn}`)
-            })
+          target.binPaths.push(`${from.realpath}/node_modules/.bin/${bn}`)
+        })
 
         const link = {
-            global: false,
-            globalTop: false,
-            isProjectRoot: false,
-            edgesIn: new Set(),
-            edgesOut: new Map(),
-            binPaths: [],
-            isTop: false,
-            optional: true,
-            location: `${node_modules_folder}/${dep.name}`,
-            path: `${dep.root.localPath}/${node_modules_folder}/${dep.name}`,
-            realpath: target.path,
-            name: toKey,
-            resolved:toKey,
-            top: { path: dep.root.localPath },
-            children: [],
-            fsChildren: [],
-            isLink: true,
-            isRoot: false,
-            package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined, bin: target.package.bin },
-            target
-          }
+          global: false,
+          globalTop: false,
+          isProjectRoot: false,
+          edgesIn: new Set(),
+          edgesOut: new Map(),
+          binPaths: [],
+          isTop: false,
+          optional: false,
+          location: `${nmFolder}/${dep.name}`,
+          path: `${dep.root.localPath}/${nmFolder}/${dep.name}`,
+          realpath: target.path,
+          name: toKey,
+          resolved: toKey,
+          top: { path: dep.root.localPath },
+          children: [],
+          fsChildren: [],
+          isLink: true,
+          isRoot: false,
+          package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined, bin: target.package.bin },
+          target,
+        }
+        const newEdge1 = { optional: false, from, to: link }
+        from.edgesOut.set(dep.name, newEdge1)
+        link.edgesIn.add(newEdge1)
+        const newEdge2 = { optional: false, from: link, to: target }
+        link.edgesOut.set(dep.name, newEdge2)
+        target.edgesIn.add(newEdge2)
+        t.children.push(link)
+      }
+      for (const dep of node.externalOptionalDependencies) {
+        processExternalEdges(dep)
+
+        const binNames = dep.package.bin && Object.keys(dep.package.bin) || []
+
+        const toKey = getKey(dep)
+        const toLocation = `node_modules/.store/${toKey}/node_modules/${dep.name}`
+        const target = t.children.find(c => c.location === toLocation)
+        // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
+
+        binNames.forEach(bn => {
+          target.binPaths.push(`${from.realpath}/node_modules/.bin/${bn}`)
+        })
+
+        const link = {
+          global: false,
+          globalTop: false,
+          isProjectRoot: false,
+          edgesIn: new Set(),
+          edgesOut: new Map(),
+          binPaths: [],
+          isTop: false,
+          optional: true,
+          location: `${nmFolder}/${dep.name}`,
+          path: `${dep.root.localPath}/${nmFolder}/${dep.name}`,
+          realpath: target.path,
+          name: toKey,
+          resolved: toKey,
+          top: { path: dep.root.localPath },
+          children: [],
+          fsChildren: [],
+          isLink: true,
+          isRoot: false,
+          package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined, bin: target.package.bin },
+          target,
+        }
         const newEdge1 = { optional: true, from, to: link }
         from.edgesOut.set(dep.name, newEdge1)
         link.edgesIn.add(newEdge1)
@@ -495,15 +502,17 @@ module.exports = cls => class Reifier extends cls {
         t.children.push(link)
       }
     }
-    function processLocalEdges(node) {
+    function processLocalEdges (node) {
       const key = getKey(node)
-      if (memo.has(key)) { return }
+      if (memo.has(key)) {
+        return
+      }
       memo.add(key)
       const fromLocation = node.localLocation
       const from = node.isProjectRoot ? t : t.fsChildren.find(c => c.location === node.localLocation)
-      const node_modules_folder = join(node.localLocation, 'node_modules')
+      const nmFolder = join(node.localLocation, 'node_modules')
 
-      for(const dep of node.localDependencies) {
+      for (const dep of node.localDependencies) {
         processLocalEdges(dep)
 
         const binNames = dep.package.bin && Object.keys(dep.package.bin) || []
@@ -514,31 +523,31 @@ module.exports = cls => class Reifier extends cls {
         // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
 
         binNames.forEach(bn => {
-            target.binPaths.push(`${from.realpath}/node_modules/.bin/${bn}`)
-            })
+          target.binPaths.push(`${from.realpath}/node_modules/.bin/${bn}`)
+        })
 
         const link = {
-            global: false,
-            globalTop: false,
-            isProjectRoot: false,
-            edgesIn: new Set(),
-            edgesOut: new Map(),
-            binPaths: [],
-            isTop: false,
-            optional: false,
-            location: `${node_modules_folder}/${dep.name}`,
-            path: `${dep.root.localPath}/${node_modules_folder}/${dep.name}`,
-            realpath: target.path,
-            name: toKey,
-            resolved:toKey,
-            top: { path: dep.root.localPath },
-            children: [],
-            fsChildren: [],
-            isLink: true,
-            isRoot: false,
-            package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined, bin: target.package.bin },
-            target
-          }
+          global: false,
+          globalTop: false,
+          isProjectRoot: false,
+          edgesIn: new Set(),
+          edgesOut: new Map(),
+          binPaths: [],
+          isTop: false,
+          optional: false,
+          location: `${nmFolder}/${dep.name}`,
+          path: `${dep.root.localPath}/${nmFolder}/${dep.name}`,
+          realpath: target.path,
+          name: toKey,
+          resolved: toKey,
+          top: { path: dep.root.localPath },
+          children: [],
+          fsChildren: [],
+          isLink: true,
+          isRoot: false,
+          package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined, bin: target.package.bin },
+          target,
+        }
         const newEdge1 = { optional: false, from, to: link }
         from.edgesOut.set(dep.name, newEdge1)
         link.edgesIn.add(newEdge1)
@@ -547,42 +556,42 @@ module.exports = cls => class Reifier extends cls {
         target.edgesIn.add(newEdge2)
         t.children.push(link)
       }
-      for(const dep of node.externalDependencies) {
+      for (const dep of node.externalDependencies) {
         processExternalEdges(dep)
 
         const binNames = dep.package.bin && Object.keys(dep.package.bin) || []
 
         const toKey = getKey(dep)
-        const toLocation = `node_modules/.store/${toKey}/node_modules/${dep.name}` 
+        const toLocation = `node_modules/.store/${toKey}/node_modules/${dep.name}`
         const target = t.children.find(c => c.location === toLocation)
         // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
 
         binNames.forEach(bn => {
-            target.binPaths.push(`${from.realpath}/node_modules/.bin/${bn}`)
-            })
+          target.binPaths.push(`${from.realpath}/node_modules/.bin/${bn}`)
+        })
 
         const link = {
-            global: false,
-            globalTop: false,
-            isProjectRoot: false,
-            edgesIn: new Set(),
-            edgesOut: new Map(),
-            binPaths: [],
-            isTop: false,
-            optional: false,
-            location: `${node_modules_folder}/${dep.name}`,
-            path: `${dep.root.localPath}/${node_modules_folder}/${dep.name}`,
-            realpath: target.path,
-            name: toKey,
-            resolved:toKey,
-            top: { path: dep.root.localPath },
-            children: [],
-            fsChildren: [],
-            isLink: true,
-            isRoot: false,
-            package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined, bin: target.package.bin },
-            target
-          }
+          global: false,
+          globalTop: false,
+          isProjectRoot: false,
+          edgesIn: new Set(),
+          edgesOut: new Map(),
+          binPaths: [],
+          isTop: false,
+          optional: false,
+          location: `${nmFolder}/${dep.name}`,
+          path: `${dep.root.localPath}/${nmFolder}/${dep.name}`,
+          realpath: target.path,
+          name: toKey,
+          resolved: toKey,
+          top: { path: dep.root.localPath },
+          children: [],
+          fsChildren: [],
+          isLink: true,
+          isRoot: false,
+          package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined, bin: target.package.bin },
+          target,
+        }
         const newEdge1 = { optional: false, from, to: link }
         from.edgesOut.set(dep.name, newEdge1)
         link.edgesIn.add(newEdge1)
@@ -591,42 +600,42 @@ module.exports = cls => class Reifier extends cls {
         target.edgesIn.add(newEdge2)
         t.children.push(link)
       }
-      for(const dep of node.externalOptionalDependencies) {
+      for (const dep of node.externalOptionalDependencies) {
         processExternalEdges(dep)
 
         const binNames = dep.package.bin && Object.keys(dep.package.bin) || []
 
         const toKey = getKey(dep)
-        const toLocation = `node_modules/.store/${toKey}/node_modules/${dep.name}` 
+        const toLocation = `node_modules/.store/${toKey}/node_modules/${dep.name}`
         const target = t.children.find(c => c.location === toLocation)
         // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
 
         binNames.forEach(bn => {
-            target.binPaths.push(`${from.realpath}/node_modules/.bin/${bn}`)
-            })
+          target.binPaths.push(`${from.realpath}/node_modules/.bin/${bn}`)
+        })
 
         const link = {
-            global: false,
-            globalTop: false,
-            isProjectRoot: false,
-            edgesIn: new Set(),
-            edgesOut: new Map(),
-            binPaths: [],
-            isTop: false,
-            optional: true,
-            location: `${node_modules_folder}/${dep.name}`,
-            path: `${dep.root.localPath}/${node_modules_folder}/${dep.name}`,
-            realpath: target.path,
-            name: toKey,
-            resolved:toKey,
-            top: { path: dep.root.localPath },
-            children: [],
-            fsChildren: [],
-            isLink: true,
-            isRoot: false,
-            package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined, bin: target.package.bin },
-            target
-          }
+          global: false,
+          globalTop: false,
+          isProjectRoot: false,
+          edgesIn: new Set(),
+          edgesOut: new Map(),
+          binPaths: [],
+          isTop: false,
+          optional: true,
+          location: `${nmFolder}/${dep.name}`,
+          path: `${dep.root.localPath}/${nmFolder}/${dep.name}`,
+          realpath: target.path,
+          name: toKey,
+          resolved: toKey,
+          top: { path: dep.root.localPath },
+          children: [],
+          fsChildren: [],
+          isLink: true,
+          isRoot: false,
+          package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined, bin: target.package.bin },
+          target,
+        }
         const newEdge1 = { optional: true, from, to: link }
         from.edgesOut.set(dep.name, newEdge1)
         link.edgesIn.add(newEdge1)
@@ -642,7 +651,6 @@ module.exports = cls => class Reifier extends cls {
     t.root = t
     t.target = t
     return t
-
   }
 
   // public method
@@ -673,7 +681,6 @@ module.exports = cls => class Reifier extends cls {
     }
 
     await this[_diffTrees]()
-
 
     await this[_reifyPackages]()
 
@@ -850,7 +857,7 @@ module.exports = cls => class Reifier extends cls {
       || this[_includeWorkspaceRoot] && this[_workspaces].length > 0
 
     const filterNodes = []
-      if (this[_global] && this.explicitRequests.size) {
+    if (this[_global] && this.explicitRequests.size) {
       const idealTree = this.idealTree.target
       const actualTree = this.actualTree.target
       // we ONLY are allowed to make changes in the global top-level
@@ -894,12 +901,12 @@ module.exports = cls => class Reifier extends cls {
     // find all the nodes that need to change between the actual
     // and ideal trees.
 
-      this.diff = Diff.calculate({
+    this.diff = Diff.calculate({
       shrinkwrapInflated: this[_shrinkwrapInflated],
       filterNodes,
       actual: this.actualTree,
       ideal: this.idealTree,
-      })
+    })
 
     // we don't have to add 'removed' folders to the trashlist, because
     // they'll be moved aside to a retirement folder, and then the retired
@@ -1252,7 +1259,7 @@ module.exports = cls => class Reifier extends cls {
   // shipping a virtual tree that must be reified, they ship an entire
   // reified actual tree that must be unpacked and not modified.
   [_loadBundlesAndUpdateTrees] (
-      depth = 0, bundlesByDepth = this[_getBundlesByDepth]()
+    depth = 0, bundlesByDepth = this[_getBundlesByDepth]()
   ) {
     if (depth === 0) {
       process.emit('time', 'reify:loadBundles')
@@ -1332,7 +1339,7 @@ module.exports = cls => class Reifier extends cls {
         }
 
         const { bundleDependencies } = node.package
-	  if (bundleDependencies && bundleDependencies.length) {
+        if (bundleDependencies && bundleDependencies.length) {
           maxBundleDepth = Math.max(maxBundleDepth, node.depth)
           if (!bundlesByDepth.has(node.depth)) {
             bundlesByDepth.set(node.depth, [node])
