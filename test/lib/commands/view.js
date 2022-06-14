@@ -464,6 +464,15 @@ t.test('throws when unpublished', async t => {
   )
 })
 
+t.test('throws when version not matched', async t => {
+  const { npm } = await loadMockNpm(t)
+  await t.rejects(
+    npm.exec('view', ['blue@2.0.0']),
+    { code: 'E404', pkgid: 'blue@2.0.0', message: 'No match found for version 2.0.0' }
+  )
+})
+
+
 t.test('workspaces', async t => {
   const prefixDir = {
     'package.json': JSON.stringify({
