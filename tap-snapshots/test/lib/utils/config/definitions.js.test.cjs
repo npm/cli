@@ -136,6 +136,7 @@ Array [
   "sign-git-tag",
   "sso-poll-frequency",
   "sso-type",
+  "strategy",
   "strict-peer-deps",
   "strict-ssl",
   "tag",
@@ -1699,6 +1700,19 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for sso-t
   future version of npm in favor of web-based login.
 
 If \`--auth-type=sso\`, the type of SSO type to use.
+`
+
+exports[`test/lib/utils/config/definitions.js TAP > config description for strategy 1`] = `
+#### \`strategy\`
+
+* Default: "hoisted"
+* Type: "hoisted" or "isolated"
+
+Sets the installation or "reify" strategy for installing packages on disk.
+The default is \`hoisted\`, which deduplicates packages and installs them at
+the highest possible directory. The \`isolated\` strategy flat installs
+packages in \`node_modules/.store\` and links each version in each dependency
+level, including workspaces.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for strict-peer-deps 1`] = `

@@ -655,7 +655,7 @@ module.exports = cls => class Reifier extends cls {
 
   // public method
   async reify (options = {}) {
-    const isolated = options.isolated || false
+    const isolated = options.strategy === 'isolated'
 
     if (this[_packageLockOnly] && this[_global]) {
       const er = new Error('cannot generate lockfile for global packages')
@@ -676,8 +676,7 @@ module.exports = cls => class Reifier extends cls {
 
     const old = this.idealTree
     if (isolated) {
-      const isolatedTree = await this[_createIsolatedTree](this.idealTree)
-      this.idealTree = isolatedTree
+      this.idealTree = await this[_createIsolatedTree](this.idealTree)
     }
 
     await this[_diffTrees]()
