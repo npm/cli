@@ -186,7 +186,7 @@ async function getRepo (graph) {
 }
 
 function testdir(structure) {
-  const dir = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const dir = fs.mkdtempSync(`${path.resolve(os.tmpdir())}/test-`)
   createDir(dir, structure)
   return dir
 }

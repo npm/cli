@@ -369,7 +369,7 @@ module.exports = cls => class Reifier extends cls {
       const from = t.children.find(c => c.location === fromLocation)
       const nmFolder = `node_modules/.store/${key}/node_modules`
 
-      for (const target of node.localDependencies) {
+      for (const dep of node.localDependencies) {
         processLocalEdges(dep)
 
         const binNames = dep.package.bin && Object.keys(dep.package.bin) || []
@@ -502,6 +502,7 @@ module.exports = cls => class Reifier extends cls {
         t.children.push(link)
       }
     }
+
     function processLocalEdges (node) {
       const key = getKey(node)
       if (memo.has(key)) {

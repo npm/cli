@@ -13,6 +13,8 @@ class newMap extends oldMap {
 }
 Map = newMap
 
+const getTempDir = () => path.resolve(os.tmpdir())
+
 const Arborist = require('../lib/arborist')
 const { getRepo } = require('./nock')
 
@@ -240,9 +242,9 @@ tap.test('most simple happy scenario', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
@@ -293,9 +295,9 @@ tap.test('simple peer dependencies scenarios', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
@@ -318,13 +320,13 @@ tap.test('Lock file is same in hoisted and in isolated mode', async t => {
   const { dir: hoistedModeDir, registry } = await getRepo(graph)
   const { dir: isolatedModeDir } = await getRepo(graph)
 
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arboristHoisted = new Arborist({ path: hoistedModeDir, registry, packumentCache: new Map(), cache })
   const arboristIsolated = new Arborist({ path: isolatedModeDir, registry, packumentCache: new Map(), cache })
 
   await Promise.all([
-    arboristHoisted.reify({ isolated: false }),
-    arboristIsolated.reify({ isolated: true }),
+    arboristHoisted.reify({ strategy: 'hoisted' }),
+    arboristIsolated.reify({ strategy: 'isolated' }),
   ])
 
   const [hoistedModeLockFile, isolatedModeLockFile] = await Promise.all([
@@ -393,9 +395,9 @@ tap.test('Basic workspaces setup', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
@@ -470,9 +472,9 @@ tap.test('resolved versions are the same on isolated and in hoisted mode', async
   let { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  let cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  let cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   let arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   rule7.apply(t, dir, resolved, new Set())
 
@@ -481,9 +483,9 @@ tap.test('resolved versions are the same on isolated and in hoisted mode', async
   registry = mock.registry
 
   // Note that we override this cache to prevent interference from other tests
-  cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: false })
+  await arborist.reify({ strategy: 'hoisted' })
 
   // checking that the resolved graph is the same in hoisting and in isolated mode
   rule7.apply(t, dir, resolved, new Set())
@@ -518,9 +520,9 @@ tap.test('peer dependency chain', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
@@ -546,9 +548,9 @@ tap.test('failing optional deps are not installed', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   t.notOk(setupRequire(dir)('which'), 'Failing optional deps should not be installed')
 
@@ -569,9 +571,9 @@ tap.test('Optional deps are installed when possible', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   t.ok(setupRequire(dir)('which'), 'Optional deps should be installed when possible')
 
@@ -631,9 +633,9 @@ tap.test('shrinkwrap', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
@@ -699,9 +701,9 @@ tap.test('shrinkwrap install dev deps (like hoisting does)', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
@@ -798,9 +800,9 @@ tap.test('shrinkwrap with peer dependencies', async t => {
   }
 
   const { dir, registry } = await getRepo(graph)
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   // TODO: greate the resolved object
   const asserted = new Set()
@@ -842,9 +844,9 @@ tap.test('bundled dependencies of external packages', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
@@ -885,9 +887,9 @@ tap.test('bundled dependencies of internal packages', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
@@ -936,11 +938,11 @@ tap.test('nested bundled dependencies of internal packages', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
 
   debugger
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
@@ -981,10 +983,10 @@ tap.test('nested bundled dependencies of workspaces', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
 
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
   debugger
 
   const asserted = new Set()
@@ -1038,10 +1040,10 @@ tap.only('nested bundled dependencies of workspaces with conflicting isolated de
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
 
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
@@ -1085,14 +1087,14 @@ tap.test('adding a dependency', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   // Add a new dependency
-  const cache2 = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache2 = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache: cache2, add: ['bar@^2.0.0'] })
-  await arborist2.reify({ isolated: true })
+  await arborist2.reify({ strategy: 'isolated' })
 
   // Note that the 'resolved' dependency graph contains 'bar'
   const asserted = new Set()
@@ -1121,18 +1123,18 @@ tap.test('removing a dependency', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   // checking that bar is installed
   t.ok(setupRequire(dir)('bar'), 'bar should be installed initially')
 
   // Add a new dependency
-  const cache2 = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache2 = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache: cache2 })
   await arborist2.buildIdealTree({ rm: ['bar'] })
-  await arborist2.reify({ isolated: true })
+  await arborist2.reify({ strategy: 'isolated' })
 
   t.notOk(setupRequire(dir)('bar'), 'bar should not be installed anymore')
 })
@@ -1163,9 +1165,9 @@ tap.test('circular dependencies', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
@@ -1204,9 +1206,9 @@ tap.test('circular peer dependencies', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
@@ -1242,9 +1244,9 @@ tap.test('peer dependency on parent', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
@@ -1288,9 +1290,9 @@ tap.test('scoped package', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
@@ -1315,9 +1317,9 @@ tap.test('failing optional peer deps are not installed', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   t.notOk(setupRequire(dir)('bar', 'which'), 'Failing optional peer deps should not be installed')
 })
@@ -1363,9 +1365,9 @@ tap.test('virtual packages', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
@@ -1394,9 +1396,9 @@ tap.test('postinstall scripts are run', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   const postInstallRanWhich = pathExists(`${setupRequire(dir)('which')}/postInstallRanWhich`)
   t.ok(postInstallRanWhich)
@@ -1422,9 +1424,9 @@ tap.test('bins are installed', async t => {
   const { dir, registry } = await getRepo(graph)
 
   // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ isolated: true })
+  await arborist.reify({ strategy: 'isolated' })
 
   // TODO: make the test not assume folder structure
   const binFromWhichToWhich = pathExists(`${setupRequire(dir)('which')}/../.bin/which`)
