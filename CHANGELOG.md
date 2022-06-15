@@ -1,5 +1,12 @@
 # Changelog
 
+## v8.12.2 (2022-06-15)
+
+### Dependencies
+
+  * [`053dffe`](https://github.com/npm/cli/commit/053dffe2adf4bc5cc33e98de63f9331f47be23ea) [#4986](https://github.com/npm/cli/pull/4986) deps: `make-fetch-happen@10.1.7`
+  * [`d404c8c`](https://github.com/npm/cli/commit/d404c8c9d3f86e7491070210a763e701582830e0) [#4985](https://github.com/npm/cli/pull/4985) deps: `cacache@16.1.1`
+
 ## v8.12.1 (2022-06-02)
 
 ### Bug Fixes
