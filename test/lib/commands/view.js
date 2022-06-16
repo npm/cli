@@ -33,6 +33,7 @@ const packument = (nv, opts) => {
       },
     },
     blue: {
+      _id: 'blue',
       name: 'blue',
       'dist-tags': {
         latest: '1.0.0',
@@ -471,7 +472,6 @@ t.test('throws when version not matched', async t => {
     { code: 'E404', pkgid: 'blue@2.0.0', message: 'No match found for version 2.0.0' }
   )
 })
-
 
 t.test('workspaces', async t => {
   const prefixDir = {
