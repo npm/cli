@@ -82,6 +82,7 @@ module.exports = cls => class IsolatedReifier extends cls {
       const dir = `${node.root.path}/node_modules/.store/${node.name}@${node.version}`
       fs.mkdirSync(dir, { recursive: true })
       await pacote.extract(node.resolved, dir, {
+        ...this.options,
         resolved: node.resolved,
         integrity: node.integrity,
       })
