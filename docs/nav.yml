@@ -232,6 +232,9 @@
   - title: Registry
     url: /using-npm/registry
     description: The JavaScript Package Registry
+  - title: Package spec
+    url: /using-npm/package-spec
+    description: Package name specifier
   - title: Config
     url: /using-npm/config
     description: About npm configuration
