@@ -2,6 +2,7 @@ const t = require('tap')
 const _trashList = Symbol.for('trashList')
 const Arborist = require('../../lib/arborist/index.js')
 const { resolve, dirname } = require('path')
+const os = require('os')
 const fs = require('fs')
 const fixtures = resolve(__dirname, '../fixtures')
 const relpath = require('../../lib/relpath.js')
@@ -185,6 +186,11 @@ t.test('verify dep flags in script environments', async t => {
       localeCompare(patha, pathb) || localeCompare(eventa, eventb))
     .map(({ pkg, event, cmd, code, signal, stdout, stderr }) =>
       ({ pkg, event, cmd, code, signal, stdout, stderr }))
+  t.cleanSnapshot = (input) => {
+    return input.replace(new RegExp(os.tmpdir().replace(/\\/g, '\\\\\\\\'), 'g'), '{TMP}')
+      .replace(/\\\\/g, '/')
+      .replace(/(\d+)\.(?:sh|cmd)/g, '{TIMESTAMP}')
+  }
   t.matchSnapshot(saved, 'saved script results')
 
   for (const [pkg, flags] of Object.entries(expect)) {
