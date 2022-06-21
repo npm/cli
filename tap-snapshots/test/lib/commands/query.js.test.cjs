@@ -5,7 +5,7 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/lib/commands/query.js TAP global > should return expected linked node res 1`] = `
+exports[`test/lib/commands/query.js TAP global > should return global package 1`] = `
 [
   {
     "name": "lorem",
@@ -13,8 +13,8 @@ exports[`test/lib/commands/query.js TAP global > should return expected linked n
     "_id": "lorem@2.0.0",
     "pkgid": "lorem@2.0.0",
     "location": "node_modules/lorem",
-    "path": "{CWD}/test/lib/commands/tap-testdir-query-global/globalDir/lib/node_modules/lorem",
-    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-global/globalDir/lib/node_modules/lorem",
+    "path": "{CWD}/test/lib/commands/tap-testdir-query-global/global/lib/node_modules/lorem",
+    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-global/global/lib/node_modules/lorem",
     "resolved": null,
     "isLink": false,
     "isWorkspace": false
@@ -22,7 +22,7 @@ exports[`test/lib/commands/query.js TAP global > should return expected linked n
 ]
 `
 
-exports[`test/lib/commands/query.js TAP linked node > should return expected linked node res 1`] = `
+exports[`test/lib/commands/query.js TAP linked node > should return linked node res 1`] = `
 [
   {
     "name": "a",
@@ -30,8 +30,8 @@ exports[`test/lib/commands/query.js TAP linked node > should return expected lin
     "_id": "a@1.0.0",
     "pkgid": "a@1.0.0",
     "location": "a",
-    "path": "{CWD}/test/lib/commands/tap-testdir-query-linked-node/a",
-    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-linked-node/a",
+    "path": "{CWD}/test/lib/commands/tap-testdir-query-linked-node/prefix/a",
+    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-linked-node/prefix/a",
     "resolved": null,
     "isLink": false,
     "isWorkspace": false
@@ -39,7 +39,7 @@ exports[`test/lib/commands/query.js TAP linked node > should return expected lin
 ]
 `
 
-exports[`test/lib/commands/query.js TAP simple query > should return expected object 1`] = `
+exports[`test/lib/commands/query.js TAP simple query > should return root object 1`] = `
 [
   {
     "name": "project",
@@ -49,8 +49,8 @@ exports[`test/lib/commands/query.js TAP simple query > should return expected ob
     },
     "pkgid": "project@",
     "location": "",
-    "path": "{CWD}/test/lib/commands/tap-testdir-query-simple-query",
-    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-simple-query",
+    "path": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/prefix",
+    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/prefix",
     "resolved": null,
     "isLink": false,
     "isWorkspace": false
@@ -58,8 +58,8 @@ exports[`test/lib/commands/query.js TAP simple query > should return expected ob
   {
     "pkgid": "a@",
     "location": "node_modules/a",
-    "path": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/node_modules/a",
-    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/node_modules/a",
+    "path": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/prefix/node_modules/a",
+    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/prefix/node_modules/a",
     "resolved": null,
     "isLink": false,
     "isWorkspace": false
@@ -67,8 +67,8 @@ exports[`test/lib/commands/query.js TAP simple query > should return expected ob
   {
     "pkgid": "b@",
     "location": "node_modules/b",
-    "path": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/node_modules/b",
-    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/node_modules/b",
+    "path": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/prefix/node_modules/b",
+    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/prefix/node_modules/b",
     "resolved": null,
     "isLink": false,
     "isWorkspace": false
@@ -76,7 +76,7 @@ exports[`test/lib/commands/query.js TAP simple query > should return expected ob
 ]
 `
 
-exports[`test/lib/commands/query.js TAP workspace query > should return expected workspace res 1`] = `
+exports[`test/lib/commands/query.js TAP workspace query > should return workspace object 1`] = `
 [
   {
     "name": "c",
@@ -84,8 +84,8 @@ exports[`test/lib/commands/query.js TAP workspace query > should return expected
     "_id": "c@1.0.0",
     "pkgid": "c@1.0.0",
     "location": "c",
-    "path": "{CWD}/test/lib/commands/tap-testdir-query-workspace-query/c",
-    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-workspace-query/c",
+    "path": "{CWD}/test/lib/commands/tap-testdir-query-workspace-query/prefix/c",
+    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-workspace-query/prefix/c",
     "resolved": null,
     "isLink": false,
     "isWorkspace": true

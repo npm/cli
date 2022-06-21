@@ -1,120 +1,107 @@
-const { resolve } = require('path')
 const t = require('tap')
-const { fake: mockNpm } = require('../../fixtures/mock-npm')
-const Query = require('../../../lib/commands/query.js')
+const { load: loadMockNpm } = require('../../fixtures/mock-npm')
 
-const redactCwd = (path) => {
+t.cleanSnapshot = (str) => {
   const normalizePath = p => p
     .replace(/\\+/g, '/')
     .replace(/\r\n/g, '\n')
-  return normalizePath(path)
+  return normalizePath(str)
     .replace(new RegExp(normalizePath(process.cwd()), 'g'), '{CWD}')
 }
 
-t.cleanSnapshot = (str) => redactCwd(str)
-const config = {
-  global: false,
-}
-
-const npm = mockNpm({
-  config,
-  globalDir: '',
-  flatOptions: {},
-  output: () => {},
-})
-
-const query = new Query(npm)
-
 t.test('simple query', async t => {
-  const path = t.testdir({
-    node_modules: {
-      a: {
-        name: 'a',
-        version: '1.0.0',
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    prefixDir: {
+      node_modules: {
+        a: {
+          name: 'a',
+          version: '1.0.0',
+        },
+        b: {
+          name: 'b',
+          version: '^2.0.0',
+        },
       },
-      b: {
-        name: 'b',
-        version: '^2.0.0',
-      },
+      'package.json': JSON.stringify({
+        name: 'project',
+        dependencies: {
+          a: '^1.0.0',
+          b: '^1.0.0',
+        },
+      }),
     },
-    'package.json': JSON.stringify({
-      name: 'project',
-      dependencies: {
-        a: '^1.0.0',
-        b: '^1.0.0',
-      },
-    }),
   })
-  npm.prefix = path
-  npm.output = (res) => {
-    t.matchSnapshot(res, 'should return expected object')
-  }
-  await query.exec([':root, :root > *:not(.workspace)'])
+  await npm.exec('query', [':root, :root > *'])
+  t.matchSnapshot(joinedOutput(), 'should return root object')
 })
 
 t.test('workspace query', async t => {
-  const path = t.testdir({
-    node_modules: {
-      a: {
-        name: 'a',
-        version: '1.0.0',
-      },
-      b: {
-        name: 'b',
-        version: '^2.0.0',
-      },
-      c: t.fixture('symlink', '../c'),
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    config: {
+      workspaces: ['c'],
     },
-    c: {
+    prefixDir: {
+      node_modules: {
+        a: {
+          name: 'a',
+          version: '1.0.0',
+        },
+        b: {
+          name: 'b',
+          version: '^2.0.0',
+        },
+        c: t.fixture('symlink', '../c'),
+      },
+      c: {
+        'package.json': JSON.stringify({
+          name: 'c',
+          version: '1.0.0',
+        }),
+      },
       'package.json': JSON.stringify({
-        name: 'c',
-        version: '1.0.0',
+        name: 'project',
+        workspaces: ['c'],
+        dependencies: {
+          a: '^1.0.0',
+          b: '^1.0.0',
+        },
       }),
     },
-    'package.json': JSON.stringify({
-      name: 'project',
-      workspaces: ['c'],
-      dependencies: {
-        a: '^1.0.0',
-        b: '^1.0.0',
-      },
-    }),
   })
-  npm.prefix = npm.localPrefix = path
-  npm.output = (res) => {
-    t.matchSnapshot(res, 'should return expected workspace res')
-  }
-  await query.execWorkspaces([':scope'], ['c'])
+  await npm.exec('query', [':scope'], ['c'])
+  t.matchSnapshot(joinedOutput(), 'should return workspace object')
 })
 
 t.test('linked node', async t => {
-  const path = t.testdir({
-    node_modules: {
-      a: t.fixture('symlink', '../a'),
-    },
-    a: {
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    prefixDir: {
+      node_modules: {
+        a: t.fixture('symlink', '../a'),
+      },
+      a: {
+        'package.json': JSON.stringify({
+          name: 'a',
+          version: '1.0.0',
+        }),
+      },
       'package.json': JSON.stringify({
-        name: 'a',
-        version: '1.0.0',
+        name: 'project',
+        dependencies: {
+          a: 'file:./a',
+        },
       }),
     },
-    'package.json': JSON.stringify({
-      name: 'project',
-      dependencies: {
-        a: 'file:./a',
-      },
-    }),
   })
-  npm.prefix = npm.localPrefix = path
-  npm.output = (res) => {
-    t.matchSnapshot(res, 'should return expected linked node res')
-  }
-  await query.exec(['[name=a]'])
+  await npm.exec('query', ['[name=a]'])
+  t.matchSnapshot(joinedOutput(), 'should return linked node res')
 })
 
 t.test('global', async t => {
-  const path = t.testdir({
-    globalDir: {
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    config: {
+      global: true,
+    },
+    globalPrefixDir: {
       lib: {
         node_modules: {
           lorem: {
@@ -126,13 +113,7 @@ t.test('global', async t => {
         },
       },
     },
-    project: {},
   })
-  config.global = true
-  npm.globalDir = resolve(path, 'globalDir/lib/node_modules')
-  npm.prefix = npm.localPrefix = resolve(path, 'project')
-  npm.output = (res) => {
-    t.matchSnapshot(res, 'should return expected linked node res')
-  }
-  await query.exec(['[name=lorem]'])
+  await npm.exec('query', ['[name=lorem]'])
+  t.matchSnapshot(joinedOutput(), 'should return global package')
 })
