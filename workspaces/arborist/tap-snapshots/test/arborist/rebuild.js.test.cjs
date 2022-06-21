@@ -8,7 +8,7 @@
 exports[`test/arborist/rebuild.js TAP verify dep flags in script environments > saved script results 1`] = `
 Array [
   Object {
-    "cmd": "node ../../env.js",
+    "cmd": "{TMP}/postinstall-{TIMESTAMP}",
     "code": 0,
     "event": "postinstall",
     "pkg": Object {
@@ -30,7 +30,7 @@ Array [
     "stdout": "npm_package_dev\\n",
   },
   Object {
-    "cmd": "node ../../env.js",
+    "cmd": "{TMP}/postinstall-{TIMESTAMP}",
     "code": 0,
     "event": "postinstall",
     "pkg": Object {
@@ -46,7 +46,7 @@ Array [
     "stdout": "npm_package_dev_optional\\n",
   },
   Object {
-    "cmd": "node ../../env.js",
+    "cmd": "{TMP}/postinstall-{TIMESTAMP}",
     "code": 0,
     "event": "postinstall",
     "pkg": Object {
@@ -66,7 +66,7 @@ Array [
     ),
   },
   Object {
-    "cmd": "node ../../env.js",
+    "cmd": "{TMP}/postinstall-{TIMESTAMP}",
     "code": 0,
     "event": "postinstall",
     "pkg": Object {
