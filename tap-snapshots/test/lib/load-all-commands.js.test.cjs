@@ -687,7 +687,7 @@ exports[`test/lib/load-all-commands.js TAP load each command query > must match 
 Retrieve a filtered list of packages
 
 Usage:
-npm query <value>
+npm query <selector>
 
 Options:
 [-g|--global]

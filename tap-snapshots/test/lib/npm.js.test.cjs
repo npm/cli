@@ -739,7 +739,7 @@ All commands:
     query           Retrieve a filtered list of packages
                     
                     Usage:
-                    npm query <value>
+                    npm query <selector>
                     
                     Options:
                     [-g|--global]

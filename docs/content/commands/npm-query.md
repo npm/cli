@@ -11,7 +11,7 @@ description: Dependency selector query
 <!-- see lib/commands/query.js -->
 
 ```bash
-npm query <value>
+npm query <selector>
 ```
 
 <!-- automatically generated, do not edit manually -->

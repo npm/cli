@@ -20,16 +20,29 @@ The `npm query` commmand exposes a new dependency selector syntax (informed by &
 - there is no "type" or "tag" selectors (ex. `div, h1, a`) as a dependency/target is the only type of `Node` that can be queried
 - the term "dependencies" is in reference to any `Node` found in a `tree` returned by `Arborist`
 
+#### Combinators
+
+- `>` direct descendant/child
+- ` ` any descendant/child
+- `~` sibling
+
 #### Selectors
 
 - `*` universal selector
 - `#<name>` dependency selector (equivalent to `[name="..."]`)
 - `#<name>@<version>` (equivalent to `[name=<name>]:semver(<version>)`)
 - `,` selector list delimiter
-- `.` class selector
-- `:` pseudo class selector
-- `>` direct decendent/child selector
-- `~` sibling selector
+- `.` dependency type selector
+- `:` pseudo selector
+
+#### Dependency Type Selectors
+
+- `.prod` dependency found in the `dependencies` section of `package.json`, or is a child of said dependency
+- `.dev` dependency found in the `devDependencies` section of `package.json`, or is a child of said dependency
+- `.optional` dependency found in the `optionalDependencies` section of `package.json`, or has `"optional": true` set in its entry in the `peerDependenciesMeta` section of `package.json`, or a child of said dependency
+- `.peer` dependency found in the `peerDependencies` section of `package.json`
+- `.workspace` dependency found in the `workspaces` section of `package.json`
+- `.bundled` dependency found in the `bundleDependencies` section of `package.json`, or is a child of said dependency
 
 #### Pseudo Selectors
 - [`:not(<selector>)`](https://developer.mozilla.org/en-US/docs/Web/CSS/:not)
@@ -58,7 +71,7 @@ The attribute selector evaluates the key/value pairs in `package.json` if they a
 - `[attribute~=value]` attribute value contains word...
 - `[attribute*=value]` attribute value contains string...
 - `[attribute|=value]` attribute value is equal to or starts with...
-- `[attribute^=value]` attribute value begins with...
+- `[attribute^=value]` attribute value starts with...
 - `[attribute$=value]` attribute value ends with...
 
 #### `Array` & `Object` Attribute Selectors
@@ -72,7 +85,7 @@ The generic `:attr()` pseudo selector standardizes a pattern which can be used f
 *:attr(scripts, [test~=tap])
 ```
 
-#### Nested  `Objects`
+#### Nested `Objects`
 
 Nested objects are expressed as sequential arguments to `:attr()`.
 
