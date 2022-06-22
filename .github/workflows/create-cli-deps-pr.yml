@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          ref: master
+          ref: main
           repository: npm/node
           token: ${{ secrets.NODE_PULL_REQUEST_TOKEN }}
       - name: Setup git user
@@ -29,9 +29,9 @@ jobs:
       - name: Sync upstream changes
         uses: aormsby/Fork-Sync-With-Upstream-action@v3.2
         with:
-          target_sync_branch: master
+          target_sync_branch: main
           target_repo_token: ${{ secrets.NODE_PULL_REQUEST_TOKEN }}
-          upstream_sync_branch: master
+          upstream_sync_branch: main
           upstream_sync_repo: nodejs/node
           upstream_pull_args: --ff-only
       - name: Run dependency updates and create PR
@@ -46,7 +46,7 @@ jobs:
 
           if [ "$npm_version" == "latest" ]; then 
             npm_tag=`npm view npm@latest version`
-            base_branch="master"
+            base_branch="main"
           else
             npm_tag="$npm_version"
             base_branch="v14.x-staging"
@@ -81,7 +81,7 @@ jobs:
 
           git add -A deps/npm
           git commit -m "$message"
-          git rebase --whitespace=fix master
+          git rebase --whitespace=fix main
           
           if [[ "$dry_run" == "true" ]]; then
             git status
