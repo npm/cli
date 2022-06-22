@@ -2,7 +2,7 @@
 
 // eslint-disable-next-line max-len
 // this code adapted from: https://blogs.msdn.microsoft.com/twistylittlepassagesallalike/2011/04/23/everyone-quotes-command-line-arguments-the-wrong-way/
-const cmd = (input) => {
+const cmd = (input, doubleEscape) => {
   if (!input.length) {
     return '""'
   }
@@ -37,7 +37,11 @@ const cmd = (input) => {
 
   // and finally, prefix shell meta chars with a ^
   result = result.replace(/[!^&()<>|"]/g, '^$&')
-  // except for % which is escaped with another %
+  if (doubleEscape) {
+    result = result.replace(/[!^&()<>|"]/g, '^$&')
+  }
+
+  // except for % which is escaped with another %, and only once
   result = result.replace(/%/g, '%%')
 
   return result
