@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.4](https://github.com/npm/cli/compare/libnpmdiff-v4.0.3...libnpmdiff-v4.0.4) (2022-06-22)
+
+
+### Dependencies
+
+* pacote@13.6.1 ([2e50cb8](https://github.com/npm/cli/commit/2e50cb83e84cf25fee93ba0ca5a0343fbdb33c41))
+
 ### [4.0.3](https://github.com/npm/cli/compare/libnpmdiff-v4.0.2...libnpmdiff-v4.0.3) (2022-04-06)
 
 
