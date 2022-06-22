@@ -1,5 +1,18 @@
 # Changelog
 
+## [5.2.2](https://github.com/npm/cli/compare/arborist-v5.2.1...arborist-v5.2.2) (2022-06-22)
+
+
+### Bug Fixes
+
+* Add space to SemVer log message ([#5042](https://github.com/npm/cli/issues/5042)) ([e03009f](https://github.com/npm/cli/commit/e03009f4b423e85e498f1b1851fae785de91a73d))
+
+
+### Dependencies
+
+* @npmcli/run-script@4.1.0 ([2c06cee](https://github.com/npm/cli/commit/2c06ceee82dd813c0ae84cc0b09e6941cfc5533e))
+* pacote@13.6.1 ([2e50cb8](https://github.com/npm/cli/commit/2e50cb83e84cf25fee93ba0ca5a0343fbdb33c41))
+
 ### [5.2.1](https://github.com/npm/cli/compare/arborist-v5.2.0...arborist-v5.2.1) (2022-06-01)
 
 
