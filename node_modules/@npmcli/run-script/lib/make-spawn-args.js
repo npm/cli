@@ -63,14 +63,20 @@ const makeSpawnArgs = options => {
 
     scriptFile = resolve(tmpdir(), `${event}-${Date.now()}.cmd`)
     script += '@echo off\n'
-    script += `${cmd} ${args.map((arg) => escape.cmd(arg, doubleEscape)).join(' ')}`
+    script += cmd
+    if (args.length) {
+      script += ` ${args.map((arg) => escape.cmd(arg, doubleEscape)).join(' ')}`
+    }
   } else {
     const shebang = isAbsolute(scriptShell)
       ? `#!${scriptShell}`
       : `#!/usr/bin/env ${scriptShell}`
     scriptFile = resolve(tmpdir(), `${event}-${Date.now()}.sh`)
     script += `${shebang}\n`
-    script += `${cmd} ${args.map((arg) => escape.sh(arg)).join(' ')}`
+    script += cmd
+    if (args.length) {
+      script += ` ${args.map((arg) => escape.sh(arg)).join(' ')}`
+    }
   }
 
   writeFile(scriptFile, script)
