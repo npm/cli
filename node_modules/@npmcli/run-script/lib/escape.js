@@ -36,9 +36,9 @@ const cmd = (input, doubleEscape) => {
   }
 
   // and finally, prefix shell meta chars with a ^
-  result = result.replace(/[!^&()<>|"]/g, '^$&')
+  result = result.replace(/[ !^&()<>|"]/g, '^$&')
   if (doubleEscape) {
-    result = result.replace(/[!^&()<>|"]/g, '^$&')
+    result = result.replace(/[ !^&()<>|"]/g, '^$&')
   }
 
   // except for % which is escaped with another %, and only once

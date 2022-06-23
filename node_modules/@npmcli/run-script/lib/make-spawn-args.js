@@ -83,7 +83,9 @@ const makeSpawnArgs = options => {
   if (!isCmd) {
     chmod(scriptFile, '0775')
   }
-  const spawnArgs = isCmd ? ['/d', '/s', '/c', scriptFile] : ['-c', scriptFile]
+  const spawnArgs = isCmd
+    ? ['/d', '/s', '/c', escape.cmd(scriptFile)]
+    : ['-c', escape.sh(scriptFile)]
 
   const spawnOpts = {
     env: spawnEnv,
