@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.1.2](https://github.com/npm/cli/compare/libnpmpack-v4.1.1...libnpmpack-v4.1.2) (2022-06-23)
+
+
+### Dependencies
+
+* @npmcli/run-script@4.1.3 ([#5064](https://github.com/npm/cli/issues/5064)) ([f59a114](https://github.com/npm/cli/commit/f59a114ffe3d1f86ccb2e52a4432292ab76852cc))
+
 ## [4.1.1](https://github.com/npm/cli/compare/libnpmpack-v4.1.0...libnpmpack-v4.1.1) (2022-06-22)
 
 
