@@ -42,6 +42,7 @@ t.test('npm edit', async t => {
   const [scriptShell] = makeSpawnArgs({
     event: 'install',
     path: npm.prefix,
+    cmd: 'testinstall',
   })
   spawk.spawn('testeditor', [semverPath])
   spawk.spawn(
@@ -66,6 +67,7 @@ t.test('rebuild failure', async t => {
   const [scriptShell] = makeSpawnArgs({
     event: 'install',
     path: npm.prefix,
+    cmd: 'testinstall',
   })
   spawk.spawn('testeditor', [semverPath])
   spawk.spawn(
@@ -109,6 +111,7 @@ t.test('npm edit editor has flags', async t => {
   const [scriptShell] = makeSpawnArgs({
     event: 'install',
     path: npm.prefix,
+    cmd: 'testinstall',
   })
   spawk.spawn('testeditor', ['--flag', semverPath])
   spawk.spawn(

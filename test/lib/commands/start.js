@@ -26,7 +26,7 @@ t.test('should run start script from package.json', async t => {
       loglevel: 'silent',
     },
   })
-  const [scriptShell] = makeSpawnArgs({ path: npm.prefix })
+  const [scriptShell] = makeSpawnArgs({ path: npm.prefix, cmd: 'node ./test-start.js' })
   const script = spawk.spawn(scriptShell, (args) => {
     const lastArg = args[args.length - 1]
     const rightExtension = lastArg.endsWith('.cmd') || lastArg.endsWith('.sh')
