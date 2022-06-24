@@ -8,10 +8,15 @@ const _flatOptions = {
 const token = '24528a24f240'
 const SSO_URL = 'https://registry.npmjs.org/{SSO_URL}'
 const profile = {}
-const npmFetch = {}
+const npmFetch = {
+  cleanUrl: (s) => s,
+}
 const sso = t.mock('../../../lib/auth/sso.js', {
   'proc-log': {
     info: (...msgs) => {
+      log += msgs.join(' ') + '\n'
+    },
+    notice: (...msgs) => {
       log += msgs.join(' ') + '\n'
     },
   },
@@ -82,6 +87,7 @@ t.test('simple login', async (t) => {
 
   t.equal(
     log,
+    ' Log in on https://registry.npmjs.org/\n' +
     'adduser Polling for validated SSO session\nadduser Authorized user foo\n',
     'should have correct logged info msg'
   )
@@ -220,6 +226,7 @@ t.test('scoped login', async (t) => {
 
   t.equal(
     log,
+    ' Log in on https://diff-registry.npmjs.org/\n' +
     'adduser Polling for validated SSO session\nadduser Authorized user foo\n',
     'should have correct logged info msg'
   )
