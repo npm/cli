@@ -253,14 +253,12 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for auth-
 #### \`auth-type\`
 
 * Default: "legacy"
-* Type: "legacy", "webauthn", "sso", "saml", or "oauth"
+* Type: "legacy", "web", "sso", "saml", "oauth", or "webauthn"
 
-NOTE: auth-type values "sso", "saml", and "oauth" will be removed in a
-future version.
+NOTE: auth-type values "sso", "saml", "oauth", and "webauthn" will be
+removed in a future version.
 
 What authentication strategy to use with \`login\`.
-
-Pass \`webauthn\` to use a web-based login.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for before 1`] = `
