@@ -35,7 +35,7 @@ const usage = () => `
   edited and need to be pasted somewhere else.
 `
 
-// this script assumes that the tags it looks for all start with this prefix
+// this script assumes that the tags it is searching for all start with this prefix
 const TAG_PREFIX = 'v'
 
 // a naive implementation of console.log/group for indenting console
