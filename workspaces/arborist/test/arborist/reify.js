@@ -1,4 +1,4 @@
-const { resolve, basename } = require('path')
+const { join, resolve, basename } = require('path')
 const t = require('tap')
 const runScript = require('@npmcli/run-script')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
@@ -2465,6 +2465,62 @@ t.test('add local dep with existing dev + peer/optional', async t => {
   t.matchSnapshot(printTree(tree), 'tree')
   t.equal(tree.children.get('abbrev').resolved, 'file:../../dep', 'resolved')
   t.equal(tree.children.size, 1, 'children')
+})
+
+t.test('runs dependencies script if tree changes', async (t) => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: {
+        abbrev: '^1.1.1',
+      },
+      scripts: {
+        predependencies: `node -e "require('fs').writeFileSync('ran-predependencies', '')"`,
+        dependencies: `node -e "require('fs').writeFileSync('ran-dependencies', '')"`,
+        postdependencies: `node -e "require('fs').writeFileSync('ran-postdependencies', '')"`,
+      },
+    }),
+  })
+
+  await reify(path)
+
+  for (const script of ['predependencies', 'dependencies', 'postdependencies']) {
+    const expectedPath = join(path, `ran-${script}`)
+    t.ok(fs.existsSync(expectedPath), `ran ${script}`)
+    // delete the files after we assert they exist
+    fs.unlinkSync(expectedPath)
+  }
+
+  // reify again without changing dependencies
+  await reify(path)
+
+  for (const script of ['predependencies', 'dependencies', 'postdependencies']) {
+    const expectedPath = join(path, `ran-${script}`)
+    // and this time we assert that they do _not_ exist
+    t.not(fs.existsSync(expectedPath), `did not run ${script}`)
+  }
+
+  // take over console.log as run-script is going to print a banner for these because
+  // they're running in the foreground
+  const _log = console.log
+  t.teardown(() => {
+    console.log = _log
+  })
+  const logs = []
+  console.log = (msg) => logs.push(msg)
+  // reify again, this time adding a new dependency
+  await reify(path, { foregroundScripts: true, add: ['once@^1.4.0'] })
+  console.log = _log
+
+  t.match(logs, [/predependencies/, /dependencies/, /postdependencies/], 'logged banners')
+
+  // files should exist again
+  for (const script of ['predependencies', 'dependencies', 'postdependencies']) {
+    const expectedPath = join(path, `ran-${script}`)
+    t.ok(fs.existsSync(expectedPath), `ran ${script}`)
+    fs.unlinkSync(expectedPath)
+  }
 })
 
 t.test('save package.json on update', t => {
