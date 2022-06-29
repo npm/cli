@@ -6,7 +6,7 @@ description: Dependency Selector Syntax & Querying
 
 ### Description
 
-The `npm query` commmand exposes a new dependency selector syntax (informed by & respecting many aspects of the [CSS Selectors 4 Spec](https://dev.w3.org/csswg/selectors4/#relational)) which:
+The [`npm query`](/commands/npm-query) commmand exposes a new dependency selector syntax (informed by & respecting many aspects of the [CSS Selectors 4 Spec](https://dev.w3.org/csswg/selectors4/#relational)) which:
 
 - Standardizes the shape of, & querying of, dependency graphs with a robust object model, metadata & selector syntax
 - Leverages existing, known language syntax & operators from CSS to make disparate package information broadly accessible
@@ -121,7 +121,7 @@ Nested objects are expressed as sequential arguments to `:attr()`.
 
 ### Groups
 
-Dependency groups are defined by the package relationships to their ancestors (ie. the dependency types that are defined in `package.json`). This approach is user-centric as the ecosystem has been taught to think about dependencies in these groups first-and-foremost. Dependencies are allowed to be apart of multiple groups (ex. a `workspace` may also be a `dev` dependency & may also be `bundled` - a selector for that type of dependency would look like: `*.workspace.dev.bundled`).
+Dependency groups are defined by the package relationships to their ancestors (ie. the dependency types that are defined in `package.json`). This approach is user-centric as the ecosystem has been taught to think about dependencies in these groups first-and-foremost. Dependencies are allowed to be included in multiple groups (ex. a `prod` dependency may also be a `dev` dependency (in that it's also required by another `dev` dependency) & may also be `bundled` - a selector for that type of dependency would look like: `*.prod.dev.bundled`).
 
 - `.prod`
 - `.dev`
@@ -130,149 +130,12 @@ Dependency groups are defined by the package relationships to their ancestors (i
 - `.bundled`
 - `.workspace`
 
-### Command
-
-#### `npm query "<selector>"` (alias `q`)
-
-#### Options:
-
-- `query-output`
-  - Default: `list` - a human-readable subset of dependency information
-  - `json` - all data available
-
-#### Example Response Output
-
-- an array of dependency objects is returned which can contain multiple copies of the same package which may or may not have been linked or deduped
-
-```json
-[
-  {
-    "name": "",
-    "version": "",
-    "description": "",
-    "homepage": "",
-    "bugs": {},
-    "author": {},
-    "license": {},
-    "funding": {},
-    "files": [],
-    "main": "",
-    "browser": "",
-    "bin": {},
-    "man": [],
-    "directories": {},
-    "repository": {},
-    "scripts": {},
-    "config": {},
-    "dependencies": {},
-    "devDependencies": {},
-    "optionalDependencies": {},
-    "bundledDependencies": {},
-    "peerDependencies": {},
-    "peerDependenciesMeta": {},
-    "engines": {},
-    "os": [],
-    "cpu": [],
-    "workspaces": {},
-    "keywords": [],
-    ...
-  },
-  ...
-```
-
-### Usage
-
-```bash
-# get all workspace direct deps
-npm query ":root > .workspace > *"
-```
-
-### Extended Use Cases & Queries
-
-```stylus
-// all deps
-*
-
-// all direct deps
-:root > *
-
-// direct production deps
-:root > .prod
-
-// direct development deps
-:root > .dev
-
-// any peer dep of a direct deps
-:root > * > .peer
-
-// any workspace dep
-.workspace
-
-// all workspaces that depend on another workspace
-.workspace > .workspace
-
-// all workspaces that have peer deps
-.workspace:has(.peer)
-
-// any dep named "lodash"
-// equivalent to [name="lodash"]
-#lodash
-
-// any deps named "lodash" & within semver range ^"1.2.3"
-#lodash@^1.2.3
-// equivalent to...
-[name="lodash"]:semver(^1.2.3)
-
-// get the hoisted node for a given semver range
-#lodash@^1.2.3:not(:deduped)
-
-// querying deps with a specific version
-#lodash@2.1.5
-// equivalent to...
-[name="lodash"][version="2.1.5"]
-
-// has any deps
-:has(*)
-
-// deps with no other deps (ie. "leaf" nodes)
-:empty
-
-// manually querying git dependencies
-[repository^=github:],
-[repository^=git:],
-[repository^=https://github.com],
-[repository^=http://github.com],
-[repository^=https://github.com],
-[repository^=+git:...]
-
-// querying for all git dependencies
-:type(git)
-
-// get production dependencies that aren't also dev deps
-.prod:not(.dev)
-
-// get dependencies with specific licenses
-[license=MIT], [license=ISC]
-
-// find all packages that have @ruyadorno as a contributor
-:attr(contributors, [email=ruyadorno@github.com])
-```
-
-### Piping `npm query` to other commands
-
-```bash
-# find all dependencies with postinstall scripts & uninstall them
-npm query ":attr(scripts, [postinstall])" | jq 'map(.name)|join("\n")' -r | xargs -I {} npm uninstall {}
-
-# find all git dependencies & explain who requires them
-npm query ":type(git)" | jq 'map(.name)' | xargs -I {} npm why {}
-```
+Please note that currently `workspace` deps are always `prod` dependencies.  Additionally the `.root` dependency is also considered a `prod` dependency.
 
 ### Programmatic Usage
 
-- `Arborist`'s `Node` Class will have a new `.querySelectorAll()` method
+- `Arborist`'s `Node` Class has a `.querySelectorAll()` method
   - this method will return a filtered, flattened dependency Arborist `Node` list based on a valid query selector
-- Introduce a new command, `npm query`, which will take a dependency selector & output a flattened dependency Node list (output is in `json` by default, but configurable)
 
 ```js
 const Arborist = require('@npmcli/arborist')
@@ -299,3 +162,7 @@ arb.loadActual((tree) => {
 })
 ```
 
+## See Also
+
+* [npm query](/commands/npm-query)
+* [@npmcli/arborist](https://npm.im/@npmcli/arborist]

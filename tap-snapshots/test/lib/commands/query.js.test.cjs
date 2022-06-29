@@ -16,8 +16,12 @@ exports[`test/lib/commands/query.js TAP global > should return global package 1`
     "path": "{CWD}/test/lib/commands/tap-testdir-query-global/global/node_modules/lorem",
     "realpath": "{CWD}/test/lib/commands/tap-testdir-query-global/global/node_modules/lorem",
     "resolved": null,
-    "isLink": false,
-    "isWorkspace": false
+    "from": [
+      ""
+    ],
+    "to": [],
+    "dev": false,
+    "inBundle": false
   }
 ]
 `
@@ -38,8 +42,14 @@ exports[`test/lib/commands/query.js TAP include-workspace-root > should return w
     "path": "{CWD}/test/lib/commands/tap-testdir-query-include-workspace-root/prefix",
     "realpath": "{CWD}/test/lib/commands/tap-testdir-query-include-workspace-root/prefix",
     "resolved": null,
-    "isLink": false,
-    "isWorkspace": false
+    "from": [],
+    "to": [
+      "node_modules/c",
+      "node_modules/a",
+      "node_modules/b"
+    ],
+    "dev": false,
+    "inBundle": false
   },
   {
     "name": "c",
@@ -50,8 +60,10 @@ exports[`test/lib/commands/query.js TAP include-workspace-root > should return w
     "path": "{CWD}/test/lib/commands/tap-testdir-query-include-workspace-root/prefix/c",
     "realpath": "{CWD}/test/lib/commands/tap-testdir-query-include-workspace-root/prefix/c",
     "resolved": null,
-    "isLink": false,
-    "isWorkspace": true
+    "from": [],
+    "to": [],
+    "dev": false,
+    "inBundle": false
   }
 ]
 `
@@ -67,8 +79,10 @@ exports[`test/lib/commands/query.js TAP linked node > should return linked node 
     "path": "{CWD}/test/lib/commands/tap-testdir-query-linked-node/prefix/a",
     "realpath": "{CWD}/test/lib/commands/tap-testdir-query-linked-node/prefix/a",
     "resolved": null,
-    "isLink": false,
-    "isWorkspace": false
+    "from": [],
+    "to": [],
+    "dev": false,
+    "inBundle": false
   }
 ]
 `
@@ -86,8 +100,13 @@ exports[`test/lib/commands/query.js TAP simple query > should return root object
     "path": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/prefix",
     "realpath": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/prefix",
     "resolved": null,
-    "isLink": false,
-    "isWorkspace": false
+    "from": [],
+    "to": [
+      "node_modules/a",
+      "node_modules/b"
+    ],
+    "dev": false,
+    "inBundle": false
   },
   {
     "pkgid": "a@",
@@ -95,8 +114,12 @@ exports[`test/lib/commands/query.js TAP simple query > should return root object
     "path": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/prefix/node_modules/a",
     "realpath": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/prefix/node_modules/a",
     "resolved": null,
-    "isLink": false,
-    "isWorkspace": false
+    "from": [
+      ""
+    ],
+    "to": [],
+    "dev": false,
+    "inBundle": false
   },
   {
     "pkgid": "b@",
@@ -104,8 +127,12 @@ exports[`test/lib/commands/query.js TAP simple query > should return root object
     "path": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/prefix/node_modules/b",
     "realpath": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/prefix/node_modules/b",
     "resolved": null,
-    "isLink": false,
-    "isWorkspace": false
+    "from": [
+      ""
+    ],
+    "to": [],
+    "dev": false,
+    "inBundle": false
   }
 ]
 `
@@ -121,8 +148,10 @@ exports[`test/lib/commands/query.js TAP workspace query > should return workspac
     "path": "{CWD}/test/lib/commands/tap-testdir-query-workspace-query/prefix/c",
     "realpath": "{CWD}/test/lib/commands/tap-testdir-query-workspace-query/prefix/c",
     "resolved": null,
-    "isLink": false,
-    "isWorkspace": true
+    "from": [],
+    "to": [],
+    "dev": false,
+    "inBundle": false
   }
 ]
 `

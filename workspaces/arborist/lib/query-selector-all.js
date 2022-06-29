@@ -312,14 +312,10 @@ class Results {
   }
 }
 
-// TODO attr foo in tests that's a number
-// I think attributeMatch should handle it and cast it since the ast parser always returns strings
-
 // operators for attribute selectors
 const attributeOperators = {
   // existence of the attribute
   '' ({ attr }) {
-    // TODO existence of attribute in case it's falsey (i.e. 0)
     return Boolean(attr)
   },
   // attribute value is equivalent
@@ -348,6 +344,24 @@ const attributeOperators = {
   },
 }
 
+const attributeOperator = ({ attr, value, insensitive, operator }) => {
+  if (typeof attr === 'number') {
+    attr = String(attr)
+  }
+  if (typeof attr !== 'string') {
+    // It's an object or an array, bail
+    return false
+  }
+  if (insensitive) {
+    attr = attr.toLowerCase()
+  }
+  return attributeOperators[operator]({
+    attr,
+    insensitive,
+    value,
+  })
+}
+
 const attributeMatch = (matcher, obj) => {
   const insensitive = !!matcher.insensitive
   const operator = matcher.operator || ''
@@ -360,47 +374,34 @@ const attributeMatch = (matcher, obj) => {
   // then we try to match every item in the array
   if (Array.isArray(obj[attribute])) {
     return obj[attribute].find((i, index) => {
-      let attr = obj[attribute][index] || ''
-      if (typeof attr !== 'string') {
-        // It's an object, bail
-        return false
-      }
-      if (insensitive) {
-        attr = attr.toLowerCase()
-      }
-      return attributeOperators[operator]({
-        attr,
-        insensitive,
-        value,
-      })
+      const attr = obj[attribute][index] || ''
+      return attributeOperator({ attr, value, insensitive, operator })
     })
   } else {
-    let attr = obj[attribute] || ''
-    if (typeof attr !== 'string') {
-      // It's an object, bail
-      return false
-    }
-    if (insensitive) {
-      attr = attr.toLowerCase()
-    }
-
-    return attributeOperators[operator]({
-      attr,
-      value,
-      insensitive,
-    })
+    const attr = obj[attribute] || ''
+    return attributeOperator({ attr, value, insensitive, operator })
   }
 }
 
-// a dependency is of a given type if any of its edgesIn are also of that type
+const edgeIsType = (node, type, seen = new Set()) => {
+  for (const edgeIn of node.edgesIn) {
+    // TODO Need a test with an infinite loop
+    if (seen.has(edgeIn)) {
+      continue
+    }
+    seen.add(edgeIn)
+    if (edgeIn.type === type || edgeIn.from[type] || edgeIsType(edgeIn.from, type, seen)) {
+      return true
+    }
+  }
+  return false
+}
+
 const filterByType = (nodes, type) => {
   const found = []
   for (const node of nodes) {
-    for (const edge of node.edgesIn) {
-      if (edge[type]) {
-        found.push(node)
-        break
-      }
+    if (node[type] || edgeIsType(node, type)) {
+      found.push(node)
     }
   }
   return found
@@ -409,7 +410,13 @@ const filterByType = (nodes, type) => {
 const depTypes = {
   // dependency
   '.prod' (prevResults) {
-    return filterByType(prevResults, 'prod')
+    const found = []
+    for (const node of prevResults) {
+      if (!node.dev) {
+        found.push(node)
+      }
+    }
+    return found
   },
   // devDependency
   '.dev' (prevResults) {
@@ -454,7 +461,8 @@ const hasParent = (node, compareNodes) => {
 
 // checks if a given node is a descendant of any of the nodes provided in the
 // compareNodes array
-const hasAscendant = (node, compareNodes) => {
+const hasAscendant = (node, compareNodes, seen = new Set()) => {
+  // TODO (future) loop over ancestry property
   if (hasParent(node, compareNodes)) {
     return true
   }
@@ -463,7 +471,12 @@ const hasAscendant = (node, compareNodes) => {
     return hasAscendant(node.resolveParent, compareNodes)
   }
   for (const edge of node.edgesIn) {
-    if (edge && edge.from && hasAscendant(edge.from, compareNodes)) {
+    // TODO Need a test with an infinite loop
+    if (seen.has(edge)) {
+      continue
+    }
+    seen.add(edge)
+    if (edge && edge.from && hasAscendant(edge.from, compareNodes, seen)) {
       return true
     }
   }
@@ -539,7 +552,7 @@ const querySelectorAll = async (targetNode, query) => {
   })
 
   // returns nodes ordered by realpath
-  return [...res].sort((a, b) => localeCompare(a.realpath, b.realpath))
+  return [...res].sort((a, b) => localeCompare(a.location, b.location))
 }
 
 module.exports = querySelectorAll
