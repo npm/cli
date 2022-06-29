@@ -11,7 +11,7 @@ const otplease = t.mock('../../../lib/utils/otplease.js', {
 
 t.test('returns function results on success', async (t) => {
   const fn = () => 'test string'
-  const result = await otplease({}, fn)
+  const result = await otplease(null, {}, fn)
   t.equal('test string', result)
 })
 
@@ -26,7 +26,7 @@ t.test('returns function results on otp success', async (t) => {
     }
     throw Object.assign(new Error('nope'), { code: 'EOTP' })
   }
-  const result = await otplease({}, fn)
+  const result = await otplease(null, {}, fn)
   t.equal('success', result)
 })
 
@@ -51,7 +51,7 @@ t.test('prompts for otp for EOTP', async (t) => {
     t.end()
   }
 
-  await otplease({ some: 'prop' }, fn)
+  await otplease(null, { some: 'prop' }, fn)
 })
 
 t.test('prompts for otp for 401', async (t) => {
@@ -78,7 +78,7 @@ t.test('prompts for otp for 401', async (t) => {
     t.end()
   }
 
-  await otplease({ some: 'prop' }, fn)
+  await otplease(null, { some: 'prop' }, fn)
 })
 
 t.test('does not prompt for non-otp errors', async (t) => {
@@ -95,7 +95,11 @@ t.test('does not prompt for non-otp errors', async (t) => {
     throw new Error('nope')
   }
 
-  t.rejects(otplease({ some: 'prop' }, fn), { message: 'nope' }, 'rejects with the original error')
+  t.rejects(
+    otplease(null, { some: 'prop' }, fn),
+    { message: 'nope' },
+    'rejects with the original error'
+  )
 })
 
 t.test('does not prompt if stdin or stdout is not a tty', async (t) => {
@@ -112,5 +116,9 @@ t.test('does not prompt if stdin or stdout is not a tty', async (t) => {
     throw Object.assign(new Error('nope'), { code: 'EOTP' })
   }
 
-  t.rejects(otplease({ some: 'prop' }, fn), { message: 'nope' }, 'rejects with the original error')
+  t.rejects(
+    otplease(null, { some: 'prop' }, fn),
+    { message: 'nope' },
+    'rejects with the original error'
+  )
 })
