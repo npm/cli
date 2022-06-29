@@ -1,5 +1,18 @@
 # Changelog
 
+## v8.13.2 (2022-06-29)
+
+### Documentation
+
+  * [`5be7d6e`](https://github.com/npm/cli/commit/5be7d6ea555bc25acaae1bfd309d64ce6693b084) [#5087](https://github.com/npm/cli/pull/5087) docs: add foreground-scripts to run-script page ([@ruyadorno](https://github.com/ruyadorno))
+
+### Dependencies
+
+  * [`dd62328`](https://github.com/npm/cli/commit/dd6232817d8c86afa4eb27ec1f62278893443163) [#5086](https://github.com/npm/cli/pull/5086) deps: `@npmcli/run-script@4.1.4`
+  * [`5546906`](https://github.com/npm/cli/commit/5546906977bae55c61a3874e2cbf10e28f2df4ea) [#5086](https://github.com/npm/cli/pull/5086) deps: `@npmcli/run-script@4.1.5`
+  * [`c7d5a69`](https://github.com/npm/cli/commit/c7d5a69080b5de6ed0f1cdde77e7d7a3c6b05158) [#5102](https://github.com/npm/cli/pull/5102) deps: `@npmcli/metavuln-calculator@3.1.1`
+  * [`7ce66b0`](https://github.com/npm/cli/commit/7ce66b017a611458b4ce385c13c446d89c23d777) [#5103](https://github.com/npm/cli/pull/5103) deps: `npm-packlist@5.1.1`
+
 ## v8.13.1 (2022-06-23)
 
 ### Dependencies
