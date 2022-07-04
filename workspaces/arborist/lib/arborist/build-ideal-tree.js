@@ -603,7 +603,7 @@ Try using the package name instead, e.g:
     if (filepath) {
       const { name } = spec
       const tree = this.idealTree.target
-      spec = npa(`file:${relpath(tree.path, filepath)}`, tree.path)
+      spec = npa(`file:${relpath(tree.path, filepath).replace(/#/g, '%23')}`, tree.path)
       spec.name = name
     }
     return spec
