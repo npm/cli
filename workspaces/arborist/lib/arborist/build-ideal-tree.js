@@ -484,7 +484,7 @@ Try using the package name instead, e.g:
             .catch(/* istanbul ignore next */ er => null)
           if (st && st.isSymbolicLink()) {
             const target = await readlink(dir)
-            const real = resolve(dirname(dir), target)
+            const real = resolve(dirname(dir), target).replace(/#/g, '%23')
             tree.package.dependencies[name] = `file:${real}`
           } else {
             tree.package.dependencies[name] = '*'
