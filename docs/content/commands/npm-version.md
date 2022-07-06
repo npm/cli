@@ -13,7 +13,7 @@ description: Bump a package version
 ```bash
 npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]
 
-alias: verison
+alias: version
 ```
 
 <!-- automatically generated, do not edit manually -->
