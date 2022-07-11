@@ -94,10 +94,11 @@ npm init --scope=@foo --yes
 
 * Default: "legacy"
 * Type: "legacy", "webauthn", "sso", "saml", or "oauth"
-* DEPRECATED: The SSO/SAML/OAuth methods are deprecated and will be removed in
-  a future version of npm in favor of web-based login.
 
-What authentication strategy to use with `adduser`/`login`.
+NOTE: auth-type values "sso", "saml", and "oauth" will be removed in a
+future version.
+
+What authentication strategy to use with `login`.
 
 Pass `webauthn` to use a web-based login.
 
