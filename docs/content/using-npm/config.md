@@ -215,6 +215,21 @@ exit code.
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->
 
+#### `auth-type`
+
+* Default: "legacy"
+* Type: "legacy", "webauthn", "sso", "saml", or "oauth"
+
+NOTE: auth-type values "sso", "saml", and "oauth" will be removed in a
+future version.
+
+What authentication strategy to use with `login`.
+
+Pass `webauthn` to use a web-based login.
+
+<!-- automatically generated, do not edit manually -->
+<!-- see lib/utils/config/definitions.js -->
+
 #### `before`
 
 * Default: null
@@ -1901,20 +1916,6 @@ command line.
 * DEPRECATED: Please use --include=dev instead.
 
 When set to `dev` or `development`, this is an alias for `--include=dev`.
-
-<!-- automatically generated, do not edit manually -->
-<!-- see lib/utils/config/definitions.js -->
-
-#### `auth-type`
-
-* Default: "legacy"
-* Type: "legacy", "webauthn", "sso", "saml", or "oauth"
-* DEPRECATED: The SSO/SAML/OAuth methods are deprecated and will be removed in
-  a future version of npm in favor of web-based login.
-
-What authentication strategy to use with `adduser`/`login`.
-
-Pass `webauthn` to use a web-based login.
 
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->
