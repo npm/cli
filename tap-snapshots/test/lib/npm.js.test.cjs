@@ -199,7 +199,7 @@ All commands:
     audit           Run a security audit
                     
                     Usage:
-                    npm audit [fix]
+                    npm audit [fix|signatures]
                     
                     Options:
                     [--audit-level <info|low|moderate|high|critical|none>] [--dry-run] [-f|--force]
