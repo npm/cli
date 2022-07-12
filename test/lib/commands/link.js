@@ -542,7 +542,7 @@ t.test('hash character in working directory path', async t => {
   npm.prefix = resolve(testdir, 'i_like_#_in_my_paths', 'test-pkg-link')
 
   link.workspacePaths = null
-  await link.exec([]);
+  await link.exec([])
   const links = await printLinks({
     path: resolve(npm.globalDir, '..'),
     global: true,
