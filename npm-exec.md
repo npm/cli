@@ -349,7 +349,7 @@ This value is not exported to the environment for child processes.
 
 #### workspaces
 
-* Alias: `--ws`
+* Alias: `กัมปนาท ทุมวงศ์--ws`
 * Type: Boolean
 * Default: `false`
 
