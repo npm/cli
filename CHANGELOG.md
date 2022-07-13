@@ -1,5 +1,38 @@
 # Changelog
 
+## v8.14.0 (2022-07-13)
+
+### Features
+
+  * [`f032e1c`](https://github.com/npm/cli/commit/f032e1c0ada062e2139c8f057b24abb1ce2e4a33) [#4827](https://github.com/npm/cli/pull/4827) feat: add npm audit signatures ([@feelepxyz](https://github.com/feelepxyz))
+  * [`e8102c1`](https://github.com/npm/cli/commit/e8102c1aae65a18e41253fbcdffe2eff0bedae53) [#5076](https://github.com/npm/cli/pull/5076) feat: Add `web` auth type ([@jumoel](https://github.com/jumoel))
+  * [`e9b4214`](https://github.com/npm/cli/commit/e9b4214e1ddb1ad79fe6826cf2ce7ba385f0c274) [#5094](https://github.com/npm/cli/pull/5094) feat(arborist): add support for dependencies script ([@nlf](https://github.com/nlf))
+  * [`c6c4ba3`](https://github.com/npm/cli/commit/c6c4ba3b62e2a0896a48329f4c7e13d9e44a2f80) [#5149](https://github.com/npm/cli/pull/5149) feat: notify on adduser of upcoming cmds, login and register ([@fritzy](https://github.com/fritzy))
+  * [`e58f02f`](https://github.com/npm/cli/commit/e58f02f5e8263bf86ae1f07a863098d445e6d0cd) [#5149](https://github.com/npm/cli/pull/5149) feat: warn on config --auth-type=sso/saml/oauth, undeprecate --auth-type ([@fritzy](https://github.com/fritzy))
+
+### Bug Fixes
+
+  * [`52ec5ec`](https://github.com/npm/cli/commit/52ec5ec61fd3b266efd7a9c5712dd6a769a2d365) [#5154](https://github.com/npm/cli/pull/5154) fix: properly open package arg repo inside workspace ([@wraithgar](https://github.com/wraithgar))
+
+### Documentation
+
+  * [`9697f16`](https://github.com/npm/cli/commit/9697f16952b1bf02bb5455c36a1995277cbc0c97) [#5118](https://github.com/npm/cli/pull/5118) docs: typo in npm command ([@crisanmm](https://github.com/crisanmm))
+  * [`da5a4ba`](https://github.com/npm/cli/commit/da5a4ba2c83af9a7e5e0fe38c32136adf396f557) [#5079](https://github.com/npm/cli/pull/5079) docs: update reference to deprecated spdx package ([@kachick](https://github.com/kachick))
+  * [`25b3058`](https://github.com/npm/cli/commit/25b305830be0892bbbf0245aee2eebdb76ee2ce3) [#5043](https://github.com/npm/cli/pull/5043) docs: naming of files in example code should be consistent ([@xc1427](https://github.com/xc1427))
+  * [`ac56fc4`](https://github.com/npm/cli/commit/ac56fc41bc2f91f51c8438f98893121e7a92ee46) [#5095](https://github.com/npm/cli/pull/5095) docs: document `dependencies` script ([@nlf](https://github.com/nlf))
+
+### Dependencies
+
+  * [`cb0db7c`](https://github.com/npm/cli/commit/cb0db7c3fd1d0a4c30db9f44e9ea9e69ec327fe8) [#5147](https://github.com/npm/cli/pull/5147) deps: `@npmcli/arborist@5.3.0`
+  * [`b8c0580`](https://github.com/npm/cli/commit/b8c0580e5df93aa519b3ec240bb85d59eee5ee37) [#5156](https://github.com/npm/cli/pull/5156) deps: `minipass@3.3.4`
+  * [`ad72611`](https://github.com/npm/cli/commit/ad726118755ef577cc0755499d35a5d3c74d54a6) [#5156](https://github.com/npm/cli/pull/5156) deps: `lru-cache@7.12.0`
+  * [`c94919d`](https://github.com/npm/cli/commit/c94919dd4874196d3a84eff4fab450a17dcd4867) [#5156](https://github.com/npm/cli/pull/5156) deps: `just-diff@5.0.3`
+  * [`18ddc57`](https://github.com/npm/cli/commit/18ddc57c7a54165d55c81b413ef9de981c790148) [#5156](https://github.com/npm/cli/pull/5156) deps: `just-diff-apply@5.3.1`
+  * [`a2d700b`](https://github.com/npm/cli/commit/a2d700b3cc7cebca2d1b0c16224af41da3689aaf) [#5156](https://github.com/npm/cli/pull/5156) deps: `npm-package-arg@9.1.0`
+  * [`99dc697`](https://github.com/npm/cli/commit/99dc697409e1eb42caaf0c0e38fa41635d89a871) [#5156](https://github.com/npm/cli/pull/5156) deps: `@npmcli/run-script@4.1.7`
+  * [`4a9f2dc`](https://github.com/npm/cli/commit/4a9f2dc9169fd330c4dcf2bad7890aaf4765bafa) [#5157](https://github.com/npm/cli/pull/5157) deps: `npm-registry-fetch@13.2.0`
+  * [`45a9bde`](https://github.com/npm/cli/commit/45a9bdee604073a3c5b4d3c6d90e22bf6672d6bf) [#5158](https://github.com/npm/cli/pull/5158) deps: `npm-profile@6.2.0`
+
 ## v8.13.2 (2022-06-29)
 
 ### Documentation
