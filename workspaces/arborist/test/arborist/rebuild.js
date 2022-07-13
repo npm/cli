@@ -189,7 +189,7 @@ t.test('verify dep flags in script environments', async t => {
   t.cleanSnapshot = (input) => {
     return input.replace(new RegExp(os.tmpdir().replace(/\\/g, '\\\\\\\\'), 'g'), '{TMP}')
       .replace(/\\\\/g, '/')
-      .replace(/(\d+)\.(?:sh|cmd)/g, '{TIMESTAMP}')
+      .replace(/-(.+)\.(?:sh|cmd)/g, '{HASH}')
   }
   t.matchSnapshot(saved, 'saved script results')
 
