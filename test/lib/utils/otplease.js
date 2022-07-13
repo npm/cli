@@ -1,12 +1,20 @@
 const t = require('tap')
+
+const { fake: mockNpm } = require('../../fixtures/mock-npm')
 const mockGlobals = require('../../fixtures/mock-globals')
 
 const readUserInfo = {
   otp: async () => '1234',
 }
+const webAuth = async (opener) => {
+  opener()
+  return '1234'
+}
 
 const otplease = t.mock('../../../lib/utils/otplease.js', {
   '../../../lib/utils/read-user-info.js': readUserInfo,
+  '../../../lib/utils/open-url-prompt.js': () => {},
+  '../../../lib/utils/web-auth': webAuth,
 })
 
 t.test('returns function results on success', async (t) => {
@@ -52,6 +60,30 @@ t.test('prompts for otp for EOTP', async (t) => {
   }
 
   await otplease(null, { some: 'prop' }, fn)
+})
+
+t.test('returns function results on webauth success', async (t) => {
+  mockGlobals(t, {
+    'process.stdin': { isTTY: true },
+    'process.stdout': { isTTY: true },
+  })
+
+  const npm = mockNpm({ config: { browser: 'firefox' } })
+  const fn = ({ otp }) => {
+    if (otp) {
+      return 'success'
+    }
+    throw Object.assign(new Error('nope'), {
+      code: 'EOTP',
+      body: {
+        authUrl: 'https://www.example.com/auth',
+        doneUrl: 'https://www.example.com/done',
+      },
+    })
+  }
+
+  const result = await otplease(npm, {}, fn)
+  t.equal('success', result)
 })
 
 t.test('prompts for otp for 401', async (t) => {
