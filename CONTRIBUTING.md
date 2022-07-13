@@ -19,7 +19,7 @@ $ git clone git@github.com:npm/cli.git npm
 **2. Navigate into project & install development-specific dependencies...**
 
 ```bash
-$ cd ./npm && npm install
+$ cd ./npm && node . install
 ```
 
 **3. Write some code &/or add some tests...**
@@ -30,7 +30,7 @@ $ cd ./npm && npm install
 
 **4. Run tests & ensure they pass...**
 ```
-$ npm run test
+$ node . run test
 ```
 
 **5. Open a [Pull Request](https://github.com/npm/cli/pulls) for your work & become the newest contributor to `npm`! 🎉**
@@ -42,7 +42,7 @@ We use [`tap`](https://node-tap.org/) for testing & expect that every new featur
 **You can find out what the current test coverage percentage is by running...**
 
 ```bash
-$ npm run check-coverage
+$ node . run check-coverage
 ```
 
 ## Performance & Benchmarks
