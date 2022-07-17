@@ -39,12 +39,6 @@ $ node . run test
 
 We use [`tap`](https://node-tap.org/) for testing & expect that every new feature or bug fix comes with corresponding tests that validate the solutions. We strive to have as close to, if not exactly, 100% code coverage.
 
-**You can find out what the current test coverage percentage is by running...**
-
-```bash
-$ node . run check-coverage
-```
-
 ## Performance & Benchmarks
 
 We've set up an automated [benchmark](https://github.com/npm/benchmarks) integration that will run against all Pull Requests; Posting back a comment with the results of the run.
