@@ -358,6 +358,11 @@ t.test('query-selector-all', async t => {
     [':invalid', ['lorem@1.0.0']],
     [':link', ['a@1.0.0', 'b@1.0.0']],
     [':link', ['a@1.0.0', 'b@1.0.0']],
+    [':deduped', [
+      'bar@2.0.0',
+      'moo@3.0.0',
+      'recur@1.0.0',
+    ]],
     [':missing', ['missing-dep@^1.0.0']],
     [':private', ['b@1.0.0']],
 

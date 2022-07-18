@@ -30,6 +30,9 @@ t.test('simple query', async t => {
           a: '^1.0.0',
           b: '^1.0.0',
         },
+        peerDependencies: {
+          c: '1.0.0',
+        },
       }),
     },
   })
@@ -37,6 +40,34 @@ t.test('simple query', async t => {
   t.matchSnapshot(joinedOutput(), 'should return root object and direct children')
 })
 
+t.test('recursive tree', async t => {
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    prefixDir: {
+      node_modules: {
+        a: {
+          name: 'a',
+          version: '1.0.0',
+        },
+        b: {
+          name: 'b',
+          version: '^2.0.0',
+          dependencies: {
+            a: '1.0.0',
+          },
+        },
+      },
+      'package.json': JSON.stringify({
+        name: 'project',
+        dependencies: {
+          a: '^1.0.0',
+          b: '^1.0.0',
+        },
+      }),
+    },
+  })
+  await npm.exec('query', ['*'])
+  t.matchSnapshot(joinedOutput(), 'should return everything in the tree, accounting for recursion')
+})
 t.test('workspace query', async t => {
   const { npm, joinedOutput } = await loadMockNpm(t, {
     config: {

@@ -21,7 +21,8 @@ exports[`test/lib/commands/query.js TAP global > should return global package 1`
     ],
     "to": [],
     "dev": false,
-    "inBundle": false
+    "inBundle": false,
+    "deduped": false
   }
 ]
 `
@@ -49,7 +50,8 @@ exports[`test/lib/commands/query.js TAP include-workspace-root > should return w
       "node_modules/b"
     ],
     "dev": false,
-    "inBundle": false
+    "inBundle": false,
+    "deduped": false
   },
   {
     "name": "c",
@@ -63,7 +65,8 @@ exports[`test/lib/commands/query.js TAP include-workspace-root > should return w
     "from": [],
     "to": [],
     "dev": false,
-    "inBundle": false
+    "inBundle": false,
+    "deduped": false
   }
 ]
 `
@@ -82,7 +85,61 @@ exports[`test/lib/commands/query.js TAP linked node > should return linked node 
     "from": [],
     "to": [],
     "dev": false,
-    "inBundle": false
+    "inBundle": false,
+    "deduped": false
+  }
+]
+`
+
+exports[`test/lib/commands/query.js TAP recursive tree > should return everything in the tree, accounting for recursion 1`] = `
+[
+  {
+    "name": "project",
+    "dependencies": {
+      "a": "^1.0.0",
+      "b": "^1.0.0"
+    },
+    "pkgid": "project@",
+    "location": "",
+    "path": "{CWD}/test/lib/commands/tap-testdir-query-recursive-tree/prefix",
+    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-recursive-tree/prefix",
+    "resolved": null,
+    "from": [],
+    "to": [
+      "node_modules/a",
+      "node_modules/b"
+    ],
+    "dev": false,
+    "inBundle": false,
+    "deduped": false
+  },
+  {
+    "pkgid": "a@",
+    "location": "node_modules/a",
+    "path": "{CWD}/test/lib/commands/tap-testdir-query-recursive-tree/prefix/node_modules/a",
+    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-recursive-tree/prefix/node_modules/a",
+    "resolved": null,
+    "from": [
+      ""
+    ],
+    "to": [],
+    "dev": false,
+    "inBundle": false,
+    "deduped": false
+  },
+  {
+    "pkgid": "b@",
+    "location": "node_modules/b",
+    "path": "{CWD}/test/lib/commands/tap-testdir-query-recursive-tree/prefix/node_modules/b",
+    "realpath": "{CWD}/test/lib/commands/tap-testdir-query-recursive-tree/prefix/node_modules/b",
+    "resolved": null,
+    "from": [
+      ""
+    ],
+    "to": [],
+    "dev": false,
+    "inBundle": false,
+    "deduped": false
   }
 ]
 `
@@ -95,6 +152,9 @@ exports[`test/lib/commands/query.js TAP simple query > should return root object
       "a": "^1.0.0",
       "b": "^1.0.0"
     },
+    "peerDependencies": {
+      "c": "1.0.0"
+    },
     "pkgid": "project@",
     "location": "",
     "path": "{CWD}/test/lib/commands/tap-testdir-query-simple-query/prefix",
@@ -106,7 +166,8 @@ exports[`test/lib/commands/query.js TAP simple query > should return root object
       "node_modules/b"
     ],
     "dev": false,
-    "inBundle": false
+    "inBundle": false,
+    "deduped": false
   },
   {
     "pkgid": "a@",
@@ -119,7 +180,8 @@ exports[`test/lib/commands/query.js TAP simple query > should return root object
     ],
     "to": [],
     "dev": false,
-    "inBundle": false
+    "inBundle": false,
+    "deduped": false
   },
   {
     "pkgid": "b@",
@@ -132,7 +194,8 @@ exports[`test/lib/commands/query.js TAP simple query > should return root object
     ],
     "to": [],
     "dev": false,
-    "inBundle": false
+    "inBundle": false,
+    "deduped": false
   }
 ]
 `
@@ -151,7 +214,8 @@ exports[`test/lib/commands/query.js TAP workspace query > should return workspac
     "from": [],
     "to": [],
     "dev": false,
-    "inBundle": false
+    "inBundle": false,
+    "deduped": false
   }
 ]
 `

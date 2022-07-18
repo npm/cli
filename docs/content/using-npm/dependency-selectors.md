@@ -41,7 +41,7 @@ The [`npm query`](/commands/npm-query) commmand exposes a new dependency selecto
 - `.dev` dependency found in the `devDependencies` section of `package.json`, or is a child of said dependency
 - `.optional` dependency found in the `optionalDependencies` section of `package.json`, or has `"optional": true` set in its entry in the `peerDependenciesMeta` section of `package.json`, or a child of said dependency
 - `.peer` dependency found in the `peerDependencies` section of `package.json`
-- `.workspace` dependency found in the `workspaces` section of `package.json`
+- `.workspace` dependency found in the [`workspaces`](https://docs.npmjs.com/cli/v8/using-npm/workspaces) section of `package.json`
 - `.bundled` dependency found in the `bundleDependencies` section of `package.json`, or is a child of said dependency
 
 #### Pseudo Selectors
@@ -52,9 +52,9 @@ The [`npm query`](/commands/npm-query) commmand exposes a new dependency selecto
 - [`:scope`](https://developer.mozilla.org/en-US/docs/Web/CSS/:scope) matches node/dependency it was queried against
 - [`:empty`](https://developer.mozilla.org/en-US/docs/Web/CSS/:empty) when a dependency has no dependencies
 - [`:private`](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#private) when a dependency is private
-- `:link` when a dependency is linked
-- `:deduped` when a dependency has been deduped
-- `:override` when a dependency is an override
+- `:link` when a dependency is linked (for instance, workspaces or packages manually [`linked`](https://docs.npmjs.com/cli/v8/commands/npm-link)
+- `:deduped` when a dependency has been deduped (note that this does *not* always mean the dependency has been hoisted to the root of node_modules)
+- `:override` when a dependency is an override (not implemented yet)
 - `:extraneous` when a dependency exists but is not defined as a dependency of any node
 - `:invalid` when a dependency version is out of its ancestors specified range
 - `:missing` when a dependency is not found on disk

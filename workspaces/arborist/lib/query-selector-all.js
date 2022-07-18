@@ -310,6 +310,10 @@ class Results {
         return found
       })
   }
+
+  dedupedPseudo () {
+    return this.initialItems.filter(node => node.target.edgesIn.size > 1)
+  }
 }
 
 // operators for attribute selectors
