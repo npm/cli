@@ -206,7 +206,6 @@ class Results {
       })
       if (res.size > 0) {
         found.push(item)
-        break
       }
     }
     return found
