@@ -19,7 +19,7 @@ This is the plumbing command called by `npm link` and `npm install`.
 It should generally be called during installation, but if you need to run it
 directly, run:
 ```bash
-    npm run-script build
+    npm build
 ```
 
 ### See Also
