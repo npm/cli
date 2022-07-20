@@ -13,7 +13,7 @@ description: Clean install a project
 ```bash
 npm ci
 
-aliases: clean-install, ic, install-clean, isntall-clean
+aliases: clean-install, ic, install-clean, install-clean
 ```
 
 <!-- automatically generated, do not edit manually -->
