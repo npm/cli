@@ -35,15 +35,18 @@ $ node . run test
 
 **5. Open a [Pull Request](https://github.com/npm/cli/pulls) for your work & become the newest contributor to `npm`! 🎉**
 
+## Pull Request Conventions
+
+We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).  When opening a pull request, please be sure that either the pull request title, or each commit in the pull request, has one of the following prefixes:
+
+ - `feat`: For when introducing a new feature.  The result will be a new semver minor version of the package when it is next published.
+ - `fix`: For bug fixes. The result will be a new semver patch version of the package when it is next published.
+ - `docs`: For documentation updates.  The result will be a new semver patch version of the package when it is next published.
+ - `chore`: For changes that do not affect the published module.  Often these are changes to tests.  The result will be *no* change to the version of the package when it is next published (as the commit does not affect the published version).
+
 ## Test Coverage
 
-We use [`tap`](https://node-tap.org/) for testing & expect that every new feature or bug fix comes with corresponding tests that validate the solutions. We strive to have as close to, if not exactly, 100% code coverage.
-
-**You can find out what the current test coverage percentage is by running...**
-
-```bash
-$ node . run check-coverage
-```
+We use [`tap`](https://node-tap.org/) for testing & expect that every new feature or bug fix comes with corresponding tests that validate the solutions. Tap also reports on code coverage and it will fail if that drops below 100%.
 
 ## Performance & Benchmarks
 
