@@ -1,5 +1,28 @@
 # Changelog
 
+## v8.15.0 (2022-07-20)
+
+### Features
+
+  * [`5ef53ee`](https://github.com/npm/cli/commit/5ef53eedad2871a32611f47001e1c9ca9b813c07) [#5160](https://github.com/npm/cli/pull/5160) feat: accept registry-scoped certfile and keyfile as credentials ([@jenseng](https://github.com/jenseng))
+  * [`c8bdb4a`](https://github.com/npm/cli/commit/c8bdb4a2517cf69cccf9bfe5bd5375a5e3d4b5b1) feat: Support pure web authentication for commands ([@jumoel](https://github.com/jumoel)) ([@ljharb](https://github.com/ljharb)) ([@hfaulds](https://github.com/hfaulds)) ([@sandeepmeduru](https://github.com/sandeepmeduru))
+
+### Bug Fixes
+
+  * [`9c590fa`](https://github.com/npm/cli/commit/9c590fac8b9b649b3ab7203c48a0abce89e6f3e9) [#5172](https://github.com/npm/cli/pull/5172) fix: disable progress bar on publish ([@wraithgar](https://github.com/wraithgar))
+  * [`2fa3271`](https://github.com/npm/cli/commit/2fa3271ba37a58767307cf0105424b3c0b4ba7fe) [#5196](https://github.com/npm/cli/pull/5196) fix: add missing ` in adduser warning ([@MylesBorins](https://github.com/MylesBorins))
+
+### Documentation
+
+  * [`7efad06`](https://github.com/npm/cli/commit/7efad065ed4e7bc56e14e94cdcb21f71d547dd9e) [#5168](https://github.com/npm/cli/pull/5168) docs: Update audit signatures cmd ([@feelepxyz](https://github.com/feelepxyz))
+  * [`8ab5fca`](https://github.com/npm/cli/commit/8ab5fcabbf9317df096bc727c49a98cf87dda560) [#5171](https://github.com/npm/cli/pull/5171) docs: correct bundledDependencies -> bundleDependencies ([@nlf](https://github.com/nlf))
+
+### Dependencies
+
+  * [`64fe64b`](https://github.com/npm/cli/commit/64fe64b74bc66635771ae65003ccc67be5853929) [#5187](https://github.com/npm/cli/pull/5187) deps: `@npmcli/config@4.2.0`
+  * [`51b12a0`](https://github.com/npm/cli/commit/51b12a085e087609c99befccfd6a98ef8a9919d0) [#5187](https://github.com/npm/cli/pull/5187) deps: `npm-registry-fetch@13.3.0`
+  * [`3ae1b81`](https://github.com/npm/cli/commit/3ae1b814aa557ccb5b639a57715f67119754ea76) [#5190](https://github.com/npm/cli/pull/5190) deps: `make-fetch-happen@10.2.0`
+
 ## v8.14.0 (2022-07-13)
 
 ### Features
