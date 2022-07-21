@@ -68,7 +68,7 @@ t.test('test out bumping the version in all the ways', async t => {
     t.afterEach(async () => {
       actionLog.length = 0
     })
-    let path = `${dir}/git`
+    var path = `${dir}/git`
     await t.test('major', async t => {
       // for this one, let's pretend that the package-lock.json is .gitignored
       const { spawn } = gitMock
@@ -252,7 +252,7 @@ t.test('test out bumping the version in all the ways', async t => {
     t.afterEach(async () => {
       actionLog.length = 0
     })
-    let path = `${dir}/not-git`
+    var path = `${dir}/not-git`
     await t.test('major', async t => {
       t.equal(await version('major', { path, pkg }), '2.0.0')
       t.match(actionLog, [
