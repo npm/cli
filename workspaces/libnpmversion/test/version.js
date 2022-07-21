@@ -4,6 +4,7 @@ const requireInject = require('require-inject')
 const actionLog = []
 
 const gitMock = {
+  find: async opts => !opts.path.includes('not-git') ? "git" : null,
   is: async opts => !/\bnot-git$/.test(opts.path),
   spawn: async (args, opts) => actionLog.push(['spawn', args, opts]),
 }
@@ -42,7 +43,18 @@ t.test('test out bumping the version in all the ways', async t => {
     git: {
       'package-lock.json': JSON.stringify(lock, null, 2),
     },
+    'git/package/a': {
+      'package-lock.json': JSON.stringify(lock, null, 2),
+    },
     'not-git': {
+      'npm-shrinkwrap.json': JSON.stringify({
+        ...lock,
+        packages: {
+          '': { ...pkg },
+        },
+      }, null, 2),
+    },
+    'not-git/package/b': {
       'npm-shrinkwrap.json': JSON.stringify({
         ...lock,
         packages: {
@@ -56,7 +68,7 @@ t.test('test out bumping the version in all the ways', async t => {
     t.afterEach(async () => {
       actionLog.length = 0
     })
-    const path = `${dir}/git`
+    var path = `${dir}/git`
     await t.test('major', async t => {
       // for this one, let's pretend that the package-lock.json is .gitignored
       const { spawn } = gitMock
@@ -153,6 +165,8 @@ t.test('test out bumping the version in all the ways', async t => {
       ])
       t.equal(pkg.version, '2.2.0')
     })
+    // for these, let's test subdirectories
+    path = `${dir}/git/packages/a`
     await t.test('explicit version', async t => {
       t.equal(await version('=v3.2.1', { path, pkg, gitTagVersion: true }), '3.2.1')
       t.match(actionLog, [
@@ -238,7 +252,7 @@ t.test('test out bumping the version in all the ways', async t => {
     t.afterEach(async () => {
       actionLog.length = 0
     })
-    const path = `${dir}/not-git`
+    var path = `${dir}/not-git`
     await t.test('major', async t => {
       t.equal(await version('major', { path, pkg }), '2.0.0')
       t.match(actionLog, [
@@ -312,6 +326,8 @@ t.test('test out bumping the version in all the ways', async t => {
       ])
       t.equal(pkg.version, '3.2.1')
     })
+    // for these, let's test subdirectories
+    path = `${dir}/not-git/packages/b`
     await t.test('invalid version', async t => {
       await t.rejects(version('invalid version', { path, pkg }), {
         message: 'Invalid version: invalid version',
