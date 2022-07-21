@@ -4,7 +4,7 @@ const requireInject = require('require-inject')
 const actionLog = []
 
 const gitMock = {
-  find: async opts => !opts.path.includes('not-git') ? "git" : null,
+  find: async opts => !opts.path.includes('not-git') ? 'git' : null,
   is: async opts => !/\bnot-git$/.test(opts.path),
   spawn: async (args, opts) => actionLog.push(['spawn', args, opts]),
 }
