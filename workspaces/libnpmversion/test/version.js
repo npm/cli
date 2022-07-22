@@ -15,7 +15,7 @@ const version = requireInject('../lib/version.js', {
   '../lib/commit.js': async (v, opts) => actionLog.push(['commit', v, opts]),
   '../lib/tag.js': async (v, opts) => actionLog.push(['tag', v, opts]),
   '../lib/retrieve-tag.js': async (opts) => {
-    if (/\bnot-git$/.test(opts.path)) {
+    if (opts.path.includes('not-git')) {
       throw new Error('not a git dir')
     }
     actionLog.push(['retrieve-tag', opts])
@@ -43,7 +43,7 @@ t.test('test out bumping the version in all the ways', async t => {
     git: {
       'package-lock.json': JSON.stringify(lock, null, 2),
     },
-    'git/package/a': {
+    'git/packages/a': {
       'package-lock.json': JSON.stringify(lock, null, 2),
     },
     'not-git': {
@@ -54,7 +54,7 @@ t.test('test out bumping the version in all the ways', async t => {
         },
       }, null, 2),
     },
-    'not-git/package/b': {
+    'not-git/packages/b': {
       'npm-shrinkwrap.json': JSON.stringify({
         ...lock,
         packages: {
