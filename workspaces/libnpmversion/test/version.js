@@ -15,7 +15,7 @@ const version = requireInject('../lib/version.js', {
   '../lib/commit.js': async (v, opts) => actionLog.push(['commit', v, opts]),
   '../lib/tag.js': async (v, opts) => actionLog.push(['tag', v, opts]),
   '../lib/retrieve-tag.js': async (opts) => {
-    if (/\bnot-git$/.test(opts.path)) {
+    if (opts.path.includes('not-git')) {
       throw new Error('not a git dir')
     }
     actionLog.push(['retrieve-tag', opts])
