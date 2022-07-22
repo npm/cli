@@ -43,7 +43,7 @@ t.test('test out bumping the version in all the ways', async t => {
     git: {
       'package-lock.json': JSON.stringify(lock, null, 2),
     },
-    'git/package/a': {
+    'git/packages/a': {
       'package-lock.json': JSON.stringify(lock, null, 2),
     },
     'not-git': {
@@ -54,7 +54,7 @@ t.test('test out bumping the version in all the ways', async t => {
         },
       }, null, 2),
     },
-    'not-git/package/b': {
+    'not-git/packages/b': {
       'npm-shrinkwrap.json': JSON.stringify({
         ...lock,
         packages: {
