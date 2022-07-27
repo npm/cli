@@ -1,5 +1,24 @@
 # Changelog
 
+## v8.15.1 (2022-07-27)
+
+### Bug Fixes
+
+  * [`9905d0e`](https://github.com/npm/cli/commit/9905d0e24c162c3f6cc006fa86b4c9d0205a4c6f) [#5197](https://github.com/npm/cli/pull/5197) fix: don't fail immediately if cache dir is not accessible ([@lukekarrys](https://github.com/lukekarrys))
+  * [`0e3660e`](https://github.com/npm/cli/commit/0e3660eb39bd12a25517d745701bf841811b4623) [#5206](https://github.com/npm/cli/pull/5206) fix(init): allow for spec on scope-only arg ([@wraithgar](https://github.com/wraithgar))
+  * [`62b95a0`](https://github.com/npm/cli/commit/62b95a04337661e3fa17093708b57000054442d9) [#5122](https://github.com/npm/cli/pull/5122) fix: allow hash character in paths ([@AgainPsychoX](https://github.com/AgainPsychoX))
+
+### Documentation
+
+  * [`f9abee7`](https://github.com/npm/cli/commit/f9abee79abe541226a249f50bdeec41317dd5712) [#5205](https://github.com/npm/cli/pull/5205) docs: update commit-ish default branch ([@dijonkitchen](https://github.com/dijonkitchen))
+  * [`77bf2e1`](https://github.com/npm/cli/commit/77bf2e10236b72613101ac21d151f5974240f3aa) [#5218](https://github.com/npm/cli/pull/5218) docs: update npm-ls.md ([@MapleCCC](https://github.com/MapleCCC))
+  * [`de40c31`](https://github.com/npm/cli/commit/de40c31d1fe7521ffbc4e22fd233b18eca149afe) [#5207](https://github.com/npm/cli/pull/5207) docs: sync ci params with install ([@wraithgar](https://github.com/wraithgar))
+  * [`4d1d8a9`](https://github.com/npm/cli/commit/4d1d8a9561000064fe765ba31a3ad21832721c59) [#5221](https://github.com/npm/cli/pull/5221) docs: describe implicit workspace and prefix configuration ([@fritzy](https://github.com/fritzy)) ([@lukekarrys](https://github.com/lukekarrys)) ([@wraithgar](https://github.com/wraithgar))
+
+### Dependencies
+
+  * [`3bbb293`](https://github.com/npm/cli/commit/3bbb2931d09df66186108760353b2992171b057f) [#5223](https://github.com/npm/cli/pull/5223) deps: `@npmcli/arborist@5.3.1`
+
 ## v8.15.0 (2022-07-20)
 
 ### Features
