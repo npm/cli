@@ -55,8 +55,13 @@ npm ERR! Usage:
 npm ERR! npm ci
 npm ERR! 
 npm ERR! Options:
-npm ERR! [--no-audit] [--foreground-scripts] [--ignore-scripts]
-npm ERR! [--script-shell <script-shell>]
+npm ERR! [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer|--save-bundle]
+npm ERR! [-E|--save-exact] [-g|--global] [--global-style] [--legacy-bundling]
+npm ERR! [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm ERR! [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
+npm ERR! [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
+npm ERR! [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm ERR! [-ws|--workspaces] [--include-workspace-root] [--install-links]
 npm ERR! 
 npm ERR! aliases: clean-install, ic, install-clean, isntall-clean
 npm ERR! 
