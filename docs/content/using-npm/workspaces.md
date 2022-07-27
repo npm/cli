@@ -138,7 +138,7 @@ nested workspaces to be consumed elsewhere.
 You can use the `workspace` configuration option to run commands in the context
 of a configured workspace.
 Additionally, if your current directory is in a workspace, the `workspace`
-configuration is implicitely set, and `prefix` is set to the root workspace.
+configuration is implicitly set, and `prefix` is set to the root workspace.
 
 Following is a quick example on how to use the `npm run` command in the context
 of nested workspaces. For a project containing multiple workspaces, e.g:
