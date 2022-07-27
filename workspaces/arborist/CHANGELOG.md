@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.3.1](https://github.com/npm/cli/compare/arborist-v5.3.0...arborist-v5.3.1) (2022-07-27)
+
+
+### Bug Fixes
+
+* allow hash character in paths ([#5122](https://github.com/npm/cli/issues/5122)) ([62b95a0](https://github.com/npm/cli/commit/62b95a04337661e3fa17093708b57000054442d9))
+
 ## [5.3.0](https://github.com/npm/cli/compare/arborist-v5.2.3...arborist-v5.3.0) (2022-07-11)
 
 
