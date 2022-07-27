@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@mdx-js/mdx": "^1.6.22",
-    "@npmcli/eslint-config": "^3.0.1",
+    "@npmcli/eslint-config": "^3.1.0",
     "@npmcli/fs": "^2.1.0",
     "@npmcli/promise-spawn": "^3.0.0",
     "@npmcli/template-oss": "3.5.0",

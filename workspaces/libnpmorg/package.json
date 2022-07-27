@@ -30,7 +30,7 @@
     "lib/"
   ],
   "devDependencies": {
-    "@npmcli/eslint-config": "^3.0.1",
+    "@npmcli/eslint-config": "^3.1.0",
     "@npmcli/template-oss": "3.5.0",
     "minipass": "^3.1.1",
     "nock": "^13.2.4",

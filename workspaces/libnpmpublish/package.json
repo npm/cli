@@ -27,7 +27,7 @@
     "template-oss-apply": "template-oss-apply --force"
   },
   "devDependencies": {
-    "@npmcli/eslint-config": "^3.0.1",
+    "@npmcli/eslint-config": "^3.1.0",
     "@npmcli/template-oss": "3.5.0",
     "libnpmpack": "^4.0.0",
     "lodash.clonedeep": "^4.5.0",
