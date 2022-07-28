@@ -71,6 +71,7 @@ const a = {
   },
   isTop: false,
   parent: top,
+  root: top,
   resolve (n) {
     return n === 'aa' ? aa : this.parent.resolve(n)
   },
@@ -1008,6 +1009,7 @@ t.test('shrinkwrapped and bundled deps are not overridden and remain valid', (t)
       return this.package.version
     },
     parent: root,
+    root,
     resolve (n) {
       return n === 'bar' ? bar : this.parent.resolve(n)
     },
@@ -1036,6 +1038,7 @@ t.test('shrinkwrapped and bundled deps are not overridden and remain valid', (t)
       return this.package.version
     },
     parent: foo,
+    root,
     resolve (n) {
       return this.parent.resolve(n)
     },
