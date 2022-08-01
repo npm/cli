@@ -1,27 +1,74 @@
-const { delimiter, dirname, resolve } = require('path')
+'use strict'
+
 const { promisify } = require('util')
-const read = promisify(require('read'))
 
 const Arborist = require('@npmcli/arborist')
 const ciDetect = require('@npmcli/ci-detect')
+const crypto = require('crypto')
 const log = require('proc-log')
-const npmlog = require('npmlog')
 const mkdirp = require('mkdirp-infer-owner')
 const npa = require('npm-package-arg')
+const npmlog = require('npmlog')
 const pacote = require('pacote')
+const read = promisify(require('read'))
+const semver = require('semver')
 
-const cacheInstallDir = require('./cache-install-dir.js')
 const { fileExists, localFileExists } = require('./file-exists.js')
 const getBinFromManifest = require('./get-bin-from-manifest.js')
 const noTTY = require('./no-tty.js')
 const runScript = require('./run-script.js')
 const isWindows = require('./is-windows.js')
-const _localManifest = Symbol('localManifest')
 
-/* istanbul ignore next */
-const PATH = (
-  process.env.PATH || process.env.Path || process.env.path
-).split(delimiter)
+const { delimiter, dirname, resolve } = require('path')
+
+const pathArr = process.env.PATH.split(delimiter)
+
+// when checking the local tree we look up manifests, cache those results by
+// spec.raw so we don't have to fetch again when we check npxCache
+const manifests = new Map()
+
+// Returns the required manifest if the spec is missing from the tree
+const missingFromTree = async ({ spec, tree, pacoteOpts }) => {
+  if (spec.registry && (spec.rawSpec === '' || spec.type !== 'tag')) {
+    // registry spec that is not a specific tag.
+    const nodesBySpec = tree.inventory.query('packageName', spec.name)
+    for (const node of nodesBySpec) {
+      if (spec.type === 'tag') {
+        // package requested by name only
+        return
+      } else if (spec.type === 'version') {
+        // package requested by specific version
+        if (node.pkgid === spec.raw) {
+          return
+        }
+      } else {
+        // package requested by version range, only remaining registry type
+        if (semver.satisfies(node.package.version, spec.rawSpec)) {
+          return
+        }
+      }
+    }
+    if (!manifests.get(spec.raw)) {
+      manifests.set(spec.raw, await pacote.manifest(spec, pacoteOpts))
+    }
+    return manifests.get(spec.raw)
+  } else {
+    // non-registry spec, or a specific tag.  Look up manifest and check
+    // resolved to see if it's in the tree.
+    if (!manifests.get(spec.raw)) {
+      manifests.set(spec.raw, await pacote.manifest(spec, pacoteOpts))
+    }
+    const manifest = manifests.get(spec.raw)
+    const nodesByManifest = tree.inventory.query('packageName', manifest.name)
+    for (const node of nodesByManifest) {
+      if (node.package.resolved === manifest._resolved) {
+        // we have a package by the same name and the same resolved destination, nothing to add.
+        return
+      }
+    }
+    return manifest
+  }
+}
 
 const exec = async (opts) => {
   const {
@@ -32,7 +79,8 @@ const exec = async (opts) => {
     locationMsg = undefined,
     globalBin = '',
     output,
-    packages: _packages = [],
+    // dereference values because we manipulate it later
+    packages: [...packages] = [],
     path = '.',
     runPath = '.',
     scriptShell = isWindows ? process.env.ComSpec || 'cmd' : 'sh',
@@ -40,10 +88,7 @@ const exec = async (opts) => {
     ...flatOptions
   } = opts
 
-  // dereferences values because we manipulate it later
-  const packages = [..._packages]
-  const pathArr = [...PATH]
-  const _run = () => runScript({
+  const run = () => runScript({
     args,
     call,
     color,
@@ -56,120 +101,87 @@ const exec = async (opts) => {
     scriptShell,
   })
 
-  // nothing to maybe install, skip the arborist dance
+  // interactive mode
   if (!call && !args.length && !packages.length) {
-    return await _run()
+    return run()
   }
 
-  const needPackageCommandSwap = args.length && !packages.length
-  // if there's an argument and no package has been explicitly asked for
-  // check the local and global bin paths for a binary named the same as
-  // the argument and run it if it exists, otherwise fall through to
-  // the behavior of treating the single argument as a package name
+  const pacoteOpts = { ...flatOptions, perferOnline: true }
+
+  const needPackageCommandSwap = (args.length > 0) && (packages.length === 0)
   if (needPackageCommandSwap) {
-    let binExists = false
     const dir = dirname(dirname(localBin))
-    const localBinPath = await localFileExists(dir, args[0])
+    const localBinPath = await localFileExists(dir, args[0], '/')
     if (localBinPath) {
-      pathArr.unshift(localBinPath)
-      binExists = true
+      // @npmcli/run-script adds local bin to $PATH itself
+      return await run()
     } else if (await fileExists(`${globalBin}/${args[0]}`)) {
       pathArr.unshift(globalBin)
-      binExists = true
+      return await run()
     }
 
-    if (binExists) {
-      return await _run()
-    }
-
+    // We swap out args[0] with the bin from the manifest later
     packages.push(args[0])
   }
 
-  // figure out whether we need to install stuff, or if local is fine
-  const localArb = new Arborist({
-    ...flatOptions,
-    path,
-  })
+  const localArb = new Arborist({ ...flatOptions, path })
   const localTree = await localArb.loadActual()
 
-  const getLocalManifest = ({ tree, name }) => {
-    // look up the package name in the current tree inventory,
-    // if it's found then return that normalized pkg data
-    const [node] = tree.inventory.query('packageName', name)
-
-    if (node) {
-      return {
-        _id: node.pkgid,
-        ...node.package,
-        [_localManifest]: true,
-      }
+  // Find anything that isn't installed locally
+  const needInstall = []
+  await Promise.all(packages.map(async pkg => {
+    const spec = npa(pkg, path)
+    const manifest = await missingFromTree({ spec, tree: localTree, pacoteOpts })
+    if (manifest) {
+      needInstall.push({ spec, manifest })
     }
-  }
-
-  // If we do `npm exec foo`, and have a `foo` locally, then we'll
-  // always use that, so we don't really need to fetch the manifest.
-  // So: run npa on each packages entry, and if it is a name with a
-  // rawSpec==='', then try to find that node name in the tree inventory
-  // and only pacote fetch if that fails.
-  const manis = await Promise.all(packages.map(async p => {
-    const spec = npa(p, path)
-    if (spec.type === 'tag' && spec.rawSpec === '') {
-      const localManifest = getLocalManifest({
-        tree: localTree,
-        name: spec.name,
-      })
-      if (localManifest) {
-        return localManifest
-      }
-    }
-    // Force preferOnline to true so we are making sure to pull in the latest
-    // This is especially useful if the user didn't give us a version, and
-    // they expect to be running @latest
-    return await pacote.manifest(p, {
-      ...flatOptions,
-      preferOnline: true,
-    })
   }))
 
   if (needPackageCommandSwap) {
-    args[0] = getBinFromManifest(manis[0])
+    // Either we have a scoped package or the bin of our package we inferred
+    // from arg[0] is not identical to the package name
+    let commandManifest
+    if (needInstall.length === 0) {
+      commandManifest = await pacote.manifest(args[0], {
+        ...flatOptions,
+        preferOnline: true,
+      })
+    } else {
+      commandManifest = needInstall[0].manifest
+    }
+    args[0] = getBinFromManifest(commandManifest)
   }
 
-  // are all packages from the manifest list installed?
-  const needInstall =
-    manis.some(manifest => !manifest[_localManifest])
-
-  if (needInstall) {
+  const add = []
+  if (needInstall.length > 0) {
+    // Install things to the npx cache, if needed
     const { npxCache } = flatOptions
-    const installDir = cacheInstallDir({ npxCache, packages })
+    if (!npxCache) {
+      throw new Error('Must provide a valid npxCache path')
+    }
+    const hash = crypto.createHash('sha512')
+      .update(packages.sort((a, b) => a.localeCompare(b, 'en')).join('\n'))
+      .digest('hex')
+      .slice(0, 16)
+    const installDir = resolve(npxCache, hash)
     await mkdirp(installDir)
-    const arb = new Arborist({
+    const npxArb = new Arborist({
       ...flatOptions,
       path: installDir,
     })
-    const tree = await arb.loadActual()
-
-    // inspect the npx-space installed tree to check if the package is already
-    // there, if that's the case also check that it's version matches the same
-    // version expected by the user requested pkg returned by pacote.manifest
-    const filterMissingPackagesFromInstallDir = (mani) => {
-      const localManifest = getLocalManifest({ tree, name: mani.name })
-      if (localManifest) {
-        return localManifest.version !== mani.version
+    const npxTree = await npxArb.loadActual()
+    await Promise.all(needInstall.map(async ({ spec }) => {
+      const manifest = await missingFromTree({ spec, tree: npxTree, pacoteOpts })
+      if (manifest) {
+        // Manifest is not in npxCache, we need to install it there
+        if (!spec.registry) {
+          add.push(manifest._from)
+        } else {
+          add.push(manifest._id)
+        }
       }
-      return true
-    }
+    }))
 
-    // at this point, we have to ensure that we get the exact same
-    // version, because it's something that has only ever been installed
-    // by npm exec in the cache install directory
-    const add = manis
-      .filter(mani => !mani[_localManifest])
-      .filter(filterMissingPackagesFromInstallDir)
-      .map(mani => mani._id || mani._from)
-      .sort((a, b) => a.localeCompare(b, 'en'))
-
-    // no need to install if already present
     if (add.length) {
       if (!yes) {
         // set -n to always say no
@@ -196,7 +208,7 @@ const exec = async (opts) => {
           }
         }
       }
-      await arb.reify({
+      await npxArb.reify({
         ...flatOptions,
         add,
       })
@@ -204,7 +216,7 @@ const exec = async (opts) => {
     pathArr.unshift(resolve(installDir, 'node_modules/.bin'))
   }
 
-  return await _run()
+  return await run()
 }
 
 module.exports = exec
