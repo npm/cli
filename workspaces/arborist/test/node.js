@@ -62,8 +62,8 @@ t.test('basic instantiation', t => {
   t.end()
 })
 
-t.test('testing with dep tree', t => {
-  const runTest = rootMetadata => t => {
+t.test('testing with dep tree', async t => {
+  const runTest = rootMetadata => async t => {
     const root = new Node({
       pkg: {
         name: 'root',
@@ -114,6 +114,10 @@ t.test('testing with dep tree', t => {
     })
     t.equal(meta.isDescendantOf(root), true, 'meta descends from root')
     t.equal(meta.root, root, 'meta rooted in same tree via parent')
+
+    // retrieve a node using querySelectorAll
+    const queryResult = await root.querySelectorAll('* #meta')
+    t.same(queryResult, [meta], 'should retrieve node using querySelectorAll')
 
     const bundled = new Node({
       pkg: {
@@ -344,14 +348,14 @@ t.test('testing with dep tree', t => {
     t.end()
   }
 
-  t.test('without meta', runTest())
+  t.test('without meta', await runTest())
   const meta = new Shrinkwrap({ path: '/home/user/projects/root' })
   meta.data = {
     lockfileVersion: 2,
     packages: {},
     dependencies: {},
   }
-  t.test('with meta', runTest(meta))
+  t.test('with meta', await runTest(meta))
 
   t.end()
 })
