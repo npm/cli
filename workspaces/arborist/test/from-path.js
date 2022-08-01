@@ -1,7 +1,7 @@
 const t = require('tap')
 const { normalizePath } = require('./fixtures/utils.js')
 const fp = require('../lib/from-path.js')
-const fromPath = obj => normalizePath(fp(obj))
+const fromPath = (node, edge) => normalizePath(fp(node, edge))
 
 t.equal(fromPath({
   realpath: '/some/path',
@@ -21,3 +21,30 @@ t.equal(fromPath({
   realpath: '/some/path/to/install/target',
   resolved: 'https://registry.com/package.tgz',
 }), '/some/path/to/install/target', 'use dirname if not dir or file type')
+
+t.equal(fromPath({
+  root: {
+    realpath: '/some/root',
+  },
+}, {
+  name: 'foo',
+  overrides: {
+    name: 'foo',
+    value: 'foo@2',
+  },
+}), '/some/root', 'uses root realpath for overridden edges')
+
+t.equal(fromPath({
+  sourceReference: {
+    root: {
+      realpath: '/some/root',
+    },
+  },
+  realpath: '/some/red/herring',
+}, {
+  name: 'foo',
+  overrides: {
+    name: 'foo',
+    value: 'foo@2',
+  },
+}), '/some/root', 'uses sourceReferences root realpath for overridden edges')
