@@ -1315,7 +1315,7 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for packa
 * Default:
 * Type: String (can be set multiple times)
 
-The package to install for [\`npm exec\`](/commands/npm-exec)
+The package or packages to install for [\`npm exec\`](/commands/npm-exec)
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for package-lock 1`] = `
