@@ -1117,7 +1117,7 @@ Directory in which \`npm pack\` will save tarballs.
 * Default:
 * Type: String (can be set multiple times)
 
-The package to install for [\`npm exec\`](/commands/npm-exec)
+The package or packages to install for [\`npm exec\`](/commands/npm-exec)
 
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->
