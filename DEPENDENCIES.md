@@ -157,6 +157,7 @@ graph LR;
   npmcli-arborist-->npmcli-name-from-folder["@npmcli/name-from-folder"];
   npmcli-arborist-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-arborist-->npmcli-package-json["@npmcli/package-json"];
+  npmcli-arborist-->npmcli-query["@npmcli/query"];
   npmcli-arborist-->npmcli-run-script["@npmcli/run-script"];
   npmcli-arborist-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-arborist-->npmlog;
@@ -186,6 +187,8 @@ graph LR;
   npmcli-metavuln-calculator-->pacote;
   npmcli-metavuln-calculator-->semver;
   npmcli-promise-spawn-->infer-owner;
+  npmcli-query-->npm-package-arg;
+  npmcli-query-->semver;
   npmcli-run-script-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-run-script-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-run-script-->read-package-json-fast;
@@ -567,6 +570,7 @@ graph LR;
   npmcli-arborist-->json-parse-even-better-errors;
   npmcli-arborist-->json-stringify-nice;
   npmcli-arborist-->minify-registry-metadata;
+  npmcli-arborist-->minimatch;
   npmcli-arborist-->mkdirp-infer-owner;
   npmcli-arborist-->mkdirp;
   npmcli-arborist-->nock;
@@ -583,6 +587,7 @@ graph LR;
   npmcli-arborist-->npmcli-name-from-folder["@npmcli/name-from-folder"];
   npmcli-arborist-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-arborist-->npmcli-package-json["@npmcli/package-json"];
+  npmcli-arborist-->npmcli-query["@npmcli/query"];
   npmcli-arborist-->npmcli-run-script["@npmcli/run-script"];
   npmcli-arborist-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-arborist-->npmlog;
@@ -634,6 +639,9 @@ graph LR;
   npmcli-move-file-->rimraf;
   npmcli-package-json-->json-parse-even-better-errors;
   npmcli-promise-spawn-->infer-owner;
+  npmcli-query-->npm-package-arg;
+  npmcli-query-->postcss-selector-parser;
+  npmcli-query-->semver;
   npmcli-run-script-->node-gyp;
   npmcli-run-script-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-run-script-->npmcli-promise-spawn["@npmcli/promise-spawn"];
@@ -669,6 +677,8 @@ graph LR;
   parse-conflict-json-->json-parse-even-better-errors;
   parse-conflict-json-->just-diff-apply;
   parse-conflict-json-->just-diff;
+  postcss-selector-parser-->cssesc;
+  postcss-selector-parser-->util-deprecate;
   promise-retry-->err-code;
   promise-retry-->retry;
   promzard-->read;
@@ -742,6 +752,6 @@ packages higher up the chain.
  - pacote, libnpmaccess, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, npm-profile
  - npm-registry-fetch
  - make-fetch-happen, libnpmversion, @npmcli/config, init-package-json
- - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, @npmcli/git, @npmcli/run-script, npm-packlist, read-package-json, readdir-scoped-modules, promzard
+ - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, @npmcli/git, @npmcli/run-script, npm-packlist, read-package-json, @npmcli/query, readdir-scoped-modules, promzard
  - npm-bundled, read-package-json-fast, @npmcli/fs, unique-filename, @npmcli/promise-spawn, npm-package-arg, normalize-package-data, bin-links, nopt, npm-install-checks, npmlog, dezalgo, read
  - npm-normalize-package-bin, @npmcli/name-from-folder, semver, @npmcli/move-file, fs-minipass, infer-owner, ssri, unique-slug, proc-log, @npmcli/node-gyp, hosted-git-info, validate-npm-package-name, ignore-walk, minipass-fetch, @npmcli/package-json, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, parse-conflict-json, wrappy, treeverse, @npmcli/eslint-config, @npmcli/template-oss, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, ini, npm-audit-report, npm-user-validate
