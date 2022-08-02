@@ -5,7 +5,6 @@ const baseOpts = {
   call: '',
   color: false,
   path: '',
-  pathArr: [''],
   runPath: '',
   shell: process.platform === 'win32'
     ? process.env.ComSpec || 'cmd'

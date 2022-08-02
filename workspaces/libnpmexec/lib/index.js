@@ -19,9 +19,9 @@ const noTTY = require('./no-tty.js')
 const runScript = require('./run-script.js')
 const isWindows = require('./is-windows.js')
 
-const { delimiter, dirname, resolve } = require('path')
+const { dirname, resolve } = require('path')
 
-const pathArr = process.env.PATH.split(delimiter)
+const binPaths = []
 
 // when checking the local tree we look up manifests, cache those results by
 // spec.raw so we don't have to fetch again when we check npxCache
@@ -96,7 +96,7 @@ const exec = async (opts) => {
     locationMsg,
     output,
     path,
-    pathArr,
+    binPaths,
     runPath,
     scriptShell,
   })
@@ -113,10 +113,10 @@ const exec = async (opts) => {
     const dir = dirname(dirname(localBin))
     const localBinPath = await localFileExists(dir, args[0], '/')
     if (localBinPath) {
-      // @npmcli/run-script adds local bin to $PATH itself
+      binPaths.push(localBinPath)
       return await run()
     } else if (await fileExists(`${globalBin}/${args[0]}`)) {
-      pathArr.unshift(globalBin)
+      binPaths.push(globalBin)
       return await run()
     }
 
@@ -213,7 +213,7 @@ const exec = async (opts) => {
         add,
       })
     }
-    pathArr.unshift(resolve(installDir, 'node_modules/.bin'))
+    binPaths.push(resolve(installDir, 'node_modules/.bin'))
   }
 
   return await run()
