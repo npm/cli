@@ -2,6 +2,7 @@ const { join, resolve, basename } = require('path')
 const t = require('tap')
 const runScript = require('@npmcli/run-script')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
+const tnock = require('../fixtures/tnock')
 
 // mock rimraf so we can make it fail in rollback tests
 const realRimraf = require('rimraf')
@@ -2922,4 +2923,133 @@ t.test('installLinks', (t) => {
   })
 
   t.end()
+})
+
+t.only('should preserve exact ranges, missing actual tree', async (t) => {
+  const Arborist = require('../../lib/index.js')
+  const abbrev = resolve(__dirname,
+    '../fixtures/registry-mocks/content/abbrev/-/abbrev-1.1.1.tgz')
+  const abbrevTGZ = fs.readFileSync(abbrev)
+
+  const abbrevPackument = JSON.stringify({
+    _id: 'abbrev',
+    _rev: 'lkjadflkjasdf',
+    name: 'abbrev',
+    'dist-tags': { latest: '1.1.1' },
+    versions: {
+      '1.1.1': {
+        name: 'abbrev',
+        version: '1.1.1',
+        dist: {
+          tarball: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+        },
+      },
+    },
+  })
+
+  const abbrevPackument2 = JSON.stringify({
+    _id: 'abbrev',
+    _rev: 'lkjadflkjasdf',
+    name: 'abbrev',
+    'dist-tags': { latest: '1.1.1' },
+    versions: {
+      '1.1.1': {
+        name: 'abbrev',
+        version: '1.1.1',
+        dist: {
+          tarball: 'https://registry.garbage.org/abbrev/-/abbrev-1.1.1.tgz',
+        },
+      },
+    },
+  })
+
+  t.only('host should not be replaced replaceRegistryHost=never', async (t) => {
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://registry.github.com')
+      .get('/abbrev')
+      .reply(200, abbrevPackument)
+
+    tnock(t, 'https://registry.npmjs.org')
+      .get('/abbrev/-/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.github.com',
+      cache: resolve(testdir, 'cache'),
+      replaceRegistryHost: 'never',
+    })
+    await arb.reify()
+  })
+
+  t.only('host should be replaced replaceRegistryHost=npmjs', async (t) => {
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://registry.github.com')
+      .get('/abbrev')
+      .reply(200, abbrevPackument)
+
+    tnock(t, 'https://registry.github.com')
+      .get('/abbrev/-/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.github.com',
+      cache: resolve(testdir, 'cache'),
+      replaceRegistryHost: 'npmjs',
+    })
+    await arb.reify()
+  })
+
+  t.only('host should be always replaceRegistryHost=always', async (t) => {
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://registry.github.com')
+      .get('/abbrev')
+      .reply(200, abbrevPackument2)
+
+    tnock(t, 'https://registry.github.com')
+      .get('/abbrev/-/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.github.com',
+      cache: resolve(testdir, 'cache'),
+      replaceRegistryHost: 'always',
+    })
+    await arb.reify()
+  })
 })
