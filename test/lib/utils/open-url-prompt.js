@@ -36,7 +36,10 @@ const readline = {
       }
     },
     close: () => {},
-  }),
+    on: (_signal, cb) => { 
+      cb()
+    }
+  })
 }
 
 const openUrlPrompt = t.mock('../../../lib/utils/open-url-prompt.js', {
