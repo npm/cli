@@ -86,6 +86,9 @@ t.test('query-selector-all', async t => {
           dependencies: {
             lorem: 'latest',
           },
+          scripts: {
+            test: 'tap',
+          },
         }),
       },
       foo: {
@@ -567,6 +570,9 @@ t.test('query-selector-all', async t => {
     [':attr(arbitrary, :attr([foo=10000]))', ['bar@2.0.0']],
 
     // attribute matchers
+    ['[scripts]', [
+      'baz@1.0.0',
+    ]],
     ['[name]', [
       'query-selector-all-tests@1.0.0',
       'a@1.0.0',
