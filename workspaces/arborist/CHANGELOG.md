@@ -1,5 +1,26 @@
 # Changelog
 
+## [5.4.0](https://github.com/npm/cli/compare/arborist-v5.3.1...arborist-v5.4.0) (2022-08-03)
+
+
+### Features
+
+* add --replace-registry-host=<npmjs|always|never> ([#4860](https://github.com/npm/cli/issues/4860)) ([703dbbf](https://github.com/npm/cli/commit/703dbbf2a8149dff72c848d60600889a76779828))
+* add --replace-registry-host=<npmjs|always|never>|<hostname> ([703dbbf](https://github.com/npm/cli/commit/703dbbf2a8149dff72c848d60600889a76779828))
+* add npm query cmd ([#5000](https://github.com/npm/cli/issues/5000)) ([3c024ac](https://github.com/npm/cli/commit/3c024ace60904c69e61da00e1fb56c0c1735804a))
+
+
+### Bug Fixes
+
+* **arborist:** fix bare attribute queries ([#5248](https://github.com/npm/cli/issues/5248)) ([8233fca](https://github.com/npm/cli/commit/8233fca44321186c485964d26aa3c7c43eafff3d))
+* **arborist:** pass the edge to fromPath in order to determine correct path ([#5233](https://github.com/npm/cli/issues/5233)) ([050284d](https://github.com/npm/cli/commit/050284d2abb6aa91a0f9ffad5b0c4f074e5dbf6d))
+* **arborist:** use the sourceReference root rather than the node root for overrides ([#5227](https://github.com/npm/cli/issues/5227)) ([47cc95d](https://github.com/npm/cli/commit/47cc95d9ffb37fc8ff62a1d5554eab16d303aa43)), closes [#4395](https://github.com/npm/cli/issues/4395)
+
+
+### Dependencies
+
+* @npmcli/query@1.1.1 ([#5247](https://github.com/npm/cli/issues/5247)) ([d55007d](https://github.com/npm/cli/commit/d55007d9c535b17612a07a7a58cb6be94eedf77a))
+
 ## [5.3.1](https://github.com/npm/cli/compare/arborist-v5.3.0...arborist-v5.3.1) (2022-07-27)
 
 
