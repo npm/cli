@@ -71,22 +71,22 @@ const fixupAttr = astNode => {
       matcher.insensitive = true
     }
   } else {
-    matcher.qualifiedAttribute = attributeAstNode.qualifiedAttribute
-    matcher.operator = attributeAstNode.operator || ''
-    matcher.value = attributeAstNode.value
-
-    // backwards compatibility
-    matcher.attribute = attributeAstNode.qualifiedAttribute
-
-    if (attributeAstNode.insensitive) {
-      matcher.insensitive = true
-    }
-
     if (attributeAstNode.type !== 'attribute') {
       throw Object.assign(
         new Error('`:attr` pseudo-class expects an attribute matcher as the last value'),
         { code: 'EQUERYATTR' }
       )
+    }
+
+    matcher.qualifiedAttribute = unescapeSlashes(attributeAstNode.qualifiedAttribute)
+    matcher.operator = attributeAstNode.operator
+    matcher.value = attributeAstNode.value
+
+    // backwards compatibility
+    matcher.attribute = matcher.qualifiedAttribute
+
+    if (attributeAstNode.insensitive) {
+      matcher.insensitive = true
     }
   }
 
