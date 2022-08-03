@@ -485,6 +485,51 @@ t.test('global space pkg', async t => {
   t.equal(res, 'GLOBAL PKG', 'should run local pkg bin script')
 })
 
+t.test('global scoped pkg', async t => {
+  const pkg = {
+    name: '@ruyadorno/create-test',
+    bin: {
+      'create-test': 'index.js',
+    },
+  }
+  const path = t.testdir({
+    cache: {},
+    npxCache: {},
+    global: {
+      node_modules: {
+        '.bin': {},
+        '@ruyadorno': {
+          'create-test': {
+            'index.js': `#!/usr/bin/env node
+    require('fs').writeFileSync(process.argv.slice(2)[0], 'GLOBAL PKG')`,
+            'package.json': JSON.stringify(pkg),
+          },
+        },
+      },
+    },
+  })
+  const globalBin = resolve(path, 'global/node_modules/.bin')
+  const globalPath = resolve(path, 'global')
+  const runPath = path
+
+  await binLinks({
+    path: resolve(path, 'global/node_modules/@ruyadorno/create-test'),
+    pkg,
+  })
+
+  await libexec({
+    ...baseOpts,
+    args: ['@ruyadorno/create-test', 'resfile'],
+    globalBin,
+    globalPath,
+    path,
+    runPath,
+  })
+
+  const res = fs.readFileSync(resolve(path, 'resfile')).toString()
+  t.equal(res, 'GLOBAL PKG', 'should run global pkg bin script')
+})
+
 t.test('run from registry - no local packages', async t => {
   const testdir = t.testdir({
     cache: {},
