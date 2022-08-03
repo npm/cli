@@ -1,5 +1,38 @@
 # Changelog
 
+## v8.16.0 (2022-08-03)
+
+### Features
+
+  * [`3c024ac`](https://github.com/npm/cli/commit/3c024ace60904c69e61da00e1fb56c0c1735804a) [#5000](https://github.com/npm/cli/pull/5000) feat: add npm query cmd ([@ruyadorno](https://github.com/ruyadorno)) ([@wraithgar](https://github.com/wraithgar))
+  * [`703dbbf`](https://github.com/npm/cli/commit/703dbbf2a8149dff72c848d60600889a76779828) [#4860](https://github.com/npm/cli/pull/4860) feat: add --replace-registry-host=<npmjs|always|never> ([@fritzy](https://github.com/fritzy))
+
+### Bug Fixes
+
+  * [`eac1bf2`](https://github.com/npm/cli/commit/eac1bf26f28e9e8fc07e1350c3d7b14a94005ebf) [#5164](https://github.com/npm/cli/pull/5164) fix(ls): when filtering workspaces, make sure the edge has a to before checking if its a workspace ([@nlf](https://github.com/nlf))
+  * [`47cc95d`](https://github.com/npm/cli/commit/47cc95d9ffb37fc8ff62a1d5554eab16d303aa43) [#5227](https://github.com/npm/cli/pull/5227) fix(arborist): use the sourceReference root rather than the node root for overrides ([@nlf](https://github.com/nlf))
+  * [`050284d`](https://github.com/npm/cli/commit/050284d2abb6aa91a0f9ffad5b0c4f074e5dbf6d) [#5233](https://github.com/npm/cli/pull/5233) fix(arborist): pass the edge to fromPath in order to determine correct path ([@nlf](https://github.com/nlf))
+  * [`d315ead`](https://github.com/npm/cli/commit/d315ead7a7f6d531eb57cfa4350bb08949c60997) [#5243](https://github.com/npm/cli/pull/5243) fix: gracefully exit login and publish commands on Ctrl+C (SIGINT) in the new webAuthn flow ([@neeldani](https://github.com/neeldani))
+  * [`ea44995`](https://github.com/npm/cli/commit/ea449954844f21abbf984e09e421f0e03485a535) [#5244](https://github.com/npm/cli/pull/5244) fix: properly find locally/globally/npxCache packages ([@wraithgar](https://github.com/wraithgar))
+  * [`19f1497`](https://github.com/npm/cli/commit/19f1497322411f1566885bd53e63dc39f0df27ea) [#5244](https://github.com/npm/cli/pull/5244) fix: use binPaths ([@wraithgar](https://github.com/wraithgar))
+  * [`3b30af2`](https://github.com/npm/cli/commit/3b30af25e93665f5aa21897910a65d7f26bbd066) [#5244](https://github.com/npm/cli/pull/5244) fix: fix exec tests and  clean up workspace-location-msg ([@wraithgar](https://github.com/wraithgar))
+  * [`8233fca`](https://github.com/npm/cli/commit/8233fca44321186c485964d26aa3c7c43eafff3d) [#5248](https://github.com/npm/cli/pull/5248) fix(arborist): fix bare attribute queries ([@darcyclarke](https://github.com/darcyclarke))
+  * [`19a8346`](https://github.com/npm/cli/commit/19a834610d154f36748536b27aed13bfdb5ee748) [#5250](https://github.com/npm/cli/pull/5250) fix: properly find and run global scoped packages ([@wraithgar](https://github.com/wraithgar))
+
+### Documentation
+
+  * [`a6153cf`](https://github.com/npm/cli/commit/a6153cfd2b0764e69d103b33af6b42978b0403f4) [#5240](https://github.com/npm/cli/pull/5240) docs: Use the full proper name of Travis CI ([@tnir](https://github.com/tnir))
+
+### Dependencies
+
+  * [`fd030c8`](https://github.com/npm/cli/commit/fd030c86b1e01b7df1b9d73fda07496742a4737f) [#5245](https://github.com/npm/cli/pull/5245) deps: `npm-profile@6.2.1`
+  * [`c18dbc4`](https://github.com/npm/cli/commit/c18dbc4393491e02532d698351747307848d2e20) [#5244](https://github.com/npm/cli/pull/5244) deps: add `@npmcli/fs@2.1.1`
+  * [`cd6bafd`](https://github.com/npm/cli/commit/cd6bafdfbbd7a054709c11850b58f7dbc26eb8da) [#5244](https://github.com/npm/cli/pull/5244) deps: add `semver@7.3.7`
+  * [`d0be9a2`](https://github.com/npm/cli/commit/d0be9a2bb53e74b30e13751afd1f6924990c8422) [#5244](https://github.com/npm/cli/pull/5244) deps: `@npmcli/run-script@4.2.0`
+  * [`d55007d`](https://github.com/npm/cli/commit/d55007d9c535b17612a07a7a58cb6be94eedf77a) [#5247](https://github.com/npm/cli/pull/5247) deps: `@npmcli/query@1.1.1`
+  * [`c650a29`](https://github.com/npm/cli/commit/c650a29a664aa303d8b8761dcf50236baf4bb4ca) [#5241](https://github.com/npm/cli/pull/5241) deps: `@npmcli/arborist@5.4.0`
+  * [`4b7b48b`](https://github.com/npm/cli/commit/4b7b48befdca90e0114f4c64eac1d96fea1cc191) [#5246](https://github.com/npm/cli/pull/5246) deps: `libnpmexec@4.0.9`
+
 ## v8.15.1 (2022-07-27)
 
 ### Bug Fixes
