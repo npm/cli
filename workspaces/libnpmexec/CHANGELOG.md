@@ -1,5 +1,22 @@
 # Changelog
 
+## [4.0.9](https://github.com/npm/cli/compare/libnpmexec-v4.0.8...libnpmexec-v4.0.9) (2022-08-03)
+
+
+### Bug Fixes
+
+* fix exec tests and  clean up workspace-location-msg ([3b30af2](https://github.com/npm/cli/commit/3b30af25e93665f5aa21897910a65d7f26bbd066))
+* properly find and run global scoped packages ([#5250](https://github.com/npm/cli/issues/5250)) ([19a8346](https://github.com/npm/cli/commit/19a834610d154f36748536b27aed13bfdb5ee748))
+* properly find locally/globally/npxCache packages ([ea44995](https://github.com/npm/cli/commit/ea449954844f21abbf984e09e421f0e03485a535))
+* use binPaths ([19f1497](https://github.com/npm/cli/commit/19f1497322411f1566885bd53e63dc39f0df27ea))
+
+
+### Dependencies
+
+* @npmcli/run-script@4.2.0 ([d0be9a2](https://github.com/npm/cli/commit/d0be9a2bb53e74b30e13751afd1f6924990c8422))
+* add @npmcli/fs@2.1.1 ([c18dbc4](https://github.com/npm/cli/commit/c18dbc4393491e02532d698351747307848d2e20))
+* add semver@7.3.7 ([cd6bafd](https://github.com/npm/cli/commit/cd6bafdfbbd7a054709c11850b58f7dbc26eb8da))
+
 ## [4.0.8](https://github.com/npm/cli/compare/libnpmexec-v4.0.7...libnpmexec-v4.0.8) (2022-06-23)
 
 
