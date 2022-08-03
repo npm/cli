@@ -317,10 +317,6 @@ class Results {
 
 // operators for attribute selectors
 const attributeOperators = {
-  // existence of the attribute
-  '' ({ attr }) {
-    return Boolean(attr)
-  },
   // attribute value is equivalent
   '=' ({ attr, value, insensitive }) {
     return attr === value
@@ -370,6 +366,10 @@ const attributeMatch = (matcher, obj) => {
   const operator = matcher.operator || ''
   const attribute = matcher.qualifiedAttribute
   let value = matcher.value || ''
+  // return early if checking existence
+  if (operator === '') {
+    return Boolean(obj[attribute])
+  }
   if (insensitive) {
     value = value.toLowerCase()
   }
