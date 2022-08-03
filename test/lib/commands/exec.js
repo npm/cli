@@ -42,7 +42,9 @@ t.test('registry package', async t => {
     }),
   })
 
-  await registry.package({ manifest,
+  await registry.package({
+    times: 2,
+    manifest,
     tarballs: {
       '1.0.0': path.join(npm.prefix, 'npm-exec-test'),
     } })
