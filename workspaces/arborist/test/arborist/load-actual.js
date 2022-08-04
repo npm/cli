@@ -199,8 +199,17 @@ t.test('missing symlinks', t =>
       'bar has error')
   }))
 
-t.test('load from a hidden lockfile', t =>
-  t.resolveMatchSnapshot(loadActual(resolve(fixtures, 'hidden-lockfile'))))
+t.test('load from a hidden lockfile', async (t) => {
+  const tree = await loadActual(resolve(fixtures, 'hidden-lockfile'))
+  t.ok(tree.meta.loadedFromDisk, 'meta was loaded from disk')
+  t.matchSnapshot(tree)
+})
+
+t.test('do not load from a hidden lockfile when forceActual is set', async (t) => {
+  const tree = await loadActual(resolve(fixtures, 'hidden-lockfile'), { forceActual: true })
+  t.not(tree.meta.loadedFromDisk, 'meta was NOT loaded from disk')
+  t.matchSnapshot(tree)
+})
 
 t.test('load a global space', t =>
   t.resolveMatchSnapshot(loadActual(resolve(fixtures, 'global-style/lib'), {
