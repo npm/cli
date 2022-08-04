@@ -121,7 +121,7 @@ exports[`test/yarn-lock.js TAP load a yarn lock from an actual tree install-type
   "version" "1.0.0"
 
 "full-git-url@git+https://github.com/isaacs/abbrev-js.git":
-  "resolved" "git+ssh://git@github.com/isaacs/abbrev-js.git#a9ee72ebc8fe3975f1b0c7aeb3a8f2a806a432eb"
+  "resolved" "git+https://github.com/isaacs/abbrev-js.git#a9ee72ebc8fe3975f1b0c7aeb3a8f2a806a432eb"
   "version" "1.1.1"
 
 "ghshort@github:isaacs/abbrev-js":

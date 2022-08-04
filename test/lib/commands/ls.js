@@ -3684,7 +3684,7 @@ t.test('ls --json', t => {
           abbrev: {
             version: '1.1.1',
             /* eslint-disable-next-line max-len */
-            resolved: 'git+ssh://git@github.com/isaacs/abbrev-js.git#b8f3a2fc0c3bb8ffd8b0d0072cc6b5a3667e963c',
+            resolved: 'git+https://github.com/isaacs/abbrev-js.git#b8f3a2fc0c3bb8ffd8b0d0072cc6b5a3667e963c',
           },
         },
       },
@@ -4618,7 +4618,7 @@ t.test('ls --package-lock-only', t => {
           dependencies: {
             abbrev: {
               /* eslint-disable-next-line max-len */
-              version: 'git+ssh://git@github.com/isaacs/abbrev-js.git#b8f3a2fc0c3bb8ffd8b0d0072cc6b5a3667e963c',
+              version: 'git+https://github.com/isaacs/abbrev-js.git#b8f3a2fc0c3bb8ffd8b0d0072cc6b5a3667e963c',
               from: 'abbrev@git+https://github.com/isaacs/abbrev-js.git',
             },
           },
@@ -4633,7 +4633,7 @@ t.test('ls --package-lock-only', t => {
           dependencies: {
             abbrev: {
               /* eslint-disable-next-line max-len */
-              resolved: 'git+ssh://git@github.com/isaacs/abbrev-js.git#b8f3a2fc0c3bb8ffd8b0d0072cc6b5a3667e963c',
+              resolved: 'git+https://github.com/isaacs/abbrev-js.git#b8f3a2fc0c3bb8ffd8b0d0072cc6b5a3667e963c',
             },
           },
         },

@@ -577,7 +577,7 @@ print-deduped-symlinks@1.0.0 {CWD}/tap-testdir-ls-ls-print-deduped-symlinks
 
 exports[`test/lib/commands/ls.js TAP ls resolved points to git ref > should output tree containing git refs 1`] = `
 test-npm-ls@1.0.0 {CWD}/tap-testdir-ls-ls-resolved-points-to-git-ref
-\`-- abbrev@1.1.1 (git+ssh://git@github.com/isaacs/abbrev-js.git#b8f3a2fc0c3bb8ffd8b0d0072cc6b5a3667e963c)
+\`-- abbrev@1.1.1 (git+https://github.com/isaacs/abbrev-js.git#b8f3a2fc0c3bb8ffd8b0d0072cc6b5a3667e963c)
 
 `
 

@@ -1594,7 +1594,7 @@ ArboristNode {
       "name": "full-git-url",
       "packageName": "abbrev",
       "path": "install-types/node_modules/full-git-url",
-      "resolved": "git+ssh://git@github.com/isaacs/abbrev-js.git#a9ee72ebc8fe3975f1b0c7aeb3a8f2a806a432eb",
+      "resolved": "git+https://github.com/isaacs/abbrev-js.git#a9ee72ebc8fe3975f1b0c7aeb3a8f2a806a432eb",
       "version": "1.1.1",
     },
     "ghshort" => ArboristNode {

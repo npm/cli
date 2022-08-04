@@ -13530,7 +13530,7 @@ ArboristNode {
       "location": "node_modules/full-git-url",
       "name": "full-git-url",
       "path": "{CWD}/test/fixtures/install-types/node_modules/full-git-url",
-      "resolved": "git+ssh://git@github.com/isaacs/abbrev-js.git#a9ee72ebc8fe3975f1b0c7aeb3a8f2a806a432eb",
+      "resolved": "git+https://github.com/isaacs/abbrev-js.git#a9ee72ebc8fe3975f1b0c7aeb3a8f2a806a432eb",
     },
     "ghshort" => ArboristNode {
       "edgesIn": Set {
@@ -14219,7 +14219,7 @@ ArboristNode {
       "location": "node_modules/full-git-url",
       "name": "full-git-url",
       "path": "{CWD}/test/fixtures/install-types/node_modules/full-git-url",
-      "resolved": "git+ssh://git@github.com/isaacs/abbrev-js.git#a9ee72ebc8fe3975f1b0c7aeb3a8f2a806a432eb",
+      "resolved": "git+https://github.com/isaacs/abbrev-js.git#a9ee72ebc8fe3975f1b0c7aeb3a8f2a806a432eb",
     },
     "ghshort" => ArboristNode {
       "edgesIn": Set {
@@ -14908,7 +14908,7 @@ ArboristNode {
       "location": "node_modules/full-git-url",
       "name": "full-git-url",
       "path": "{CWD}/test/arborist/tap-testdir-load-virtual-load-from-npm-shrinkwrap.json/node_modules/full-git-url",
-      "resolved": "git+ssh://git@github.com/isaacs/abbrev-js.git#a9ee72ebc8fe3975f1b0c7aeb3a8f2a806a432eb",
+      "resolved": "git+https://github.com/isaacs/abbrev-js.git#a9ee72ebc8fe3975f1b0c7aeb3a8f2a806a432eb",
     },
     "ghshort" => ArboristNode {
       "edgesIn": Set {
@@ -15561,7 +15561,7 @@ ArboristNode {
       "location": "node_modules/full-git-url",
       "name": "full-git-url",
       "path": "{CWD}/test/fixtures/install-types-sw-only/node_modules/full-git-url",
-      "resolved": "git+ssh://git@github.com/isaacs/abbrev-js.git#a9ee72ebc8fe3975f1b0c7aeb3a8f2a806a432eb",
+      "resolved": "git+https://github.com/isaacs/abbrev-js.git#a9ee72ebc8fe3975f1b0c7aeb3a8f2a806a432eb",
     },
     "ghshort" => ArboristNode {
       "location": "node_modules/ghshort",

@@ -56,34 +56,43 @@ t.test('file and directories made consistent if toPath not set', t => {
 
 t.test('consistent hosted git info urls', t => {
   const expect = 'git+ssh://git@github.com/a/b.git'
-  const expectAuth = 'git+https://user:pass@github.com/a/b.git'
   t.equal(cr('a/b'), expect)
   t.equal(cr('github:a/b'), expect)
-  t.equal(cr('git+https://github.com/a/b'), expect)
   t.equal(cr('git://github.com/a/b'), expect)
   t.equal(cr('git+ssh://git@github.com/a/b'), expect)
-  t.equal(cr('git+https://github.com/a/b.git'), expect)
   t.equal(cr('git://github.com/a/b.git'), expect)
   t.equal(cr('git+ssh://git@github.com/a/b.git'), expect)
-  t.equal(cr('git+https://user:pass@github.com/a/b.git'), expectAuth)
 
   const hash = '#0000000000000000000000000000000000000000'
   t.equal(cr('a/b' + hash), expect + hash)
   t.equal(cr('github:a/b' + hash), expect + hash)
-  t.equal(cr('git+https://github.com/a/b' + hash), expect + hash)
   t.equal(cr('git://github.com/a/b' + hash), expect + hash)
   t.equal(cr('git+ssh://git@github.com/a/b' + hash), expect + hash)
-  t.equal(cr('git+https://github.com/a/b.git' + hash), expect + hash)
   t.equal(cr('git://github.com/a/b.git' + hash), expect + hash)
   t.equal(cr('git+ssh://git@github.com/a/b.git' + hash), expect + hash)
   t.equal(cr('xyz@a/b' + hash), expect + hash)
   t.equal(cr('xyz@github:a/b' + hash), expect + hash)
-  t.equal(cr('xyz@git+https://github.com/a/b' + hash), expect + hash)
   t.equal(cr('xyz@git://github.com/a/b' + hash), expect + hash)
   t.equal(cr('xyz@git+ssh://git@github.com/a/b' + hash), expect + hash)
-  t.equal(cr('xyz@git+https://github.com/a/b.git' + hash), expect + hash)
   t.equal(cr('xyz@git://github.com/a/b.git' + hash), expect + hash)
   t.equal(cr('xyz@git+ssh://git@github.com/a/b.git' + hash), expect + hash)
+  t.end()
+})
+
+t.test('consistent resolve hosted git to https urls', t => {
+  const expect = 'git+https://github.com/a/b.git'
+  const expectAuth = 'git+https://user:pass@github.com/a/b.git'
+  const expectUserOnlyAuth = 'git+https://user@github.com/a/b.git'
+  t.equal(cr('git+https://github.com/a/b'), expect)
+  t.equal(cr('git+https://github.com/a/b.git'), expect)
+  t.equal(cr('git+https://user:pass@github.com/a/b.git'), expectAuth)
+  t.equal(cr('git+https://user@github.com/a/b.git'), expectUserOnlyAuth)
+
+  const hash = '#0000000000000000000000000000000000000000'
+  t.equal(cr('git+https://github.com/a/b' + hash), expect + hash)
+  t.equal(cr('git+https://github.com/a/b.git' + hash), expect + hash)
+  t.equal(cr('xyz@git+https://github.com/a/b' + hash), expect + hash)
+  t.equal(cr('xyz@git+https://github.com/a/b.git' + hash), expect + hash)
   t.end()
 })
 
