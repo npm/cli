@@ -139,6 +139,7 @@ t.test('lifecycle scripts', async t => {
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
   await npm.exec('ci', [])
   t.same(scripts, [
+    'prefetch',
     'preinstall',
     'install',
     'postinstall',
