@@ -66,6 +66,60 @@ require('fs').writeFileSync(process.argv.slice(2)[0], 'LOCAL PKG')`,
   t.equal(res, 'LOCAL PKG', 'should run local pkg bin script')
 })
 
+t.test('locally available pkg - by scoped name only', async t => {
+  const pkg = {
+    name: '@npmcli/npx-local-test',
+    version: '2.0.0',
+    bin: {
+      'npx-local-test': './index.js',
+    },
+  }
+  const path = t.testdir({
+    cache: {},
+    npxCache: {},
+    node_modules: {
+      '.bin': {},
+      '@npmcli': {
+        'npx-local-test': {
+          'package.json': JSON.stringify(pkg),
+          'index.js': `#!/usr/bin/env node
+  require('fs').writeFileSync(process.argv.slice(2)[0], 'LOCAL PKG')`,
+        },
+      },
+    },
+    'package.json': JSON.stringify({
+      name: 'pkg',
+      dependencies: {
+        '@npmcli/npx-local-test': '^2.0.0',
+      },
+    }),
+  })
+  const runPath = path
+  const cache = resolve(path, 'cache')
+  const npxCache = resolve(path, 'npxCache')
+
+  const executable =
+    resolve(path, 'node_modules/@npmcli/npx-local-test/index.js')
+  fs.chmodSync(executable, 0o775)
+
+  await binLinks({
+    path: resolve(path, 'node_modules/@npmcli/npx-local-test'),
+    pkg,
+  })
+
+  await libexec({
+    ...baseOpts,
+    cache,
+    npxCache,
+    args: ['@npmcli/npx-local-test', 'resfile'],
+    path,
+    runPath,
+  })
+
+  const res = fs.readFileSync(resolve(path, 'resfile')).toString()
+  t.equal(res, 'LOCAL PKG', 'should run local pkg bin script')
+})
+
 t.test('locally available pkg - by name', async t => {
   const pkg = {
     name: '@ruyadorno/create-index',
