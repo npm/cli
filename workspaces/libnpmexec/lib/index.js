@@ -161,7 +161,7 @@ const exec = async (opts) => {
       const globalTree = await globalArb.loadActual()
       const { manifest: globalManifest } =
         await missingFromTree({ spec, tree: globalTree, flatOptions })
-      if (!globalManifest) {
+      if (!globalManifest && await fileExists(`${globalBin}/${args[0]}`)) {
         binPaths.push(globalBin)
         return await run()
       }
