@@ -9,6 +9,7 @@ const git = require('@npmcli/git')
 const commit = require('./commit.js')
 const tag = require('./tag.js')
 const log = require('proc-log')
+const isWorkspaceSafe = require('./is-workspace-safe.js')
 
 const runScript = require('@npmcli/run-script')
 
@@ -51,13 +52,13 @@ module.exports = async (newversion, opts) => {
     })
   }
 
-  const isGitDir = newversion === 'from-git' || Boolean(await git.find(opts))
+  const gitDir = await git.find(opts)
 
   // ok!  now we know the new version, and the old version is in pkg
 
   // - check if git dir is clean
   // returns false if we should not keep doing git stuff
-  const doGit = gitTagVersion && isGitDir && await enforceClean(opts)
+  const doGit = gitTagVersion && Boolean(gitDir) && await enforceClean(opts) && await isWorkspaceSafe(gitDir, path)
 
   if (!ignoreScripts) {
     await runScript({

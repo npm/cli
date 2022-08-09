@@ -41,6 +41,12 @@ t.test('test out bumping the version in all the ways', async t => {
 
   const dir = t.testdir({
     git: {
+      'package.json': JSON.stringify({
+        ...pkg,
+        workspaces: [
+          "packages/a"
+        ]
+      }, null, 2),
       'package-lock.json': JSON.stringify(lock, null, 2),
     },
     'git/packages/a': {
@@ -52,6 +58,12 @@ t.test('test out bumping the version in all the ways', async t => {
         packages: {
           '': { ...pkg },
         },
+      }, null, 2),
+      'package.json': JSON.stringify({
+        ...pkg,
+        workspaces: [
+          "packages/b"
+        ]
       }, null, 2),
     },
     'not-git/packages/b': {
