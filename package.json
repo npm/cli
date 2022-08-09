@@ -96,7 +96,7 @@
     "mkdirp": "^1.0.4",
     "mkdirp-infer-owner": "^2.0.0",
     "ms": "^2.1.2",
-    "node-gyp": "^9.0.0",
+    "node-gyp": "^9.1.0",
     "nopt": "^6.0.0",
     "npm-audit-report": "^3.0.0",
     "npm-install-checks": "^5.0.0",
