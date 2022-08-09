@@ -45,11 +45,14 @@ t.test('test out bumping the version in all the ways', async t => {
         ...pkg,
         workspaces: [
           "packages/a"
-        ]
+        ],
       }, null, 2),
       'package-lock.json': JSON.stringify(lock, null, 2),
     },
     'git/packages/a': {
+      'package.json': JSON.stringify({
+        ...pkg,
+      }, null, 2),
       'package-lock.json': JSON.stringify(lock, null, 2),
     },
     'not-git': {

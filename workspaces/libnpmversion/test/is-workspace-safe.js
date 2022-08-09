@@ -1,5 +1,6 @@
 const t = require('tap')
 const isWorkspaceSafe = require('../lib/is-workspace-safe.js')
+const path = require('path')
 
 t.cleanSnapshot = s => s.replace(/\\+/g, '/')
 
@@ -44,7 +45,7 @@ t.test('all the potential states', async t => {
   })
 
   await t.test('in workspace', async t => {
-    t.notOk(await isWorkspaceSafe(`${dir}/git`, `${dir}\\git\\packages\\a`, `${dir}\\git\\packages\\a`), 'should return false for being in a workspace')
+    t.notOk(await isWorkspaceSafe(`${dir}/git`, `${dir}${path.sep}git${path.sep}packages${path.sep}a`, `${dir}${path.sep}git${path.sep}packages${path.sep}a`), 'should return false for being in a workspace')
   })
 
   await t.test('no workspaces', async t=> {
