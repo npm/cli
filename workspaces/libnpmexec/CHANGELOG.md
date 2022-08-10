@@ -1,5 +1,14 @@
 # Changelog
 
+## [4.0.10](https://github.com/npm/cli/compare/libnpmexec-v4.0.9...libnpmexec-v4.0.10) (2022-08-10)
+
+
+### Bug Fixes
+
+* ignore global prefix if --prefix is used ([#5291](https://github.com/npm/cli/issues/5291)) ([daaf461](https://github.com/npm/cli/commit/daaf4619c85ecf62346770735cfa8e2ddecbef8b))
+* look up local command bins from local tree ([#5273](https://github.com/npm/cli/issues/5273)) ([c992fd6](https://github.com/npm/cli/commit/c992fd6757505974dc8e92a9e2886d2233e098eb))
+* only try to run global bin if the bin name exists ([#5253](https://github.com/npm/cli/issues/5253)) ([95ae9f2](https://github.com/npm/cli/commit/95ae9f2e2555ef592777399bf8fee5206d77f41d))
+
 ## [4.0.9](https://github.com/npm/cli/compare/libnpmexec-v4.0.8...libnpmexec-v4.0.9) (2022-08-03)
 
 
