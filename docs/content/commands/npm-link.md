@@ -41,10 +41,10 @@ test it iteratively without having to continually rebuild.
 For example:
 
 ```bash
-    cd ~/projects/node-redis    # go into the package directory
-    npm link                    # creates global link
-    cd ~/projects/node-bloggy   # go into some other package directory.
-    npm link redis              # link-install the package
+cd ~/projects/node-redis    # go into the package directory
+npm link                    # creates global link
+cd ~/projects/node-bloggy   # go into some other package directory.
+npm link redis              # link-install the package
 ```
 
 Now, any changes to ~/projects/node-redis will be reflected in
