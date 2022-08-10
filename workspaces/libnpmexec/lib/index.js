@@ -82,7 +82,7 @@ const exec = async (opts) => {
     localBin = resolve('./node_modules/.bin'),
     locationMsg = undefined,
     globalBin = '',
-    globalPath = '',
+    globalPath,
     output,
     // dereference values because we manipulate it later
     packages: [...packages] = [],
@@ -120,7 +120,7 @@ const exec = async (opts) => {
     if (localBinPath) {
       binPaths.push(localBinPath)
       return await run()
-    } else if (await fileExists(`${globalBin}/${args[0]}`)) {
+    } else if (globalPath && await fileExists(`${globalBin}/${args[0]}`)) {
       binPaths.push(globalBin)
       return await run()
     }
@@ -155,7 +155,7 @@ const exec = async (opts) => {
 
     args[0] = getBinFromManifest(commandManifest)
 
-    if (needInstall.length > 0) {
+    if (needInstall.length > 0 && globalPath) {
       // See if the package is installed globally, and run the translated bin
       const globalArb = new Arborist({ ...flatOptions, path: globalPath, global: true })
       const globalTree = await globalArb.loadActual()

@@ -517,6 +517,7 @@ t.test('global space pkg', async t => {
     },
   })
   const globalBin = resolve(path, 'global/node_modules/.bin')
+  const globalPath = resolve(path, 'global')
   const runPath = path
 
   const executable = resolve(path, 'global/node_modules/a')
@@ -531,6 +532,7 @@ t.test('global space pkg', async t => {
     ...baseOpts,
     args: ['a', 'resfile'],
     globalBin,
+    globalPath,
     path,
     runPath,
   })
@@ -588,12 +590,13 @@ t.test('run from registry - no local packages', async t => {
   const testdir = t.testdir({
     cache: {},
     npxCache: {},
+    global: {
+      lib: {},
+      bin: {},
+    },
     work: {},
   })
   const path = resolve(testdir, 'work')
-  const runPath = path
-  const cache = resolve(testdir, 'cache')
-  const npxCache = resolve(testdir, 'npxCache')
 
   t.throws(
     () => fs.statSync(resolve(path, 'index.js')),
@@ -604,10 +607,11 @@ t.test('run from registry - no local packages', async t => {
   await libexec({
     ...baseOpts,
     args: ['@ruyadorno/create-index'],
-    cache,
-    npxCache,
+    cache: resolve(testdir, 'cache'),
+    globalPath: resolve(testdir, 'global'),
+    npxCache: resolve(testdir, 'npxCache'),
     path,
-    runPath,
+    runPath: path,
   })
 
   t.ok(fs.statSync(resolve(path, 'index.js')).isFile(), 'ran create pkg')
