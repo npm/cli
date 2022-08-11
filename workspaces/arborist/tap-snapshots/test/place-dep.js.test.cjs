@@ -775,6 +775,501 @@ exports[`test/place-dep.js TAP placement tests clobber and nest a peer set in fa
 Array []
 `
 
+exports[`test/place-dep.js TAP placement tests conflicted optional peer fails when it has a non-peerOptional edgeIn > thrown error 1`] = `
+Error: could not resolve {
+  "code": "ERESOLVE",
+  "current": Object {
+    "dependents": Array [
+      Object {
+        "from": Object {
+          "dependents": Array [
+            Object {
+              "from": Object {
+                "location": "/some/path",
+              },
+              "name": "a",
+              "spec": "1",
+              "type": "prod",
+            },
+          ],
+          "isWorkspace": false,
+          "location": "node_modules/a",
+          "name": "a",
+          "version": "1.0.0",
+        },
+        "name": "c",
+        "spec": "1",
+        "type": "peer",
+      },
+    ],
+    "isWorkspace": false,
+    "location": "node_modules/c",
+    "name": "c",
+    "version": "1.0.0",
+  },
+  "dep": Object {
+    "dependents": Array [
+      Object {
+        "error": "INVALID",
+        "from": Object {
+          "dependents": Array [
+            Object {
+              "from": Object {
+                "dependents": Array [
+                  Object {
+                    "from": Object {
+                      "location": "/some/path",
+                    },
+                    "name": "d",
+                    "spec": "2",
+                    "type": "prod",
+                  },
+                ],
+                "isWorkspace": false,
+                "location": "node_modules/d",
+                "name": "d",
+                "version": "2.0.0",
+              },
+              "name": "b",
+              "spec": "2",
+              "type": "peerOptional",
+            },
+            Object {
+              "from": Object {
+                "location": "/some/path",
+              },
+              "name": "b",
+              "spec": "2",
+              "type": "prod",
+            },
+          ],
+          "isWorkspace": false,
+          "location": "node_modules/b",
+          "name": "b",
+          "version": "2.0.0",
+        },
+        "name": "c",
+        "spec": "2",
+        "type": "peer",
+      },
+    ],
+    "isWorkspace": false,
+    "location": "node_modules/c",
+    "name": "c",
+    "version": "2.0.0",
+    "whileInstalling": Object {
+      "name": "b",
+      "path": "/some/path/node_modules/b",
+      "version": "2.0.0",
+    },
+  },
+  "edge": Object {
+    "error": "INVALID",
+    "from": Object {
+      "dependents": Array [
+        Object {
+          "from": Object {
+            "dependents": Array [
+              Object {
+                "from": Object {
+                  "location": "/some/path",
+                },
+                "name": "d",
+                "spec": "2",
+                "type": "prod",
+              },
+            ],
+            "isWorkspace": false,
+            "location": "node_modules/d",
+            "name": "d",
+            "version": "2.0.0",
+          },
+          "name": "b",
+          "spec": "2",
+          "type": "peerOptional",
+        },
+        Object {
+          "from": Object {
+            "location": "/some/path",
+          },
+          "name": "b",
+          "spec": "2",
+          "type": "prod",
+        },
+      ],
+      "isWorkspace": false,
+      "location": "node_modules/b",
+      "name": "b",
+      "version": "2.0.0",
+    },
+    "name": "c",
+    "spec": "2",
+    "type": "peer",
+  },
+  "force": false,
+  "isMine": true,
+  "name": "Error",
+  "peerConflict": Object {
+    "current": Object {
+      "dependents": Array [
+        Object {
+          "from": Object {
+            "dependents": Array [
+              Object {
+                "from": Object {
+                  "location": "/some/path",
+                },
+                "name": "a",
+                "spec": "1",
+                "type": "prod",
+              },
+            ],
+            "isWorkspace": false,
+            "location": "node_modules/a",
+            "name": "a",
+            "version": "1.0.0",
+          },
+          "name": "c",
+          "spec": "1",
+          "type": "peer",
+        },
+      ],
+      "isWorkspace": false,
+      "location": "node_modules/c",
+      "name": "c",
+      "version": "1.0.0",
+    },
+    "peer": Object {
+      "dependents": Array [
+        Object {
+          "error": "INVALID",
+          "from": Object {
+            "dependents": Array [
+              Object {
+                "from": Object {
+                  "dependents": Array [
+                    Object {
+                      "from": Object {
+                        "location": "/some/path",
+                      },
+                      "name": "d",
+                      "spec": "2",
+                      "type": "prod",
+                    },
+                  ],
+                  "isWorkspace": false,
+                  "location": "node_modules/d",
+                  "name": "d",
+                  "version": "2.0.0",
+                },
+                "name": "b",
+                "spec": "2",
+                "type": "peerOptional",
+              },
+              Object {
+                "from": Object {
+                  "location": "/some/path",
+                },
+                "name": "b",
+                "spec": "2",
+                "type": "prod",
+              },
+            ],
+            "isWorkspace": false,
+            "location": "node_modules/b",
+            "name": "b",
+            "version": "2.0.0",
+          },
+          "name": "c",
+          "spec": "2",
+          "type": "peer",
+        },
+      ],
+      "isWorkspace": false,
+      "location": "node_modules/c",
+      "name": "c",
+      "version": "2.0.0",
+      "whileInstalling": Object {
+        "name": "b",
+        "path": "/some/path/node_modules/b",
+        "version": "2.0.0",
+      },
+    },
+  },
+  "strictPeerDeps": false,
+}
+`
+
+exports[`test/place-dep.js TAP placement tests conflicted optional peer fails when it has a non-peerOptional edgeIn, force > changes to tree 1`] = `
+--- expected
++++ actual
+@@ -69,6 +69,7 @@
+           "name": "c",
+           "spec": "2",
+           "error": "INVALID",
++          "peerConflicted": true,
+           "to": "node_modules/c",
+         },
+       },
+@@ -108,6 +109,7 @@
+           "name": "c",
+           "spec": "2",
+           "error": "INVALID",
++          "peerConflicted": true,
+           "from": "node_modules/b",
+         },
+       },
+
+`
+
+exports[`test/place-dep.js TAP placement tests conflicted optional peer fails when it has a non-peerOptional edgeIn, force > placements 1`] = `
+Array [
+  Object {
+    "canPlace": null,
+    "canPlaceSelf": null,
+    "checks": Map {
+      "" => Array [
+        Symbol(CONFLICT),
+        Symbol(CONFLICT),
+      ],
+    },
+    "dep": "c@2.0.0",
+    "edge": "{ node_modules/b peer c@2 }",
+    "placed": null,
+  },
+]
+`
+
+exports[`test/place-dep.js TAP placement tests conflicted optional peer fails when it has a non-peerOptional edgeIn, force > warnings 1`] = `
+Array [
+  Array [
+    "ERESOLVE",
+    "overriding peer dependency",
+    Object {
+      "code": "ERESOLVE",
+      "current": Object {
+        "dependents": Array [
+          Object {
+            "from": Object {
+              "dependents": Array [
+                Object {
+                  "from": Object {
+                    "location": "/some/path",
+                  },
+                  "name": "a",
+                  "spec": "1",
+                  "type": "prod",
+                },
+              ],
+              "isWorkspace": false,
+              "location": "node_modules/a",
+              "name": "a",
+              "version": "1.0.0",
+            },
+            "name": "c",
+            "spec": "1",
+            "type": "peer",
+          },
+        ],
+        "isWorkspace": false,
+        "location": "node_modules/c",
+        "name": "c",
+        "version": "1.0.0",
+      },
+      "dep": Object {
+        "dependents": Array [
+          Object {
+            "error": "INVALID",
+            "from": Object {
+              "dependents": Array [
+                Object {
+                  "from": Object {
+                    "dependents": Array [
+                      Object {
+                        "from": Object {
+                          "location": "/some/path",
+                        },
+                        "name": "d",
+                        "spec": "2",
+                        "type": "prod",
+                      },
+                    ],
+                    "isWorkspace": false,
+                    "location": "node_modules/d",
+                    "name": "d",
+                    "version": "2.0.0",
+                  },
+                  "name": "b",
+                  "spec": "2",
+                  "type": "peerOptional",
+                },
+                Object {
+                  "from": Object {
+                    "location": "/some/path",
+                  },
+                  "name": "b",
+                  "spec": "2",
+                  "type": "prod",
+                },
+              ],
+              "isWorkspace": false,
+              "location": "node_modules/b",
+              "name": "b",
+              "version": "2.0.0",
+            },
+            "name": "c",
+            "spec": "2",
+            "type": "peer",
+          },
+        ],
+        "isWorkspace": false,
+        "location": "node_modules/c",
+        "name": "c",
+        "version": "2.0.0",
+        "whileInstalling": Object {
+          "name": "b",
+          "path": "/some/path/node_modules/b",
+          "version": "2.0.0",
+        },
+      },
+      "edge": Object {
+        "error": "INVALID",
+        "from": Object {
+          "dependents": Array [
+            Object {
+              "from": Object {
+                "dependents": Array [
+                  Object {
+                    "from": Object {
+                      "location": "/some/path",
+                    },
+                    "name": "d",
+                    "spec": "2",
+                    "type": "prod",
+                  },
+                ],
+                "isWorkspace": false,
+                "location": "node_modules/d",
+                "name": "d",
+                "version": "2.0.0",
+              },
+              "name": "b",
+              "spec": "2",
+              "type": "peerOptional",
+            },
+            Object {
+              "from": Object {
+                "location": "/some/path",
+              },
+              "name": "b",
+              "spec": "2",
+              "type": "prod",
+            },
+          ],
+          "isWorkspace": false,
+          "location": "node_modules/b",
+          "name": "b",
+          "version": "2.0.0",
+        },
+        "name": "c",
+        "spec": "2",
+        "type": "peer",
+      },
+      "force": true,
+      "isMine": true,
+      "peerConflict": Object {
+        "current": Object {
+          "dependents": Array [
+            Object {
+              "from": Object {
+                "dependents": Array [
+                  Object {
+                    "from": Object {
+                      "location": "/some/path",
+                    },
+                    "name": "a",
+                    "spec": "1",
+                    "type": "prod",
+                  },
+                ],
+                "isWorkspace": false,
+                "location": "node_modules/a",
+                "name": "a",
+                "version": "1.0.0",
+              },
+              "name": "c",
+              "spec": "1",
+              "type": "peer",
+            },
+          ],
+          "isWorkspace": false,
+          "location": "node_modules/c",
+          "name": "c",
+          "version": "1.0.0",
+        },
+        "peer": Object {
+          "dependents": Array [
+            Object {
+              "error": "INVALID",
+              "from": Object {
+                "dependents": Array [
+                  Object {
+                    "from": Object {
+                      "dependents": Array [
+                        Object {
+                          "from": Object {
+                            "location": "/some/path",
+                          },
+                          "name": "d",
+                          "spec": "2",
+                          "type": "prod",
+                        },
+                      ],
+                      "isWorkspace": false,
+                      "location": "node_modules/d",
+                      "name": "d",
+                      "version": "2.0.0",
+                    },
+                    "name": "b",
+                    "spec": "2",
+                    "type": "peerOptional",
+                  },
+                  Object {
+                    "from": Object {
+                      "location": "/some/path",
+                    },
+                    "name": "b",
+                    "spec": "2",
+                    "type": "prod",
+                  },
+                ],
+                "isWorkspace": false,
+                "location": "node_modules/b",
+                "name": "b",
+                "version": "2.0.0",
+              },
+              "name": "c",
+              "spec": "2",
+              "type": "peer",
+            },
+          ],
+          "isWorkspace": false,
+          "location": "node_modules/c",
+          "name": "c",
+          "version": "2.0.0",
+          "whileInstalling": Object {
+            "name": "b",
+            "path": "/some/path/node_modules/b",
+            "version": "2.0.0",
+          },
+        },
+      },
+      "strictPeerDeps": false,
+    },
+  ],
+]
+`
+
 exports[`test/place-dep.js TAP placement tests cycle of peers > changes to tree 1`] = `
 --- expected
 +++ actual
@@ -5086,6 +5581,213 @@ Array [
 
 exports[`test/place-dep.js TAP placement tests peer with peers > warnings 1`] = `
 Array []
+`
+
+exports[`test/place-dep.js TAP placement tests peerOptional can be invalid when peers conflict > changes to tree 1`] = `
+--- expected
++++ actual
+@@ -63,6 +63,7 @@
+           "name": "c",
+           "spec": "2",
+           "error": "INVALID",
++          "peerConflicted": true,
+           "to": "node_modules/c",
+         },
+       },
+@@ -96,6 +97,7 @@
+           "name": "c",
+           "spec": "2",
+           "error": "INVALID",
++          "peerConflicted": true,
+           "from": "node_modules/b",
+         },
+       },
+
+`
+
+exports[`test/place-dep.js TAP placement tests peerOptional can be invalid when peers conflict > placements 1`] = `
+Array [
+  Object {
+    "canPlace": null,
+    "canPlaceSelf": null,
+    "checks": Map {
+      "" => Array [
+        Symbol(CONFLICT),
+        Symbol(CONFLICT),
+      ],
+    },
+    "dep": "c@2.0.0",
+    "edge": "{ node_modules/b peerOptional c@2 }",
+    "placed": null,
+  },
+]
+`
+
+exports[`test/place-dep.js TAP placement tests peerOptional can be invalid when peers conflict > warnings 1`] = `
+Array [
+  Array [
+    "ERESOLVE",
+    "overriding peer dependency",
+    Object {
+      "code": "ERESOLVE",
+      "current": Object {
+        "dependents": Array [
+          Object {
+            "from": Object {
+              "dependents": Array [
+                Object {
+                  "from": Object {
+                    "location": "/some/path",
+                  },
+                  "name": "a",
+                  "spec": "1",
+                  "type": "prod",
+                },
+              ],
+              "isWorkspace": false,
+              "location": "node_modules/a",
+              "name": "a",
+              "version": "1.0.0",
+            },
+            "name": "c",
+            "spec": "1",
+            "type": "peer",
+          },
+        ],
+        "isWorkspace": false,
+        "location": "node_modules/c",
+        "name": "c",
+        "version": "1.0.0",
+      },
+      "dep": Object {
+        "dependents": Array [
+          Object {
+            "error": "INVALID",
+            "from": Object {
+              "dependents": Array [
+                Object {
+                  "from": Object {
+                    "location": "/some/path",
+                  },
+                  "name": "b",
+                  "spec": "2",
+                  "type": "prod",
+                },
+              ],
+              "isWorkspace": false,
+              "location": "node_modules/b",
+              "name": "b",
+              "version": "2.0.0",
+            },
+            "name": "c",
+            "spec": "2",
+            "type": "peerOptional",
+          },
+        ],
+        "isWorkspace": false,
+        "location": "node_modules/c",
+        "name": "c",
+        "version": "2.0.0",
+        "whileInstalling": Object {
+          "name": "b",
+          "path": "/some/path/node_modules/b",
+          "version": "2.0.0",
+        },
+      },
+      "edge": Object {
+        "error": "INVALID",
+        "from": Object {
+          "dependents": Array [
+            Object {
+              "from": Object {
+                "location": "/some/path",
+              },
+              "name": "b",
+              "spec": "2",
+              "type": "prod",
+            },
+          ],
+          "isWorkspace": false,
+          "location": "node_modules/b",
+          "name": "b",
+          "version": "2.0.0",
+        },
+        "name": "c",
+        "spec": "2",
+        "type": "peerOptional",
+      },
+      "force": false,
+      "isMine": true,
+      "peerConflict": Object {
+        "current": Object {
+          "dependents": Array [
+            Object {
+              "from": Object {
+                "dependents": Array [
+                  Object {
+                    "from": Object {
+                      "location": "/some/path",
+                    },
+                    "name": "a",
+                    "spec": "1",
+                    "type": "prod",
+                  },
+                ],
+                "isWorkspace": false,
+                "location": "node_modules/a",
+                "name": "a",
+                "version": "1.0.0",
+              },
+              "name": "c",
+              "spec": "1",
+              "type": "peer",
+            },
+          ],
+          "isWorkspace": false,
+          "location": "node_modules/c",
+          "name": "c",
+          "version": "1.0.0",
+        },
+        "peer": Object {
+          "dependents": Array [
+            Object {
+              "error": "INVALID",
+              "from": Object {
+                "dependents": Array [
+                  Object {
+                    "from": Object {
+                      "location": "/some/path",
+                    },
+                    "name": "b",
+                    "spec": "2",
+                    "type": "prod",
+                  },
+                ],
+                "isWorkspace": false,
+                "location": "node_modules/b",
+                "name": "b",
+                "version": "2.0.0",
+              },
+              "name": "c",
+              "spec": "2",
+              "type": "peerOptional",
+            },
+          ],
+          "isWorkspace": false,
+          "location": "node_modules/c",
+          "name": "c",
+          "version": "2.0.0",
+          "whileInstalling": Object {
+            "name": "b",
+            "path": "/some/path/node_modules/b",
+            "version": "2.0.0",
+          },
+        },
+      },
+      "strictPeerDeps": false,
+    },
+  ],
+]
 `
 
 exports[`test/place-dep.js TAP placement tests peers with peerConflicted edges in peerSet > changes to tree 1`] = `
