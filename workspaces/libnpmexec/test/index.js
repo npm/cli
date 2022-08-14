@@ -66,6 +66,60 @@ require('fs').writeFileSync(process.argv.slice(2)[0], 'LOCAL PKG')`,
   t.equal(res, 'LOCAL PKG', 'should run local pkg bin script')
 })
 
+t.test('locally available pkg - by scoped name only', async t => {
+  const pkg = {
+    name: '@npmcli/npx-local-test',
+    version: '2.0.0',
+    bin: {
+      'npx-local-test': './index.js',
+    },
+  }
+  const path = t.testdir({
+    cache: {},
+    npxCache: {},
+    node_modules: {
+      '.bin': {},
+      '@npmcli': {
+        'npx-local-test': {
+          'package.json': JSON.stringify(pkg),
+          'index.js': `#!/usr/bin/env node
+  require('fs').writeFileSync(process.argv.slice(2)[0], 'LOCAL PKG')`,
+        },
+      },
+    },
+    'package.json': JSON.stringify({
+      name: 'pkg',
+      dependencies: {
+        '@npmcli/npx-local-test': '^2.0.0',
+      },
+    }),
+  })
+  const runPath = path
+  const cache = resolve(path, 'cache')
+  const npxCache = resolve(path, 'npxCache')
+
+  const executable =
+    resolve(path, 'node_modules/@npmcli/npx-local-test/index.js')
+  fs.chmodSync(executable, 0o775)
+
+  await binLinks({
+    path: resolve(path, 'node_modules/@npmcli/npx-local-test'),
+    pkg,
+  })
+
+  await libexec({
+    ...baseOpts,
+    cache,
+    npxCache,
+    args: ['@npmcli/npx-local-test', 'resfile'],
+    path,
+    runPath,
+  })
+
+  const res = fs.readFileSync(resolve(path, 'resfile')).toString()
+  t.equal(res, 'LOCAL PKG', 'should run local pkg bin script')
+})
+
 t.test('locally available pkg - by name', async t => {
   const pkg = {
     name: '@ruyadorno/create-index',
@@ -463,6 +517,7 @@ t.test('global space pkg', async t => {
     },
   })
   const globalBin = resolve(path, 'global/node_modules/.bin')
+  const globalPath = resolve(path, 'global')
   const runPath = path
 
   const executable = resolve(path, 'global/node_modules/a')
@@ -477,6 +532,7 @@ t.test('global space pkg', async t => {
     ...baseOpts,
     args: ['a', 'resfile'],
     globalBin,
+    globalPath,
     path,
     runPath,
   })
@@ -534,12 +590,13 @@ t.test('run from registry - no local packages', async t => {
   const testdir = t.testdir({
     cache: {},
     npxCache: {},
+    global: {
+      lib: {},
+      bin: {},
+    },
     work: {},
   })
   const path = resolve(testdir, 'work')
-  const runPath = path
-  const cache = resolve(testdir, 'cache')
-  const npxCache = resolve(testdir, 'npxCache')
 
   t.throws(
     () => fs.statSync(resolve(path, 'index.js')),
@@ -550,10 +607,11 @@ t.test('run from registry - no local packages', async t => {
   await libexec({
     ...baseOpts,
     args: ['@ruyadorno/create-index'],
-    cache,
-    npxCache,
+    cache: resolve(testdir, 'cache'),
+    globalPath: resolve(testdir, 'global'),
+    npxCache: resolve(testdir, 'npxCache'),
     path,
-    runPath,
+    runPath: path,
   })
 
   t.ok(fs.statSync(resolve(path, 'index.js')).isFile(), 'ran create pkg')

@@ -1,5 +1,37 @@
 # Changelog
 
+## v8.17.0 (2022-08-10)
+
+### Features
+
+  * [`96b6781`](https://github.com/npm/cli/commit/96b6781086143d7285c2c5bf7808c24b2c87e4dd) [#5263](https://github.com/npm/cli/pull/5263) feat(arborist): add option to forcibly skip loading a virtual tree ([@nlf](https://github.com/nlf))
+
+### Bug Fixes
+
+  * [`9078e27`](https://github.com/npm/cli/commit/9078e27cef0233d6fc81e0ca824a34fd7685d93c) [#5263](https://github.com/npm/cli/pull/5263) fix(query): tell arborist to load an actual tree, not a virtual one ([@nlf](https://github.com/nlf))
+  * [`c992fd6`](https://github.com/npm/cli/commit/c992fd6757505974dc8e92a9e2886d2233e098eb) [#5273](https://github.com/npm/cli/pull/5273) fix: look up local command bins from local tree ([@wraithgar](https://github.com/wraithgar))
+  * [`95ae9f2`](https://github.com/npm/cli/commit/95ae9f2e2555ef592777399bf8fee5206d77f41d) [#5253](https://github.com/npm/cli/pull/5253) fix: only try to run global bin if the bin name exists ([@wraithgar](https://github.com/wraithgar))
+  * [`daaf461`](https://github.com/npm/cli/commit/daaf4619c85ecf62346770735cfa8e2ddecbef8b) [#5291](https://github.com/npm/cli/pull/5291) fix: ignore global prefix if --prefix is used ([@wraithgar](https://github.com/wraithgar))
+
+### Documentation
+
+  * [`f281ec8`](https://github.com/npm/cli/commit/f281ec8a1aec43439281a8fca4c255b0d94a0c94) [#5257](https://github.com/npm/cli/pull/5257) docs: Fix link syntax in `dependency-selectors.md` ([@aried3r](https://github.com/aried3r))
+
+### Dependencies
+
+  * [`741bccf`](https://github.com/npm/cli/commit/741bccf24ad1fa420a6c6182e04487abc02f8ccf) [#5284](https://github.com/npm/cli/pull/5284) deps: `@npmcli/config@4.2.1`
+  * [`7f31b85`](https://github.com/npm/cli/commit/7f31b85db650c7a2b3b0577840251f5e25e63a01) [#5284](https://github.com/npm/cli/pull/5284) deps: `nopt@6.0.0`
+  * [`2569d82`](https://github.com/npm/cli/commit/2569d82d0408e158b4b28cab6f23e1b7dc468553) [#5284](https://github.com/npm/cli/pull/5284) deps: `node-gyp@9.1.0`
+  * [`a396f8d`](https://github.com/npm/cli/commit/a396f8dd0968971ddb6f491a0bc645132c82021a) [#5284](https://github.com/npm/cli/pull/5284) deps: `@npmcli/map-workspaces@2.0.4`
+  * [`a9b5306`](https://github.com/npm/cli/commit/a9b5306627058b8869a6221a0c099493c206a3f2) [#5284](https://github.com/npm/cli/pull/5284) deps: `is-core-module@2.10.0`
+  * [`786f753`](https://github.com/npm/cli/commit/786f753b0db49340a0e26ec8fb5425773a7f0558) [#5284](https://github.com/npm/cli/pull/5284) deps: `lru-cache@7.13.2`
+  * [`7b702b6`](https://github.com/npm/cli/commit/7b702b6d490d37bdfa52b623dd42ce185846b1bc) [#5284](https://github.com/npm/cli/pull/5284) deps: `are-we-there-yet@3.0.1`
+  * [`e74f99e`](https://github.com/npm/cli/commit/e74f99e7ccdfce1519cc45bb58054d94b748146c) [#5284](https://github.com/npm/cli/pull/5284) deps: `just-diff@5.1.1`
+  * [`9833066`](https://github.com/npm/cli/commit/983306637579ab5c062878c0153671007cceea2b) [#5284](https://github.com/npm/cli/pull/5284) deps: `just-diff-apply@5.4.1`
+  * [`4e5dd73`](https://github.com/npm/cli/commit/4e5dd732d7fe39490be1d9f8e81cbdba602c67fe) [#5284](https://github.com/npm/cli/pull/5284) deps: `socks@2.7.0`
+  * [`d0f5995`](https://github.com/npm/cli/commit/d0f5995e0399a093c8037057150a922e56b1d7ca) [#5284](https://github.com/npm/cli/pull/5284) deps: `@npmcli/run-script@4.2.1`
+  * [`8d870c5`](https://github.com/npm/cli/commit/8d870c56eed20f352695c3c06be07a656ada4ba7) [#5275](https://github.com/npm/cli/pull/5275) deps: `libnpmexec@4.0.10`
+
 ## v8.16.0 (2022-08-03)
 
 ### Features
