@@ -2728,6 +2728,52 @@ t.test('overrides', (t) => {
     t.end()
   })
 
+  t.test('node.overridden is true when an override applies to a specific node', async (t) => {
+    const tree = new Node({
+      loadOverrides: true,
+      path: '/some/path',
+      pkg: {
+        name: 'foo',
+        dependencies: {
+          bar: '^1',
+        },
+        overrides: {
+          baz: '1.0.0',
+        },
+      },
+      children: [{
+        name: 'bar',
+        version: '1.0.0',
+        pkg: {
+          dependencies: {
+            baz: '2.0.0',
+          },
+        },
+        children: [{
+          name: 'baz',
+          version: '1.0.0',
+          pkg: {
+            dependencies: {
+              buzz: '1.0.0',
+            },
+          },
+          children: [{
+            name: 'buzz',
+            version: '1.0.0',
+            pkg: {},
+          }],
+        }],
+      }],
+    })
+
+    const bar = tree.edgesOut.get('bar').to
+    t.not(bar.overridden, 'bar was not overridden')
+    const baz = bar.edgesOut.get('baz').to
+    t.ok(baz.overridden, 'baz was overridden')
+    const buzz = baz.edgesOut.get('buzz').to
+    t.not(buzz.overridden, 'buzz was not overridden')
+  })
+
   t.test('assertRootOverrides throws when a dependency and override conflict', async (t) => {
     const conflictingTree = new Node({
       loadOverrides: true,
