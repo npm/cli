@@ -28,7 +28,7 @@ t.test('query-selector-all', async t => {
     │ └── moo@3.0.0 (production dep of bar)
     ├─┬ foo@2.2.2 (dev dep of query-selector-all-tests)
     │ ├─┬ bar@1.4.0 (production dep of foo, deduped)
-    │ │ └── dasher@2.0.0 (peer dep of bar)
+    │ │ └── dasher@2.0.0 (overridden peer dep of bar)
     │ └── dash-separated-pkg@1.0.0 (production dep of foo)
     ├── moo@3.0.0 (dev dep of query-selector-all-tests)
     └─┬ recur@1.0.0 (dev dep of query-selector-all-tests)
@@ -98,7 +98,7 @@ t.test('query-selector-all', async t => {
               name: 'bar',
               version: '1.4.0',
               peerDependencies: {
-                dasher: '2.0.0',
+                dasher: '2.1.0',
               },
             }),
           },
@@ -202,6 +202,9 @@ t.test('query-selector-all', async t => {
         abbrev: '^1.1.1',
         bar: '^2.0.0',
         ipsum: 'npm:sit@1.0.0',
+      },
+      overrides: {
+        dasher: '2.0.0',
       },
       devDependencies: {
         foo: '^2.0.0',
@@ -368,6 +371,7 @@ t.test('query-selector-all', async t => {
     ]],
     [':missing', ['missing-dep@^1.0.0']],
     [':private', ['b@1.0.0']],
+    [':overridden', ['dasher@2.0.0']],
 
     // :not pseudo
     [':not(#foo)', [
