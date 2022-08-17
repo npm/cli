@@ -1,5 +1,40 @@
 # Changelog
 
+## v8.18.0 (2022-08-17)
+
+### Features
+
+  * [`e6d4304`](https://github.com/npm/cli/commit/e6d4304bbd03e38dcf2c7467bb1e61b5740a4c73) [#5306](https://github.com/npm/cli/pull/5306) feat(arborist): add overridden getter to Node class ([@nlf](https://github.com/nlf))
+  * [`d221f72`](https://github.com/npm/cli/commit/d221f72c00e13258469a748227a1d6f9953a5948) [#5306](https://github.com/npm/cli/pull/5306) feat(arborist): add :overridden pseudo selector ([@nlf](https://github.com/nlf))
+  * [`0d4ed0f`](https://github.com/npm/cli/commit/0d4ed0fb1cd86edd827cac0b5367b73bb864a9bf) [#5306](https://github.com/npm/cli/pull/5306) feat(query): support :overridden pseudo selector ([@nlf](https://github.com/nlf))
+
+### Bug Fixes
+
+  * [`05d9bcf`](https://github.com/npm/cli/commit/05d9bcf7e557e0dbecbd80d4d1be332963761e69) [#5306](https://github.com/npm/cli/pull/5306) fix(ls): display overridden nodes ([@nlf](https://github.com/nlf))
+  * [`cd2b1e6`](https://github.com/npm/cli/commit/cd2b1e6f5fbd85691465bbfe275c8baf1b6e2746) [#5306](https://github.com/npm/cli/pull/5306) fix(explain): display override information ([@nlf](https://github.com/nlf))
+  * [`e5a9162`](https://github.com/npm/cli/commit/e5a9162a9dae9471e1ea77ad38baa02bb8d9852e) [#5297](https://github.com/npm/cli/pull/5297) fix: npm exec does not use script-shell option to run commands ([@lux01](https://github.com/lux01))
+  * [`6eba131`](https://github.com/npm/cli/commit/6eba13164d84efb34554c7dddeb2dbfed063ac0a) [#5298](https://github.com/npm/cli/pull/5298) fix: don't prompt on `npm exec [directory]` ([@wraithgar](https://github.com/wraithgar))
+
+### Documentation
+
+  * [`bc66ffa`](https://github.com/npm/cli/commit/bc66ffa76005c882cc5fd237af87b7ca79375097) [#5304](https://github.com/npm/cli/pull/5304) docs: update --no-optional to --omit=optional ([@wraithgar](https://github.com/wraithgar))
+
+### Dependencies
+
+  * [`8460ccf`](https://github.com/npm/cli/commit/8460ccf8de0744e9b7228af682bbeb2eebb00e98) [#5311](https://github.com/npm/cli/pull/5311) deps: `libnpmexec@4.0.11`
+  * [`41d0f51`](https://github.com/npm/cli/commit/41d0f51c34b24659d080beff0d53905975d34213) [#5310](https://github.com/npm/cli/pull/5310) deps: `@npmcli/arborist@5.6.0`
+  * [`4e08d71`](https://github.com/npm/cli/commit/4e08d71e76fb2355dc93fcd7695e1ae20d6446af) [#5315](https://github.com/npm/cli/pull/5315) deps: `pacote@13.6.2`
+  * [`46e8753`](https://github.com/npm/cli/commit/46e875306f551e3b89e2786d0fc8f0f3e4a8aa82) [#5316](https://github.com/npm/cli/pull/5316) deps: `npm-registry-fetch@13.3.1`
+  * [`d39b2ee`](https://github.com/npm/cli/commit/d39b2ee671f2c7adf041b07a1d4e8bdc24ef7588) [#5318](https://github.com/npm/cli/pull/5318) deps: `normalize-package-data@4.0.1`
+  * [`7d564bd`](https://github.com/npm/cli/commit/7d564bd73bcac909a922d88986e3a55fe343ca44) [#5318](https://github.com/npm/cli/pull/5318) deps: `make-fetch-happen@10.2.1`
+  * [`5a56686`](https://github.com/npm/cli/commit/5a566863ca96f641fcecacd1ad20a7c837dccfeb) [#5318](https://github.com/npm/cli/pull/5318) deps: `@npmcli/git@3.0.2`
+  * [`3c5a866`](https://github.com/npm/cli/commit/3c5a866cc6e58e660a0aedb8ce6fec258e523a21) [#5318](https://github.com/npm/cli/pull/5318) deps: `bin-links@3.0.2`
+  * [`07536a4`](https://github.com/npm/cli/commit/07536a4be30ac3305fe4827335d621387bae3ca7) [#5318](https://github.com/npm/cli/pull/5318) deps: `@npmcli/fs@2.1.2`
+  * [`8165501`](https://github.com/npm/cli/commit/81655017172eaedd346b3efe63c5975c803c82b4) [#5318](https://github.com/npm/cli/pull/5318) deps: `@npmcli/move-file@2.0.1`
+  * [`cbee638`](https://github.com/npm/cli/commit/cbee6385a3231ea9ba02aa23d9dd110ba369217b) [#5318](https://github.com/npm/cli/pull/5318) deps: `cacache@16.1.2`
+  * [`1f6daf5`](https://github.com/npm/cli/commit/1f6daf5b9df054952a47df01780039bd5da8f024) [#5318](https://github.com/npm/cli/pull/5318) deps: `write-file-atomic@4.0.2`
+  * [`409468f`](https://github.com/npm/cli/commit/409468f25e783d0941e76c7a9a64a751a574176b) [#5318](https://github.com/npm/cli/pull/5318) deps: `minipass-fetch@2.1.1`
+
 ## v8.17.0 (2022-08-10)
 
 ### Features
