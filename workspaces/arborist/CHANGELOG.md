@@ -1,5 +1,14 @@
 # Changelog
 
+## [5.6.0](https://github.com/npm/cli/compare/arborist-v5.5.0...arborist-v5.6.0) (2022-08-17)
+
+
+### Features
+
+* **arborist:** add :overridden pseudo selector ([d221f72](https://github.com/npm/cli/commit/d221f72c00e13258469a748227a1d6f9953a5948))
+* **arborist:** add overridden getter to Node class ([e6d4304](https://github.com/npm/cli/commit/e6d4304bbd03e38dcf2c7467bb1e61b5740a4c73))
+* **query:** support :overridden pseudo selector ([0d4ed0f](https://github.com/npm/cli/commit/0d4ed0fb1cd86edd827cac0b5367b73bb864a9bf))
+
 ## [5.5.0](https://github.com/npm/cli/compare/arborist-v5.4.0...arborist-v5.5.0) (2022-08-10)
 
 
