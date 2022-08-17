@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.0.11](https://github.com/npm/cli/compare/libnpmexec-v4.0.10...libnpmexec-v4.0.11) (2022-08-17)
+
+
+### Bug Fixes
+
+* don't prompt on `npm exec [directory]` ([#5298](https://github.com/npm/cli/issues/5298)) ([6eba131](https://github.com/npm/cli/commit/6eba13164d84efb34554c7dddeb2dbfed063ac0a))
+* npm exec does not use script-shell option to run commands ([#5297](https://github.com/npm/cli/issues/5297)) ([e5a9162](https://github.com/npm/cli/commit/e5a9162a9dae9471e1ea77ad38baa02bb8d9852e))
+
 ## [4.0.10](https://github.com/npm/cli/compare/libnpmexec-v4.0.9...libnpmexec-v4.0.10) (2022-08-10)
 
 
