@@ -10,249 +10,198 @@ const OPTS = {
   registry: REG,
 }
 
-test('create', t => {
+test('create', async t => {
   tnock(t, REG).put(
     '/-/org/foo/team', { name: 'cli' }
   ).reply(201, { name: 'cli' })
-  return team.create('@foo:cli', OPTS).then(ret => {
-    t.same(ret, { name: 'cli' }, 'request succeeded')
-  })
+  const ret = await team.create('@foo:cli', OPTS)
+  t.same(ret, { name: 'cli' }, 'request succeeded')
 })
 
-test('create - no options', t => {
+test('create - no options', async t => {
   // NOTE: mocking real url, because no opts variable means `registry` value
   // will be defauled to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .put('/-/org/foo/team', { name: 'cli' })
     .reply(201, { name: 'cli' })
 
-  return team.create('@foo:cli')
-    .then(ret => {
-      t.same(ret, { name: 'cli' })
-    })
+  const ret = await team.create('@foo:cli')
+  t.same(ret, { name: 'cli' })
 })
 
-test('create bad entity name', t => {
-  return team.create('go away', OPTS).then(
-    () => {
-      throw new Error('should not succeed')
-    },
-    err => {
-      t.ok(err, 'error on bad entity name')
-    }
-  )
+test('create bad entity name', async t => {
+  await t.rejects(team.create('go away', OPTS))
 })
 
-test('create empty entity', t => {
-  return team.create(undefined, OPTS).then(
-    () => {
-      throw new Error('should not succeed')
-    },
-    err => {
-      t.ok(err, 'error on bad entity name')
-    }
-  )
+test('create empty entity', async t => {
+  await t.rejects(team.create(undefined, OPTS))
 })
 
-test('create w/ description', t => {
+test('create w/ description', async t => {
   tnock(t, REG).put('/-/org/foo/team', {
     name: 'cli',
     description: 'just some cool folx',
   }).reply(201, { name: 'cli' })
-  return team.create('@foo:cli', {
+  const ret = await team.create('@foo:cli', {
     ...OPTS,
     description: 'just some cool folx',
-  }).then(ret => {
-    t.same(ret, { name: 'cli' }, 'no desc in return')
   })
+  t.same(ret, { name: 'cli' }, 'no desc in return')
 })
 
-test('destroy', t => {
+test('destroy', async t => {
   tnock(t, REG).delete(
     '/-/team/foo/cli'
   ).reply(204, {})
-  return team.destroy('@foo:cli', OPTS).then(ret => {
-    t.same(ret, {}, 'request succeeded')
-  })
+  const ret = await team.destroy('@foo:cli', OPTS)
+  t.same(ret, {}, 'request succeeded')
 })
 
-test('destroy - no options', t => {
+test('destroy - no options', async t => {
   // NOTE: mocking real url, because no opts variable means `registry` value
   // will be defauled to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .delete('/-/team/foo/cli')
     .reply(204, {})
 
-  return team.destroy('@foo:cli').then(ret => {
-    t.same(ret, {}, 'request succeeded')
-  })
+  const ret = await team.destroy('@foo:cli')
+  t.same(ret, {}, 'request succeeded')
 })
 
-test('add', t => {
+test('add', async t => {
   tnock(t, REG).put(
     '/-/team/foo/cli/user', { user: 'zkat' }
   ).reply(201, {})
-  return team.add('zkat', '@foo:cli', OPTS).then(ret => {
-    t.same(ret, {}, 'request succeeded')
-  })
+  const ret = await team.add('zkat', '@foo:cli', OPTS)
+  t.same(ret, {}, 'request succeeded')
 })
 
-test('add - no options', t => {
+test('add - no options', async t => {
   // NOTE: mocking real url, because no opts variable means `registry` value
   // will be defauled to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .put('/-/team/foo/cli/user', { user: 'zkat' })
     .reply(201, {})
 
-  return team.add('zkat', '@foo:cli').then(ret => {
-    t.same(ret, {}, 'request succeeded')
-  })
+  const ret = await team.add('zkat', '@foo:cli')
+  t.same(ret, {}, 'request succeeded')
 })
 
-test('rm', t => {
+test('rm', async t => {
   tnock(t, REG).delete(
     '/-/team/foo/cli/user', { user: 'zkat' }
   ).reply(204, {})
-  return team.rm('zkat', '@foo:cli', OPTS).then(ret => {
-    t.same(ret, {}, 'request succeeded')
-  })
+  const ret = await team.rm('zkat', '@foo:cli', OPTS)
+  t.same(ret, {}, 'request succeeded')
 })
 
-test('rm - no options', t => {
+test('rm - no options', async t => {
   // NOTE: mocking real url, because no opts variable means `registry` value
   // will be defauled to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .delete('/-/team/foo/cli/user', { user: 'zkat' })
     .reply(204, {})
 
-  return team.rm('zkat', '@foo:cli').then(ret => {
-    t.same(ret, {}, 'request succeeded')
-  })
+  const ret = await team.rm('zkat', '@foo:cli')
+  t.same(ret, {}, 'request succeeded')
 })
 
-test('lsTeams', t => {
+test('lsTeams', async t => {
   tnock(t, REG).get(
     '/-/org/foo/team?format=cli'
   ).reply(200, ['foo:bar', 'foo:cli'])
-  return team.lsTeams('foo', OPTS).then(ret => {
-    t.same(ret, ['foo:bar', 'foo:cli'], 'got teams')
-  })
+  const ret = await team.lsTeams('foo', OPTS)
+  t.same(ret, ['foo:bar', 'foo:cli'], 'got teams')
 })
 
-test('lsTeams - no options', t => {
+test('lsTeams - no options', async t => {
   // NOTE: mocking real url, because no opts variable means `registry` value
   // will be defauled to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .get('/-/org/foo/team?format=cli')
     .reply(200, ['foo:bar', 'foo:cli'])
 
-  return team.lsTeams('foo').then(ret => {
-    t.same(ret, ['foo:bar', 'foo:cli'], 'got teams')
-  })
+  const ret = await team.lsTeams('foo')
+  t.same(ret, ['foo:bar', 'foo:cli'], 'got teams')
 })
 
-test('lsTeams error', t => {
+test('lsTeams error', async t => {
   tnock(t, REG).get(
     '/-/org/foo/team?format=cli'
   ).reply(500)
-  return team.lsTeams('foo', OPTS).then(
-    () => {
-      throw new Error('should not succeed')
-    },
-    err => {
-      t.equal(err.code, 'E500', 'got error code')
-    }
+  await t.rejects(
+    team.lsTeams('foo', OPTS),
+    { code: 'E500' }
   )
 })
 
-test('lsTeams.stream', t => {
+test('lsTeams.stream', async t => {
   tnock(t, REG).get(
     '/-/org/foo/team?format=cli'
   ).reply(200, ['foo:bar', 'foo:cli'])
-  return team.lsTeams.stream('foo', OPTS)
-    .collect()
-    .then(ret => {
-      t.same(ret, ['foo:bar', 'foo:cli'], 'got teams')
-    })
+  const ret = await team.lsTeams.stream('foo', OPTS).collect()
+  t.same(ret, ['foo:bar', 'foo:cli'], 'got teams')
 })
 
-test('lsTeams.stream - no options', t => {
+test('lsTeams.stream - no options', async t => {
   // NOTE: mocking real url, because no opts variable means `registry` value
   // will be defauled to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .get('/-/org/foo/team?format=cli')
     .reply(200, ['foo:bar', 'foo:cli'])
 
-  return team.lsTeams.stream('foo')
-    .collect()
-    .then(ret => {
-      t.same(ret, ['foo:bar', 'foo:cli'], 'got teams')
-    })
+  const ret = await team.lsTeams.stream('foo').collect()
+  t.same(ret, ['foo:bar', 'foo:cli'], 'got teams')
 })
 
-test('lsUsers', t => {
+test('lsUsers', async t => {
   tnock(t, REG).get(
     '/-/team/foo/cli/user?format=cli'
   ).reply(500)
-  return team.lsUsers('@foo:cli', OPTS).then(
-    () => {
-      throw new Error('should not succeed')
-    },
-    err => {
-      t.equal(err.code, 'E500', 'got error code')
-    }
+  await t.rejects(
+    team.lsUsers('@foo:cli', OPTS),
+    { code: 'E500' }
   )
 })
 
-test('lsUsers - no options', t => {
+test('lsUsers - no options', async t => {
   // NOTE: mocking real url, because no opts variable means `registry` value
   // will be defauled to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .get('/-/team/foo/cli/user?format=cli')
     .reply(500)
 
-  return team.lsUsers('@foo:cli').then(
-    () => {
-      throw new Error('should not succeed')
-    },
-    err => {
-      t.equal(err.code, 'E500', 'got error code')
-    }
+  await t.rejects(
+    team.lsUsers('@foo:cli'),
+    { code: 'E500' }
   )
 })
 
-test('lsUsers error', t => {
+test('lsUsers error', async t => {
   tnock(t, REG).get(
     '/-/team/foo/cli/user?format=cli'
   ).reply(200, ['iarna', 'zkat'])
-  return team.lsUsers('@foo:cli', OPTS).then(ret => {
-    t.same(ret, ['iarna', 'zkat'], 'got team members')
-  })
+  const ret = await team.lsUsers('@foo:cli', OPTS)
+  t.same(ret, ['iarna', 'zkat'], 'got team members')
 })
 
-test('lsUsers.stream', t => {
+test('lsUsers.stream', async t => {
   tnock(t, REG).get(
     '/-/team/foo/cli/user?format=cli'
   ).reply(200, ['iarna', 'zkat'])
-  return team.lsUsers.stream('@foo:cli', OPTS)
-    .collect()
-    .then(ret => {
-      t.same(ret, ['iarna', 'zkat'], 'got team members')
-    })
+  const ret = await team.lsUsers.stream('@foo:cli', OPTS).collect()
+  t.same(ret, ['iarna', 'zkat'], 'got team members')
 })
 
-test('lsUsers.stream - no options', t => {
+test('lsUsers.stream - no options', async t => {
   // NOTE: mocking real url, because no opts variable means `registry` value
   // will be defauled to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .get('/-/team/foo/cli/user?format=cli')
     .reply(200, ['iarna', 'zkat'])
 
-  return team.lsUsers.stream('@foo:cli')
-    .collect()
-    .then(ret => {
-      t.same(ret, ['iarna', 'zkat'], 'got team members')
-    })
+  const ret = await team.lsUsers.stream('@foo:cli').collect()
+  t.same(ret, ['iarna', 'zkat'], 'got team members')
 })
 
 test('edit', t => {
