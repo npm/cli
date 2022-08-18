@@ -496,6 +496,7 @@ graph LR;
   npm-->libnpmversion;
   npm-->licensee;
   npm-->make-fetch-happen;
+  npm-->minimatch;
   npm-->minipass-pipeline;
   npm-->minipass;
   npm-->mkdirp-infer-owner;
