@@ -344,6 +344,7 @@ graph LR;
   libnpmdiff-->tar;
   libnpmexec-->bin-links;
   libnpmexec-->chalk;
+  libnpmexec-->minify-registry-metadata;
   libnpmexec-->mkdirp-infer-owner;
   libnpmexec-->mkdirp;
   libnpmexec-->npm-package-arg;
