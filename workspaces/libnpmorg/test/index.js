@@ -11,7 +11,7 @@ const OPTS = {
 }
 const REG = 'https://registry.npmjs.org/'
 
-test('set', t => {
+test('set', async t => {
   const memDeets = {
     org: {
       name: 'myorg',
@@ -27,13 +27,11 @@ test('set', t => {
     })
     .reply(201, memDeets)
 
-  return org.set('myorg', 'myuser', 'admin', OPTS)
-    .then(res => {
-      t.same(res, memDeets, 'got a membership details object back')
-    })
+  const res = await org.set('myorg', 'myuser', 'admin', OPTS)
+  t.same(res, memDeets, 'got a membership details object back')
 })
 
-test('optional role for set', t => {
+test('optional role for set', async t => {
   const memDeets = {
     org: {
       name: 'myorg',
@@ -45,57 +43,48 @@ test('optional role for set', t => {
   tnock(t, OPTS.registry).put('/-/org/myorg/user', {
     user: 'myuser',
   }).reply(201, memDeets)
-  return org.set('myorg', 'myuser', OPTS).then(res => {
-    t.same(res, memDeets, 'got a membership details object back')
-  })
+  const res = await org.set('myorg', 'myuser', OPTS)
+  t.same(res, memDeets, 'got a membership details object back')
 })
 
-test('rm with no options', t => {
+test('rm with no options', async t => {
   tnock(t, REG).delete('/-/org/myorg/user', {
     user: 'myuser',
   }).reply(204)
-  return org.rm('myorg', 'myuser').then(() => {
-    t.ok(true, 'request succeeded')
-  })
+  await t.resolves(org.rm('myorg', 'myuser'))
 })
 
-test('rm', t => {
+test('rm', async t => {
   tnock(t, OPTS.registry).delete('/-/org/myorg/user', {
     user: 'myuser',
   }).reply(204)
-  return org.rm('myorg', 'myuser', OPTS)
-    .then(ret => {
-      t.equal(ret, null, 'null return value')
-      t.ok(true, 'request succeeded')
-    })
+  const ret = await org.rm('myorg', 'myuser', OPTS)
+  t.equal(ret, null, 'null return value')
 })
 
-test('ls with no options', t => {
+test('ls with no options', async t => {
   const roster = {
     zkat: 'developer',
     iarna: 'admin',
     isaacs: 'owner',
   }
   tnock(t, REG).get('/-/org/myorg/user').reply(200, roster)
-  return org.ls('myorg').then(res => {
-    t.same(res, roster, 'got back a roster')
-  })
+  const res = await org.ls('myorg')
+  t.same(res, roster, 'got back a roster')
 })
 
-test('ls', t => {
+test('ls', async t => {
   const roster = {
     zkat: 'developer',
     iarna: 'admin',
     isaacs: 'owner',
   }
   tnock(t, OPTS.registry).get('/-/org/myorg/user').reply(200, roster)
-  return org.ls('myorg', OPTS).then(res => {
-    t.same(res, roster, 'got back a roster')
-  })
+  const res = await org.ls('myorg', OPTS)
+  t.same(res, roster, 'got back a roster')
 })
 
-test('ls stream with no options', t => {
-  t.plan(2)
+test('ls stream with no options', async t => {
   const roster = {
     zkat: 'developer',
     iarna: 'admin',
@@ -105,14 +94,11 @@ test('ls stream with no options', t => {
   tnock(t, REG).get('/-/org/myorg/user').reply(200, roster)
   const result = org.ls.stream('myorg')
   t.ok(Minipass.isStream(result), 'returns a stream')
-  return result.collect()
-    .then(res => {
-      t.same(res, rosterArr, 'got back a roster, in entries format')
-    })
+  const res = await result.collect()
+  t.same(res, rosterArr, 'got back a roster, in entries format')
 })
 
-test('ls stream', t => {
-  t.plan(2)
+test('ls stream', async t => {
   const roster = {
     zkat: 'developer',
     iarna: 'admin',
@@ -122,8 +108,6 @@ test('ls stream', t => {
   tnock(t, OPTS.registry).get('/-/org/myorg/user').reply(200, roster)
   const result = org.ls.stream('myorg', OPTS)
   t.ok(Minipass.isStream(result), 'returns a stream')
-  return result.collect()
-    .then(res => {
-      t.same(res, rosterArr, 'got back a roster, in entries format')
-    })
+  const res = await result.collect()
+  t.same(res, rosterArr, 'got back a roster, in entries format')
 })

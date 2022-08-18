@@ -11,7 +11,7 @@ const tarball = require('../lib/tarball.js')
 
 const json = (obj) => `${JSON.stringify(obj, null, 2)}\n`
 
-t.test('returns a tarball from node_modules', t => {
+t.test('returns a tarball from node_modules', async t => {
   t.plan(2)
 
   const path = t.testdir({
@@ -33,22 +33,21 @@ t.test('returns a tarball from node_modules', t => {
     process.chdir(_cwd)
   })
 
-  tarball({ bin: { a: 'index.js' }, _resolved: resolve(path, 'node_modules/a') }, { where: path })
-    .then(res => {
-      tar.list({
-        filter: p => {
-          t.match(
-            p,
-            /package.json|index.js/,
-            'should return tarball with expected files'
-          )
-        },
-      })
-        .on('error', e => {
-          throw e
-        })
-        .end(res)
-    })
+  const res = await tarball(
+    { bin: { a: 'index.js' }, _resolved: resolve(path, 'node_modules/a') },
+    { where: path }
+  )
+  tar.list({
+    filter: p => {
+      t.match(
+        p,
+        /package.json|index.js/,
+        'should return tarball with expected files'
+      )
+    },
+  }).on('error', e => {
+    throw e
+  }).end(res)
 })
 
 t.test('node_modules folder within a linked dir', async t => {
