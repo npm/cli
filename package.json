@@ -135,6 +135,7 @@
     "@npmcli/fs",
     "@npmcli/map-workspaces",
     "@npmcli/package-json",
+    "@npmcli/promise-spawn",
     "@npmcli/run-script",
     "abbrev",
     "archy",
@@ -203,6 +204,7 @@
   ],
   "devDependencies": {
     "@npmcli/eslint-config": "^3.1.0",
+    "@npmcli/promise-spawn": "^3.0.0",
     "@npmcli/template-oss": "3.5.0",
     "fs-minipass": "^2.1.0",
     "licensee": "^8.2.0",
