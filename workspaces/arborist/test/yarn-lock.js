@@ -86,11 +86,13 @@ t.test('load a yarn lock from an actual tree', t => {
     resolve(__dirname, 'fixtures/install-types'),
     resolve(__dirname, 'fixtures/links-all-over'),
   ]
-  fixtures.forEach(fixture => t.test(basename(fixture), t =>
-    new Arborist({ path: fixture }).loadActual().then(tree => {
+  for (const fixture of fixtures) {
+    t.test(basename(fixture), async t => {
+      const tree = await new Arborist({ path: fixture }).loadActual()
       const y = YarnLock.fromTree(tree)
       t.matchSnapshot(y.toString(), 'yarn.lock from a package tree')
-    })))
+    })
+  }
   t.end()
 })
 

@@ -1080,7 +1080,7 @@ t.test('pathologically nested dependency cycle', async t => {
     resolve(fixtures, 'pathological-dep-nesting-cycle')))
 })
 
-t.test('resolve file deps from cwd', t => {
+t.test('resolve file deps from cwd', async t => {
   const cwd = process.cwd()
   t.teardown(() => process.chdir(cwd))
   const path = t.testdir({
@@ -1094,17 +1094,16 @@ t.test('resolve file deps from cwd', t => {
     path: resolve(path, 'global'),
     ...OPT,
   })
-  return arb.buildIdealTree({
+  const tree = await arb.buildIdealTree({
     path: `${path}/local`,
     add: ['child-1.2.3.tgz'],
     global: true,
-  }).then(tree => {
-    const resolved = `file:${resolve(fixturedir, 'child-1.2.3.tgz')}`
-    t.equal(normalizePath(tree.children.get('child').resolved), normalizePath(resolved))
   })
+  const resolved = `file:${resolve(fixturedir, 'child-1.2.3.tgz')}`
+  t.equal(normalizePath(tree.children.get('child').resolved), normalizePath(resolved))
 })
 
-t.test('resolve links in global mode', t => {
+t.test('resolve links in global mode', async t => {
   const cwd = process.cwd()
   t.teardown(() => process.chdir(cwd))
   const path = t.testdir({
@@ -1127,13 +1126,12 @@ t.test('resolve links in global mode', t => {
     global: true,
     path: resolve(path, 'global'),
   })
-  return arb.buildIdealTree({
+  const tree = await arb.buildIdealTree({
     add: ['file:../../linked-dep'],
     global: true,
-  }).then(tree => {
-    const resolved = 'file:../../linked-dep'
-    t.equal(tree.children.get('linked-dep').resolved, resolved)
   })
+  const resolved = 'file:../../linked-dep'
+  t.equal(tree.children.get('linked-dep').resolved, resolved)
 })
 
 t.test('dont get confused if root matches duped metadep', async t => {

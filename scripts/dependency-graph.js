@@ -168,7 +168,9 @@ const iterate = function (node, dependedBy, annotations, onlyOurs) {
 
 main().then(() => {
   process.exit(0)
+  return 0
 }).catch(err => {
   console.error(err)
   process.exit(1)
+  return 1
 })
