@@ -166,6 +166,7 @@
     "libnpmteam",
     "libnpmversion",
     "make-fetch-happen",
+    "minimatch",
     "minipass",
     "minipass-pipeline",
     "mkdirp",
@@ -208,6 +209,7 @@
     "@npmcli/template-oss": "3.5.0",
     "fs-minipass": "^2.1.0",
     "licensee": "^8.2.0",
+    "minimatch": "^5.1.0",
     "nock": "^13.2.4",
     "spawk": "^1.7.1",
     "tap": "^16.0.1"
