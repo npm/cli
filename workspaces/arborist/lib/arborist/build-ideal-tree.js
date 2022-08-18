@@ -378,6 +378,7 @@ Try using the package name instead, e.g:
         this.idealTree = tree
         this.virtualTree = null
         process.emit('timeEnd', 'idealTree:init')
+        return tree
       })
   }
 
@@ -531,12 +532,12 @@ Try using the package name instead, e.g:
 
   // This returns a promise because we might not have the name yet,
   // and need to call pacote.manifest to find the name.
-  [_add] (tree, { add, saveType = null, saveBundle = false }) {
+  async [_add] (tree, { add, saveType = null, saveBundle = false }) {
     // get the name for each of the specs in the list.
     // ie, doing `foo@bar` we just return foo
     // but if it's a url or git, we don't know the name until we
     // fetch it and look in its manifest.
-    return Promise.all(add.map(async rawSpec => {
+    const resolvedAdd = await Promise.all(add.map(async rawSpec => {
       // We do NOT provide the path to npa here, because user-additions
       // need to be resolved relative to the CWD the user is in.
       const spec = await this[_retrieveSpecName](npa(rawSpec))
@@ -544,17 +545,16 @@ Try using the package name instead, e.g:
         .then(spec => this[_followSymlinkPath](spec))
       spec.tree = tree
       return spec
-    })).then(add => {
-      this[_resolvedAdd].push(...add)
-      // now add is a list of spec objects with names.
-      // find a home for each of them!
-      addRmPkgDeps.add({
-        pkg: tree.package,
-        add,
-        saveBundle,
-        saveType,
-        path: this.path,
-      })
+    }))
+    this[_resolvedAdd].push(...resolvedAdd)
+    // now resolvedAdd is a list of spec objects with names.
+    // find a home for each of them!
+    addRmPkgDeps.add({
+      pkg: tree.package,
+      add: resolvedAdd,
+      saveBundle,
+      saveType,
+      path: this.path,
     })
   }
 
@@ -781,17 +781,18 @@ This is a one-time fix-up, please be patient...
         const spec = npa.resolve(name, id, dirname(path))
         const t = `idealTree:inflate:${location}`
         this.addTracker(t)
-        await pacote.manifest(spec, {
-          ...this.options,
-          resolved: resolved,
-          integrity: integrity,
-          fullMetadata: false,
-        }).then(mani => {
+        try {
+          const mani = await pacote.manifest(spec, {
+            ...this.options,
+            resolved: resolved,
+            integrity: integrity,
+            fullMetadata: false,
+          })
           node.package = { ...mani, _id: `${mani.name}@${mani.version}` }
-        }).catch((er) => {
+        } catch (er) {
           const warning = `Could not fetch metadata for ${name}@${id}`
           log.warn(heading, warning, er)
-        })
+        }
         this.finishTracker(t)
       })
     }

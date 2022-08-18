@@ -151,7 +151,7 @@ const suite = new Suite({
     }
   },
 
-  onComplete () {
+  async onComplete () {
     rimraf.sync(lastBenchmark)
     mkdirp.sync(resolve(__dirname, 'benchmark/saved'))
     // always save with sha
@@ -168,12 +168,13 @@ const suite = new Suite({
     }
 
     linkSync(saveThis, lastBenchmark)
-    teardown().then(() => Promise.all([
+    await teardown()
+    await Promise.all([
       registryServer.stop(),
       new Promise((res, rej) => {
         rimraf(this.cache, er => er ? rej(er) : res())
       }),
-    ]))
+    ])
   },
 })
 

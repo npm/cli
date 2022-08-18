@@ -49,10 +49,9 @@ const suite = async (suite, { registry, cache }) => {
       version: '1.0.0',
       dependencies,
     }))
-    await arb.reify().then(() => {
-      // grab this so we can make setup faster
-      packageLock = require(resolve(path, 'package-lock.json'))
-    })
+    await arb.reify()
+    // grab this so we can make setup faster
+    packageLock = require(resolve(path, 'package-lock.json'))
   }
 
   // just reify them all fast.  we'll remove the bits we don't want later.
@@ -96,14 +95,13 @@ const suite = async (suite, { registry, cache }) => {
           rimraf.sync(resolve(path, 'cache'))
         }
       },
-      fn (d) {
-        new Arborist({
+      async fn (d) {
+        await new Arborist({
           path,
           registry,
           cache: /no-cache/.test(path) ? resolve(path, 'cache') : cache,
-        }).reify().then(() => d.resolve(), er => {
-          throw er
-        })
+        }).reify()
+        d.resolve()
       },
     })
   }
