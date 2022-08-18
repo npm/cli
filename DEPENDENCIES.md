@@ -345,6 +345,7 @@ graph LR;
   libnpmexec-->bin-links;
   libnpmexec-->chalk;
   libnpmexec-->mkdirp-infer-owner;
+  libnpmexec-->mkdirp;
   libnpmexec-->npm-package-arg;
   libnpmexec-->npmcli-arborist["@npmcli/arborist"];
   libnpmexec-->npmcli-ci-detect["@npmcli/ci-detect"];
