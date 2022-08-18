@@ -52,6 +52,9 @@ t.test('query-selector-all', async t => {
           name: 'abbrev',
           version: '1.1.1',
           license: 'ISC',
+          engines: {
+            node: '^16.0.0',
+          },
         }),
       },
       b: t.fixture('symlink', '../b'),
@@ -61,6 +64,9 @@ t.test('query-selector-all', async t => {
           version: '2.0.0',
           dependencies: {
             moo: '3.0.0',
+          },
+          engines: {
+            node: '>= 14.0.0',
           },
           arbitrary: {
             foo: [
@@ -88,6 +94,10 @@ t.test('query-selector-all', async t => {
           },
           scripts: {
             test: 'tap',
+          },
+          engines: {
+            // intentionally invalid range
+            node: 'nope',
           },
         }),
       },
@@ -252,6 +262,18 @@ t.test('query-selector-all', async t => {
     q(tree, 'node'),
     { code: 'EQUERYNOSELECTOR' },
     'should throw in invalid selector'
+  )
+
+  t.rejects(
+    q(tree, ':semver(1.0.0, [version], eqqq)'),
+    { code: 'EQUERYINVALIDOPERATOR' },
+    'should throw on invalid semver operator'
+  )
+
+  t.rejects(
+    q(tree, ':semver(nope)'),
+    { code: 'EQUERYINVALIDSEMVER' },
+    'should throw on invalid semver value'
   )
 
   // :scope pseudo
@@ -559,6 +581,92 @@ t.test('query-selector-all', async t => {
     ]],
     [':semver(=1.4.0)', ['bar@1.4.0']],
     [':semver(1.4.0 || 2.2.2)', ['foo@2.2.2', 'bar@1.4.0']],
+    [':semver(^16.0.0, :attr(engines, [node]))', ['abbrev@1.1.1', 'bar@2.0.0']],
+    [':semver(18.0.0, :attr(engines, [node]))', ['bar@2.0.0']],
+    [':semver(^16.0.0, :attr(engines, [node^=">="]))', ['bar@2.0.0']],
+    [':semver(3.0.0, [version], eq)', ['moo@3.0.0']],
+    [':semver(^3.0.0, [version], eq)', []],
+    [':semver(1.0.0, [version], neq)', [
+      '@npmcli/abbrev@2.0.0-beta.45',
+      'abbrev@1.1.1',
+      'bar@2.0.0',
+      'dasher@2.0.0',
+      'foo@2.2.2',
+      'bar@1.4.0',
+      'moo@3.0.0',
+    ]],
+    [':semver(^1.0.0, [version], neq)', []],
+    [':semver(2.0.0, [version], gt)', ['foo@2.2.2', 'moo@3.0.0']],
+    [':semver(^2.0.0, [version], gt)', []],
+    [':semver(2.0.0, [version], gte)', [
+      'bar@2.0.0',
+      'dasher@2.0.0',
+      'foo@2.2.2',
+      'moo@3.0.0',
+    ]],
+    [':semver(^2.0.0, [version], gte)', []],
+    [':semver(1.1.1, [version], lt)', [
+      'query-selector-all-tests@1.0.0',
+      'a@1.0.0',
+      'b@1.0.0',
+      'baz@1.0.0',
+      'dash-separated-pkg@1.0.0',
+      'ipsum@npm:sit@1.0.0',
+      'lorem@1.0.0',
+      'recur@1.0.0',
+      'sive@1.0.0',
+    ]],
+    [':semver(^1.1.1, [version], lt)', []],
+    [':semver(1.1.1, [version], lte)', [
+      'query-selector-all-tests@1.0.0',
+      'a@1.0.0',
+      'b@1.0.0',
+      'abbrev@1.1.1',
+      'baz@1.0.0',
+      'dash-separated-pkg@1.0.0',
+      'ipsum@npm:sit@1.0.0',
+      'lorem@1.0.0',
+      'recur@1.0.0',
+      'sive@1.0.0',
+    ]],
+    [':semver(^1.1.1, [version], lte)', []],
+    [':semver(^14.0.0, :attr(engines, [node]), intersects)', ['bar@2.0.0']],
+    [':semver(>=14, :attr(engines, [node]), subset)', ['abbrev@1.1.1', 'bar@2.0.0']],
+    [':semver(^2.0.0, [version], gtr)', ['moo@3.0.0']],
+    [':semver(^2.0.0, :attr(engines, [node]), gtr)', []],
+    [':semver(20.0.0, :attr(engines, [node]), gtr)', ['abbrev@1.1.1']],
+    [':semver(1.0.1, [version], gtr)', [
+      'query-selector-all-tests@1.0.0',
+      'a@1.0.0',
+      'b@1.0.0',
+      'baz@1.0.0',
+      'dash-separated-pkg@1.0.0',
+      'ipsum@npm:sit@1.0.0',
+      'lorem@1.0.0',
+      'recur@1.0.0',
+      'sive@1.0.0',
+    ]],
+    [':semver(^1.1.1, [version], ltr)', [
+      'query-selector-all-tests@1.0.0',
+      'a@1.0.0',
+      'b@1.0.0',
+      'baz@1.0.0',
+      'dash-separated-pkg@1.0.0',
+      'ipsum@npm:sit@1.0.0',
+      'lorem@1.0.0',
+      'recur@1.0.0',
+      'sive@1.0.0',
+    ]],
+    [':semver(^1.1.1, :attr(engines, [node]), ltr)', []],
+    [':semver(0.0.1, :attr(engines, [node]), ltr)', ['abbrev@1.1.1', 'bar@2.0.0']],
+    [':semver(1.1.1, [version], ltr)', [
+      '@npmcli/abbrev@2.0.0-beta.45',
+      'bar@2.0.0',
+      'dasher@2.0.0',
+      'foo@2.2.2',
+      'bar@1.4.0',
+      'moo@3.0.0',
+    ]],
 
     // attr pseudo
     [':attr([name=dasher])', ['dasher@2.0.0']],
