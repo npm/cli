@@ -144,7 +144,7 @@ const arb = new Arborist({})
 
 ```js
 // root-level
-arb.loadActual().then((tree) => {
+arb.loadActual().then(async (tree) => {
   // query all production dependencies
   const results = await tree.querySelectorAll('.prod')
   console.log(results)
@@ -153,7 +153,7 @@ arb.loadActual().then((tree) => {
 
 ```js
 // iterative
-arb.loadActual().then((tree) => {
+arb.loadActual().then(async (tree) => {
   // query for the deduped version of react
   const results = await tree.querySelectorAll('#react:not(:deduped)')
   // query the deduped react for git deps
