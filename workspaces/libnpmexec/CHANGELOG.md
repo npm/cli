@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.12](https://github.com/npm/cli/compare/libnpmexec-v4.0.11...libnpmexec-v4.0.12) (2022-08-23)
+
+
+### Dependencies
+
+* @npmcli/eslint-config@3.1.0 ([8ab12dc](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460))
+
 ## [4.0.11](https://github.com/npm/cli/compare/libnpmexec-v4.0.10...libnpmexec-v4.0.11) (2022-08-17)
 
 
