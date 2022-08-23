@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.6.1](https://github.com/npm/cli/compare/arborist-v5.6.0...arborist-v5.6.1) (2022-08-23)
+
+
+### Bug Fixes
+
+* linting ([bd2ae5d](https://github.com/npm/cli/commit/bd2ae5d79eb8807bfca6075e98432c545a9ededa))
+
+
+### Dependencies
+
+* @npmcli/eslint-config@3.1.0 ([8ab12dc](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460))
+
 ## [5.6.0](https://github.com/npm/cli/compare/arborist-v5.5.0...arborist-v5.6.0) (2022-08-17)
 
 
