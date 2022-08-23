@@ -137,6 +137,7 @@ Array [
   "sign-git-tag",
   "sso-poll-frequency",
   "sso-type",
+  "install-strategy",
   "strict-peer-deps",
   "strict-ssl",
   "tag",
@@ -989,6 +990,19 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for insta
 When set file: protocol dependencies that exist outside of the project root
 will be packed and installed as regular dependencies instead of creating a
 symlink. This option has no effect on workspaces.
+`
+
+exports[`test/lib/utils/config/definitions.js TAP > config description for install-strategy 1`] = `
+#### \`install-strategy\`
+
+* Default: "hoisted"
+* Type: "hoisted" or "linked"
+
+Sets the installation or "reify" strategy for installing packages on disk.
+The default is \`hoisted\`, which deduplicates packages and installs them at
+the highest possible directory. The \`linked\` strategy flat installs packages
+in \`node_modules/.store\` and links each version in each dependency level,
+including workspaces.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for json 1`] = `

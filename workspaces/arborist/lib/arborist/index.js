@@ -42,6 +42,7 @@ const mixins = [
   require('./load-virtual.js'),
   require('./rebuild.js'),
   require('./reify.js'),
+  require('./isolated-reifier'),
 ]
 
 const _workspacesEnabled = Symbol.for('workspacesEnabled')
@@ -76,6 +77,7 @@ class Arborist extends Base {
       workspacesEnabled: options.workspacesEnabled !== false,
       replaceRegistryHost: options.replaceRegistryHost,
       lockfileVersion: lockfileVersion(options.lockfileVersion),
+      installStrategy: options.installStrategy || 'hoisted',
     }
     this.replaceRegistryHost = this.options.replaceRegistryHost =
       (!this.options.replaceRegistryHost || this.options.replaceRegistryHost === 'npmjs') ?

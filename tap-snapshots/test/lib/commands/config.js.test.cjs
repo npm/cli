@@ -142,6 +142,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "sign-git-tag": false,
   "sso-poll-frequency": 500,
   "sso-type": "oauth",
+  "install-strategy": "hoisted",
   "strict-peer-deps": false,
   "strict-ssl": true,
   "tag": "latest",
@@ -238,6 +239,7 @@ init.license = "ISC"
 init.module = "{HOME}/.npm-init.js" 
 init.version = "1.0.0" 
 install-links = true 
+install-strategy = "hoisted" 
 json = false 
 key = null 
 legacy-bundling = false 

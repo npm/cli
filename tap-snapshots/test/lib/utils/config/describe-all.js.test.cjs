@@ -793,6 +793,20 @@ symlink. This option has no effect on workspaces.
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->
 
+#### \`install-strategy\`
+
+* Default: "hoisted"
+* Type: "hoisted" or "linked"
+
+Sets the installation or "reify" strategy for installing packages on disk.
+The default is \`hoisted\`, which deduplicates packages and installs them at
+the highest possible directory. The \`linked\` strategy flat installs packages
+in \`node_modules/.store\` and links each version in each dependency level,
+including workspaces.
+
+<!-- automatically generated, do not edit manually -->
+<!-- see lib/utils/config/definitions.js -->
+
 #### \`json\`
 
 * Default: false

@@ -1637,6 +1637,20 @@ this to work properly.
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->
 
+#### `strategy`
+
+* Default: "hoisted"
+* Type: "hoisted" or "isolated"
+
+Sets the installation or "reify" strategy for installing packages on disk.
+The default is `hoisted`, which deduplicates packages and installs them at
+the highest possible directory. The `isolated` strategy flat installs
+packages in `node_modules/.store` and links each version in each dependency
+level, including workspaces.
+
+<!-- automatically generated, do not edit manually -->
+<!-- see lib/utils/config/definitions.js -->
+
 #### `strict-peer-deps`
 
 * Default: false
