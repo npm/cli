@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.0.0 (2022-08-24)
+
+
+### Bug Fixes
+
+* update readme badges ([#4658](https://github.com/npm/cli/issues/4658)) ([2829cb2](https://github.com/npm/cli/commit/2829cb28a432b5ff7beeeb3bf3e7e2e174c1121d))
+
+
+### Dependencies
+
+* @npmcli/eslint-config@3.1.0 ([8ab12dc](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460))
+* @npmcli/template-oss@3.2.1 ([aac01b8](https://github.com/npm/cli/commit/aac01b89caf6336a2eb34d696296303cdadd5c08))
+* @npmcli/template-oss@3.2.2 ([#4639](https://github.com/npm/cli/issues/4639)) ([a59fd2c](https://github.com/npm/cli/commit/a59fd2cb863245fce56f96c90ac854e62c5c4d6f))
+* libnpmorg@4.0.3 ([dda8a97](https://github.com/npm/cli/commit/dda8a976a9dd696cf2b2e2be5b55b2048e768768))
+
 ### [4.0.3](https://github.com/npm/cli/compare/libnpmorg-v4.0.2...libnpmorg-v4.0.3) (2022-04-06)
 
 
