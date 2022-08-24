@@ -1,5 +1,20 @@
 # Changelog
 
+## [5.6.1](https://github.com/npm/cli/compare/arborist-v5.6.0...arborist-v5.6.1) (2022-08-24)
+
+
+### Bug Fixes
+
+* create links relative to the target ([1e84102](https://github.com/npm/cli/commit/1e841029917817556207c39d25be1ea91e2959e7))
+* inline single-use functions ([ea5e3a3](https://github.com/npm/cli/commit/ea5e3a319a7c1b5f7f2a66284227a34b79b2c831))
+* linting ([bd2ae5d](https://github.com/npm/cli/commit/bd2ae5d79eb8807bfca6075e98432c545a9ededa))
+* update `index.js` spelling error in comment ([#5329](https://github.com/npm/cli/issues/5329)) ([645c680](https://github.com/npm/cli/commit/645c6804c09014b96c2d1eff191b174d12a2b7c0))
+
+
+### Dependencies
+
+* @npmcli/eslint-config@3.1.0 ([8ab12dc](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460))
+
 ## [5.6.0](https://github.com/npm/cli/compare/arborist-v5.5.0...arborist-v5.6.0) (2022-08-17)
 
 
