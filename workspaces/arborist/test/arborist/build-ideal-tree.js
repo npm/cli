@@ -2674,6 +2674,19 @@ t.test('add packages to workspaces, not root', async t => {
   t.matchSnapshot(printTree(rmTree), 'tree with abbrev removed from a and b')
 })
 
+t.test('add one workspace to another', async t => {
+  const path = resolve(__dirname, '../fixtures/workspaces-not-root')
+  const packageA = resolve(path, 'packages/a')
+
+  const addTree = await buildIdeal(path, {
+    add: [packageA],
+    workspaces: ['c'],
+  })
+  const c = addTree.children.get('c').target
+  t.match(c.edgesOut.get('a'), { spec: 'file:../a' })
+  t.matchSnapshot(printTree(addTree), 'tree with workspace a added to workspace c')
+})
+
 t.test('workspace error handling', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
