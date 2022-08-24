@@ -511,17 +511,18 @@ Try using the package name instead, e.g:
     this[_depsQueue].push(tree)
   }
 
-  // This returns a promise because we might not have the name yet,
-  // and need to call pacote.manifest to find the name.
+  // This returns a promise because we might not have the name yet, and need to
+  // call pacote.manifest to find the name.
   async [_add] (tree, { add, saveType = null, saveBundle = false }) {
-    const path = this.idealTree.target.path
+    // If we have a link it will need to be added relative to the target's path
+    const path = tree.target.path
+
     // get the name for each of the specs in the list.
-    // ie, doing `foo@bar` we just return foo
-    // but if it's a url or git, we don't know the name until we
-    // fetch it and look in its manifest.
+    // ie, doing `foo@bar` we just return foo but if it's a url or git, we
+    // don't know the name until we fetch it and look in its manifest.
     await Promise.all(add.map(async rawSpec => {
-      // We do NOT provide the path to npa here, because user-additions
-      // need to be resolved relative to the CWD the user is in.
+      // We do NOT provide the path to npa here, because user-additions need to
+      // be resolved relative to the tree being added to.
       let spec = npa(rawSpec)
 
       // if it's just @'' then we reload whatever's there, or get latest
