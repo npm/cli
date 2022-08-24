@@ -1,5 +1,5 @@
 {
-  "workspaces/arborist": "5.6.0",
+  "workspaces/arborist": "5.6.1",
   "workspaces/libnpmaccess": "6.0.3",
   "workspaces/libnpmdiff": "4.0.4",
   "workspaces/libnpmexec": "4.0.11",
