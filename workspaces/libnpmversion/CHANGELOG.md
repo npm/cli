@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.0.7](https://github.com/npm/cli/compare/libnpmversion-v3.0.6...libnpmversion-v3.0.7) (2022-08-24)
+
+
+### Bug Fixes
+
+* linting ([bd2ae5d](https://github.com/npm/cli/commit/bd2ae5d79eb8807bfca6075e98432c545a9ededa))
+
 ## [3.0.6](https://github.com/npm/cli/compare/libnpmversion-v3.0.5...libnpmversion-v3.0.6) (2022-06-23)
 
 
