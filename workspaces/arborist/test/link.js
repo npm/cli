@@ -94,23 +94,6 @@ t.test('link.target setter', async t => {
   t.equal(oldTarget.linksIn.size, 0, 'old target still has no links')
   t.equal(newTarget.linksIn.size, 0, 'new target has no links in now')
 
-  const laterTarget = new Promise((res) =>
-    setTimeout(() => res(new Node({
-      path: '/node-later',
-      realpath: '/node-later',
-      pkg: { name: 'node-later', version: '1.2.3' },
-    }))))
-  link.target = laterTarget
-  t.equal(link.target, laterTarget, 'waiting for a new target to resolve')
-  t.throws(() => link.target = oldTarget, {
-    message: 'cannot set target while awaiting',
-    path: link.path,
-    realpath: link.realpath,
-  })
-  const node = await laterTarget
-  t.equal(link.target, node, 'target resolved and assigned')
-  t.equal(link.package, node.package, 'took on new targets package')
-  t.equal(node.linksIn.has(link), true, 'link in node.linksIn')
   link.target = null
   t.equal(link.target, null, 'target is now null')
   t.strictSame(link.package, {}, 'removed target, package is now empty')
