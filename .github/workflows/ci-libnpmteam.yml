@@ -16,8 +16,8 @@ on:
     paths:
       - workspaces/libnpmteam/**
   schedule:
-    # "At 02:00 on Monday" https://crontab.guru/#0_2_*_*_1
-    - cron: "0 2 * * 1"
+    # "At 09:00 UTC (02:00 PT) on Monday" https://crontab.guru/#0_9_*_*_1
+    - cron: "0 9 * * 1"
 
 jobs:
   lint:
@@ -86,5 +86,7 @@ jobs:
         if: ${{ !startsWith(matrix.node-version, '10.') }}
         run: npm i --prefer-online --no-fund --no-audit -g npm@latest
       - run: npm -v
+      - name: add tap problem matcher
+        run: echo "::add-matcher::.github/matchers/tap.json"
       - run: npm i --ignore-scripts --no-audit --no-fund
       - run: npm test --ignore-scripts -w libnpmteam

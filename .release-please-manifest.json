@@ -1,0 +1,14 @@
+{
+  "workspaces/arborist": "5.6.0",
+  "workspaces/libnpmaccess": "6.0.3",
+  "workspaces/libnpmdiff": "4.0.4",
+  "workspaces/libnpmexec": "4.0.11",
+  "workspaces/libnpmfund": "3.0.2",
+  "workspaces/libnpmhook": "8.0.3",
+  "workspaces/libnpmorg": "4.0.3",
+  "workspaces/libnpmpack": "4.1.2",
+  "workspaces/libnpmpublish": "6.0.4",
+  "workspaces/libnpmsearch": "5.0.3",
+  "workspaces/libnpmteam": "4.0.3",
+  "workspaces/libnpmversion": "3.0.6"
+}

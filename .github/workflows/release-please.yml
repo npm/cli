@@ -1,0 +1,57 @@
+# This file is automatically added by @npmcli/template-oss. Do not edit.
+
+name: Release Please
+
+on:
+  push:
+    branches:
+      - main
+      - latest
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      prs: ${{ steps.release.outputs.prs }}
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          command: manifest
+
+  update-prs:
+    needs: release-please
+    if: needs.release-please.outputs.prs
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        pr: ${{ fromJSON(needs.release-please.outputs.prs) }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup git user
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: Update npm to latest
+        run: npm i --prefer-online --no-fund --no-audit -g npm@latest
+      - run: npm -v
+      - name: Update PR ${{ matrix.pr.number }} dependencies and commit
+        if: steps.release.outputs.pr
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr checkout ${{ matrix.pr.number }}
+          npm run resetdeps
+          title="${{ matrix.pr.title }}"
+          # get the dependency spec from the pr title
+          # get everything after ': release ' + replace space with @
+          dep_spec=$(echo "${title##*: release }" | tr ' ' @)
+          git commit -am "deps: $dep_spec"
+          git push

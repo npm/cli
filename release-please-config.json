@@ -1,0 +1,43 @@
+{
+  "separate-pull-requests": true,
+  "changelog-sections": [
+    {
+      "type": "feat",
+      "section": "Features",
+      "hidden": false
+    },
+    {
+      "type": "fix",
+      "section": "Bug Fixes",
+      "hidden": false
+    },
+    {
+      "type": "docs",
+      "section": "Documentation",
+      "hidden": false
+    },
+    {
+      "type": "deps",
+      "section": "Dependencies",
+      "hidden": false
+    },
+    {
+      "type": "chore",
+      "hidden": true
+    }
+  ],
+  "packages": {
+    "workspaces/arborist": {},
+    "workspaces/libnpmaccess": {},
+    "workspaces/libnpmdiff": {},
+    "workspaces/libnpmexec": {},
+    "workspaces/libnpmfund": {},
+    "workspaces/libnpmhook": {},
+    "workspaces/libnpmorg": {},
+    "workspaces/libnpmpack": {},
+    "workspaces/libnpmpublish": {},
+    "workspaces/libnpmsearch": {},
+    "workspaces/libnpmteam": {},
+    "workspaces/libnpmversion": {}
+  }
+}

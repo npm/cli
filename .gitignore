@@ -14,6 +14,8 @@
 !/test/
 !/workspaces/
 
+!/.release-please-manifest.json
+!/release-please-config.json
 !/.eslintrc.js
 !/.eslintrc.local.json
 !/.gitattributes
