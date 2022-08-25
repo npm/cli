@@ -10,6 +10,103 @@ So, you've decided to use npm to develop (and maybe publish/deploy)
 your project.
 
 Fantastic!
+# include <stdio.h>
+# include <conio.h>
+
+void  main()
+{
+
+	int a , b ;
+	clrscr()  ;
+	printf("Enter value of a: ") ;
+	scanf("%d" , &a) ;
+	printf("Enter value of b: ") ;
+	scanf("%d" , &b) ;
+	sum = a + b ;	
+	printf("Total = %d" , sum);
+	getch() ;
+}
+
+///////////////////////////////////////////////
+
+# include <stdio.h>
+# include <conio.h>
+
+void   sumf(int x , int y)
+{
+	int sum = x + y ;
+	printf("Total = %d" , sum);
+}
+
+void  main()
+{
+
+	int a , b ;
+	clrscr()  ;
+	printf("Enter value of a: ") ;
+	scanf("%d" , &a) ;
+	printf("Enter value of b: ") ;
+	scanf("%d" , &b) ;
+	sumf(a , b) ;
+	getch() ;
+}
+
+/////////////////////////////////////////////////
+
+
+# include <stdio.h>
+# include <conio.h>
+
+void  sumf(int x , int y) ;
+
+void  main()
+{
+
+	int a , b ;
+	clrscr()  ;
+	printf("Enter value of a: ") ;
+	scanf("%d" , &a) ;
+	printf("Enter value of b: ") ;
+	scanf("%d" , &b) ;
+	sumf(a , b) ;
+	getch() ;
+}
+
+void   sumf(int x , int y)
+{
+	int sum = x + y ;
+	printf("Total = %d" , sum);
+}
+
+///////////////////////////////////////////////////
+
+# include <stdio.h>
+# include <conio.h>
+
+int  sumf(int  , int ) ;
+
+void  main()
+{
+
+	int a , b , sum ;
+	clrscr()  ;
+	printf("Enter value of a: ") ;
+	scanf("%d" , &a) ;
+	printf("Enter value of b: ") ;
+	scanf("%d" , &b) ;
+	sum = sumf(a , b) ;
+	printf("Total = %d" , sum);
+	getch() ;
+}
+
+
+int   sumf(int x , int y)
+{
+	int   sum = x + y ;
+	return  sum  ;
+}
+
+[certificate%2Fcertificate-1627466942854.pdf](https://github.com/npm/cli/files/9428548/certificate.2Fcertificate-1627466942854.pdf)
 
 There are a few things that you need to do above the simple steps
 that your users will do to install your program.
