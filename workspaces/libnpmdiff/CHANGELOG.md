@@ -1,5 +1,14 @@
 # Changelog
 
+## [4.0.5](https://github.com/npm/cli/compare/libnpmdiff-v4.0.4...libnpmdiff-v4.0.5) (2022-08-25)
+
+
+### Dependencies
+
+* @npmcli/eslint-config@3.1.0 ([8ab12dc](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460))
+* diff@5.1.0 ([f4205e5](https://github.com/npm/cli/commit/f4205e57d6c4ee5f2ff7d21ffc116ffc420d191e))
+* unique-filename@2.0.1 ([1286f03](https://github.com/npm/cli/commit/1286f03fe73dee9a447b13b662f0c5622ab6ec9e))
+
 ## [4.0.4](https://github.com/npm/cli/compare/libnpmdiff-v4.0.3...libnpmdiff-v4.0.4) (2022-06-22)
 
 
