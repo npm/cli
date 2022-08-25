@@ -10,5 +10,5 @@
   "workspaces/libnpmpublish": "6.0.4",
   "workspaces/libnpmsearch": "5.0.3",
   "workspaces/libnpmteam": "4.0.3",
-  "workspaces/libnpmversion": "3.0.6"
+  "workspaces/libnpmversion": "3.0.7"
 }
