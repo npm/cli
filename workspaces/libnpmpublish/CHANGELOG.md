@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.0.5](https://github.com/npm/cli/compare/libnpmpublish-v6.0.4...libnpmpublish-v6.0.5) (2022-08-25)
+
+
+### Dependencies
+
+* @npmcli/eslint-config@3.1.0 ([8ab12dc](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460))
+
 ### [6.0.4](https://github.com/npm/cli/compare/libnpmpublish-v6.0.3...libnpmpublish-v6.0.4) (2022-04-26)
 
 
