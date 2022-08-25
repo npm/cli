@@ -1,5 +1,26 @@
 # Changelog
 
+## [6.0.6](https://github.com/npm/cli/compare/libnpmpublish-v6.0.5...libnpmpublish-v6.0.6) (2022-08-25)
+
+
+### Bug Fixes
+
+* **libnpmpublish:** unpublish from custom reg ([#4657](https://github.com/npm/cli/issues/4657)) ([e9163b4](https://github.com/npm/cli/commit/e9163b48d8e46a80d2a4cc98c492b94dfa152cb8))
+* replace deprecated String.prototype.substr() ([#4667](https://github.com/npm/cli/issues/4667)) ([e3da5df](https://github.com/npm/cli/commit/e3da5df4152fbe547f7871547165328e1bf06262))
+* update readme badges ([#4658](https://github.com/npm/cli/issues/4658)) ([2829cb2](https://github.com/npm/cli/commit/2829cb28a432b5ff7beeeb3bf3e7e2e174c1121d))
+
+
+### Dependencies
+
+* @npmcli/eslint-config@3.1.0 ([8ab12dc](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460))
+* @npmcli/template-oss@3.2.1 ([aac01b8](https://github.com/npm/cli/commit/aac01b89caf6336a2eb34d696296303cdadd5c08))
+* @npmcli/template-oss@3.2.2 ([#4639](https://github.com/npm/cli/issues/4639)) ([a59fd2c](https://github.com/npm/cli/commit/a59fd2cb863245fce56f96c90ac854e62c5c4d6f))
+* libnpmpublish@6.0.3 ([1617bce](https://github.com/npm/cli/commit/1617bce61663a743435d162b003d3b99376d426f))
+* libnpmpublish@6.0.4 ([0ee57f1](https://github.com/npm/cli/commit/0ee57f1492893da84686f4340feeb0469fb751f8))
+* libnpmpublish@6.0.5 ([d3197c9](https://github.com/npm/cli/commit/d3197c90e75327bf4c406be4261c2c34ee3ba2de))
+* semver@7.3.7 ([c51e553](https://github.com/npm/cli/commit/c51e553a32315e4f1b703ca9030eb7ade91d1a85))
+* ssri@9.0.0 ([a2781a3](https://github.com/npm/cli/commit/a2781a367d62328d7f870de878f1b63d66593f4f))
+
 ## [6.0.5](https://github.com/npm/cli/compare/libnpmpublish-v6.0.4...libnpmpublish-v6.0.5) (2022-08-25)
 
 
