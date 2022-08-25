@@ -1,5 +1,21 @@
 # Changelog
 
+## [6.0.5](https://github.com/npm/cli/compare/libnpmaccess-v6.0.4...libnpmaccess-v6.0.5) (2022-08-25)
+
+
+### Bug Fixes
+
+* update readme badges ([#4658](https://github.com/npm/cli/issues/4658)) ([2829cb2](https://github.com/npm/cli/commit/2829cb28a432b5ff7beeeb3bf3e7e2e174c1121d))
+
+
+### Dependencies
+
+* @npmcli/eslint-config@3.1.0 ([8ab12dc](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460))
+* @npmcli/template-oss@3.2.1 ([aac01b8](https://github.com/npm/cli/commit/aac01b89caf6336a2eb34d696296303cdadd5c08))
+* @npmcli/template-oss@3.2.2 ([#4639](https://github.com/npm/cli/issues/4639)) ([a59fd2c](https://github.com/npm/cli/commit/a59fd2cb863245fce56f96c90ac854e62c5c4d6f))
+* libnpmaccess@6.0.3 ([8914864](https://github.com/npm/cli/commit/891486451f1c34a2e7649b0a76c6c0d611ce3d39))
+* libnpmaccess@6.0.4 ([7e8f05d](https://github.com/npm/cli/commit/7e8f05d687fdc341af326a6194a199bd9cf4eacf))
+
 ## [6.0.4](https://github.com/npm/cli/compare/libnpmaccess-v6.0.3...libnpmaccess-v6.0.4) (2022-08-25)
 
 
