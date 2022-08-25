@@ -1,6 +1,6 @@
 // pass in a manifest with a 'bin' field here, and it'll turn it
 // into a properly santized bin object
-const {join, basename} = require('path')
+const { join, basename } = require('path')
 
 const normalize = pkg =>
   !pkg.bin ? removeBin(pkg)
@@ -10,8 +10,9 @@ const normalize = pkg =>
   : removeBin(pkg)
 
 const normalizeString = pkg => {
-  if (!pkg.name)
+  if (!pkg.name) {
     return removeBin(pkg)
+  }
   pkg.bin = { [pkg.name]: pkg.bin }
   return normalizeObject(pkg)
 }
@@ -34,25 +35,28 @@ const normalizeObject = pkg => {
   const clean = {}
   let hasBins = false
   Object.keys(orig).forEach(binKey => {
-    const base = join('/', basename(binKey.replace(/\\|:/g, '/'))).substr(1)
+    const base = join('/', basename(binKey.replace(/\\|:/g, '/'))).slice(1)
 
-    if (typeof orig[binKey] !== 'string' || !base)
+    if (typeof orig[binKey] !== 'string' || !base) {
       return
+    }
 
     const binTarget = join('/', orig[binKey])
-      .replace(/\\/g, '/').substr(1)
+      .replace(/\\/g, '/').slice(1)
 
-    if (!binTarget)
+    if (!binTarget) {
       return
+    }
 
     clean[base] = binTarget
     hasBins = true
   })
 
-  if (hasBins)
+  if (hasBins) {
     pkg.bin = clean
-  else
+  } else {
     delete pkg.bin
+  }
 
   return pkg
 }
