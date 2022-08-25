@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.0.7](https://github.com/npm/cli/compare/libnpmversion-v3.0.6...libnpmversion-v3.0.7) (2022-08-25)
+
+
+### Bug Fixes
+
+* linting ([bd2ae5d](https://github.com/npm/cli/commit/bd2ae5d79eb8807bfca6075e98432c545a9ededa))
+
+
+### Dependencies
+
+* @npmcli/eslint-config@3.1.0 ([8ab12dc](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460))
+
 ## [3.0.6](https://github.com/npm/cli/compare/libnpmversion-v3.0.5...libnpmversion-v3.0.6) (2022-06-23)
 
 
