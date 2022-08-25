@@ -8,4 +8,4 @@ rm -rf "workspaces/*/node_modules"
 git checkout node_modules
 node . i --ignore-scripts --no-audit --no-fund
 node . rebuild --ignore-scripts
-node scripts/bundle-and-gitignore-deps.js
+node . run dependencies --ignore-scripts
