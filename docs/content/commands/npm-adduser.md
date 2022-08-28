@@ -31,9 +31,9 @@ the default registry will be used (see [`config`](/using-npm/config)).
 
 The username, password, and email are read in from prompts.
 
-To reset your password, go to <https://www.npmjs.com/forgot>
+Go to <https://www.npmjs.com/forgot> to reset your password.
 
-To change your email address, go to <https://www.npmjs.com/email-edit>
+Go to <https://www.npmjs.com/email-edit> to change your email address.
 
 You may use this command multiple times with the same user account to
 authorize on a new machine.  When authenticating on a new machine,
