@@ -34,13 +34,13 @@ There's also these extra commands to help you manage your favorite packages:
 
 #### Unstar
 
-You can also "unstar" a package using [`npm unstar`](/commands/npm-unstar)
+You can also "unstar" a package using [`npm unstar`](/commands/npm-unstar).
 
 "Unstarring" is the same thing, but in reverse.
 
 #### Listing stars
 
-You can see all your starred packages using [`npm stars`](/commands/npm-stars)
+You can see all your starred packages using [`npm stars`](/commands/npm-stars).
 
 ### Configuration
 
