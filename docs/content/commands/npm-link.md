@@ -110,7 +110,7 @@ If you _want_ to save the `file:` reference in your `package.json` and
 ### Workspace Usage
 
 `npm link <pkg> --workspace <name>` will link the relevant package as a
-dependency of the specified workspace(s).  Note that It may actually be
+dependency of the specified workspace(s).  Note that it may actually be
 linked into the parent project's `node_modules` folder, if there are no
 conflicting dependencies.
 
