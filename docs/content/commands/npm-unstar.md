@@ -32,11 +32,11 @@ There's also these extra commands to help you manage your favorite packages:
 
 #### Star
 
-You can "star" a package using [`npm star`](/commands/npm-star)
+You can "star" a package using [`npm star`](/commands/npm-star).
 
 #### Listing stars
 
-You can see all your starred packages using [`npm stars`](/commands/npm-stars)
+You can see all your starred packages using [`npm stars`](/commands/npm-stars).
 
 ### Configuration
 
