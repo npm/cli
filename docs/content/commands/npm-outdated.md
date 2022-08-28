@@ -42,12 +42,12 @@ In the output:
   package, depending on how the package's developer manages the latest
   [dist-tag](/commands/npm-dist-tag).
 * `location` is where in the physical tree the package is located.
-* `depended by` shows which package depends on the displayed dependency
+* `depended by` shows which package depends on the displayed dependency.
 * `package type` (when using `--long` / `-l`) tells you whether this
   package is a `dependency` or a dev/peer/optional dependency. Packages not
   included in `package.json` are always marked `dependencies`.
 * `homepage` (when using `--long` / `-l`) is the `homepage` value contained
-  in the package's packument
+  in the package's packument.
 * Red means there's a newer version matching your semver requirements, so
   you should update now.
 * Yellow indicates that there's a newer version _above_ your semver
