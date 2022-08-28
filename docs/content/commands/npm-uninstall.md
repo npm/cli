@@ -39,7 +39,7 @@ will update those files as well.
 `--save` or `-S` will tell npm to remove the package from your
 `package.json`, `npm-shrinkwrap.json`, and `package-lock.json` files.
 This is the default, but you may need to use this if you have for
-instance `save=false` in your `npmrc` file
+instance `save=false` in your `npmrc` file.
 
 In global mode (ie, with `-g` or `--global` appended to the command),
 it uninstalls the current package context as a global package.
