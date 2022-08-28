@@ -49,7 +49,7 @@ subcommand.
 * ls-packages (deprecated):
   Show all of the packages a user or a team is able to access, along with the
   access level, except for read-only public packages (it won't print the whole
-  registry listing)
+  registry listing).
 
 * ls-collaborators (deprecated):
   Show all of the access privileges for a package. Will only show permissions
