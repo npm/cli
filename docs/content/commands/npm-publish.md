@@ -31,7 +31,7 @@ scope-configured registry (see
 
 
 A `package` is interpreted the same way as other commands (like
-`npm install` and can be:
+`npm install`) and can be:
 
 * a) a folder containing a program described by a
   [`package.json`](/configuring-npm/package-json) file
@@ -81,7 +81,7 @@ files are included by default, with the following exceptions:
 
   `.npmignore` files follow the [same pattern
   rules](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring)
-  as `.gitignore` files
+  as `.gitignore` files.
 
 - If the file matches certain patterns, then it will _never_ be included,
   unless explicitly added to the `"files"` list in `package.json`, or
