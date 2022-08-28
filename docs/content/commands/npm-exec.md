@@ -247,7 +247,7 @@ If no positional argument or `--call` option is provided, it will open an
 interactive subshell in the context of each of these configured workspaces one
 at a time.
 
-Given a project with configured workspaces, e.g:
+Given a project with configured workspaces, e.g.:
 
 ```
 .
@@ -262,7 +262,7 @@ Given a project with configured workspaces, e.g:
 ```
 
 Assuming the workspace configuration is properly set up at the root level
-`package.json` file. e.g:
+`package.json` file, e.g.:
 
 ```
 {
@@ -290,8 +290,8 @@ npm exec --workspace=a -- eslint ./*.js
 
 The `workspace` config can also be specified multiple times in order to run a
 specific script in the context of multiple workspaces. When defining values for
-the `workspace` config in the command line, it also possible to use `-w` as a
-shorthand, e.g:
+the `workspace` config in the command line, it is also possible to use `-w` as a
+shorthand, e.g.:
 
 ```
 npm exec -w a -w b -- eslint ./*.js
