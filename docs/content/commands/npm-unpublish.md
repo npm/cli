@@ -21,7 +21,7 @@ npm unpublish [<package-spec>]
 
 To learn more about how the npm registry treats unpublish, see our <a
 href="https://docs.npmjs.com/policies/unpublish" target="_blank"
-rel="noopener noreferrer"> unpublish policies</a>
+rel="noopener noreferrer"> unpublish policies</a>.
 
 ### Warning
 
