@@ -62,7 +62,7 @@ Add a hook to watch packages belonging to the user `substack`:
 $ npm hook add ~substack https://example.com/ my-shared-secret
 ```
 
-Add a hook to watch packages in the scope `@npm`
+Add a hook to watch packages in the scope `@npm`:
 
 ```bash
 $ npm hook add @npm https://example.com/ my-shared-secret
