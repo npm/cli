@@ -140,7 +140,7 @@ Returned values are always in **json** format.
 
 * `npm pkg delete <key>`
 
-    Deletes a `key` from your `package.json`
+    Deletes a `key` from your `package.json`.
 
     The same syntax used to set values from your package can also be used
     to remove existing ones. For example, in order to remove a script named
@@ -165,7 +165,7 @@ npm pkg set funding=https://example.com --ws
 When using `npm pkg get` to retrieve info from your configured workspaces, the
 returned result will be in a json format in which top level keys are the
 names of each workspace, the values of these keys will be the result values
-returned from each of the configured workspaces, e.g:
+returned from each of the configured workspaces, e.g.:
 
 ```
 npm pkg get name version --ws
