@@ -45,7 +45,7 @@ to make that the default behavior).
 ### Example
 
 For the examples below, assume that the current package is `app` and it depends
-on dependencies, `dep1` (`dep2`, .. etc.).  The published versions of `dep1`
+on dependencies, `dep1` (`dep2`, ...).  The published versions of `dep1`
 are:
 
 ```json
@@ -89,9 +89,9 @@ However, if `app`'s `package.json` contains:
 ```
 
 In this case, running `npm update` will install `dep1@1.1.2`.  Even though the
-`latest` tag points to `1.2.2`, this version do not satisfy `~1.1.1`, which is
-equivalent to `>=1.1.1 <1.2.0`.  So the highest-sorting version that satisfies
-`~1.1.1` is used, which is `1.1.2`.
+`latest` tag points to `1.2.2`, this version does not satisfy `~1.1.1`, which
+is equivalent to `>=1.1.1 <1.2.0`.  So the highest-sorting version that
+satisfies `~1.1.1` is used, which is `1.1.2`.
 
 #### Caret Dependencies below 1.0.0
 
@@ -115,7 +115,7 @@ If the dependence were on `^0.4.0`:
 ```
 
 Then `npm update` will install `dep1@0.4.1`, because that is the highest-sorting
-version that satisfies `^0.4.0` (`>= 0.4.0 <0.5.0`)
+version that satisfies `^0.4.0` (`>= 0.4.0 <0.5.0`).
 
 
 #### Subdependencies
@@ -159,7 +159,7 @@ package that is `outdated` -- that is, has a version that is different from
 
 Note: Globally installed packages are treated as if they are installed with a
 caret semver range specified. So if you require to update to `latest` you may
-need to run `npm install -g [<pkg>...]`
+need to run `npm install -g [<pkg>...]`.
 
 NOTE: If a package has been upgraded to a version newer than `latest`, it will
 be _downgraded_.
