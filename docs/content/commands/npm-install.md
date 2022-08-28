@@ -116,7 +116,7 @@ into a tarball (b).
 * `npm install <tarball url>`:
 
     Fetch the tarball url, and then install it.  In order to distinguish between
-    this and other options, the argument must start with "http://" or "https://"
+    this and other options, the argument must start with "http://" or "https://".
 
     Example:
 
@@ -258,7 +258,7 @@ into a tarball (b).
     <protocol>://[<user>[:<password>]@]<hostname>[:<port>][:][/]<path>[#<commit-ish> | #semver:<semver>]
     ```
 
-    `<protocol>` is one of `git`, `git+ssh`, `git+http`, `git+https`, or
+    `<protocol>` is one of `git`, `git+ssh`, `git+http`, `git+https`, and
     `git+file`.
 
     If `#<commit-ish>` is provided, it will be used to clone exactly that
