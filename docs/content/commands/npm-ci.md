@@ -60,7 +60,7 @@ added 154 packages in 10s
 $ ls | grep package-lock
 ```
 
-Run `npm ci` in that project
+Run `npm ci` in that project:
 
 ```bash
 $ npm ci
