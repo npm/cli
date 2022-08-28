@@ -49,7 +49,7 @@ npm query ":type(git)" | jq 'map(.name)' | xargs -I {} npm why {}
 // direct development deps
 :root > .dev
 
-// any peer dep of a direct deps
+// any peer dep of a direct dep
 :root > * > .peer
 
 // any workspace dep
@@ -81,7 +81,7 @@ npm query ":type(git)" | jq 'map(.name)' | xargs -I {} npm why {}
 // has any deps
 :has(*)
 
-// deps with no other deps (ie. "leaf" nodes)
+// deps with no other deps (i.e. "leaf" nodes)
 :empty
 
 // manually querying git dependencies
