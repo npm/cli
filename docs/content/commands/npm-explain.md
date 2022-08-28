@@ -29,7 +29,7 @@ to be installed in the current project.
 If one or more package specs are provided, then only packages matching
 one of the specifiers will have their relationships explained.
 
-The package spec can also refer to a folder within `./node_modules`
+The package spec can also refer to a folder within `./node_modules`.
 
 For example, running `npm explain glob` within npm's source tree will show:
 
