@@ -98,8 +98,8 @@ following help topics:
   link`](/commands/npm-link) to do this.
 * install:
   It's a good idea to install things if you don't need the symbolic
-  link.  Especially, installing other peoples code from the registry is
-  done via [`npm install`](/commands/npm-install)
+  link.  Especially, installing other people's code from the registry is
+  done via [`npm install`](/commands/npm-install).
 * adduser:
   Create an account or log in.  When you do this, npm will store
   credentials in the user config file.
@@ -125,7 +125,7 @@ npm is extremely configurable.  It reads its configuration options from
   present, it is parsed.  If the `userconfig` option is set in the cli
   or env, that file will be used instead.
 * Global Configs:
-  The file found at `./etc/npmrc` (relative to the global prefix will be
+  The file found at `./etc/npmrc` (relative to the global prefix) will be
   parsed if it is found.  See [`npm prefix`](/commands/npm-prefix) for
   more info on the global prefix.  If the `globalconfig` option is set
   in the cli, env, or user config, then that file is parsed instead.
@@ -133,7 +133,7 @@ npm is extremely configurable.  It reads its configuration options from
   npm's default configuration options are defined in
   lib/utils/config-defs.js.  These must not be changed.
 
-See [`config`](/using-npm/config) for much much more information.
+See [`config`](/using-npm/config) for much, much more information.
 
 ### Contributions
 
