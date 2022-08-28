@@ -26,14 +26,14 @@ of files for packages published to the npm registry.
 
 * `npm diff --diff=<spec-a> --diff=<spec-b>`
 
-    Compares two package versions using their registry specifiers, e.g:
+    Compares two package versions using their registry specifiers, e.g.:
     `npm diff --diff=pkg@1.0.0 --diff=pkg@^2.0.0`. It's also possible to
     compare across forks of any package,
-    e.g: `npm diff --diff=pkg@1.0.0 --diff=pkg-fork@1.0.0`.
+    e.g.: `npm diff --diff=pkg@1.0.0 --diff=pkg-fork@1.0.0`.
 
     Any valid spec can be used, so that it's also possible to compare
     directories or git repositories,
-    e.g: `npm diff --diff=pkg@latest --diff=./packages/pkg`
+    e.g.: `npm diff --diff=pkg@latest --diff=./packages/pkg`.
 
     Here's an example comparing two different versions of a package named
     `abbrev` from the registry:
@@ -146,7 +146,7 @@ compare to a published tag, you must use the `pkg@tagname` syntax.
 
 It's possible to also specify positional arguments using file names or globs
 pattern matching in order to limit the result of diff patches to only a subset
-of files for a given package, e.g:
+of files for a given package, e.g.:
 
   ```bash
   npm diff --diff=pkg@2 ./lib/ CHANGELOG.md
