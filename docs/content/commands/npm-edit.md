@@ -25,7 +25,7 @@ Note: This command is unaware of workspaces.
 
 Selects a dependency in the current project and opens the package folder in
 the default editor (or whatever you've configured as the npm `editor`
-config -- see [`npm-config`](npm-config).)
+config -- see [`npm-config`](npm-config)).
 
 After it has been edited, the package is rebuilt so as to pick up any
 changes in compiled packages.
