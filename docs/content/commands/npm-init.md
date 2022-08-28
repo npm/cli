@@ -109,7 +109,7 @@ create the folders and boilerplate expected while also adding a reference
 to your project `package.json` `"workspaces": []` property in order to make
 sure that new generated **workspace** is properly set up as such.
 
-Given a project with no workspaces, e.g:
+Given a project with no workspaces, e.g.:
 
 ```
 .
@@ -149,7 +149,7 @@ This will make sure to generate your react app as expected, one important
 consideration to have in mind is that `npm exec` is going to be run in the
 context of the newly created folder for that workspace, and that's the reason
 why in this example the initializer uses the initializer name followed with a
-dot to represent the current directory in that context, e.g: `react-app .`:
+dot to represent the current directory in that context, e.g.: `react-app .`:
 
 ```
 .
