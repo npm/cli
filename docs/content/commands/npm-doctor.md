@@ -72,7 +72,7 @@ always likely to be the most functional and defect-free version of npm.
 
 For most users, in most circumstances, the best version of Node will be the
 latest long-term support (LTS) release. Those of you who want access to new
-ECMAscript features or bleeding-edge changes to Node's standard library may
+ECMAScript features or bleeding-edge changes to Node's standard library may
 be running a newer version, and some may be required to run an older
 version of Node because of enterprise change control policies. That's OK!
 But in general, the npm team recommends that most users run Node.js LTS.
