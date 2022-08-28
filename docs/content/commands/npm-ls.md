@@ -77,7 +77,7 @@ ls` now only shows the _top_ level dependencies, unless `--all` is
 provided.
 
 A thorough re-examination of the use cases, intention, behavior, and output
-of this command, is currently underway.  Expect significant changes to at
+of this command is currently underway.  Expect significant changes to at
 least the default human-readable `npm ls` output in npm v8.
 
 ### Configuration
