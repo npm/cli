@@ -90,7 +90,7 @@ arbitrary command from a package's `"scripts"` object in the context of the
 specified workspaces. If no `"command"` is provided, it will list the available
 scripts for each of these configured workspaces.
 
-Given a project with configured workspaces, e.g:
+Given a project with configured workspaces, e.g.:
 
 ```
 .
@@ -105,7 +105,7 @@ Given a project with configured workspaces, e.g:
 ```
 
 Assuming the workspace configuration is properly set up at the root level
-`package.json` file. e.g:
+`package.json` file, e.g.:
 
 ```
 {
@@ -132,7 +132,7 @@ npm test --workspace=a
 The `workspace` config can also be specified multiple times in order to run a
 specific script in the context of multiple workspaces. When defining values for
 the `workspace` config in the command line, it also possible to use `-w` as a
-shorthand, e.g:
+shorthand, e.g.:
 
 ```
 npm test -w a -w b
