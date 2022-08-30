@@ -323,8 +323,6 @@ graph LR;
   init-package-json-->validate-npm-package-name;
   is-cidr-->cidr-regex;
   is-core-module-->has;
-  libnpmaccess-->aproba;
-  libnpmaccess-->minipass;
   libnpmaccess-->nock;
   libnpmaccess-->npm-package-arg;
   libnpmaccess-->npm-registry-fetch;
