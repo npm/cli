@@ -25,11 +25,12 @@ of `patch`, `minor`, `major`, `prepatch`, `preminor`, `premajor`,
 be incremented by 1 in the specified field.  `from-git` will try to read
 the latest git tag, and use that as the new npm version.
 
-If run in a git repo, it will also create a version commit and tag.  This
-behavior is controlled by `git-tag-version` (see below), and can be
-disabled on the command line by running `npm --no-git-tag-version version`.
-It will fail if the working directory is not clean, unless the `-f` or
-`--force` flag is set.
+If run in a git repo, it will also create a version commit and tag, unless
+the working directory is within a workspace (in which case no commit is
+made).  This behavior is controlled by `git-tag-version` (see below), and
+can be disabled on the command line by running `npm --no-git-tag-version
+version`.  It will fail if the working directory is not clean, unless the
+`-f` or `--force` flag is set.
 
 If supplied with `-m` or [`--message` config](/using-npm/config#message) option,
 npm will use it as a commit message when creating a version commit.  If the

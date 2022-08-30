@@ -3,6 +3,7 @@
 const retrieveTag = require('./retrieve-tag.js')
 const semver = require('semver')
 const enforceClean = require('./enforce-clean.js')
+const isWorkspaceSafe = require('./is-workspace-safe.js')
 const writeJson = require('./write-json.js')
 const readJson = require('./read-json.js')
 const git = require('@npmcli/git')
@@ -51,13 +52,13 @@ module.exports = async (newversion, opts) => {
     })
   }
 
-  const isGitDir = newversion === 'from-git' || await git.is(opts)
+  const gitDir = await git.find(opts)
 
   // ok!  now we know the new version, and the old version is in pkg
 
   // - check if git dir is clean
   // returns false if we should not keep doing git stuff
-  const doGit = gitTagVersion && isGitDir && await enforceClean(opts)
+  const doGit = gitTagVersion && Boolean(gitDir) && await enforceClean(opts) && await isWorkspaceSafe(gitDir, path)
 
   if (!ignoreScripts) {
     await runScript({
