@@ -1,5 +1,9 @@
 {
-  "separate-pull-requests": true,
+  "bootstrap-sha": "141faf0c19eae382d0e19833129f5545fc2355c8",
+  "plugins": [
+    "node-workspace",
+    "workspace-deps"
+  ],
   "changelog-sections": [
     {
       "type": "feat",
@@ -27,6 +31,9 @@
     }
   ],
   "packages": {
+    ".": {
+      "package-name": ""
+    },
     "workspaces/arborist": {},
     "workspaces/libnpmaccess": {},
     "workspaces/libnpmdiff": {},
@@ -39,5 +46,8 @@
     "workspaces/libnpmsearch": {},
     "workspaces/libnpmteam": {},
     "workspaces/libnpmversion": {}
-  }
+  },
+  "exclude-packages-from-root": true,
+  "group-pull-request-title-pattern": "chore: release ${version}",
+  "pull-request-title-pattern": "chore: release${component} ${version}"
 }

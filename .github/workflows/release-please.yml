@@ -16,20 +16,8 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     outputs:
-      prs: ${{ steps.release.outputs.prs }}
-    steps:
-      - uses: google-github-actions/release-please-action@v3
-        id: release
-        with:
-          command: manifest
-
-  update-prs:
-    needs: release-please
-    if: needs.release-please.outputs.prs
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        pr: ${{ fromJSON(needs.release-please.outputs.prs) }}
+      pr: ${{ steps.release.outputs.pr }}
+      release: ${{ steps.release.outputs.release }}
     steps:
       - uses: actions/checkout@v3
       - name: Setup git user
@@ -42,15 +30,71 @@ jobs:
       - name: Update npm to latest
         run: npm i --prefer-online --no-fund --no-audit -g npm@latest
       - run: npm -v
-      - name: Update PR ${{ matrix.pr.number }} dependencies and commit
+      - run: npm i --ignore-scripts --no-audit --no-fund
+      - name: Release Please
+        id: release
+        run: npx --offline template-oss-release-please
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  post-pr:
+    needs: release-please
+    if: needs.release-please.outputs.pr
+    runs-on: ubuntu-latest
+    outputs:
+      ref: ${{ steps.ref.outputs.branch }}
+    steps:
+      - name: Output ref
+        id: ref
+        run: echo "::set-output name=branch::${{ fromJSON(needs.release-please.outputs.pr).headBranchName }}"
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ steps.ref.outputs.branch }}
+      - name: Setup git user
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: Update npm to latest
+        run: npm i --prefer-online --no-fund --no-audit -g npm@latest
+      - run: npm -v
+      - run: npm i --ignore-scripts --no-audit --no-fund
+      - name: Post pull request actions
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr checkout ${{ matrix.pr.number }}
-          npm run resetdeps
-          title="${{ matrix.pr.title }}"
-          # get the dependency spec from the pr title
-          # get everything after ': release ' + replace space with @
-          dep_spec=$(echo "${title##*: release }" | tr ' ' @)
-          git commit -am "deps: $dep_spec"
+          npm run rp-pull-request --ignore-scripts --if-present -ws -iwr
+          git commit -am "chore: post pull request" || true
           git push
+
+  release-test:
+    needs: post-pr
+    if: needs.post-pr.outputs.ref
+    uses: ./.github/workflows/release.yml
+    with:
+      ref: ${{ needs.post-pr.outputs.ref }}
+
+  post-release:
+    needs: release-please
+    if: needs.release-please.outputs.release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup git user
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: Update npm to latest
+        run: npm i --prefer-online --no-fund --no-audit -g npm@latest
+      - run: npm -v
+      - run: npm i --ignore-scripts --no-audit --no-fund
+      - name: Post release actions
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run rp-release --ignore-scripts --if-present -ws -iwr

@@ -206,7 +206,7 @@
   "devDependencies": {
     "@npmcli/eslint-config": "^3.1.0",
     "@npmcli/promise-spawn": "^3.0.0",
-    "@npmcli/template-oss": "3.7.1",
+    "@npmcli/template-oss": "3.8.0",
     "fs-minipass": "^2.1.0",
     "licensee": "^8.2.0",
     "minimatch": "^5.1.0",
@@ -217,7 +217,7 @@
   "scripts": {
     "dependencies": "node scripts/bundle-and-gitignore-deps.js && node scripts/dependency-graph.js",
     "dumpconf": "env | grep npm | sort | uniq",
-    "preversion": "bash scripts/update-authors.sh && git add AUTHORS && git commit -m \"chore: update AUTHORS\" || true",
+    "authors": "bash scripts/update-authors.sh",
     "licenses": "licensee --production --errors-only",
     "test": "tap",
     "test-all": "npm run test --if-present --workspaces --include-workspace-root",
@@ -231,7 +231,8 @@
     "lintfix": "npm run lint -- --fix",
     "lint-all": "npm run lint --if-present --workspaces --include-workspace-root",
     "prelint": "rimraf test/npm_cache*",
-    "resetdeps": "bash scripts/resetdeps.sh"
+    "resetdeps": "bash scripts/resetdeps.sh",
+    "rp-pull-request": "npm run resetdeps && npm run authors"
   },
   "tap": {
     "test-env": [
@@ -250,7 +251,8 @@
   "templateOSS": {
     "rootRepo": false,
     "rootModule": false,
-    "version": "3.7.1"
+    "version": "3.8.0",
+    "releaseTest": "release.yml"
   },
   "license": "Artistic-2.0",
   "engines": {
