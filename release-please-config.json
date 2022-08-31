@@ -32,7 +32,8 @@
   ],
   "packages": {
     ".": {
-      "package-name": ""
+      "package-name": "",
+      "prerelease": true
     },
     "workspaces/arborist": {},
     "workspaces/libnpmaccess": {},
