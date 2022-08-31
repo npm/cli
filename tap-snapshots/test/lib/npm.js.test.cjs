@@ -168,18 +168,16 @@ All commands:
     access          Set access level on published packages
                     
                     Usage:
-                    npm access public [<package>]
-                    npm access restricted [<package>]
+                    npm access list packages [<user>|<scope>|<scope:team> [<package>]
+                    npm access list collaborators [<package> [<user>]]
+                    npm access get status [<package>]
+                    npm access set status=public|private [<package>]
+                    npm access set mfa=none|publish|automation [<package>]
                     npm access grant <read-only|read-write> <scope:team> [<package>]
                     npm access revoke <scope:team> [<package>]
-                    npm access 2fa-required [<package>]
-                    npm access 2fa-not-required [<package>]
-                    npm access ls-packages [<user>|<scope>|<scope:team>]
-                    npm access ls-collaborators [<package> [<user>]]
-                    npm access edit [<package>]
                     
                     Options:
-                    [--registry <registry>] [--otp <otp>]
+                    [--json] [--otp <otp>] [--registry <registry>]
                     
                     Run "npm help access" for more info
 
