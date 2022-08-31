@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.0.3](https://github.com/npm/cli/compare/libnpmfund-v3.0.2...libnpmfund-v3.0.3) (2022-08-31)
+
+### Dependencies
+
+  * [`8ab12dc`](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460) [#5323](https://github.com/npm/cli/pull/5323) deps: `@npmcli/eslint-config@3.1.0`
+* The following workspace dependencies were updated
+  * dependencies
+    * @npmcli/arborist bumped from ^5.0.0 to ^5.6.1
+
 ### [3.0.2](https://github.com/npm/cli/compare/libnpmfund-v3.0.1...libnpmfund-v3.0.2) (2022-04-06)
 
 

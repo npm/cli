@@ -1,5 +1,48 @@
 # Changelog
 
+## [8.19.0](https://github.com/npm/cli/compare/v8.18.0...v8.19.0) (2022-08-31)
+
+### Features
+
+  * [`d94a9f5`](https://github.com/npm/cli/commit/d94a9f56cce1de32bfd87f841d7678e8394d8ea6) [#5347](https://github.com/npm/cli/pull/5347) feat: add deprecation warnings to access commands (@wraithgar)
+
+### Bug Fixes
+
+  * [`bd2ae5d`](https://github.com/npm/cli/commit/bd2ae5d79eb8807bfca6075e98432c545a9ededa) [#5323](https://github.com/npm/cli/pull/5323) fix: linting (@wraithgar)
+
+### Documentation
+
+  * [`3569094`](https://github.com/npm/cli/commit/356909424f60a26d90faf25594085e79e93f09d5) [#5321](https://github.com/npm/cli/pull/5321) docs: fix link to dependency selectors page (@hghmn)
+  * [`414667a`](https://github.com/npm/cli/commit/414667a1e6d7d7a3ab0cb64704c3aa696eae8715) [#5328](https://github.com/npm/cli/pull/5328) docs(dependency-selectors): fix Arborist example in docs (@kyle-west)
+
+### Dependencies
+
+  * [`1286f03`](https://github.com/npm/cli/commit/1286f03fe73dee9a447b13b662f0c5622ab6ec9e) [#5381](https://github.com/npm/cli/pull/5381) deps: `unique-filename@2.0.1`
+  * [`d7e9a8e`](https://github.com/npm/cli/commit/d7e9a8ed5b7c1f9ca8d34e86388a134b2f48fc15) [#5381](https://github.com/npm/cli/pull/5381) deps: `ini@3.0.1`
+  * [`2c4e387`](https://github.com/npm/cli/commit/2c4e38728f25fd32624df2eb5bbf61c2c40c8ad5) [#5381](https://github.com/npm/cli/pull/5381) deps: `hosted-git-info@5.1.0`
+  * [`e401a81`](https://github.com/npm/cli/commit/e401a81c784556393bad57283337283a46bd57c5) [#5381](https://github.com/npm/cli/pull/5381) deps: `npm-bundled@2.0.1`
+  * [`f4205e5`](https://github.com/npm/cli/commit/f4205e57d6c4ee5f2ff7d21ffc116ffc420d191e) [#5381](https://github.com/npm/cli/pull/5381) deps: `diff@5.1.0`
+  * [`8f7abbe`](https://github.com/npm/cli/commit/8f7abbe4c3ceba451eb422c6328d623e7c8eeed5) [#5381](https://github.com/npm/cli/pull/5381) deps: `npm-packlist@5.1.3`
+  * [`b12ac01`](https://github.com/npm/cli/commit/b12ac013226b7d86b5b1847d58eabbac2846b153) [#5381](https://github.com/npm/cli/pull/5381) deps: `npm-pick-manifest@7.0.2`
+  * [`7fbf6f7`](https://github.com/npm/cli/commit/7fbf6f7825f76906ecdec79ab15595f9e2f7b784) [#5381](https://github.com/npm/cli/pull/5381) deps: `bin-links@3.0.3`
+  * [`7c7f656`](https://github.com/npm/cli/commit/7c7f65629c3dd4fe7fd8254ac38914cf52ad31c2) [#5381](https://github.com/npm/cli/pull/5381) deps: `read-package-json@5.0.2`
+  * [`26d2e55`](https://github.com/npm/cli/commit/26d2e551b250972caa550d56127810648a1663a1) [#5381](https://github.com/npm/cli/pull/5381) deps: `@npmcli/query@1.2.0`
+  * [`a79ee00`](https://github.com/npm/cli/commit/a79ee00b530b765ed219e81de77c37057c373adf) [#5381](https://github.com/npm/cli/pull/5381) deps: `cacache@16.1.3`
+  * [`2561822`](https://github.com/npm/cli/commit/25618229b7698aa8abbfcd2ef32024809f05a1a1) [#5378](https://github.com/npm/cli/pull/5378) deps: `@npmcli/config@4.2.2`
+  * [`8ab12dc`](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460) [#5323](https://github.com/npm/cli/pull/5323) deps: `@npmcli/eslint-config@3.1.0`
+  * `@npmcli/arborist@^5.6.1`
+  * [`libnpmaccess@^6.0.4`](https://github.com/npm/cli/compare/libnpmaccess-v6.0.3...libnpmaccess-v6.0.4)
+  * [`libnpmdiff@^4.0.5`](https://github.com/npm/cli/compare/libnpmdiff-v4.0.4...libnpmdiff-v4.0.5)
+  * [`libnpmexec@^4.0.12`](https://github.com/npm/cli/compare/libnpmexec-v4.0.11...libnpmexec-v4.0.12)
+  * [`libnpmfund@^3.0.3`](https://github.com/npm/cli/compare/libnpmfund-v3.0.2...libnpmfund-v3.0.3)
+  * [`libnpmhook@^8.0.4`](https://github.com/npm/cli/compare/libnpmhook-v8.0.3...libnpmhook-v8.0.4)
+  * [`libnpmorg@^4.0.4`](https://github.com/npm/cli/compare/libnpmorg-v4.0.3...libnpmorg-v4.0.4)
+  * [`libnpmpack@^4.1.3`](https://github.com/npm/cli/compare/libnpmpack-v4.1.2...libnpmpack-v4.1.3)
+  * [`libnpmpublish@^6.0.5`](https://github.com/npm/cli/compare/libnpmpublish-v6.0.4...libnpmpublish-v6.0.5)
+  * [`libnpmsearch@^5.0.4`](https://github.com/npm/cli/compare/libnpmsearch-v5.0.3...libnpmsearch-v5.0.4)
+  * [`libnpmteam@^4.0.4`](https://github.com/npm/cli/compare/libnpmteam-v4.0.3...libnpmteam-v4.0.4)
+  * [`libnpmversion@^3.0.7`](https://github.com/npm/cli/compare/libnpmversion-v3.0.6...libnpmversion-v3.0.7)
+
 ## v8.18.0 (2022-08-17)
 
 ### Features
