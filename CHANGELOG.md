@@ -1,5 +1,14 @@
 # Changelog
 
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * libnpmaccess bumped from ^6.0.4 to ^6.0.5
+    * libnpmorg bumped from ^4.0.4 to ^4.0.5
+    * libnpmpublish bumped from ^6.0.5 to ^6.0.6
+    * libnpmteam bumped from ^4.0.4 to ^4.0.5
+
 ## [8.19.0](https://github.com/npm/cli/compare/v8.18.0...v8.19.0) (2022-08-31)
 
 ### Features

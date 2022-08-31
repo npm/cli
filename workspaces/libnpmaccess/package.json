@@ -1,6 +1,6 @@
 {
   "name": "libnpmaccess",
-  "version": "6.0.4",
+  "version": "6.0.5",
   "description": "programmatic library for `npm access` commands",
   "author": "GitHub Inc.",
   "license": "ISC",

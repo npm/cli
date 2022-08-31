@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.0.5](https://github.com/npm/cli/compare/libnpmteam-v4.0.4...libnpmteam-v4.0.5) (2022-08-31)
+
+### Bug Fixes
+
+  * [`2829cb2`](https://github.com/npm/cli/commit/2829cb28a432b5ff7beeeb3bf3e7e2e174c1121d) [#4658](https://github.com/npm/cli/pull/4658) fix: update readme badges (@lukekarrys)
+
+### Dependencies
+
+  * [`8ab12dc`](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460) [#5323](https://github.com/npm/cli/pull/5323) deps: `@npmcli/eslint-config@3.1.0`
+  * [`35e5100`](https://github.com/npm/cli/commit/35e5100e287925d19df4aab98de96cf70a6ff5a6) [#4697](https://github.com/npm/cli/pull/4697) deps: `libnpmteam@4.0.3`
+  * [`a59fd2c`](https://github.com/npm/cli/commit/a59fd2cb863245fce56f96c90ac854e62c5c4d6f) [#4639](https://github.com/npm/cli/pull/4639) deps: `@npmcli/template-oss@3.2.2`
+  * [`aac01b8`](https://github.com/npm/cli/commit/aac01b89caf6336a2eb34d696296303cdadd5c08) [#4628](https://github.com/npm/cli/pull/4628) deps: `@npmcli/template-oss@3.2.1`
+
 ## [4.0.4](https://github.com/npm/cli/compare/libnpmteam-v4.0.3...libnpmteam-v4.0.4) (2022-08-31)
 
 ### Dependencies
