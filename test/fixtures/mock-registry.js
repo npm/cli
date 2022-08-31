@@ -67,21 +67,19 @@ class MockRegistry {
     }
   }
 
-  access ({ spec, access, publishRequires2fa }) {
-    const body = {}
-    if (access !== undefined) {
-      body.access = access
-    }
-    if (publishRequires2fa !== undefined) {
-      body.publish_requires_tfa = publishRequires2fa
-    }
+  setAccess ({ spec, body = {} }) {
     this.nock = this.nock.post(
-      `/-/package/${encodeURIComponent(spec)}/access`,
+      `/-/package/${npa(spec).escapedName}/access`,
       body
     ).reply(200)
   }
 
-  grant ({ spec, team, permissions }) {
+  getVisibility ({ spec, visibility }) {
+    this.nock = this.nock.get(`/-/package/${npa(spec).escapedName}/visibility`)
+      .reply(200, visibility)
+  }
+
+  setPermissions ({ spec, team, permissions }) {
     if (team.startsWith('@')) {
       team = team.slice(1)
     }
@@ -92,7 +90,7 @@ class MockRegistry {
     ).reply(200)
   }
 
-  revoke ({ spec, team }) {
+  removePermissions ({ spec, team }) {
     if (team.startsWith('@')) {
       team = team.slice(1)
     }
@@ -141,27 +139,22 @@ class MockRegistry {
   }
 
   // team can be a team or a username
-  lsPackages ({ team, packages = {}, times = 1 }) {
+  getPackages ({ team, packages = {}, times = 1 }) {
     if (team.startsWith('@')) {
       team = team.slice(1)
     }
-    const [scope, teamName] = team.split(':')
+    const [scope, teamName] = team.split(':').map(encodeURIComponent)
     let uri
     if (teamName) {
-      uri = `/-/team/${encodeURIComponent(scope)}/${encodeURIComponent(teamName)}/package`
+      uri = `/-/team/${scope}/${teamName}/package`
     } else {
-      uri = `/-/org/${encodeURIComponent(scope)}/package`
+      uri = `/-/org/${scope}/package`
     }
-    this.nock = this.nock.get(uri).query({ format: 'cli' }).times(times).reply(200, packages)
+    this.nock = this.nock.get(uri).times(times).reply(200, packages)
   }
 
-  lsCollaborators ({ spec, user, collaborators = {} }) {
-    const query = { format: 'cli' }
-    if (user) {
-      query.user = user
-    }
-    this.nock = this.nock.get(`/-/package/${encodeURIComponent(spec)}/collaborators`)
-      .query(query)
+  getCollaborators ({ spec, collaborators = {} }) {
+    this.nock = this.nock.get(`/-/package/${npa(spec).escapedName}/collaborators`)
       .reply(200, collaborators)
   }
 
