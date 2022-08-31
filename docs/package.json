@@ -47,7 +47,8 @@
     "statements": 81,
     "branches": 72,
     "functions": 75,
-    "lines": 81
+    "lines": 81,
+    "timeout": 600
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",

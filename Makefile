@@ -2,7 +2,6 @@
 SHELL = bash
 
 PUBLISHTAG = $(shell node scripts/publish-tag.js)
-BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
 
 # these docs have the @VERSION@ tag in them, so they have to be rebuilt
 # whenever the package.json is touched, in case the version changed.
@@ -112,8 +111,6 @@ prune: deps
 	node scripts/git-dirty.js
 
 publish: gitclean ls-ok link test-all docs prune
-	git push origin $(BRANCH) &&\
-	git push origin --tags &&\
 	node bin/npm-cli.js publish --tag=$(PUBLISHTAG)
 
 release: gitclean ls-ok docs prune
