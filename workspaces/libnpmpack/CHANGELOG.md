@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.1.3](https://github.com/npm/cli/compare/libnpmpack-v4.1.2...libnpmpack-v4.1.3) (2022-08-31)
+
+### Dependencies
+
+  * [`8ab12dc`](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460) [#5323](https://github.com/npm/cli/pull/5323) deps: `@npmcli/eslint-config@3.1.0`
+
 ## [4.1.2](https://github.com/npm/cli/compare/libnpmpack-v4.1.1...libnpmpack-v4.1.2) (2022-06-23)
 
 

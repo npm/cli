@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.0.4](https://github.com/npm/cli/compare/libnpmteam-v4.0.3...libnpmteam-v4.0.4) (2022-08-31)
+
+### Dependencies
+
+  * [`8ab12dc`](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460) [#5323](https://github.com/npm/cli/pull/5323) deps: `@npmcli/eslint-config@3.1.0`
+
 ### [4.0.3](https://github.com/npm/cli/compare/libnpmteam-v4.0.2...libnpmteam-v4.0.3) (2022-04-06)
 
 

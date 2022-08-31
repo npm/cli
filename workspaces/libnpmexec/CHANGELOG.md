@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.12](https://github.com/npm/cli/compare/libnpmexec-v4.0.11...libnpmexec-v4.0.12) (2022-08-31)
+
+### Dependencies
+
+  * [`1286f03`](https://github.com/npm/cli/commit/1286f03fe73dee9a447b13b662f0c5622ab6ec9e) [#5381](https://github.com/npm/cli/pull/5381) deps: `unique-filename@2.0.1`
+  * [`7fbf6f7`](https://github.com/npm/cli/commit/7fbf6f7825f76906ecdec79ab15595f9e2f7b784) [#5381](https://github.com/npm/cli/pull/5381) deps: `bin-links@3.0.3`
+  * [`8ab12dc`](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460) [#5323](https://github.com/npm/cli/pull/5323) deps: `@npmcli/eslint-config@3.1.0`
+* The following workspace dependencies were updated
+  * dependencies
+    * @npmcli/arborist bumped from ^5.0.0 to ^5.6.1
+
 ## [4.0.11](https://github.com/npm/cli/compare/libnpmexec-v4.0.10...libnpmexec-v4.0.11) (2022-08-17)
 
 

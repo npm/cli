@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.0.4](https://github.com/npm/cli/compare/libnpmaccess-v6.0.3...libnpmaccess-v6.0.4) (2022-08-31)
+
+### Dependencies
+
+  * [`8ab12dc`](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460) [#5323](https://github.com/npm/cli/pull/5323) deps: `@npmcli/eslint-config@3.1.0`
+
 ### [6.0.3](https://github.com/npm/cli/compare/libnpmaccess-v6.0.2...libnpmaccess-v6.0.3) (2022-04-06)
 
 
