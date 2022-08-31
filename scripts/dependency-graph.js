@@ -7,7 +7,7 @@ const fs = require('fs')
 
 // To re-create npm-cli-repos.txt run:
 /* eslint-disable-next-line max-len */
-// gh api "/graphql" -F query='query { search (query: "org:npm topic:npm-cli", type: REPOSITORY, first:100) { nodes { ... on Repository { name } } } }' --jq '.data.search.nodes[].name'|sort
+// npx --package=@npmcli/stafftools@latest gh repos --json | json -a name | sort > scripts/npm-cli-repos.txt
 const repos = fs.readFileSync('./scripts/npm-cli-repos.txt', 'utf8').trim().split('\n')
 
 // these have a different package name than the repo name, and are ours.
