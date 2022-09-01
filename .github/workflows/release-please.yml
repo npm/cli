@@ -49,6 +49,7 @@ jobs:
         run: echo "::set-output name=branch::${{ fromJSON(needs.release-please.outputs.pr).headBranchName }}"
       - uses: actions/checkout@v3
         with:
+          fetch-depth: 0
           ref: ${{ steps.ref.outputs.branch }}
       - name: Setup git user
         run: |

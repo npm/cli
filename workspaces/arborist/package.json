@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^3.1.0",
-    "@npmcli/template-oss": "3.8.0",
+    "@npmcli/template-oss": "3.8.1",
     "benchmark": "^2.1.4",
     "chalk": "^4.1.0",
     "minify-registry-metadata": "^2.1.0",
@@ -56,9 +56,6 @@
     "snap": "tap",
     "postsnap": "npm run lintfix",
     "test-proxy": "ARBORIST_TEST_PROXY=1 tap --snapshot",
-    "preversion": "npm test",
-    "postversion": "npm publish",
-    "prepublishOnly": "git push origin --follow-tags",
     "eslint": "eslint",
     "lint": "eslint \"**/*.js\"",
     "lintfix": "npm run lint -- --fix",
@@ -103,6 +100,6 @@
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "3.8.0"
+    "version": "3.8.1"
   }
 }
