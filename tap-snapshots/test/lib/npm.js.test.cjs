@@ -21,7 +21,7 @@ npm help npm       more involved overview
 
 All commands:
 
-    access, adduser, audit, bin, bugs, cache, ci, completion,
+    access, adduser, audit, bugs, cache, ci, completion,
     config, dedupe, deprecate, diff, dist-tag, docs, doctor,
     edit, exec, explain, explore, find-dupes, fund, get, help,
     hook, init, install, install-ci-test, install-test, link,
@@ -57,7 +57,7 @@ npm help npm       more involved overview
 
 All commands:
 
-    access, adduser, audit, bin, bugs, cache, ci, completion,
+    access, adduser, audit, bugs, cache, ci, completion,
     config, dedupe, deprecate, diff, dist-tag, docs, doctor,
     edit, exec, explain, explore, find-dupes, fund, get, help,
     hook, init, install, install-ci-test, install-test, link,
@@ -93,7 +93,7 @@ npm help npm       more involved overview
 
 All commands:
 
-    access, adduser, audit, bin, bugs, cache, ci, completion,
+    access, adduser, audit, bugs, cache, ci, completion,
     config, dedupe, deprecate, diff, dist-tag, docs, doctor,
     edit, exec, explain, explore, find-dupes, fund, get, help,
     hook, init, install, install-ci-test, install-test, link,
@@ -129,7 +129,7 @@ npm help npm       more involved overview (in a browser)
 
 All commands:
 
-    access, adduser, audit, bin, bugs, cache, ci, completion,
+    access, adduser, audit, bugs, cache, ci, completion,
     config, dedupe, deprecate, diff, dist-tag, docs, doctor,
     edit, exec, explain, explore, find-dupes, fund, get, help,
     hook, init, install, install-ci-test, install-test, link,
@@ -210,16 +210,6 @@ All commands:
                     [-ws|--workspaces] [--include-workspace-root] [--install-links]
                     
                     Run "npm help audit" for more info
-
-    bin             Display npm bin folder
-                    
-                    Usage:
-                    npm bin
-                    
-                    Options:
-                    [-g|--global]
-                    
-                    Run "npm help bin" for more info
 
     bugs            Report bugs for a package in a web browser
                     
