@@ -1,5 +1,11 @@
 # Changelog
 
+## [8.19.1](https://github.com/npm/cli/compare/v8.19.0...v8.19.1) (2022-09-01)
+
+### Bug Fixes
+
+  * [`d60b43f`](https://github.com/npm/cli/commit/d60b43f3825452dd8b9b5879c287df232c9a8dc8) [#5438](https://github.com/npm/cli/pull/5438) fix: Turn off progress bar when using web based authorization (@sandeepmeduru)
+
 ## [8.19.0](https://github.com/npm/cli/compare/v8.18.0...v8.19.0) (2022-08-31)
 
 ### Features
