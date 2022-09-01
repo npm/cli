@@ -983,7 +983,7 @@ Alias for \`--init-version\`
 exports[`test/lib/utils/config/definitions.js TAP > config description for install-links 1`] = `
 #### \`install-links\`
 
-* Default: false
+* Default: true
 * Type: Boolean
 
 When set file: protocol dependencies that exist outside of the project root

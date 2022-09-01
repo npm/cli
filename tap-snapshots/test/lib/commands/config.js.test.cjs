@@ -81,7 +81,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "init.license": "ISC",
   "init.module": "{HOME}/.npm-init.js",
   "init.version": "1.0.0",
-  "install-links": false,
+  "install-links": true,
   "key": null,
   "legacy-bundling": false,
   "legacy-peer-deps": false,
@@ -237,7 +237,7 @@ init.author.url = ""
 init.license = "ISC" 
 init.module = "{HOME}/.npm-init.js" 
 init.version = "1.0.0" 
-install-links = false 
+install-links = true 
 json = false 
 key = null 
 legacy-bundling = false 
