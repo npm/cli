@@ -95,7 +95,6 @@ Array [
       run-script
       search
       set
-      set-script
       shrinkwrap
       star
       stars

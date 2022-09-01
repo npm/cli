@@ -27,9 +27,9 @@ All commands:
     hook, init, install, install-ci-test, install-test, link,
     ll, login, logout, ls, org, outdated, owner, pack, ping,
     pkg, prefix, profile, prune, publish, query, rebuild, repo,
-    restart, root, run-script, search, set, set-script,
-    shrinkwrap, star, stars, start, stop, team, test, token,
-    uninstall, unpublish, unstar, update, version, view, whoami
+    restart, root, run-script, search, set, shrinkwrap, star,
+    stars, start, stop, team, test, token, uninstall, unpublish,
+    unstar, update, version, view, whoami
 
 Specify configs in the ini-formatted file:
     {CWD}/smoke-tests/test/tap-testdir-index/.npmrc
@@ -597,21 +597,7 @@ exports[`test/index.js TAP npm pkg > should print package.json contents 1`] = `
 
 `
 
-exports[`test/index.js TAP npm prefix > should have expected prefix output 1`] = `
-{CWD}/smoke-tests/test/tap-testdir-index/project
-
-`
-
-exports[`test/index.js TAP npm run-script > should have expected run-script output 1`] = `
-
-> project@1.0.0 hello
-> echo Hello
-
-Hello
-
-`
-
-exports[`test/index.js TAP npm set-script > should have expected script added package.json result 1`] = `
+exports[`test/index.js TAP npm pkg set scripts > should have expected script added package.json result 1`] = `
 {
   "name": "project",
   "version": "1.0.0",
@@ -634,7 +620,21 @@ exports[`test/index.js TAP npm set-script > should have expected script added pa
 
 `
 
-exports[`test/index.js TAP npm set-script > should have expected set-script output 1`] = `
+exports[`test/index.js TAP npm pkg set scripts > should have expected set-script output 1`] = `
+
+`
+
+exports[`test/index.js TAP npm prefix > should have expected prefix output 1`] = `
+{CWD}/smoke-tests/test/tap-testdir-index/project
+
+`
+
+exports[`test/index.js TAP npm run-script > should have expected run-script output 1`] = `
+
+> project@1.0.0 hello
+> echo Hello
+
+Hello
 
 `
 

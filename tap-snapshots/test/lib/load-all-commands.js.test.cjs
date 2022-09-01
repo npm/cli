@@ -802,19 +802,6 @@ npm set <key>=<value> [<key>=<value> ...] (See \`npm config\`)
 Run "npm help set" for more info
 `
 
-exports[`test/lib/load-all-commands.js TAP load each command set-script > must match snapshot 1`] = `
-Set tasks in the scripts section of package.json, deprecated
-
-Usage:
-npm set-script [<script>] [<command>]
-
-Options:
-[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root]
-
-Run "npm help set-script" for more info
-`
-
 exports[`test/lib/load-all-commands.js TAP load each command shrinkwrap > must match snapshot 1`] = `
 Lock down dependency versions for publication
 
