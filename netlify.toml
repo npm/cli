@@ -1,4 +1,4 @@
 [build]
   base = "docs"
-  command = "npm run build"
-  publish = "public"
+  command = "node dockhand.js"
+  publish = "output"
