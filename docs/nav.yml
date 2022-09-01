@@ -228,9 +228,6 @@
   - title: Organizations
     url: /using-npm/orgs
     description: Working with teams & organizations
-  - title: Disputes
-    url: /using-npm/disputes
-    description: Handling module name disputes
   - title: Developers
     url: /using-npm/developers
     description: Developer guide

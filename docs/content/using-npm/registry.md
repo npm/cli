@@ -100,4 +100,3 @@ Yes, head over to <https://www.npmjs.com/>
 * [config](/using-npm/config)
 * [npmrc](/configuring-npm/npmrc)
 * [npm developers](/using-npm/developers)
-* [npm disputes](/using-npm/disputes)
