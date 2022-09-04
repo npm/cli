@@ -44,8 +44,6 @@ situations. These scripts happen in addition to the `pre<event>`, `post<event>`,
 **prepare** (since `npm@4.0.0`)
 * Runs any time before the package is packed, i.e. during `npm publish`
     and `npm pack`
-* Runs BEFORE the package is packed
-* Runs BEFORE the package is published
 * Runs on local `npm install` without any arguments
 * Run AFTER `prepublish`, but BEFORE `prepublishOnly`
 
