@@ -8,8 +8,6 @@
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
     "lintfix": "npm run lint -- --fix",
-    "preversion": "npm test",
-    "postversion": "git push origin --follow-tags",
     "snap": "tap",
     "test": "tap",
     "posttest": "npm run lint"
@@ -24,7 +22,7 @@
     "@npmcli/eslint-config": "^3.1.0",
     "@npmcli/fs": "^2.1.0",
     "@npmcli/promise-spawn": "^3.0.0",
-    "@npmcli/template-oss": "3.7.1",
+    "@npmcli/template-oss": "3.8.1",
     "cmark-gfm": "^0.9.0",
     "jsdom": "^18.1.0",
     "marked-man": "^0.7.0",
@@ -47,7 +45,8 @@
     "statements": 81,
     "branches": 72,
     "functions": 75,
-    "lines": 81
+    "lines": 81,
+    "timeout": 600
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
@@ -60,6 +59,6 @@
     "ciVersions": [
       "16"
     ],
-    "version": "3.7.1"
+    "version": "3.8.1"
   }
 }

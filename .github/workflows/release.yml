@@ -1,22 +1,19 @@
 name: Release - cli
 
 on:
-  workflow_dispatch:
-  pull_request:
-  schedule:
-    # 08:00am UTC everyday: https://crontab.guru/#0_8_*_*_*
-    # https://dateful.com/convert/utc?t=8am
-    - cron: "0 8 * * *"
+  workflow_call:
+    inputs:
+      ref:
+        required: true
+        type: string
 
 jobs:
   lint-all:
-    if: |
-      github.event_name == 'schedule' ||
-      github.event_name == 'workflow_dispatch' ||
-      startsWith(github.head_ref, 'release/')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.ref }}
       - name: Use Node.js 16.x
         uses: actions/setup-node@v3
         with:
@@ -26,10 +23,6 @@ jobs:
       - run: node bin/npm-cli.js run lint-all --ignore-scripts
 
   smoke-publish:
-    if: |
-      github.event_name == 'schedule' ||
-      github.event_name == 'workflow_dispatch' ||
-      startsWith(github.head_ref, 'release/')
     strategy:
       fail-fast: false
       matrix:
@@ -53,6 +46,8 @@ jobs:
         shell: ${{ matrix.platform.shell }}
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.ref }}
       - name: Setup git user
         run: |
           git config --global user.email "ops+npm-cli@npmjs.com"
@@ -76,12 +71,8 @@ jobs:
           node bin/npm-cli.js install -w smoke-tests --ignore-scripts --no-audit --no-fund
           rm -rf {lib,bin,index.js}
           SMOKE_PUBLISH_NPM=1 npm test -w smoke-tests --ignore-scripts
-          
+            
   test-all:
-    if: |
-      github.event_name == 'schedule' ||
-      github.event_name == 'workflow_dispatch' ||
-      startsWith(github.head_ref, 'release/')
     strategy:
       fail-fast: false
       matrix:
@@ -104,15 +95,17 @@ jobs:
       run:
         shell: ${{ matrix.platform.shell }}
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: npm
-    - run: node bin/npm-cli.js run resetdeps
-    - run: node bin/npm-cli.js link -f --ignore-scripts
-    - run: node bin/npm-cli.js run test-all --ignore-scripts
-    - name: git status
-      if: matrix.platform.os != 'windows-latest'
-      run: node scripts/git-dirty.js
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.ref }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - run: node bin/npm-cli.js run resetdeps
+      - run: node bin/npm-cli.js link -f --ignore-scripts
+      - run: node bin/npm-cli.js run test-all --ignore-scripts
+      - name: git status
+        if: matrix.platform.os != 'windows-latest'
+        run: node scripts/git-dirty.js
