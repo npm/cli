@@ -43,6 +43,7 @@ const {
   stat,
   writeFile,
 } = require('node:fs/promises')
+const { existsSync } = require('node:fs')
 
 const { resolve, basename, relative } = require('node:path')
 const specFromLock = require('./spec-from-lock.js')
@@ -927,7 +928,18 @@ class Shrinkwrap {
         if (node === this.tree || node.isRoot || node.location === '') {
           continue
         }
+
         const loc = relpath(this.path, node.path)
+
+        // If the node is extraneous and is a workspace that no longer exists on disk, remove it from the workspaces array and skip adding to lockfile
+        if (node.extraneous && root.workspaces?.length && !existsSync(node.path)) {
+          const wsIndex = root.workspaces.findIndex(ws => ws === loc)
+          if (wsIndex > -1) {
+            root.workspaces.splice(wsIndex, 1)
+            continue
+          }
+        }
+
         this.data.packages[loc] = Shrinkwrap.metaFromNode(
           node,
           this.path,

@@ -1722,3 +1722,120 @@ t.test('setting lockfileVersion from the file contents', async t => {
       }
     })
 })
+
+t.test('removes deleted extraneous workspaces from lockfile', async t => {
+  // Simulate a workspace that was removed from disk but still in lockfile
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      workspaces: ['packages/*'],
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          name: 'root',
+          version: '1.0.0',
+          workspaces: ['packages/*'],
+        },
+        'packages/a': {
+          name: 'a',
+          version: '1.0.0',
+        },
+        'packages/deleted-ws': {
+          name: 'deleted-ws',
+          version: '1.0.0',
+        },
+      },
+    }),
+    packages: {
+      a: {
+        'package.json': JSON.stringify({
+          name: 'a',
+          version: '1.0.0',
+        }),
+      },
+      // Note: 'deleted-ws' folder does NOT exist on disk
+    },
+  })
+
+  const arb = new Arborist({ path })
+  const tree = await arb.loadActual()
+  await calcDepFlags(tree)
+
+  // The deleted workspace should be marked extraneous
+  const deletedWs = tree.children.get('packages/deleted-ws')
+  t.notOk(deletedWs, 'deleted workspace should not be in tree children')
+
+  // Now commit the lockfile
+  const lockData = tree.meta.commit()
+
+  // The deleted workspace should be removed from lockfile packages
+  t.notOk(lockData.packages['packages/deleted-ws'],
+    'deleted extraneous workspace should be removed from lockfile')
+  // But the existing workspace should remain
+  t.ok(lockData.packages['packages/a'],
+    'existing workspace should remain in lockfile')
+})
+
+t.test('keeps extraneous workspaces that exist on disk', async t => {
+  // Simulate a workspace that exists on disk but is extraneous (e.g., not matched by the workspaces glob pattern)
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      workspaces: ['packages/a'], // Only 'a' is in workspaces
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          name: 'root',
+          version: '1.0.0',
+          workspaces: ['packages/a', 'packages/b'],
+        },
+        'packages/a': {
+          name: 'a',
+          version: '1.0.0',
+        },
+        'packages/b': {
+          name: 'b',
+          version: '1.0.0',
+        },
+      },
+    }),
+    packages: {
+      a: {
+        'package.json': JSON.stringify({
+          name: 'a',
+          version: '1.0.0',
+        }),
+      },
+      b: {
+        // This workspace exists on disk but is extraneous (not in workspaces config)
+        'package.json': JSON.stringify({
+          name: 'b',
+          version: '1.0.0',
+        }),
+      },
+    },
+  })
+
+  const arb = new Arborist({ path })
+  const tree = await arb.loadActual()
+  await calcDepFlags(tree)
+
+  // Now commit the lockfile
+  const lockData = tree.meta.commit()
+
+  // Both workspaces should remain since 'b' exists on disk
+  t.ok(lockData.packages['packages/a'],
+    'configured workspace should remain in lockfile')
+})
