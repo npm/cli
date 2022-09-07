@@ -922,7 +922,18 @@ class Shrinkwrap {
         if (node === this.tree || node.isRoot || node.location === '') {
           continue
         }
+
         const loc = relpath(this.path, node.path)
+
+        // extraneous ws node should not commit
+        if(node.extraneous) {
+          const wsIndex = root.workspaces.findIndex(ws => ws === loc)
+          if(wsIndex > -1) {
+            root.workspaces.splice(wsIndex, 1)
+            continue
+          }
+        }
+
         this.data.packages[loc] = Shrinkwrap.metaFromNode(
           node,
           this.path,
