@@ -1198,6 +1198,14 @@ t.test('audit signatures', async t => {
       npm.exec('audit', ['signatures']),
       /found no dependencies to audit that where installed from a supported registry/
     )
+
+    // Some registries return 400 instead, even though 404 would be more appropriate
+    registry.nock.get('/-/npm/v1/keys').reply(400)
+
+    await t.rejects(
+      npm.exec('audit', ['signatures']),
+      /found no dependencies to audit that where installed from a supported registry/
+    )
   })
 
   t.test('third-party registry with keys and signatures', async t => {
