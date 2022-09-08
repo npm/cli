@@ -574,10 +574,10 @@ t.test('aliases and typos', async t => {
   const { npm } = await loadMockNpm(t, { load: false })
   await t.rejects(npm.cmd('thisisnotacommand'), { code: 'EUNKNOWNCOMMAND' })
   await t.rejects(npm.cmd(''), { code: 'EUNKNOWNCOMMAND' })
-  await t.rejects(npm.cmd('birt'), { code: 'EUNKNOWNCOMMAND' })
+  await t.rejects(npm.cmd('birthday'), { code: 'EUNKNOWNCOMMAND' })
   await t.resolves(npm.cmd('it'), { name: 'install-test' })
   await t.resolves(npm.cmd('installTe'), { name: 'install-test' })
-  await t.resolves(npm.cmd('birthday'), { name: 'birthday' })
+  await t.resolves(npm.cmd('access'), { name: 'access' })
 })
 
 t.test('explicit workspace rejection', async t => {
