@@ -1,6 +1,6 @@
 {
   "name": "libnpmpack",
-  "version": "4.1.3",
+  "version": "5.0.0-pre.0",
   "description": "Programmatic API for the bits behind npm pack",
   "author": "GitHub Inc.",
   "main": "lib/index.js",
