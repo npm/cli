@@ -32,10 +32,9 @@ Usage:
 npm adduser
 
 Options:
-[--registry <registry>] [--scope <@scope>]
-[--auth-type <legacy|web|sso|saml|oauth|webauthn>]
+[--registry <registry>] [--scope <@scope>] [--auth-type <legacy|web>]
 
-aliases: login, add-user
+alias: add-user
 
 Run "npm help adduser" for more info
 `
@@ -502,18 +501,15 @@ Run "npm help ll" for more info
 `
 
 exports[`test/lib/load-all-commands.js TAP load each command login > must match snapshot 1`] = `
-Add a registry user account
+Login to a registry user account
 
 Usage:
-npm adduser
+npm login
 
 Options:
-[--registry <registry>] [--scope <@scope>]
-[--auth-type <legacy|web|sso|saml|oauth|webauthn>]
+[--registry <registry>] [--scope <@scope>] [--auth-type <legacy|web>]
 
-aliases: login, add-user
-
-Run "npm help adduser" for more info
+Run "npm help login" for more info
 `
 
 exports[`test/lib/load-all-commands.js TAP load each command logout > must match snapshot 1`] = `

@@ -113,13 +113,28 @@ class MockRegistry {
     }
   }
 
-  couchlogin ({ username, password, email, otp, token = 'npm_default-test-token' }) {
-    this.nock = this.nock
-      .post('/-/v1/login').reply(401, { error: 'You must be logged in to publish packages.' })
-    if (otp) {
-      // TODO otp failure results in a 401 with
-      // {"ok":false,"error":"failed to authenticate: Could not authenticate ${username}: bad otp"}
-    }
+  couchadduser ({ username, email, password, token = 'npm_default-test-token' }) {
+    this.nock = this.nock.put(`/-/user/org.couchdb.user:${username}`, body => {
+      this.#tap.match(body, {
+        _id: `org.couchdb.user:${username}`,
+        name: username,
+        email, // Sole difference from couchlogin
+        password,
+        type: 'user',
+        roles: [],
+      })
+      if (!body.date) {
+        return false
+      }
+      return true
+    }).reply(201, {
+      id: 'org.couchdb.user:undefined',
+      rev: '_we_dont_use_revs_any_more',
+      token,
+    })
+  }
+
+  couchlogin ({ username, password, token = 'npm_default-test-token' }) {
     this.nock = this.nock.put(`/-/user/org.couchdb.user:${username}`, body => {
       this.#tap.match(body, {
         _id: `org.couchdb.user:${username}`,
@@ -133,11 +148,37 @@ class MockRegistry {
       }
       return true
     }).reply(201, {
-      ok: true,
       id: 'org.couchdb.user:undefined',
       rev: '_we_dont_use_revs_any_more',
       token,
     })
+  }
+
+  webadduser ({ username, password, token = 'npm_default-test-token' }) {
+    const doneUrl = new URL('/npm-cli-test/done', this.#registry).href
+    const loginUrl = new URL('/npm-cli-test/login', this.#registry).href
+    this.nock = this.nock
+      .post('/-/v1/login', body => {
+        this.#tap.ok(body.create) // Sole difference from weblogin
+        this.#tap.ok(body.hostname)
+        return true
+      })
+      .reply(200, { doneUrl, loginUrl })
+      .get('/npm-cli-test/done')
+      .reply(200, { token })
+  }
+
+  weblogin ({ token = 'npm_default-test-token' }) {
+    const doneUrl = new URL('/npm-cli-test/done', this.#registry).href
+    const loginUrl = new URL('/npm-cli-test/login', this.#registry).href
+    this.nock = this.nock
+      .post('/-/v1/login', body => {
+        this.#tap.ok(body.hostname)
+        return true
+      })
+      .reply(200, { doneUrl, loginUrl })
+      .get('/npm-cli-test/done')
+      .reply(200, { token })
   }
 
   // team can be a team or a username

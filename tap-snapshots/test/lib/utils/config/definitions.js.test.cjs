@@ -135,8 +135,6 @@ Array [
   "shrinkwrap",
   "sign-git-commit",
   "sign-git-tag",
-  "sso-poll-frequency",
-  "sso-type",
   "strict-peer-deps",
   "strict-ssl",
   "tag",
@@ -254,10 +252,7 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for auth-
 #### \`auth-type\`
 
 * Default: "legacy"
-* Type: "legacy", "web", "sso", "saml", "oauth", or "webauthn"
-
-NOTE: auth-type values "sso", "saml", "oauth", and "webauthn" will be
-removed in a future version.
+* Type: "legacy" or "web"
 
 What authentication strategy to use with \`login\`.
 `
@@ -1695,29 +1690,6 @@ If set to true, then the \`npm version\` command will tag the version using
 
 Note that git requires you to have set up GPG keys in your git configs for
 this to work properly.
-`
-
-exports[`test/lib/utils/config/definitions.js TAP > config description for sso-poll-frequency 1`] = `
-#### \`sso-poll-frequency\`
-
-* Default: 500
-* Type: Number
-* DEPRECATED: The --auth-type method of SSO/SAML/OAuth will be removed in a
-  future version of npm in favor of web-based login.
-
-When used with SSO-enabled \`auth-type\`s, configures how regularly the
-registry should be polled while the user is completing authentication.
-`
-
-exports[`test/lib/utils/config/definitions.js TAP > config description for sso-type 1`] = `
-#### \`sso-type\`
-
-* Default: "oauth"
-* Type: null, "oauth", or "saml"
-* DEPRECATED: The --auth-type method of SSO/SAML/OAuth will be removed in a
-  future version of npm in favor of web-based login.
-
-If \`--auth-type=sso\`, the type of SSO type to use.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for strict-peer-deps 1`] = `
