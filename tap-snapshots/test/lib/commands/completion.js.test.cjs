@@ -47,7 +47,6 @@ Array [
       access
       adduser
       audit
-      bin
       bugs
       cache
       ci

@@ -21,7 +21,7 @@ npm help npm       more involved overview
 
 All commands:
 
-    access, adduser, audit, bin, bugs, cache, ci, completion,
+    access, adduser, audit, bugs, cache, ci, completion,
     config, dedupe, deprecate, diff, dist-tag, docs, doctor,
     edit, exec, explain, explore, find-dupes, fund, get, help,
     hook, init, install, install-ci-test, install-test, link,

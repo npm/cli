@@ -57,18 +57,6 @@ Options:
 Run "npm help audit" for more info
 `
 
-exports[`test/lib/load-all-commands.js TAP load each command bin > must match snapshot 1`] = `
-Display npm bin folder
-
-Usage:
-npm bin
-
-Options:
-[-g|--global]
-
-Run "npm help bin" for more info
-`
-
 exports[`test/lib/load-all-commands.js TAP load each command birthday > must match snapshot 1`] = `
 Birthday, deprecated
 
