@@ -224,8 +224,8 @@ t.test('npm outdated', async t => {
   t.matchSnapshot(err.stdout, 'should have expected outdated output')
 })
 
-t.test('npm set-script', async t => {
-  const cmdRes = await exec('set-script', 'hello', 'echo Hello')
+t.test('npm pkg set scripts', async t => {
+  const cmdRes = await exec('pkg', 'set', 'scripts.hello=echo Hello')
 
   t.matchSnapshot(cmdRes, 'should have expected set-script output')
   t.matchSnapshot(

@@ -27,9 +27,9 @@ All commands:
     hook, init, install, install-ci-test, install-test, link,
     ll, login, logout, ls, org, outdated, owner, pack, ping,
     pkg, prefix, profile, prune, publish, query, rebuild, repo,
-    restart, root, run-script, search, set, set-script,
-    shrinkwrap, star, stars, start, stop, team, test, token,
-    uninstall, unpublish, unstar, update, version, view, whoami
+    restart, root, run-script, search, set, shrinkwrap, star,
+    stars, start, stop, team, test, token, uninstall, unpublish,
+    unstar, update, version, view, whoami
 
 Specify configs in the ini-formatted file:
     /some/config/file/.npmrc
@@ -63,9 +63,9 @@ All commands:
     hook, init, install, install-ci-test, install-test, link,
     ll, login, logout, ls, org, outdated, owner, pack, ping,
     pkg, prefix, profile, prune, publish, query, rebuild, repo,
-    restart, root, run-script, search, set, set-script,
-    shrinkwrap, star, stars, start, stop, team, test, token,
-    uninstall, unpublish, unstar, update, version, view, whoami
+    restart, root, run-script, search, set, shrinkwrap, star,
+    stars, start, stop, team, test, token, uninstall, unpublish,
+    unstar, update, version, view, whoami
 
 Specify configs in the ini-formatted file:
     /some/config/file/.npmrc
@@ -99,9 +99,9 @@ All commands:
     hook, init, install, install-ci-test, install-test, link,
     ll, login, logout, ls, org, outdated, owner, pack, ping,
     pkg, prefix, profile, prune, publish, query, rebuild, repo,
-    restart, root, run-script, search, set, set-script,
-    shrinkwrap, star, stars, start, stop, team, test, token,
-    uninstall, unpublish, unstar, update, version, view, whoami
+    restart, root, run-script, search, set, shrinkwrap, star,
+    stars, start, stop, team, test, token, uninstall, unpublish,
+    unstar, update, version, view, whoami
 
 Specify configs in the ini-formatted file:
     /some/config/file/.npmrc
@@ -135,9 +135,9 @@ All commands:
     hook, init, install, install-ci-test, install-test, link,
     ll, login, logout, ls, org, outdated, owner, pack, ping,
     pkg, prefix, profile, prune, publish, query, rebuild, repo,
-    restart, root, run-script, search, set, set-script,
-    shrinkwrap, star, stars, start, stop, team, test, token,
-    uninstall, unpublish, unstar, update, version, view, whoami
+    restart, root, run-script, search, set, shrinkwrap, star,
+    stars, start, stop, team, test, token, uninstall, unpublish,
+    unstar, update, version, view, whoami
 
 Specify configs in the ini-formatted file:
     /some/config/file/.npmrc
@@ -828,17 +828,6 @@ All commands:
                     npm set <key>=<value> [<key>=<value> ...] (See \`npm config\`)
                     
                     Run "npm help set" for more info
-
-    set-script      Set tasks in the scripts section of package.json, deprecated
-                    
-                    Usage:
-                    npm set-script [<script>] [<command>]
-                    
-                    Options:
-                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces] [--include-workspace-root]
-                    
-                    Run "npm help set-script" for more info
 
     shrinkwrap      Lock down dependency versions for publication
                     
