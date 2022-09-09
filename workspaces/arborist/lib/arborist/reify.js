@@ -13,6 +13,7 @@ const log = require('proc-log')
 const { dirname, resolve, relative } = require('path')
 const { depth: dfwalk } = require('treeverse')
 const fs = require('fs')
+const { parse } = require('url')
 const { promisify } = require('util')
 const lstat = promisify(fs.lstat)
 const symlink = promisify(fs.symlink)
@@ -718,11 +719,11 @@ module.exports = cls => class Reifier extends cls {
     // ${REGISTRY} or something.  This has to be threaded through the
     // Shrinkwrap and Node classes carefully, so for now, just treat
     // the default reg as the magical animal that it has been.
-    const resolvedURL = new URL(resolved)
+    const resolvedURL = parse(resolved)
     if ((this.options.replaceRegistryHost === resolvedURL.hostname)
       || this.options.replaceRegistryHost === 'always') {
       // this.registry always has a trailing slash
-      resolved = `${this.registry.slice(0, -1)}${resolvedURL.pathname}${resolvedURL.searchParams}`
+      resolved = `${this.registry.slice(0, -1)}${resolvedURL.pathname}${resolvedURL.search || ''}`
     }
     return resolved
   }
