@@ -6,7 +6,6 @@
   "license": "ISC",
   "main": "lib/index.js",
   "scripts": {
-    "postpublish": "git push origin --follow-tags",
     "lint": "eslint \"**/*.js\"",
     "test": "tap",
     "postlint": "template-oss-check",
