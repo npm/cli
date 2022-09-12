@@ -1,8 +1,7 @@
----
+
 title: package.json
 section: 5
 description: Specifics of npm's package.json handling
----
 
 ### Description
 
