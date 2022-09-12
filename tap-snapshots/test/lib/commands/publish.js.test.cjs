@@ -51,7 +51,7 @@ Array [
   ],
   Array [
     "",
-    "Publishing to https://registry.npmjs.org/ (dry-run)",
+    "Publishing to https://registry.npmjs.org/ with tag latest (dry-run)",
   ],
 ]
 `
@@ -72,7 +72,7 @@ exports[`test/lib/commands/publish.js TAP json > must match snapshot 1`] = `
 Array [
   Array [
     "",
-    "Publishing to https://registry.npmjs.org/",
+    "Publishing to https://registry.npmjs.org/ with tag latest",
   ],
 ]
 `
@@ -165,7 +165,7 @@ Array [
   ],
   Array [
     "",
-    "Publishing to https://registry.npmjs.org/",
+    "Publishing to https://registry.npmjs.org/ with tag latest",
   ],
 ]
 `
