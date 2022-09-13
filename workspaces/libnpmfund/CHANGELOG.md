@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.0.4](https://github.com/npm/cli/compare/libnpmfund-v3.0.3...libnpmfund-v3.0.4) (2022-09-13)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/compare/arborist-v5.6.1...arborist-v5.6.2): `@npmcli/arborist@5.6.2`
+
 ## [3.0.3](https://github.com/npm/cli/compare/libnpmfund-v3.0.2...libnpmfund-v3.0.3) (2022-08-31)
 
 ### Dependencies

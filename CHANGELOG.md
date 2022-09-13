@@ -1,5 +1,13 @@
 # Changelog
 
+## [8.19.2](https://github.com/npm/cli/compare/v8.19.1...v8.19.2) (2022-09-13)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/compare/arborist-v5.6.1...arborist-v5.6.2): `@npmcli/arborist@5.6.2`
+* [Workspace](https://github.com/npm/cli/compare/libnpmexec-v4.0.12...libnpmexec-v4.0.13): `libnpmexec@4.0.13`
+* [Workspace](https://github.com/npm/cli/compare/libnpmfund-v3.0.3...libnpmfund-v3.0.4): `libnpmfund@3.0.4`
+
 ## [8.19.1](https://github.com/npm/cli/compare/v8.19.0...v8.19.1) (2022-09-01)
 
 ### Bug Fixes
