@@ -1,5 +1,24 @@
 # Changelog
 
+## [5.0.0-pre.1](https://github.com/JoliParris/cli/compare/libnpmexec-v5.0.0-pre.0...libnpmexec-v5.0.0-pre.1) (2022-09-13)
+
+### ⚠ BREAKING CHANGES
+
+* **workspaces:** all workspace packages are now compatible with the following semver range for node: `^14.17.0 || ^16.13.0 || >=18.0.0`
+
+### Features
+
+  * [`e95017a`](https://github.com/JoliParris/cli/commit/e95017a07b041cbb3293e659dad853f76462c108) [#5485](https://github.com/npm/cli/pull/5485) feat(workspaces): update supported node engines in package.json (@lukekarrys)
+
+### Dependencies
+
+  * [`1286f03`](https://github.com/JoliParris/cli/commit/1286f03fe73dee9a447b13b662f0c5622ab6ec9e) [#5381](https://github.com/npm/cli/pull/5381) deps: `unique-filename@2.0.1`
+  * [`7fbf6f7`](https://github.com/JoliParris/cli/commit/7fbf6f7825f76906ecdec79ab15595f9e2f7b784) [#5381](https://github.com/npm/cli/pull/5381) deps: `bin-links@3.0.3`
+  * [`8ab12dc`](https://github.com/JoliParris/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460) [#5323](https://github.com/npm/cli/pull/5323) deps: `@npmcli/eslint-config@3.1.0`
+* The following workspace dependencies were updated
+  * dependencies
+    * @npmcli/arborist bumped from ^6.0.0-pre.0 to ^6.0.0-pre.1
+
 ## [5.0.0-pre.0](https://github.com/npm/cli/compare/libnpmexec-v4.0.12...libnpmexec-v5.0.0-pre.0) (2022-09-08)
 
 ### ⚠ BREAKING CHANGES
