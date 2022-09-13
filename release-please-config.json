@@ -1,0 +1,78 @@
+{
+  "bootstrap-sha": "141faf0c19eae382d0e19833129f5545fc2355c8",
+  "plugins": [
+    "node-workspace",
+    "workspace-deps"
+  ],
+  "changelog-sections": [
+    {
+      "type": "feat",
+      "section": "Features",
+      "hidden": false
+    },
+    {
+      "type": "fix",
+      "section": "Bug Fixes",
+      "hidden": false
+    },
+    {
+      "type": "docs",
+      "section": "Documentation",
+      "hidden": false
+    },
+    {
+      "type": "deps",
+      "section": "Dependencies",
+      "hidden": false
+    },
+    {
+      "type": "chore",
+      "hidden": true
+    }
+  ],
+  "packages": {
+    ".": {
+      "package-name": "",
+      "prerelease": true
+    },
+    "workspaces/arborist": {
+      "prerelease": true
+    },
+    "workspaces/libnpmaccess": {
+      "prerelease": true
+    },
+    "workspaces/libnpmdiff": {
+      "prerelease": true
+    },
+    "workspaces/libnpmexec": {
+      "prerelease": true
+    },
+    "workspaces/libnpmfund": {
+      "prerelease": true
+    },
+    "workspaces/libnpmhook": {
+      "prerelease": true
+    },
+    "workspaces/libnpmorg": {
+      "prerelease": true
+    },
+    "workspaces/libnpmpack": {
+      "prerelease": true
+    },
+    "workspaces/libnpmpublish": {
+      "prerelease": true
+    },
+    "workspaces/libnpmsearch": {
+      "prerelease": true
+    },
+    "workspaces/libnpmteam": {
+      "prerelease": true
+    },
+    "workspaces/libnpmversion": {
+      "prerelease": true
+    }
+  },
+  "exclude-packages-from-root": true,
+  "group-pull-request-title-pattern": "chore: release ${version}",
+  "pull-request-title-pattern": "chore: release${component} ${version}"
+}

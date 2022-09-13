@@ -47,7 +47,6 @@ Array [
       access
       adduser
       audit
-      bin
       bugs
       cache
       ci
@@ -95,7 +94,6 @@ Array [
       run-script
       search
       set
-      set-script
       shrinkwrap
       star
       stars

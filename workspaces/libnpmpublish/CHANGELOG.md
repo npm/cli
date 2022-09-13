@@ -1,5 +1,31 @@
 # Changelog
 
+## [7.0.0-pre.0](https://github.com/npm/cli/compare/libnpmpublish-v6.0.5...libnpmpublish-v7.0.0-pre.0) (2022-09-08)
+
+### ⚠ BREAKING CHANGES
+
+* **workspaces:** all workspace packages are now compatible with the following semver range for node: `^14.17.0 || ^16.13.0 || >=18.0.0`
+
+### Features
+
+  * [`e95017a`](https://github.com/npm/cli/commit/e95017a07b041cbb3293e659dad853f76462c108) [#5485](https://github.com/npm/cli/pull/5485) feat(workspaces): update supported node engines in package.json (@lukekarrys)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * libnpmpack bumped from ^4.1.3 to ^5.0.0-pre.0
+
+## [6.0.5](https://github.com/npm/cli/compare/libnpmpublish-v6.0.4...libnpmpublish-v6.0.5) (2022-08-31)
+
+### Dependencies
+
+  * [`8ab12dc`](https://github.com/npm/cli/commit/8ab12dc32b26db770b868cf694cedab38f4e7460) [#5323](https://github.com/npm/cli/pull/5323) deps: `@npmcli/eslint-config@3.1.0`
+* The following workspace dependencies were updated
+  * devDependencies
+    * libnpmpack bumped from ^4.0.0 to ^4.1.3
+
 ### [6.0.4](https://github.com/npm/cli/compare/libnpmpublish-v6.0.3...libnpmpublish-v6.0.4) (2022-04-26)
 
 

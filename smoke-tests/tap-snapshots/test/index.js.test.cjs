@@ -21,15 +21,15 @@ npm help npm       more involved overview
 
 All commands:
 
-    access, adduser, audit, bin, bugs, cache, ci, completion,
+    access, adduser, audit, bugs, cache, ci, completion,
     config, dedupe, deprecate, diff, dist-tag, docs, doctor,
     edit, exec, explain, explore, find-dupes, fund, get, help,
     hook, init, install, install-ci-test, install-test, link,
     ll, login, logout, ls, org, outdated, owner, pack, ping,
     pkg, prefix, profile, prune, publish, query, rebuild, repo,
-    restart, root, run-script, search, set, set-script,
-    shrinkwrap, star, stars, start, stop, team, test, token,
-    uninstall, unpublish, unstar, update, version, view, whoami
+    restart, root, run-script, search, set, shrinkwrap, star,
+    stars, start, stop, team, test, token, uninstall, unpublish,
+    unstar, update, version, view, whoami
 
 Specify configs in the ini-formatted file:
     {CWD}/smoke-tests/test/tap-testdir-index/.npmrc
@@ -61,7 +61,7 @@ npm ERR! [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 npm ERR! [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
 npm ERR! [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 npm ERR! [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-npm ERR! [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm ERR! [-ws|--workspaces] [--include-workspace-root] [--no-install-links]
 npm ERR! 
 npm ERR! aliases: clean-install, ic, install-clean, isntall-clean
 npm ERR! 
@@ -597,21 +597,7 @@ exports[`test/index.js TAP npm pkg > should print package.json contents 1`] = `
 
 `
 
-exports[`test/index.js TAP npm prefix > should have expected prefix output 1`] = `
-{CWD}/smoke-tests/test/tap-testdir-index/project
-
-`
-
-exports[`test/index.js TAP npm run-script > should have expected run-script output 1`] = `
-
-> project@1.0.0 hello
-> echo Hello
-
-Hello
-
-`
-
-exports[`test/index.js TAP npm set-script > should have expected script added package.json result 1`] = `
+exports[`test/index.js TAP npm pkg set scripts > should have expected script added package.json result 1`] = `
 {
   "name": "project",
   "version": "1.0.0",
@@ -634,7 +620,21 @@ exports[`test/index.js TAP npm set-script > should have expected script added pa
 
 `
 
-exports[`test/index.js TAP npm set-script > should have expected set-script output 1`] = `
+exports[`test/index.js TAP npm pkg set scripts > should have expected set-script output 1`] = `
+
+`
+
+exports[`test/index.js TAP npm prefix > should have expected prefix output 1`] = `
+{CWD}/smoke-tests/test/tap-testdir-index/project
+
+`
+
+exports[`test/index.js TAP npm run-script > should have expected run-script output 1`] = `
+
+> project@1.0.0 hello
+> echo Hello
+
+Hello
 
 `
 

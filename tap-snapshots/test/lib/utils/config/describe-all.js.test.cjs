@@ -783,7 +783,7 @@ number, if not already set in package.json.
 
 #### \`install-links\`
 
-* Default: false
+* Default: true
 * Type: Boolean
 
 When set file: protocol dependencies that exist outside of the project root

@@ -8,8 +8,6 @@
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
     "lintfix": "npm run lint -- --fix",
-    "preversion": "npm test",
-    "postversion": "git push origin --follow-tags",
     "snap": "tap",
     "test": "tap",
     "posttest": "npm run lint"
@@ -20,9 +18,9 @@
     "directory": "smoke-tests"
   },
   "devDependencies": {
-    "@npmcli/eslint-config": "^3.0.1",
+    "@npmcli/eslint-config": "^3.1.0",
     "@npmcli/promise-spawn": "^3.0.0",
-    "@npmcli/template-oss": "3.5.0",
+    "@npmcli/template-oss": "4.0.0",
     "minify-registry-metadata": "^2.2.0",
     "rimraf": "^3.0.2",
     "tap": "^16.0.1",
@@ -32,7 +30,7 @@
   "license": "ISC",
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "3.5.0",
+    "version": "4.0.0",
     "workspaceRepo": false
   },
   "tap": {
@@ -45,6 +43,6 @@
     "lib/"
   ],
   "engines": {
-    "node": "^12.13.0 || ^14.15.0 || >=16.0.0"
+    "node": "^14.17.0 || ^16.13.0 || >=18.0.0"
   }
 }

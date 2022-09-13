@@ -3,8 +3,9 @@
 const { resolve } = require('path')
 const { parser, arrayDelimiter } = require('@npmcli/query')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
-const npa = require('npm-package-arg')
+const log = require('proc-log')
 const minimatch = require('minimatch')
+const npa = require('npm-package-arg')
 const semver = require('semver')
 
 // handle results for parsed query asts, results are stored in a map that has a
@@ -262,6 +263,10 @@ class Results {
       !internalSelector.has(node))
   }
 
+  overriddenPseudo () {
+    return this.initialItems.filter(node => node.overridden)
+  }
+
   pathPseudo () {
     return this.initialItems.filter(node => {
       if (!this.currentAstNode.pathValue) {
@@ -287,11 +292,115 @@ class Results {
   }
 
   semverPseudo () {
-    if (!this.currentAstNode.semverValue) {
+    const {
+      attributeMatcher,
+      lookupProperties,
+      semverFunc = 'infer',
+      semverValue,
+    } = this.currentAstNode
+    const { qualifiedAttribute } = attributeMatcher
+
+    if (!semverValue) {
+      // DEPRECATED: remove this warning and throw an error as part of @npmcli/arborist@6
+      log.warn('query', 'usage of :semver() with no parameters is deprecated')
       return this.initialItems
     }
-    return this.initialItems.filter(node =>
-      semver.satisfies(node.version, this.currentAstNode.semverValue))
+
+    if (!semver.valid(semverValue) && !semver.validRange(semverValue)) {
+      throw Object.assign(
+        new Error(`\`${semverValue}\` is not a valid semver version or range`),
+        { code: 'EQUERYINVALIDSEMVER' })
+    }
+
+    const valueIsVersion = !!semver.valid(semverValue)
+
+    const nodeMatches = (node, obj) => {
+      // if we already have an operator, the user provided some test as part of the selector
+      // we evaluate that first because if it fails we don't want this node anyway
+      if (attributeMatcher.operator) {
+        if (!attributeMatch(attributeMatcher, obj)) {
+          // if the initial operator doesn't match, we're done
+          return false
+        }
+      }
+
+      const attrValue = obj[qualifiedAttribute]
+      // both valid and validRange return null for undefined, so this will skip both nodes that
+      // do not have the attribute defined as well as those where the attribute value is invalid
+      // and those where the value from the package.json is not a string
+      if ((!semver.valid(attrValue) && !semver.validRange(attrValue)) ||
+          typeof attrValue !== 'string') {
+        return false
+      }
+
+      const attrIsVersion = !!semver.valid(attrValue)
+
+      let actualFunc = semverFunc
+
+      // if we're asked to infer, we examine outputs to make a best guess
+      if (actualFunc === 'infer') {
+        if (valueIsVersion && attrIsVersion) {
+          // two versions -> semver.eq
+          actualFunc = 'eq'
+        } else if (!valueIsVersion && !attrIsVersion) {
+          // two ranges -> semver.intersects
+          actualFunc = 'intersects'
+        } else {
+          // anything else -> semver.satisfies
+          actualFunc = 'satisfies'
+        }
+      }
+
+      if (['eq', 'neq', 'gt', 'gte', 'lt', 'lte'].includes(actualFunc)) {
+        // both sides must be versions, but one is not
+        if (!valueIsVersion || !attrIsVersion) {
+          return false
+        }
+
+        return semver[actualFunc](attrValue, semverValue)
+      } else if (['gtr', 'ltr', 'satisfies'].includes(actualFunc)) {
+        // at least one side must be a version, but neither is
+        if (!valueIsVersion && !attrIsVersion) {
+          return false
+        }
+
+        return valueIsVersion
+          ? semver[actualFunc](semverValue, attrValue)
+          : semver[actualFunc](attrValue, semverValue)
+      } else if (['intersects', 'subset'].includes(actualFunc)) {
+        // these accept two ranges and since a version is also a range, anything goes
+        return semver[actualFunc](attrValue, semverValue)
+      } else {
+        // user provided a function we don't know about, throw an error
+        throw Object.assign(new Error(`\`semver.${actualFunc}\` is not a supported operator.`),
+          { code: 'EQUERYINVALIDOPERATOR' })
+      }
+    }
+
+    return this.initialItems.filter((node) => {
+      // no lookupProperties just means its a top level property, see if it matches
+      if (!lookupProperties.length) {
+        return nodeMatches(node, node.package)
+      }
+
+      // this code is mostly duplicated from attrPseudo to traverse into the package until we get
+      // to our deepest requested object
+      let objs = [node.package]
+      for (const prop of lookupProperties) {
+        if (prop === arrayDelimiter) {
+          objs = objs.flat()
+          continue
+        }
+
+        objs = objs.flatMap(obj => obj[prop] || [])
+        const noAttr = objs.every(obj => !obj)
+        if (noAttr) {
+          return false
+        }
+
+        return objs.some(obj => nodeMatches(node, obj))
+      }
+    })
   }
 
   typePseudo () {
@@ -354,6 +463,7 @@ const attributeOperator = ({ attr, value, insensitive, operator }) => {
   if (insensitive) {
     attr = attr.toLowerCase()
   }
+
   return attributeOperators[operator]({
     attr,
     insensitive,

@@ -101,6 +101,8 @@ Result {
     "default": "sshurl",
     "docstemplate": "function docstemplate",
     "domain": "github.com",
+    "editpath": "edit",
+    "edittemplate": "function edittemplate",
     "extract": "function extract",
     "filetemplate": "function filetemplate",
     "gittemplate": "function gittemplate",

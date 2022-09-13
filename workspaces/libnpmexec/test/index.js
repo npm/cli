@@ -482,7 +482,16 @@ require('fs').writeFileSync(process.argv.slice(2)[0], 'LOCAL PKG')`,
   const executable = resolve(path, 'a/index.js')
   fs.chmodSync(executable, 0o775)
 
-  await libexec({
+  const mockexec = t.mock('../lib/index.js', {
+    '@npmcli/ci-detect': () => true,
+    'proc-log': {
+      warn (title, msg) {
+        t.fail('should not warn about local file package install')
+      },
+    },
+  })
+
+  await mockexec({
     ...baseOpts,
     args: [`file:${resolve(path, 'a')}`, 'resfile'],
     cache,

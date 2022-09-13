@@ -16,8 +16,8 @@ on:
     paths:
       - workspaces/libnpmdiff/**
   schedule:
-    # "At 02:00 on Monday" https://crontab.guru/#0_2_*_*_1
-    - cron: "0 2 * * 1"
+    # "At 09:00 UTC (02:00 PT) on Monday" https://crontab.guru/#0_9_*_*_1
+    - cron: "0 9 * * 1"
 
 jobs:
   lint:
@@ -30,7 +30,7 @@ jobs:
           git config --global user.name "npm CLI robot"
       - uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
       - name: Update npm to latest
         run: npm i --prefer-online --no-fund --no-audit -g npm@latest
       - run: npm -v
@@ -42,12 +42,12 @@ jobs:
       fail-fast: false
       matrix:
         node-version:
-          - 12.13.0
-          - 12.x
-          - 14.15.0
+          - 14.17.0
           - 14.x
-          - 16.0.0
+          - 16.13.0
           - 16.x
+          - 18.0.0
+          - 18.x
         platform:
           - os: ubuntu-latest
             shell: bash
@@ -87,4 +87,6 @@ jobs:
         run: npm i --prefer-online --no-fund --no-audit -g npm@latest
       - run: npm -v
       - run: npm i --ignore-scripts --no-audit --no-fund
+      - name: add tap problem matcher
+        run: echo "::add-matcher::.github/matchers/tap.json"
       - run: npm test --ignore-scripts -w libnpmdiff
