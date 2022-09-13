@@ -206,7 +206,7 @@
   "devDependencies": {
     "@npmcli/eslint-config": "^3.1.0",
     "@npmcli/promise-spawn": "^3.0.0",
-    "@npmcli/template-oss": "3.8.1",
+    "@npmcli/template-oss": "4.1.0",
     "fs-minipass": "^2.1.0",
     "licensee": "^8.2.0",
     "minimatch": "^5.1.0",
@@ -251,8 +251,19 @@
   "templateOSS": {
     "rootRepo": false,
     "rootModule": false,
-    "version": "3.8.1",
-    "releaseTest": "release.yml"
+    "version": "4.1.0",
+    "releaseTest": "release.yml",
+    "ciVersions": [
+      "12.13.0",
+      "12.x",
+      "14.15.0",
+      "14.x",
+      "16.0.0",
+      "16.x"
+    ],
+    "releaseBranches": [
+      "v8"
+    ]
   },
   "license": "Artistic-2.0",
   "engines": {
