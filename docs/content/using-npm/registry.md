@@ -69,7 +69,7 @@ to force it to be published only to your internal/private registry.
 
 See [`package.json`](/configuring-npm/package-json) for more info on what goes in the package.json file.
 
-### Where can I find my (and others') published packages?
+### Where can I find my own, & other's, published packages?
 
 <https://www.npmjs.com/>
 
