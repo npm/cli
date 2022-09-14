@@ -1,8 +1,7 @@
 {
   "bootstrap-sha": "141faf0c19eae382d0e19833129f5545fc2355c8",
   "plugins": [
-    "node-workspace",
-    "workspace-deps"
+    "node-workspace"
   ],
   "changelog-sections": [
     {
