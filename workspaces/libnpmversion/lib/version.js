@@ -58,7 +58,11 @@ module.exports = async (newversion, opts) => {
 
   // - check if git dir is clean
   // returns false if we should not keep doing git stuff
-  const doGit = gitTagVersion && Boolean(gitDir) && await enforceClean(opts) && await isWorkspaceSafe(gitDir, path)
+  const doGit = (gitTagVersion
+    && Boolean(gitDir)
+    && await enforceClean(opts)
+    && await isWorkspaceSafe(gitDir, path)
+  )
 
   if (!ignoreScripts) {
     await runScript({

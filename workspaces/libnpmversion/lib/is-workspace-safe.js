@@ -12,7 +12,7 @@ module.exports = async (gitDir, path, cwd = process.cwd()) => {
   if (cwd === gitDir) {
     return true
   }
-  // if your path's package.json contains workspaces, you are in a top level package, not a workspace
+  // if your path's package.json contains workspaces you are in a top level package, not a workspace
   var rpj = await readJson(`${path}/package.json`)
   if (rpj.workspaces) {
     return true
@@ -22,11 +22,13 @@ module.exports = async (gitDir, path, cwd = process.cwd()) => {
     cwd = dirname(cwd)
     try {
       rpj = await readJson(`${cwd}/package.json`)
-    } catch(er) { continue }
-    const workspaceMap = await mapWorkspaces({cwd, pkg: rpj})
+    } catch (er) {
+      continue
+    }
+    const workspaceMap = await mapWorkspaces({ cwd, pkg: rpj })
     const mapValues = [...workspaceMap.values()]
     if (mapValues.includes(path)) {
-        return false
+      return false
     }
   }
   return true
