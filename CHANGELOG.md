@@ -1,5 +1,32 @@
 # Changelog
 
+## [9.0.0-pre.1](https://github.com/npm/cli/compare/v9.0.0-pre.0...v9.0.0-pre.1) (2022-09-14)
+
+### ⚠️ BREAKING CHANGES
+
+* renames most of the `npm access` subcommands
+* the api for libnpmaccess is different now
+
+### Features
+
+* [`9c32c6c`](https://github.com/npm/cli/commit/9c32c6c8d6fc5bdfd6af685731fe26920d7e5446) rewrite: rewrite `npm access` (@wraithgar)
+* [`854521b`](https://github.com/npm/cli/commit/854521baa49ef88ff9586ec2cc5f1fbaee7fa364) rewrite: Rewrite libnpmaccess (@wraithgar)
+
+### Bug Fixes
+
+* [`c3d7549`](https://github.com/npm/cli/commit/c3d75499cfd4e3601c6ca31621b2f693af466c4d) add tag to publish log message (@wraithgar)
+
+### Documentation
+
+* [`fd0eebe`](https://github.com/npm/cli/commit/fd0eebe4c2b55dd69972aff7de1b4db14ea6799a) update registry docs header (@hughlilly)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.0.0-pre.0...arborist-v6.0.0-pre.1): `@npmcli/arborist@6.0.0-pre.1`
+* [Workspace](https://github.com/npm/cli/compare/libnpmaccess-v7.0.0-pre.0...libnpmaccess-v7.0.0-pre.1): `libnpmaccess@7.0.0-pre.1`
+* [Workspace](https://github.com/npm/cli/compare/libnpmexec-v5.0.0-pre.0...libnpmexec-v5.0.0-pre.1): `libnpmexec@5.0.0-pre.1`
+* [Workspace](https://github.com/npm/cli/compare/libnpmfund-v4.0.0-pre.0...libnpmfund-v4.0.0-pre.1): `libnpmfund@4.0.0-pre.1`
+
 ## [9.0.0-pre.0](https://github.com/npm/cli/compare/v8.19.1...v9.0.0-pre.0) (2022-09-08)
 
 ### ⚠ BREAKING CHANGES

@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.0.0-pre.1](https://github.com/npm/cli/compare/arborist-v6.0.0-pre.0...arborist-v6.0.0-pre.1) (2022-09-14)
+
+### Bug Fixes
+
+* [`f3b0c43`](https://github.com/npm/cli/commit/f3b0c438d5b62b267f36c21d7b9fa57ae9507ef5) keep saveTypes separate for each `add` (@wraithgar)
+
 ## [6.0.0-pre.0](https://github.com/npm/cli/compare/arborist-v5.6.1...arborist-v6.0.0-pre.0) (2022-09-08)
 
 ### ⚠ BREAKING CHANGES

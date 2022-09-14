@@ -1,5 +1,15 @@
 # Changelog
 
+## [7.0.0-pre.1](https://github.com/npm/cli/compare/libnpmaccess-v7.0.0-pre.0...libnpmaccess-v7.0.0-pre.1) (2022-09-14)
+
+### ⚠️ BREAKING CHANGES
+
+* the api for libnpmaccess is different now
+
+### Features
+
+* [`854521b`](https://github.com/npm/cli/commit/854521baa49ef88ff9586ec2cc5f1fbaee7fa364) rewrite: Rewrite libnpmaccess (@wraithgar)
+
 ## [7.0.0-pre.0](https://github.com/npm/cli/compare/libnpmaccess-v6.0.4...libnpmaccess-v7.0.0-pre.0) (2022-09-08)
 
 ### ⚠ BREAKING CHANGES
