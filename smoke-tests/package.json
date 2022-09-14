@@ -7,10 +7,10 @@
     "lint": "eslint \"**/*.js\"",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
-    "lintfix": "npm run lint -- --fix",
+    "lintfix": "node .. run lint -- --fix",
     "snap": "tap",
     "test": "tap",
-    "posttest": "npm run lint"
+    "posttest": "node .. run lint"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
   "devDependencies": {
     "@npmcli/eslint-config": "^3.1.0",
     "@npmcli/promise-spawn": "^3.0.0",
-    "@npmcli/template-oss": "4.1.1",
+    "@npmcli/template-oss": "4.2.0",
     "minify-registry-metadata": "^2.2.0",
     "rimraf": "^3.0.2",
     "tap": "^16.0.1",
@@ -30,13 +30,18 @@
   "license": "ISC",
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.1.1",
-    "workspaceRepo": false
+    "version": "4.2.0",
+    "workspaceRepo": false,
+    "content": "../scripts/template-oss/workspaces.js"
   },
   "tap": {
     "no-coverage": true,
     "timeout": 300,
-    "files": "test/index.js"
+    "files": "test/index.js",
+    "nyc-arg": [
+      "--exclude",
+      "tap-snapshots/**"
+    ]
   },
   "files": [
     "bin/",

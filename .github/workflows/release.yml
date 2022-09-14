@@ -1,4 +1,6 @@
-name: Release - cli
+# This file is automatically added by @npmcli/template-oss. Do not edit.
+
+name: Release
 
 on:
   workflow_call:
@@ -9,70 +11,25 @@ on:
 
 jobs:
   lint-all:
+    if: github.repository_owner == 'npm'
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ inputs.ref }}
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-          cache: npm
-      - run: node bin/npm-cli.js run resetdeps
-      - run: node bin/npm-cli.js run lint-all --ignore-scripts
-
-  smoke-publish:
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version:
-          - 12.13.0
-          - 12.x
-          - 14.15.0
-          - 14.x
-          - 16.0.0
-          - 16.x
-        platform:
-          - os: ubuntu-latest
-            shell: bash
-          - os: macos-latest
-            shell: bash
-        # XXX: this should be possible in windows also
-        # but resetdeps cant be a bash script
-    runs-on: ${{ matrix.platform.os }}
-    defaults:
-      run:
-        shell: ${{ matrix.platform.shell }}
     steps:
       - uses: actions/checkout@v3
         with:
           ref: ${{ inputs.ref }}
       - name: Setup git user
         run: |
-          git config --global user.email "ops+npm-cli@npmjs.com"
-          git config --global user.name "npm cli ops bot"
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - uses: actions/setup-node@v3
         with:
           node-version: 16.x
           cache: npm
-      - name: Pack
-        run: |
-          NPM_VERSION="$(node bin/npm-cli.js --version)-$GITHUB_SHA.0"
-          node bin/npm-cli.js version $NPM_VERSION --ignore-scripts
-          node bin/npm-cli.js run resetdeps
-          git clean -fd
-          node bin/npm-cli.js ls --production >/dev/null
-          node bin/npm-cli.js prune --production --no-save --no-audit --no-fund
-          node scripts/git-dirty.js
-          node bin/npm-cli.js pack --pack-destination=$RUNNER_TEMP
-          node bin/npm-cli.js install -g $RUNNER_TEMP/npm-$NPM_VERSION.tgz
-          node bin/npm-cli.js install -w smoke-tests --ignore-scripts --no-audit --no-fund
-          rm -rf {lib,bin,index.js}
-          SMOKE_PUBLISH_NPM=1 npm test -w smoke-tests --ignore-scripts
-            
+      - run: node . run resetdeps
+      - run: node . run lint -ws -iwr --if-present
+
   test-all:
+    if: github.repository_owner == 'npm'
     strategy:
       fail-fast: false
       matrix:
@@ -98,14 +55,66 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ inputs.ref }}
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Setup git user
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
-      - run: node bin/npm-cli.js run resetdeps
-      - run: node bin/npm-cli.js link -f --ignore-scripts
-      - run: node bin/npm-cli.js run test-all --ignore-scripts
-      - name: git status
-        if: matrix.platform.os != 'windows-latest'
-        run: node scripts/git-dirty.js
+      - run: node . run resetdeps
+      - name: add tap problem matcher
+        run: echo "::add-matcher::.github/matchers/tap.json"
+      - run: node . run test -ws -iwr --if-present
+
+  smoke-publish:
+    if: github.repository_owner == 'npm'
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version:
+          - 12.13.0
+          - 12.x
+          - 14.15.0
+          - 14.x
+          - 16.0.0
+          - 16.x
+        platform:
+          - os: ubuntu-latest
+            shell: bash
+          - os: macos-latest
+            shell: bash
+          - os: windows-latest
+            shell: cmd
+    runs-on: ${{ matrix.platform.os }}
+    defaults:
+      run:
+        shell: ${{ matrix.platform.shell }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.ref }}
+      - name: Setup git user
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - run: node . run resetdeps
+      - name: Pack
+        run: |
+          NPM_VERSION="$(node . --version)-$GITHUB_SHA.0"
+          node . version $NPM_VERSION --ignore-scripts
+          node . run resetdeps
+          git clean -fd
+          node . ls --production >/dev/null
+          node . prune --production --no-save --no-audit --no-fund
+          node scripts/git-dirty.js
+          node . pack --pack-destination=$RUNNER_TEMP
+          node . install -g $RUNNER_TEMP/npm-$NPM_VERSION.tgz
+          node . install -w smoke-tests --ignore-scripts --no-audit --no-fund
+          rm -rf {lib,bin,index.js}
+          SMOKE_PUBLISH_NPM=1 npm test -w smoke-tests --ignore-scripts

@@ -1,0 +1,30 @@
+name: CI - cli
+
+on:
+  {{> setupCiOn }}
+
+jobs:
+  lint:
+    {{> setupJob }}
+      - run: {{rootNpmPath}} run lint
+
+  check_docs:
+    {{> setupJob }}
+      - run: make freshdocs
+      - run: node scripts/git-dirty.js
+
+  licenses:
+    {{> setupJob }}
+      - run: {{rootNpmPath}} run licenses
+  
+  smoke-tests:
+    {{> setupJob }}
+      - run: {{rootNpmPath}} test -w smoke-tests --ignore-scripts
+      - run: node scripts/git-dirty.js
+
+  test:
+    {{> setupJobMatrix }}
+      - run: {{rootNpmPath}} run test --ignore-scripts
+      - name: git status
+        if: matrix.platform.os != 'windows-latest'
+        run: node scripts/git-dirty.js

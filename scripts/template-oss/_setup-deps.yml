@@ -1,0 +1,1 @@
+- run: {{rootNpmPath}} run resetdeps

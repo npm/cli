@@ -1,0 +1,44 @@
+# This file is automatically added by @npmcli/template-oss. Do not edit.
+
+name: "CodeQL"
+
+on:
+  push:
+    branches:
+      - main
+      - latest
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches:
+      - main
+      - latest
+  schedule:
+    # "At 10:00 UTC (03:00 PT) on Monday" https://crontab.guru/#0_10_*_*_1
+    - cron: "0 10 * * 1"
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ javascript ]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup git user
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: ${{ matrix.language }}
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v1

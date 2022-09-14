@@ -1,3 +1,5 @@
+# This file is automatically added by @npmcli/template-oss. Do not edit.
+
 name: CI - cli
 
 on:
@@ -5,63 +7,91 @@ on:
   pull_request:
     branches:
       - '*'
+    paths-ignore:
+      - docs/**
+      - smoke-tests/**
+      - workspaces/**
   push:
     branches:
+      - main
       - latest
+    paths-ignore:
+      - docs/**
+      - smoke-tests/**
+      - workspaces/**
+  schedule:
+    # "At 09:00 UTC (02:00 PT) on Monday" https://crontab.guru/#0_9_*_*_1
+    - cron: "0 9 * * 1"
 
 jobs:
   lint:
+    if: github.repository_owner == 'npm'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
+      - name: Setup git user
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - uses: actions/setup-node@v3
         with:
           node-version: 16.x
           cache: npm
-      - run: node bin/npm-cli.js run resetdeps
-      - run: node bin/npm-cli.js run lint
+      - run: node . run resetdeps
+      - run: node . run lint
 
   check_docs:
+    if: github.repository_owner == 'npm'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
+      - name: Setup git user
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - uses: actions/setup-node@v3
         with:
           node-version: 16.x
           cache: npm
+      - run: node . run resetdeps
       - run: make freshdocs
       - run: node scripts/git-dirty.js
 
   licenses:
+    if: github.repository_owner == 'npm'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
+      - name: Setup git user
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - uses: actions/setup-node@v3
         with:
           node-version: 16.x
           cache: npm
-      - run: node bin/npm-cli.js run resetdeps
-      - run: node bin/npm-cli.js run licenses
-  
+      - run: node . run resetdeps
+      - run: node . run licenses
+
   smoke-tests:
+    if: github.repository_owner == 'npm'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
+      - name: Setup git user
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - uses: actions/setup-node@v3
         with:
           node-version: 16.x
           cache: npm
-      - run: node bin/npm-cli.js run resetdeps
-      - run: node bin/npm-cli.js test -w smoke-tests --ignore-scripts
-      - name: git status
-        if: matrix.platform.os != 'windows-latest'
-        run: node scripts/git-dirty.js
+      - run: node . run resetdeps
+      - run: node . test -w smoke-tests --ignore-scripts
+      - run: node scripts/git-dirty.js
 
   test:
+    if: github.repository_owner == 'npm'
     strategy:
       fail-fast: false
       matrix:
@@ -84,14 +114,17 @@ jobs:
       run:
         shell: ${{ matrix.platform.shell }}
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: npm
-    - run: node bin/npm-cli.js run resetdeps
-    - run: node bin/npm-cli.js run test --ignore-scripts
-    - name: git status
-      if: matrix.platform.os != 'windows-latest'
-      run: node scripts/git-dirty.js
+      - uses: actions/checkout@v3
+      - name: Setup git user
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - run: node . run resetdeps
+      - run: node . run test --ignore-scripts
+      - name: git status
+        if: matrix.platform.os != 'windows-latest'
+        run: node scripts/git-dirty.js
