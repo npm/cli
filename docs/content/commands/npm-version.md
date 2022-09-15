@@ -192,7 +192,7 @@ disabled on the command line by running `npm --no-git-tag-version version`.
 It will fail if the working directory is not clean, unless the `-f` or
 `--force` flag is set.
 
-If supplied with `-m` or `--message` config option, npm will use it as a
+If supplied with `-m` or [`--message` config](/using-npm/config#message) option, npm will use it as a
 commit message when creating a version commit.  If the `message` config
 contains `%s` then that will be replaced with the resulting version number.
 For example:
@@ -201,7 +201,7 @@ For example:
 npm version patch -m "Upgrade to %s for reasons"
 ```
 
-If the `sign-git-tag` config is set, then the tag will be signed using the
+If the [`sign-git-tag` config](/using-npm/config#sign-git-tag) is set, then the tag will be signed using the
 `-s` flag to git.  Note that you must have a default GPG key set up in your
 git config for this to work properly.  For example:
 
