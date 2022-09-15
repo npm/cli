@@ -58,9 +58,25 @@ The [`npm query`](/commands/npm-query) commmand exposes a new dependency selecto
 - `:extraneous` when a dependency exists but is not defined as a dependency of any node
 - `:invalid` when a dependency version is out of its ancestors specified range
 - `:missing` when a dependency is not found on disk
-- `:semver(<spec>)` matching a valid [`node-semver`](https://github.com/npm/node-semver) spec
+- `:semver(<spec>, [selector], [function])` match a valid [`node-semver`](https://github.com/npm/node-semver) version or range to a selector
 - `:path(<path>)` [glob](https://www.npmjs.com/package/glob) matching based on dependencies path relative to the project
 - `:type(<type>)` [based on currently recognized types](https://github.com/npm/npm-package-arg#result-object)
+
+##### `:semver(<spec>, [selector], [function])`
+
+The `:semver()` pseudo selector allows comparing fields from each node's `package.json` using [semver](https://github.com/npm/node-semver#readme) methods. It accepts up to 3 parameters, all but the first of which are optional.
+
+- `spec` a semver version or range
+- `selector` an attribute selector for each node (default `[version]`)
+- `function` a semver method to apply, one of: `satisfies`, `intersects`, `subset`, `gt`, `gte`, `gtr`, `lt`, `lte`, `ltr`, `eq`, `neq` or the special function `infer` (default `infer`)
+
+When the special `infer` function is used the `spec` and the actual value from the node are compared. If both are versions, according to `semver.valid()`, `eq` is used. If both values are ranges, according to `!semver.valid()`, `intersects` is used. If the values are mixed types `satisfies` is used.
+
+Some examples:
+
+- `:semver(^1.0.0)` returns every node that has a `version` satisfied by the provided range `^1.0.0`
+- `:semver(16.0.0, :attr(engines, [node]))` returns every node which has an `engines.node` property satisfying the version `16.0.0`
+- `:semver(1.0.0, [version], lt)` every node with a `version` less than `1.0.0`
 
 #### [Attribute Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
 

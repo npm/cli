@@ -25,6 +25,22 @@ t.test('add', t => {
     add: [
       foo1,
       bar,
+    ],
+    path: '/',
+  }), {
+    dependencies: { bar: '1' },
+    devDependencies: { foo: '1' },
+  }, 'inferred save types stay the same for each dependency')
+
+  t.strictSame(logs, [])
+  t.strictSame(add({
+    pkg: {
+      dependencies: { bar: '1' },
+      devDependencies: { foo: '2' },
+    },
+    add: [
+      foo1,
+      bar,
       file,
     ],
     saveType: 'prod',

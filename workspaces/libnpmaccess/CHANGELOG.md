@@ -1,5 +1,25 @@
 # Changelog
 
+## [7.0.0-pre.1](https://github.com/npm/cli/compare/libnpmaccess-v7.0.0-pre.0...libnpmaccess-v7.0.0-pre.1) (2022-09-14)
+
+### ⚠️ BREAKING CHANGES
+
+* the api for libnpmaccess is different now
+
+### Features
+
+* [`854521b`](https://github.com/npm/cli/commit/854521baa49ef88ff9586ec2cc5f1fbaee7fa364) rewrite: Rewrite libnpmaccess (@wraithgar)
+
+## [7.0.0-pre.0](https://github.com/npm/cli/compare/libnpmaccess-v6.0.4...libnpmaccess-v7.0.0-pre.0) (2022-09-08)
+
+### ⚠ BREAKING CHANGES
+
+* **workspaces:** all workspace packages are now compatible with the following semver range for node: `^14.17.0 || ^16.13.0 || >=18.0.0`
+
+### Features
+
+  * [`e95017a`](https://github.com/npm/cli/commit/e95017a07b041cbb3293e659dad853f76462c108) [#5485](https://github.com/npm/cli/pull/5485) feat(workspaces): update supported node engines in package.json (@lukekarrys)
+
 ## [6.0.4](https://github.com/npm/cli/compare/libnpmaccess-v6.0.3...libnpmaccess-v6.0.4) (2022-08-31)
 
 ### Dependencies
