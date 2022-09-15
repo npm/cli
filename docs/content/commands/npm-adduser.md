@@ -27,7 +27,7 @@ Note: This command is unaware of workspaces.
 
 Create or verify a user named `<username>` in the specified registry, and
 save the credentials to the `.npmrc` file. If no registry is specified,
-the default registry will be used (see [`config`](/using-npm/config)).
+the default registry will be used (see [`registry`](/using-npm/registry)).
 
 The username, password, and email are read in from prompts.
 
