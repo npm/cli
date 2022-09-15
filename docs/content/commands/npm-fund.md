@@ -39,7 +39,8 @@ same shape of the output from `npm ls`.
 ### Workspaces support
 
 It's possible to filter the results to only include a single workspace
-and its dependencies using the `workspace` config option.
+and its dependencies using the
+[`workspace` config](/using-npm/config#workspace) option.
 
 #### Example:
 
