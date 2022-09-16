@@ -7,6 +7,7 @@ const {
 } = require('../../fixtures/clean-snapshot.js')
 
 const path = require('node:path')
+const { rmSync } = require('node:fs')
 const t = require('tap')
 
 t.cleanSnapshot = (str) => cleanPackumentCache(cleanDate(cleanTime(cleanCwd(str))))
@@ -426,6 +427,38 @@ t.test('should show install keeps dirty --workspace flag', async t => {
   await npm.exec('install', [])
   assert.packageDirty('node_modules/abbrev@1.1.0')
   assert.packageInstalled('node_modules/lodash@1.1.1')
+})
+
+t.test('should remove non-existent workspace from package-lock.json', async t => {
+  const cwd = process.cwd()
+
+  t.afterEach(() => {
+    process.chdir(cwd)
+  })
+
+  const localPrefix = path.join(t.testdir(), 'prefix')
+  const { npm } = await loadMockNpm(t)
+
+  process.chdir(localPrefix)
+  // init and install root package and its workspaces
+  npm.config.set('yes', true)
+  await npm.exec('init', [])
+  npm.config.set('workspace', ['packages/a', 'packages/b'])
+  await npm.exec('init', [])
+  await npm.exec('install', [])
+
+  // remove one workspace node and reinstall
+  rmSync(path.join(localPrefix, 'packages/b'), { recursive: true, force: true })
+  await npm.exec('install', [])
+  const lockJson = require(path.join(localPrefix, 'package-lock.json'))
+
+  t.strictSame(lockJson.packages[''].workspaces, ['packages/a'], 'remove non-exist ws node')
+  t.equal(lockJson.packages['packages/b'], undefined, 'remove non-exist ws package')
+  t.equal(lockJson.packages['node_modules/b'],
+    undefined,
+    'remove non-exist ws node_modules package'
+  )
+  t.equal(lockJson.dependencies.b, undefined, 'remove non-exist ws dependency')
 })
 
 t.test('devEngines', async t => {
