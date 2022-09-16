@@ -1,4 +1,6 @@
 const t = require('tap')
+const { join } = require('path')
+const { rmSync } = require('fs')
 
 const { load: _loadMockNpm } = require('../../fixtures/mock-npm')
 
@@ -325,5 +327,39 @@ t.test('completion', async t => {
     process.chdir(testdir)
     const res = await install.completion({ partialWord: '/' })
     t.strictSame(res, [])
+  })
+})
+
+t.test('workspace', async it => {
+  const cwd = process.cwd()
+
+  t.afterEach(() => {
+    process.chdir(cwd)
+  })
+
+  t.test('remove non-exist workspace node and its dependency', async t => {
+    const localPrefix = join(t.testdir(), 'prefix')
+    const { npm } = await loadMockNpm(t)
+
+    process.chdir(localPrefix)
+    // init and install root package and its workspaces
+    npm.config.set('yes', true)
+    await npm.exec('init', [])
+    npm.config.set('workspace', ['packages/a', 'packages/b'])
+    await npm.exec('init', [])
+    await npm.exec('install', [])
+
+    // remove one workspace node and reinstall
+    rmSync(join(localPrefix, 'packages/b'), { recursive: true, force: true })
+    await npm.exec('install', [])
+    const lockJson = require(join(localPrefix, 'package-lock.json'))
+
+    t.strictSame(lockJson.packages[''].workspaces, ['packages/a'], 'remove non-exist ws node')
+    t.equal(lockJson.packages['packages/b'], undefined, 'remove non-exist ws package')
+    t.equal(lockJson.packages['node_modules/b'],
+      undefined,
+      'remove non-exist ws node_modules package'
+    )
+    t.equal(lockJson.dependencies.b, undefined, 'remove non-exist ws dependency')
   })
 })

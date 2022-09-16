@@ -926,7 +926,7 @@ class Shrinkwrap {
         const loc = relpath(this.path, node.path)
 
         // extraneous ws node should not commit
-        if(node.extraneous) {
+        if(node.extraneous && root.workspaces && root.workspaces.length) {
           const wsIndex = root.workspaces.findIndex(ws => ws === loc)
           if(wsIndex > -1) {
             root.workspaces.splice(wsIndex, 1)
