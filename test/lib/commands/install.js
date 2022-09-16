@@ -294,6 +294,7 @@ t.test('completion', async t => {
   })
 })
 
+<<<<<<< HEAD
 t.test('should install in workspace with unhoisted module', async t => {
   const { npm, registry, assert } = await loadMockNpm(t, {
     prefixDir: workspaceMock(t, {
