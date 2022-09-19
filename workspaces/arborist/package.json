@@ -52,13 +52,13 @@
   },
   "scripts": {
     "test": "tap",
-    "posttest": "npm run lint",
+    "posttest": "node ../.. run lint",
     "snap": "tap",
     "postsnap": "npm run lintfix",
     "test-proxy": "ARBORIST_TEST_PROXY=1 tap --snapshot",
     "eslint": "eslint",
     "lint": "eslint \"**/*.js\"",
-    "lintfix": "npm run lint -- --fix",
+    "lintfix": "node ../.. run lint -- --fix",
     "benchmark": "node scripts/benchmark.js",
     "benchclean": "rm -rf scripts/benchmark/*/",
     "npmclilint": "npmcli-lint",
@@ -93,7 +93,11 @@
       "--no-warnings",
       "--no-deprecation"
     ],
-    "timeout": "360"
+    "timeout": "360",
+    "nyc-arg": [
+      "--exclude",
+      "tap-snapshots/**"
+    ]
   },
   "engines": {
     "node": "^14.17.0 || ^16.13.0 || >=18.0.0"

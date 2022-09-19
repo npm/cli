@@ -4,20 +4,20 @@
 /*
 
 # keep these
-!/.eslintrc.local.*
 !**/.gitignore
-!/docs/
-!/tap-snapshots/
-!/test/
-!/map.js
-!/scripts/
-!/README*
-!/LICENSE*
-!/CHANGELOG*
 !/.eslintrc.js
+!/.eslintrc.local.*
 !/.gitignore
 !/bin/
+!/CHANGELOG*
 !/content/
+!/docs/
 !/lib/
+!/LICENSE*
+!/map.js
 !/nav.yml
 !/package.json
+!/README*
+!/scripts/
+!/tap-snapshots/
+!/test/

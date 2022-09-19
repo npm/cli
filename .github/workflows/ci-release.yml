@@ -1,0 +1,214 @@
+# This file is automatically added by @npmcli/template-oss. Do not edit.
+
+name: CI - Release
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        required: true
+        type: string
+      check-sha:
+        required: true
+        type: string
+
+jobs:
+  lint-all:
+    name: Lint All
+    if: github.repository_owner == 'npm'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Create Check
+        uses: LouisBrunner/checks-action@v1.3.1
+        id: check
+
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: in_progress
+          name: Lint All
+          sha: ${{ inputs.check-sha }}
+          # XXX: this does not work when using the default GITHUB_TOKEN.
+          # Instead we post the main job url to the PR as a comment which
+          # will link to all the other checks. To work around this we would
+          # need to create a GitHub that would create on-demand tokens.
+          # https://github.com/LouisBrunner/checks-action/issues/18
+          # details_url:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.ref }}
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: npm
+      - name: Reset Deps
+        run: node . run resetdeps
+      - name: Lint
+        run: node . run lint --ignore-scripts
+      - name: Post Lint
+        run: node . run postlint --ignore-scripts
+      - name: Conclude Check
+        uses: LouisBrunner/checks-action@v1.3.1
+        if: always()
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          conclusion: ${{ job.status }}
+          check_id: ${{ steps.check.outputs.check_id }}
+
+  test-all:
+    name: Test All - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
+    if: github.repository_owner == 'npm'
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - name: Linux
+            os: ubuntu-latest
+            shell: bash
+          - name: macOS
+            os: macos-latest
+            shell: bash
+          - name: Windows
+            os: windows-latest
+            shell: cmd
+        node-version:
+          - 14.17.0
+          - 14.x
+          - 16.13.0
+          - 16.x
+          - 18.0.0
+          - 18.x
+    runs-on: ${{ matrix.platform.os }}
+    defaults:
+      run:
+        shell: ${{ matrix.platform.shell }}
+    steps:
+      - name: Create Check
+        uses: LouisBrunner/checks-action@v1.3.1
+        id: check
+
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: in_progress
+          name: Test All - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
+          sha: ${{ inputs.check-sha }}
+          # XXX: this does not work when using the default GITHUB_TOKEN.
+          # Instead we post the main job url to the PR as a comment which
+          # will link to all the other checks. To work around this we would
+          # need to create a GitHub that would create on-demand tokens.
+          # https://github.com/LouisBrunner/checks-action/issues/18
+          # details_url:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.ref }}
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - name: Reset Deps
+        run: node . run resetdeps
+      - name: Add Problem Matcher
+        run: echo "::add-matcher::.github/matchers/tap.json"
+      - name: Test
+        run: node . test --ignore-scripts -ws -iwr --if-present
+      - name: Conclude Check
+        uses: LouisBrunner/checks-action@v1.3.1
+        if: always()
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          conclusion: ${{ job.status }}
+          check_id: ${{ steps.check.outputs.check_id }}
+
+  smoke-publish:
+    name: Smoke Publish - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
+    if: github.repository_owner == 'npm'
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - name: Linux
+            os: ubuntu-latest
+            shell: bash
+          - name: macOS
+            os: macos-latest
+            shell: bash
+          - name: Windows
+            os: windows-latest
+            shell: cmd
+        node-version:
+          - 14.17.0
+          - 14.x
+          - 16.13.0
+          - 16.x
+          - 18.0.0
+          - 18.x
+    runs-on: ${{ matrix.platform.os }}
+    defaults:
+      run:
+        shell: ${{ matrix.platform.shell }}
+    steps:
+      - name: Create Check
+        uses: LouisBrunner/checks-action@v1.3.1
+        id: check
+
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: in_progress
+          name: Smoke Publish - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
+          sha: ${{ inputs.check-sha }}
+          # XXX: this does not work when using the default GITHUB_TOKEN.
+          # Instead we post the main job url to the PR as a comment which
+          # will link to all the other checks. To work around this we would
+          # need to create a GitHub that would create on-demand tokens.
+          # https://github.com/LouisBrunner/checks-action/issues/18
+          # details_url:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.ref }}
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - name: Reset Deps
+        run: node . run resetdeps
+      - name: Pack
+        run: |
+          NPM_VERSION="$(node . --version)-$GITHUB_SHA.0"
+          node . version $NPM_VERSION --ignore-scripts
+          node . run resetdeps
+          git clean -fd
+          node . ls --production >/dev/null
+          node . prune --production --no-save --no-audit --no-fund
+          node scripts/git-dirty.js
+          node . pack --pack-destination=$RUNNER_TEMP
+          node . install -g $RUNNER_TEMP/npm-$NPM_VERSION.tgz
+          node . install -w smoke-tests --ignore-scripts --no-audit --no-fund
+          rm -rf {lib,bin,index.js}
+          SMOKE_PUBLISH_NPM=1 node . test -w smoke-tests --ignore-scripts
+      - name: Conclude Check
+        uses: LouisBrunner/checks-action@v1.3.1
+        if: always()
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          conclusion: ${{ job.status }}
+          check_id: ${{ steps.check.outputs.check_id }}

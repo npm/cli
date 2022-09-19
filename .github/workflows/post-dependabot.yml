@@ -1,0 +1,88 @@
+# This file is automatically added by @npmcli/template-oss. Do not edit.
+
+name: Post Dependabot
+
+on: pull_request
+
+permissions:
+  contents: write
+
+jobs:
+  template-oss:
+    name: template-oss
+    if: github.repository_owner == 'npm' && github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head_ref }}
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: npm
+      - name: Reset Deps
+        run: node . run resetdeps
+      - name: Fetch Dependabot Metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Dependabot can update multiple directories so we output which directory
+      # it is acting on so we can run the command for the correct root or workspace
+      - name: Get Dependabot Directory
+        if: contains(steps.metadata.outputs.dependency-names, '@npmcli/template-oss')
+        id: flags
+        run: |
+          if [[ "${{ steps.metadata.outputs.directory }}" == "/" ]]; then
+            echo "::set-output name=workspace::-iwr"
+          else
+            echo "::set-output name=workspace::-w ${{ steps.metadata.outputs.directory }}"
+          fi
+
+      - name: Apply Changes
+        if: steps.flags.outputs.workspace
+        id: apply
+        run: |
+          node . run template-oss-apply ${{ steps.flags.outputs.workspace }}
+          if [[ `git status --porcelain` ]]; then
+            echo "::set-output name=changes::true"
+          fi
+
+      # This step will fail if template-oss has made any workflow updates. It is impossible
+      # for a workflow to update other workflows. In the case it does fail, we continue
+      # and then try to apply only a portion of the changes in the next step
+      - name: Push All Changes
+        if: steps.apply.outputs.changes
+        id: push
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git commit -am "chore: postinstall for dependabot template-oss PR"
+          git push
+
+      - name: Push All Changes Except Workflows
+        if: steps.push.outcome == 'failure'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git reset HEAD~
+          git checkout HEAD -- .github/workflows/
+          git clean -fd .github/workflows/
+          git commit -am "chore: postinstall for dependabot template-oss PR"
+          git push
+
+      - name: Check Changes
+        if: steps.apply.outputs.changes
+        run: |
+          node . exec --offline ${{ steps.flags.outputs.workspace }} -- template-oss-check
