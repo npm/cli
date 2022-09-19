@@ -1,111 +1,225 @@
-name: Release - cli
+# This file is automatically added by @npmcli/template-oss. Do not edit.
+
+name: Release
 
 on:
-  workflow_call:
-    inputs:
-      ref:
-        required: true
-        type: string
+  push:
+    branches:
+      - main
+      - latest
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: write
 
 jobs:
-  lint-all:
+  release:
+    outputs:
+      pr: ${{ steps.release.outputs.pr }}
+      releases: ${{ steps.release.outputs.releases }}
+      release-flags: ${{ steps.release.outputs.release-flags }}
+      branch: ${{ steps.release.outputs.pr-branch }}
+      pr-number: ${{ steps.release.outputs.pr-number }}
+      comment-id: ${{ steps.pr-comment.outputs.result }}
+      check-id: ${{ steps.check.outputs.check_id }}
+    name: Release
+    if: github.repository_owner == 'npm'
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
     steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ inputs.ref }}
-      - name: Use Node.js 16.x
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
           cache: npm
-      - run: node bin/npm-cli.js run resetdeps
-      - run: node bin/npm-cli.js run lint-all --ignore-scripts
+      - name: Reset Deps
+        run: node . run resetdeps
+      - name: Release Please
+        id: release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx --offline template-oss-release-please ${{ github.ref_name }}
+      - name: Post Pull Request Comment
+        if: steps.release.outputs.pr-number
+        uses: actions/github-script@v6
+        id: pr-comment
+        env:
+          PR_NUMBER: ${{ steps.release.outputs.pr-number }}
+        with:
+          script: |
+            const repo = { owner: context.repo.owner, repo: context.repo.repo }
+            const issue = { ...repo, issue_number: process.env.PR_NUMBER }
 
-  smoke-publish:
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version:
-          - 14.17.0
-          - 14.x
-          - 16.13.0
-          - 16.x
-          - 18.0.0
-          - 18.x
-        platform:
-          - os: ubuntu-latest
-            shell: bash
-          - os: macos-latest
-            shell: bash
-        # XXX: this should be possible in windows also
-        # but resetdeps cant be a bash script
-    runs-on: ${{ matrix.platform.os }}
+            const { data: workflow } = await github.rest.actions.getWorkflowRun({ ...repo, run_id: context.runId })
+
+            let body = '## Release Manager\n\n'
+
+            const comments = await github.paginate(github.rest.issues.listComments, issue)
+            let commentId = comments?.find(c => c.user.login === 'github-actions[bot]' && c.body.startsWith(body))?.id
+
+            body += `- Release workflow run: ${workflow.html_url}`
+            if (commentId) {
+              await github.rest.issues.updateComment({ ...repo, comment_id: commentId, body })
+            } else {
+              const { data: comment } = await github.rest.issues.createComment({ ...issue, body })
+              commentId = comment?.id
+            }
+
+            return commentId
+      - name: Create Check
+        uses: LouisBrunner/checks-action@v1.3.1
+        id: check
+        if: steps.release.outputs.pr-number
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: in_progress
+          name: Release
+          sha: ${{ steps.release.outputs.pr-sha }}
+          # XXX: this does not work when using the default GITHUB_TOKEN.
+          # Instead we post the main job url to the PR as a comment which
+          # will link to all the other checks. To work around this we would
+          # need to create a GitHub that would create on-demand tokens.
+          # https://github.com/LouisBrunner/checks-action/issues/18
+          # details_url:
+
+  update:
+    needs: release
+    outputs:
+      sha: ${{ steps.commit.outputs.sha }}
+      check-id: ${{ steps.check.outputs.check_id }}
+    name: Update - Release
+    if: github.repository_owner == 'npm' && needs.release.outputs.pr
+    runs-on: ubuntu-latest
     defaults:
       run:
-        shell: ${{ matrix.platform.shell }}
+        shell: bash
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
-          ref: ${{ inputs.ref }}
-      - name: Setup git user
+          fetch-depth: 0
+          ref: ${{ needs.release.outputs.branch }}
+      - name: Setup Git User
         run: |
-          git config --global user.email "ops+npm-cli@npmjs.com"
-          git config --global user.name "npm cli ops bot"
-      - name: Use Node.js 16.x
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
           cache: npm
-      - name: Pack
+      - name: Reset Deps
+        run: node . run resetdeps
+      - name: Run Post Pull Request Actions
+        env:
+          RELEASE_PR_NUMBER: ${{ needs.release.outputs.pr-number }}
+          RELEASE_COMMENT_ID: ${{ needs.release.outputs.comment-id }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          NPM_VERSION="$(node bin/npm-cli.js --version)-$GITHUB_SHA.0"
-          node bin/npm-cli.js version $NPM_VERSION --ignore-scripts
-          node bin/npm-cli.js run resetdeps
-          git clean -fd
-          node bin/npm-cli.js ls --production >/dev/null
-          node bin/npm-cli.js prune --production --no-save --no-audit --no-fund
-          node scripts/git-dirty.js
-          node bin/npm-cli.js pack --pack-destination=$RUNNER_TEMP
-          node bin/npm-cli.js install -g $RUNNER_TEMP/npm-$NPM_VERSION.tgz
-          node bin/npm-cli.js install -w smoke-tests --ignore-scripts --no-audit --no-fund
-          rm -rf {lib,bin,index.js}
-          SMOKE_PUBLISH_NPM=1 npm test -w smoke-tests --ignore-scripts
-            
-  test-all:
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version:
-          - 14.17.0
-          - 14.x
-          - 16.13.0
-          - 16.x
-          - 18.0.0
-          - 18.x
-        platform:
-          - os: ubuntu-latest
-            shell: bash
-          - os: macos-latest
-            shell: bash
-          - os: windows-latest
-            shell: cmd
-    runs-on: ${{ matrix.platform.os }}
+          node . run rp-pull-request --ignore-scripts -ws -iwr --if-present
+      - name: Commit
+        id: commit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git commit --all --amend --no-edit || true
+          git push --force-with-lease
+          echo "::set-output  name=sha::$(git rev-parse HEAD)"
+      - name: Create Check
+        uses: LouisBrunner/checks-action@v1.3.1
+        id: check
+
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: in_progress
+          name: Release
+          sha: ${{ steps.commit.outputs.sha }}
+          # XXX: this does not work when using the default GITHUB_TOKEN.
+          # Instead we post the main job url to the PR as a comment which
+          # will link to all the other checks. To work around this we would
+          # need to create a GitHub that would create on-demand tokens.
+          # https://github.com/LouisBrunner/checks-action/issues/18
+          # details_url:
+      - name: Conclude Check
+        uses: LouisBrunner/checks-action@v1.3.1
+        if: always()
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          conclusion: ${{ job.status }}
+          check_id: ${{ needs.release.outputs.check-id }}
+
+  ci:
+    name: CI - Release
+    needs: [ release, update ]
+    if: needs.release.outputs.pr
+    uses: ./.github/workflows/ci-release.yml
+    with:
+      ref: ${{ needs.release.outputs.branch }}
+      check-sha: ${{ needs.update.outputs.sha }}
+
+  post-ci:
+    needs: [ release, update, ci ]
+    name: Post CI - Release
+    if: github.repository_owner == 'npm' && needs.release.outputs.pr && always()
+    runs-on: ubuntu-latest
     defaults:
       run:
-        shell: ${{ matrix.platform.shell }}
+        shell: bash
     steps:
-      - uses: actions/checkout@v3
+      - name: Get Needs Result
+        id: needs-result
+        run: |
+          result=""
+          if [[ "${{ contains(needs.*.result, 'failure') }}" == "true" ]]; then
+            result="failure"
+          elif [[ "${{ contains(needs.*.result, 'cancelled') }}" == "true" ]]; then
+            result="cancelled"
+          else
+            result="success"
+          fi
+          echo "::set-output name=result::$result"
+      - name: Conclude Check
+        uses: LouisBrunner/checks-action@v1.3.1
+        if: always()
         with:
-          ref: ${{ inputs.ref }}
-      - name: Use Node.js ${{ matrix.node-version }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          conclusion: ${{ steps.needs-result.outputs.result }}
+          check_id: ${{ needs.update.outputs.check-id }}
+
+  post-release:
+    needs: release
+    name: Post Release - Release
+    if: github.repository_owner == 'npm' && needs.release.outputs.releases
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 18.x
           cache: npm
-      - run: node bin/npm-cli.js run resetdeps
-      - run: node bin/npm-cli.js link -f --ignore-scripts
-      - run: node bin/npm-cli.js run test-all --ignore-scripts
-      - name: git status
-        if: matrix.platform.os != 'windows-latest'
-        run: node scripts/git-dirty.js
+      - name: Reset Deps
+        run: node . run resetdeps
+      - name: Run Post Release Actions
+        env:
+          RELEASES: ${{ needs.release.outputs.releases }}
+        run: |
+          node . run rp-release --ignore-scripts --if-present ${{ join(fromJSON(needs.release.outputs.release-flags), ' ') }}

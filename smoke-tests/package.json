@@ -7,10 +7,10 @@
     "lint": "eslint \"**/*.js\"",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
-    "lintfix": "npm run lint -- --fix",
+    "lintfix": "node .. run lint -- --fix",
     "snap": "tap",
     "test": "tap",
-    "posttest": "npm run lint"
+    "posttest": "node .. run lint"
   },
   "repository": {
     "type": "git",
@@ -36,7 +36,11 @@
   "tap": {
     "no-coverage": true,
     "timeout": 300,
-    "files": "test/index.js"
+    "files": "test/index.js",
+    "nyc-arg": [
+      "--exclude",
+      "tap-snapshots/**"
+    ]
   },
   "files": [
     "bin/",

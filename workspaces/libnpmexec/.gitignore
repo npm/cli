@@ -4,18 +4,18 @@
 /*
 
 # keep these
-!/.eslintrc.local.*
 !**/.gitignore
-!/docs/
-!/tap-snapshots/
-!/test/
-!/map.js
-!/scripts/
-!/README*
-!/LICENSE*
-!/CHANGELOG*
 !/.eslintrc.js
+!/.eslintrc.local.*
 !/.gitignore
 !/bin/
+!/CHANGELOG*
+!/docs/
 !/lib/
+!/LICENSE*
+!/map.js
 !/package.json
+!/README*
+!/scripts/
+!/tap-snapshots/
+!/test/
