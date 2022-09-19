@@ -1,0 +1,35 @@
+name: CI - cli
+
+on:
+  {{> onCi }}
+
+jobs:
+  lint:
+    {{> job jobName="Lint" }}
+      {{> stepLint jobRunFlags=pkgFlags }}
+
+  check-docs:
+    {{> job jobName="Check Docs" }}
+      - name: Make Docs
+        run: make freshdocs
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
+
+  licenses:
+    {{> job jobName="Check Licenses" }}
+      - name: Check Licenses
+        run: {{rootNpmPath}} run licenses
+
+  smoke-tests:
+    {{> job jobName="Smoke Tests" }}
+      - name: Run Smoke Tests
+        run: {{rootNpmPath}} test -w smoke-tests --ignore-scripts
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
+
+  test:
+    {{> jobMatrix jobName="Test" }}
+      {{> stepTest jobRunFlags=pkgFlags }}
+      - name: Check Git Status
+        if: matrix.platform.os != 'windows-latest'
+        run: node scripts/git-dirty.js
