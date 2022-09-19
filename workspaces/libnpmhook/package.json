@@ -13,9 +13,9 @@
     "test": "tap",
     "lint": "eslint \"**/*.js\"",
     "postlint": "template-oss-check",
-    "lintfix": "npm run lint -- --fix",
+    "lintfix": "node ../.. run lint -- --fix",
     "snap": "tap",
-    "posttest": "npm run lint",
+    "posttest": "node ../.. run lint",
     "template-oss-apply": "template-oss-apply --force"
   },
   "repository": {
@@ -48,5 +48,11 @@
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
     "version": "4.3.2",
     "content": "../../scripts/template-oss/index.js"
+  },
+  "tap": {
+    "nyc-arg": [
+      "--exclude",
+      "tap-snapshots/**"
+    ]
   }
 }
