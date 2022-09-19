@@ -5,8 +5,6 @@ name: CI - libnpmversion
 on:
   workflow_dispatch:
   pull_request:
-    branches:
-      - '*'
     paths:
       - workspaces/libnpmversion/**
   push:
@@ -21,26 +19,47 @@ on:
 
 jobs:
   lint:
+    name: Lint
+    if: github.repository_owner == 'npm'
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup git user
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
         run: |
           git config --global user.email "npm-cli+bot@github.com"
           git config --global user.name "npm CLI robot"
-      - uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
           node-version: 16.x
-      - name: Update npm to latest
-        run: npm i --prefer-online --no-fund --no-audit -g npm@latest
-      - run: npm -v
-      - run: npm i --ignore-scripts --no-audit --no-fund
-      - run: npm run lint -w libnpmversion
+          cache: npm
+      - name: Reset Deps
+        run: node . run resetdeps
+      - name: Lint
+        run: node . run lint --ignore-scripts
+      - name: Post Lint
+        run: node . run postlint --ignore-scripts
 
   test:
+    name: Test - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
+    if: github.repository_owner == 'npm'
     strategy:
       fail-fast: false
       matrix:
+        platform:
+          - name: Linux
+            os: ubuntu-latest
+            shell: bash
+          - name: macOS
+            os: macos-latest
+            shell: bash
+          - name: Windows
+            os: windows-latest
+            shell: cmd
         node-version:
           - 12.13.0
           - 12.x
@@ -48,45 +67,25 @@ jobs:
           - 14.x
           - 16.0.0
           - 16.x
-        platform:
-          - os: ubuntu-latest
-            shell: bash
-          - os: macos-latest
-            shell: bash
-          - os: windows-latest
-            shell: cmd
     runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
         shell: ${{ matrix.platform.shell }}
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup git user
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
         run: |
           git config --global user.email "npm-cli+bot@github.com"
           git config --global user.name "npm CLI robot"
-      - uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Update to workable npm (windows)
-        # node 12 and 14 ship with npm@6, which is known to fail when updating itself in windows
-        if: matrix.platform.os == 'windows-latest' && (startsWith(matrix.node-version, '12.') || startsWith(matrix.node-version, '14.'))
-        run: |
-          curl -sO https://registry.npmjs.org/npm/-/npm-7.5.4.tgz
-          tar xf npm-7.5.4.tgz
-          cd package
-          node lib/npm.js install --no-fund --no-audit -g ..\npm-7.5.4.tgz
-          cd ..
-          rmdir /s /q package
-      - name: Update npm to 7
-        # If we do test on npm 10 it needs npm7
-        if: startsWith(matrix.node-version, '10.')
-        run: npm i --prefer-online --no-fund --no-audit -g npm@7
-      - name: Update npm to latest
-        if: ${{ !startsWith(matrix.node-version, '10.') }}
-        run: npm i --prefer-online --no-fund --no-audit -g npm@latest
-      - run: npm -v
-      - run: npm i --ignore-scripts --no-audit --no-fund
-      - name: add tap problem matcher
+          cache: npm
+      - name: Reset Deps
+        run: node . run resetdeps
+      - name: Add Problem Matcher
         run: echo "::add-matcher::.github/matchers/tap.json"
-      - run: npm test --ignore-scripts -w libnpmversion
+      - name: Test
+        run: node . test --ignore-scripts -w libnpmversion
