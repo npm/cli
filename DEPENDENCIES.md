@@ -525,6 +525,7 @@ graph LR;
   npm-->npmcli-run-script["@npmcli/run-script"];
   npm-->npmcli-template-oss["@npmcli/template-oss"];
   npm-->npmlog;
+  npm-->octokit-rest["@octokit/rest"];
   npm-->opener;
   npm-->p-map;
   npm-->pacote;

@@ -1,0 +1,23 @@
+{{> ciRelease}}
+
+  smoke-publish:
+    {{> jobMatrix
+      jobName="Smoke Publish"
+      jobCheck=(obj sha="${{ inputs.check-sha }}")
+      jobCheckout=(obj ref="${{ inputs.ref }}")
+    }}
+      - name: Pack
+        run: |
+          NPM_VERSION="$({{ rootNpmPath }} --version)-$GITHUB_SHA.0"
+          {{ rootNpmPath }} version $NPM_VERSION --ignore-scripts
+          {{ rootNpmPath }} run resetdeps
+          git clean -fd
+          {{ rootNpmPath }} ls --production >/dev/null
+          {{ rootNpmPath }} prune --production --no-save --no-audit --no-fund
+          node scripts/git-dirty.js
+          {{ rootNpmPath }} pack --pack-destination=$RUNNER_TEMP
+          {{ rootNpmPath }} install -g $RUNNER_TEMP/npm-$NPM_VERSION.tgz
+          {{ rootNpmPath }} install -w smoke-tests --ignore-scripts --no-audit --no-fund
+          rm -rf {lib,bin,index.js}
+          SMOKE_PUBLISH_NPM=1 {{ rootNpmPath }} test -w smoke-tests --ignore-scripts
+      {{> stepChecks jobCheck=true }}
