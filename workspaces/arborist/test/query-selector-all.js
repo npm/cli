@@ -1,5 +1,6 @@
 'use strict'
 
+const nock = require('nock')
 const t = require('tap')
 const Arborist = require('..')
 
@@ -7,8 +8,8 @@ const q = require('../lib/query-selector-all.js')
 
 // test helper that spits out pkgid for readability
 // and deduplicates link/target from results
-const querySelectorAll = async (tree, query) => {
-  const res = await q(tree, query)
+const querySelectorAll = async (tree, query, options) => {
+  const res = await q(tree, query, options)
   return [...new Set(res.map(i => i.pkgid))]
 }
 
@@ -36,6 +37,76 @@ t.test('query-selector-all', async t => {
         └── recur@1.0.0 (recursive production dep of recur, deduped)
 
    */
+
+  const now = Date.now()
+  const today = new Date(now)
+  const yesterday = new Date(now - (1000 * 60 * 60 * 24))
+  const dayBeforeYesterday = new Date(now - (1000 * 60 * 60 * 24 * 2))
+  // @npmcli/abbrev is deliberately left out of this list to cover the case when
+  // fetching a packument fails
+  const packumentStubs = {
+    a: {
+      '1.0.0': today,
+    },
+    abbrev: {
+      '1.1.1': dayBeforeYesterday,
+      '1.2.0': yesterday,
+    },
+    b: {
+      '1.0.0': today,
+    },
+    bar: {
+      '1.4.0': dayBeforeYesterday,
+      '2.0.0': today,
+    },
+    baz: {
+      // undefined for coverage in --before mode
+      '1.0.0': undefined,
+      '1.0.1': yesterday,
+    },
+    'dash-separated-pkg': {
+      '1.0.0': dayBeforeYesterday,
+      '2.0.0': yesterday,
+    },
+    dasher: {
+      '2.0.0': today,
+    },
+    foo: {
+      '2.2.2': today,
+    },
+    lorem: {
+      '1.0.0': today,
+    },
+    moo: {
+      '3.0.0': today,
+    },
+    recur: {
+      '1.0.0': today,
+    },
+    sive: {
+      '1.0.0': today,
+    },
+  }
+
+  nock.disableNetConnect()
+  t.teardown(() => {
+    nock.enableNetConnect()
+  })
+
+  for (const [pkg, versions] of Object.entries(packumentStubs)) {
+    nock('https://registry.npmjs.org')
+      .persist()
+      .get(`/${pkg}`)
+      .reply(200, {
+        time: Object.entries(versions).reduce((final, [version, time]) => {
+          return { ...final, [version]: time }
+        }, {}),
+        versions: Object.keys(versions).reduce((final, next) => {
+          return { ...final, [next]: {} }
+        }, {}),
+      })
+  }
+
   const path = t.testdir({
     node_modules: {
       '@npmcli': {
@@ -288,13 +359,22 @@ t.test('query-selector-all', async t => {
   ], ':scope > *')
 
   const runSpecParsing = async testCase => {
-    for (const [selector, expected] of testCase) {
-      t.test(selector, async t => {
-        const res = await querySelectorAll(tree, selector)
+    for (const [selector, expected, options = {}] of testCase) {
+      let title = selector
+      if (options.before) {
+        const friendlyTime = options.before === today
+          ? 'today'
+          : options.before === yesterday
+            ? 'yesterday'
+            : options.before
+        title += ` before ${friendlyTime}`
+      }
+      t.test(title, async t => {
+        const res = await querySelectorAll(tree, selector, options)
         t.same(
           res,
           expected,
-          selector
+          title
         )
       })
     }
@@ -667,6 +747,68 @@ t.test('query-selector-all', async t => {
       'bar@1.4.0',
       'moo@3.0.0',
     ]],
+
+    // outdated pseudo
+    [':outdated', [
+      'abbrev@1.1.1', // 1.2.0 is available
+      'baz@1.0.0', // 1.0.1 is available
+      'dash-separated-pkg@1.0.0', // 2.0.0 is available
+      'bar@1.4.0', // 2.0.0 is available
+    ]],
+    [':outdated(any)', [
+      'abbrev@1.1.1', // 1.2.0 is available
+      'baz@1.0.0', // 1.0.1 is available
+      'dash-separated-pkg@1.0.0', // 2.0.0 is available
+      'bar@1.4.0', // 2.0.0 is available
+    ]],
+    [':outdated(major)', [
+      'dash-separated-pkg@1.0.0', // 2.0.0 is available
+      'bar@1.4.0', // 2.0.0 is available
+    ]],
+    [':outdated(minor)', [
+      'abbrev@1.1.1', // 1.2.0 is available
+    ]],
+    [':outdated(patch)', [
+      'baz@1.0.0', // 1.0.1 is available
+    ]],
+    [':outdated(in-range)', [
+      'abbrev@1.1.1', // 1.2.0 is available and in-range
+      'baz@1.0.0', // 1.0.1 is available and in-range
+    ]],
+    [':outdated(out-of-range)', [
+      'dash-separated-pkg@1.0.0', // 2.0.0 is available
+      'bar@1.4.0', // 2.0.0 is available and out-of-range
+    ]],
+    [':outdated(nonsense)', []], // invalid, no results ever
+
+    // :outdated combined with --before
+    [':outdated', [
+      'abbrev@1.1.1', // 1.2.0 is available and published yesterday
+      'baz@1.0.0', // 1.0.1 is available and published yesterday
+      'dash-separated-pkg@1.0.0', // 2.0.0 is available and published yesterday
+    ], { before: yesterday }],
+    [':outdated(any)', [
+      'abbrev@1.1.1', // 1.2.0 is available and published yesterday
+      'baz@1.0.0', // 1.0.1 is available and published yesterday
+      'dash-separated-pkg@1.0.0', // 2.0.0 is available and published yesterday
+    ], { before: yesterday }],
+    [':outdated(major)', [
+      'dash-separated-pkg@1.0.0', // 2.0.0 is available and published yesterday
+    ], { before: yesterday }],
+    [':outdated(minor)', [
+      'abbrev@1.1.1', // 1.2.0 is available and published yesterday
+    ], { before: yesterday }],
+    [':outdated(patch)', [
+      'baz@1.0.0', // 1.0.1 is available and published yesterday
+    ], { before: yesterday }],
+    [':outdated(in-range)', [
+      'abbrev@1.1.1', // 1.2.0 is available, in-range and published yesterday
+      'baz@1.0.0', // 1.0.1 is available, in-range and published yesterday
+    ], { before: yesterday }],
+    [':outdated(out-of-range)', [
+      'dash-separated-pkg@1.0.0', // 2.0.0 is available, out-of-range and published yesterday
+    ], { before: yesterday }],
+    [':outdated(nonsense)', [], { before: yesterday }], // again, no results here ever
 
     // attr pseudo
     [':attr([name=dasher])', ['dasher@2.0.0']],
