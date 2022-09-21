@@ -126,6 +126,8 @@ jobs:
       - name: Link
         if: matrix
         run: node . link -f --ignore-scripts
+      - name: Rebuild cmark-gfm
+        run: node . rebuild cmark-gfm
       - name: Test
         run: node . test --ignore-scripts -ws -iwr --if-present
       - name: Conclude Check

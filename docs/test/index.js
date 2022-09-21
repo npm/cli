@@ -9,19 +9,11 @@ const output = join(cwd, 'output')
 
 const rmOutput = () => fs.rm(output, { recursive: true, force: true }).catch(() => {})
 
-const spawnNpm = (cmd, ...args) => {
-  // remove npm config when spawning so config set by test commands don't interfere
-  const env = Object.entries(process.env)
-    .filter(([k]) => k.toLowerCase() !== 'npm_config_ignore_scripts')
+const spawnNpm = (cmd, ...args) => spawn(which(cmd), args, {
+  stdioString: true,
+  cwd,
+})
 
-  return spawn(which(cmd), args, {
-    env: Object.fromEntries(env),
-    stdioString: true,
-    cwd,
-  })
-}
-
-t.before(() => spawnNpm('node', '..', 'rebuild', 'cmark-gfm'))
 t.beforeEach(() => rmOutput())
 
 t.test('docs', async (t) => {

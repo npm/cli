@@ -3,5 +3,7 @@
 - name: Link
   if: matrix
   run: {{ rootNpmPath }} link -f --ignore-scripts
+- name: Rebuild cmark-gfm
+  run: {{ rootNpmPath }} rebuild cmark-gfm
 - name: Test
   run: {{ rootNpmPath }} test --ignore-scripts {{~#if jobRunFlags}} {{ jobRunFlags }}{{/if}}
