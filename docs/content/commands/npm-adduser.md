@@ -27,7 +27,7 @@ Note: This command is unaware of workspaces.
 
 Create a new user in the specified registry, and save the credentials to
 the `.npmrc` file. If no registry is specified, the default registry
-will be used (see [`config`](/using-npm/config)).
+will be used (see [`registry`](/using-npm/registry)).
 
 When using `legacy` for your `auth-type`, the username, password, and
 email are read in from prompts.
