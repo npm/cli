@@ -1,0 +1,45 @@
+# This file is automatically added by @npmcli/template-oss. Do not edit.
+
+name: Pull Request
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
+
+jobs:
+  commitlint:
+    name: Lint Commits
+    if: github.repository_owner == 'npm'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: npm
+      - name: Reset Deps
+        run: node . run resetdeps
+      - name: Run Commitlint on Commits
+        id: commit
+        continue-on-error: true
+        run: |
+          npx --offline commitlint -V --from origin/${{ github.base_ref }} --to ${{ github.event.pull_request.head.sha }}
+      - name: Run Commitlint on PR Title
+        if: steps.commit.outcome == 'failure'
+        run: |
+          echo ${{ github.event.pull_request.title }} | npx --offline commitlint -V

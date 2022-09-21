@@ -61,6 +61,7 @@ The [`npm query`](/commands/npm-query) commmand exposes a new dependency selecto
 - `:semver(<spec>, [selector], [function])` match a valid [`node-semver`](https://github.com/npm/node-semver) version or range to a selector
 - `:path(<path>)` [glob](https://www.npmjs.com/package/glob) matching based on dependencies path relative to the project
 - `:type(<type>)` [based on currently recognized types](https://github.com/npm/npm-package-arg#result-object)
+- `:outdated(<type>)` when a dependency is outdated
 
 ##### `:semver(<spec>, [selector], [function])`
 
@@ -77,6 +78,28 @@ Some examples:
 - `:semver(^1.0.0)` returns every node that has a `version` satisfied by the provided range `^1.0.0`
 - `:semver(16.0.0, :attr(engines, [node]))` returns every node which has an `engines.node` property satisfying the version `16.0.0`
 - `:semver(1.0.0, [version], lt)` every node with a `version` less than `1.0.0`
+
+##### `:outdated(<type>)`
+
+The `:outdated` pseudo selector retrieves data from the registry and returns information about which of your dependencies are outdated. The type parameter may be one of the following:
+
+- `any` (default) a version exists that is greater than the current one
+- `in-range` a version exists that is greater than the current one, and satisfies at least one if its dependents
+- `out-of-range` a version exists that is greater than the current one, does not satisfy at least one of its dependents
+- `major` a version exists that is a semver major greater than the current one
+- `minor` a version exists that is a semver minor greater than the current one
+- `patch` a version exists that is a semver patch greater than the current one
+
+In addition to the filtering performed by the pseudo selector, some extra data is added to the resulting objects. The following data can be found under the `queryContext` property of each node.
+
+- `versions` an array of every available version of the given node
+- `outdated.inRange` an array of objects, each with a `from` and `versions`, where `from` is the on-disk location of the node that depends on the current node and `versions` is an array of all available versions that satisfies that dependency. This is only populated if `:outdated(in-range)` is used.
+- `outdated.outOfRange` an array of objects, identical in shape to `inRange`, but where the `versions` array is every available version that does not satisfy the dependency. This is only populated if `:outdated(out-of-range)` is used.
+
+Some examples:
+
+- `:root > :outdated(major)` returns every direct dependency that has a new semver major release
+- `.prod:outdated(in-range)` returns production dependencies that have a new release that satisfies at least one of its edges in
 
 #### [Attribute Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
 

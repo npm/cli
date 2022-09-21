@@ -96,6 +96,9 @@
   - title: npm link
     url: /commands/npm-link
     description: Symlink a package folder
+  - title: npm login
+    url: /commands/npm-login
+    description: Login to a registry user account
   - title: npm logout
     url: /commands/npm-logout
     description: Log out of the registry
