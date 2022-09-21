@@ -87,5 +87,8 @@ jobs:
         run: node . run resetdeps
       - name: Add Problem Matcher
         run: echo "::add-matcher::.github/matchers/tap.json"
+      - name: Link
+        if: matrix
+        run: node . link -f --ignore-scripts
       - name: Test
         run: node . test --ignore-scripts -w libnpmaccess

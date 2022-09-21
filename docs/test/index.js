@@ -21,7 +21,7 @@ const spawnNpm = (cmd, ...args) => {
   })
 }
 
-t.before(() => spawnNpm('npm', 'rebuild', 'cmark-gfm'))
+t.before(() => spawnNpm('node', '..', 'rebuild', 'cmark-gfm'))
 t.beforeEach(() => rmOutput())
 
 t.test('docs', async (t) => {
