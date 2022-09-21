@@ -1032,9 +1032,10 @@ capable of properly installing your program.  For example:
 }
 ```
 
-Unless the user has set the `engine-strict` config flag, this field is
-advisory only and will only produce warnings when your package is installed
-as a dependency.
+Unless the user has set the
+[`engine-strict` config](/using-npm/config#engine-strict) flag, this field is
+advisory only and will only produce warnings when your package is installed as a
+dependency.
 
 ### os
 
