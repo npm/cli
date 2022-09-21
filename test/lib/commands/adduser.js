@@ -25,6 +25,7 @@ t.test('legacy', async t => {
       'process.stdout': new stream.PassThrough(), // to quiet readline
     }, { replace: true })
     const { npm, home } = await loadMockNpm(t, {
+      config: { 'auth-type': 'legacy' },
       homeDir: {
         // These all get cleaned up by config.setCredentialsByURI
         '.npmrc': [
@@ -72,6 +73,7 @@ t.test('legacy', async t => {
     }, { replace: true })
     const { npm, home } = await loadMockNpm(t, {
       config: {
+        'auth-type': 'legacy',
         scope: '@myscope',
       },
     })
@@ -109,6 +111,7 @@ t.test('legacy', async t => {
         '.npmrc': '@myscope:registry=https://diff-registry.npmjs.org',
       },
       config: {
+        'auth-type': 'legacy',
         scope: '@myscope',
       },
     })
@@ -142,6 +145,7 @@ t.test('legacy', async t => {
       'process.stdout': new stream.PassThrough(), // to quiet readline
     }, { replace: true })
     const { npm } = await loadMockNpm(t, {
+      config: { 'auth-type': 'legacy' },
       homeDir: {
         '.npmrc': {},
       },
