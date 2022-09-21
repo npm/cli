@@ -166,6 +166,7 @@ const main = async (env) => {
   const releaseTitle = `### Release Checklist for ${release.tag}`
   const releaseChecklist = releaseItems
     .join('\n\n')
+    .replace(/<PR-NUMBER>/g, RELEASE_PR_NUMBER)
     .replace(/<RELEASE-BRANCH>/g, pr.head.ref)
     .replace(/<BASE-BRANCH>/g, pr.base.ref)
     .replace(/<MAJOR>/g, release.major)

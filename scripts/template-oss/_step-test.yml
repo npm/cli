@@ -1,0 +1,7 @@
+- name: Add Problem Matcher
+  run: echo "::add-matcher::.github/matchers/tap.json"
+- name: Link
+  if: matrix
+  run: {{ rootNpmPath }} link -f --ignore-scripts
+- name: Test
+  run: {{ rootNpmPath }} test --ignore-scripts {{~#if jobRunFlags}} {{ jobRunFlags }}{{/if}}
