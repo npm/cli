@@ -251,7 +251,7 @@ exit code.
 exports[`test/lib/utils/config/definitions.js TAP > config description for auth-type 1`] = `
 #### \`auth-type\`
 
-* Default: "legacy"
+* Default: "web"
 * Type: "legacy" or "web"
 
 What authentication strategy to use with \`login\`.

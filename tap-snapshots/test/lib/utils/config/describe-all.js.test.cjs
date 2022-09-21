@@ -90,7 +90,7 @@ exit code.
 
 #### \`auth-type\`
 
-* Default: "legacy"
+* Default: "web"
 * Type: "legacy" or "web"
 
 What authentication strategy to use with \`login\`.
