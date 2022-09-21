@@ -75,7 +75,7 @@ npm view express contributors[0].email
 If the field value you are querying for is a property of an object, you should run:
 
 ```bash
-npm view express time'[14.8.0]'
+npm view express time'[4.8.0]'
 ```
 
 Multiple fields may be specified, and will be printed one after another.
