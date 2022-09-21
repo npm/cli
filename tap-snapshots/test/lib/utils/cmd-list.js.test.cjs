@@ -381,7 +381,6 @@ Object {
     "la": "ll",
     "list": "ls",
     "ln": "link",
-    "login": "adduser",
     "ogr": "org",
     "r": "uninstall",
     "rb": "rebuild",

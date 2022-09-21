@@ -187,10 +187,9 @@ All commands:
                     npm adduser
                     
                     Options:
-                    [--registry <registry>] [--scope <@scope>]
-                    [--auth-type <legacy|web|sso|saml|oauth|webauthn>]
+                    [--registry <registry>] [--scope <@scope>] [--auth-type <legacy|web>]
                     
-                    aliases: login, add-user
+                    alias: add-user
                     
                     Run "npm help adduser" for more info
 
@@ -568,18 +567,15 @@ All commands:
                     
                     Run "npm help ll" for more info
 
-    login           Add a registry user account
+    login           Login to a registry user account
                     
                     Usage:
-                    npm adduser
+                    npm login
                     
                     Options:
-                    [--registry <registry>] [--scope <@scope>]
-                    [--auth-type <legacy|web|sso|saml|oauth|webauthn>]
+                    [--registry <registry>] [--scope <@scope>] [--auth-type <legacy|web>]
                     
-                    aliases: login, add-user
-                    
-                    Run "npm help adduser" for more info
+                    Run "npm help login" for more info
 
     logout          Log out of the registry
                     

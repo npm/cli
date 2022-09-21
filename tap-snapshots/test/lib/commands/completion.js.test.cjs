@@ -109,7 +109,6 @@ Array [
       version
       view
       whoami
-      login
       author
       home
       issues
