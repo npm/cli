@@ -151,9 +151,6 @@ jobs:
           - name: macOS
             os: macos-latest
             shell: bash
-          - name: Windows
-            os: windows-latest
-            shell: cmd
         node-version:
           - 14.17.0
           - 14.x
