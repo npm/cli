@@ -5,6 +5,7 @@
       jobName="Smoke Publish"
       jobCheck=(obj sha="${{ inputs.check-sha }}")
       jobCheckout=(obj ref="${{ inputs.ref }}")
+      windowsCI=false
     }}
       - name: Pack
         run: |
