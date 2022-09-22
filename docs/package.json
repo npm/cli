@@ -39,7 +39,7 @@
     "nav.yml"
   ],
   "engines": {
-    "node": ">=18.0.0"
+    "node": "^14.17.0 || ^16.13.0 || >=18.0.0"
   },
   "tap": {
     "statements": 81,
@@ -63,6 +63,7 @@
       "/nav.yml"
     ],
     "ciVersions": "latest",
+    "engines": "^14.17.0 || ^16.13.0 || >=18.0.0",
     "version": "4.3.2",
     "content": "../scripts/template-oss/index.js"
   }
