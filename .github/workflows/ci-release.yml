@@ -202,14 +202,17 @@ jobs:
           node . version $NPM_VERSION --ignore-scripts
           node . run resetdeps
           git clean -fd
-          node . ls --production >/dev/null
-          node . prune --production --no-save --no-audit --no-fund
+          node . ls --omit=dev >/dev/null
+          node . prune --omit=dev --no-save --no-audit --no-fund
           node scripts/git-dirty.js
           node . pack --pack-destination=$RUNNER_TEMP
           node . install -g $RUNNER_TEMP/npm-$NPM_VERSION.tgz
           node . install -w smoke-tests --ignore-scripts --no-audit --no-fund
           rm -rf {lib,bin,index.js}
-          SMOKE_PUBLISH_NPM=1 node . test -w smoke-tests --ignore-scripts
+          # this one should be npm since we explicitly installed our packed
+          # tarball globally and the next test will make sure our the new
+          # globally installed version contains the git sha
+          SMOKE_PUBLISH_NPM=1 npm test -w smoke-tests --ignore-scripts
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.3.1
         if: always()
