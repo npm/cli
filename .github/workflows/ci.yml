@@ -1,6 +1,6 @@
 # This file is automatically added by @npmcli/template-oss. Do not edit.
 
-name: CI - cli
+name: CI
 
 on:
   workflow_dispatch:
@@ -22,6 +22,39 @@ on:
     - cron: "0 9 * * 1"
 
 jobs:
+  engines:
+    name: Engines - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
+    if: github.repository_owner == 'npm'
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - name: Linux
+            os: ubuntu-latest
+            shell: bash
+        node-version:
+          - 14.17.0
+          - 16.13.0
+          - 18.0.0
+    runs-on: ${{ matrix.platform.os }}
+    defaults:
+      run:
+        shell: ${{ matrix.platform.shell }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - name: Reset Deps
+        run: node . run resetdeps -- --engines-strict
+
   lint:
     name: Lint
     if: github.repository_owner == 'npm'
@@ -47,6 +80,60 @@ jobs:
         run: node . run lint --ignore-scripts
       - name: Post Lint
         run: node . run postlint --ignore-scripts
+
+  test:
+    name: Test - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
+    if: github.repository_owner == 'npm'
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - name: Linux
+            os: ubuntu-latest
+            shell: bash
+          - name: macOS
+            os: macos-latest
+            shell: bash
+          - name: Windows
+            os: windows-latest
+            shell: cmd
+        node-version:
+          - 14.17.0
+          - 14.x
+          - 16.13.0
+          - 16.x
+          - 18.0.0
+          - 18.x
+    runs-on: ${{ matrix.platform.os }}
+    defaults:
+      run:
+        shell: ${{ matrix.platform.shell }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - name: Reset Deps
+        run: node . run resetdeps
+      - name: Link
+        if: matrix
+        run: node . link -f --ignore-scripts
+      - name: Rebuild cmark-gfm
+        run: node . rebuild cmark-gfm
+      - name: Add Problem Matcher
+        run: echo "::add-matcher::.github/matchers/tap.json"
+      - name: Test
+        run: node . test --ignore-scripts -iwr
+      - name: Check Git Status
+        if: matrix && matrix.platform.os != 'windows-latest'
+        run: node scripts/git-dirty.js
 
   check-docs:
     name: Check Docs
@@ -122,58 +209,4 @@ jobs:
       - name: Run Smoke Tests
         run: node . test -w smoke-tests --ignore-scripts
       - name: Check Git Status
-        run: node scripts/git-dirty.js
-
-  test:
-    name: Test - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
-    if: github.repository_owner == 'npm'
-    strategy:
-      fail-fast: false
-      matrix:
-        platform:
-          - name: Linux
-            os: ubuntu-latest
-            shell: bash
-          - name: macOS
-            os: macos-latest
-            shell: bash
-          - name: Windows
-            os: windows-latest
-            shell: cmd
-        node-version:
-          - 14.17.0
-          - 14.x
-          - 16.13.0
-          - 16.x
-          - 18.0.0
-          - 18.x
-    runs-on: ${{ matrix.platform.os }}
-    defaults:
-      run:
-        shell: ${{ matrix.platform.shell }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Git User
-        run: |
-          git config --global user.email "npm-cli+bot@github.com"
-          git config --global user.name "npm CLI robot"
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: npm
-      - name: Reset Deps
-        run: node . run resetdeps
-      - name: Add Problem Matcher
-        run: echo "::add-matcher::.github/matchers/tap.json"
-      - name: Link
-        if: matrix
-        run: node . link -f --ignore-scripts
-      - name: Rebuild cmark-gfm
-        run: node . rebuild cmark-gfm
-      - name: Test
-        run: node . test --ignore-scripts -iwr
-      - name: Check Git Status
-        if: matrix.platform.os != 'windows-latest'
         run: node scripts/git-dirty.js

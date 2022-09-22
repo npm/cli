@@ -118,12 +118,15 @@ jobs:
           cache: npm
       - name: Reset Deps
         run: node . run resetdeps
-      - name: Add Problem Matcher
-        run: echo "::add-matcher::.github/matchers/tap.json"
       - name: Link
         if: matrix
         run: node . link -f --ignore-scripts
       - name: Rebuild cmark-gfm
         run: node . rebuild cmark-gfm
+      - name: Add Problem Matcher
+        run: echo "::add-matcher::.github/matchers/tap.json"
       - name: Test
         run: node . test --ignore-scripts -w smoke-tests
+      - name: Check Git Status
+        if: matrix && matrix.platform.os != 'windows-latest'
+        run: node scripts/git-dirty.js

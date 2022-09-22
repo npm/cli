@@ -91,6 +91,9 @@ freshdocs:
 	make docs
 	make mddocs
 
+lint-all: deps
+	node bin/npm-cli.js run lint-all
+
 test-all: deps
 	node bin/npm-cli.js run test-all
 
@@ -110,10 +113,10 @@ prune: deps
 	node bin/npm-cli.js prune --omit=dev --no-save --no-audit --no-fund
 	node scripts/git-dirty.js
 
-publish: gitclean ls-ok link test-all docs prune
+publish: gitclean ls-ok link lint-all test-all docs prune
 	node bin/npm-cli.js publish --tag=$(PUBLISHTAG)
 
 release: gitclean ls-ok docs prune
 	@bash scripts/release.sh
 
-.PHONY: all latest install dev link docs mddocs clean uninstall test-all man docsclean release ls-ok deps prune freshdocs
+.PHONY: all latest install dev link docs mddocs clean uninstall lint-all test-all man docsclean release ls-ok deps prune freshdocs
