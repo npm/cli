@@ -28,7 +28,7 @@
     "marked-man": "^0.7.0",
     "tap": "^16.0.1",
     "which": "^2.0.2",
-    "yaml": "^1.10.0"
+    "yaml": "^2.1.1"
   },
   "author": "GitHub Inc.",
   "license": "ISC",
