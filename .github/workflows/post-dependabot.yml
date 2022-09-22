@@ -57,6 +57,15 @@ jobs:
           if [[ `git status --porcelain` ]]; then
             echo "::set-output name=changes::true"
           fi
+          # This only sets the conventional commit prefix. This workflow can't reliably determine
+          # what the breaking change is though. If a BREAKING CHANGE message is required then
+          # this PR check will fail and the commit will be amended with stafftools
+          if [[ "${{ steps.dependabot-metadata.outputs.update-type }}" == "version-update:semver-major" ]]; then
+            prefix='feat!'
+          else
+            prefix='chore!'
+          fi
+          echo "::set-output name=message::$prefix: postinstall for dependabot template-oss PR"
 
       # This step will fail if template-oss has made any workflow updates. It is impossible
       # for a workflow to update other workflows. In the case it does fail, we continue
@@ -68,21 +77,39 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git commit -am "chore: postinstall for dependabot template-oss PR"
+          git commit -am "${{ steps.apply.outputs.message }}"
           git push
 
-      - name: Push All Changes Except Workflows
-        if: steps.push.outcome == 'failure'
+      # If the previous step failed, then reset the commit and remove any workflow changes
+      # and attempt to commit and push again. This is helpful because we will have a commit
+      # with the correct prefix that we can then --amend with @npmcli/stafftools later.
+      - name: Commit and push all changes except workflows
+        if: steps.apply.outputs.changes && steps.push-all.outcome == 'failure'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git reset HEAD~
           git checkout HEAD -- .github/workflows/
           git clean -fd .github/workflows/
-          git commit -am "chore: postinstall for dependabot template-oss PR"
+          git commit -am "${{ steps.apply.outputs.message }}"
           git push
 
+      # Check if all the necessary template-oss changes were applied. Since we continued
+      # on errors in one of the previous steps, this check will fail if our follow up
+      # only applied a portion of the changes and we need to followup manually.
+      #
+      # Note that this used to run `lint` and `postlint` but that will fail this action
+      # if we've also shipped any linting changes separate from template-oss. We do
+      # linting in another action, so we want to fail this one only if there are
+      # template-oss changes that could not be applied.
       - name: Check Changes
         if: steps.apply.outputs.changes
         run: |
           node . exec --offline ${{ steps.flags.outputs.workspace }} -- template-oss-check
+
+      - name: Fail on Breaking Change
+        if: steps.apply.outputs.changes && startsWith(steps.apply.outputs.message, 'feat!')
+        run: |
+          echo "This PR has a breaking change. Run 'npx -p @npmcli/stafftools gh template-oss-fix'"
+          echo "for more information on how to fix this with a BREAKING CHANGE footer."
+          exit 1
