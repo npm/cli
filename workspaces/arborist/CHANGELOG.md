@@ -1,5 +1,19 @@
 # Changelog
 
+## [6.0.0-pre.2](https://github.com/npm/cli/compare/arborist-v6.0.0-pre.1...arborist-v6.0.0-pre.2) (2022-09-23)
+
+### Features
+
+* [`ebf167b`](https://github.com/npm/cli/commit/ebf167b621ed14933826f617077ab5890e72bf83) add `:outdated` pseudo selector (@nlf)
+
+### Documentation
+
+* [`8402fd8`](https://github.com/npm/cli/commit/8402fd8780c5e0461850da882dca024f7df1a681) [#5547](https://github.com/npm/cli/pull/5547) add `:outdated` pseudo selector to docs (@nlf)
+
+### Dependencies
+
+* [`d030f10`](https://github.com/npm/cli/commit/d030f10fd535433e5a824df1b099f500a71075dd) `@npmcli/query@2.0.0`
+
 ## [6.0.0-pre.1](https://github.com/npm/cli/compare/arborist-v6.0.0-pre.0...arborist-v6.0.0-pre.1) (2022-09-14)
 
 ### Bug Fixes

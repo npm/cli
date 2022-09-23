@@ -1,5 +1,43 @@
 # Changelog
 
+## [9.0.0-pre.2](https://github.com/npm/cli/compare/v9.0.0-pre.1...v9.0.0-pre.2) (2022-09-23)
+
+### ⚠️ BREAKING CHANGES
+
+* the default `auth-type` config value is now `web`
+* `login`, `adduser`, and `auth-type` changes
+    - This removes all `auth-type` configs except `web` and `legacy`.
+    - `login` and `adduser` are now separate commands that send different data to the registry.
+    - `auth-type` config values `web` and `legacy` only try
+    their respective methods, npm no longer tries them all and waits to see
+    which one doesn't fail.
+
+### Features
+
+* [`66ed584`](https://github.com/npm/cli/commit/66ed58454418dd69c4cd8196ad8499e73f7e46e1) [#5551](https://github.com/npm/cli/pull/5551) default auth-type to web (#5551) (@wraithgar)
+* [`6ee5b32`](https://github.com/npm/cli/commit/6ee5b320d2eab58c18d50b861b3cfabe7f24124a) query: display `queryContext` in results (@nlf)
+* [`314311c`](https://github.com/npm/cli/commit/314311c61b8f341715c168199d52976ee3237077) [#5550](https://github.com/npm/cli/pull/5550) separate login/adduser, remove auth types (#5550) (@wraithgar)
+
+### Bug Fixes
+
+* [`0d90a01`](https://github.com/npm/cli/commit/0d90a011fff411c878ba4b44582f14ef7dbdceb1) [#5480](https://github.com/npm/cli/pull/5480) audit: add a condition to allow third-party registries returning E400 (#5480) (@juanheyns, Juan Heyns)
+
+### Documentation
+
+* [`2d756cb`](https://github.com/npm/cli/commit/2d756cbb05125dcb769f2ca4c1687e42568d5882) [#5527](https://github.com/npm/cli/pull/5527) add instruction to query objects with npm view (#5527) (@moonith)
+* [`8743366`](https://github.com/npm/cli/commit/874336699681ac37857167b2438fac19c059511c) [#5519](https://github.com/npm/cli/pull/5519) add hash to "tag" config link (#5519) (@mrienstra, @lukekarrys)
+* [`5645c51`](https://github.com/npm/cli/commit/5645c51410a730c4b9c6831cf81ab22efbe8c0ce) [#5521](https://github.com/npm/cli/pull/5521) link mentions of config parameters (#5521) (@mrienstra)
+* [`19762b4`](https://github.com/npm/cli/commit/19762b4ac4b10741ff53ddd315be1fd23d9b1e28) [#5529](https://github.com/npm/cli/pull/5529) modify Misleading doc about bins (@Hafizur046)
+* [`19762b4`](https://github.com/npm/cli/commit/19762b4ac4b10741ff53ddd315be1fd23d9b1e28) [#5529](https://github.com/npm/cli/pull/5529) modify misleading doc about package.json:bin (#5529) (@Hafizur046)
+* [`8402fd8`](https://github.com/npm/cli/commit/8402fd8780c5e0461850da882dca024f7df1a681) [#5547](https://github.com/npm/cli/pull/5547) add `:outdated` pseudo selector to docs (@nlf)
+
+### Dependencies
+
+* [`d030f10`](https://github.com/npm/cli/commit/d030f10fd535433e5a824df1b099f500a71075dd) `@npmcli/query@2.0.0`
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.0.0-pre.1...arborist-v6.0.0-pre.2): `@npmcli/arborist@6.0.0-pre.2`
+* [Workspace](https://github.com/npm/cli/compare/libnpmexec-v5.0.0-pre.1...libnpmexec-v5.0.0-pre.2): `libnpmexec@5.0.0-pre.2`
+* [Workspace](https://github.com/npm/cli/compare/libnpmfund-v4.0.0-pre.1...libnpmfund-v4.0.0-pre.2): `libnpmfund@4.0.0-pre.2`
+
 ## [9.0.0-pre.1](https://github.com/npm/cli/compare/v9.0.0-pre.0...v9.0.0-pre.1) (2022-09-14)
 
 ### ⚠️ BREAKING CHANGES
