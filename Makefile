@@ -113,7 +113,7 @@ prune: deps
 	node bin/npm-cli.js prune --omit=dev --no-save --no-audit --no-fund
 	node scripts/git-dirty.js
 
-publish: gitclean ls-ok link lint-all test-all docs prune
+publish: gitclean ls-ok link docs lint-all test-all prune
 	node bin/npm-cli.js publish --tag=$(PUBLISHTAG)
 
 release: gitclean ls-ok docs prune
