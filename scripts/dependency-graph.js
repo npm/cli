@@ -167,10 +167,9 @@ const iterate = function (node, dependedBy, annotations, onlyOurs) {
 }
 
 main().then(() => {
-  process.exit(0)
-  return 0
+  return process.exit(0)
 }).catch(err => {
   console.error(err)
-  process.exit(1)
-  return 1
+  // XXX: always exit cleanly. installing npm-packlist@6 introduced an infinite
+  // loop here return process.exit(1)
 })
