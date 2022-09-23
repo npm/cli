@@ -22,7 +22,7 @@
     "@npmcli/eslint-config": "^3.1.0",
     "@npmcli/fs": "^2.1.0",
     "@npmcli/promise-spawn": "^3.0.0",
-    "@npmcli/template-oss": "4.4.1",
+    "@npmcli/template-oss": "4.4.2",
     "cmark-gfm": "^0.9.0",
     "jsdom": "^18.1.0",
     "marked-man": "^0.7.0",
