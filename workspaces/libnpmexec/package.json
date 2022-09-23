@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^3.1.0",
-    "@npmcli/template-oss": "4.4.1",
+    "@npmcli/template-oss": "4.4.2",
     "bin-links": "^3.0.3",
     "minify-registry-metadata": "^2.2.0",
     "mkdirp": "^1.0.4",
