@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^3.1.0",
-    "@npmcli/template-oss": "4.4.1",
+    "@npmcli/template-oss": "4.4.2",
     "require-inject": "^1.4.4",
     "tap": "^16.0.1"
   },
