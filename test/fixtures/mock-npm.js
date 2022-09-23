@@ -174,8 +174,8 @@ const LoadMockNpm = async (t, {
         .join('\n')
     },
     timingFile: async () => {
-      const data = await fs.readFile(path.resolve(dirs.cache, '_timing.json'), 'utf8')
-      return JSON.parse(data) // XXX: this fails if multiple timings are written
+      const data = await fs.readFile(npm.timingFile, 'utf8')
+      return JSON.parse(data)
     },
   }
 }

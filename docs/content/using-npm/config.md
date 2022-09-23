@@ -1707,12 +1707,11 @@ particular, use care when overriding this setting for public packages.
 * Default: false
 * Type: Boolean
 
-If true, writes a debug log to `logs-dir` and timing information to
-`_timing.json` in the cache, even if the command completes successfully.
-`_timing.json` is a newline delimited list of JSON objects.
+If true, writes timing information to a process specific json file in the
+cache or `logs-dir`. The file name ends with `-timing.json`.
 
 You can quickly view it with this [json](https://npm.im/json) command line:
-`npm exec -- json -g < ~/.npm/_timing.json`.
+`cat ~/.npm/_logs/*-timing.json | npm exec -- json -g`.
 
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->

@@ -68,17 +68,17 @@ t.test('finish unstarted timer', async (t) => {
 })
 
 t.test('writes file', async (t) => {
-  const { timers } = mockTimers(t)
+  const { timers } = mockTimers(t, { id: 'TIMING_FILE' })
   const dir = t.testdir()
   process.emit('time', 'foo')
   process.emit('timeEnd', 'foo')
   timers.load({ dir })
   timers.writeFile({ some: 'data' })
-  const data = JSON.parse(fs.readFileSync(resolve(dir, '_timing.json')))
+  const data = JSON.parse(fs.readFileSync(resolve(dir, 'TIMING_FILE-timing.json')))
   t.match(data, {
-    some: 'data',
-    foo: Number,
-    unfinished: {
+    metadata: { some: 'data' },
+    timers: { foo: Number },
+    unfinishedTimers: {
       npm: [Number, Number],
     },
   })
