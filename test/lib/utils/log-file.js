@@ -6,6 +6,7 @@ const os = require('os')
 const fsMiniPass = require('fs-minipass')
 const rimraf = require('rimraf')
 const LogFile = require('../../../lib/utils/log-file.js')
+const runId = require('../../../lib/utils/run-id.js')
 const { cleanCwd } = require('../../fixtures/clean-snapshot')
 
 t.cleanSnapshot = (path) => cleanCwd(path)
@@ -19,7 +20,7 @@ const makeOldLogs = (count, oldStyle) => {
   return range(oldStyle ? count : (count / 2)).reduce((acc, i) => {
     const cloneDate = new Date(d.getTime())
     cloneDate.setSeconds(i)
-    const dateId = LogFile.logId(cloneDate)
+    const dateId = runId(cloneDate)
     if (oldStyle) {
       acc[`${dateId}-debug.log`] = 'hello'
     } else {

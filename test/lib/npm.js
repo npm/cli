@@ -513,19 +513,23 @@ t.test('timings', async t => {
     process.emit('timeEnd', 'foo')
     process.emit('time', 'bar')
     npm.writeTimingFile()
-    t.equal(npm.timingFile, join(cache, '_timing.json'))
+    t.match(npm.timingFile, cache)
+    t.match(npm.timingFile, /-timing.json$/)
     const timings = await timingFile()
     t.match(timings, {
-      command: [],
-      logfile: String,
-      logfiles: [String],
-      version: String,
-      unfinished: {
+      metadata: {
+        command: [],
+        logfiles: [String],
+        version: String,
+      },
+      unfinishedTimers: {
         bar: [Number, Number],
         npm: [Number, Number],
       },
-      foo: Number,
-      'npm:load': Number,
+      timers: {
+        foo: Number,
+        'npm:load': Number,
+      },
     })
   })
 

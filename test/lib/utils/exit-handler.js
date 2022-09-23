@@ -326,7 +326,7 @@ t.test('timing with no error', async (t) => {
   t.match(msg, /Timing info written to:/)
 
   t.match(
-    timingFileData,
+    timingFileData.timers,
     Object.keys(npm.finishedTimers).reduce((acc, k) => {
       acc[k] = Number
       return acc
@@ -334,11 +334,14 @@ t.test('timing with no error', async (t) => {
   )
   t.strictSame(npm.unfinishedTimers, new Map())
   t.match(timingFileData, {
-    command: [],
-    version: '1.0.0',
-    npm: Number,
-    logfile: String,
-    logfiles: [String],
+    metadata: {
+      command: [],
+      version: '1.0.0',
+      logfiles: [String],
+    },
+    timers: {
+      npm: Number,
+    },
   })
 })
 
@@ -356,12 +359,15 @@ t.test('unfinished timers', async (t) => {
   t.equal(process.exitCode, 0)
   t.match(npm.unfinishedTimers, new Map([['foo', Number], ['bar', Number]]))
   t.match(timingFileData, {
-    command: [],
-    version: '1.0.0',
-    npm: Number,
-    logfile: String,
-    logfiles: [String],
-    unfinished: {
+    metadata: {
+      command: [],
+      version: '1.0.0',
+      logfiles: [String],
+    },
+    timers: {
+      npm: Number,
+    },
+    unfinishedTimers: {
       foo: [Number, Number],
       bar: [Number, Number],
     },
