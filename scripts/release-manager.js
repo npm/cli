@@ -2,6 +2,11 @@
 
 const { Octokit } = require('@octokit/rest')
 const semver = require('semver')
+const mapWorkspaces = require('@npmcli/map-workspaces')
+const { join } = require('path')
+
+const ROOT = process.cwd()
+const pkg = require(join(ROOT, 'package.json'))
 
 const log = (...logs) => console.error('LOG', ...logs)
 
@@ -33,7 +38,7 @@ const getReleaseProcess = async () => {
     [Symbol.split] (str) {
       const [, ...matches] = str.split(RELEASE_LIST_ITEM)
       log(`Found ${matches.length} release items`)
-      return matches.map((m, i) => `- [ ] <STEP_INDEX>. ${m}`.trim())
+      return matches.map((m) => `- [ ] <STEP_INDEX>. ${m}`.trim())
     },
   })
 }
@@ -43,10 +48,18 @@ const getPrReleases = async (pr) => {
   const MONO_VERSIONS = /<details><summary>(?:(.*?):\s)?(.*?)<\/summary>/
   const ROOT_VERSION = /\n##\s\[(.*?)\]/
 
+  const workspaces = [...await mapWorkspaces({ pkg: pkg, cwd: ROOT })].reduce((acc, [k]) => {
+    const wsComponentName = k.startsWith('@') ? k.split('/')[1] : k
+    acc[wsComponentName] = k
+    return acc
+  }, {})
+
   const getReleaseInfo = ({ name, version: rawVersion }) => {
     const version = semver.parse(rawVersion)
     const prerelease = !!version.prerelease.length
     const tag = `${name ? `${name}-` : ''}v${rawVersion}`
+    const workspace = workspaces[name]
+
     return {
       name,
       tag,
@@ -54,7 +67,7 @@ const getPrReleases = async (pr) => {
       version: rawVersion,
       major: version.major,
       url: `https://github.com/${pr.base.repo.full_name}/releases/tag/${tag}`,
-      flags: name ? `-w ${name} ${prerelease ? `--tag prerelease` : ''}`.trim() : '',
+      flags: name ? `-w ${workspace} ${prerelease ? `--tag prerelease` : ''}`.trim() : '',
     }
   }
 
@@ -79,10 +92,10 @@ const getPrReleases = async (pr) => {
     const release = getReleaseInfo({ name, version })
 
     if (!name) {
-      log('Found root', release.tag)
+      log('Found root', release)
       acc[0] = release
     } else {
-      log('Found workspace', release.tag)
+      log('Found workspace', release)
       acc[1].push(release)
     }
 
