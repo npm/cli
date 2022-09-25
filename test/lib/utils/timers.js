@@ -68,11 +68,11 @@ t.test('finish unstarted timer', async (t) => {
 })
 
 t.test('writes file', async (t) => {
-  const { timers } = mockTimers(t, { id: 'TIMING_FILE' })
+  const { timers } = mockTimers(t)
   const dir = t.testdir()
   process.emit('time', 'foo')
   process.emit('timeEnd', 'foo')
-  timers.load({ dir })
+  timers.load({ path: resolve(dir, `TIMING_FILE-`) })
   timers.writeFile({ some: 'data' })
   const data = JSON.parse(fs.readFileSync(resolve(dir, 'TIMING_FILE-timing.json')))
   t.match(data, {
@@ -88,7 +88,7 @@ t.test('fails to write file', async (t) => {
   const { logs, timers } = mockTimers(t)
   const dir = t.testdir()
 
-  timers.load({ dir: join(dir, 'does', 'not', 'exist') })
+  timers.load({ path: join(dir, 'does', 'not', 'exist') })
   timers.writeFile()
 
   t.match(logs.warn, [['timing', 'could not write timing file']])
