@@ -673,7 +673,7 @@ t.test('empty update should not trigger old lockfile', async t => {
     'package-lock.json': JSON.stringify({
       name: 'empty-update',
       version: '1.0.0',
-      lockfileVersion: 2,
+      lockfileVersion: 3,
       requires: true,
       packages: {
         '': {

@@ -18,20 +18,7 @@ ArboristNode {
 
 exports[`test/arborist/pruner.js TAP prune with actual tree omit dev > should keep dev dependencies in package-lock.json 1`] = `
 Object {
-  "dependencies": Object {
-    "once": Object {
-      "dev": true,
-      "requires": Object {
-        "wrappy": "1",
-      },
-      "version": "1.4.0",
-    },
-    "wrappy": Object {
-      "dev": true,
-      "version": "1.0.2",
-    },
-  },
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "name": "prune-actual",
   "packages": Object {
     "": Object {

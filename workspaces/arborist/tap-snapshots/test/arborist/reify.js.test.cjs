@@ -206,7 +206,7 @@ ArboristNode {
 exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be mkdirpd > should place expected lockfile file into place 1`] = `
 {
   "name": "root",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
@@ -215,13 +215,6 @@ exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be m
       }
     },
     "node_modules/abbrev": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
-    }
-  },
-  "dependencies": {
-    "abbrev": {
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
       "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
@@ -471,56 +464,7 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP add deps to workspaces add mkdirp 0.5.0 to b > lockfile 1`] = `
 Object {
-  "dependencies": Object {
-    "a": Object {
-      "dependencies": Object {
-        "mkdirp": Object {
-          "integrity": "sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==",
-          "requires": Object {
-            "minimist": "^1.2.5",
-          },
-          "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.5.tgz",
-          "version": "0.5.5",
-        },
-      },
-      "requires": Object {
-        "mkdirp": "^0.5.0",
-      },
-      "version": "file:packages/a",
-    },
-    "b": Object {
-      "dependencies": Object {
-        "minimist": Object {
-          "integrity": "sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=",
-          "resolved": "https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz",
-          "version": "0.0.8",
-        },
-        "mkdirp": Object {
-          "integrity": "sha1-HXMHam35hs2TROFecfzAWkyavxI=",
-          "requires": Object {
-            "minimist": "0.0.8",
-          },
-          "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.0.tgz",
-          "version": "0.5.0",
-        },
-      },
-      "requires": Object {
-        "mkdirp": "0.5.0",
-      },
-      "version": "file:packages/b",
-    },
-    "minimist": Object {
-      "integrity": "sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==",
-      "resolved": "https://registry.npmjs.org/minimist/-/minimist-1.2.5.tgz",
-      "version": "1.2.5",
-    },
-    "mkdirp": Object {
-      "integrity": "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==",
-      "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz",
-      "version": "1.0.4",
-    },
-  },
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "name": "tap-testdir-reify-add-deps-to-workspaces-add-mkdirp-0.5.0-to-b",
   "packages": Object {
     "": Object {
@@ -814,56 +758,7 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP add deps to workspaces add mkdirp 0.5.0 to b, empty start > lockfile 1`] = `
 Object {
-  "dependencies": Object {
-    "a": Object {
-      "dependencies": Object {
-        "mkdirp": Object {
-          "integrity": "sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==",
-          "requires": Object {
-            "minimist": "^1.2.5",
-          },
-          "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.5.tgz",
-          "version": "0.5.5",
-        },
-      },
-      "requires": Object {
-        "mkdirp": "^0.5.0",
-      },
-      "version": "file:packages/a",
-    },
-    "b": Object {
-      "dependencies": Object {
-        "minimist": Object {
-          "integrity": "sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=",
-          "resolved": "https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz",
-          "version": "0.0.8",
-        },
-        "mkdirp": Object {
-          "integrity": "sha1-HXMHam35hs2TROFecfzAWkyavxI=",
-          "requires": Object {
-            "minimist": "0.0.8",
-          },
-          "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.0.tgz",
-          "version": "0.5.0",
-        },
-      },
-      "requires": Object {
-        "mkdirp": "0.5.0",
-      },
-      "version": "file:packages/b",
-    },
-    "minimist": Object {
-      "integrity": "sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==",
-      "resolved": "https://registry.npmjs.org/minimist/-/minimist-1.2.5.tgz",
-      "version": "1.2.5",
-    },
-    "mkdirp": Object {
-      "integrity": "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==",
-      "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz",
-      "version": "1.0.4",
-    },
-  },
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "name": "tap-testdir-reify-add-deps-to-workspaces-add-mkdirp-0.5.0-to-b-empty-start",
   "packages": Object {
     "": Object {
@@ -1069,38 +964,7 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP add deps to workspaces no args > lockfile 1`] = `
 Object {
-  "dependencies": Object {
-    "a": Object {
-      "dependencies": Object {
-        "mkdirp": Object {
-          "integrity": "sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==",
-          "requires": Object {
-            "minimist": "^1.2.5",
-          },
-          "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.5.tgz",
-          "version": "0.5.5",
-        },
-      },
-      "requires": Object {
-        "mkdirp": "^0.5.0",
-      },
-      "version": "file:packages/a",
-    },
-    "b": Object {
-      "version": "file:packages/b",
-    },
-    "minimist": Object {
-      "integrity": "sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==",
-      "resolved": "https://registry.npmjs.org/minimist/-/minimist-1.2.5.tgz",
-      "version": "1.2.5",
-    },
-    "mkdirp": Object {
-      "integrity": "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==",
-      "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz",
-      "version": "1.0.4",
-    },
-  },
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "name": "tap-testdir-reify-add-deps-to-workspaces-no-args",
   "packages": Object {
     "": Object {
@@ -1316,20 +1180,7 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP add deps to workspaces remove mkdirp from a > lockfile 1`] = `
 Object {
-  "dependencies": Object {
-    "a": Object {
-      "version": "file:packages/a",
-    },
-    "b": Object {
-      "version": "file:packages/b",
-    },
-    "mkdirp": Object {
-      "integrity": "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==",
-      "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz",
-      "version": "1.0.4",
-    },
-  },
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "name": "tap-testdir-reify-add-deps-to-workspaces-remove-mkdirp-from-a",
   "packages": Object {
     "": Object {
@@ -1485,20 +1336,7 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP add deps to workspaces remove mkdirp from a, empty start > lockfile 1`] = `
 Object {
-  "dependencies": Object {
-    "a": Object {
-      "version": "file:packages/a",
-    },
-    "b": Object {
-      "version": "file:packages/b",
-    },
-    "mkdirp": Object {
-      "integrity": "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==",
-      "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz",
-      "version": "1.0.4",
-    },
-  },
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "name": "tap-testdir-reify-add-deps-to-workspaces-remove-mkdirp-from-a-empty-start",
   "packages": Object {
     "": Object {
@@ -1614,23 +1452,7 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP add deps to workspaces upgrade mkdirp in a, dedupe on root > lockfile 1`] = `
 Object {
-  "dependencies": Object {
-    "a": Object {
-      "requires": Object {
-        "mkdirp": "1",
-      },
-      "version": "file:packages/a",
-    },
-    "b": Object {
-      "version": "file:packages/b",
-    },
-    "mkdirp": Object {
-      "integrity": "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==",
-      "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz",
-      "version": "1.0.4",
-    },
-  },
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "name": "tap-testdir-reify-add-deps-to-workspaces-upgrade-mkdirp-in-a-dedupe-on-root",
   "packages": Object {
     "": Object {
@@ -1806,23 +1628,7 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP add deps to workspaces upgrade mkdirp in a, dedupe on root, empty start > lockfile 1`] = `
 Object {
-  "dependencies": Object {
-    "a": Object {
-      "requires": Object {
-        "mkdirp": "1",
-      },
-      "version": "file:packages/a",
-    },
-    "b": Object {
-      "version": "file:packages/b",
-    },
-    "mkdirp": Object {
-      "integrity": "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==",
-      "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz",
-      "version": "1.0.4",
-    },
-  },
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "name": "tap-testdir-reify-add-deps-to-workspaces-upgrade-mkdirp-in-a-dedupe-on-root-empty-start",
   "packages": Object {
     "": Object {
@@ -2612,7 +2418,7 @@ exports[`test/arborist/reify.js TAP do not excessively duplicate bundled metadep
 {
   "name": "@isaacs/bundle-metadep-duplication-root",
   "version": "1.0.0",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "node_modules/@isaacs/bundle-metadep-duplication-x": {
@@ -2663,7 +2469,7 @@ exports[`test/arborist/reify.js TAP do not excessively duplicate bundled metadep
 {
   "name": "@isaacs/bundle-metadep-duplication-root",
   "version": "1.0.0",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
@@ -2708,46 +2514,6 @@ exports[`test/arborist/reify.js TAP do not excessively duplicate bundled metadep
       }
     },
     "node_modules/abbrev": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
-    }
-  },
-  "dependencies": {
-    "@isaacs/bundle-metadep-duplication-x": {
-      "version": "1.0.2",
-      "resolved": "https://registry.npmjs.org/@isaacs/bundle-metadep-duplication-x/-/bundle-metadep-duplication-x-1.0.2.tgz",
-      "integrity": "sha512-mlCA3lXLaraoJFrnZ1sBZeXy4qdYpubKH8jZB5KIjCCwcWPgOui/EWTWnf/wf0Q08V0qr8xmG63wGQgEa+hkSw==",
-      "requires": {
-        "@isaacs/bundle-metadep-duplication-y": "1",
-        "@isaacs/bundle-metadep-duplication-z": "1",
-        "abbrev": "1"
-      },
-      "dependencies": {
-        "@isaacs/bundle-metadep-duplication-a": {
-          "version": "1.0.0",
-          "bundled": true,
-          "requires": {
-            "@isaacs/bundle-metadep-duplication-z": "1"
-          }
-        },
-        "@isaacs/bundle-metadep-duplication-y": {
-          "version": "1.0.0",
-          "bundled": true,
-          "requires": {
-            "@isaacs/bundle-metadep-duplication-z": "1"
-          }
-        },
-        "@isaacs/bundle-metadep-duplication-z": {
-          "version": "1.0.0",
-          "bundled": true,
-          "requires": {
-            "@isaacs/bundle-metadep-duplication-a": "1"
-          }
-        }
-      }
-    },
-    "abbrev": {
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
       "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
@@ -3542,7 +3308,7 @@ ArboristNode {
 exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden lockfile - c 1`] = `
 {
   "name": "tap-testdir-reify-filtered-reification-in-workspaces",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "node_modules/c": {
@@ -3568,7 +3334,7 @@ exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden 
 exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden lockfile - c, old x, removed a 1`] = `
 {
   "name": "tap-testdir-reify-filtered-reification-in-workspaces",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "apps/x": {
@@ -3601,7 +3367,7 @@ exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden 
 exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden lockfile - c, x 1`] = `
 {
   "name": "tap-testdir-reify-filtered-reification-in-workspaces",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "apps/x": {
@@ -3634,7 +3400,7 @@ exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden 
 exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden lockfile - c, x, a 1`] = `
 {
   "name": "tap-testdir-reify-filtered-reification-in-workspaces",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "apps/x": {
@@ -3691,7 +3457,7 @@ exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden 
 exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden lockfile - foo/x linked, c, old x, removed a 1`] = `
 {
   "name": "tap-testdir-reify-filtered-reification-in-workspaces",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "apps/x": {
@@ -4552,7 +4318,7 @@ ArboristNode {
 exports[`test/arborist/reify.js TAP just the shrinkwrap cli-750-fresh > must match snapshot 1`] = `
 {
   "name": "monorepo",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
@@ -4575,17 +4341,6 @@ exports[`test/arborist/reify.js TAP just the shrinkwrap cli-750-fresh > must mat
       "resolved": "lib",
       "link": true
     }
-  },
-  "dependencies": {
-    "app": {
-      "version": "file:app",
-      "requires": {
-        "lib": "file:../lib"
-      }
-    },
-    "lib": {
-      "version": "file:lib"
-    }
   }
 }
 
@@ -4594,7 +4349,7 @@ exports[`test/arborist/reify.js TAP just the shrinkwrap cli-750-fresh > must mat
 exports[`test/arborist/reify.js TAP just the shrinkwrap yarn-lock-mkdirp > must match snapshot 1`] = `
 {
   "name": "tap-testdir-reify-just-the-shrinkwrap-yarn-lock-mkdirp",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
@@ -4612,13 +4367,6 @@ exports[`test/arborist/reify.js TAP just the shrinkwrap yarn-lock-mkdirp > must 
       "engines": {
         "node": ">=10"
       }
-    }
-  },
-  "dependencies": {
-    "mkdirp": {
-      "version": "1.0.2",
-      "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.2.tgz",
-      "integrity": "sha512-N2REVrJ/X/jGPfit2d7zea2J1pf7EAR5chIUcfHffAZ7gmlam5U65sAm76+o4ntQbSRdTjYf7qZz3chuHlwXEA=="
     }
   }
 }
@@ -17744,7 +17492,7 @@ exports[`test/arborist/reify.js TAP packageLockOnly can add deps > must match sn
 exports[`test/arborist/reify.js TAP packageLockOnly can add deps > must match snapshot 2`] = `
 {
   "name": "tap-testdir-reify-packageLockOnly-can-add-deps",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
@@ -17753,13 +17501,6 @@ exports[`test/arborist/reify.js TAP packageLockOnly can add deps > must match sn
       }
     },
     "node_modules/abbrev": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
-    }
-  },
-  "dependencies": {
-    "abbrev": {
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
       "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
@@ -17921,14 +17662,7 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP reify from old package-lock with bins > should add bins entry to package-lock packages entry 1`] = `
 Object {
-  "dependencies": Object {
-    "ruy": Object {
-      "integrity": "sha512-VYppDTCM6INWUMKlWiKws4nVMuCNU5h+xjF6lj/0y90rLq017/m8aEpNy4zQSZFV2qz66U/hRZwwlSLJ5l5JMQ==",
-      "resolved": "https://registry.npmjs.org/ruy/-/ruy-1.0.0.tgz",
-      "version": "1.0.0",
-    },
-  },
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "name": "old-package-lock-with-bins",
   "packages": Object {
     "": Object {
@@ -32821,7 +32555,7 @@ exports[`test/arborist/reify.js TAP save complete lockfile on update-all > shoul
 {
   "name": "save-package-lock-after-update-test",
   "version": "1.0.0",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
@@ -32832,13 +32566,6 @@ exports[`test/arborist/reify.js TAP save complete lockfile on update-all > shoul
       }
     },
     "node_modules/abbrev": {
-      "version": "1.0.4",
-      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.4.tgz",
-      "integrity": "sha1-vVWuXkE7oXIu5Mq6H26hBBSlns0="
-    }
-  },
-  "dependencies": {
-    "abbrev": {
       "version": "1.0.4",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.4.tgz",
       "integrity": "sha1-vVWuXkE7oXIu5Mq6H26hBBSlns0="
@@ -32852,7 +32579,7 @@ exports[`test/arborist/reify.js TAP save complete lockfile on update-all > shoul
 {
   "name": "save-package-lock-after-update-test",
   "version": "1.0.0",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
@@ -32863,13 +32590,6 @@ exports[`test/arborist/reify.js TAP save complete lockfile on update-all > shoul
       }
     },
     "node_modules/abbrev": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
-    }
-  },
-  "dependencies": {
-    "abbrev": {
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
       "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
@@ -32938,7 +32658,7 @@ exports[`test/arborist/reify.js TAP save package.json on update should not save 
 exports[`test/arborist/reify.js TAP save package.json on update should not save many deps in multiple package.json when using save=false > should update lockfile with many deps updated package.json save=false 1`] = `
 {
   "name": "tap-testdir-reify-save-package.json-on-update-should-not-save-many-deps-in-multiple-package.json-when-using-save-false",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
@@ -32987,39 +32707,6 @@ exports[`test/arborist/reify.js TAP save package.json on update should not save 
       "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
       "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
     }
-  },
-  "dependencies": {
-    "a": {
-      "version": "file:a",
-      "requires": {
-        "abbrev": "^1.0.4",
-        "once": "^1.3.2"
-      }
-    },
-    "abbrev": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
-    },
-    "b": {
-      "version": "file:b",
-      "requires": {
-        "abbrev": "^1.0.4"
-      }
-    },
-    "once": {
-      "version": "1.4.0",
-      "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
-      "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
-      "requires": {
-        "wrappy": "1"
-      }
-    },
-    "wrappy": {
-      "version": "1.0.2",
-      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
-      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
-    }
   }
 }
 
@@ -33028,7 +32715,7 @@ exports[`test/arborist/reify.js TAP save package.json on update should not save 
 exports[`test/arborist/reify.js TAP save package.json on update should save many deps in multiple package.json when using save=true > should update lockfile with many deps updated package.json save=true 1`] = `
 {
   "name": "tap-testdir-reify-save-package.json-on-update-should-save-many-deps-in-multiple-package.json-when-using-save-true",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
@@ -33073,39 +32760,6 @@ exports[`test/arborist/reify.js TAP save package.json on update should save many
       }
     },
     "node_modules/wrappy": {
-      "version": "1.0.2",
-      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
-      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
-    }
-  },
-  "dependencies": {
-    "a": {
-      "version": "file:a",
-      "requires": {
-        "abbrev": "^1.0.4",
-        "once": "^1.3.2"
-      }
-    },
-    "abbrev": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
-    },
-    "b": {
-      "version": "file:b",
-      "requires": {
-        "abbrev": "^1.0.4"
-      }
-    },
-    "once": {
-      "version": "1.4.0",
-      "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
-      "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
-      "requires": {
-        "wrappy": "1"
-      }
-    },
-    "wrappy": {
       "version": "1.0.2",
       "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
       "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
@@ -33298,7 +32952,7 @@ exports[`test/arborist/reify.js TAP save package.json on update should update si
 exports[`test/arborist/reify.js TAP save proper lockfile with bins when upgrading lockfile complete=false > should upgrade, with bins in place 1`] = `
 {
   "name": "tap-testdir-reify-save-proper-lockfile-with-bins-when-upgrading-lockfile-complete-false",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
@@ -33316,13 +32970,6 @@ exports[`test/arborist/reify.js TAP save proper lockfile with bins when upgradin
       "engines": {
         "node": ">=10"
       }
-    }
-  },
-  "dependencies": {
-    "semver": {
-      "version": "7.3.2",
-      "resolved": "https://registry.npmjs.org/semver/-/semver-7.3.2.tgz",
-      "integrity": "sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6/5XpPNp2DuRH6+9QLw/orhp72j87v8Qa1ScDkvrrBNpZcDejAirJmfXQ=="
     }
   }
 }
@@ -33332,7 +32979,7 @@ exports[`test/arborist/reify.js TAP save proper lockfile with bins when upgradin
 exports[`test/arborist/reify.js TAP save proper lockfile with bins when upgrading lockfile complete=true > should upgrade, with bins in place 1`] = `
 {
   "name": "tap-testdir-reify-save-proper-lockfile-with-bins-when-upgrading-lockfile-complete-true",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
@@ -33350,13 +32997,6 @@ exports[`test/arborist/reify.js TAP save proper lockfile with bins when upgradin
       "engines": {
         "node": ">=10"
       }
-    }
-  },
-  "dependencies": {
-    "semver": {
-      "version": "7.3.2",
-      "resolved": "https://registry.npmjs.org/semver/-/semver-7.3.2.tgz",
-      "integrity": "sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6/5XpPNp2DuRH6+9QLw/orhp72j87v8Qa1ScDkvrrBNpZcDejAirJmfXQ=="
     }
   }
 }
@@ -33373,46 +33013,7 @@ exports[`test/arborist/reify.js TAP saveBundle > must match snapshot 1`] = `
 
 exports[`test/arborist/reify.js TAP saving the ideal tree save some stuff > lock after save 1`] = `
 Object {
-  "dependencies": Object {
-    "a": Object {
-      "extraneous": true,
-      "from": "a@git+ssh://git@github.com:foo/bar#baz",
-      "version": "git+ssh://git@github.com:foo/bar#71f3ccfefba85d2048484569dba8c1829f6f41d7",
-    },
-    "b": Object {
-      "extraneous": true,
-      "resolved": "https://registry.npmjs.org/b/-/b-1.2.3.tgz",
-      "version": "1.2.3",
-    },
-    "c": Object {
-      "extraneous": true,
-      "from": "c@git+ssh://git@githost.com:a/b/c.git#master",
-      "version": "git+ssh://git@githost.com:a/b/c.git#71f3ccfefba85d2048484569dba8c1829f6f41d7",
-    },
-    "d": Object {
-      "extraneous": true,
-      "resolved": "https://registry.npmjs.org/c/-/c-1.2.3.tgz",
-      "version": "npm:c@1.2.3",
-    },
-    "e": Object {
-      "version": "file:e",
-    },
-    "f": Object {
-      "extraneous": true,
-      "from": "f@git+https://user:pass@github.com/baz/quux#asdf",
-      "version": "git+https://user:pass@github.com/baz/quux#71f3ccfefba85d2048484569dba8c1829f6f41d7",
-    },
-    "g": Object {
-      "extraneous": true,
-      "resolved": "https://registry.npmjs.org/g/-/g-1.2.3.tgz",
-    },
-    "h": Object {
-      "extraneous": true,
-      "resolved": "https://registry.npmjs.org/h/-/h-1.2.3.tgz",
-      "version": "1.2.3",
-    },
-  },
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "name": "tap-testdir-reify-saving-the-ideal-tree-save-some-stuff",
   "packages": Object {
     "": Object {
@@ -33523,7 +33124,7 @@ exports[`test/arborist/reify.js TAP store files with a custom indenting > must m
 {
 	"name": "tab-indented-package-json",
 	"version": "1.0.0",
-	"lockfileVersion": 2,
+	"lockfileVersion": 3,
 	"requires": true,
 	"packages": {
 		"": {
@@ -33534,13 +33135,6 @@ exports[`test/arborist/reify.js TAP store files with a custom indenting > must m
 			}
 		},
 		"node_modules/abbrev": {
-			"version": "1.1.1",
-			"resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-			"integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
-		}
-	},
-	"dependencies": {
-		"abbrev": {
 			"version": "1.1.1",
 			"resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
 			"integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
@@ -34589,16 +34183,6 @@ ArboristNode {
   "packageName": "test-bin-added-transitive-deps",
   "path": "{CWD}/test/arborist/tap-testdir-reify-transitive-deps-containing-asymmetrical-bin-with-lockfile",
   "version": "1.0.0",
-}
-`
-
-exports[`test/arborist/reify.js TAP update a bundling node without updating all of its deps > contains fsevents in lockfile 1`] = `
-Object {
-  "dev": true,
-  "integrity": "sha512-R4wDiBwZ0KzpgOWetKDug1FZcYhqYnUYKtfZYt4mD5SBz76q0KR4Q9o7GIPamsVPGmW3EYPPJ0dOOjvx32ldZA==",
-  "optional": true,
-  "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.1.2.tgz",
-  "version": "2.1.2",
 }
 `
 
@@ -53756,18 +53340,7 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP workspaces reify workspaces lockfile > should lock workspaces config 1`] = `
 Object {
-  "dependencies": Object {
-    "a": Object {
-      "requires": Object {
-        "b": "^1.0.0",
-      },
-      "version": "file:a",
-    },
-    "b": Object {
-      "version": "file:b",
-    },
-  },
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "name": "workspace-simple",
   "packages": Object {
     "": Object {
@@ -53801,47 +53374,7 @@ Object {
 
 exports[`test/arborist/reify.js TAP workspaces root as-a-workspace > should produce expected package-lock file 1`] = `
 Object {
-  "dependencies": Object {
-    "a": Object {
-      "requires": Object {
-        "abbrev": "^1.0.0",
-      },
-      "version": "file:a",
-    },
-    "abbrev": Object {
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
-      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "version": "1.1.1",
-    },
-    "b": Object {
-      "version": "file:b",
-    },
-    "workspaces-root-linked": Object {
-      "dependencies": Object {
-        "a": Object {
-          "requires": Object {
-            "abbrev": "^1.0.0",
-          },
-          "version": "file:a",
-        },
-        "abbrev": Object {
-          "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
-          "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-          "version": "1.1.1",
-        },
-        "b": Object {
-          "version": "file:b",
-        },
-      },
-      "requires": Object {
-        "a": "file:a",
-        "b": "file:b",
-        "workspaces-root-linked": "file:",
-      },
-      "version": "file:",
-    },
-  },
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "name": "workspaces-root-linked",
   "packages": Object {
     "": Object {

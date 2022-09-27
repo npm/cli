@@ -273,7 +273,11 @@ t.test('update a bundling node without updating all of its deps', t => {
     : () => t.ok(fs.lstatSync(bin).isSymbolicLink(), 'created symlink')
 
   const checkPackageLock = () => {
-    t.matchSnapshot(require(path + '/package-lock.json').dependencies.fsevents,
+    t.match(require(path + '/package-lock.json').packages['node_modules/fsevents'],
+      {
+        dev: true,
+        optional: true,
+      },
       'contains fsevents in lockfile')
   }
 
@@ -341,7 +345,7 @@ t.test('omit optional dep', t => {
   return arb.reify({ omit: ['optional'] }).then(tree => {
     t.equal(tree.children.get('fsevents'), undefined, 'no fsevents in tree')
     t.throws(() => fs.statSync(path + '/node_modules/fsevents'), 'no fsevents unpacked')
-    t.match(require(path + '/package-lock.json').dependencies.fsevents, {
+    t.match(require(path + '/package-lock.json').packages['node_modules/fsevents'], {
       dev: true,
       optional: true,
     }, 'fsevents present in lockfile')

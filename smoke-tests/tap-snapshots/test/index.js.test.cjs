@@ -366,7 +366,7 @@ exports[`test/index.js TAP npm install dev dep > should have expected dev dep ad
 {
   "name": "project",
   "version": "1.0.0",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
@@ -393,19 +393,6 @@ exports[`test/index.js TAP npm install dev dep > should have expected dev dep ad
       "funding": {
         "url": "https://github.com/sponsors/isaacs"
       }
-    }
-  },
-  "dependencies": {
-    "abbrev": {
-      "version": "1.0.4",
-      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.4.tgz",
-      "integrity": "sha1-vVWuXkE7oXIu5Mq6H26hBBSlns0="
-    },
-    "promise-all-reject-late": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/promise-all-reject-late/-/promise-all-reject-late-1.0.1.tgz",
-      "integrity": "sha512-vuf0Lf0lOxyQREH7GDIOUMLS7kz+gs8i6B+Yi8dC68a2sychGrHTJYghMBD6k7eUcH0H5P73EckCA48xijWqXw==",
-      "dev": true
     }
   }
 }
@@ -453,7 +440,7 @@ exports[`test/index.js TAP npm install prodDep@version > should have expected lo
 {
   "name": "project",
   "version": "1.0.0",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
@@ -465,13 +452,6 @@ exports[`test/index.js TAP npm install prodDep@version > should have expected lo
       }
     },
     "node_modules/abbrev": {
-      "version": "1.0.4",
-      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.4.tgz",
-      "integrity": "sha1-vVWuXkE7oXIu5Mq6H26hBBSlns0="
-    }
-  },
-  "dependencies": {
-    "abbrev": {
       "version": "1.0.4",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.4.tgz",
       "integrity": "sha1-vVWuXkE7oXIu5Mq6H26hBBSlns0="
@@ -642,7 +622,7 @@ exports[`test/index.js TAP npm uninstall > should have expected uninstall lockfi
 {
   "name": "project",
   "version": "1.0.0",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
@@ -654,13 +634,6 @@ exports[`test/index.js TAP npm uninstall > should have expected uninstall lockfi
       }
     },
     "node_modules/abbrev": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
-    }
-  },
-  "dependencies": {
-    "abbrev": {
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
       "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
@@ -700,7 +673,7 @@ exports[`test/index.js TAP npm update dep > should have expected update lockfile
 {
   "name": "project",
   "version": "1.0.0",
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
@@ -727,19 +700,6 @@ exports[`test/index.js TAP npm update dep > should have expected update lockfile
       "funding": {
         "url": "https://github.com/sponsors/isaacs"
       }
-    }
-  },
-  "dependencies": {
-    "abbrev": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
-    },
-    "promise-all-reject-late": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/promise-all-reject-late/-/promise-all-reject-late-1.0.1.tgz",
-      "integrity": "sha512-vuf0Lf0lOxyQREH7GDIOUMLS7kz+gs8i6B+Yi8dC68a2sychGrHTJYghMBD6k7eUcH0H5P73EckCA48xijWqXw==",
-      "dev": true
     }
   }
 }
