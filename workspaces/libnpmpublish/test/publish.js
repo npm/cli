@@ -79,7 +79,66 @@ t.test('basic publish', async t => {
   t.ok(ret, 'publish succeeded')
 })
 
-t.test('scoped publish', async t => {
+t.test('scoped publish - default access', async t => {
+  const manifest = {
+    name: '@claudiahdz/libnpmpublish',
+    version: '1.0.0',
+    description: 'some stuff',
+  }
+
+  const tarData = await pack(`file:${testDir}`, { ...OPTS })
+  const shasum = crypto.createHash('sha1').update(tarData).digest('hex')
+  const integrity = ssri.fromData(tarData, { algorithms: ['sha512'] })
+  const packument = {
+    _id: '@claudiahdz/libnpmpublish',
+    name: '@claudiahdz/libnpmpublish',
+    description: 'some stuff',
+    'dist-tags': {
+      latest: '1.0.0',
+    },
+    versions: {
+      '1.0.0': {
+        _id: '@claudiahdz/libnpmpublish@1.0.0',
+        _nodeVersion: process.versions.node,
+        _npmVersion: '6.13.7',
+        name: '@claudiahdz/libnpmpublish',
+        version: '1.0.0',
+        description: 'some stuff',
+        dist: {
+          shasum,
+          integrity: integrity.toString(),
+          tarball: 'http://mock.reg/@claudiahdz/libnpmpublish/'
+            + '-/@claudiahdz/libnpmpublish-1.0.0.tgz',
+        },
+      },
+    },
+    access: 'public',
+    _attachments: {
+      '@claudiahdz/libnpmpublish-1.0.0.tgz': {
+        content_type: 'application/octet-stream',
+        data: tarData.toString('base64'),
+        length: tarData.length,
+      },
+    },
+  }
+
+  const srv = tnock(t, REG)
+  srv.put('/@claudiahdz%2flibnpmpublish', body => {
+    t.same(body, packument, 'posted packument matches expectations')
+    return true
+  }, {
+    authorization: 'Bearer deadbeef',
+  }).reply(201, {})
+
+  const ret = await publish(manifest, tarData, {
+    ...OPTS,
+    npmVersion: '6.13.7',
+    token: 'deadbeef',
+  })
+  t.ok(ret, 'publish succeeded')
+})
+
+t.test('scoped publish - restricted access', async t => {
   const manifest = {
     name: '@claudiahdz/libnpmpublish',
     version: '1.0.0',
@@ -132,6 +191,7 @@ t.test('scoped publish', async t => {
 
   const ret = await publish(manifest, tarData, {
     ...OPTS,
+    access: 'restricted',
     npmVersion: '6.13.7',
     token: 'deadbeef',
   })
