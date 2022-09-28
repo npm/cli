@@ -25,6 +25,7 @@ graph LR;
   libnpmaccess-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmaccess-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmdiff-->npm-package-arg;
+  libnpmdiff-->npmcli-arborist["@npmcli/arborist"];
   libnpmdiff-->npmcli-disparity-colors["@npmcli/disparity-colors"];
   libnpmdiff-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmdiff-->npmcli-installed-package-contents["@npmcli/installed-package-contents"];
@@ -54,6 +55,7 @@ graph LR;
   libnpmorg-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmorg-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmpack-->npm-package-arg;
+  libnpmpack-->npmcli-arborist["@npmcli/arborist"];
   libnpmpack-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmpack-->npmcli-run-script["@npmcli/run-script"];
   libnpmpack-->npmcli-template-oss["@npmcli/template-oss"];
@@ -139,8 +141,6 @@ graph LR;
   npm-package-arg-->semver;
   npm-package-arg-->validate-npm-package-name;
   npm-packlist-->ignore-walk;
-  npm-packlist-->npm-bundled;
-  npm-packlist-->npm-normalize-package-bin;
   npm-profile-->npm-registry-fetch;
   npm-profile-->proc-log;
   npm-registry-fetch-->make-fetch-happen;
@@ -333,6 +333,7 @@ graph LR;
   libnpmdiff-->diff;
   libnpmdiff-->minimatch;
   libnpmdiff-->npm-package-arg;
+  libnpmdiff-->npmcli-arborist["@npmcli/arborist"];
   libnpmdiff-->npmcli-disparity-colors["@npmcli/disparity-colors"];
   libnpmdiff-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmdiff-->npmcli-installed-package-contents["@npmcli/installed-package-contents"];
@@ -379,6 +380,7 @@ graph LR;
   libnpmorg-->tap;
   libnpmpack-->nock;
   libnpmpack-->npm-package-arg;
+  libnpmpack-->npmcli-arborist["@npmcli/arborist"];
   libnpmpack-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmpack-->npmcli-run-script["@npmcli/run-script"];
   libnpmpack-->npmcli-template-oss["@npmcli/template-oss"];
@@ -554,10 +556,7 @@ graph LR;
   npm-package-arg-->proc-log;
   npm-package-arg-->semver;
   npm-package-arg-->validate-npm-package-name;
-  npm-packlist-->glob;
   npm-packlist-->ignore-walk;
-  npm-packlist-->npm-bundled;
-  npm-packlist-->npm-normalize-package-bin;
   npm-pick-manifest-->npm-install-checks;
   npm-pick-manifest-->npm-normalize-package-bin;
   npm-pick-manifest-->npm-package-arg;
@@ -756,12 +755,13 @@ Each group depends on packages lower down the chain, nothing depends on
 packages higher up the chain.
 
  - npm
- - libnpmexec, libnpmfund
- - @npmcli/arborist, libnpmpublish
- - @npmcli/metavuln-calculator, libnpmdiff, libnpmpack
+ - libnpmpublish
+ - libnpmdiff, libnpmexec, libnpmfund, libnpmpack
+ - @npmcli/arborist
+ - @npmcli/metavuln-calculator
  - pacote, libnpmaccess, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, npm-profile
  - npm-registry-fetch
  - make-fetch-happen, libnpmversion, @npmcli/config, init-package-json
- - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, @npmcli/git, @npmcli/run-script, npm-packlist, read-package-json, @npmcli/query, readdir-scoped-modules, promzard
- - npm-bundled, read-package-json-fast, @npmcli/fs, unique-filename, @npmcli/promise-spawn, npm-package-arg, normalize-package-data, bin-links, nopt, npm-install-checks, npmlog, dezalgo, read
+ - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, @npmcli/git, @npmcli/run-script, read-package-json, @npmcli/query, readdir-scoped-modules, promzard
+ - npm-bundled, read-package-json-fast, @npmcli/fs, unique-filename, @npmcli/promise-spawn, npm-package-arg, npm-packlist, normalize-package-data, bin-links, nopt, npm-install-checks, npmlog, dezalgo, read
  - npm-normalize-package-bin, @npmcli/name-from-folder, semver, @npmcli/move-file, fs-minipass, infer-owner, ssri, unique-slug, proc-log, @npmcli/node-gyp, hosted-git-info, validate-npm-package-name, ignore-walk, minipass-fetch, @npmcli/package-json, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, parse-conflict-json, wrappy, treeverse, @npmcli/eslint-config, @npmcli/template-oss, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, ini, npm-audit-report, npm-user-validate
