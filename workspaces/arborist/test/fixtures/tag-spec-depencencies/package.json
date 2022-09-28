@@ -1,0 +1,8 @@
+{
+  "name": "tag-spec-dependencies-project",
+  "version": "1.0.0",
+  "dependencies": {
+    "kewu": "1.0.0",
+    "wuke": "1.0.1"
+  }
+}

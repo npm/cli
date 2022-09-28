@@ -1,0 +1,100 @@
+{
+  "_id": "wuke",
+  "_rev": "3-d23303f2f68e74c7f53be5c8dbcccfa0",
+  "name": "wuke",
+  "dist-tags": {
+    "latest": "1.0.1",
+    "stable": "1.0.0",
+    "next": "1.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "wuke",
+      "version": "1.0.0",
+      "_id": "wuke@1.0.0",
+      "_nodeVersion": "16.15.1",
+      "_npmVersion": "8.17.0",
+      "dist": {
+        "integrity": "sha512-zrae28H8/RvjcNGBKQ8ZhXwn4xSWzNnhG+nhSGJK0nB/d1ifUXl150RbHIqBm9B0FQyHcgTko8Y/8SelX/Qdbg==",
+        "shasum": "d050c2b3bf9fa8ec408f42b96bf279be285b4b79",
+        "tarball": "https://registry.npmjs.org/wuke/-/wuke-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 43,
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIDkCRi5/smALz/Cv5fx8S/nWdMpPwVNd9dr4mVCfvQcpAiEA2/99URPwLJTvXmizwCFxdAwC5Sn0l3yg7Z44KwIYyps="
+          }
+        ],
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJjBHv8ACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2Vmoh4g//XYRCGOf9Ud42tKIqYp8iy5AwGulatTgK97s3HTMpTsO4rczq\r\nY3yCeGUcGoumcXqE40GOARVWGFLxDhgt0+cNfTFCyw2qKnWZzBnXO7rIsmpe\r\ndrS0PAj+UQ4EiwGMEQMcaRiBO1dH3hue1gW6EEGLEjOjN74LEhYjXfHxAPvb\r\nHlLJtOcuE1CkbW+ZNkQ4ybApwE71wJy2fF0m+qfwxfhbDVLVsj1Toi6l4xxG\r\nDU+2vHHnRbyc90kJ82k1QBIJfS6aL1UYicoxl39Rf9SLWCwffFdtwmOLxPbs\r\neFoO6NIy+BUlCnENdSPBrl6II8MfMR9A1Ckil8CAfXIbVbNOR6L0XKd2nsgg\r\nG2nm8yzvdY1KVpb1mQfYOdCm3KuNSQ5BSPmA9XQUYYusnprMZxaF9x7CtZkd\r\ngcCpsF46S5eBeuzVxyTsBzW4H6zJRHy48DnxMDITMtLuJFqF1s0kk8KxidKw\r\nb3he+35d17kK1YuRvNDRnXgBETSFsN6XubgNeR4jys6mngVu6wI+KcdQMXnq\r\nXOa7rlG5uVmUlWfdhlBZZwdB6SwqhvpnSG8JPWbhCFsjLeoi58JBAVEgRmRz\r\nTRl+GpnHkudS9+DXirZwKBfMTEzPwvSXtqQz9tbd51ThBHD1P3r8eMthHvWY\r\n3W3YfpqId6OgE21npBplIoKwRcWH6B5+4go=\r\n=KHcG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "gemwuu",
+        "email": "gemwuu@gmail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "gemwuu",
+          "email": "gemwuu@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/wuke_1.0.0_1661238267937_0.5672981357422893"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.1": {
+      "name": "wuke",
+      "version": "1.0.1",
+      "_id": "wuke@1.0.1",
+      "_nodeVersion": "16.15.1",
+      "_npmVersion": "8.17.0",
+      "dist": {
+        "integrity": "sha512-ym3gum9DUBKAQtb1bhdU6LAa1tWAipJm6BuB9wZrHwmMD3slWHIC9041NTWDEfcVfIvbAH3FGnUF4VUqIzcyYw==",
+        "shasum": "382526aa008482c45c88dd5a749909f93ad71b87",
+        "tarball": "https://registry.npmjs.org/wuke/-/wuke-1.0.1.tgz",
+        "fileCount": 1,
+        "unpackedSize": 43,
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIBQ1QL5HHh/Kvd7d2/G0PqrD/oxkF6lMElesGSDP/ENeAiB05w/UchB6ym/gJIp98XKut5/tu5rVC76m3BVTbIJU5Q=="
+          }
+        ],
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJjBHwSACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2VmoAIw//YZRkizGDR387mDMDztkywUpkQKUt43v9WxCsqiCLaWMAbV9w\r\nvqNCDym+wU7JfDDfH03ryAron9P31g0ak1nrpdzOjhoSRINZkCrlhETKCWZM\r\nWjwJgz1TkZ6nMrRQCDpadZm+wCEF0ZGqGlJg+dgWhK8Q5guIkAMjR0dfn0+b\r\nnR+ZxAtBMrWJUHApUO1Odi8JWuTlPsZ64yy/UEkEdDvZpd6/qWNjt0+bpWDp\r\nwXH0Z2y+zTtgSS2n9Zfw+WxOuqldBiHowfWa8bX6HBG+KFNJuIA6ODUvTwbS\r\nhMZQ3EKEYWG+zCLLIYMRkhoE0pPa5gKWpuc17bezYsfWWSQBj3v1Dv7+DtB+\r\nuyY+og34xAgEMOJrNn82OmAJWsGXKBOWUvXqKsJGqJosUU1IXK/BnUp/B4lK\r\nA7a0hWLvY6xdGn0Pu+bSp909I3XCVONGdrYzggbsEPZzn8DM4dJ54IYvc/tm\r\nqwH7/cOH/FSUaH7XvgO4rQWWbvON6g+94uVKZosOyaQ8GtPdzPL4KtGH7a00\r\nJrmLzIYwN+f7HJ0D4SPENZTR35/e7y2+ewoYhw6eGyuErRYsy4wyk6dM9ooE\r\n/iippxE4PPbNwxjcXxoCylALs6QZnyzliS7MZd362uCPQdLjqPXoVNzBZxVR\r\nWawB6J85DvluYJtfJbIs5jkIv7mVSzwnF9o=\r\n=if4q\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "gemwuu",
+        "email": "gemwuu@gmail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "gemwuu",
+          "email": "gemwuu@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/wuke_1.0.1_1661238290371_0.7887855147024714"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2022-08-23T07:04:27.937Z",
+    "1.0.0": "2022-08-23T07:04:28.096Z",
+    "modified": "2022-08-23T07:05:50.354Z",
+    "1.0.1": "2022-08-23T07:04:50.523Z"
+  },
+  "maintainers": [
+    {
+      "name": "gemwuu",
+      "email": "gemwuu@gmail.com"
+    }
+  ],
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

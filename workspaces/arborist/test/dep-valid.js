@@ -126,9 +126,31 @@ t.notOk(depValid({
   },
 }, './tarball.tgz', null, emptyRequestor), 'too uncertain, nope')
 
-t.ok(depValid({
+t.notOk(depValid({
   resolved: 'https://registry.npmjs.org/foo/foo-1.2.3.tgz',
 }, 'latest', null, emptyRequestor), 'tagged registry version needs remote tarball')
+
+t.ok(depValid({ name: 'foo', version: '1.0.0' }, 'latest', null, {
+  children: new Map([
+    ['foo', { name: 'foo', version: '1.0.0' }],
+  ]),
+  edgesOut: new Map(),
+  errors: [],
+}), 'tagged version needs match exact version of requestor\'s children')
+
+t.notOk(depValid({ name: 'foo', version: '1.0.1' }, 'latest', null, {
+  children: new Map([
+    ['foo', { name: 'foo', version: '1.0.0' }],
+  ]),
+  edgesOut: new Map(),
+  errors: [],
+}), 'tagged version doesn\'t match exact version of requestor\'s children')
+
+t.notOk(depValid({ name: 'foo', version: '1.0.1' }, 'latest', null, {
+  children: new Map(),
+  edgesOut: new Map(),
+  errors: [],
+}), 'tagged version doesn\'t match exact version of requestor without children')
 
 t.notOk(depValid({
   resolved: 'git+https://registry.npmjs.org/foo/foo-1.2.3.git',

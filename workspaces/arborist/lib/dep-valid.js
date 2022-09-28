@@ -62,11 +62,12 @@ const depValid = (child, requested, requestor) => {
       // check that the alias target is valid
       return depValid(child, requested.subSpec, requestor)
 
-    case 'tag':
-      // if it's a tag, we just verify that it has a tarball resolution
-      // presumably, it came from the registry and was tagged at some point
-      return child.resolved && npa(child.resolved).type === 'remote'
-
+    case 'tag': {
+      // if it's a tag, requestor has the exact version of the requested tag
+      // so child must be the same version as requestor's child version
+      const exactNode = requestor.children ? requestor.children.get(child.name) : null
+      return exactNode ? child.version === exactNode.version : false
+    }
     case 'remote':
       // verify that we got it from the desired location
       return child.resolved === requested.fetchSpec
