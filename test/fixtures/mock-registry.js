@@ -5,6 +5,7 @@
  * for tests against any registry data.
  */
 const pacote = require('pacote')
+const Arborist = require('@npmcli/arborist')
 const npa = require('npm-package-arg')
 class MockRegistry {
   #tap
@@ -250,7 +251,7 @@ class MockRegistry {
   async tarball ({ manifest, tarball }) {
     const nock = this.nock
     const dist = new URL(manifest.dist.tarball)
-    const tar = await pacote.tarball(tarball)
+    const tar = await pacote.tarball(tarball, { Arborist })
     nock.get(dist.pathname).reply(200, tar)
     return nock
   }

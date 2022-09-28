@@ -2,6 +2,7 @@ const t = require('tap')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
 const MockRegistry = require('../../fixtures/mock-registry.js')
 const pacote = require('pacote')
+const Arborist = require('@npmcli/arborist')
 const path = require('path')
 const fs = require('@npmcli/fs')
 const npa = require('npm-package-arg')
@@ -227,7 +228,7 @@ t.test('tarball', async t => {
       'index.js': 'console.log("hello world"}',
     },
   })
-  const tarball = await pacote.tarball(home)
+  const tarball = await pacote.tarball(home, { Arborist })
   const tarFilename = path.join(home, 'tarball.tgz')
   await fs.writeFile(tarFilename, tarball)
   const registry = new MockRegistry({

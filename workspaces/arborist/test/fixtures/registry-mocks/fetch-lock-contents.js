@@ -1,5 +1,6 @@
 // fetch all the deps and tarballs in a v2 lockfile
 const pacote = require('pacote')
+const Arborist = require('../../index.js')
 const url = require('url')
 const mkdirp = require('mkdirp')
 const {dirname, resolve} = require('path')
@@ -29,7 +30,7 @@ const main = async lock => {
       continue
     const path = url.parse(meta.resolved).pathname.replace(/^\/@?/, '')
     const tgzFile = resolve(dir, path)
-    await pacote.tarball.file(meta.resolved, tgzFile)
+    await pacote.tarball.file(meta.resolved, tgzFile, { Arborist })
   }
   console.log('OK!')
 }
