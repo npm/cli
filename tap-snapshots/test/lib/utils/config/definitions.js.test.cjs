@@ -981,9 +981,9 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for insta
 * Default: true
 * Type: Boolean
 
-When set file: protocol dependencies that exist outside of the project root
-will be packed and installed as regular dependencies instead of creating a
-symlink. This option has no effect on workspaces.
+When set file: protocol dependencies will be packed and installed as regular
+dependencies instead of creating a symlink. This option has no effect on
+workspaces.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for json 1`] = `
