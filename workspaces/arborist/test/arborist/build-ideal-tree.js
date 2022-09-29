@@ -3935,7 +3935,14 @@ t.test('store files with a custom indenting', async t => {
 })
 
 t.test('should install accurate version when deps has dist-tag spec', async t => {
-  const path = resolve(fixtures, 'tag-spec-depencencies')
+  const tabIndentedPackageJson =
+    fs.readFileSync(
+      resolve(fixtures, 'tag-spec-depencencies/package.json'),
+      'utf8'
+    ).replace(/\r\n/g, '\n')
+  const path = t.testdir({
+    'package.json': tabIndentedPackageJson,
+  })
   const tree = await buildIdeal(path)
   t.matchSnapshot(String(tree.meta))
 })
