@@ -37,8 +37,8 @@ t.test('writes tarball to file when dryRun === false', async t => {
       name: 'my-cool-pkg',
       version: '1.0.0',
       scripts: {
-        prepack: 'touch prepack',
-        postpack: 'touch postpack',
+        prepack: 'touch prepack && sleep 1',
+        postpack: 'sleep 1 && touch postpack',
       },
     }, null, 2),
   })
