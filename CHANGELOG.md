@@ -1,5 +1,42 @@
 # Changelog
 
+## [9.0.0-pre.3](https://github.com/npm/cli/compare/v9.0.0-pre.2...v9.0.0-pre.3) (2022-09-30)
+
+### ⚠️ BREAKING CHANGES
+
+* `npm pack` now follows a strict order of operations when applying ignore rules. If a files array is present in the package.json, then rules in .gitignore and .npmignore files from the root will be ignored.
+* `--timing` file changes:
+    - When run with the `--timing` flag, `npm` now writes timing data to a
+    file alongside the debug log data, respecting the `logs-dir` option and
+    falling back to `<CACHE>/_logs/` dir, instead of directly inside the
+    cache directory.
+    - The timing file data is no longer newline delimited JSON, and instead
+    each run will create a uniquely named `<ID>-timing.json` file, with the
+    `<ID>` portion being the same as the debug log.
+    - Finally, the data inside the file now has three top level keys,
+    `metadata`, `timers, and `unfinishedTimers` instead of everything being
+    a top level key.
+
+### Features
+
+* [`3ae796d`](https://github.com/npm/cli/commit/3ae796d937bd36a5b1b9fd6e9e8473b4f2ddc32d) implement new `npm-packlist` behavior (@lukekarrys)
+* [`e64d69a`](https://github.com/npm/cli/commit/e64d69aedecc0943425605b3a6dc68aec3ad93aa) [#5581](https://github.com/npm/cli/pull/5581) write eresolve error files to the logs directory (@lukekarrys)
+* [`3445da0`](https://github.com/npm/cli/commit/3445da0138f9eed9d73d2b3f5f451fcc1fa2e3fe) timings are now written alongside debug log files (@lukekarrys)
+
+### Documentation
+
+* [`f0e7584`](https://github.com/npm/cli/commit/f0e758494698d9dd8a58d07bf71c87608c36869e) [#5601](https://github.com/npm/cli/pull/5601) update docs/logging for new --access default (@wraithgar)
+
+### Dependencies
+
+* [`bc21552`](https://github.com/npm/cli/commit/bc2155247d00b7a868c414f4bc86993069b035f9) [#5603](https://github.com/npm/cli/pull/5603) `npm-package-arg@9.1.2`
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.0.0-pre.2...arborist-v6.0.0-pre.3): `@npmcli/arborist@6.0.0-pre.3`
+* [Workspace](https://github.com/npm/cli/compare/libnpmdiff-v5.0.0-pre.0...libnpmdiff-v5.0.0-pre.1): `libnpmdiff@5.0.0-pre.1`
+* [Workspace](https://github.com/npm/cli/compare/libnpmexec-v5.0.0-pre.2...libnpmexec-v5.0.0-pre.3): `libnpmexec@5.0.0-pre.3`
+* [Workspace](https://github.com/npm/cli/compare/libnpmfund-v4.0.0-pre.2...libnpmfund-v4.0.0-pre.3): `libnpmfund@4.0.0-pre.3`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpack-v5.0.0-pre.0...libnpmpack-v5.0.0-pre.1): `libnpmpack@5.0.0-pre.1`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpublish-v7.0.0-pre.0...libnpmpublish-v7.0.0-pre.1): `libnpmpublish@7.0.0-pre.1`
+
 ## [9.0.0-pre.2](https://github.com/npm/cli/compare/v9.0.0-pre.1...v9.0.0-pre.2) (2022-09-23)
 
 ### ⚠️ BREAKING CHANGES
