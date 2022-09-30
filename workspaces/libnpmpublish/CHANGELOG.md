@@ -1,5 +1,19 @@
 # Changelog
 
+## [7.0.0-pre.1](https://github.com/npm/cli/compare/libnpmpublish-v7.0.0-pre.0...libnpmpublish-v7.0.0-pre.1) (2022-09-30)
+
+### ⚠️ BREAKING CHANGES
+
+* The default value of `access` is now `public`
+
+### Features
+
+* [`525654e`](https://github.com/npm/cli/commit/525654e957a80c7f47472e18240e3c8d94e0568f) default access to `public` (@wraithgar)
+
+### Documentation
+
+* [`f0e7584`](https://github.com/npm/cli/commit/f0e758494698d9dd8a58d07bf71c87608c36869e) [#5601](https://github.com/npm/cli/pull/5601) update docs/logging for new --access default (@wraithgar)
+
 ## [7.0.0-pre.0](https://github.com/npm/cli/compare/libnpmpublish-v6.0.5...libnpmpublish-v7.0.0-pre.0) (2022-09-08)
 
 ### ⚠ BREAKING CHANGES
