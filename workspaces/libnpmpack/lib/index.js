@@ -18,13 +18,15 @@ async function pack (spec = 'file:.', opts = {}) {
   // mode
   const banner = !opts.silent
 
+  const stdio = opts.foregroundScripts ? 'inherit' : 'pipe'
+
   if (spec.type === 'directory') {
     // prepack
     await runScript({
       ...opts,
       event: 'prepack',
       path: spec.fetchSpec,
-      stdio: 'inherit',
+      stdio,
       pkg: manifest,
       banner,
     })
@@ -50,7 +52,7 @@ async function pack (spec = 'file:.', opts = {}) {
       ...opts,
       event: 'postpack',
       path: spec.fetchSpec,
-      stdio: 'inherit',
+      stdio,
       pkg: manifest,
       banner,
       env: {
