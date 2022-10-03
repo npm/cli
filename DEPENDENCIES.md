@@ -403,6 +403,7 @@ graph LR;
   libnpmpack-->npmcli-run-script["@npmcli/run-script"];
   libnpmpack-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmpack-->pacote;
+  libnpmpack-->spawk;
   libnpmpack-->tap;
   libnpmpublish-->libnpmpack;
   libnpmpublish-->lodash.clonedeep;
