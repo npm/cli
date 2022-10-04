@@ -117,7 +117,7 @@
     "read-package-json-fast": "^2.0.3",
     "readdir-scoped-modules": "^1.1.0",
     "rimraf": "^3.0.2",
-    "semver": "^7.3.7",
+    "semver": "^7.3.8",
     "ssri": "^9.0.1",
     "tar": "^6.1.11",
     "text-table": "~0.2.0",
