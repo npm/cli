@@ -1,9 +1,17 @@
+#!/usr/bin/env node
+
 'use strict'
 
 // Generates our dependency graph documents in DEPENDENCIES.md.
 
 const Arborist = require('@npmcli/arborist')
+const mapWorkspaces = require('@npmcli/map-workspaces')
 const fs = require('fs')
+const log = require('proc-log')
+
+if (process.argv.includes('--debug')) {
+  process.on('log', console.error)
+}
 
 // To re-create npm-cli-repos.txt run:
 /* eslint-disable-next-line max-len */
@@ -66,6 +74,7 @@ function escapeName (name) {
   }
   return name
 }
+
 function stripName (name) {
   if (name.startsWith('@')) {
     const parts = name.slice(1).split('/')
@@ -75,6 +84,14 @@ function stripName (name) {
 }
 
 const main = async function () {
+  // add all of the cli's public workspaces as package names
+  const workspaces = await mapWorkspaces({ pkg: require('../package.json') })
+  for (const [key, value] of workspaces.entries()) {
+    if (!require(value + '/package.json').private) {
+      repos.push(key)
+    }
+  }
+
   const arborist = new Arborist({
     prefix: process.cwd(),
     path: process.cwd(),
@@ -82,14 +99,8 @@ const main = async function () {
   const tree = await arborist.loadVirtual({ path: process.cwd(), name: 'npm' })
   tree.name = 'npm'
 
-  const {
-    heirarchy: heirarchyOurs,
-    annotations: annotationsOurs,
-  } = walk(tree, true)
-
-  const {
-    annotations: annotationsAll,
-  } = walk(tree, false)
+  const [annotationsOurs, heirarchyOurs] = walk(tree, true)
+  const [annotationsAll] = walk(tree, false)
 
   const out = [
     '# npm dependencies',
@@ -121,31 +132,52 @@ const main = async function () {
 const walk = function (tree, onlyOurs) {
   const annotations = [] // mermaid dependency annotations
   const dependedBy = {}
+
   iterate(tree, dependedBy, annotations, onlyOurs)
+
   const allDeps = new Set(Object.keys(dependedBy))
   const foundDeps = new Set()
   const heirarchy = []
-  while (allDeps.size) {
-    const level = []
-    for (const dep of allDeps) {
-      if (!dependedBy[dep].size) {
-        level.push(dep)
-        foundDeps.add(dep)
+
+  if (onlyOurs) {
+    while (allDeps.size) {
+      log.silly('SIZE', allDeps.size)
+      const level = []
+
+      for (const dep of allDeps) {
+        log.silly(dep, '::', [...dependedBy[dep]].join(', '))
+        log.silly('-'.repeat(80))
+
+        if (!dependedBy[dep].size) {
+          level.push(dep)
+          foundDeps.add(dep)
+        }
       }
-    }
-    for (const dep of allDeps) {
-      for (const found of foundDeps) {
-        allDeps.delete(found)
-        dependedBy[dep].delete(found)
+
+      log.silly('LEVEL', level.length)
+      log.silly('FOUND', foundDeps.size)
+
+      for (const dep of allDeps) {
+        for (const found of foundDeps) {
+          allDeps.delete(found)
+          dependedBy[dep].delete(found)
+        }
       }
+
+      log.silly('SIZE', allDeps.size)
+
+      if (!level.length) {
+        const remaining = `Remaining deps: ${[...allDeps.keys()]}`
+        throw new Error(`Would do an infinite loop here, need to debug. ${remaining}`)
+      }
+
+      heirarchy.push(level.join(', '))
+      log.silly('HIEARARCHY', heirarchy.length)
+      log.silly('='.repeat(80))
     }
-    if (!level.length) {
-      throw new Error('Would do an infinite loop here, need to debug')
-    }
-    heirarchy.push(level.join(', '))
   }
 
-  return { heirarchy, annotations }
+  return [annotations, heirarchy]
 }
 const iterate = function (node, dependedBy, annotations, onlyOurs) {
   if (!dependedBy[node.packageName]) {
@@ -167,10 +199,8 @@ const iterate = function (node, dependedBy, annotations, onlyOurs) {
 }
 
 main().then(() => {
-  process.exit(0)
-  return 0
+  return process.exit(0)
 }).catch(err => {
   console.error(err)
-  process.exit(1)
-  return 1
+  return process.exit(1)
 })
