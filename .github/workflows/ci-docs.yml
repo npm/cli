@@ -29,6 +29,7 @@ jobs:
             os: ubuntu-latest
             shell: bash
         node-version:
+          - 18.0.0
     runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
