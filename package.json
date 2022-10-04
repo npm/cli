@@ -102,7 +102,7 @@
     "npm-install-checks": "^5.0.0",
     "npm-package-arg": "^9.1.2",
     "npm-pick-manifest": "^7.0.2",
-    "npm-profile": "^6.2.0",
+    "npm-profile": "^7.0.0",
     "npm-registry-fetch": "^13.3.1",
     "npm-user-validate": "^1.0.1",
     "npmlog": "^6.0.2",
