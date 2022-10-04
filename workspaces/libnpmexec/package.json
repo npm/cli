@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "@npmcli/arborist": "^6.0.0-pre.3",
-    "@npmcli/ci-detect": "^2.0.0",
+    "@npmcli/ci-detect": "^3.0.0",
     "@npmcli/fs": "^2.1.1",
     "@npmcli/run-script": "^4.2.0",
     "chalk": "^4.1.0",
