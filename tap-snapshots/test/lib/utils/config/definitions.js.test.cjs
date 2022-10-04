@@ -336,8 +336,7 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for cache
 * Default: Windows: \`%LocalAppData%\\npm-cache\`, Posix: \`~/.npm\`
 * Type: Path
 
-The location of npm's cache directory. See [\`npm
-cache\`](/commands/npm-cache)
+The location of npm's cache directory.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for cache-max 1`] = `
