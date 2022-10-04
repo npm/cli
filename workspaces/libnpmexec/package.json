@@ -62,7 +62,7 @@
     "@npmcli/ci-detect": "^3.0.0",
     "@npmcli/fs": "^2.1.1",
     "@npmcli/run-script": "^4.2.0",
-    "chalk": "^4.1.0",
+    "chalk": "^5.0.1",
     "mkdirp-infer-owner": "^2.0.0",
     "npm-package-arg": "^9.0.1",
     "npmlog": "^6.0.2",
