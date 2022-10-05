@@ -3,13 +3,11 @@
 const t = require('tap')
 
 const tspawk = require('./fixtures/tspawk.js')
-const spawk = tspawk(t)
 
 const fs = require('fs')
 const path = require('path')
 const pack = require('../lib/index.js')
 const tnock = require('./fixtures/tnock.js')
-const { load: loadMockNpm } = require('../../../test/fixtures/mock-npm.js')
 
 const OPTS = {
   registry: 'https://mock.reg/',
@@ -140,7 +138,7 @@ t.test('packs from registry spec', async t => {
 })
 
 t.test('runs scripts in foreground when foregroundScripts === true', async t => {
-  const { npm } = await loadMockNpm(t, {})
+  const spawk = tspawk(t)
 
   const testDir = t.testdir({
     'package.json': JSON.stringify({
@@ -148,7 +146,6 @@ t.test('runs scripts in foreground when foregroundScripts === true', async t => 
       version: '1.0.0',
       scripts: {
         prepack: 'touch prepack',
-        postpack: 'touch postpack',
       },
     }, null, 2),
   })
@@ -158,7 +155,7 @@ t.test('runs scripts in foreground when foregroundScripts === true', async t => 
 
   const [scriptShell, scriptArgs] = makeSpawnArgs({
     event: 'prepack',
-    path: npm.prefix,
+    path: testDir,
     cmd: 'touch prepack',
   })
 
