@@ -20,7 +20,7 @@
   "devDependencies": {
     "@npmcli/eslint-config": "^3.1.0",
     "@npmcli/promise-spawn": "^3.0.0",
-    "@npmcli/template-oss": "4.4.5",
+    "@npmcli/template-oss": "4.5.0",
     "minify-registry-metadata": "^2.2.0",
     "rimraf": "^3.0.2",
     "tap": "^16.0.1",
@@ -30,7 +30,7 @@
   "license": "ISC",
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.4.5",
+    "version": "4.5.0",
     "content": "../scripts/template-oss/index.js"
   },
   "tap": {
