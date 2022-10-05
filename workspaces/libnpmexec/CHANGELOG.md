@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.0.0-pre.4](https://github.com/npm/cli/compare/libnpmexec-v5.0.0-pre.3...libnpmexec-v5.0.0-pre.4) (2022-10-05)
+
+### Dependencies
+
+* [`5344d2c`](https://github.com/npm/cli/commit/5344d2ca9ffd1f6db473fd58b46b50179f899ff5) [#5644](https://github.com/npm/cli/pull/5644) `pacote@14.0.0`
+* [`8b072dc`](https://github.com/npm/cli/commit/8b072dc113190ed49b296a5f02650b7d8cbf384a) [#5639](https://github.com/npm/cli/pull/5639) `@npmcli/ci-detect@3.0.0` (#5639)
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.0.0-pre.3...arborist-v6.0.0-pre.4): `@npmcli/arborist@6.0.0-pre.4`
+
 ## [5.0.0-pre.3](https://github.com/npm/cli/compare/libnpmexec-v5.0.0-pre.2...libnpmexec-v5.0.0-pre.3) (2022-09-30)
 
 ### ⚠️ BREAKING CHANGES

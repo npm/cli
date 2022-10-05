@@ -1,5 +1,37 @@
 # Changelog
 
+## [9.0.0-pre.4](https://github.com/npm/cli/compare/v9.0.0-pre.3...v9.0.0-pre.4) (2022-10-05)
+
+### Features
+
+* [`9609e9e`](https://github.com/npm/cli/commit/9609e9eed87c735f0319ac0af265f4d406cbf800) [#5605](https://github.com/npm/cli/pull/5605) use v3 lockfiles by default (#5605) (@fritzy)
+
+### Bug Fixes
+
+* [`e4e8ae2`](https://github.com/npm/cli/commit/e4e8ae20aef9e27e57282e87e8757d5b364abb39) libnpmpack: obey foregroundScripts (@winterqt)
+* [`07fabc9`](https://github.com/npm/cli/commit/07fabc93007495f0926f4dd24b4350c07d92887d) [#5633](https://github.com/npm/cli/pull/5633) `npm link` should override `--install-links` (#5633) (@fritzy)
+* [`02fcbb6`](https://github.com/npm/cli/commit/02fcbb67e6b7cf78cd6dc996570b0ba58132de22) [#5634](https://github.com/npm/cli/pull/5634) ensure Arborist constructor gets passed around everywhere for pacote (#5634) (@nlf)
+
+### Documentation
+
+* [`f37caad`](https://github.com/npm/cli/commit/f37caad9e92c50ae949014f6bee6375d9299fb39) [#5606](https://github.com/npm/cli/pull/5606) accurately describe install-links effect on relative paths (#5606) (@lukekarrys)
+* [`97c32ed`](https://github.com/npm/cli/commit/97c32ed24d8fa2edcdbb9448839a1f1c9d8fb86f) [#5637](https://github.com/npm/cli/pull/5637) remove link to cache command (#5637) (@wraithgar)
+* [`130bc9f`](https://github.com/npm/cli/commit/130bc9fb31fcff956765493a9e3cec668867c30e) [#5626](https://github.com/npm/cli/pull/5626) Remove circular reference (#5626) (@giovanniPepi)
+
+### Dependencies
+
+* [`5344d2c`](https://github.com/npm/cli/commit/5344d2ca9ffd1f6db473fd58b46b50179f899ff5) [#5644](https://github.com/npm/cli/pull/5644) `pacote@14.0.0`
+* [`6a43b31`](https://github.com/npm/cli/commit/6a43b31eab8bd392ed684d2f906259ddfe0f26b5) `@npmcli/metavuln-calculator@4.0.0`
+* [`501f8ca`](https://github.com/npm/cli/commit/501f8ca47bb042f19cdfca4026970caf7160f7f6) [#5640](https://github.com/npm/cli/pull/5640) `semver@7.3.8` (#5640)
+* [`8b072dc`](https://github.com/npm/cli/commit/8b072dc113190ed49b296a5f02650b7d8cbf384a) [#5639](https://github.com/npm/cli/pull/5639) `@npmcli/ci-detect@3.0.0` (#5639)
+* [`1ebbb44`](https://github.com/npm/cli/commit/1ebbb4454c09891ca2c9f9a11432c4a10ccf8c32) [#5638](https://github.com/npm/cli/pull/5638) `npm-profile@7.0.0` (#5638)
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.0.0-pre.3...arborist-v6.0.0-pre.4): `@npmcli/arborist@6.0.0-pre.4`
+* [Workspace](https://github.com/npm/cli/compare/libnpmdiff-v5.0.0-pre.1...libnpmdiff-v5.0.0-pre.2): `libnpmdiff@5.0.0-pre.2`
+* [Workspace](https://github.com/npm/cli/compare/libnpmexec-v5.0.0-pre.3...libnpmexec-v5.0.0-pre.4): `libnpmexec@5.0.0-pre.4`
+* [Workspace](https://github.com/npm/cli/compare/libnpmfund-v4.0.0-pre.3...libnpmfund-v4.0.0-pre.4): `libnpmfund@4.0.0-pre.4`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpack-v5.0.0-pre.1...libnpmpack-v5.0.0-pre.2): `libnpmpack@5.0.0-pre.2`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpublish-v7.0.0-pre.1...libnpmpublish-v7.0.0-pre.2): `libnpmpublish@7.0.0-pre.2`
+
 ## [9.0.0-pre.3](https://github.com/npm/cli/compare/v9.0.0-pre.2...v9.0.0-pre.3) (2022-09-30)
 
 ### ⚠️ BREAKING CHANGES
