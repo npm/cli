@@ -66,7 +66,7 @@
     "mkdirp-infer-owner": "^2.0.0",
     "npm-package-arg": "^9.0.1",
     "npmlog": "^6.0.2",
-    "pacote": "^14.0.0-pre.3",
+    "pacote": "^14.0.0",
     "proc-log": "^2.0.0",
     "read": "^1.0.7",
     "read-package-json-fast": "^2.0.2",
