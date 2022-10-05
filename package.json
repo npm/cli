@@ -108,7 +108,7 @@
     "npmlog": "^6.0.2",
     "opener": "^1.5.2",
     "p-map": "^4.0.0",
-    "pacote": "^14.0.0-pre.3",
+    "pacote": "^14.0.0",
     "parse-conflict-json": "^2.0.2",
     "proc-log": "^2.0.1",
     "qrcode-terminal": "^0.12.0",
