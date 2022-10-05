@@ -1,12 +1,5 @@
 {{> ci }}
 
-  check-docs:
-    {{> job jobName="Check Docs" }}
-      - name: Make Docs
-        run: make freshdocs
-      - name: Check Git Status
-        run: node scripts/git-dirty.js
-
   licenses:
     {{> job jobName="Check Licenses" }}
       - name: Check Licenses

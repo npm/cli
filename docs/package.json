@@ -1,8 +1,9 @@
 {
-  "name": "docs",
+  "name": "@npmcli/docs",
   "description": "The npm cli documentation",
   "version": "1.0.0",
   "private": true,
+  "main": "lib/index.js",
   "scripts": {
     "lint": "eslint \"**/*.js\"",
     "postlint": "template-oss-check",
@@ -10,7 +11,8 @@
     "lintfix": "node .. run lint -- --fix",
     "snap": "tap",
     "test": "tap",
-    "posttest": "node .. run lint"
+    "posttest": "node .. run lint",
+    "build": "node bin/build.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +20,12 @@
     "directory": "docs"
   },
   "dependencies": {
+    "@isaacs/string-locale-compare": "^1.1.0",
     "@mdx-js/mdx": "^1.6.22",
+    "@npmcli/fs": "^2.1.0",
     "cmark-gfm": "^0.9.0",
+    "front-matter": "^4.0.2",
+    "ignore-walk": "^5.0.1",
     "jsdom": "^18.1.0",
     "marked-man": "^0.7.0",
     "mkdirp": "^1.0.4",
@@ -27,28 +33,19 @@
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^3.1.0",
-    "@npmcli/fs": "^2.1.0",
-    "@npmcli/promise-spawn": "^3.0.0",
     "@npmcli/template-oss": "4.5.1",
-    "tap": "^16.0.1",
-    "which": "^2.0.2"
+    "tap": "^16.0.1"
   },
   "author": "GitHub Inc.",
   "license": "ISC",
   "files": [
     "bin/",
-    "lib/",
-    "content/",
-    "nav.yml"
+    "lib/"
   ],
   "engines": {
     "node": "^14.17.0 || ^16.13.0 || >=18.0.0"
   },
   "tap": {
-    "statements": 81,
-    "branches": 72,
-    "functions": 75,
-    "lines": 81,
     "timeout": 600,
     "nyc-arg": [
       "--exclude",
@@ -57,14 +54,6 @@
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "distPaths": [
-      "content/",
-      "nav.yml"
-    ],
-    "allowPaths": [
-      "/content/",
-      "/nav.yml"
-    ],
     "ciVersions": "latest",
     "engines": "^14.17.0 || ^16.13.0 || >=18.0.0",
     "version": "4.5.1",

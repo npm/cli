@@ -135,32 +135,6 @@ jobs:
         if: matrix && matrix.platform.os != 'windows-latest'
         run: node scripts/git-dirty.js
 
-  check-docs:
-    name: Check Docs
-    if: github.repository_owner == 'npm'
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Git User
-        run: |
-          git config --global user.email "npm-cli+bot@github.com"
-          git config --global user.name "npm CLI robot"
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-          cache: npm
-      - name: Reset Deps
-        run: node . run resetdeps
-      - name: Make Docs
-        run: make freshdocs
-      - name: Check Git Status
-        run: node scripts/git-dirty.js
-
   licenses:
     name: Check Licenses
     if: github.repository_owner == 'npm'

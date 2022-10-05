@@ -1,9 +1,10 @@
 const t = require('tap')
 const { resolve, dirname, join } = require('path')
+const fs = require('@npmcli/fs')
 
 const { load: loadMockNpm } = require('../fixtures/mock-npm.js')
 const mockGlobals = require('../fixtures/mock-globals')
-const fs = require('@npmcli/fs')
+const { commands } = require('../../lib/utils/cmd-list.js')
 
 // delete this so that we don't have configs from the fact that it
 // is being run by 'npm test'
@@ -48,7 +49,6 @@ t.test('not yet loaded', async t => {
   t.throws(() => npm.config.set('foo', 'bar'))
   t.throws(() => npm.config.get('foo'))
   t.same(logs, [])
-  t.end()
 })
 
 t.test('npm.load', async t => {
@@ -502,7 +502,6 @@ t.test('timings', async t => {
     t.notOk(npm.unfinishedTimers.has('foo'), 'foo timer is gone')
     t.notOk(npm.unfinishedTimers.has('bar'), 'bar timer is gone')
     t.match(npm.finishedTimers, { foo: Number, bar: Number, npm: Number })
-    t.end()
   })
 
   t.test('writes timings file', async t => {
@@ -571,7 +570,6 @@ t.test('output clears progress and console.logs the message', async t => {
 
   t.match(logs, [['hello']])
   t.match(errors, [['error']])
-  t.end()
 })
 
 t.test('aliases and typos', async t => {
@@ -682,59 +680,85 @@ t.test('implicit workspace accept', async t => {
 })
 
 t.test('usage', async t => {
-  const { npm } = await loadMockNpm(t)
-  t.afterEach(() => {
-    npm.config.set('viewer', null)
-    npm.config.set('long', false)
-    npm.config.set('userconfig', '/some/config/file/.npmrc')
-  })
-  const { dirname } = require('path')
-  const basedir = dirname(dirname(__dirname))
-  t.cleanSnapshot = str => str.split(basedir).join('{BASEDIR}')
-    .split(require('../../package.json').version).join('{VERSION}')
-
-  npm.config.set('viewer', null)
-  npm.config.set('long', false)
-  npm.config.set('userconfig', '/some/config/file/.npmrc')
-
-  t.test('basic usage', async t => {
-    t.matchSnapshot(await npm.usage)
-    t.end()
-  })
-
   t.test('with browser', async t => {
+    mockGlobals(t, { process: { platform: 'posix' } })
+    const { npm } = await loadMockNpm(t)
+    const usage = await npm.usage
     npm.config.set('viewer', 'browser')
-    t.matchSnapshot(await npm.usage)
-    t.end()
+    const browserUsage = await npm.usage
+    t.notMatch(usage, '(in a browser)')
+    t.match(browserUsage, '(in a browser)')
   })
 
-  t.test('with long', async t => {
+  t.test('windows always uses browser', async t => {
+    mockGlobals(t, { process: { platform: 'win32' } })
+    const { npm } = await loadMockNpm(t)
+    const usage = await npm.usage
+    npm.config.set('viewer', 'browser')
+    const browserUsage = await npm.usage
+    t.match(usage, '(in a browser)')
+    t.match(browserUsage, '(in a browser)')
+  })
+
+  t.test('includes commands', async t => {
+    const { npm } = await loadMockNpm(t)
+    const usage = await npm.usage
     npm.config.set('long', true)
-    t.matchSnapshot(await npm.usage)
-    t.end()
+    const longUsage = await npm.usage
+
+    const lastCmd = commands[commands.length - 1]
+    for (const cmd of commands) {
+      const isLast = cmd === lastCmd
+      const shortCmd = new RegExp(`\\s${cmd}${isLast ? '\\n' : ',[\\s\\n]'}`)
+      const longCmd = new RegExp(`^\\s+${cmd}\\s+\\w.*\n\\s+Usage:\\n`, 'm')
+
+      t.match(usage, shortCmd, `usage includes ${cmd}`)
+      t.notMatch(usage, longCmd, `usage does not include long ${cmd}`)
+
+      t.match(longUsage, longCmd, `long usage includes ${cmd}`)
+      if (!isLast) {
+        // long usage includes false positives for the last command since it is
+        // not followed by a comma
+        t.notMatch(longUsage, shortCmd, `long usage does not include short ${cmd}`)
+      }
+    }
   })
 
   t.test('set process.stdout.columns', async t => {
-    const { columns } = process.stdout
-    t.teardown(() => {
-      Object.defineProperty(process.stdout, 'columns', {
-        value: columns,
-        enumerable: true,
-        configurable: true,
-        writable: true,
-      })
-    })
-    const cases = [0, 90]
-    for (const cols of cases) {
-      t.test(`columns=${cols}`, async t => {
-        Object.defineProperty(process.stdout, 'columns', {
-          value: cols,
-          enumerable: true,
-          configurable: true,
-          writable: true,
-        })
-        t.matchSnapshot(await npm.usage)
-      })
+    const { npm } = await loadMockNpm(t)
+
+    const colUsage = async (cols) => {
+      const usages = []
+      for (const col of cols) {
+        mockGlobals(t, { 'process.stdout.columns': col })
+        const usage = await npm.usage
+        usages.push(usage)
+      }
+      return usages
     }
+
+    t.test('max size', async t => {
+      const usages = await colUsage([0, 76, 90, 100])
+      t.equal(usages.filter(Boolean).length, 4)
+      t.equal(new Set([...usages]).size, 1)
+    })
+
+    t.test('across max boundary', async t => {
+      const usages = await colUsage([75, 76])
+      t.equal(usages.filter(Boolean).length, 2)
+      t.equal(new Set([...usages]).size, 2)
+    })
+
+    t.test('min size', async t => {
+      const usages = await colUsage([1, 10, 24, 40])
+      t.equal(usages.filter(Boolean).length, 4)
+      t.equal(new Set([...usages]).size, 1)
+    })
+
+    t.test('different cols within min/max', async t => {
+      const usages = await colUsage([40, 41])
+      t.equal(usages.filter(Boolean).length, 2)
+      t.equal(new Set([...usages]).size, 2)
+    })
   })
 })
