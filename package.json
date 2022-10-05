@@ -205,6 +205,7 @@
     "write-file-atomic"
   ],
   "devDependencies": {
+    "@npmcli/docs": "^1.0.0",
     "@npmcli/eslint-config": "^3.1.0",
     "@npmcli/git": "^3.0.2",
     "@npmcli/promise-spawn": "^3.0.0",
@@ -223,7 +224,7 @@
     "test": "tap",
     "test-all": "node . run test -ws -iwr --if-present",
     "snap": "tap",
-    "postsnap": "make -s docs",
+    "prepack": "npm run build -w docs",
     "test:nocleanup": "NO_TEST_CLEANUP=1 node . run test --",
     "sudotest": "sudo node . run run test --",
     "sudotest:nocleanup": "sudo NO_TEST_CLEANUP=1 node . run test --",

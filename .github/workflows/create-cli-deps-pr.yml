@@ -64,7 +64,6 @@ jobs:
           echo "Prepping CLI repo for release"
           cd cli
           git checkout "$npm_vtag"
-          make
           make release
 
           echo "Removing old npm"
