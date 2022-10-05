@@ -285,7 +285,6 @@ class PackWalker extends IgnoreWalker {
     const strict = [
       ...strictDefaults,
       '!/package.json',
-      '!/npm-shrinkwrap.json',
       '/.git',
       '/node_modules',
       '/package-lock.json',
