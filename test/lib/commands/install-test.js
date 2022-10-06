@@ -23,6 +23,9 @@ const installTest = new InstallTest({
       testCalled = true
     }
   },
+  config: {
+    validate: () => {},
+  },
 })
 
 t.test('the install-test command', t => {

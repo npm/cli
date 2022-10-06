@@ -44,8 +44,7 @@ t.test('arborist-cmd', async t => {
 
   class TestCmd extends ArboristCmd {}
 
-  const cmd = new TestCmd()
-  cmd.npm = { localPrefix: path }
+  const cmd = new TestCmd({ localPrefix: path, config: { validate: () => {} } })
 
   // check filtering for a single workspace name
   cmd.exec = async function (args) {
@@ -97,8 +96,7 @@ t.test('handle getWorkspaces raising an error', async t => {
     },
   })
   class TestCmd extends ArboristCmd {}
-  const cmd = new TestCmd()
-  cmd.npm = { localPrefix: t.testdir() }
+  const cmd = new TestCmd({ localPrefix: t.testdir(), config: { validate: () => {} } })
 
   await t.rejects(
     cmd.execWorkspaces(['foo'], ['a']),
