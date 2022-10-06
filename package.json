@@ -58,7 +58,7 @@
     "@isaacs/string-locale-compare": "^1.1.0",
     "@npmcli/arborist": "^6.0.0-pre.4",
     "@npmcli/ci-detect": "^3.0.0",
-    "@npmcli/config": "^4.2.1",
+    "@npmcli/config": "^5.0.0",
     "@npmcli/fs": "^2.1.0",
     "@npmcli/map-workspaces": "^2.0.3",
     "@npmcli/package-json": "^2.0.0",
