@@ -26,15 +26,7 @@ t.test('legacy', t => {
     const { npm, home } = await loadMockNpm(t, {
       config: { 'auth-type': 'legacy' },
       homeDir: {
-        // These all get cleaned up by config.setCredentialsByURI
         '.npmrc': [
-          '_token=user',
-          '_password=user',
-          'username=user',
-          '_auth=user',
-          '_authtoken=user',
-          '-authtoken=user',
-          '_authToken=user',
           '//registry.npmjs.org/:_authToken=user',
           '//registry.npmjs.org/:always-auth=user',
           '//registry.npmjs.org/:email=test-email-old@npmjs.org',

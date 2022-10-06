@@ -6,6 +6,9 @@ const npm = {
   output: (...args) => {
     OUTPUT.push(args)
   },
+  config: {
+    validate: () => {},
+  },
 }
 const { resolve } = require('path')
 

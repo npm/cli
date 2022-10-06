@@ -216,6 +216,7 @@ class MockNpm {
         }
       },
       list: [{ ...realConfig.defaults, ...config }],
+      validate: () => {},
     }
 
     if (t && config.loglevel) {
