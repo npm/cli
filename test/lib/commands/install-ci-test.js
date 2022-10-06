@@ -23,6 +23,9 @@ const installCITest = new InstallCITest({
       testCalled = true
     }
   },
+  config: {
+    validate: () => {},
+  },
 })
 
 t.test('the install-ci-test command', t => {

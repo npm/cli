@@ -190,7 +190,7 @@ t.test('dry-run', async t => {
 t.test('shows usage with wrong set of arguments', async t => {
   t.plan(1)
   const Publish = t.mock('../../../lib/commands/publish.js')
-  const publish = new Publish({})
+  const publish = new Publish({ config: { validate: () => {} } })
 
   await t.rejects(publish.exec(['a', 'b', 'c']), publish.usage)
 })
@@ -637,7 +637,7 @@ t.test('ignore-scripts', async t => {
 t.test('_auth config default registry', async t => {
   const { npm, joinedOutput } = await loadMockNpm(t, {
     config: {
-      _auth: basic,
+      '//registry.npmjs.org/:_auth': basic,
     },
     prefixDir: {
       'package.json': JSON.stringify(pkgJson),
@@ -661,7 +661,7 @@ t.test('bare _auth and registry config', async t => {
   const { npm, joinedOutput } = await loadMockNpm(t, {
     config: {
       registry: alternateRegistry,
-      _auth: basic,
+      '//other.registry.npmjs.org/:_auth': basic,
     },
     prefixDir: {
       'package.json': JSON.stringify({

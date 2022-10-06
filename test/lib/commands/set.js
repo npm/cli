@@ -40,6 +40,9 @@ const npm = {
       configArgs = args
     }
   },
+  config: {
+    validate: () => {},
+  },
 }
 
 const Set = t.mock('../../../lib/commands/set.js')
