@@ -3,6 +3,7 @@
 const t = require('tap')
 
 const tspawk = require('./fixtures/tspawk.js')
+const spawk = tspawk(t)
 
 const fs = require('fs')
 const path = require('path')
@@ -138,8 +139,6 @@ t.test('packs from registry spec', async t => {
 })
 
 t.test('runs scripts in foreground when foregroundScripts === true', async t => {
-  const spawk = tspawk(t)
-
   const testDir = t.testdir({
     'package.json': JSON.stringify({
       name: 'my-cool-pkg',
@@ -170,5 +169,41 @@ t.test('runs scripts in foreground when foregroundScripts === true', async t => 
 
   t.teardown(async () => {
     process.chdir(cwd)
+  })
+})
+
+t.test('doesn\'t run scripts when ignoreScripts === true', async t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-cool-pkg',
+      version: '1.0.0',
+      scripts: {
+        prepack: 'touch prepack',
+      },
+    }, null, 2),
+  })
+
+  const cwd = process.cwd()
+  process.chdir(testDir)
+
+  const [scriptShell, scriptArgs] = makeSpawnArgs({
+    event: 'prepack',
+    path: testDir,
+    cmd: 'touch prepack',
+  })
+
+  const prepack = spawk.spawn(scriptShell, scriptArgs)
+
+  await pack('file:.', {
+    packDestination: testDir,
+    foregroundScripts: true,
+    ignoreScripts: true,
+  })
+
+  t.ok(!prepack.called)
+
+  t.teardown(async () => {
+    process.chdir(cwd)
+    spawk.clean()
   })
 })
