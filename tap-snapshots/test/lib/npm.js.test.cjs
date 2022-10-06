@@ -268,6 +268,7 @@ All commands:
                     npm config delete <key> [<key> ...]
                     npm config list [--json]
                     npm config edit
+                    npm config fix
                     
                     Options:
                     [--json] [-g|--global] [--editor <editor>] [-L|--location <global|user|project>]

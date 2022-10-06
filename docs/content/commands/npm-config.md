@@ -16,6 +16,7 @@ npm config get [<key> [<key> ...]]
 npm config delete <key> [<key> ...]
 npm config list [--json]
 npm config edit
+npm config fix
 
 alias: c
 ```
@@ -99,6 +100,15 @@ npm config edit
 
 Opens the config file in an editor.  Use the `--global` flag to edit the
 global config.
+
+#### fix
+
+```bash
+npm config fix
+```
+
+Repairs invalid configuration errors. Use the `--location` flag to target
+a specific config location.
 
 ### Configuration
 
