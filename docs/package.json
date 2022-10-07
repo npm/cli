@@ -18,7 +18,7 @@
     "directory": "docs"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/mdx": "^2.1.4",
     "cmark-gfm": "^0.9.0",
     "jsdom": "^18.1.0",
     "marked-man": "^0.7.0",
