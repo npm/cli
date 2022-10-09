@@ -141,7 +141,7 @@ prevented.
 
 Another optimization can be made by installing dependencies at the
 highest level possible, below the localized "target" folder (hoisting).
-Since version 5, npm hoists dependencies by default.
+Since version 3, npm hoists dependencies by default.
 
 #### Example
 
