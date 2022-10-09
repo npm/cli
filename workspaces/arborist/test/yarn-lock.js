@@ -64,12 +64,12 @@ bar@foo:
 # yarn lockfile v1
 
 
-"bar@foo":
-  "version" "1.2.3"
+bar@foo:
+  version "1.2.3"
 
-"foo@bar":
-  "resolved" "https://registry.local/foo/-/foo-1.2.3.tgz"
-  "version" "1.2.3"
+foo@bar:
+  version "1.2.3"
+  resolved "https://registry.local/foo/-/foo-1.2.3.tgz"
 `)
   t.end()
 })
