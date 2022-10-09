@@ -128,8 +128,8 @@ Consider the case above, where `foo -> bar -> baz`.  Imagine if, in
 addition to that, baz depended on bar, so you'd have:
 `foo -> bar -> baz -> bar -> baz ...`.  However, since the folder
 structure is: `foo/node_modules/bar/node_modules/baz`, there's no need to
-put another copy of bar into `.../baz/node_modules`, since when it calls
-require("bar"), it will get the copy that is installed in
+put another copy of bar into `.../baz/node_modules`, since when baz calls
+`require("bar")`, it will get the copy that is installed in
 `foo/node_modules/bar`.
 
 This shortcut is only used if the exact same
@@ -140,7 +140,8 @@ exact same package multiple times, an infinite regress will always be
 prevented.
 
 Another optimization can be made by installing dependencies at the
-highest level possible, below the localized "target" folder.
+highest level possible, below the localized "target" folder (hoisting).
+Since version 5, npm hoists dependencies by default.
 
 #### Example
 
@@ -160,21 +161,19 @@ foo
         `-- bar
 ```
 
-In this case, we might expect a folder structure like this:
+In this case, we might expect a folder structure like this 
+(with all dependencies hoisted to the highest level possible):
 
 ```bash
 foo
 +-- node_modules
     +-- blerg (1.2.5) <---[A]
     +-- bar (1.2.3) <---[B]
-    |   `-- node_modules
+    |   +-- node_modules
     |       +-- baz (2.0.2) <---[C]
-    |       |   `-- node_modules
-    |       |       `-- quux (3.2.0)
-    |       `-- asdf (2.3.4)
-    `-- baz (1.2.3) <---[D]
-        `-- node_modules
-            `-- quux (3.2.0) <---[E]
+    +-- asdf (2.3.4)
+    +-- baz (1.2.3) <---[D]
+    +-- quux (3.2.0) <---[E]
 ```
 
 Since foo depends directly on `bar@1.2.3` and `baz@1.2.3`, those are
@@ -185,17 +184,16 @@ dependency on version 1.2.5.  So, that gets installed at [A].  Since the
 parent installation of blerg satisfies bar's dependency on `blerg@1.x`,
 it does not install another copy under [B].
 
-Bar [B] also has dependencies on baz and asdf, so those are installed in
-bar's `node_modules` folder.  Because it depends on `baz@2.x`, it cannot
+Bar [B] also has dependencies on baz and asdf.  Because it depends on `baz@2.x`, it cannot
 re-use the `baz@1.2.3` installed in the parent `node_modules` folder [D],
-and must install its own copy [C].
+and must install its own copy [C]. In order to minimize duplication, npm hoists 
+dependencies to the top level by default, so asdf is installed under [A].
 
 Underneath bar, the `baz -> quux -> bar` dependency creates a cycle.
 However, because bar is already in quux's ancestry [B], it does not
-unpack another copy of bar into that folder.
-
-Underneath `foo -> baz` [D], quux's [E] folder tree is empty, because its
-dependency on bar is satisfied by the parent folder copy installed at [B].
+unpack another copy of bar into that folder. Likewise, quux's [E] 
+folder tree is empty, because its dependency on bar is satisfied
+by the parent folder copy installed at [B].
 
 For a graphical breakdown of what is installed where, use `npm ls`.
 
