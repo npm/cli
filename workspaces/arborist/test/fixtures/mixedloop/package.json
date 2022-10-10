@@ -1,9 +1,0 @@
-{
-  "name": "root",
-  "optionalDependencies": {
-    "a": ""
-  },
-  "devDependencies": {
-    "c": ""
-  }
-}

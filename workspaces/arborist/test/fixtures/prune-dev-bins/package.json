@@ -1,7 +1,0 @@
-{
-  "name": "prune-dev-bins",
-  "version": "1.0.0",
-  "devDependencies": {
-    "yes": "^1.0.0"
-  }
-}

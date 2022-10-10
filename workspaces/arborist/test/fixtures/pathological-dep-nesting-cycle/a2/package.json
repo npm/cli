@@ -1,7 +1,0 @@
-{
-  "name": "@isaacs/pathological-dep-nesting-a",
-  "version": "2.0.0",
-  "dependencies": {
-    "@isaacs/pathological-dep-nesting-b": "2"
-  }
-}

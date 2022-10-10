@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "mkdirp": "1",
-    "once": "^1.3.3"
-  }
-}

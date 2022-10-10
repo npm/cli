@@ -1,9 +1,0 @@
-{
-  "name": "bundle",
-  "bundledDependencies": [
-    "dep"
-  ],
-  "dependencies": {
-    "dep": ""
-  }
-}

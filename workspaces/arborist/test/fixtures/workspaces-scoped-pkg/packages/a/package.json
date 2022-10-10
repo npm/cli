@@ -1,7 +1,0 @@
-{
-  "name": "@ruyadorno/scoped-a",
-  "version": "1.0.0",
-  "dependencies": {
-    "@ruyadorno/scoped-b": "^1.0.0"
-  }
-}

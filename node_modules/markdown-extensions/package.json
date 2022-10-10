@@ -1,0 +1,36 @@
+{
+  "name": "markdown-extensions",
+  "version": "1.1.1",
+  "description": "List of Markdown file extensions",
+  "license": "MIT",
+  "repository": "sindresorhus/markdown-extensions",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "files": [
+    "index.js",
+    "markdown-extensions.json"
+  ],
+  "keywords": [
+    "markdown",
+    "md",
+    "ext",
+    "extensions",
+    "extension",
+    "file",
+    "json",
+    "list",
+    "array"
+  ],
+  "devDependencies": {
+    "ava": "*"
+  }
+}

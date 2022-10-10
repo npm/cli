@@ -1,0 +1,46 @@
+{
+  "name": "is-reference",
+  "version": "3.0.0",
+  "description": "Determine whether an AST node is a reference",
+  "type": "module",
+  "module": "src/index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    "import": "./src/index.js"
+  },
+  "files": [
+    "src",
+    "types"
+  ],
+  "scripts": {
+    "test": "uvu",
+    "prepublishOnly": "npm test && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rich-Harris/is-reference.git"
+  },
+  "keywords": [
+    "ast",
+    "javascript",
+    "estree",
+    "acorn"
+  ],
+  "author": "Rich Harris",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rich-Harris/is-reference/issues"
+  },
+  "homepage": "https://github.com/Rich-Harris/is-reference#readme",
+  "dependencies": {
+    "@types/estree": "*"
+  },
+  "devDependencies": {
+    "acorn": "^8.0.5",
+    "acorn-class-fields": "^1.0.0",
+    "acorn-static-class-features": "^1.0.0",
+    "estree-walker": "^3.0.0",
+    "typescript": "^4.1.5",
+    "uvu": "^0.5.1"
+  }
+}

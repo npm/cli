@@ -1,9 +1,0 @@
-{
-  "name": "optionalloop",
-  "optionalDependencies": {
-    "a": ""
-  },
-  "dependencies": {
-    "c": ""
-  }
-}

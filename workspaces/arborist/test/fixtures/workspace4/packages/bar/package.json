@@ -1,7 +1,0 @@
-{
-  "name": "bar",
-  "version": "1.2.3",
-  "dependencies": {
-    "mkdirp": "0.x"
-  }
-}

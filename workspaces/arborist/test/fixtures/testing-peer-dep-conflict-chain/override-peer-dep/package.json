@@ -1,5 +1,0 @@
-{
-  "dependencies": {
-    "@isaacs/testing-peer-dep-conflict-chain-override-peer": "1"
-  }
-}
