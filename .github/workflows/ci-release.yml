@@ -52,9 +52,9 @@ jobs:
       - name: Reset Deps
         run: node . run resetdeps
       - name: Lint
-        run: node . run lint --ignore-scripts
+        run: node . run lint --ignore-scripts -ws -iwr --if-present
       - name: Post Lint
-        run: node . run postlint --ignore-scripts
+        run: node . run postlint --ignore-scripts -ws -iwr --if-present
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.3.1
         if: always()

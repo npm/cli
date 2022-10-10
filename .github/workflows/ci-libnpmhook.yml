@@ -73,9 +73,9 @@ jobs:
       - name: Reset Deps
         run: node . run resetdeps
       - name: Lint
-        run: node . run lint --ignore-scripts
+        run: node . run lint --ignore-scripts -w libnpmhook
       - name: Post Lint
-        run: node . run postlint --ignore-scripts
+        run: node . run postlint --ignore-scripts -w libnpmhook
 
   test:
     name: Test - ${{ matrix.platform.name }} - ${{ matrix.node-version }}

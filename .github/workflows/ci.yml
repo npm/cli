@@ -130,7 +130,7 @@ jobs:
       - name: Add Problem Matcher
         run: echo "::add-matcher::.github/matchers/tap.json"
       - name: Test
-        run: node . test --ignore-scripts -iwr
+        run: node . test --ignore-scripts
       - name: Check Git Status
         if: matrix && matrix.platform.os != 'windows-latest'
         run: node scripts/git-dirty.js
