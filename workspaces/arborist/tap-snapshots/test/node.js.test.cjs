@@ -32,7 +32,7 @@ exports[`test/node.js TAP basic instantiation > just a lone root node 1`] = `
       "foo" => OverrideSet {
         "children": Map {},
         "key": "foo",
-        "keySpec": "",
+        "keySpec": "*",
         "name": "foo",
         "parent": <*ref_2>,
         "value": "1",

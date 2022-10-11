@@ -124,26 +124,26 @@ t.test('constructor', async (t) => {
     const fooRule = ruleset.get('foo')
     // these are both empty because the foo rule does not actually override
     // anything directly, it only carries child rules through
-    t.equal(fooRule.keySpec, '', 'keySpec is empty')
-    t.equal(fooRule.value, '', 'value is empty')
+    t.equal(fooRule.keySpec, '*', 'keySpec is *')
+    t.equal(fooRule.value, '*', 'value is *')
     const barRule = ruleset.get('bar')
-    t.equal(barRule.keySpec, '', 'keySpec is empty')
+    t.equal(barRule.keySpec, '*', 'keySpec is *')
     t.equal(barRule.value, '2.0.0', 'got the correct override for bar')
     const bazRule = ruleset.get('baz')
-    t.equal(bazRule.keySpec, '', 'keySpec is empty')
+    t.equal(bazRule.keySpec, '*', 'keySpec is *')
     t.equal(bazRule.value, '2.0.0', 'got the correct override for baz')
 
     const childRule = edgeRule.getEdgeRule({ name: 'bar', spec: '^1.0.0' })
     const childRuleSet = childRule.ruleset
     const childBazRule = childRuleSet.get('baz')
-    t.equal(childBazRule.keySpec, '', 'keySpec is empty')
+    t.equal(childBazRule.keySpec, '*', 'keySpec is *')
     t.equal(childBazRule.value, '3.0.0', 'got the correct override for nested baz')
     const childBarRule = childRuleSet.get('bar')
-    t.equal(childBarRule.keySpec, '', 'keySpec is empty')
+    t.equal(childBarRule.keySpec, '*', 'keySpec is *')
     t.equal(childBarRule.value, '2.0.0', 'got the correct override for nested bar')
     const childFooRule = childRuleSet.get('foo')
-    t.equal(childFooRule.keySpec, '', 'keySpec is empty')
-    t.equal(childFooRule.value, '', 'value is empty')
+    t.equal(childFooRule.keySpec, '*', 'keySpec is *')
+    t.equal(childFooRule.value, '*', 'value is *')
   })
 
   t.test('coerces empty string to *', async (t) => {
@@ -161,6 +161,6 @@ t.test('constructor', async (t) => {
     t.equal(edgeRule.value, '*', 'empty string was replaced with *')
 
     const barEdgeRule = overrides.getEdgeRule({ name: 'bar', spec: '^1' })
-    t.equal(barEdgeRule.value, '', 'when rule is omitted entirely value is an empty string')
+    t.equal(barEdgeRule.value, '*', 'when rule is omitted entirely value is *')
   })
 })

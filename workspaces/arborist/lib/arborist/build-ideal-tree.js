@@ -254,13 +254,12 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     for (const name of update.names) {
       const spec = npa(name)
       const validationError =
-        new TypeError(`Update arguments must not contain package version specifiers
-
-Try using the package name instead, e.g:
+        new TypeError(`Update arguments must only contain package names, eg:
     npm update ${spec.name}`)
       validationError.code = 'EUPDATEARGS'
 
-      if (spec.fetchSpec !== 'latest') {
+      // If they gave us anything other than a bare package name
+      if (spec.raw !== spec.name) {
         throw validationError
       }
     }
