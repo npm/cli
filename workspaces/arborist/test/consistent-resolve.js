@@ -101,17 +101,21 @@ t.test('remotes returned as-is', t => {
   t.end()
 })
 
-t.test('just a tag name interpreted as a tag name, not a name@', t => {
-  t.equal(cr('foo'), 'foo')
-  t.equal(cr('foo@'), '')
-  t.end()
-})
-
 t.test('falsey resolved returns null', t => {
   t.equal(cr(null), null)
   t.equal(cr(0), null)
   t.equal(cr(false), null)
   t.equal(cr(undefined), null)
+  t.end()
+})
+
+t.test('tag returns tag', t => {
+  t.equal(cr('foo@latest'), 'latest')
+  t.end()
+})
+
+t.test('package name returns package name', t => {
+  t.equal(cr('foo'), 'foo')
   t.end()
 })
 
