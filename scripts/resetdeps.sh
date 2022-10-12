@@ -9,3 +9,9 @@ git checkout node_modules
 node . i --ignore-scripts --no-audit --no-fund "$@"
 node . rebuild --ignore-scripts
 node . run dependencies --ignore-scripts
+# check for cmark-gfm bindings
+cmarkbinding=$(find `npm ls cmark-gfm --parseable \
+| head -n 1` -name binding.node)
+if [[ ! $cmarkbinding ]]; then
+  node . rebuild cmark-gfm
+fi
