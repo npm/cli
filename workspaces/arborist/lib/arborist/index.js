@@ -77,7 +77,12 @@ class Arborist extends Base {
       replaceRegistryHost: options.replaceRegistryHost,
       lockfileVersion: lockfileVersion(options.lockfileVersion),
       installStrategy: options.global ? 'shallow' : (options.installStrategy ? options.installStrategy : 'hoisted'),
+      location: options.global ? 'global' : options.location,
     }
+    // don't audit when run in a non-project location
+    this.options.audit = (!this.options.location || this.options.location === 'project')
+      && options.audit !== false
+
     this.replaceRegistryHost = this.options.replaceRegistryHost =
       (!this.options.replaceRegistryHost || this.options.replaceRegistryHost === 'npmjs') ?
         'registry.npmjs.org' : this.options.replaceRegistryHost
