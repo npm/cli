@@ -96,11 +96,9 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "maxsockets": 15,
   "message": "%s",
   "node-options": null,
-  "node-version": "{NODE-VERSION}",
   "noproxy": [
     ""
   ],
-  "npm-version": "{NPM-VERSION}",
   "offline": false,
   "omit": [],
   "omit-lockfile-registry-resolved": false,
@@ -252,9 +250,7 @@ maxsockets = 15
 message = "%s" 
 metrics-registry = "https://registry.npmjs.org/" 
 node-options = null 
-node-version = "{NODE-VERSION}" 
 noproxy = [""] 
-npm-version = "{NPM-VERSION}" 
 offline = false 
 omit = [] 
 omit-lockfile-registry-resolved = false 

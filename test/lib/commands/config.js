@@ -330,21 +330,21 @@ t.test('config get no args', async t => {
 t.test('config get single key', async t => {
   const sandbox = new Sandbox(t)
 
-  await sandbox.run('config', ['get', 'node-version'])
-  t.equal(sandbox.output, sandbox.config.get('node-version'), 'should get the value')
+  await sandbox.run('config', ['get', 'all'])
+  t.equal(sandbox.output, `${sandbox.config.get('all')}`, 'should get the value')
 })
 
 t.test('config get multiple keys', async t => {
   const sandbox = new Sandbox(t)
 
-  await sandbox.run('config', ['get', 'node-version', 'npm-version'])
+  await sandbox.run('config', ['get', 'yes', 'all'])
   t.ok(
-    sandbox.output.includes(`node-version=${sandbox.config.get('node-version')}`),
-    'outputs node-version'
+    sandbox.output.includes(`yes=${sandbox.config.get('yes')}`),
+    'outputs yes'
   )
   t.ok(
-    sandbox.output.includes(`npm-version=${sandbox.config.get('npm-version')}`),
-    'outputs npm-version'
+    sandbox.output.includes(`all=${sandbox.config.get('all')}`),
+    'outputs all'
   )
 })
 

@@ -6,6 +6,7 @@ const { promisify } = require('util')
 const mkdirp = require('mkdirp-infer-owner')
 const rimraf = promisify(require('rimraf'))
 const mockLogs = require('./mock-logs')
+const pkg = require('../../package.json')
 
 const chain = new Map()
 const sandboxes = new Map()
@@ -45,8 +46,6 @@ const _logs = Symbol('sandbox.logs')
 
 // these config keys can be redacted widely
 const redactedDefaults = [
-  'node-version',
-  'npm-version',
   'tmp',
 ]
 
@@ -155,6 +154,8 @@ class Sandbox extends EventEmitter {
       .split(normalize(homedir())).join('{REALHOME}')
       .split(this[_proxy].platform).join('{PLATFORM}')
       .split(this[_proxy].arch).join('{ARCH}')
+      .replace(new RegExp(process.version, 'g'), '{NODE-VERSION}')
+      .replace(new RegExp(pkg.version, 'g'), '{NPM-VERSION}')
 
     // We do the defaults after everything else so that they don't cause the
     // other cleaners to miss values we would have clobbered here.  For
