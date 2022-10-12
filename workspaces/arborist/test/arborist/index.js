@@ -253,3 +253,13 @@ t.test('valid global/installStrategy values', t => {
   t.equal(new Arborist({ installStrategy: 'hoisted' }).options.installStrategy, 'hoisted')
   t.end()
 })
+
+t.test('disable audit when location is not project', t => {
+  t.equal(new Arborist({ location: 'global' }).options.audit, false)
+  t.equal(new Arborist({ location: undefined }).options.audit, true)
+  t.equal(new Arborist({ audit: undefined }).options.audit, true)
+  t.equal(new Arborist({ audit: false, location: 'project' }).options.audit, false)
+  t.equal(new Arborist({ global: true }).options.audit, false)
+  t.equal(new Arborist({ global: false }).options.audit, true)
+  t.end()
+})
