@@ -5,12 +5,16 @@ module.exports = {
       '.github/ISSUE_TEMPLATE/bug.yml': false,
       '.github/workflows/ci.yml': 'ci.yml',
       '.github/workflows/ci-release.yml': 'ci-release.yml',
+      '.github/dependabot.yml': false,
+      '.github/workflows/post-dependabot.yml': false,
     },
   },
   workspaceRepo: {
     add: {
       '.github/workflows/release.yml': false,
       '.github/workflows/ci-release.yml': false,
+      '.github/dependabot.yml': false,
+      '.github/workflows/post-dependabot.yml': false,
     },
   },
   lockfile: true,
