@@ -1361,13 +1361,6 @@ Options to pass through to Node.js via the \`NODE_OPTIONS\` environment
 variable. This does not impact how npm itself is executed but it does impact
 how lifecycle scripts are called.
 
-#### \`node-version\`
-
-* Default: Node.js \`process.version\` value
-* Type: SemVer string
-
-The node version to use when checking a package's \`engines\` setting.
-
 #### \`noproxy\`
 
 * Default: The value of the NO_PROXY environment variable
@@ -1376,13 +1369,6 @@ The node version to use when checking a package's \`engines\` setting.
 Domain extensions that should bypass any proxies.
 
 Also accepts a comma-delimited string.
-
-#### \`npm-version\`
-
-* Default: Output of \`npm --version\`
-* Type: SemVer string
-
-The npm version to use when checking a package's \`engines\` setting.
 
 #### \`offline\`
 
@@ -1792,7 +1778,7 @@ tarball that will be compared with the local files by default.
 * Type: String
 
 If set, alters the prefix used when tagging a new version when performing a
-version increment using \`npm-version\`. To remove the prefix altogether, set
+version increment using \`npm version\`. To remove the prefix altogether, set
 it to the empty string: \`""\`.
 
 Because other tools may rely on the convention that npm version tags look
@@ -2190,9 +2176,7 @@ Array [
   "maxsockets",
   "message",
   "node-options",
-  "node-version",
   "noproxy",
-  "npm-version",
   "offline",
   "omit",
   "omit-lockfile-registry-resolved",
@@ -2326,9 +2310,7 @@ Array [
   "loglevel",
   "maxsockets",
   "message",
-  "node-version",
   "noproxy",
-  "npm-version",
   "offline",
   "omit",
   "omit-lockfile-registry-resolved",

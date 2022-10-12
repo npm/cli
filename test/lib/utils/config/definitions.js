@@ -1,6 +1,7 @@
 const t = require('tap')
 const { resolve } = require('path')
 const mockGlobals = require('../../../fixtures/mock-globals')
+const pkg = require('../../../../package.json')
 
 // have to fake the node version, or else it'll only pass on this one
 mockGlobals(t, { 'process.version': 'v14.8.0', 'process.env.NODE_ENV': undefined })
@@ -8,14 +9,6 @@ mockGlobals(t, { 'process.version': 'v14.8.0', 'process.env.NODE_ENV': undefined
 const mockDefs = (mocks = {}) => t.mock('../../../../lib/utils/config/definitions.js', mocks)
 
 const isWin = (isWindows) => ({ '../../../../lib/utils/is-windows.js': { isWindows } })
-
-t.test('node and npm versions', t => {
-  const definitions = mockDefs()
-  const pkg = require('../../../../package.json')
-  t.equal(definitions['npm-version'].default, pkg.version, 'npm-version default')
-  t.equal(definitions['node-version'].default, process.version, 'node-version default')
-  t.end()
-})
 
 t.test('basic flattening function camelCases from css-case', t => {
   const flat = {}
@@ -745,11 +738,9 @@ t.test('detect CI', t => {
 t.test('user-agent', t => {
   const obj = {
     'user-agent': mockDefs()['user-agent'].default,
-    'npm-version': '1.2.3',
-    'node-version': '9.8.7',
   }
   const flat = {}
-  const expectNoCI = `npm/1.2.3 node/9.8.7 ` +
+  const expectNoCI = `npm/${pkg.version} node/${process.version} ` +
     `${process.platform} ${process.arch} workspaces/false`
   mockDefs()['user-agent'].flatten('user-agent', obj, flat)
   t.equal(flat.userAgent, expectNoCI)
