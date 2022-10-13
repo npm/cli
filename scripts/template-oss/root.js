@@ -7,6 +7,7 @@ module.exports = {
       '.github/workflows/ci-release.yml': 'ci-release.yml',
       '.github/dependabot.yml': false,
       '.github/workflows/post-dependabot.yml': false,
+      '.github/workflows/audit.yml': 'audit.yml',
     },
   },
   workspaceRepo: {
