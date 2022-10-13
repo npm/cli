@@ -224,7 +224,7 @@
     "test": "tap",
     "test-all": "node . run test -ws -iwr --if-present",
     "snap": "tap",
-    "prepack": "npm run build -w docs",
+    "prepack": "node . run build -w docs",
     "test:nocleanup": "NO_TEST_CLEANUP=1 node . run test --",
     "sudotest": "sudo node . run run test --",
     "sudotest:nocleanup": "sudo NO_TEST_CLEANUP=1 node . run test --",
