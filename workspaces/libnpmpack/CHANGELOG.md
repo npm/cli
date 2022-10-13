@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.0.0-pre.3](https://github.com/npm/cli/compare/libnpmpack-v5.0.0-pre.2...libnpmpack-v5.0.0-pre.3) (2022-10-13)
+
+### Bug Fixes
+
+* [`a990c3c`](https://github.com/npm/cli/commit/a990c3c9a0e67f0a8b6454213675e159fe49432d) [#5651](https://github.com/npm/cli/pull/5651) libnpmpack: obey ignoreScripts (@winterqt)
+
 ## [5.0.0-pre.2](https://github.com/npm/cli/compare/libnpmpack-v5.0.0-pre.1...libnpmpack-v5.0.0-pre.2) (2022-10-05)
 
 ### Bug Fixes

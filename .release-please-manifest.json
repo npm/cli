@@ -1,5 +1,5 @@
 {
-  ".": "9.0.0-pre.4",
+  ".": "9.0.0-pre.5",
   "workspaces/arborist": "6.0.0-pre.4",
   "workspaces/libnpmaccess": "7.0.0-pre.1",
   "workspaces/libnpmdiff": "5.0.0-pre.2",
@@ -7,8 +7,8 @@
   "workspaces/libnpmfund": "4.0.0-pre.4",
   "workspaces/libnpmhook": "9.0.0-pre.0",
   "workspaces/libnpmorg": "5.0.0-pre.0",
-  "workspaces/libnpmpack": "5.0.0-pre.2",
-  "workspaces/libnpmpublish": "7.0.0-pre.2",
+  "workspaces/libnpmpack": "5.0.0-pre.3",
+  "workspaces/libnpmpublish": "7.0.0-pre.3",
   "workspaces/libnpmsearch": "6.0.0-pre.0",
   "workspaces/libnpmteam": "5.0.0-pre.0",
   "workspaces/libnpmversion": "4.0.0-pre.0"
