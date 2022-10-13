@@ -1,6 +1,6 @@
 {
   "name": "libnpmpublish",
-  "version": "7.0.0-pre.2",
+  "version": "7.0.0-pre.3",
   "description": "Programmatic API for the bits behind npm publish and unpublish",
   "author": "GitHub Inc.",
   "main": "lib/index.js",
@@ -26,7 +26,7 @@
   "devDependencies": {
     "@npmcli/eslint-config": "^3.1.0",
     "@npmcli/template-oss": "4.5.1",
-    "libnpmpack": "^5.0.0-pre.2",
+    "libnpmpack": "^5.0.0-pre.3",
     "lodash.clonedeep": "^4.5.0",
     "nock": "^13.2.4",
     "tap": "^16.0.1"

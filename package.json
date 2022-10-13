@@ -1,5 +1,5 @@
 {
-  "version": "9.0.0-pre.4",
+  "version": "9.0.0-pre.5",
   "name": "npm",
   "description": "a package manager for JavaScript",
   "workspaces": [
@@ -86,8 +86,8 @@
     "libnpmfund": "^4.0.0-pre.4",
     "libnpmhook": "^9.0.0-pre.0",
     "libnpmorg": "^5.0.0-pre.0",
-    "libnpmpack": "^5.0.0-pre.2",
-    "libnpmpublish": "^7.0.0-pre.2",
+    "libnpmpack": "^5.0.0-pre.3",
+    "libnpmpublish": "^7.0.0-pre.3",
     "libnpmsearch": "^6.0.0-pre.0",
     "libnpmteam": "^5.0.0-pre.0",
     "libnpmversion": "^4.0.0-pre.0",

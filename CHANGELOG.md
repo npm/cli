@@ -1,5 +1,35 @@
 # Changelog
 
+## [9.0.0-pre.5](https://github.com/npm/cli/compare/v9.0.0-pre.4...v9.0.0-pre.5) (2022-10-13)
+
+### ⚠️ BREAKING CHANGES
+
+* the presence of auth related settings that are not scoped to a specific registry found in a config file is no longer supported and will throw errors
+* the `node-version` and `npm-version` configs have been removed.
+* links generated from git urls will now use `HEAD` instead of `master` as the default ref
+
+### Features
+
+* [`a09e19d`](https://github.com/npm/cli/commit/a09e19d88f046e54e8d75343883635a1bd056310) [#5696](https://github.com/npm/cli/pull/5696) introduce the `npm config fix` command (@nlf)
+* [`d2963c6`](https://github.com/npm/cli/commit/d2963c67b992b9b3b9dd32f6f41cbbe4bcc580c8) explicitly validate config within the cli (@nlf)
+* [`a5fec08`](https://github.com/npm/cli/commit/a5fec08348add7e75fa2498e6a9efe608b20aa8b) rewrite docs generation (@lukekarrys)
+
+### Bug Fixes
+
+* [`a35c784`](https://github.com/npm/cli/commit/a35c784f8c25dce05b4173edd6c3f8e7913d7b50) [#5691](https://github.com/npm/cli/pull/5691) config: remove `node-version` and `npm-version` (@wraithgar)
+
+### Documentation
+
+* [`a8532eb`](https://github.com/npm/cli/commit/a8532eb39504584cef452152948e015cef8c010a) [#5661](https://github.com/npm/cli/pull/5661) typo missing parentheses (@hbrls)
+* [`542efdb`](https://github.com/npm/cli/commit/542efdb0a31f663cd899bc6d2ddad8fa88c20bc8) update `folders` page for modern npm (@shalvah)
+
+### Dependencies
+
+* [`cee3fd9`](https://github.com/npm/cli/commit/cee3fd9905c7eb0a5cb26a8c9c08c5db48becd15) `@npmcli/config@5.0.0`
+* [`2a740b1`](https://github.com/npm/cli/commit/2a740b14c3789d80825b1345f2e99765fcb90351) [#5692](https://github.com/npm/cli/pull/5692) `hosted-git-info@6.0.0`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpack-v5.0.0-pre.2...libnpmpack-v5.0.0-pre.3): `libnpmpack@5.0.0-pre.3`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpublish-v7.0.0-pre.2...libnpmpublish-v7.0.0-pre.3): `libnpmpublish@7.0.0-pre.3`
+
 ## [9.0.0-pre.4](https://github.com/npm/cli/compare/v9.0.0-pre.3...v9.0.0-pre.4) (2022-10-05)
 
 ### Features
