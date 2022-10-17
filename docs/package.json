@@ -22,10 +22,9 @@
   "dependencies": {
     "@isaacs/string-locale-compare": "^1.1.0",
     "@mdx-js/mdx": "^1.6.22",
-    "@npmcli/fs": "^2.1.0",
     "cmark-gfm": "^0.9.0",
     "front-matter": "^4.0.2",
-    "ignore-walk": "^5.0.1",
+    "ignore-walk": "^6.0.0",
     "jsdom": "^20.0.1",
     "marked-man": "^0.7.0",
     "mkdirp": "^1.0.4",

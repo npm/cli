@@ -1,5 +1,5 @@
 const { join, dirname, basename, extname, sep, posix } = require('path')
-const fs = require('@npmcli/fs')
+const fs = require('fs/promises')
 const ignoreWalk = require('ignore-walk')
 const yaml = require('yaml')
 const parseFrontMatter = require('front-matter')

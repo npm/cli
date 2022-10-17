@@ -48,13 +48,13 @@
   },
   "dependencies": {
     "@npmcli/arborist": "^6.0.0-pre.4",
-    "@npmcli/disparity-colors": "^2.0.0",
-    "@npmcli/installed-package-contents": "^1.0.7",
+    "@npmcli/disparity-colors": "^3.0.0",
+    "@npmcli/installed-package-contents": "^2.0.0",
     "binary-extensions": "^2.2.0",
     "diff": "^5.1.0",
     "minimatch": "^5.0.1",
     "npm-package-arg": "^9.0.1",
-    "pacote": "^14.0.0",
+    "pacote": "^15.0.1",
     "tar": "^6.1.0"
   },
   "templateOSS": {

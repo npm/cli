@@ -4,7 +4,7 @@ const MockRegistry = require('../../fixtures/mock-registry.js')
 const pacote = require('pacote')
 const Arborist = require('@npmcli/arborist')
 const path = require('path')
-const fs = require('@npmcli/fs')
+const fs = require('fs')
 const npa = require('npm-package-arg')
 
 const pkg = 'test-package'
@@ -80,14 +80,10 @@ t.test('respects publishConfig.registry, runs appropriate scripts', async t => {
   }).reply(200, {})
   await npm.exec('publish', [])
   t.matchSnapshot(joinedOutput(), 'new package version')
-  t.resolveMatch(fs.exists(path.join(prefix, 'scripts-prepublishonly')), true, 'ran prepublishOnly')
-  t.resolveMatch(
-    fs.exists(path.join(prefix, 'scripts-prepublish')),
-    false,
-    'did not run prepublish'
-  )
-  t.resolveMatch(fs.exists(path.join(prefix, 'scripts-publish')), true, 'ran publish')
-  t.resolveMatch(fs.exists(path.join(prefix, 'scripts-postpublish')), true, 'ran postpublish')
+  t.equal(fs.existsSync(path.join(prefix, 'scripts-prepublishonly')), true, 'ran prepublishOnly')
+  t.equal(fs.existsSync(path.join(prefix, 'scripts-prepublish')), false, 'did not run prepublish')
+  t.equal(fs.existsSync(path.join(prefix, 'scripts-publish')), true, 'ran publish')
+  t.equal(fs.existsSync(path.join(prefix, 'scripts-postpublish')), true, 'ran postpublish')
 })
 
 t.test('re-loads publishConfig.registry if added during script process', async t => {
@@ -230,7 +226,7 @@ t.test('tarball', async t => {
   })
   const tarball = await pacote.tarball(home, { Arborist })
   const tarFilename = path.join(home, 'tarball.tgz')
-  await fs.writeFile(tarFilename, tarball)
+  fs.writeFileSync(tarFilename, tarball)
   const registry = new MockRegistry({
     tap: t,
     registry: npm.config.get('registry'),
@@ -612,23 +608,23 @@ t.test('ignore-scripts', async t => {
   registry.nock.put(`/${pkg}`).reply(200, {})
   await npm.exec('publish', [])
   t.matchSnapshot(joinedOutput(), 'new package version')
-  t.resolveMatch(
-    fs.exists(path.join(prefix, 'scripts-prepublishonly')),
+  t.equal(
+    fs.existsSync(path.join(prefix, 'scripts-prepublishonly')),
     false,
     'did not run prepublishOnly'
   )
-  t.resolveMatch(
-    fs.exists(path.join(prefix, 'scripts-prepublish')),
+  t.equal(
+    fs.existsSync(path.join(prefix, 'scripts-prepublish')),
     false,
     'did not run prepublish'
   )
-  t.resolveMatch(
-    fs.exists(path.join(prefix, 'scripts-publish')),
+  t.equal(
+    fs.existsSync(path.join(prefix, 'scripts-publish')),
     false,
     'did not run publish'
   )
-  t.resolveMatch(
-    fs.exists(path.join(prefix, 'scripts-postpublish')),
+  t.equal(
+    fs.existsSync(path.join(prefix, 'scripts-postpublish')),
     false,
     'did not run postpublish'
   )

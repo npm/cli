@@ -2,26 +2,20 @@
 const walkUp = require('walk-up-path')
 const ini = require('ini')
 const nopt = require('nopt')
-const mkdirp = require('mkdirp-infer-owner')
 const mapWorkspaces = require('@npmcli/map-workspaces')
 const rpj = require('read-package-json-fast')
 const log = require('proc-log')
 
-/* istanbul ignore next */
-const myUid = process.getuid && process.getuid()
-/* istanbul ignore next */
-const myGid = process.getgid && process.getgid()
-
 const { resolve, dirname, join } = require('path')
 const { homedir } = require('os')
-const { promisify } = require('util')
-const fs = require('fs')
-const readFile = promisify(fs.readFile)
-const writeFile = promisify(fs.writeFile)
-const chmod = promisify(fs.chmod)
-const chown = promisify(fs.chown)
-const unlink = promisify(fs.unlink)
-const stat = promisify(fs.stat)
+const {
+  readFile,
+  writeFile,
+  chmod,
+  unlink,
+  stat,
+  mkdir,
+} = require('fs/promises')
 
 const hasOwnProperty = (obj, key) =>
   Object.prototype.hasOwnProperty.call(obj, key)
@@ -731,16 +725,8 @@ class Config {
       return
     }
     const dir = dirname(conf.source)
-    await mkdirp(dir)
+    await mkdir(dir, { recursive: true })
     await writeFile(conf.source, iniData, 'utf8')
-    // don't leave a root-owned config file lying around
-    /* istanbul ignore if - this is best-effort and a pita to test */
-    if (myUid === 0) {
-      const st = await stat(dir).catch(() => null)
-      if (st && (st.uid !== myUid || st.gid !== myGid)) {
-        await chown(conf.source, st.uid, st.gid).catch(() => {})
-      }
-    }
     const mode = where === 'user' ? 0o600 : 0o666
     await chmod(conf.source, mode)
   }

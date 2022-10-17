@@ -1,6 +1,6 @@
 const t = require('tap')
 const { resolve, dirname, join } = require('path')
-const fs = require('@npmcli/fs')
+const fs = require('fs')
 
 const { load: loadMockNpm } = require('../fixtures/mock-npm.js')
 const mockGlobals = require('../fixtures/mock-globals')
@@ -448,7 +448,7 @@ t.test('debug log', async t => {
     const logsDir = join(testdir, 'my_logs_dir')
 
     // make logs dir a file before load so it files
-    await fs.writeFile(logsDir, 'A_TEXT_FILE')
+    fs.writeFileSync(logsDir, 'A_TEXT_FILE')
     await t.resolves(npm.load(), 'loads with invalid logs dir')
 
     t.equal(npm.logFiles.length, 0, 'no log files array')
