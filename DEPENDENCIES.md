@@ -544,7 +544,6 @@ graph LR;
   libnpmexec-->bin-links;
   libnpmexec-->chalk;
   libnpmexec-->minify-registry-metadata;
-  libnpmexec-->mkdirp-infer-owner;
   libnpmexec-->mkdirp;
   libnpmexec-->npm-package-arg;
   libnpmexec-->npmcli-arborist["@npmcli/arborist"];

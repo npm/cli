@@ -1,12 +1,12 @@
 'use strict'
 
+const { mkdir } = require('fs/promises')
 const { promisify } = require('util')
 
 const Arborist = require('@npmcli/arborist')
 const ciDetect = require('@npmcli/ci-detect')
 const crypto = require('crypto')
 const log = require('proc-log')
-const mkdirp = require('mkdirp-infer-owner')
 const npa = require('npm-package-arg')
 const npmlog = require('npmlog')
 const pacote = require('pacote')
@@ -205,7 +205,7 @@ const exec = async (opts) => {
       .digest('hex')
       .slice(0, 16)
     const installDir = resolve(npxCache, hash)
-    await mkdirp(installDir)
+    await mkdir(installDir, { recursive: true })
     const npxArb = new Arborist({
       ...flatOptions,
       path: installDir,
