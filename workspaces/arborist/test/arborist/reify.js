@@ -4,36 +4,22 @@ const runScript = require('@npmcli/run-script')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 const tnock = require('../fixtures/tnock')
 
-// mock rimraf so we can make it fail in rollback tests
-const realRimraf = require('rimraf')
-let failRimraf = false
-const rimrafMock = (...args) => {
-  if (!failRimraf) {
-    return realRimraf(...args)
-  } else {
-    return args.pop()(new Error('rimraf fail'))
-  }
-}
-rimrafMock.sync = (...args) => {
-  if (!failRimraf) {
-    return realRimraf.sync(...args)
-  } else {
-    throw new Error('rimraf fail')
-  }
-}
 const fs = require('fs')
+
+let failRm = false
 let failRename = null
 let failRenameOnce = null
 let failMkdir = null
-const { rename: realRename, mkdir: realMkdir } = fs
+const { rename: realRename, rm: realRm, mkdir: realMkdir } = fs
 const fsMock = {
   ...fs,
   mkdir (...args) {
     if (failMkdir) {
       process.nextTick(() => args.pop()(failMkdir))
+      return
     }
 
-    realMkdir(...args)
+    return realMkdir(...args)
   },
   rename (...args) {
     if (failRename) {
@@ -43,13 +29,37 @@ const fsMock = {
       failRenameOnce = null
       process.nextTick(() => args.pop()(er))
     } else {
-      realRename(...args)
+      return realRename(...args)
     }
+  },
+  rm (...args) {
+    if (failRm) {
+      process.nextTick(() => args.pop()(new Error('rm fail')))
+      return
+    }
+
+    realRm(...args)
   },
 }
 const mocks = {
   fs: fsMock,
-  rimraf: rimrafMock,
+  'fs/promises': {
+    ...fs.promises,
+    mkdir: async (...args) => {
+      if (failMkdir) {
+        throw failMkdir
+      }
+
+      return fs.promises.mkdir(...args)
+    },
+    rm: async (...args) => {
+      if (failRm) {
+        throw new Error('rm fail')
+      }
+
+      return fs.promises.rm(...args)
+    },
+  },
 }
 
 const oldLockfileWarning = [
@@ -66,10 +76,6 @@ This is a one-time fix-up, please be patient...
 // need this to be injected so that it doesn't pull from main cache
 const moveFile = t.mock('@npmcli/move-file', { fs: fsMock })
 mocks['@npmcli/move-file'] = moveFile
-const mkdirp = t.mock('mkdirp', mocks)
-mocks.mkdirp = mkdirp
-const mkdirpInferOwner = t.mock('mkdirp-infer-owner', mocks)
-mocks['mkdirp-infer-owner'] = mkdirpInferOwner
 
 // track the warnings that are emitted.  returns a function that removes
 // the listener and provides the list of what it saw.
@@ -430,7 +436,7 @@ t.test('tracks changes of shrinkwrapped dep correctly', async t => {
   t.match(install2, update2, 'update maintains the same correct tree')
 
   // delete a dependency that was installed as part of the shrinkwrap
-  realRimraf.sync(resolve(path, 'node_modules/@nlf/shrinkwrapped-dep-updates-a/node_modules/@nlf/shrinkwrapped-dep-updates-b'))
+  fs.rmSync(resolve(path, 'node_modules/@nlf/shrinkwrapped-dep-updates-a/node_modules/@nlf/shrinkwrapped-dep-updates-b'), { recursive: true, force: true })
   const repair = await printReified(path)
   t.match(repair, install2, 'tree got repaired')
 })
@@ -623,7 +629,7 @@ t.test('rollbacks', { buffered: false }, t => {
     }), expect).then(() => t.equal(rolledBack, true, 'rolled back'))
   })
 
-  t.test('fail retiring nodes because rimraf fails after eexist', t => {
+  t.test('fail retiring nodes because rm fails after eexist', t => {
     const path = fixture(t, 'testing-bundledeps-3')
     const a = newArb({ path, legacyBundling: true })
     const eexist = new Error('rename fail')
@@ -633,7 +639,7 @@ t.test('rollbacks', { buffered: false }, t => {
     a[kRenamePath] = (from, to) => {
       a[kRenamePath] = renamePath
       failRename = eexist
-      failRimraf = true
+      failRm = true
       return a[kRenamePath](from, to)
     }
     const kRollback = Symbol.for('rollbackRetireShallowNodes')
@@ -642,8 +648,8 @@ t.test('rollbacks', { buffered: false }, t => {
     a[kRollback] = er => {
       rolledBack = true
       failRename = new Error('some other error')
-      failRimraf = false
-      t.match(er, new Error('rimraf fail'))
+      failRm = false
+      t.match(er, new Error('rm fail'))
       a[kRollback] = rollbackRetireShallowNodes
       return a[kRollback](er).then(er => {
         failRename = null
@@ -656,11 +662,11 @@ t.test('rollbacks', { buffered: false }, t => {
 
     return t.rejects(a.reify({
       update: ['@isaacs/testing-bundledeps-parent'],
-    }), new Error('rimraf fail'))
+    }), new Error('rm fail'))
       .then(() => t.equal(rolledBack, true, 'rolled back'))
   })
 
-  t.test('fail retiring node, but then rimraf fixes it', t => {
+  t.test('fail retiring node, but then rm fixes it', async t => {
     const path = fixture(t, 'testing-bundledeps-3')
     const a = newArb({ path, legacyBundling: true })
     const eexist = new Error('rename fail')
@@ -680,10 +686,11 @@ t.test('rollbacks', { buffered: false }, t => {
       return a[kRollback](er)
     }
 
-    return t.resolveMatchSnapshot(a.reify({
+    const tree = await a.reify({
       update: ['@isaacs/testing-bundledeps-parent'],
       save: false,
-    }).then(printTree))
+    })
+    return printTree(tree)
   })
 
   t.test('fail creating sparse tree', t => {
@@ -712,7 +719,7 @@ t.test('rollbacks', { buffered: false }, t => {
 
   t.test('fail rolling back from creating sparse tree', t => {
     failMkdir = null
-    failRimraf = null
+    failRm = null
     const path = fixture(t, 'testing-bundledeps-3')
     const a = newArb({ path, legacyBundling: true })
 
@@ -722,7 +729,7 @@ t.test('rollbacks', { buffered: false }, t => {
     a[kRetireShallowNodes] = async () => {
       a[kRetireShallowNodes] = retireShallowNodes
       await a[kRetireShallowNodes]()
-      failRimraf = true
+      failRm = true
     }
     const createSparseTree = a[kCreateST]
     t.teardown(() => failMkdir = null)
@@ -753,11 +760,11 @@ t.test('rollbacks', { buffered: false }, t => {
             'warn',
             'cleanup',
             'Failed to remove some directories',
-            [[String, new Error('rimraf fail')]],
+            [[String, new Error('rm fail')]],
           ],
         ])
       })
-      .then(() => failRimraf = false)
+      .then(() => failRm = false)
   })
 
   t.test('fail loading shrinkwraps and updating trees', t => {
@@ -856,7 +863,7 @@ t.test('rollbacks', { buffered: false }, t => {
     const kRemove = Symbol.for('removeTrash')
     const removeRetiredAndDeletedNodes = a[kRemove]
     a[kRemove] = () => {
-      failRimraf = true
+      failRm = true
       a[kRemove] = removeRetiredAndDeletedNodes
       return a[kRemove]()
     }
@@ -875,11 +882,11 @@ t.test('rollbacks', { buffered: false }, t => {
           'warn',
           'cleanup',
           'Failed to remove some directories',
-          [[String, new Error('rimraf fail')]],
+          [[String, new Error('rm fail')]],
         ],
       ])
     })
-      .then(() => failRimraf = false)
+      .then(() => failRm = false)
   })
 
   t.end()
@@ -1477,7 +1484,7 @@ t.test('rollback if process is terminated during reify process', async t => {
         // ensure that we end up with the same thing we started with,
         // if it was something other than we're installing
         const a = resolve(path, 'node_modules/abbrev')
-        mkdirp.sync(a)
+        fs.mkdirSync(a, { recursive: true })
         const pj = resolve(a, 'package.json')
         fs.writeFileSync(pj, JSON.stringify({
           name: 'abbrev',
@@ -2337,7 +2344,7 @@ t.test('never unpack into anything other than a real directory', async t => {
   const wrappy = resolve(path, 'node_modules/once/node_modules/wrappy')
   arb[kUnpack] = () => {
     // will have already created it
-    realRimraf.sync(wrappy)
+    fs.rmSync(wrappy, { recursive: true, force: true })
     const target = resolve(path, 'target')
     fs.symlinkSync(target, wrappy, 'junction')
     arb[kUnpack] = unpackNewModules

@@ -12,14 +12,13 @@ const log = require('proc-log')
 
 const { dirname, resolve, relative } = require('path')
 const { depth: dfwalk } = require('treeverse')
-const fs = require('fs')
-const { promisify } = require('util')
-const lstat = promisify(fs.lstat)
-const symlink = promisify(fs.symlink)
-const mkdirp = require('mkdirp-infer-owner')
-const justMkdirp = require('mkdirp')
+const {
+  lstat,
+  mkdir,
+  rm,
+  symlink,
+} = require('fs/promises')
 const moveFile = require('@npmcli/move-file')
-const rimraf = promisify(require('rimraf'))
 const PackageJson = require('@npmcli/package-json')
 const packageContents = require('@npmcli/installed-package-contents')
 const runScript = require('@npmcli/run-script')
@@ -175,7 +174,7 @@ module.exports = cls => class Reifier extends cls {
     // we do NOT want to set ownership on this folder, especially
     // recursively, because it can have other side effects to do that
     // in a project directory.  We just want to make it if it's missing.
-    await justMkdirp(resolve(this.path))
+    await mkdir(resolve(this.path), { recursive: true })
 
     // do not allow the top-level node_modules to be a symlink
     await this[_validateNodeModules](resolve(this.path, 'node_modules'))
@@ -433,10 +432,10 @@ module.exports = cls => class Reifier extends cls {
         // handled the most common cause of ENOENT (dir doesn't exist yet),
         // then just ignore any ENOENT.
         if (er.code === 'ENOENT') {
-          return didMkdirp ? null : mkdirp(dirname(to)).then(() =>
+          return didMkdirp ? null : mkdir(dirname(to), { recursive: true }).then(() =>
             this[_renamePath](from, to, true))
         } else if (er.code === 'EEXIST') {
-          return rimraf(to).then(() => moveFile(from, to))
+          return rm(to, { recursive: true, force: true }).then(() => moveFile(from, to))
         } else {
           throw er
         }
@@ -518,7 +517,7 @@ module.exports = cls => class Reifier extends cls {
           await this[_renamePath](d, retired)
         }
       }
-      const made = await mkdirp(node.path)
+      const made = await mkdir(node.path, { recursive: true })
       this[_sparseTreeDirs].add(node.path)
       this[_sparseTreeRoots].add(made)
     }))
@@ -533,7 +532,7 @@ module.exports = cls => class Reifier extends cls {
     const failures = []
     const targets = [...roots, ...Object.keys(this[_retiredPaths])]
     const unlinks = targets
-      .map(path => rimraf(path).catch(er => failures.push([path, er])))
+      .map(path => rm(path, { recursive: true, force: true }).catch(er => failures.push([path, er])))
     return promiseAllRejectLate(unlinks).then(() => {
       // eslint-disable-next-line promise/always-return
       if (failures.length) {
@@ -630,7 +629,7 @@ module.exports = cls => class Reifier extends cls {
       return
     }
     log.warn('reify', 'Removing non-directory', nm)
-    await rimraf(nm)
+    await rm(nm, { recursive: true, force: true })
   }
 
   async [_extractOrLink] (node) {
@@ -664,7 +663,7 @@ module.exports = cls => class Reifier extends cls {
     await this[_validateNodeModules](nm)
 
     if (node.isLink) {
-      await rimraf(node.path)
+      await rm(node.path, { recursive: true, force: true })
       await this[_symlink](node)
     } else {
       await debug(async () => {
@@ -690,7 +689,7 @@ module.exports = cls => class Reifier extends cls {
     const dir = dirname(node.path)
     const target = node.realpath
     const rel = relative(dir, target)
-    await mkdirp(dir)
+    await mkdir(dir, { recursive: true })
     return symlink(rel, node.path, 'junction')
   }
 
@@ -953,7 +952,7 @@ module.exports = cls => class Reifier extends cls {
 
   // ok!  actually unpack stuff into their target locations!
   // The sparse tree has already been created, so we walk the diff
-  // kicking off each unpack job.  If any fail, we rimraf the sparse
+  // kicking off each unpack job.  If any fail, we rm the sparse
   // tree entirely and try to put everything back where it was.
   [_unpackNewModules] () {
     process.emit('time', 'reify:unpack')
@@ -1034,7 +1033,8 @@ module.exports = cls => class Reifier extends cls {
       return promiseAllRejectLate(diff.unchanged.map(node => {
         // no need to roll back links, since we'll just delete them anyway
         if (node.isLink) {
-          return mkdirp(dirname(node.path)).then(() => this[_reifyNode](node))
+          return mkdir(dirname(node.path), { recursive: true, force: true })
+            .then(() => this[_reifyNode](node))
         }
 
         // will have been moved/unpacked along with bundler
@@ -1050,7 +1050,7 @@ module.exports = cls => class Reifier extends cls {
         // skip it.
         const bd = node.package.bundleDependencies
         const dir = bd && bd.length ? node.path + '/node_modules' : node.path
-        return mkdirp(dir).then(() => this[_moveContents](node, fromPath))
+        return mkdir(dir, { recursive: true }).then(() => this[_moveContents](node, fromPath))
       }))
     }))
       .then(() => process.emit('timeEnd', 'reify:unretire'))
@@ -1124,15 +1124,15 @@ module.exports = cls => class Reifier extends cls {
   // the tree is pretty much built now, so it's cleanup time.
   // remove the retired folders, and any deleted nodes
   // If this fails, there isn't much we can do but tell the user about it.
-  // Thankfully, it's pretty unlikely that it'll fail, since rimraf is a tank.
+  // Thankfully, it's pretty unlikely that it'll fail, since rm is a node builtin.
   async [_removeTrash] () {
     process.emit('time', 'reify:trash')
     const promises = []
     const failures = []
-    const rm = path => rimraf(path).catch(er => failures.push([path, er]))
+    const _rm = path => rm(path, { recursive: true, force: true }).catch(er => failures.push([path, er]))
 
     for (const path of this[_trashList]) {
-      promises.push(rm(path))
+      promises.push(_rm(path))
     }
 
     await promiseAllRejectLate(promises)

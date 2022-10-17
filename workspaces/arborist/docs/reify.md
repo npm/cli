@@ -87,7 +87,7 @@ Fail: rename each retired `.${name}-hash` folder back to `${name}`
 
 ### step 2: create sparse tree
 
-Now that the shallowest changing nodes are retired, `mkdirp` all leaf
+Now that the shallowest changing nodes are retired, `mkdir` all leaf
 nodes.
 
 ```

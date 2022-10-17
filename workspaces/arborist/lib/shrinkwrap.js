@@ -35,30 +35,14 @@ const mismatch = (a, b) => a && b && a !== b
 
 const log = require('proc-log')
 const YarnLock = require('./yarn-lock.js')
-const { promisify } = require('util')
-const rimraf = promisify(require('rimraf'))
-const fs = require('fs')
-const readFile = promisify(fs.readFile)
-const writeFile = promisify(fs.writeFile)
-const stat = promisify(fs.stat)
-const readdir_ = promisify(fs.readdir)
-const readlink = promisify(fs.readlink)
-
-// XXX remove when drop support for node v10
-const lstat = promisify(fs.lstat)
-/* istanbul ignore next - version specific polyfill */
-const readdir = async (path, opt) => {
-  if (!opt || !opt.withFileTypes) {
-    return readdir_(path, opt)
-  }
-  const ents = await readdir_(path, opt)
-  if (typeof ents[0] === 'string') {
-    return Promise.all(ents.map(async ent => {
-      return Object.assign(await lstat(path + '/' + ent), { name: ent })
-    }))
-  }
-  return ents
-}
+const {
+  readFile,
+  readdir,
+  readlink,
+  rm,
+  stat,
+  writeFile,
+} = require('fs/promises')
 
 const { resolve, basename, relative } = require('path')
 const specFromLock = require('./spec-from-lock.js')
@@ -1153,7 +1137,7 @@ class Shrinkwrap {
           // a node_modules folder, but then the lockfile is not important.
           // Remove the file, so that in case there WERE deps, but we just
           // failed to update the file for some reason, it's not out of sync.
-          return rimraf(this.filename)
+          return rm(this.filename, { recursive: true, force: true })
         }
         throw er
       }),

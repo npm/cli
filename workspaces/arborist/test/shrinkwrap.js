@@ -4,7 +4,6 @@ const Link = require('../lib/link.js')
 const calcDepFlags = require('../lib/calc-dep-flags.js')
 const fs = require('fs')
 const Arborist = require('../lib/arborist/index.js')
-const rimraf = require('rimraf')
 
 const t = require('tap')
 
@@ -893,8 +892,8 @@ t.test('hidden lockfile only used if up to date', async t => {
 
   // make the lockfile newer, but missing a folder from node_modules
   {
-    rimraf.sync(resolve(path, 'node_modules/abbrev'))
-    rimraf.sync(resolve(path, 'node_modules/xyz'))
+    fs.rmSync(resolve(path, 'node_modules/abbrev'), { recursive: true, force: true })
+    fs.rmSync(resolve(path, 'node_modules/xyz'), { recursive: true, force: true })
     const later = Date.now() + 10000
     fs.utimesSync(resolve(path, hidden), new Date(later), new Date(later))
     const s = await Shrinkwrap.load({ path, hiddenLockfile: true })
