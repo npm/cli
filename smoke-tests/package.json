@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^4.0.0",
-    "@npmcli/promise-spawn": "^3.0.0",
+    "@npmcli/promise-spawn": "^4.0.0",
     "@npmcli/template-oss": "4.6.1",
     "minify-registry-metadata": "^2.2.0",
     "rimraf": "^3.0.2",

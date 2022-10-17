@@ -509,9 +509,9 @@ t.test('query-selector-all', async t => {
     ]],
 
     // has pseudo
-    [':root > *:has(* > #bar@1.4.0)', ['foo@2.2.2']],
-    ['*:has(* > #bar@1.4.0)', ['foo@2.2.2']],
-    ['*:has(> #bar@1.4.0)', ['foo@2.2.2']],
+    [':root > *:has(* > #bar:semver(1.4.0))', ['foo@2.2.2']],
+    ['*:has(* > #bar:semver(1.4.0))', ['foo@2.2.2']],
+    ['*:has(> #bar:semver(1.4.0))', ['foo@2.2.2']],
     ['.workspace:has(> * > #lorem)', ['a@1.0.0']],
     ['.workspace:has(* #lorem, ~ #b)', ['a@1.0.0']],
 
@@ -931,8 +931,8 @@ t.test('query-selector-all', async t => {
 
     // id selector
     ['#bar', ['bar@2.0.0', 'bar@1.4.0']],
-    ['#bar@2.0.0', ['bar@2.0.0']],
-    ['#@npmcli/abbrev@2.0.0-beta.45', ['@npmcli/abbrev@2.0.0-beta.45']],
+    ['#bar:semver(2.0.0)', ['bar@2.0.0']],
+    ['#@npmcli/abbrev:semver(2.0.0-beta.45)', ['@npmcli/abbrev@2.0.0-beta.45']],
     ['#bar:semver(2.0)', ['bar@2.0.0']],
     ['#bar:semver(2)', ['bar@2.0.0']],
     ['#bar:semver(^2.0.0)', ['bar@2.0.0']],
@@ -959,6 +959,6 @@ t.test('query-selector-all', async t => {
     [':root #bar:semver(1) > *', ['dasher@2.0.0']],
     [':root #bar:semver(1) ~ *', ['dash-separated-pkg@1.0.0']],
     ['#bar:semver(2), #foo', ['bar@2.0.0', 'foo@2.2.2']],
-    ['#a, #bar:semver(2), #foo@2.2.2', ['a@1.0.0', 'bar@2.0.0', 'foo@2.2.2']],
+    ['#a, #bar:semver(2), #foo:semver(2.2.2)', ['a@1.0.0', 'bar@2.0.0', 'foo@2.2.2']],
   ])
 })

@@ -1,6 +1,6 @@
 const t = require('tap')
 const { join, resolve, basename, extname, dirname } = require('path')
-const fs = require('@npmcli/fs')
+const fs = require('fs/promises')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 const docs = require('@npmcli/docs')
 

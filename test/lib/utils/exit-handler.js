@@ -1,6 +1,7 @@
 const t = require('tap')
 const os = require('os')
-const fs = require('@npmcli/fs')
+const fs = require('fs')
+const fsMiniPass = require('fs-minipass')
 const { join } = require('path')
 const EventEmitter = require('events')
 const { format } = require('../../../lib/utils/log-file')
@@ -291,20 +292,57 @@ t.test('no logs dir', async (t) => {
   ])
 })
 
-t.test('log file error', async (t) => {
+t.test('timers fail to write', async (t) => {
+  // we want the fs.writeFileSync in the Timers class to fail
+  const mockTimers = t.mock('../../../lib/utils/timers.js', {
+    fs: {
+      ...fs,
+      writeFileSync: (file, ...rest) => {
+        if (file.includes('LOGS_DIR')) {
+          throw new Error('err')
+        }
+
+        return fs.writeFileSync(file, ...rest)
+      },
+    },
+  })
+
   const { exitHandler, logs } = await mockExitHandler(t, {
     config: {
       'logs-dir': 'LOGS_DIR',
       timing: true,
     },
     mocks: {
-      '@npmcli/fs': {
-        mkdir: async (dir) => {
-          if (dir.includes('LOGS_DIR')) {
-            throw new Error('err')
-          }
-        },
+      // note, this is relative to test/fixtures/mock-npm.js not this file
+      '../../lib/utils/timers.js': mockTimers,
+    },
+  })
+
+  await exitHandler(new Error())
+
+  t.match(logs.error.filter(([t]) => t === ''), [['', `error writing to the directory`]])
+})
+
+t.test('log files fail to write', async (t) => {
+  // we want the fsMiniPass.WriteStreamSync in the LogFile class to fail
+  const mockLogFile = t.mock('../../../lib/utils/log-file.js', {
+    'fs-minipass': {
+      ...fsMiniPass,
+      WriteStreamSync: (file, ...rest) => {
+        if (file.includes('LOGS_DIR')) {
+          throw new Error('err')
+        }
       },
+    },
+  })
+
+  const { exitHandler, logs } = await mockExitHandler(t, {
+    config: {
+      'logs-dir': 'LOGS_DIR',
+    },
+    mocks: {
+      // note, this is relative to test/fixtures/mock-npm.js not this file
+      '../../lib/utils/log-file.js': mockLogFile,
     },
   })
 
@@ -342,7 +380,7 @@ t.test('files from error message with error', async (t) => {
       ['error-file.txt', '# error file content'],
     ],
     mocks: {
-      '@npmcli/fs': {
+      fs: {
         ...fs,
         writeFileSync: (dir) => {
           if (dir.includes('LOGS_DIR') && dir.endsWith('error-file.txt')) {

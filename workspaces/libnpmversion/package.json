@@ -37,10 +37,10 @@
     "tap": "^16.0.1"
   },
   "dependencies": {
-    "@npmcli/git": "^3.0.0",
-    "@npmcli/run-script": "^4.1.3",
-    "json-parse-even-better-errors": "^2.3.1",
-    "proc-log": "^2.0.0",
+    "@npmcli/git": "^4.0.1",
+    "@npmcli/run-script": "^5.0.0",
+    "json-parse-even-better-errors": "^3.0.0",
+    "proc-log": "^3.0.0",
     "semver": "^7.3.7"
   },
   "engines": {

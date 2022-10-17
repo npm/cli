@@ -5,7 +5,7 @@ const packlist = require('npm-packlist')
 const git = require('@npmcli/git')
 const { resolve, join, relative } = require('path')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
-const fs = require('@npmcli/fs')
+const fs = require('fs/promises')
 const PackageJson = require('@npmcli/package-json')
 
 const RM_FLAG = '--remove-ignored-files'
