@@ -60,7 +60,6 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "git": "git",
   "git-tag-version": true,
   "global": false,
-  "global-style": false,
   "globalconfig": "{GLOBALPREFIX}/npmrc",
   "heading": "npm",
   "https-proxy": null,
@@ -82,8 +81,8 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "init.module": "{HOME}/.npm-init.js",
   "init.version": "1.0.0",
   "install-links": true,
+  "install-strategy": "hoisted",
   "key": null,
-  "legacy-bundling": false,
   "legacy-peer-deps": false,
   "link": false,
   "local-address": null,
@@ -212,7 +211,6 @@ fund = true
 git = "git" 
 git-tag-version = true 
 global = false 
-global-style = false 
 globalconfig = "{GLOBALPREFIX}/npmrc" 
 heading = "npm" 
 https-proxy = null 
@@ -234,9 +232,9 @@ init.license = "ISC"
 init.module = "{HOME}/.npm-init.js" 
 init.version = "1.0.0" 
 install-links = true 
+install-strategy = "hoisted" 
 json = false 
 key = null 
-legacy-bundling = false 
 legacy-peer-deps = false 
 link = false 
 local-address = null 

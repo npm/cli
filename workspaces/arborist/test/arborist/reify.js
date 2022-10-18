@@ -509,7 +509,7 @@ t.test('update a child of a node with bundled deps', t => {
   const path = fixture(t, 'testing-bundledeps-legacy-bundling')
   return t.resolveMatchSnapshot(printReified(path, {
     update: ['@isaacs/testing-bundledeps-c'],
-    legacyBundling: true,
+    installStrategy: 'nested',
   }))
 })
 
@@ -598,7 +598,7 @@ t.test('warn on reifying deprecated dependency', t => {
 t.test('rollbacks', { buffered: false }, t => {
   t.test('fail retiring shallow nodes', t => {
     const path = fixture(t, 'testing-bundledeps-3')
-    const a = newArb({ path, legacyBundling: true })
+    const a = newArb({ path, installStrategy: 'nested' })
     const expect = new Error('rename fail')
     const kRenamePath = Symbol.for('renamePath')
     const renamePath = a[kRenamePath]
@@ -625,7 +625,7 @@ t.test('rollbacks', { buffered: false }, t => {
 
   t.test('fail retiring nodes because rimraf fails after eexist', t => {
     const path = fixture(t, 'testing-bundledeps-3')
-    const a = newArb({ path, legacyBundling: true })
+    const a = newArb({ path, installStrategy: 'nested' })
     const eexist = new Error('rename fail')
     eexist.code = 'EEXIST'
     const kRenamePath = Symbol.for('renamePath')
@@ -662,7 +662,7 @@ t.test('rollbacks', { buffered: false }, t => {
 
   t.test('fail retiring node, but then rimraf fixes it', t => {
     const path = fixture(t, 'testing-bundledeps-3')
-    const a = newArb({ path, legacyBundling: true })
+    const a = newArb({ path, installStrategy: 'nested' })
     const eexist = new Error('rename fail')
     eexist.code = 'EEXIST'
     const kRenamePath = Symbol.for('renamePath')
@@ -689,7 +689,7 @@ t.test('rollbacks', { buffered: false }, t => {
   t.test('fail creating sparse tree', t => {
     t.teardown(() => failMkdir = null)
     const path = fixture(t, 'testing-bundledeps-3')
-    const a = newArb({ path, legacyBundling: true })
+    const a = newArb({ path, installStrategy: 'nested' })
     const kCreateST = Symbol.for('createSparseTree')
     const createSparseTree = a[kCreateST]
     a[kCreateST] = () => {
@@ -714,7 +714,7 @@ t.test('rollbacks', { buffered: false }, t => {
     failMkdir = null
     failRimraf = null
     const path = fixture(t, 'testing-bundledeps-3')
-    const a = newArb({ path, legacyBundling: true })
+    const a = newArb({ path, installStrategy: 'nested' })
 
     const kCreateST = Symbol.for('createSparseTree')
     const kRetireShallowNodes = Symbol.for('retireShallowNodes')
@@ -762,7 +762,7 @@ t.test('rollbacks', { buffered: false }, t => {
 
   t.test('fail loading shrinkwraps and updating trees', t => {
     const path = fixture(t, 'shrinkwrapped-dep-no-lock-empty')
-    const a = newArb({ path, legacyBundling: true })
+    const a = newArb({ path, installStrategy: 'nested' })
     const kLoadSW = Symbol.for('loadShrinkwrapsAndUpdateTrees')
     const loadShrinkwrapsAndUpdateTrees = a[kLoadSW]
     a[kLoadSW] = seen => {
@@ -788,7 +788,7 @@ t.test('rollbacks', { buffered: false }, t => {
 
   t.test('fail loading bundles and updating trees', t => {
     const path = fixture(t, 'two-bundled-deps')
-    const a = newArb({ path, legacyBundling: true })
+    const a = newArb({ path, installStrategy: 'nested' })
     const kLoadBundles = Symbol.for('loadBundlesAndUpdateTrees')
     const loadBundlesAndUpdateTrees = a[kLoadBundles]
     a[kLoadBundles] = (depth, bundlesByDepth) => {
@@ -806,7 +806,7 @@ t.test('rollbacks', { buffered: false }, t => {
 
   t.test('fail unpacking new modules', t => {
     const path = fixture(t, 'two-bundled-deps')
-    const a = newArb({ path, legacyBundling: true })
+    const a = newArb({ path, installStrategy: 'nested' })
     const kUnpack = Symbol.for('unpackNewModules')
     const unpackNewModules = a[kUnpack]
     a[kUnpack] = () => {
@@ -824,7 +824,7 @@ t.test('rollbacks', { buffered: false }, t => {
 
   t.test('fail moving back retired unchanged', t => {
     const path = fixture(t, 'testing-bundledeps-3')
-    const a = newArb({ path, legacyBundling: true })
+    const a = newArb({ path, installStrategy: 'nested' })
     const kMoveback = Symbol.for('moveBackRetiredUnchanged')
 
     const moveBackRetiredUnchanged = a[kMoveback]
@@ -852,7 +852,7 @@ t.test('rollbacks', { buffered: false }, t => {
 
   t.test('fail removing retired and deleted nodes', t => {
     const path = fixture(t, 'testing-bundledeps-3')
-    const a = newArb({ path, legacyBundling: true })
+    const a = newArb({ path, installStrategy: 'nested' })
     const kRemove = Symbol.for('removeTrash')
     const removeRetiredAndDeletedNodes = a[kRemove]
     a[kRemove] = () => {

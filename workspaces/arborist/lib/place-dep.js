@@ -43,7 +43,6 @@ class PlaceDep {
       explicitRequest,
       updateNames,
       auditReport,
-      legacyBundling,
       strictPeerDeps,
       installLinks,
       legacyPeerDeps,
@@ -55,7 +54,6 @@ class PlaceDep {
       explicitRequest,
       updateNames,
       auditReport,
-      legacyBundling,
       strictPeerDeps,
       installLinks,
       installStrategy,
@@ -78,7 +76,6 @@ class PlaceDep {
       edge,
       dep,
       preferDedupe,
-      legacyBundling,
       explicitRequest,
       updateNames,
       installStrategy,
@@ -170,7 +167,7 @@ class PlaceDep {
 
       // nest packages like npm v1 and v2
       // very disk-inefficient
-      if (legacyBundling) {
+      if (installStrategy === 'nested') {
         break
       }
 
@@ -463,7 +460,7 @@ class PlaceDep {
   // prune all the nodes in a branch of the tree that can be safely removed
   // This is only the most basic duplication detection; it finds if there
   // is another satisfying node further up the tree, and if so, dedupes.
-  // Even in legacyBundling mode, we do this amount of deduplication.
+  // Even in installStategy is nested, we do this amount of deduplication.
   pruneDedupable (node, descend = true) {
     if (node.canDedupe(this.preferDedupe)) {
       // gather up all deps that have no valid edges in from outside

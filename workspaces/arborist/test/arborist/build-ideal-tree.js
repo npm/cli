@@ -364,7 +364,7 @@ t.test('dedupe example - deduped because preferDedupe=true', t => {
 t.test('dedupe example - nested because legacyBundling=true', t => {
   const path = resolve(fixtures, 'dedupe-tests')
   return t.resolveMatchSnapshot(printIdeal(path, {
-    legacyBundling: true,
+    installStrategy: 'nested',
     preferDedupe: true,
   }))
 })
@@ -2154,7 +2154,7 @@ t.test('properly assign fsParent when paths have .. in them', async t => {
   }
 })
 
-t.only('update global', async t => {
+t.test('update global', async t => {
   // global root
   // ├─┬ @isaacs/testing-dev-optional-flags@1.0.0
   // │ ├── own-or@1.0.0

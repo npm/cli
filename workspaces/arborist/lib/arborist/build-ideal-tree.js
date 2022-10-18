@@ -48,7 +48,6 @@ const _flagsSuspect = Symbol.for('flagsSuspect')
 const _workspaces = Symbol.for('workspaces')
 const _prune = Symbol('prune')
 const _preferDedupe = Symbol('preferDedupe')
-const _legacyBundling = Symbol('legacyBundling')
 const _parseSettings = Symbol('parseSettings')
 const _initTree = Symbol('initTree')
 const _applyUserRequests = Symbol('applyUserRequests')
@@ -143,7 +142,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
 
     this[_explicitRequests] = new Set()
     this[_preferDedupe] = false
-    this[_legacyBundling] = false
     this[_depsSeen] = new Set()
     this[_depsQueue] = []
     this[_currentDep] = null
@@ -252,7 +250,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
 
     this[_complete] = !!options.complete
     this[_preferDedupe] = !!options.preferDedupe
-    this[_legacyBundling] = !!options.legacyBundling
 
     // validates list of update names, they must
     // be dep names only, no semver ranges are supported
@@ -952,7 +949,6 @@ This is a one-time fix-up, please be patient...
         auditReport: this.auditReport,
         force: this[_force],
         preferDedupe: this[_preferDedupe],
-        legacyBundling: this[_legacyBundling],
         strictPeerDeps: this[_strictPeerDeps],
         installLinks: this.installLinks,
         legacyPeerDeps: this.legacyPeerDeps,
