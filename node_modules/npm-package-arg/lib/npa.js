@@ -39,11 +39,12 @@ function npa (arg, where) {
     spec = arg
   } else if (nameEndsAt > 0) {
     name = namePart
-    spec = arg.slice(nameEndsAt + 1)
+    spec = arg.slice(nameEndsAt + 1) || '*'
   } else {
     const valid = validatePackageName(arg)
     if (valid.validForOldPackages) {
       name = arg
+      spec = '*'
     } else {
       spec = arg
     }
@@ -113,7 +114,7 @@ function Result (opts) {
   this.name = undefined
   this.escapedName = undefined
   this.scope = undefined
-  this.rawSpec = opts.rawSpec == null ? '' : opts.rawSpec
+  this.rawSpec = opts.rawSpec || ''
   this.saveSpec = opts.saveSpec
   this.fetchSpec = opts.fetchSpec
   if (opts.name) {
@@ -383,7 +384,7 @@ function fromAlias (res, where) {
 
 function fromRegistry (res) {
   res.registry = true
-  const spec = res.rawSpec === '' ? 'latest' : res.rawSpec.trim()
+  const spec = res.rawSpec.trim()
   // no save spec for registry components as we save based on the fetched
   // version, not on the argument so this can't compute that.
   res.saveSpec = null
