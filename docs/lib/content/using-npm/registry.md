@@ -31,6 +31,9 @@ used, which is supplied by the [`registry` config](/using-npm/config#registry)
 parameter.  See [`npm config`](/commands/npm-config),
 [`npmrc`](/configuring-npm/npmrc), and [`config`](/using-npm/config) for more on
 managing npm's configuration.
+Authentication configuration such as auth tokens and certificates are configured
+specifically scoped to an individual registry. See
+[Auth Related Configuration](/configuring-npm/npmrc#auth-related-configuration)
 
 When the default registry is used in a package-lock or shrinkwrap is has the
 special meaning of "the currently configured registry". If you create a lock
