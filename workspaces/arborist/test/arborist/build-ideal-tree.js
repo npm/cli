@@ -364,7 +364,7 @@ t.test('dedupe example - deduped because preferDedupe=true', t => {
 t.test('dedupe example - nested because legacyBundling=true', t => {
   const path = resolve(fixtures, 'dedupe-tests')
   return t.resolveMatchSnapshot(printIdeal(path, {
-    legacyBundling: true,
+    installStrategy: 'nested',
     preferDedupe: true,
   }))
 })
@@ -607,7 +607,7 @@ t.test('link dep within node_modules and outside root', t => {
 })
 
 t.test('global style', t => t.resolveMatchSnapshot(printIdeal(t.testdir(), {
-  globalStyle: true,
+  installStrategy: 'shallow',
   add: ['rimraf'],
 })))
 
@@ -1136,7 +1136,7 @@ t.test('resolve links in global mode', async t => {
 
 t.test('dont get confused if root matches duped metadep', async t => {
   const path = resolve(fixtures, 'test-root-matches-metadep')
-  const arb = new Arborist({ path, ...OPT })
+  const arb = new Arborist({ path, installStrategy: 'hoisted', ...OPT })
   const tree = await arb.buildIdealTree()
   t.matchSnapshot(printTree(tree))
 })
