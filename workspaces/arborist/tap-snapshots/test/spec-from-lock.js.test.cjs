@@ -94,8 +94,10 @@ Result {
   "gitSubdir": undefined,
   "hosted": GitHost {
     "auth": null,
-    "browsefiletemplate": "function browsefiletemplate",
+    "blobpath": "blob",
+    "browseblobtemplate": "function browseblobtemplate",
     "browsetemplate": "function browsetemplate",
+    "browsetreetemplate": "function browsetreetemplate",
     "bugstemplate": "function bugstemplate",
     "committish": "a9ee72ebc8fe3975f1b0c7aeb3a8f2a806a432eb",
     "default": "sshurl",
