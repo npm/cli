@@ -908,3 +908,19 @@ t.test('loglevel silent', t => {
   t.match(flat.silent, true, 'flattens to assign silent')
   t.end()
 })
+
+t.test('remap legacy-bundling', t => {
+  const obj = { 'legacy-bundling': true }
+  const flat = {}
+  mockDefs()['legacy-bundling'].flatten('legacy-bundling', obj, flat)
+  t.strictSame(flat, { installStrategy: 'nested' })
+  t.end()
+})
+
+t.test('remap global-style', t => {
+  const obj = { 'global-style': true }
+  const flat = {}
+  mockDefs()['global-style'].flatten('global-style', obj, flat)
+  t.strictSame(flat, { installStrategy: 'shallow' })
+  t.end()
+})
