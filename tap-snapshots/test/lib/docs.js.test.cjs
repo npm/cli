@@ -750,23 +750,6 @@ npm exec --package yo --package generator-node --call "yo node"
 \`\`\`
 
 
-#### \`cert\`
-
-* Default: null
-* Type: null or String
-
-A client certificate to pass when accessing the registry. Values should be
-in PEM format (Windows calls it "Base-64 encoded X.509 (.CER)") with
-newlines replaced by the string "\\n". For example:
-
-\`\`\`ini
-cert="-----BEGIN CERTIFICATE-----\\nXXXX\\nXXXX\\n-----END CERTIFICATE-----"
-\`\`\`
-
-It is _not_ the path to a certificate file, though you can set a
-registry-scoped "certfile" path like
-"//other-registry.tld/:certfile=/path/to/cert.pem".
-
 #### \`ci-name\`
 
 * Default: The name of the current CI system, or \`null\` when not on a known CI
@@ -1199,21 +1182,6 @@ Whether or not to output JSON data, rather than the normal output.
   saving them to your \`package.json\`.
 
 Not supported by all npm commands.
-
-#### \`key\`
-
-* Default: null
-* Type: null or String
-
-A client key to pass when accessing the registry. Values should be in PEM
-format with newlines replaced by the string "\\n". For example:
-
-\`\`\`ini
-key="-----BEGIN PRIVATE KEY-----\\nXXXX\\nXXXX\\n-----END PRIVATE KEY-----"
-\`\`\`
-
-It is _not_ the path to a key file, though you can set a registry-scoped
-"keyfile" path like "//other-registry.tld/:keyfile=/path/to/key.pem".
 
 #### \`legacy-peer-deps\`
 
@@ -1975,6 +1943,27 @@ When set to \`dev\` or \`development\`, this is an alias for \`--include=dev\`.
 
 \`--cache-min=9999 (or bigger)\` is an alias for \`--prefer-offline\`.
 
+#### \`cert\`
+
+* Default: null
+* Type: null or String
+* DEPRECATED: \`key\` and \`cert\` are no longer used for most registry
+  operations. Use registry scoped \`keyfile\` and \`certfile\` instead. Example:
+  //other-registry.tld/:keyfile=/path/to/key.pem
+  //other-registry.tld/:certfile=/path/to/cert.crt
+
+A client certificate to pass when accessing the registry. Values should be
+in PEM format (Windows calls it "Base-64 encoded X.509 (.CER)") with
+newlines replaced by the string "\\n". For example:
+
+\`\`\`ini
+cert="-----BEGIN CERTIFICATE-----\\nXXXX\\nXXXX\\n-----END CERTIFICATE-----"
+\`\`\`
+
+It is _not_ the path to a certificate file, though you can set a
+registry-scoped "certfile" path like
+"//other-registry.tld/:certfile=/path/to/cert.pem".
+
 #### \`dev\`
 
 * Default: false
@@ -2040,6 +2029,25 @@ Alias for \`--init-module\`
 * DEPRECATED: Use \`--init-version\` instead.
 
 Alias for \`--init-version\`
+
+#### \`key\`
+
+* Default: null
+* Type: null or String
+* DEPRECATED: \`key\` and \`cert\` are no longer used for most registry
+  operations. Use registry scoped \`keyfile\` and \`certfile\` instead. Example:
+  //other-registry.tld/:keyfile=/path/to/key.pem
+  //other-registry.tld/:certfile=/path/to/cert.crt
+
+A client key to pass when accessing the registry. Values should be in PEM
+format with newlines replaced by the string "\\n". For example:
+
+\`\`\`ini
+key="-----BEGIN PRIVATE KEY-----\\nXXXX\\nXXXX\\n-----END PRIVATE KEY-----"
+\`\`\`
+
+It is _not_ the path to a key file, though you can set a registry-scoped
+"keyfile" path like "//other-registry.tld/:keyfile=/path/to/key.pem".
 
 #### \`legacy-bundling\`
 
