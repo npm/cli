@@ -47,7 +47,7 @@ class PlaceDep {
       strictPeerDeps,
       installLinks,
       legacyPeerDeps,
-      globalStyle,
+      installStrategy,
     } = parent || options
     Object.assign(this, {
       preferDedupe,
@@ -58,8 +58,8 @@ class PlaceDep {
       legacyBundling,
       strictPeerDeps,
       installLinks,
+      installStrategy,
       legacyPeerDeps,
-      globalStyle,
     })
 
     this.children = []
@@ -78,10 +78,10 @@ class PlaceDep {
       edge,
       dep,
       preferDedupe,
-      globalStyle,
       legacyBundling,
       explicitRequest,
       updateNames,
+      installStrategy,
       checks,
     } = this
 
@@ -176,7 +176,7 @@ class PlaceDep {
 
       // when installing globally, or just in global style, we never place
       // deps above the first level.
-      if (globalStyle) {
+      if (installStrategy === 'shallow') {
         const rp = target.resolveParent
         if (rp && rp.isProjectRoot) {
           break

@@ -79,7 +79,7 @@ const _loadFailures = Symbol('loadFailures')
 const _pruneFailedOptional = Symbol('pruneFailedOptional')
 const _linkNodes = Symbol('linkNodes')
 const _follow = Symbol('follow')
-const _globalStyle = Symbol('globalStyle')
+const _installStrategy = Symbol('installStrategy')
 const _globalRootNode = Symbol('globalRootNode')
 const _usePackageLock = Symbol.for('usePackageLock')
 const _rpcache = Symbol.for('realpathCache')
@@ -114,7 +114,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       follow = false,
       force = false,
       global = false,
-      globalStyle = false,
+      installStrategy = 'hoisted',
       idealTree = null,
       includeWorkspaceRoot = false,
       installLinks = false,
@@ -134,7 +134,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
 
     this[_usePackageLock] = packageLock
     this[_global] = !!global
-    this[_globalStyle] = this[_global] || globalStyle
+    this[_installStrategy] = global ? 'shallow' : installStrategy
     this[_follow] = !!follow
 
     if (this[_workspaces].length && this[_global]) {
@@ -956,7 +956,7 @@ This is a one-time fix-up, please be patient...
         strictPeerDeps: this[_strictPeerDeps],
         installLinks: this.installLinks,
         legacyPeerDeps: this.legacyPeerDeps,
-        globalStyle: this[_globalStyle],
+        installStrategy: this[_installStrategy],
       }))
 
     const promises = []

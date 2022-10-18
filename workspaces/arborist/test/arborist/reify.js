@@ -1116,7 +1116,7 @@ t.test('global style', t => {
   const rbinPart = '.bin/rimraf' +
     (process.platform === 'win32' ? '.cmd' : '')
   const rbin = resolve(nm, rbinPart)
-  return reify(path, { add: ['rimraf@2'], globalStyle: true })
+  return reify(path, { add: ['rimraf@2'], installStrategy: 'shallow' })
     .then(() => fs.statSync(rbin))
     .then(() => t.strictSame(fs.readdirSync(nm).sort(), ['.bin', '.package-lock.json', 'rimraf']))
 })

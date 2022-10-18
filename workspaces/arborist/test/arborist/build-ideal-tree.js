@@ -607,7 +607,7 @@ t.test('link dep within node_modules and outside root', t => {
 })
 
 t.test('global style', t => t.resolveMatchSnapshot(printIdeal(t.testdir(), {
-  globalStyle: true,
+  installStrategy: 'shallow',
   add: ['rimraf'],
 })))
 
@@ -1136,7 +1136,7 @@ t.test('resolve links in global mode', async t => {
 
 t.test('dont get confused if root matches duped metadep', async t => {
   const path = resolve(fixtures, 'test-root-matches-metadep')
-  const arb = new Arborist({ path, ...OPT })
+  const arb = new Arborist({ path, installStrategy: 'hoisted', ...OPT })
   const tree = await arb.buildIdealTree()
   t.matchSnapshot(printTree(tree))
 })
@@ -2154,7 +2154,7 @@ t.test('properly assign fsParent when paths have .. in them', async t => {
   }
 })
 
-t.test('update global', async t => {
+t.only('update global', async t => {
   // global root
   // ├─┬ @isaacs/testing-dev-optional-flags@1.0.0
   // │ ├── own-or@1.0.0
