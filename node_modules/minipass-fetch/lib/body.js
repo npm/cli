@@ -72,8 +72,8 @@ class Body {
   }
 
   async json () {
+    const buf = await this[CONSUME_BODY]()
     try {
-      const buf = await this[CONSUME_BODY]()
       return JSON.parse(buf.toString())
     } catch (er) {
       throw new FetchError(
