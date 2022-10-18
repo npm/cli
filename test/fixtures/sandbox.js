@@ -3,7 +3,7 @@ const { EventEmitter } = require('events')
 const { homedir, tmpdir } = require('os')
 const { dirname, join } = require('path')
 const { promisify } = require('util')
-const mkdirp = require('mkdirp-infer-owner')
+const { mkdir } = require('fs/promises')
 const rimraf = promisify(require('rimraf'))
 const mockLogs = require('./mock-logs')
 const pkg = require('../../package.json')
@@ -239,9 +239,9 @@ class Sandbox extends EventEmitter {
 
   async run (command, argv = []) {
     await Promise.all([
-      mkdirp(this.project),
-      mkdirp(this.home),
-      mkdirp(this.global),
+      mkdir(this.project, { recursive: true }),
+      mkdir(this.home, { recursive: true }),
+      mkdir(this.global, { recursive: true }),
     ])
 
     // attach the sandbox process now, doing it after the promise above is
@@ -290,9 +290,9 @@ class Sandbox extends EventEmitter {
     }
 
     await Promise.all([
-      mkdirp(this.project),
-      mkdirp(this.home),
-      mkdirp(this.global),
+      mkdir(this.project, { recursive: true }),
+      mkdir(this.home, { recursive: true }),
+      mkdir(this.global, { recursive: true }),
     ])
 
     // attach the sandbox process now, doing it after the promise above is
