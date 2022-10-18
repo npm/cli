@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^4.0.0",
-    "@npmcli/template-oss": "4.6.1",
+    "@npmcli/template-oss": "4.6.2",
     "bin-links": "^4.0.1",
     "minify-registry-metadata": "^2.2.0",
     "mkdirp": "^1.0.4",
@@ -73,7 +73,7 @@
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.6.1",
+    "version": "4.6.2",
     "content": "../../scripts/template-oss/index.js"
   }
 }
