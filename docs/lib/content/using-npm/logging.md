@@ -14,6 +14,9 @@ All logs are written to a debug log, with the path to that file printed if the e
 
 The default location of the logs directory is a directory named `_logs` inside the npm cache. This can be changed with the `logs-dir` config option.
 
+For example, if you wanted to write all your logs to the current working directory, you could run: `npm install --logs-dir=.`.  This is especially helpful in debugging a specific `npm` issue as you can run
+a command multiple times with different config values and then diff all the log files.
+
 Log files will be removed from the `logs-dir` when the number of log files exceeds `logs-max`, with the oldest logs being deleted first.
 
 To turn off logs completely set `--logs-max=0`.
@@ -31,7 +34,6 @@ The default value of `loglevel` is `"notice"` but there are several levels/types
 - `"warn"`
 - `"notice"`
 - `"http"`
-- `"timing"`
 - `"info"`
 - `"verbose"`
 - `"silly"`
@@ -57,14 +59,20 @@ The `npm` CLI began hiding the output of lifecycle scripts for `npm install` as 
 
 ### Timing Information
 
-The [`--timing` config](/using-npm/config#timing) can be set which does two
+The [`--timing` config](/using-npm/config#timing) can be set which does a few
 things:
 
 1. Always shows the full path to the debug log regardless of command exit status
 1. Write timing information to a process specific timing file in the cache or `logs-dir`
+1. Output timing information to the terminal
 
 This file contains a `timers` object where the keys are an identifier for the
 portion of the process being timed and the value is the number of milliseconds it took to complete.
+
+Sometimes it is helpful to get timing information without outputting anything to the terminal. For
+example, the performance might be affected by writing to the terminal. In this case you can use
+`--timing --silent` which will still write the timing file, but not output anything to the terminal
+while running.
 
 ### Registry Response Headers
 

@@ -534,11 +534,26 @@ t.test('timings', async t => {
 
   t.test('does not write timings file with timers:false', async t => {
     const { npm, timingFile } = await loadMockNpm(t, {
-      config: { false: true },
+      config: { timing: false },
     })
     npm.writeTimingFile()
     await t.rejects(() => timingFile())
   })
+
+  const timingDisplay = [
+    [{ loglevel: 'silly' }, true, false],
+    [{ loglevel: 'silly', timing: true }, true, true],
+    [{ loglevel: 'silent', timing: true }, false, false],
+  ]
+
+  for (const [config, expectedDisplay, expectedTiming] of timingDisplay) {
+    const msg = `${JSON.stringify(config)}, display:${expectedDisplay}, timing:${expectedTiming}`
+    await t.test(`timing display: ${msg}`, async t => {
+      const { display } = await loadMockNpm(t, { config })
+      t.equal(!!display.length, expectedDisplay, 'display')
+      t.equal(!!display.timing.length, expectedTiming, 'timing display')
+    })
+  }
 })
 
 t.test('output clears progress and console.logs the message', async t => {
