@@ -1,5 +1,60 @@
 # Changelog
 
+## [9.0.0-pre.6](https://github.com/npm/cli/compare/v9.0.0-pre.5...v9.0.0-pre.6) (2022-10-19)
+
+### ⚠️ BREAKING CHANGES
+
+* `npm` now outputs some json errors on stdout. Previously `npm` would output all json formatted errors on stderr, making it difficult to parse as the stderr stream usually has logs already written to it. In the future, `npm` will differentiate between errors and crashes. Errors, such as `E404` and `ERESOLVE`, will be handled and will continue to be output on stdout. In the case of a crash, `npm` will log the error as usual but will not attempt to display it as json, even in `--json` mode. Moving a case from the category of an error to a crash will not be considered a breaking change. For more information see npm/rfcs#482.
+* `npm config set` will no longer accept deprecated or invalid config options.
+* `timing` and `loglevel` changes
+    - `timing` has been removed as a value for `--loglevel`
+    - `--timing` will show timing information regardless of
+      `--loglevel`, except when `--silent`
+* deprecate boolean install flags in favor of `--install-strategy`
+    * deprecate --global-style, --global now sets --install-strategy=shallow
+    * deprecate --legacy-bundling, now sets --install-strategy=nested
+* npm will no longer attempt to modify ownership of files it creates
+* this package no longer attempts to change file ownership automatically
+* this package no longer attempts to change file ownership automatically
+
+### Features
+
+* [`d3543e9`](https://github.com/npm/cli/commit/d3543e945e721783dcb83385935f282a4bb32cf3) output json formatted errors on stdout (#5716) (@lukekarrys)
+* [`be642c6`](https://github.com/npm/cli/commit/be642c6b8e3df40fd43b0110b30d3ecd44086016) refuse to set deprecated/invalid config (#5719) (@wraithgar)
+* [`332914b`](https://github.com/npm/cli/commit/332914b48b616099e586893b1df21480b7ddb733) separate configs for `--timing` and `--loglevel` (@lukekarrys)
+* [`f653785`](https://github.com/npm/cli/commit/f6537855e1a34b84251993a49e1ee362082ada37) deprecated `key`, `cert` config options and updated registry scoped auth docs (@fritzy)
+* [`de2d33f`](https://github.com/npm/cli/commit/de2d33f3ed42e187803bdd31db4f7a12f08f353c) add --install-strategy=hoisted|nested|shallow, deprecate --global-style, --legacy-bundling (#5709) (@fritzy)
+* [`58065bc`](https://github.com/npm/cli/commit/58065bc679e6968742b5b15fa2fb82dd9e8ae988) [#5704](https://github.com/npm/cli/pull/5704) do not alter file ownership (@nlf)
+* [`475e9b6`](https://github.com/npm/cli/commit/475e9b6c0c978a104dd2ee47bde22b0a031a95f9) [#5703](https://github.com/npm/cli/pull/5703) do not alter file ownership (@nlf)
+
+### Bug Fixes
+
+* [`6ffa5b7`](https://github.com/npm/cli/commit/6ffa5b7bbb8fd7cae1a0b955a1f762661ec5e9ed) `npm hook ls` duplicates hook name prefixes (#5295) (@gennadiygashev)
+* [`1afe5ba`](https://github.com/npm/cli/commit/1afe5ba9647d1f0f55bf0a4bace543965d05daed) account for new npm-package-arg behavior (@wraithgar)
+* [`353b5bb`](https://github.com/npm/cli/commit/353b5bb92c3f7899526536b597252b44aa8a712d) [#5710](https://github.com/npm/cli/pull/5710) remove chownr and mkdirp-infer-owner (@nlf)
+
+### Documentation
+
+* [`9e74d3e`](https://github.com/npm/cli/commit/9e74d3e847c4bc0abc630fbe81328e011d6f0187) update supported engines in readme (#5725) (@lukekarrys)
+
+### Dependencies
+
+* [`88137a3`](https://github.com/npm/cli/commit/88137a329c8ad418db265dd465768a7cf5ebccb1) `npmlog@7.0.1`
+* [`2008ea6`](https://github.com/npm/cli/commit/2008ea6a807acbd97912799adfe97f276202cea6) `npm-package-arg@10.0.0`, `pacote@15.0.2`
+* [`aa01072`](https://github.com/npm/cli/commit/aa010722996ef6de46e1bb937c6f8a94dc2844fa) [#5707](https://github.com/npm/cli/pull/5707) update the following dependencies
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.0.0-pre.4...arborist-v6.0.0-pre.5): `@npmcli/arborist@6.0.0-pre.5`
+* [Workspace](https://github.com/npm/cli/compare/libnpmaccess-v7.0.0-pre.1...libnpmaccess-v7.0.0-pre.2): `libnpmaccess@7.0.0-pre.2`
+* [Workspace](https://github.com/npm/cli/compare/libnpmdiff-v5.0.0-pre.2...libnpmdiff-v5.0.0-pre.3): `libnpmdiff@5.0.0-pre.3`
+* [Workspace](https://github.com/npm/cli/compare/libnpmexec-v5.0.0-pre.4...libnpmexec-v5.0.0-pre.5): `libnpmexec@5.0.0-pre.5`
+* [Workspace](https://github.com/npm/cli/compare/libnpmfund-v4.0.0-pre.4...libnpmfund-v4.0.0-pre.5): `libnpmfund@4.0.0-pre.5`
+* [Workspace](https://github.com/npm/cli/compare/libnpmhook-v9.0.0-pre.0...libnpmhook-v9.0.0-pre.1): `libnpmhook@9.0.0-pre.1`
+* [Workspace](https://github.com/npm/cli/compare/libnpmorg-v5.0.0-pre.0...libnpmorg-v5.0.0-pre.1): `libnpmorg@5.0.0-pre.1`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpack-v5.0.0-pre.3...libnpmpack-v5.0.0-pre.4): `libnpmpack@5.0.0-pre.4`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpublish-v7.0.0-pre.3...libnpmpublish-v7.0.0-pre.4): `libnpmpublish@7.0.0-pre.4`
+* [Workspace](https://github.com/npm/cli/compare/libnpmsearch-v6.0.0-pre.0...libnpmsearch-v6.0.0-pre.1): `libnpmsearch@6.0.0-pre.1`
+* [Workspace](https://github.com/npm/cli/compare/libnpmteam-v5.0.0-pre.0...libnpmteam-v5.0.0-pre.1): `libnpmteam@5.0.0-pre.1`
+* [Workspace](https://github.com/npm/cli/compare/libnpmversion-v4.0.0-pre.0...libnpmversion-v4.0.0-pre.1): `libnpmversion@4.0.0-pre.1`
+
 ## [9.0.0-pre.5](https://github.com/npm/cli/compare/v9.0.0-pre.4...v9.0.0-pre.5) (2022-10-13)
 
 ### ⚠️ BREAKING CHANGES
