@@ -1,5 +1,15 @@
 # Changelog
 
+## [5.0.0](https://github.com/npm/cli/compare/libnpmpack-v5.0.0-pre.4...libnpmpack-v5.0.0) (2022-10-19)
+
+### Features
+
+* [`586e78d`](https://github.com/npm/cli/commit/586e78d59c3dad29e8e886a4764d2eb8021d11d1) empty commit to trigger all workspace releases (@lukekarrys)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.0.0-pre.5...arborist-v6.0.0): `@npmcli/arborist@6.0.0`
+
 ## [5.0.0-pre.4](https://github.com/npm/cli/compare/libnpmpack-v5.0.0-pre.3...libnpmpack-v5.0.0-pre.4) (2022-10-19)
 
 ### Dependencies

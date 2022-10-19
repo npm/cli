@@ -1,7 +1,7 @@
 {
   "name": "libnpmteam",
   "description": "npm Team management APIs",
-  "version": "5.0.0-pre.1",
+  "version": "5.0.0",
   "author": "GitHub Inc.",
   "license": "ISC",
   "main": "lib/index.js",

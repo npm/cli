@@ -1,5 +1,26 @@
 # Changelog
 
+## [9.0.0](https://github.com/npm/cli/compare/v9.0.0-pre.6...v9.0.0) (2022-10-19)
+
+### Features
+
+* [`e3b004c`](https://github.com/npm/cli/commit/e3b004c0d6dfcb153c4734af12afb09897e20932) [#5727](https://github.com/npm/cli/pull/5727) move cli and all workspaces out of prerelease mode (@lukekarrys)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.0.0-pre.5...arborist-v6.0.0): `@npmcli/arborist@6.0.0`
+* [Workspace](https://github.com/npm/cli/compare/libnpmaccess-v7.0.0-pre.2...libnpmaccess-v7.0.0): `libnpmaccess@7.0.0`
+* [Workspace](https://github.com/npm/cli/compare/libnpmdiff-v5.0.0-pre.3...libnpmdiff-v5.0.0): `libnpmdiff@5.0.0`
+* [Workspace](https://github.com/npm/cli/compare/libnpmexec-v5.0.0-pre.5...libnpmexec-v5.0.0): `libnpmexec@5.0.0`
+* [Workspace](https://github.com/npm/cli/compare/libnpmfund-v4.0.0-pre.5...libnpmfund-v4.0.0): `libnpmfund@4.0.0`
+* [Workspace](https://github.com/npm/cli/compare/libnpmhook-v9.0.0-pre.1...libnpmhook-v9.0.0): `libnpmhook@9.0.0`
+* [Workspace](https://github.com/npm/cli/compare/libnpmorg-v5.0.0-pre.1...libnpmorg-v5.0.0): `libnpmorg@5.0.0`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpack-v5.0.0-pre.4...libnpmpack-v5.0.0): `libnpmpack@5.0.0`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpublish-v7.0.0-pre.4...libnpmpublish-v7.0.0): `libnpmpublish@7.0.0`
+* [Workspace](https://github.com/npm/cli/compare/libnpmsearch-v6.0.0-pre.1...libnpmsearch-v6.0.0): `libnpmsearch@6.0.0`
+* [Workspace](https://github.com/npm/cli/compare/libnpmteam-v5.0.0-pre.1...libnpmteam-v5.0.0): `libnpmteam@5.0.0`
+* [Workspace](https://github.com/npm/cli/compare/libnpmversion-v4.0.0-pre.1...libnpmversion-v4.0.0): `libnpmversion@4.0.0`
+
 ## [9.0.0-pre.6](https://github.com/npm/cli/compare/v9.0.0-pre.5...v9.0.0-pre.6) (2022-10-19)
 
 ### ⚠️ BREAKING CHANGES
