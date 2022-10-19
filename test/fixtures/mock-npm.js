@@ -238,6 +238,15 @@ class MockNpm {
     }
     this._mockOutputs.push(msg)
   }
+
+  // with the older fake mock npm there is no
+  // difference between output and outputBuffer
+  // since it just collects the output and never
+  // calls the exit handler, so we just mock the
+  // method the same as output.
+  outputBuffer (...msg) {
+    this.output(...msg)
+  }
 }
 
 const FakeMockNpm = (base = {}, t) => {
