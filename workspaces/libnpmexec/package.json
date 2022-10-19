@@ -63,7 +63,7 @@
     "@npmcli/run-script": "^5.0.0",
     "chalk": "^4.1.0",
     "npm-package-arg": "^10.0.0",
-    "npmlog": "^7.0.0",
+    "npmlog": "^7.0.1",
     "pacote": "^15.0.2",
     "proc-log": "^3.0.0",
     "read": "^1.0.7",
