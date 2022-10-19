@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.0.0-pre.2](https://github.com/npm/cli/compare/libnpmaccess-v7.0.0-pre.1...libnpmaccess-v7.0.0-pre.2) (2022-10-19)
+
+### Dependencies
+
+* [`2008ea6`](https://github.com/npm/cli/commit/2008ea6a807acbd97912799adfe97f276202cea6) `npm-package-arg@10.0.0`, `pacote@15.0.2`
+* [`aa01072`](https://github.com/npm/cli/commit/aa010722996ef6de46e1bb937c6f8a94dc2844fa) [#5707](https://github.com/npm/cli/pull/5707) update the following dependencies
+
 ## [7.0.0-pre.1](https://github.com/npm/cli/compare/libnpmaccess-v7.0.0-pre.0...libnpmaccess-v7.0.0-pre.1) (2022-09-14)
 
 ### ⚠️ BREAKING CHANGES

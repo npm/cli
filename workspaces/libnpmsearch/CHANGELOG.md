@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.0.0-pre.1](https://github.com/npm/cli/compare/libnpmsearch-v6.0.0-pre.0...libnpmsearch-v6.0.0-pre.1) (2022-10-19)
+
+### Dependencies
+
+* [`aa01072`](https://github.com/npm/cli/commit/aa010722996ef6de46e1bb937c6f8a94dc2844fa) [#5707](https://github.com/npm/cli/pull/5707) update the following dependencies
+
 ## [6.0.0-pre.0](https://github.com/npm/cli/compare/libnpmsearch-v5.0.4...libnpmsearch-v6.0.0-pre.0) (2022-09-08)
 
 ### ⚠ BREAKING CHANGES
