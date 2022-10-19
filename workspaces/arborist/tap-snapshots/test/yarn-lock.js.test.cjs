@@ -3026,6 +3026,9 @@ abbrev@^1.1.1, "pinned@npm:abbrev@1.1.1", "reg@npm:abbrev@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz"
   integrity sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==
+  alpha: "thisisnotapriorityentryeither"
+  beta: "thisisnotapriorityentryeither2"
+  meta: "thisisnotapriorityentry"
 
 "full-git-url@git+https://github.com/isaacs/abbrev-js.git":
   version "1.1.1"

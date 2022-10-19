@@ -44,23 +44,22 @@ const yarnEntryPriorities = {
 }
 
 const priorityThenLocaleCompare = (a, b) => {
-  if (yarnEntryPriorities[a] || yarnEntryPriorities[b]) {
-    return (yarnEntryPriorities[a] || 100) > (yarnEntryPriorities[b] || 100) ? 1 : -1
+  if (!yarnEntryPriorities[a] && !yarnEntryPriorities[b]) {
+    return localeCompare(a, b)
   }
-
-  return localeCompare(a, b)
-}
-
-const shouldQuoteString = str => {
-  return str.indexOf('true') === 0 ||
-      str.indexOf('false') === 0 ||
-      /[:\s\n\\",[\]]/g.test(str) ||
-      /^[0-9]/g.test(str) ||
-      !/^[a-zA-Z]/g.test(str)
+  /* istanbul ignore next */
+  return (yarnEntryPriorities[a] || 100) > (yarnEntryPriorities[b] || 100) ? 1 : -1
 }
 
 const quoteIfNeeded = val => {
-  if (typeof val === 'boolean' || typeof val === 'number' || shouldQuoteString(val)) {
+  if (
+    typeof val === 'boolean' ||
+    typeof val === 'number' ||
+    val.startsWith('true') ||
+    val.startsWith('false') ||
+    /[:\s\n\\",[\]]/g.test(val) ||
+    !/^[a-zA-Z]/g.test(val)
+  ) {
     return JSON.stringify(val)
   }
 
@@ -205,7 +204,7 @@ class YarnLock {
   toString () {
     return prefix + [...new Set([...this.entries.values()])]
       .map(e => e.toString())
-      .sort((a, b) => localeCompare(a.replaceAll('"', ''), b.replaceAll('"', ''))).join('\n\n') + '\n'
+      .sort((a, b) => localeCompare(a.replace(/"/g, ''), b.replace(/"/g, ''))).join('\n\n') + '\n'
   }
 
   fromTree (tree) {

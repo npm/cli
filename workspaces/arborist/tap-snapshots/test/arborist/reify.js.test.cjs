@@ -46619,15 +46619,15 @@ exports[`test/arborist/reify.js TAP update a yarn.lock file > updated yarn lock 
 # yarn lockfile v1
 
 
-"abbrev@^1.1.1":
-  "integrity" "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
-  "resolved" "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz"
-  "version" "1.1.1"
+abbrev@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz"
+  integrity sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==
 
-"mkdirp@^1.0.2":
-  "integrity" "sha512-N2REVrJ/X/jGPfit2d7zea2J1pf7EAR5chIUcfHffAZ7gmlam5U65sAm76+o4ntQbSRdTjYf7qZz3chuHlwXEA=="
-  "resolved" "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.2.tgz"
-  "version" "1.0.2"
+mkdirp@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.2.tgz"
+  integrity sha512-N2REVrJ/X/jGPfit2d7zea2J1pf7EAR5chIUcfHffAZ7gmlam5U65sAm76+o4ntQbSRdTjYf7qZz3chuHlwXEA==
 
 `
 
