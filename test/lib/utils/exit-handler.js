@@ -208,7 +208,7 @@ t.test('exit handler called - no npm with error without stack', async (t) => {
 })
 
 t.test('console.log output using --json', async (t) => {
-  const { exitHandler, outputErrors } = await mockExitHandler(t, {
+  const { exitHandler, outputs } = await mockExitHandler(t, {
     config: { json: true },
   })
 
@@ -216,7 +216,7 @@ t.test('console.log output using --json', async (t) => {
 
   t.equal(process.exitCode, 1)
   t.same(
-    JSON.parse(outputErrors[0]),
+    JSON.parse(outputs[0]),
     {
       error: {
         code: 'EBADTHING', // should default error code to E[A-Z]+
@@ -226,6 +226,50 @@ t.test('console.log output using --json', async (t) => {
     },
     'should output expected json output'
   )
+})
+
+t.test('merges output buffers errors with --json', async (t) => {
+  const { exitHandler, outputs, npm } = await mockExitHandler(t, {
+    config: { json: true },
+  })
+
+  npm.outputBuffer({ output_data: 1 })
+  npm.outputBuffer(JSON.stringify({ more_data: 2 }))
+  npm.outputBuffer('not json, will be ignored')
+
+  await exitHandler(err('Error: EBADTHING Something happened'))
+
+  t.equal(process.exitCode, 1)
+  t.same(
+    JSON.parse(outputs[0]),
+    {
+      output_data: 1,
+      more_data: 2,
+      error: {
+        code: 'EBADTHING', // should default error code to E[A-Z]+
+        summary: 'Error: EBADTHING Something happened',
+        detail: 'Error: EBADTHING Something happened',
+      },
+    },
+    'should output expected json output'
+  )
+})
+
+t.test('output buffer without json', async (t) => {
+  const { exitHandler, outputs, npm, logs } = await mockExitHandler(t)
+
+  npm.outputBuffer('output_data')
+  npm.outputBuffer('more_data')
+
+  await exitHandler(err('Error: EBADTHING Something happened'))
+
+  t.equal(process.exitCode, 1)
+  t.same(
+    outputs,
+    [['output_data'], ['more_data']],
+    'should output expected output'
+  )
+  t.match(logs.error, [['code', 'EBADTHING']])
 })
 
 t.test('throw a non-error obj', async (t) => {
