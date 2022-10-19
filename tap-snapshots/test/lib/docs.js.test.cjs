@@ -1258,8 +1258,8 @@ Ideal if all users are on npm version 7 and higher.
 #### \`loglevel\`
 
 * Default: "notice"
-* Type: "silent", "error", "warn", "notice", "http", "timing", "info",
-  "verbose", or "silly"
+* Type: "silent", "error", "warn", "notice", "http", "info", "verbose", or
+  "silly"
 
 What level of logs to report. All logs are written to a debug log, with the
 path to that file printed if the execution of a command fails.
@@ -1753,6 +1753,9 @@ cache or \`logs-dir\`. The file name ends with \`-timing.json\`.
 
 You can quickly view it with this [json](https://npm.im/json) command line:
 \`cat ~/.npm/_logs/*-timing.json | npm exec -- json -g\`.
+
+Timing information will also be reported in the terminal. To suppress this
+while still writing the timing file, use \`--silent\`.
 
 #### \`umask\`
 
