@@ -6,7 +6,7 @@ t.cleanSnapshot = s => s.replace(/\\+/g, '/')
 
 t.test('all the potential states', async t => {
   const pkg = {
-    name: 'foo'
+    name: 'foo',
   }
   const dir = t.testdir({
     git: {

@@ -65,7 +65,7 @@ t.test('test out bumping the version in all the ways', async t => {
       'package.json': JSON.stringify({
         ...pkg,
         workspaces: [
-          'packages/b', 
+          'packages/b',
         ],
       }, null, 2),
     },
