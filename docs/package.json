@@ -11,8 +11,11 @@
     "lintfix": "node .. run lint -- --fix",
     "snap": "tap",
     "test": "tap",
+    "pretest": "node .. run rebuild-cmark",
     "posttest": "node .. run lint",
-    "build": "node bin/build.js"
+    "build": "node bin/build.js",
+    "prebuild": "node .. run rebuild-cmark",
+    "rebuild-cmark": "node ../scripts/rebuild.js cmark-gfm"
   },
   "repository": {
     "type": "git",

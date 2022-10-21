@@ -1,8 +1,3 @@
-- name: Link
-  if: matrix
-  run: {{ rootNpmPath }} link -f --ignore-scripts
-- name: Rebuild cmark-gfm
-  run: {{ rootNpmPath }} rebuild cmark-gfm
 {{> defaultStepTest }}
 - name: Check Git Status
   if: matrix && matrix.platform.os != 'windows-latest'

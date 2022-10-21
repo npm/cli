@@ -1,13 +1,13 @@
 module.exports = {
   rootRepo: {
     add: {
-      '.github/ISSUE_TEMPLATE/config.yml': false,
-      '.github/ISSUE_TEMPLATE/bug.yml': false,
       '.github/workflows/ci.yml': 'ci.yml',
       '.github/workflows/ci-release.yml': 'ci-release.yml',
+      '.github/workflows/create-node-pr.yml': 'create-node-pr.yml',
+      '.github/ISSUE_TEMPLATE/bug.yml': false,
+      '.github/ISSUE_TEMPLATE/config.yml': false,
       '.github/dependabot.yml': false,
       '.github/workflows/post-dependabot.yml': false,
-      '.github/workflows/audit.yml': 'audit.yml',
     },
   },
   workspaceRepo: {
@@ -23,19 +23,16 @@ module.exports = {
   defaultBranch: 'latest',
   distPaths: [
     'index.js',
-    'docs/content/**/*.md',
-    'docs/output/**/*.html',
-    'man',
+    'docs/content/',
+    'docs/output/',
+    'man/',
   ],
   allowPaths: [
     '/node_modules/',
     '/index.js',
-    '/Makefile',
-    '/make.bat',
     '/DEPENDENCIES.md',
     '/CONTRIBUTING.md',
     '/configure',
-    '/changelogs/',
     '/AUTHORS',
     '/.mailmap',
     '/.licensee.json',
