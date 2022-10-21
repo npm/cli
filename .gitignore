@@ -18,7 +18,6 @@
 !/AUTHORS
 !/bin/
 !/CHANGELOG*
-!/changelogs/
 !/CODE_OF_CONDUCT.md
 !/configure
 !/CONTRIBUTING.md
@@ -27,8 +26,6 @@
 !/index.js
 !/lib/
 !/LICENSE*
-!/make.bat
-!/Makefile
 !/map.js
 !/node_modules/
 /node_modules/.bin/

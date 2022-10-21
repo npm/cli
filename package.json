@@ -11,9 +11,9 @@
     "bin/",
     "lib/",
     "index.js",
-    "docs/content/**/*.md",
-    "docs/output/**/*.html",
-    "man"
+    "docs/content/",
+    "docs/output/",
+    "man/"
   ],
   "keywords": [
     "install",
@@ -201,6 +201,7 @@
   "devDependencies": {
     "@npmcli/docs": "^1.0.0",
     "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/fs": "^3.0.0",
     "@npmcli/git": "^4.0.1",
     "@npmcli/promise-spawn": "^5.0.0",
     "@npmcli/template-oss": "4.6.2",
@@ -213,8 +214,8 @@
   "scripts": {
     "dependencies": "node scripts/bundle-and-gitignore-deps.js && node scripts/dependency-graph.js",
     "dumpconf": "env | grep npm | sort | uniq",
-    "authors": "bash scripts/update-authors.sh",
     "licenses": "licensee --production --errors-only",
+    "pretest": "node scripts/rebuild.js cmark-gfm",
     "test": "tap",
     "test-all": "node . run test -ws -iwr --if-present",
     "snap": "tap",
@@ -227,8 +228,8 @@
     "lintfix": "node . run lint -- --fix",
     "lint-all": "node . run lint -ws -iwr --if-present",
     "prelint": "rimraf test/npm_cache*",
-    "resetdeps": "bash scripts/resetdeps.sh",
-    "rp-pull-request": "node . run authors",
+    "resetdeps": "node scripts/resetdeps.js",
+    "rp-pull-request": "node scripts/update-authors.js",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force"
   },

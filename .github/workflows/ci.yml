@@ -122,11 +122,6 @@ jobs:
           cache: npm
       - name: Reset Deps
         run: node . run resetdeps
-      - name: Link
-        if: matrix
-        run: node . link -f --ignore-scripts
-      - name: Rebuild cmark-gfm
-        run: node . rebuild cmark-gfm
       - name: Add Problem Matcher
         run: echo "::add-matcher::.github/matchers/tap.json"
       - name: Test

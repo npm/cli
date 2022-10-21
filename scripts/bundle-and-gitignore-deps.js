@@ -1,14 +1,10 @@
-#!/usr/bin/env node
-
 const Arborist = require('@npmcli/arborist')
 const packlist = require('npm-packlist')
-const git = require('@npmcli/git')
-const { resolve, join, relative } = require('path')
+const { join, relative } = require('path')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
-const fs = require('fs/promises')
 const PackageJson = require('@npmcli/package-json')
+const { run, CWD, git, fs } = require('./util')
 
-const RM_FLAG = '--remove-ignored-files'
 const ALWAYS_IGNORE = `
 .bin/
 .cache/
@@ -42,24 +38,19 @@ __pycache__
 .gitkeep
 `
 
-const lsIgnored = async ({ cwd, dir }) => {
-  const { stdout } = await git.spawn([
+const lsIgnored = async (dir, { removeIgnoredFiles }) => {
+  const files = await git(
     'ls-files',
     '--cached',
     '--ignored',
     `--exclude-standard`,
     dir,
-  ], { cwd })
+    { lines: true }
+  )
 
-  const files = stdout
-    .trim()
-    .split('\n')
-    .map(l => l.trim())
-    .filter(Boolean)
-
-  if (process.argv.includes(RM_FLAG)) {
+  if (removeIgnoredFiles) {
     for (const file of files) {
-      await git.spawn(['rm', file], { cwd })
+      await git('rm', file)
     }
     return []
   }
@@ -184,8 +175,8 @@ const getAllowedPaths = (files) => {
   return [...allowPaths]
 }
 
-const setBundleDeps = async (dir) => {
-  const pkg = await PackageJson.load(dir)
+const setBundleDeps = async () => {
+  const pkg = await PackageJson.load(CWD)
 
   pkg.update({
     bundleDependencies: Object.keys(pkg.content.dependencies).sort(localeCompare),
@@ -208,13 +199,10 @@ deps source. We have to do this since everything is ignored by default, and git
 will not allow a nested path if its parent has not also been allowed. BUT! We
 also have to ignore other things in those directories.
 */
-const main = async (path) => {
-  await setBundleDeps(path)
+const main = async ({ removeIgnoredFiles }) => {
+  await setBundleDeps()
 
-  const nodeModules = resolve(path, 'node_modules')
-  const gitIgnore = join(nodeModules, '.gitignore')
-
-  const arb = new Arborist({ path })
+  const arb = new Arborist({ path: CWD })
   const files = await arb.loadActual().then(packlist)
 
   const ignoreFile = [
@@ -228,28 +216,24 @@ const main = async (path) => {
     ...ALWAYS_IGNORE.trim().split('\n'),
   ]
 
-  await fs.writeFile(gitIgnore, ignoreFile.join('\n') + '\n')
+  const NODE_MODULES = join(CWD, 'node_modules')
+  const res = await fs.writeFile(join(NODE_MODULES, '.gitignore'), ignoreFile.join('\n'))
 
   // After we write the file we have to check if any of the paths already checked in
   // inside node_modules are now going to be ignored. If we find any then fail with
   // a list of paths that will need to have `git rm` run on them.
-  const trackedAndIgnored = await lsIgnored({ cwd: path, dir: nodeModules })
+  const trackedAndIgnored = await lsIgnored(NODE_MODULES, { removeIgnoredFiles })
 
   if (trackedAndIgnored.length) {
     const message = [
       'The following files are checked in to git but will now be ignored.',
-      `Rerun this script with \`${RM_FLAG}\` to remove them.`,
-      ...trackedAndIgnored.map(p => relative(nodeModules, p)),
+      `Rerun this script with \`--remove-ignored-files\` to remove them.`,
+      ...trackedAndIgnored.map(p => relative(NODE_MODULES, p)),
     ].join('\n')
     throw new Error(message)
   }
 
-  return `Wrote to ${relative(process.cwd(), gitIgnore)}`
+  return res
 }
 
-main(resolve(__dirname, '..'))
-  .then((res) => console.log(res))
-  .catch((err) => {
-    console.error(err)
-    return process.exit(1)
-  })
+run(main)

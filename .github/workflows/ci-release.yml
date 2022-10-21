@@ -177,11 +177,6 @@ jobs:
           cache: npm
       - name: Reset Deps
         run: node . run resetdeps
-      - name: Link
-        if: matrix
-        run: node . link -f --ignore-scripts
-      - name: Rebuild cmark-gfm
-        run: node . rebuild cmark-gfm
       - name: Add Problem Matcher
         run: echo "::add-matcher::.github/matchers/tap.json"
       - name: Test
@@ -284,18 +279,12 @@ jobs:
         run: |
           NPM_VERSION="$(node . --version)-$GITHUB_SHA.0"
           node . version $NPM_VERSION --ignore-scripts
-          node . run resetdeps
-          git clean -fd
-          node . ls --omit=dev >/dev/null
-          node . prune --omit=dev --no-save --no-audit --no-fund
-          node scripts/git-dirty.js
-          node . pack --pack-destination=$RUNNER_TEMP
-          node . install -g $RUNNER_TEMP/npm-$NPM_VERSION.tgz
+          node scripts/publish.js --pack-destination=$RUNNER_TEMP
+          node . install --global $RUNNER_TEMP/npm-$NPM_VERSION.tgz
           node . install -w smoke-tests --ignore-scripts --no-audit --no-fund
-          rm -rf {lib,bin,index.js}
-          # this one should be npm since we explicitly installed our packed
-          # tarball globally and the next test will make sure our the new
-          # globally installed version contains the git sha
+          node scripts/remove-files.js
+          # call installed npm instead of local source since we are testing
+          # the packed tarball that we just installed globally
           SMOKE_PUBLISH_NPM=1 npm test -w smoke-tests --ignore-scripts
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.3.1
