@@ -3,6 +3,12 @@
 name: CI - Release
 
 on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        required: true
+        type: string
+        default: latest
   workflow_call:
     inputs:
       ref:
@@ -23,7 +29,7 @@ jobs:
     steps:
       - name: Get Workflow Job
         uses: actions/github-script@v6
-
+        if: inputs.check-sha
         id: check-output
         env:
           JOB_NAME: "Lint All"
@@ -57,7 +63,7 @@ jobs:
       - name: Create Check
         uses: LouisBrunner/checks-action@v1.3.1
         id: check
-
+        if: inputs.check-sha
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           status: in_progress
@@ -85,7 +91,7 @@ jobs:
         run: node . run postlint --ignore-scripts -ws -iwr --if-present
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.3.1
-        if: always()
+        if: steps.check.outputs.check_id && always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           conclusion: ${{ job.status }}
@@ -121,7 +127,7 @@ jobs:
     steps:
       - name: Get Workflow Job
         uses: actions/github-script@v6
-
+        if: inputs.check-sha
         id: check-output
         env:
           JOB_NAME: "Test All"
@@ -155,7 +161,7 @@ jobs:
       - name: Create Check
         uses: LouisBrunner/checks-action@v1.3.1
         id: check
-
+        if: inputs.check-sha
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           status: in_progress
@@ -186,7 +192,7 @@ jobs:
         run: node scripts/git-dirty.js
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.3.1
-        if: always()
+        if: steps.check.outputs.check_id && always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           conclusion: ${{ job.status }}
@@ -219,7 +225,7 @@ jobs:
     steps:
       - name: Get Workflow Job
         uses: actions/github-script@v6
-
+        if: inputs.check-sha
         id: check-output
         env:
           JOB_NAME: "Smoke Publish"
@@ -253,7 +259,7 @@ jobs:
       - name: Create Check
         uses: LouisBrunner/checks-action@v1.3.1
         id: check
-
+        if: inputs.check-sha
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           status: in_progress
@@ -288,7 +294,7 @@ jobs:
           SMOKE_PUBLISH_NPM=1 npm test -w smoke-tests --ignore-scripts
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.3.1
-        if: always()
+        if: steps.check.outputs.check_id && always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           conclusion: ${{ job.status }}
