@@ -11,7 +11,4 @@ module.exports = {
     '16.0.0',
     '16.x',
   ],
-  releaseBranches: [
-    'v8',
-  ],
 }
