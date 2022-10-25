@@ -3,7 +3,7 @@
   smoke-publish:
     {{> jobMatrix
       jobName="Smoke Publish"
-      jobCheck=(obj sha="${{ inputs.check-sha }}")
+      jobCheck=(obj sha="inputs.check-sha")
       jobCheckout=(obj ref="${{ inputs.ref }}")
       windowsCI=false
     }}
