@@ -1,0 +1,4 @@
+{{> defaultStepTest }}
+- name: Check Git Status
+  if: matrix && matrix.platform.os != 'windows-latest'
+  run: node scripts/git-dirty.js
