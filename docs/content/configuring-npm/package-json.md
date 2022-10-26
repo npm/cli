@@ -16,13 +16,11 @@ settings described in [`config`](/using-npm/config).
 ### name
 
 If you plan to publish your package, the *most* important things in your
-package.json are the name and version fields as they will be required. The
-name and version together form an identifier that is assumed to be
-completely unique.  Changes to the package should come along with changes
-to the version. If you don't plan to publish your package, the name and
-version fields are optional.
-
-The name is what your thing is called.
+package.json are the name and version fields as they will be required.
+The name and version together form an identifier that is assumed to be
+completely unique. 
+  
+The name field contains your package name.
 
 Some rules:
 
@@ -52,12 +50,9 @@ A name can be optionally prefixed by a scope, e.g. `@myorg/mypackage`. See
 
 ### version
 
-If you plan to publish your package, the *most* important things in your
-package.json are the name and version fields as they will be required. The
-name and version together form an identifier that is assumed to be
-completely unique.  Changes to the package should come along with changes
-to the version. If you don't plan to publish your package, the name and
-version fields are optional.
+Changes to the package should come along with changes to the version.
+You can show developers how much they need to adjust on a new update by
+using [semantic versioning](../../about-semantic-versioning) 
 
 Version must be parseable by
 [node-semver](https://github.com/npm/node-semver), which is bundled with
@@ -65,7 +60,7 @@ npm as a dependency.  (`npm install semver` to use it yourself.)
 
 ### description
 
-Put a description in it.  It's a string.  This helps people discover your
+Put a description in it. It's a string.  This helps people discover your
 package, as it's listed in `npm search`.
 
 ### keywords
