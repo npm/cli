@@ -3,6 +3,8 @@
 const LRU = require('lru-cache')
 const hosts = require('./hosts.js')
 const fromUrl = require('./from-url.js')
+const parseUrl = require('./parse-url.js')
+const getProtocols = require('./protocols.js')
 
 const cache = new LRU({ max: 1000 })
 
@@ -20,15 +22,7 @@ class GitHost {
   }
 
   static #gitHosts = { byShortcut: {}, byDomain: {} }
-  static #protocols = {
-    'git+ssh:': { name: 'sshurl' },
-    'ssh:': { name: 'sshurl' },
-    'git+https:': { name: 'https', auth: true },
-    'git:': { auth: true },
-    'http:': { auth: true },
-    'https:': { auth: true },
-    'git+http:': { auth: true },
-  }
+  static #protocols = getProtocols()
 
   static addHost (name, host) {
     GitHost.#gitHosts[name] = host
@@ -53,6 +47,10 @@ class GitHost {
     }
 
     return cache.get(key)
+  }
+
+  static parseUrl (url) {
+    return parseUrl(url)
   }
 
   #fill (template, opts) {
