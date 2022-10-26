@@ -712,6 +712,7 @@ t.test('query-selector-all', async t => {
     [':semver(^1.1.1, [version], lte)', []],
     [':semver(^14.0.0, :attr(engines, [node]), intersects)', ['bar@2.0.0']],
     [':semver(>=14, :attr(engines, [node]), subset)', ['abbrev@1.1.1', 'bar@2.0.0']],
+    [':semver(>=14, :attr(engines, [node]), rsubset)', ['bar@2.0.0']],
     [':semver(^2.0.0, [version], gtr)', ['moo@3.0.0']],
     [':semver(^2.0.0, :attr(engines, [node]), gtr)', []],
     [':semver(20.0.0, :attr(engines, [node]), gtr)', ['abbrev@1.1.1']],

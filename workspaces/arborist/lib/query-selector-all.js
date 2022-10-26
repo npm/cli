@@ -376,9 +376,15 @@ class Results {
         return valueIsVersion
           ? semver[actualFunc](semverValue, attrValue)
           : semver[actualFunc](attrValue, semverValue)
-      } else if (['intersects', 'subset'].includes(actualFunc)) {
+      } else if (['intersects', 'subset', 'rsubset'].includes(actualFunc)) {
+        const reverse = actualFunc.startsWith('r')
+        if (reverse) {
+          actualFunc = actualFunc.slice(1)
+        }
         // these accept two ranges and since a version is also a range, anything goes
-        return semver[actualFunc](attrValue, semverValue)
+        return reverse
+          ? semver[actualFunc](semverValue, attrValue)
+          : semver[actualFunc](attrValue, semverValue)
       } else {
         // user provided a function we don't know about, throw an error
         throw Object.assign(new Error(`\`semver.${actualFunc}\` is not a supported operator.`),
