@@ -1,11 +1,10 @@
 const { join } = require('path')
-const fsp = require('fs/promises')
 const hgi = require('hosted-git-info')
 const semver = require('semver')
 const pacote = require('pacote')
 const log = require('proc-log')
 const tar = require('tar')
-const { cp, withTempDir } = require('@npmcli/fs')
+const { cp, withTempDir, access, constants } = require('@npmcli/fs')
 const { CWD, run, spawn, git, fs, gh } = require('./util.js')
 
 // this script expects node to already be cloned to a directory at the cli root named "node"
@@ -65,7 +64,7 @@ const main = async (spec, opts) => withTempDir(CWD, async (tmpDir) => {
     tag: skipCheckout ? null : head.tag,
   })
 
-  await fsp.access(NODE_DIR, fsp.constants.F_OK).catch(() => {
+  await access(NODE_DIR, constants.F_OK).catch(() => {
     throw new Error(`node repo must be checked out to \`${NODE_DIR}\` to continue`)
   })
 
