@@ -117,6 +117,7 @@ graph LR;
   npm-->npmcli-arborist["@npmcli/arborist"];
   npm-->npmcli-ci-detect["@npmcli/ci-detect"];
   npm-->npmcli-config["@npmcli/config"];
+  npm-->npmcli-docs["@npmcli/docs"];
   npm-->npmcli-eslint-config["@npmcli/eslint-config"];
   npm-->npmcli-fs["@npmcli/fs"];
   npm-->npmcli-git["@npmcli/git"];
@@ -193,6 +194,10 @@ graph LR;
   npmcli-config-->proc-log;
   npmcli-config-->read-package-json-fast;
   npmcli-config-->semver;
+  npmcli-docs-->ignore-walk;
+  npmcli-docs-->npmcli-eslint-config["@npmcli/eslint-config"];
+  npmcli-docs-->npmcli-fs["@npmcli/fs"];
+  npmcli-docs-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-fs-->semver;
   npmcli-git-->npm-pick-manifest;
   npmcli-git-->npmcli-promise-spawn["@npmcli/promise-spawn"];
@@ -388,19 +393,6 @@ graph LR;
   detab-->repeat-string;
   dezalgo-->asap;
   dezalgo-->wrappy;
-  docs-->cmark-gfm;
-  docs-->front-matter;
-  docs-->ignore-walk;
-  docs-->isaacs-string-locale-compare["@isaacs/string-locale-compare"];
-  docs-->jsdom;
-  docs-->marked-man;
-  docs-->mdx-js-mdx["@mdx-js/mdx"];
-  docs-->mkdirp;
-  docs-->npmcli-eslint-config["@npmcli/eslint-config"];
-  docs-->npmcli-fs["@npmcli/fs"];
-  docs-->npmcli-template-oss["@npmcli/template-oss"];
-  docs-->tap;
-  docs-->yaml;
   domexception-->webidl-conversions;
   encoding-->iconv-lite;
   end-of-stream-->once;
@@ -701,7 +693,6 @@ graph LR;
   npm-->cli-columns;
   npm-->cli-table3;
   npm-->columnify;
-  npm-->docs;
   npm-->fastest-levenshtein;
   npm-->fs-minipass;
   npm-->glob;
@@ -745,6 +736,7 @@ graph LR;
   npm-->npmcli-arborist["@npmcli/arborist"];
   npm-->npmcli-ci-detect["@npmcli/ci-detect"];
   npm-->npmcli-config["@npmcli/config"];
+  npm-->npmcli-docs["@npmcli/docs"];
   npm-->npmcli-eslint-config["@npmcli/eslint-config"];
   npm-->npmcli-fs["@npmcli/fs"];
   npm-->npmcli-git["@npmcli/git"];
@@ -855,6 +847,19 @@ graph LR;
   npmcli-config-->semver;
   npmcli-config-->walk-up-path;
   npmcli-disparity-colors-->ansi-styles;
+  npmcli-docs-->cmark-gfm;
+  npmcli-docs-->front-matter;
+  npmcli-docs-->ignore-walk;
+  npmcli-docs-->isaacs-string-locale-compare["@isaacs/string-locale-compare"];
+  npmcli-docs-->jsdom;
+  npmcli-docs-->marked-man;
+  npmcli-docs-->mdx-js-mdx["@mdx-js/mdx"];
+  npmcli-docs-->mkdirp;
+  npmcli-docs-->npmcli-eslint-config["@npmcli/eslint-config"];
+  npmcli-docs-->npmcli-fs["@npmcli/fs"];
+  npmcli-docs-->npmcli-template-oss["@npmcli/template-oss"];
+  npmcli-docs-->tap;
+  npmcli-docs-->yaml;
   npmcli-fs-->gar-promisify["@gar/promisify"];
   npmcli-fs-->semver;
   npmcli-git-->lru-cache;
@@ -1109,6 +1114,6 @@ packages higher up the chain.
  - pacote, libnpmaccess, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, npm-profile
  - npm-registry-fetch, libnpmversion
  - @npmcli/git, make-fetch-happen, @npmcli/config, init-package-json
- - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, @npmcli/run-script, npm-packlist, read-package-json, @npmcli/query, readdir-scoped-modules, promzard
- - npm-bundled, read-package-json-fast, @npmcli/fs, unique-filename, @npmcli/promise-spawn, npm-install-checks, npm-package-arg, normalize-package-data, @npmcli/package-json, bin-links, nopt, npmlog, parse-conflict-json, dezalgo, read
- - npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, semver, @npmcli/move-file, fs-minipass, infer-owner, ssri, unique-slug, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, ignore-walk, minipass-fetch, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, wrappy, treeverse, @npmcli/eslint-config, @npmcli/template-oss, minify-registry-metadata, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, ini, npm-audit-report, npm-user-validate
+ - @npmcli/docs, @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, @npmcli/run-script, npm-packlist, read-package-json, @npmcli/query, readdir-scoped-modules, promzard
+ - @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, @npmcli/promise-spawn, npm-install-checks, npm-package-arg, normalize-package-data, @npmcli/package-json, bin-links, nopt, npmlog, parse-conflict-json, dezalgo, read
+ - semver, ignore-walk, @npmcli/eslint-config, @npmcli/template-oss, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, @npmcli/move-file, fs-minipass, infer-owner, ssri, unique-slug, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, wrappy, treeverse, minify-registry-metadata, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, ini, npm-audit-report, npm-user-validate
