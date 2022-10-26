@@ -26,8 +26,8 @@ Array [
       "version": "1.0.0",
     },
     "signal": null,
-    "stderr": "stderr\\n",
-    "stdout": "npm_package_dev\\n",
+    "stderr": "stderr",
+    "stdout": "npm_package_dev",
   },
   Object {
     "cmd": "node ../../env.js",
@@ -42,8 +42,8 @@ Array [
       "version": "1.0.0",
     },
     "signal": null,
-    "stderr": "stderr\\n",
-    "stdout": "npm_package_dev_optional\\n",
+    "stderr": "stderr",
+    "stdout": "npm_package_dev_optional",
   },
   Object {
     "cmd": "node ../../env.js",
@@ -58,11 +58,10 @@ Array [
       "version": "1.0.0",
     },
     "signal": null,
-    "stderr": "stderr\\n",
+    "stderr": "stderr",
     "stdout": String(
       npm_package_dev
       npm_package_optional
-      
     ),
   },
   Object {
@@ -81,8 +80,8 @@ Array [
       "version": "1.0.0",
     },
     "signal": null,
-    "stderr": "stderr\\n",
-    "stdout": "npm_package_optional\\n",
+    "stderr": "stderr",
+    "stdout": "npm_package_optional",
   },
 ]
 `
