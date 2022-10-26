@@ -1,5 +1,23 @@
 # Changelog
 
+## [9.0.1](https://github.com/npm/cli/compare/v9.0.0...v9.0.1) (2022-10-26)
+
+### Documentation
+
+* [`b5fadd0`](https://github.com/npm/cli/commit/b5fadd0cec392f4bf6d60fa1358f96400be94667) [#5742](https://github.com/npm/cli/pull/5742) Better npx link (#5742) (@mrienstra)
+
+### Dependencies
+
+* [`de6618e`](https://github.com/npm/cli/commit/de6618e93182ba00b4be516db1efb3c51efa17ba) [#5757](https://github.com/npm/cli/pull/5757) `@npmcli/promise-spawn@5.0.0` (#5757)
+* [`5625274`](https://github.com/npm/cli/commit/562527456d3862d871d042fa4ff6e38354e320ea) [#5755](https://github.com/npm/cli/pull/5755) `hosted-git-info@6.1.0` (#5755)
+* [`32bdd68`](https://github.com/npm/cli/commit/32bdd686ccf826050075e770ffddf7401efa79c9) [#5754](https://github.com/npm/cli/pull/5754) `npm-packlist@7.0.2` (#5754)
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.0.0...arborist-v6.1.0): `@npmcli/arborist@6.1.0`
+* [Workspace](https://github.com/npm/cli/compare/libnpmdiff-v5.0.0...libnpmdiff-v5.0.1): `libnpmdiff@5.0.1`
+* [Workspace](https://github.com/npm/cli/compare/libnpmexec-v5.0.0...libnpmexec-v5.0.1): `libnpmexec@5.0.1`
+* [Workspace](https://github.com/npm/cli/compare/libnpmfund-v4.0.0...libnpmfund-v4.0.1): `libnpmfund@4.0.1`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpack-v5.0.0...libnpmpack-v5.0.1): `libnpmpack@5.0.1`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpublish-v7.0.0...libnpmpublish-v7.0.1): `libnpmpublish@7.0.1`
+
 ## [9.0.0](https://github.com/npm/cli/compare/v9.0.0-pre.6...v9.0.0) (2022-10-19)
 
 ### Features

@@ -1,5 +1,15 @@
 # Changelog
 
+## [6.1.0](https://github.com/npm/cli/compare/arborist-v6.0.0...arborist-v6.1.0) (2022-10-26)
+
+### Features
+
+* [`3dd8d68`](https://github.com/npm/cli/commit/3dd8d68577817f65ea148629905acdee3a9b1902) [#5751](https://github.com/npm/cli/pull/5751) sort and quote yarn lock keys according to yarn rules (#5751) (@wraithgar, @shalvah)
+
+### Dependencies
+
+* [`de6618e`](https://github.com/npm/cli/commit/de6618e93182ba00b4be516db1efb3c51efa17ba) [#5757](https://github.com/npm/cli/pull/5757) `@npmcli/promise-spawn@5.0.0` (#5757)
+
 ## [6.0.0](https://github.com/npm/cli/compare/arborist-v6.0.0-pre.5...arborist-v6.0.0) (2022-10-19)
 
 ### Features
