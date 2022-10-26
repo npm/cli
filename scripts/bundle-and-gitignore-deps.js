@@ -50,7 +50,7 @@ const lsIgnored = async (dir, { removeIgnoredFiles }) => {
 
   if (removeIgnoredFiles) {
     for (const file of files) {
-      await git('rm', file)
+      await git('rm', file, '--force')
     }
     return []
   }

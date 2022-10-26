@@ -1,0 +1,49 @@
+# This file is automatically added by @npmcli/template-oss. Do not edit.
+
+name: "Create Node PR"
+
+on:
+  workflow_dispatch:
+    inputs:
+      spec:
+        description: "The npm spec to create the PR from"
+        required: true
+        default: 'latest'
+      dryRun:
+        description: "Setting this to anything will run all the steps except opening the PR"
+
+jobs:
+  create-pull-request:
+    name: Create Node PR
+    if: github.repository_owner == 'npm'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: npm
+      - name: Reset Deps
+        run: node . run resetdeps
+      - name: Checkout Node
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.NODE_PULL_REQUEST_TOKEN }}
+          repository: nodejs/node
+          fetch-depth: 0
+          path: node
+      - name: Create Node Pull Request
+        env:
+          GITHUB_TOKEN: ${{ secrets.NODE_PULL_REQUEST_TOKEN }}
+        run: |
+          DRY_RUN=$([ -z "${{ inputs.dryRun }}" ] && echo "" || echo "--dry-run")
+          node scripts/create-node-pr.js "${{ inputs.spec }}" "$DRY_RUN"

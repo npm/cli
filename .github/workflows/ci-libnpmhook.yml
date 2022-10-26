@@ -18,6 +18,39 @@ on:
     - cron: "0 9 * * 1"
 
 jobs:
+  engines:
+    name: Engines - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
+    if: github.repository_owner == 'npm'
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - name: Linux
+            os: ubuntu-latest
+            shell: bash
+        node-version:
+          - 12.13.0
+          - 14.15.0
+          - 16.0.0
+    runs-on: ${{ matrix.platform.os }}
+    defaults:
+      run:
+        shell: ${{ matrix.platform.shell }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - name: Reset Deps
+        run: node . run resetdeps -- --engines-strict
+
   lint:
     name: Lint
     if: github.repository_owner == 'npm'
@@ -40,9 +73,9 @@ jobs:
       - name: Reset Deps
         run: node . run resetdeps
       - name: Lint
-        run: node . run lint --ignore-scripts
+        run: node . run lint --ignore-scripts -w libnpmhook
       - name: Post Lint
-        run: node . run postlint --ignore-scripts
+        run: node . run postlint --ignore-scripts -w libnpmhook
 
   test:
     name: Test - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
@@ -89,3 +122,6 @@ jobs:
         run: echo "::add-matcher::.github/matchers/tap.json"
       - name: Test
         run: node . test --ignore-scripts -w libnpmhook
+      - name: Check Git Status
+        if: matrix && matrix.platform.os != 'windows-latest'
+        run: node scripts/git-dirty.js
