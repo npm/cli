@@ -1,4 +1,4 @@
-const fsp = require('fs/promises')
+const fsp = require('@npmcli/fs')
 const { resolve, join, relative } = require('path')
 const { formatWithOptions } = require('util')
 const log = require('proc-log')
@@ -73,14 +73,14 @@ const spawn = async (cmd, ...allArgs) => {
     log.info('suppressed error', err.message)
   }
 
-  if (res?.stdout) {
+  if (res && res.stdout) {
     res.stdout = res.stdout.toString().trim()
     if (res.stdout) {
       log.silly('stdout', res.stdout)
     }
   }
 
-  if (res?.stderr) {
+  if (res && res.stderr) {
     res.stderr = res.stderr.toString().trim()
     if (res.stderr) {
       log.silly('stderr', res.stderr)
@@ -88,14 +88,14 @@ const spawn = async (cmd, ...allArgs) => {
   }
 
   if (lines) {
-    return (res?.stdout || '')
+    return ((res && res.stdout) || '')
       .split('\n')
       .map(l => l.trim())
       .filter(Boolean)
   }
 
   if (out) {
-    return res?.stdout || ''
+    return (res && res.stdout) || ''
   }
 
   return res

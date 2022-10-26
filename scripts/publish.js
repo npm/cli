@@ -84,7 +84,7 @@ const main = async (opts) => {
     await npm('run', 'test-all', '--ignore-scripts')
   }
 
-  await npm('prune', '--omit-dev', '--no-save', '--no-audit', '--no-fund')
+  await npm('prune', '--omit=dev', '--no-save', '--no-audit', '--no-fund')
   await git.dirty()
 
   for (const p of publishes) {

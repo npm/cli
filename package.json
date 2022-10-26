@@ -212,7 +212,7 @@
     "@npmcli/template-oss": "4.7.1",
     "licensee": "^8.2.0",
     "nock": "^13.2.4",
-    "npm-packlist": "^7.0.1",
+    "npm-packlist": "^5.1.3",
     "spawk": "^1.7.1",
     "tap": "^16.0.1"
   },
