@@ -39,7 +39,6 @@ More configuration info: npm help config
 Configuration fields: npm help 7 config
 
 npm {CWD}
-
 `
 
 exports[`test/index.js TAP npm ci > should throw mismatch deps in lock file error 1`] = `
@@ -69,7 +68,6 @@ npm ERR!
 npm ERR! Run "npm help ci" for more info
 
 npm ERR! A complete log of this run can be found in:
-
 
 `
 
@@ -325,22 +323,18 @@ index v1.0.4..v1.1.1
 +function lexSort (a, b) {
 +  return a === b ? 0 : a > b ? 1 : -1
 +}
-
 `
 
 exports[`test/index.js TAP npm explain > should have expected explain output 1`] = `
 abbrev@1.0.4
 node_modules/abbrev
   abbrev@"^1.0.4" from the root project
-
 `
 
 exports[`test/index.js TAP npm fund > should have expected fund output 1`] = `
 project@1.0.0
 \`-- https://github.com/sponsors/isaacs
     \`-- promise-all-reject-late@1.0.1
-
-
 `
 
 exports[`test/index.js TAP npm init > should have successful npm init result 1`] = `
@@ -358,9 +352,6 @@ Wrote to {CWD}/smoke-tests/test/tap-testdir-index/project/package.json:
   "author": "",
   "license": "ISC"
 }
-
-
-
 `
 
 exports[`test/index.js TAP npm install dev dep > should have expected dev dep added lockfile result 1`] = `
@@ -423,18 +414,14 @@ exports[`test/index.js TAP npm install dev dep > should have expected dev dep ad
 `
 
 exports[`test/index.js TAP npm install dev dep > should have expected dev dep added reify output 1`] = `
-
 added 1 package 
 
 1 package is looking for funding
   run \`npm fund\` for details
-
 `
 
 exports[`test/index.js TAP npm install prodDep@version > should have expected install reify output 1`] = `
-
 added 1 package 
-
 `
 
 exports[`test/index.js TAP npm install prodDep@version > should have expected lockfile result 1`] = `
@@ -485,14 +472,11 @@ exports[`test/index.js TAP npm ls > should have expected ls output 1`] = `
 project@1.0.0 {CWD}/smoke-tests/test/tap-testdir-index/project
 +-- abbrev@1.0.4
 \`-- promise-all-reject-late@1.0.1
-
-
 `
 
 exports[`test/index.js TAP npm outdated > should have expected outdated output 1`] = `
 Package  Current  Wanted  Latest  Location             Depended by
 abbrev     1.0.4   1.1.1   1.1.1  node_modules/abbrev  project
-
 `
 
 exports[`test/index.js TAP npm pkg > should have expected npm pkg delete modified package.json result 1`] = `
@@ -546,7 +530,6 @@ exports[`test/index.js TAP npm pkg > should have expected pkg delete output 1`] 
 
 exports[`test/index.js TAP npm pkg > should have expected pkg get output 1`] = `
 "ISC"
-
 `
 
 exports[`test/index.js TAP npm pkg > should have expected pkg set output 1`] = `
@@ -575,7 +558,6 @@ exports[`test/index.js TAP npm pkg > should print package.json contents 1`] = `
     ]
   }
 }
-
 `
 
 exports[`test/index.js TAP npm pkg set scripts > should have expected script added package.json result 1`] = `
@@ -607,16 +589,13 @@ exports[`test/index.js TAP npm pkg set scripts > should have expected set-script
 
 exports[`test/index.js TAP npm prefix > should have expected prefix output 1`] = `
 {CWD}/smoke-tests/test/tap-testdir-index/project
-
 `
 
 exports[`test/index.js TAP npm run-script > should have expected run-script output 1`] = `
-
 > project@1.0.0 hello
 > echo Hello
 
 Hello
-
 `
 
 exports[`test/index.js TAP npm uninstall > should have expected uninstall lockfile result 1`] = `
@@ -665,9 +644,7 @@ exports[`test/index.js TAP npm uninstall > should have expected uninstall packag
 `
 
 exports[`test/index.js TAP npm uninstall > should have expected uninstall reify output 1`] = `
-
 removed 1 package 
-
 `
 
 exports[`test/index.js TAP npm update dep > should have expected update lockfile result 1`] = `
@@ -731,16 +708,13 @@ exports[`test/index.js TAP npm update dep > should have expected update package.
 `
 
 exports[`test/index.js TAP npm update dep > should have expected update reify output 1`] = `
-
 changed 1 package 
 
 1 package is looking for funding
   run \`npm fund\` for details
-
 `
 
 exports[`test/index.js TAP npm view > should have expected view output 1`] = `
-
 abbrev@1.0.4 | MIT | deps: none | versions: 8
 Like ruby's abbrev module, but in js
 https://github.com/isaacs/abbrev-js#readme
@@ -760,5 +734,4 @@ dist-tags:
 latest: 1.1.1
 
 published over a year ago by isaacs <i@izs.me>
-
 `
