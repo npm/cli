@@ -1,44 +1,6 @@
 'use strict'
 
-const url = require('url')
-
-const safeUrl = (u) => {
-  try {
-    return new url.URL(u)
-  } catch {
-    // this fn should never throw
-  }
-}
-
-const lastIndexOfBefore = (str, char, beforeChar) => {
-  const startPosition = str.indexOf(beforeChar)
-  return str.lastIndexOf(char, startPosition > -1 ? startPosition : Infinity)
-}
-
-// accepts input like git:github.com:user/repo and inserts the // after the first :
-const correctProtocol = (arg, protocols) => {
-  const firstColon = arg.indexOf(':')
-  const proto = arg.slice(0, firstColon + 1)
-  if (Object.prototype.hasOwnProperty.call(protocols, proto)) {
-    return arg
-  }
-
-  const firstAt = arg.indexOf('@')
-  if (firstAt > -1) {
-    if (firstAt > firstColon) {
-      return `git+ssh://${arg}`
-    } else {
-      return arg
-    }
-  }
-
-  const doubleSlash = arg.indexOf('//')
-  if (doubleSlash === firstColon + 1) {
-    return arg
-  }
-
-  return `${arg.slice(0, firstColon + 1)}//${arg.slice(firstColon + 1)}`
-}
+const parseUrl = require('./parse-url')
 
 // look for github shorthand inputs, such as npm/cli
 const isGitHubShorthand = (arg) => {
@@ -71,49 +33,13 @@ const isGitHubShorthand = (arg) => {
     secondSlashOnlyAfterHash
 }
 
-// attempt to correct an scp style url so that it will parse with `new URL()`
-const correctUrl = (giturl) => {
-  // ignore @ that come after the first hash since the denotes the start
-  // of a committish which can contain @ characters
-  const firstAt = lastIndexOfBefore(giturl, '@', '#')
-  // ignore colons that come after the hash since that could include colons such as:
-  // git@github.com:user/package-2#semver:^1.0.0
-  const lastColonBeforeHash = lastIndexOfBefore(giturl, ':', '#')
-
-  if (lastColonBeforeHash > firstAt) {
-    // the last : comes after the first @ (or there is no @)
-    // like it would in:
-    // proto://hostname.com:user/repo
-    // username@hostname.com:user/repo
-    // :password@hostname.com:user/repo
-    // username:password@hostname.com:user/repo
-    // proto://username@hostname.com:user/repo
-    // proto://:password@hostname.com:user/repo
-    // proto://username:password@hostname.com:user/repo
-    // then we replace the last : with a / to create a valid path
-    giturl = giturl.slice(0, lastColonBeforeHash) + '/' + giturl.slice(lastColonBeforeHash + 1)
-  }
-
-  if (lastIndexOfBefore(giturl, ':', '#') === -1 && giturl.indexOf('//') === -1) {
-    // we have no : at all
-    // as it would be in:
-    // username@hostname.com/user/repo
-    // then we prepend a protocol
-    giturl = `git+ssh://${giturl}`
-  }
-
-  return giturl
-}
-
 module.exports = (giturl, opts, { gitHosts, protocols }) => {
   if (!giturl) {
     return
   }
 
-  const correctedUrl = isGitHubShorthand(giturl)
-    ? `github:${giturl}`
-    : correctProtocol(giturl, protocols)
-  const parsed = safeUrl(correctedUrl) || safeUrl(correctUrl(correctedUrl))
+  const correctedUrl = isGitHubShorthand(giturl) ? `github:${giturl}` : giturl
+  const parsed = parseUrl(correctedUrl, protocols)
   if (!parsed) {
     return
   }
