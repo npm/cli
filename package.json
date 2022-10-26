@@ -202,7 +202,7 @@
     "@npmcli/docs": "^1.0.0",
     "@npmcli/eslint-config": "^4.0.0",
     "@npmcli/git": "^4.0.1",
-    "@npmcli/promise-spawn": "^4.0.0",
+    "@npmcli/promise-spawn": "^5.0.0",
     "@npmcli/template-oss": "4.6.2",
     "licensee": "^8.2.0",
     "nock": "^13.2.4",

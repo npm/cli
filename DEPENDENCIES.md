@@ -207,7 +207,6 @@ graph LR;
   npmcli-metavuln-calculator-->pacote;
   npmcli-metavuln-calculator-->semver;
   npmcli-package-json-->json-parse-even-better-errors;
-  npmcli-promise-spawn-->infer-owner;
   npmcli-run-script-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-run-script-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-run-script-->read-package-json-fast;
@@ -870,7 +869,6 @@ graph LR;
   npmcli-move-file-->mkdirp;
   npmcli-move-file-->rimraf;
   npmcli-package-json-->json-parse-even-better-errors;
-  npmcli-promise-spawn-->infer-owner;
   npmcli-query-->postcss-selector-parser;
   npmcli-run-script-->node-gyp;
   npmcli-run-script-->npmcli-node-gyp["@npmcli/node-gyp"];
@@ -1102,5 +1100,5 @@ packages higher up the chain.
  - npm-registry-fetch, libnpmversion
  - @npmcli/git, make-fetch-happen, @npmcli/config, init-package-json
  - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, @npmcli/run-script, read-package-json, readdir-scoped-modules, promzard
- - @npmcli/docs, npm-bundled, read-package-json-fast, @npmcli/fs, unique-filename, @npmcli/promise-spawn, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, @npmcli/package-json, bin-links, nopt, npmlog, parse-conflict-json, dezalgo, read
- - ignore-walk, @npmcli/eslint-config, @npmcli/template-oss, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, semver, @npmcli/move-file, fs-minipass, ssri, unique-slug, infer-owner, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, wrappy, treeverse, minify-registry-metadata, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, ini, npm-audit-report, npm-user-validate
+ - @npmcli/docs, npm-bundled, read-package-json-fast, @npmcli/fs, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, @npmcli/package-json, bin-links, nopt, npmlog, parse-conflict-json, dezalgo, read
+ - ignore-walk, @npmcli/eslint-config, @npmcli/template-oss, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, semver, @npmcli/move-file, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, wrappy, treeverse, minify-registry-metadata, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, ini, npm-audit-report, npm-user-validate
