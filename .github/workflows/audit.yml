@@ -29,6 +29,6 @@ jobs:
           node-version: 16.x
           cache: npm
       - name: Reset Deps
-        run: node . run resetdeps
+        run: node . run resetdeps -- --package-lock
       - name: Run Audit
-        run: node . audit
+        run: node . audit -iwr -w workspaces

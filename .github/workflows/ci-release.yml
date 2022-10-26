@@ -3,6 +3,12 @@
 name: CI - Release
 
 on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        required: true
+        type: string
+        default: latest
   workflow_call:
     inputs:
       ref:
@@ -21,21 +27,49 @@ jobs:
       run:
         shell: bash
     steps:
+      - name: Get Workflow Job
+        uses: actions/github-script@v6
+        if: inputs.check-sha
+        id: check-output
+        env:
+          JOB_NAME: "Lint All"
+          MATRIX_NAME: ""
+        with:
+          script: |
+            const { owner, repo } = context.repo
+
+            const { data } = await github.rest.actions.listJobsForWorkflowRun({
+              owner,
+              repo,
+              run_id: context.runId,
+              per_page: 100
+            })
+
+            const jobName = process.env.JOB_NAME + process.env.MATRIX_NAME
+            const job = data.jobs.find(j => j.name.endsWith(jobName))
+            const jobUrl = job?.html_url
+
+            const shaUrl = `${context.serverUrl}/${owner}/${repo}/commit/${{ inputs.check-sha }}`
+
+            let summary = `This check is assosciated with ${shaUrl}\n\n`
+
+            if (jobUrl) {
+              summary += `For run logs, click here: ${jobUrl}`
+            } else {
+              summary += `Run logs could not be found for a job with name: "${jobName}"`
+            }
+
+            return { summary }
       - name: Create Check
         uses: LouisBrunner/checks-action@v1.3.1
         id: check
-
+        if: inputs.check-sha
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           status: in_progress
           name: Lint All
           sha: ${{ inputs.check-sha }}
-          # XXX: this does not work when using the default GITHUB_TOKEN.
-          # Instead we post the main job url to the PR as a comment which
-          # will link to all the other checks. To work around this we would
-          # need to create a GitHub that would create on-demand tokens.
-          # https://github.com/LouisBrunner/checks-action/issues/18
-          # details_url:
+          output: ${{ steps.check-output.outputs.result }}
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -52,12 +86,12 @@ jobs:
       - name: Reset Deps
         run: node . run resetdeps
       - name: Lint
-        run: node . run lint --ignore-scripts
+        run: node . run lint --ignore-scripts -ws -iwr --if-present
       - name: Post Lint
-        run: node . run postlint --ignore-scripts
+        run: node . run postlint --ignore-scripts -ws -iwr --if-present
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.3.1
-        if: always()
+        if: steps.check.outputs.check_id && always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           conclusion: ${{ job.status }}
@@ -91,21 +125,49 @@ jobs:
       run:
         shell: ${{ matrix.platform.shell }}
     steps:
+      - name: Get Workflow Job
+        uses: actions/github-script@v6
+        if: inputs.check-sha
+        id: check-output
+        env:
+          JOB_NAME: "Test All"
+          MATRIX_NAME: " - ${{ matrix.platform.name }} - ${{ matrix.node-version }}"
+        with:
+          script: |
+            const { owner, repo } = context.repo
+
+            const { data } = await github.rest.actions.listJobsForWorkflowRun({
+              owner,
+              repo,
+              run_id: context.runId,
+              per_page: 100
+            })
+
+            const jobName = process.env.JOB_NAME + process.env.MATRIX_NAME
+            const job = data.jobs.find(j => j.name.endsWith(jobName))
+            const jobUrl = job?.html_url
+
+            const shaUrl = `${context.serverUrl}/${owner}/${repo}/commit/${{ inputs.check-sha }}`
+
+            let summary = `This check is assosciated with ${shaUrl}\n\n`
+
+            if (jobUrl) {
+              summary += `For run logs, click here: ${jobUrl}`
+            } else {
+              summary += `Run logs could not be found for a job with name: "${jobName}"`
+            }
+
+            return { summary }
       - name: Create Check
         uses: LouisBrunner/checks-action@v1.3.1
         id: check
-
+        if: inputs.check-sha
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           status: in_progress
           name: Test All - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
           sha: ${{ inputs.check-sha }}
-          # XXX: this does not work when using the default GITHUB_TOKEN.
-          # Instead we post the main job url to the PR as a comment which
-          # will link to all the other checks. To work around this we would
-          # need to create a GitHub that would create on-demand tokens.
-          # https://github.com/LouisBrunner/checks-action/issues/18
-          # details_url:
+          output: ${{ steps.check-output.outputs.result }}
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -125,9 +187,12 @@ jobs:
         run: echo "::add-matcher::.github/matchers/tap.json"
       - name: Test
         run: node . test --ignore-scripts -ws -iwr --if-present
+      - name: Check Git Status
+        if: matrix && matrix.platform.os != 'windows-latest'
+        run: node scripts/git-dirty.js
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.3.1
-        if: always()
+        if: steps.check.outputs.check_id && always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           conclusion: ${{ job.status }}
@@ -146,9 +211,6 @@ jobs:
           - name: macOS
             os: macos-latest
             shell: bash
-          - name: Windows
-            os: windows-latest
-            shell: cmd
         node-version:
           - 12.13.0
           - 12.x
@@ -161,21 +223,49 @@ jobs:
       run:
         shell: ${{ matrix.platform.shell }}
     steps:
+      - name: Get Workflow Job
+        uses: actions/github-script@v6
+        if: inputs.check-sha
+        id: check-output
+        env:
+          JOB_NAME: "Smoke Publish"
+          MATRIX_NAME: " - ${{ matrix.platform.name }} - ${{ matrix.node-version }}"
+        with:
+          script: |
+            const { owner, repo } = context.repo
+
+            const { data } = await github.rest.actions.listJobsForWorkflowRun({
+              owner,
+              repo,
+              run_id: context.runId,
+              per_page: 100
+            })
+
+            const jobName = process.env.JOB_NAME + process.env.MATRIX_NAME
+            const job = data.jobs.find(j => j.name.endsWith(jobName))
+            const jobUrl = job?.html_url
+
+            const shaUrl = `${context.serverUrl}/${owner}/${repo}/commit/${{ inputs.check-sha }}`
+
+            let summary = `This check is assosciated with ${shaUrl}\n\n`
+
+            if (jobUrl) {
+              summary += `For run logs, click here: ${jobUrl}`
+            } else {
+              summary += `Run logs could not be found for a job with name: "${jobName}"`
+            }
+
+            return { summary }
       - name: Create Check
         uses: LouisBrunner/checks-action@v1.3.1
         id: check
-
+        if: inputs.check-sha
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           status: in_progress
           name: Smoke Publish - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
           sha: ${{ inputs.check-sha }}
-          # XXX: this does not work when using the default GITHUB_TOKEN.
-          # Instead we post the main job url to the PR as a comment which
-          # will link to all the other checks. To work around this we would
-          # need to create a GitHub that would create on-demand tokens.
-          # https://github.com/LouisBrunner/checks-action/issues/18
-          # details_url:
+          output: ${{ steps.check-output.outputs.result }}
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -195,19 +285,16 @@ jobs:
         run: |
           NPM_VERSION="$(node . --version)-$GITHUB_SHA.0"
           node . version $NPM_VERSION --ignore-scripts
-          node . run resetdeps
-          git clean -fd
-          node . ls --production >/dev/null
-          node . prune --production --no-save --no-audit --no-fund
-          node scripts/git-dirty.js
-          node . pack --pack-destination=$RUNNER_TEMP
-          node . install -g $RUNNER_TEMP/npm-$NPM_VERSION.tgz
+          node scripts/publish.js --pack-destination=$RUNNER_TEMP
+          node . install --global $RUNNER_TEMP/npm-$NPM_VERSION.tgz
           node . install -w smoke-tests --ignore-scripts --no-audit --no-fund
-          rm -rf {lib,bin,index.js}
-          SMOKE_PUBLISH_NPM=1 node . test -w smoke-tests --ignore-scripts
+          node scripts/remove-files.js
+          # call installed npm instead of local source since we are testing
+          # the packed tarball that we just installed globally
+          SMOKE_PUBLISH_NPM=1 npm test -w smoke-tests --ignore-scripts
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.3.1
-        if: always()
+        if: steps.check.outputs.check_id && always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           conclusion: ${{ job.status }}

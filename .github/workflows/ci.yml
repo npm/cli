@@ -1,21 +1,60 @@
 # This file is automatically added by @npmcli/template-oss. Do not edit.
 
-name: CI - cli
+name: CI
 
 on:
   workflow_dispatch:
   pull_request:
     paths-ignore:
+      - docs/**
+      - smoke-tests/**
+      - workspaces/**
   push:
     branches:
       - main
       - latest
     paths-ignore:
+      - docs/**
+      - smoke-tests/**
+      - workspaces/**
   schedule:
     # "At 09:00 UTC (02:00 PT) on Monday" https://crontab.guru/#0_9_*_*_1
     - cron: "0 9 * * 1"
 
 jobs:
+  engines:
+    name: Engines - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
+    if: github.repository_owner == 'npm'
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - name: Linux
+            os: ubuntu-latest
+            shell: bash
+        node-version:
+          - 12.13.0
+          - 14.15.0
+          - 16.0.0
+    runs-on: ${{ matrix.platform.os }}
+    defaults:
+      run:
+        shell: ${{ matrix.platform.shell }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - name: Reset Deps
+        run: node . run resetdeps -- --engines-strict
+
   lint:
     name: Lint
     if: github.repository_owner == 'npm'
@@ -42,13 +81,33 @@ jobs:
       - name: Post Lint
         run: node . run postlint --ignore-scripts
 
-  check-docs:
-    name: Check Docs
+  test:
+    name: Test - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
     if: github.repository_owner == 'npm'
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - name: Linux
+            os: ubuntu-latest
+            shell: bash
+          - name: macOS
+            os: macos-latest
+            shell: bash
+          - name: Windows
+            os: windows-latest
+            shell: cmd
+        node-version:
+          - 12.13.0
+          - 12.x
+          - 14.15.0
+          - 14.x
+          - 16.0.0
+          - 16.x
+    runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
-        shell: bash
+        shell: ${{ matrix.platform.shell }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -59,13 +118,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: ${{ matrix.node-version }}
           cache: npm
       - name: Reset Deps
         run: node . run resetdeps
-      - name: Make Docs
-        run: make freshdocs
+      - name: Add Problem Matcher
+        run: echo "::add-matcher::.github/matchers/tap.json"
+      - name: Test
+        run: node . test --ignore-scripts
       - name: Check Git Status
+        if: matrix && matrix.platform.os != 'windows-latest'
         run: node scripts/git-dirty.js
 
   licenses:
@@ -116,53 +178,4 @@ jobs:
       - name: Run Smoke Tests
         run: node . test -w smoke-tests --ignore-scripts
       - name: Check Git Status
-        run: node scripts/git-dirty.js
-
-  test:
-    name: Test - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
-    if: github.repository_owner == 'npm'
-    strategy:
-      fail-fast: false
-      matrix:
-        platform:
-          - name: Linux
-            os: ubuntu-latest
-            shell: bash
-          - name: macOS
-            os: macos-latest
-            shell: bash
-          - name: Windows
-            os: windows-latest
-            shell: cmd
-        node-version:
-          - 12.13.0
-          - 12.x
-          - 14.15.0
-          - 14.x
-          - 16.0.0
-          - 16.x
-    runs-on: ${{ matrix.platform.os }}
-    defaults:
-      run:
-        shell: ${{ matrix.platform.shell }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Git User
-        run: |
-          git config --global user.email "npm-cli+bot@github.com"
-          git config --global user.name "npm CLI robot"
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: npm
-      - name: Reset Deps
-        run: node . run resetdeps
-      - name: Add Problem Matcher
-        run: echo "::add-matcher::.github/matchers/tap.json"
-      - name: Test
-        run: node . test --ignore-scripts -iwr
-      - name: Check Git Status
-        if: matrix.platform.os != 'windows-latest'
         run: node scripts/git-dirty.js
