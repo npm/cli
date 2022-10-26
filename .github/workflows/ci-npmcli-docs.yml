@@ -1,6 +1,6 @@
 # This file is automatically added by @npmcli/template-oss. Do not edit.
 
-name: CI - docs
+name: CI - @npmcli/docs
 
 on:
   workflow_dispatch:
@@ -71,9 +71,9 @@ jobs:
       - name: Reset Deps
         run: node . run resetdeps
       - name: Lint
-        run: node . run lint --ignore-scripts -w docs
+        run: node . run lint --ignore-scripts -w @npmcli/docs
       - name: Post Lint
-        run: node . run postlint --ignore-scripts -w docs
+        run: node . run postlint --ignore-scripts -w @npmcli/docs
 
   test:
     name: Test - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
@@ -114,7 +114,7 @@ jobs:
       - name: Add Problem Matcher
         run: echo "::add-matcher::.github/matchers/tap.json"
       - name: Test
-        run: node . test --ignore-scripts -w docs
+        run: node . test --ignore-scripts -w @npmcli/docs
       - name: Check Git Status
         if: matrix && matrix.platform.os != 'windows-latest'
         run: node scripts/git-dirty.js

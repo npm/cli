@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "@npmcli/docs",
   "description": "The npm cli documentation",
   "version": "1.0.0",
   "private": true,
@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^3.1.0",
-    "@npmcli/template-oss": "4.5.1",
+    "@npmcli/template-oss": "4.7.1",
     "tap": "^16.0.1"
   },
   "author": "GitHub Inc.",

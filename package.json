@@ -205,6 +205,7 @@
     "write-file-atomic"
   ],
   "devDependencies": {
+    "@npmcli/docs": "^1.0.0",
     "@npmcli/eslint-config": "^3.1.0",
     "@npmcli/git": "^3.0.2",
     "@npmcli/promise-spawn": "^3.0.0",
