@@ -74,7 +74,7 @@
     "fastest-levenshtein": "^1.0.12",
     "glob": "^8.0.1",
     "graceful-fs": "^4.2.10",
-    "hosted-git-info": "^5.1.0",
+    "hosted-git-info": "^5.2.1",
     "ini": "^3.0.1",
     "init-package-json": "^3.0.2",
     "is-cidr": "^4.0.2",
