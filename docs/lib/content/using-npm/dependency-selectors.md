@@ -69,9 +69,11 @@ The `:semver()` pseudo selector allows comparing fields from each node's `packag
 
 - `spec` a semver version or range
 - `selector` an attribute selector for each node (default `[version]`)
-- `function` a semver method to apply, one of: `satisfies`, `intersects`, `subset`, `gt`, `gte`, `gtr`, `lt`, `lte`, `ltr`, `eq`, `neq` or the special function `infer` (default `infer`)
+- `function` a semver method to apply, one of: `satisfies`, `intersects`, `subset`, `rsubset`, `gt`, `gte`, `gtr`, `lt`, `lte`, `ltr`, `eq`, `neq` or the special function `infer` (default `infer`)
 
 When the special `infer` function is used the `spec` and the actual value from the node are compared. If both are versions, according to `semver.valid()`, `eq` is used. If both values are ranges, according to `!semver.valid()`, `intersects` is used. If the values are mixed types `satisfies` is used.
+
+The function `rsubset` is identical to `subset` except the order of the arguments are reversed. By default `subset` is called with `[selector]` as the `subRange` and `<spec>` as the `superRange`. Using `rsubset` will reverse those.
 
 Some examples:
 
