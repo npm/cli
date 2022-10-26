@@ -10,12 +10,10 @@
 !/.gitignore
 !/bin/
 !/CHANGELOG*
-!/content/
 !/docs/
 !/lib/
 !/LICENSE*
 !/map.js
-!/nav.yml
 !/package.json
 !/README*
 !/scripts/
