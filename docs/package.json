@@ -3,6 +3,7 @@
   "description": "The npm cli documentation",
   "version": "1.0.0",
   "private": true,
+  "main": "lib/index.js",
   "scripts": {
     "lint": "eslint \"**/*.js\"",
     "postlint": "template-oss-check",
@@ -10,42 +11,44 @@
     "lintfix": "node .. run lint -- --fix",
     "snap": "tap",
     "test": "tap",
-    "posttest": "node .. run lint"
+    "pretest": "node .. run rebuild-cmark",
+    "posttest": "node .. run lint",
+    "build": "node bin/build.js",
+    "prebuild": "node .. run rebuild-cmark",
+    "rebuild-cmark": "node ../scripts/rebuild.js cmark-gfm"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/npm/cli.git",
     "directory": "docs"
   },
-  "devDependencies": {
+  "dependencies": {
+    "@isaacs/string-locale-compare": "^1.1.0",
     "@mdx-js/mdx": "^1.6.22",
-    "@npmcli/eslint-config": "^3.1.0",
     "@npmcli/fs": "^2.1.0",
-    "@npmcli/promise-spawn": "^3.0.0",
-    "@npmcli/template-oss": "4.7.1",
     "cmark-gfm": "^0.9.0",
+    "front-matter": "^4.0.2",
+    "ignore-walk": "^5.0.1",
     "jsdom": "^18.1.0",
     "marked-man": "^0.7.0",
-    "tap": "^16.0.1",
-    "which": "^2.0.2",
-    "yaml": "^1.10.0"
+    "mkdirp": "^1.0.4",
+    "yaml": "^1.10.2"
+  },
+  "devDependencies": {
+    "@npmcli/eslint-config": "^3.1.0",
+    "@npmcli/template-oss": "4.5.1",
+    "tap": "^16.0.1"
   },
   "author": "GitHub Inc.",
   "license": "ISC",
   "files": [
     "bin/",
-    "lib/",
-    "content/",
-    "nav.yml"
+    "lib/"
   ],
   "engines": {
-    "node": ">=16.0.0"
+    "node": "^12.13.0 || ^14.15.0 || >=16.0.0"
   },
   "tap": {
-    "statements": 81,
-    "branches": 72,
-    "functions": 75,
-    "lines": 81,
     "timeout": 600,
     "nyc-arg": [
       "--exclude",
@@ -54,15 +57,8 @@
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "distPaths": [
-      "content/",
-      "nav.yml"
-    ],
-    "allowPaths": [
-      "/content/",
-      "/nav.yml"
-    ],
     "ciVersions": "latest",
+    "engines": "^12.13.0 || ^14.15.0 || >=16.0.0",
     "version": "4.7.1",
     "content": "../scripts/template-oss/index.js"
   }
