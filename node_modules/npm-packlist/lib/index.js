@@ -294,8 +294,13 @@ class PackWalker extends IgnoreWalker {
 
     // if we have a files array in our package, we need to pull rules from it
     if (files) {
-      for (const file of files) {
+      for (let file of files) {
         // invert the rule because these are things we want to include
+        if (file.startsWith('/')) {
+          file = file.slice(1)
+        } else if (file.startsWith('./')) {
+          file = file.slice(2)
+        }
         const inverse = `!${file}`
         try {
           // if an entry in the files array is a specific file, then we need to include it as a
@@ -305,7 +310,7 @@ class PackWalker extends IgnoreWalker {
           // if we have a file and we know that, it's strictly required
           if (stat.isFile()) {
             strict.unshift(inverse)
-            this.requiredFiles.push(file.startsWith('/') ? file.slice(1) : file)
+            this.requiredFiles.push(file)
           } else if (stat.isDirectory()) {
             // otherwise, it's a default ignore, and since we got here we know it's not a pattern
             // so we include the directory contents
