@@ -18,37 +18,6 @@ on:
     - cron: "0 9 * * 1"
 
 jobs:
-  engines:
-    name: Engines - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
-    if: github.repository_owner == 'npm'
-    strategy:
-      fail-fast: false
-      matrix:
-        platform:
-          - name: Linux
-            os: ubuntu-latest
-            shell: bash
-        node-version:
-          - 16.0.0
-    runs-on: ${{ matrix.platform.os }}
-    defaults:
-      run:
-        shell: ${{ matrix.platform.shell }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Git User
-        run: |
-          git config --global user.email "npm-cli+bot@github.com"
-          git config --global user.name "npm CLI robot"
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: npm
-      - name: Reset Deps
-        run: node . run resetdeps -- --engines-strict
-
   lint:
     name: Lint
     if: github.repository_owner == 'npm'

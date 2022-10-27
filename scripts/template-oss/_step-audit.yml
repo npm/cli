@@ -1,2 +1,0 @@
-- name: Run Audit
-  run: {{ rootNpmPath }} audit -iwr -w workspaces
