@@ -204,7 +204,7 @@
     "@npmcli/git": "^4.0.1",
     "@npmcli/promise-spawn": "^5.0.0",
     "@npmcli/template-oss": "4.6.2",
-    "licensee": "^8.2.0",
+    "licensee": "^9.0.0",
     "nock": "^13.2.4",
     "npm-packlist": "^7.0.1",
     "spawk": "^1.7.1",
