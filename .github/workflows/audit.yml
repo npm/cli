@@ -31,4 +31,4 @@ jobs:
       - name: Reset Deps
         run: node . run resetdeps -- --package-lock
       - name: Run Audit
-        run: node . audit -iwr -w workspaces
+        run: node . audit

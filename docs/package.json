@@ -22,20 +22,18 @@
     "url": "https://github.com/npm/cli.git",
     "directory": "docs"
   },
-  "dependencies": {
+  "devDependencies": {
     "@isaacs/string-locale-compare": "^1.1.0",
+    "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/template-oss": "4.7.1",
     "cmark-gfm": "^0.9.0",
     "front-matter": "^4.0.2",
     "ignore-walk": "^6.0.0",
     "jsdom": "^20.0.1",
     "marked-man": "^0.7.0",
     "mkdirp": "^1.0.4",
+    "tap": "^16.0.1",
     "yaml": "^2.1.3"
-  },
-  "devDependencies": {
-    "@npmcli/eslint-config": "^4.0.0",
-    "@npmcli/template-oss": "4.7.1",
-    "tap": "^16.0.1"
   },
   "author": "GitHub Inc.",
   "license": "ISC",
