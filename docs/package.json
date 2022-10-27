@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "@isaacs/string-locale-compare": "^1.1.0",
-    "@mdx-js/mdx": "^1.6.22",
     "cmark-gfm": "^0.9.0",
     "front-matter": "^4.0.2",
     "ignore-walk": "^6.0.0",
