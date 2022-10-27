@@ -3,7 +3,6 @@ const fs = require('@npmcli/fs')
 const ignoreWalk = require('ignore-walk')
 const yaml = require('yaml')
 const parseFrontMatter = require('front-matter')
-const mdx = require('@mdx-js/mdx')
 
 const checkNav = require('./check-nav.js')
 const { DOC_EXT, ...transform } = require('./index.js')
@@ -20,7 +19,7 @@ const readHtml = (path) => fs.readFile(path, 'utf-8')
 const readYaml = (path) => fs.readFile(path, 'utf-8').then(yaml.parse)
 const makeTransforms = (...args) => (src, trs) => trs.reduce((acc, tr) => tr(acc, ...args), src)
 
-const run = async ({ content, verify, template, nav, man, html, md }) => {
+const run = async ({ content, template, nav, man, html, md }) => {
   const [contentPaths, templateFile, navFile] = await Promise.all([
     readDocs(content),
     readHtml(template),
@@ -112,15 +111,6 @@ const run = async ({ content, verify, template, nav, man, html, md }) => {
   await Promise.all(docEntries.map(({ fullPath, src }) => fs.writeFile(fullPath, src, 'utf-8')))
 
   checkNav(navFile, entriesByType.md.map(({ path }) => path), DOC_EXT)
-
-  if (verify) {
-    await Promise.all(entriesByType.md.map(async ({ src }) => {
-      // Test that mdx can parse this markdown file.  We don't actually
-      // use the output, it's just to ensure that the upstream docs
-      // site (docs.npmjs.com) can parse it when this file gets there.
-      await mdx(src, { skipExport: true })
-    }))
-  }
 
   return docEntries
 }

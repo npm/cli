@@ -30,5 +30,7 @@ jobs:
           cache: npm
       - name: Reset Deps
         run: node . run resetdeps -- --package-lock
-      - name: Run Audit
-        run: node . audit -iwr -w workspaces
+      - name: Run Production Audit
+        run: node . audit --omit=dev
+      - name: Run Full Audit
+        run: node . audit --audit-level=none
