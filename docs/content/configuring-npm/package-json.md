@@ -16,10 +16,9 @@ settings described in [`config`](/using-npm/config).
 ### name
 
 If you plan to publish your package, the *most* important things in your
-package.json are the name and version fields as they will be required.
-The name and version together form an identifier that is assumed to be
+package.json are the name and version fields as they will be required. The
+name and version together form an identifier that is assumed to be
 completely unique. If you don't plan to publish your package, the name and
-version fields are optional.
   
 The name field contains your package name.
 
