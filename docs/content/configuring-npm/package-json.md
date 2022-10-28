@@ -51,8 +51,6 @@ A name can be optionally prefixed by a scope, e.g. `@myorg/mypackage`. See
 
 ### version
 
-If you plan to publish your package, the *most* important things in your
-package.json are the name and version fields as they will be required.
 Changes to the package should come along with changes to the version.
 You can show developers how much they need to adjust on a new update by
 using [semantic versioning](../../about-semantic-versioning) 
