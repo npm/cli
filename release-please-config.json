@@ -69,7 +69,8 @@
     },
     "workspaces/libnpmversion": {
       "prerelease": false
-    }
+    },
+    "workspaces/config": {}
   },
   "exclude-packages-from-root": true,
   "group-pull-request-title-pattern": "chore: release ${version}",

@@ -43,6 +43,7 @@
 !/workspaces/
 /workspaces/*
 !/workspaces/arborist/
+!/workspaces/config/
 !/workspaces/libnpmaccess/
 !/workspaces/libnpmdiff/
 !/workspaces/libnpmexec/
