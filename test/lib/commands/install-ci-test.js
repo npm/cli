@@ -25,6 +25,12 @@ const installCITest = new InstallCITest({
   },
   config: {
     validate: () => {},
+    get: (key) => {
+      if (key === 'location') {
+        return 'project'
+      }
+    },
+    isDefault: () => {},
   },
 })
 

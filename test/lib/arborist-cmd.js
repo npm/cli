@@ -2,6 +2,16 @@ const { resolve } = require('path')
 const t = require('tap')
 const ArboristCmd = require('../../lib/arborist-cmd.js')
 
+const configMock = {
+  validate: () => {},
+  get: (key) => {
+    if (key === 'location') {
+      return 'project'
+    }
+  },
+  isDefault: () => {},
+}
+
 t.test('arborist-cmd', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
@@ -44,7 +54,7 @@ t.test('arborist-cmd', async t => {
 
   class TestCmd extends ArboristCmd {}
 
-  const cmd = new TestCmd({ localPrefix: path, config: { validate: () => {} } })
+  const cmd = new TestCmd({ localPrefix: path, config: configMock })
 
   // check filtering for a single workspace name
   cmd.exec = async function (args) {
@@ -96,7 +106,7 @@ t.test('handle getWorkspaces raising an error', async t => {
     },
   })
   class TestCmd extends ArboristCmd {}
-  const cmd = new TestCmd({ localPrefix: t.testdir(), config: { validate: () => {} } })
+  const cmd = new TestCmd({ localPrefix: t.testdir(), config: configMock })
 
   await t.rejects(
     cmd.execWorkspaces(['foo'], ['a']),

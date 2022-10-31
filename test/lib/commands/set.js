@@ -42,6 +42,7 @@ const npm = {
   },
   config: {
     validate: () => {},
+    isDefault: () => {},
   },
 }
 
