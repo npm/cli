@@ -188,7 +188,9 @@ graph LR;
   npmcli-arborist-->treeverse;
   npmcli-config-->ini;
   npmcli-config-->nopt;
+  npmcli-config-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-config-->npmcli-map-workspaces["@npmcli/map-workspaces"];
+  npmcli-config-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-config-->proc-log;
   npmcli-config-->read-package-json-fast;
   npmcli-config-->semver;
@@ -613,10 +615,13 @@ graph LR;
   npmcli-arborist-->walk-up-path;
   npmcli-config-->ini;
   npmcli-config-->nopt;
+  npmcli-config-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-config-->npmcli-map-workspaces["@npmcli/map-workspaces"];
+  npmcli-config-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-config-->proc-log;
   npmcli-config-->read-package-json-fast;
   npmcli-config-->semver;
+  npmcli-config-->tap;
   npmcli-config-->walk-up-path;
   npmcli-disparity-colors-->ansi-styles;
   npmcli-docs-->cmark-gfm;
@@ -763,4 +768,4 @@ packages higher up the chain.
  - @npmcli/git, make-fetch-happen, @npmcli/config, init-package-json
  - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, @npmcli/run-script, read-package-json, readdir-scoped-modules, promzard
  - @npmcli/docs, npm-bundled, read-package-json-fast, @npmcli/fs, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, @npmcli/package-json, bin-links, nopt, npmlog, parse-conflict-json, dezalgo, read
- - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, semver, @npmcli/move-file, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, wrappy, treeverse, minify-registry-metadata, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, ini, npm-audit-report, npm-user-validate
+ - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, semver, @npmcli/move-file, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, wrappy, treeverse, minify-registry-metadata, ini, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, npm-audit-report, npm-user-validate
