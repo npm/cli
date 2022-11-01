@@ -61,7 +61,7 @@ npm as a dependency.  (`npm install semver` to use it yourself.)
 
 ### description
 
-Put a description in it. It's a string.  This helps people discover your
+Put a description in it.  It's a string.  This helps people discover your
 package, as it's listed in `npm search`.
 
 ### keywords
