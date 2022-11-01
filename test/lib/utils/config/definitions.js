@@ -33,9 +33,15 @@ t.test('editor', t => {
     t.end()
   })
   t.test('has neither EDITOR nor VISUAL, system specific', t => {
-    mockGlobals(t, { 'process.env': { EDITOR: undefined, VISUAL: undefined } })
+    mockGlobals(t, {
+      'process.env': {
+        EDITOR: undefined,
+        VISUAL: undefined,
+        SYSTEMROOT: 'C:\\Windows',
+      },
+    })
     const defsWin = mockDefs(isWin(true))
-    t.equal(defsWin.editor.default, 'notepad.exe')
+    t.equal(defsWin.editor.default, 'C:\\Windows\\notepad.exe')
     const defsNix = mockDefs(isWin(false))
     t.equal(defsNix.editor.default, 'vi')
     t.end()
