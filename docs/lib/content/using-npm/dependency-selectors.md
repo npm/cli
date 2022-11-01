@@ -6,7 +6,7 @@ description: Dependency Selector Syntax & Querying
 
 ### Description
 
-The [`npm query`](/commands/npm-query) commmand exposes a new dependency selector syntax (informed by & respecting many aspects of the [CSS Selectors 4 Spec](https://dev.w3.org/csswg/selectors4/#relational)) which:
+The [`npm query`](/commands/npm-query) command exposes a new dependency selector syntax (informed by & respecting many aspects of the [CSS Selectors 4 Spec](https://dev.w3.org/csswg/selectors4/#relational)) which:
 
 - Standardizes the shape of, & querying of, dependency graphs with a robust object model, metadata & selector syntax
 - Leverages existing, known language syntax & operators from CSS to make disparate package information broadly accessible
