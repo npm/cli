@@ -38,7 +38,7 @@ __pycache__
 .gitkeep
 `
 
-const lsIgnored = async (dir, { removeIgnoredFiles }) => {
+const lsAndRmIgnored = async (dir) => {
   const files = await git(
     'ls-files',
     '--cached',
@@ -48,14 +48,22 @@ const lsIgnored = async (dir, { removeIgnoredFiles }) => {
     { lines: true }
   )
 
-  if (removeIgnoredFiles) {
-    for (const file of files) {
-      await git('rm', file, '--force')
-    }
-    return []
+  for (const file of files) {
+    await git('rm', file)
   }
 
-  return files
+  // check if there are still ignored files left
+  // if so we will error in the next step
+  const notRemoved = await git(
+    'ls-files',
+    '--cached',
+    '--ignored',
+    `--exclude-standard`,
+    dir,
+    { lines: true }
+  )
+
+  return notRemoved
 }
 
 const getAllowedPaths = (files) => {
@@ -199,7 +207,7 @@ deps source. We have to do this since everything is ignored by default, and git
 will not allow a nested path if its parent has not also been allowed. BUT! We
 also have to ignore other things in those directories.
 */
-const main = async ({ removeIgnoredFiles }) => {
+const main = async () => {
   await setBundleDeps()
 
   const arb = new Arborist({ path: CWD })
@@ -221,13 +229,14 @@ const main = async ({ removeIgnoredFiles }) => {
 
   // After we write the file we have to check if any of the paths already checked in
   // inside node_modules are now going to be ignored. If we find any then fail with
-  // a list of paths that will need to have `git rm` run on them.
-  const trackedAndIgnored = await lsIgnored(NODE_MODULES, { removeIgnoredFiles })
+  // a list of the paths remaining. We already attempted to `git rm` them so just
+  // explain what happened and leave the repo in a state to debug.
+  const trackedAndIgnored = await lsAndRmIgnored(NODE_MODULES)
 
   if (trackedAndIgnored.length) {
     const message = [
       'The following files are checked in to git but will now be ignored.',
-      `Rerun this script with \`--remove-ignored-files\` to remove them.`,
+      `They could not be removed automatically and will need to be removed manually.`,
       ...trackedAndIgnored.map(p => relative(NODE_MODULES, p)),
     ].join('\n')
     throw new Error(message)
