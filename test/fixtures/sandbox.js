@@ -166,14 +166,14 @@ class Sandbox extends EventEmitter {
       // replace default config values with placeholders
       for (const name of redactedDefaults) {
         const value = this[_npm].config.defaults[name]
-        clean = clean.split(value).join(`{${name.toUpperCase()}}`)
+        clean = clean.split(normalize(value)).join(`{${name.toUpperCase()}}`)
       }
 
       // replace vague default config values that are present within quotes
       // with placeholders
       for (const name of vagueRedactedDefaults) {
         const value = this[_npm].config.defaults[name]
-        clean = clean.split(`"${value}"`).join(`"{${name.toUpperCase()}}"`)
+        clean = clean.split(`"${normalize(value)}"`).join(`"{${name.toUpperCase()}}"`)
       }
     }
 
