@@ -2936,7 +2936,20 @@ t.test('installLinks', (t) => {
 })
 
 t.only('should preserve exact ranges, missing actual tree', async (t) => {
-  const Arborist = require('../../lib/index.js')
+  const Pacote = require('pacote')
+  const Arborist = t.mock('../../lib/arborist', {
+    pacote: {
+      ...Pacote,
+      extract: async (...args) => {
+        if (args[0].startsWith('gitssh')) {
+          // we just want to test that this url is handled properly
+          // but its not a real git url we can clone so return early
+          return true
+        }
+        return Pacote.extract(...args)
+      },
+    },
+  })
   const abbrev = resolve(__dirname,
     '../fixtures/registry-mocks/content/abbrev/-/abbrev-1.1.1.tgz')
   const abbrevTGZ = fs.readFileSync(abbrev)
@@ -2973,6 +2986,40 @@ t.only('should preserve exact ranges, missing actual tree', async (t) => {
     },
   })
 
+  const gitSshPackument = JSON.stringify({
+    _id: 'gitssh',
+    _rev: 'lkjadflkjasdf',
+    name: 'gitssh',
+    'dist-tags': { latest: '1.1.1' },
+    versions: {
+      '1.1.1': {
+        name: 'gitssh',
+        version: '1.1.1',
+        dist: {
+          // this is a url that `new URL()` cant parse
+          // https://github.com/npm/cli/issues/5278
+          tarball: 'git+ssh://git@github.com:a/b/c.git#lkjadflkjasdf',
+        },
+      },
+    },
+  })
+
+  const notAUrlPackument = JSON.stringify({
+    _id: 'notaurl',
+    _rev: 'lkjadflkjasdf',
+    name: 'notaurl',
+    'dist-tags': { latest: '1.1.1' },
+    versions: {
+      '1.1.1': {
+        name: 'notaurl',
+        version: '1.1.1',
+        dist: {
+          tarball: 'hey been trying to break this test',
+        },
+      },
+    },
+  })
+
   t.only('host should not be replaced replaceRegistryHost=never', async (t) => {
     const testdir = t.testdir({
       project: {
@@ -2981,6 +3028,8 @@ t.only('should preserve exact ranges, missing actual tree', async (t) => {
           version: '1.0.0',
           dependencies: {
             abbrev: '1.1.1',
+            gitssh: '1.1.1',
+            notaurl: '1.1.1',
           },
         }),
       },
@@ -2993,6 +3042,14 @@ t.only('should preserve exact ranges, missing actual tree', async (t) => {
     tnock(t, 'https://registry.npmjs.org')
       .get('/abbrev/-/abbrev-1.1.1.tgz')
       .reply(200, abbrevTGZ)
+
+    tnock(t, 'https://registry.github.com')
+      .get('/gitssh')
+      .reply(200, gitSshPackument)
+
+    tnock(t, 'https://registry.github.com')
+      .get('/notaurl')
+      .reply(200, notAUrlPackument)
 
     const arb = new Arborist({
       path: resolve(testdir, 'project'),
@@ -3011,6 +3068,8 @@ t.only('should preserve exact ranges, missing actual tree', async (t) => {
           version: '1.0.0',
           dependencies: {
             abbrev: '1.1.1',
+            gitssh: '1.1.1',
+            notaurl: '1.1.1',
           },
         }),
       },
@@ -3021,8 +3080,16 @@ t.only('should preserve exact ranges, missing actual tree', async (t) => {
       .reply(200, abbrevPackument)
 
     tnock(t, 'https://registry.github.com')
+      .get('/gitssh')
+      .reply(200, gitSshPackument)
+
+    tnock(t, 'https://registry.github.com')
       .get('/abbrev/-/abbrev-1.1.1.tgz')
       .reply(200, abbrevTGZ)
+
+    tnock(t, 'https://registry.github.com')
+      .get('/notaurl')
+      .reply(200, notAUrlPackument)
 
     const arb = new Arborist({
       path: resolve(testdir, 'project'),
@@ -3041,6 +3108,8 @@ t.only('should preserve exact ranges, missing actual tree', async (t) => {
           version: '1.0.0',
           dependencies: {
             abbrev: '1.1.1',
+            gitssh: '1.1.1',
+            notaurl: '1.1.1',
           },
         }),
       },
@@ -3051,8 +3120,16 @@ t.only('should preserve exact ranges, missing actual tree', async (t) => {
       .reply(200, abbrevPackument2)
 
     tnock(t, 'https://registry.github.com')
+      .get('/gitssh')
+      .reply(200, gitSshPackument)
+
+    tnock(t, 'https://registry.github.com')
       .get('/abbrev/-/abbrev-1.1.1.tgz')
       .reply(200, abbrevTGZ)
+
+    tnock(t, 'https://registry.github.com')
+      .get('/notaurl')
+      .reply(200, notAUrlPackument)
 
     const arb = new Arborist({
       path: resolve(testdir, 'project'),

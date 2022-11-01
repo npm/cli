@@ -1,5 +1,4 @@
 const url = require('url')
-const getProtocols = require('./protocols.js')
 
 const lastIndexOfBefore = (str, char, beforeChar) => {
   const startPosition = str.indexOf(beforeChar)
@@ -73,7 +72,7 @@ const correctUrl = (giturl) => {
   return giturl
 }
 
-module.exports = (giturl, protocols = getProtocols()) => {
-  const withProtocol = correctProtocol(giturl, protocols)
+module.exports = (giturl, protocols) => {
+  const withProtocol = protocols ? correctProtocol(giturl, protocols) : giturl
   return safeUrl(withProtocol) || safeUrl(correctUrl(withProtocol))
 }
