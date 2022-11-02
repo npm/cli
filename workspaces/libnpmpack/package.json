@@ -37,7 +37,7 @@
   "homepage": "https://npmjs.com/package/libnpmpack",
   "dependencies": {
     "@npmcli/arborist": "^6.1.0",
-    "@npmcli/run-script": "^5.0.0",
+    "@npmcli/run-script": "^6.0.0",
     "npm-package-arg": "^10.0.0",
     "pacote": "^15.0.2"
   },

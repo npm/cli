@@ -13,7 +13,7 @@ const makeSpawnArgs = options => {
     stdio,
     cmd,
     args = [],
-    stdioString = false,
+    stdioString,
   } = options
 
   const spawnEnv = setPATH(path, binPaths, {

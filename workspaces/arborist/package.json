@@ -12,7 +12,7 @@
     "@npmcli/node-gyp": "^3.0.0",
     "@npmcli/package-json": "^3.0.0",
     "@npmcli/query": "^3.0.0",
-    "@npmcli/run-script": "^5.0.0",
+    "@npmcli/run-script": "^6.0.0",
     "bin-links": "^4.0.1",
     "cacache": "^17.0.1",
     "common-ancestor-path": "^1.0.1",
