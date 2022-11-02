@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.2](https://github.com/npm/cli/compare/libnpmpack-v5.0.1...libnpmpack-v5.0.2) (2022-11-02)
+
+### Bug Fixes
+
+* [`1f5382d`](https://github.com/npm/cli/commit/1f5382dada181cda41f1504974de1e69a6c1ad7f) [#5789](https://github.com/npm/cli/pull/5789) don't set `stdioString` for any spawn/run-script calls (@lukekarrys)
+
+### Dependencies
+
+* [`abfb28b`](https://github.com/npm/cli/commit/abfb28b249183b8c033f8e7acc1546150cdac137) `@npmcli/run-script@6.0.0`
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.1.0...arborist-v6.1.1): `@npmcli/arborist@6.1.1`
+
 ## [5.0.1](https://github.com/npm/cli/compare/libnpmpack-v5.0.0...libnpmpack-v5.0.1) (2022-10-26)
 
 ### Dependencies

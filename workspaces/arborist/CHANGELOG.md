@@ -1,5 +1,18 @@
 # Changelog
 
+## [6.1.1](https://github.com/npm/cli/compare/arborist-v6.1.0...arborist-v6.1.1) (2022-11-02)
+
+### Bug Fixes
+
+* [`1f5382d`](https://github.com/npm/cli/commit/1f5382dada181cda41f1504974de1e69a6c1ad7f) [#5789](https://github.com/npm/cli/pull/5789) don't set `stdioString` for any spawn/run-script calls (@lukekarrys)
+* [`0c5834e`](https://github.com/npm/cli/commit/0c5834ed635833ef49fe10cc888025a5debebe21) [#5758](https://github.com/npm/cli/pull/5758) use hosted-git-info to parse registry urls (#5758) (@lukekarrys)
+
+### Dependencies
+
+* [`b89c19e`](https://github.com/npm/cli/commit/b89c19e9a7674b0bd9d336c14dee1bf381843648) [#5795](https://github.com/npm/cli/pull/5795) `cli-table3@0.6.3`
+* [`66f9bcd`](https://github.com/npm/cli/commit/66f9bcd10b8d8cb635593c526727056581c7955d) `nopt@7.0.0`
+* [`abfb28b`](https://github.com/npm/cli/commit/abfb28b249183b8c033f8e7acc1546150cdac137) `@npmcli/run-script@6.0.0`
+
 ## [6.1.0](https://github.com/npm/cli/compare/arborist-v6.0.0...arborist-v6.1.0) (2022-10-26)
 
 ### Features
