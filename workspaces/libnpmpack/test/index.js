@@ -16,11 +16,6 @@ const OPTS = {
 
 const REG = OPTS.registry
 
-// TODO this ... smells.  npm "script-shell" config mentions defaults but those
-// are handled by run-script, not npm.  So for now we have to tie tests to some
-// pretty specific internals of runScript
-const makeSpawnArgs = require('@npmcli/run-script/lib/make-spawn-args.js')
-
 t.test('packs from local directory', async t => {
   const testDir = t.testdir({
     'package.json': JSON.stringify({
@@ -152,13 +147,15 @@ t.test('runs scripts in foreground when foregroundScripts === true', async t => 
   const cwd = process.cwd()
   process.chdir(testDir)
 
-  const [scriptShell, scriptArgs] = makeSpawnArgs({
-    event: 'prepack',
-    path: testDir,
-    cmd: 'touch prepack',
-  })
+  const shell = process.platform === 'win32'
+    ? process.env.COMSPEC
+    : 'sh'
 
-  const prepack = spawk.spawn(scriptShell, scriptArgs)
+  const args = process.platform === 'win32'
+    ? ['/d', '/s', '/c', 'touch prepack']
+    : ['-c', 'touch prepack']
+
+  const prepack = spawk.spawn(shell, args)
 
   await pack('file:.', {
     packDestination: testDir,
@@ -186,13 +183,7 @@ t.test('doesn\'t run scripts when ignoreScripts === true', async t => {
   const cwd = process.cwd()
   process.chdir(testDir)
 
-  const [scriptShell, scriptArgs] = makeSpawnArgs({
-    event: 'prepack',
-    path: testDir,
-    cmd: 'touch prepack',
-  })
-
-  const prepack = spawk.spawn(scriptShell, scriptArgs)
+  const prepack = spawk.spawn('sh', ['-c', 'touch prepack'])
 
   await pack('file:.', {
     packDestination: testDir,

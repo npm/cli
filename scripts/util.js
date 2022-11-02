@@ -55,7 +55,6 @@ const spawn = async (cmd, ...allArgs) => {
   let res = null
   try {
     const spawnOpts = {
-      stdioString: true,
       stdio: quiet || out || lines ? 'pipe' : 'inherit',
       cwd: CWD,
       ...opts,

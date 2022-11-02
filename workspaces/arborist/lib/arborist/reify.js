@@ -1558,7 +1558,6 @@ module.exports = cls => class Reifier extends cls {
               event,
               path,
               pkg,
-              stdioString: true,
               stdio,
               scriptShell: this.options.scriptShell,
             })
