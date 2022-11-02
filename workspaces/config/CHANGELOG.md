@@ -1,5 +1,17 @@
 # Changelog
 
+## [6.1.0](https://github.com/npm/cli/compare/config-v6.0.1...config-v6.1.0) (2022-11-02)
+
+### Features
+
+* [`706b3d3`](https://github.com/npm/cli/commit/706b3d3f227de43a095263926d2eef2b4e4cf2a9) [#5779](https://github.com/npm/cli/pull/5779) set --no-audit when installing outside of a project (like --global) (@fritzy)
+* [`586e78d`](https://github.com/npm/cli/commit/586e78d59c3dad29e8e886a4764d2eb8021d11d1) empty commit to trigger all workspace releases (@lukekarrys)
+
+### Dependencies
+
+* [`b89c19e`](https://github.com/npm/cli/commit/b89c19e9a7674b0bd9d336c14dee1bf381843648) [#5795](https://github.com/npm/cli/pull/5795) `cli-table3@0.6.3`
+* [`66f9bcd`](https://github.com/npm/cli/commit/66f9bcd10b8d8cb635593c526727056581c7955d) `nopt@7.0.0`
+
 ## [6.0.1](https://github.com/npm/config/compare/v6.0.0...v6.0.1) (2022-10-17)
 
 ### Dependencies

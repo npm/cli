@@ -1,5 +1,43 @@
 # Changelog
 
+## [9.1.0](https://github.com/npm/cli/compare/v9.0.1...v9.1.0) (2022-11-02)
+
+### Features
+
+* [`706b3d3`](https://github.com/npm/cli/commit/706b3d3f227de43a095263926d2eef2b4e4cf2a9) [#5779](https://github.com/npm/cli/pull/5779) set --no-audit when installing outside of a project (like --global) (@fritzy)
+
+### Bug Fixes
+
+* [`1f5382d`](https://github.com/npm/cli/commit/1f5382dada181cda41f1504974de1e69a6c1ad7f) [#5789](https://github.com/npm/cli/pull/5789) don't set `stdioString` for any spawn/run-script calls (@lukekarrys)
+* [`8fd614a`](https://github.com/npm/cli/commit/8fd614af5d6de970a6bbcffc538564d2a809411a) use promiseSpawn.open instead of opener (@nlf)
+* [`41843ad`](https://github.com/npm/cli/commit/41843ad8a20bd20aacad2bb37fe473f2e76d5306) use an absolute path to notepad.exe by default, correct docs (@nlf)
+* [`0c5834e`](https://github.com/npm/cli/commit/0c5834ed635833ef49fe10cc888025a5debebe21) [#5758](https://github.com/npm/cli/pull/5758) use hosted-git-info to parse registry urls (#5758) (@lukekarrys)
+
+### Documentation
+
+* [`ce6745c`](https://github.com/npm/cli/commit/ce6745c806d721f5e3c455a65fd44bfe03e9d2ae) [#5763](https://github.com/npm/cli/pull/5763) fixed some typos (#5763) (@AndrewDawes)
+
+### Dependencies
+
+* [`b89c19e`](https://github.com/npm/cli/commit/b89c19e9a7674b0bd9d336c14dee1bf381843648) [#5795](https://github.com/npm/cli/pull/5795) `cli-table3@0.6.3`
+* [`6b6dfca`](https://github.com/npm/cli/commit/6b6dfca191cb8f7871f755b926fd5ae223ba697a) `fastest-levenshtein@1.0.16`
+* [`9972ed1`](https://github.com/npm/cli/commit/9972ed1423d7a4f7ca03a34f5aa69321b81850fd) `@npmcli/ci-detect@3.0.1`
+* [`024e612`](https://github.com/npm/cli/commit/024e612f55fc9906b49065dbabbee8b8261eb4eb) `abbrev@2.0.0`
+* [`66f9bcd`](https://github.com/npm/cli/commit/66f9bcd10b8d8cb635593c526727056581c7955d) `nopt@7.0.0`
+* [`5730d17`](https://github.com/npm/cli/commit/5730d17198e066077cb3ea6f78753746afc13603) `tar@6.1.12`
+* [`2fef570`](https://github.com/npm/cli/commit/2fef570caf00bd92a3a4cf0b2bc4ce56fd8bd594) `node-gyp@9.3.0`
+* [`abfb28b`](https://github.com/npm/cli/commit/abfb28b249183b8c033f8e7acc1546150cdac137) `@npmcli/run-script@6.0.0`
+* [`205e2fd`](https://github.com/npm/cli/commit/205e2fdde91f4f21d92ccf0bf9e1ab9ab3053167) `pacote@15.0.6`
+* [`ac25863`](https://github.com/npm/cli/commit/ac25863a33b75620ac9edf4057bfb9409028636a) remove opener, `@npmcli/promise-spawn@6.0.1`, `@npmcli/run-script@5.1.1`, `@npmcli/git@4.0.3`, `pacote@15.0.5`, `which@3.0.0`
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.1.0...arborist-v6.1.1): `@npmcli/arborist@6.1.1`
+* [Workspace](https://github.com/npm/cli/compare/config-v6.0.1...config-v6.1.0): `@npmcli/config@6.1.0`
+* [Workspace](https://github.com/npm/cli/compare/libnpmdiff-v5.0.1...libnpmdiff-v5.0.2): `libnpmdiff@5.0.2`
+* [Workspace](https://github.com/npm/cli/compare/libnpmexec-v5.0.1...libnpmexec-v5.0.2): `libnpmexec@5.0.2`
+* [Workspace](https://github.com/npm/cli/compare/libnpmfund-v4.0.1...libnpmfund-v4.0.2): `libnpmfund@4.0.2`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpack-v5.0.1...libnpmpack-v5.0.2): `libnpmpack@5.0.2`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpublish-v7.0.1...libnpmpublish-v7.0.2): `libnpmpublish@7.0.2`
+* [Workspace](https://github.com/npm/cli/compare/libnpmversion-v4.0.0...libnpmversion-v4.0.1): `libnpmversion@4.0.1`
+
 ## [9.0.1](https://github.com/npm/cli/compare/v9.0.0...v9.0.1) (2022-10-26)
 
 ### Documentation
