@@ -49,7 +49,6 @@ class DirFetcher extends Fetcher {
         pkg: mani,
         event: 'prepare',
         path: this.resolved,
-        stdioString: true,
         stdio,
         banner,
         env: {
