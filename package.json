@@ -62,7 +62,7 @@
     "@npmcli/map-workspaces": "^3.0.0",
     "@npmcli/package-json": "^3.0.0",
     "@npmcli/run-script": "^6.0.0",
-    "abbrev": "~1.1.1",
+    "abbrev": "^2.0.0",
     "archy": "~1.0.0",
     "cacache": "^17.0.1",
     "chalk": "^4.1.2",
