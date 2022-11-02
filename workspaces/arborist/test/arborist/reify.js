@@ -1770,7 +1770,6 @@ console.log('ok 1 - this is fine')
     event: 'test',
     path,
     pkg,
-    stdioString: true,
     stdio: 'pipe',
   }), 'test result')
 })

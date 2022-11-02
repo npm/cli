@@ -421,7 +421,6 @@ t.test('rebuild node-gyp dependencies lacking both preinstall and install script
       event: 'install',
       path: resolve(path, 'node_modules/dep'),
       pkg: { scripts: { install: 'node-gyp rebuild' } },
-      stdioString: true,
       env: {
         npm_package_resolved: null,
         npm_package_integrity: null,

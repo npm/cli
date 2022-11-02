@@ -95,7 +95,6 @@ const exec = async (...args) => {
       PATH: `${PATH}:${binLocation}`,
       COMSPEC: process.env.COMSPEC,
     },
-    stdioString: true,
     encoding: 'utf-8',
   })
 
