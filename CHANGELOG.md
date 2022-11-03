@@ -1,5 +1,21 @@
 # Changelog
 
+## [8.19.3](https://github.com/npm/cli/compare/v8.19.2...v8.19.3) (2022-11-03)
+
+### Bug Fixes
+
+* [`26f3d0b`](https://github.com/npm/cli/commit/26f3d0b04fec438400d337c2d4ace218225b7ecb) [#5761](https://github.com/npm/cli/pull/5761) use hosted-git-info to parse registry urls (#5761) (@lukekarrys)
+
+### Documentation
+
+* [`bd92aa0`](https://github.com/npm/cli/commit/bd92aa03920aa04b20dc7087871a853c50c613e4) [#5753](https://github.com/npm/cli/pull/5753) name and version description change (#5753) (@dominikgorczyca)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/compare/arborist-v5.6.2...arborist-v5.6.3): `@npmcli/arborist@5.6.3`
+* [Workspace](https://github.com/npm/cli/compare/libnpmexec-v4.0.13...libnpmexec-v4.0.14): `libnpmexec@4.0.14`
+* [Workspace](https://github.com/npm/cli/compare/libnpmfund-v3.0.4...libnpmfund-v3.0.5): `libnpmfund@3.0.5`
+
 ## [8.19.2](https://github.com/npm/cli/compare/v8.19.1...v8.19.2) (2022-09-13)
 
 ### Dependencies

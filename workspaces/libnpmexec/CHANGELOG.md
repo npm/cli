@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.0.14](https://github.com/npm/cli/compare/libnpmexec-v4.0.13...libnpmexec-v4.0.14) (2022-11-03)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/compare/arborist-v5.6.2...arborist-v5.6.3): `@npmcli/arborist@5.6.3`
+
 ## [4.0.13](https://github.com/npm/cli/compare/libnpmexec-v4.0.12...libnpmexec-v4.0.13) (2022-09-13)
 
 ### Dependencies

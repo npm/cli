@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.6.3](https://github.com/npm/cli/compare/arborist-v5.6.2...arborist-v5.6.3) (2022-11-03)
+
+### Bug Fixes
+
+* [`26f3d0b`](https://github.com/npm/cli/commit/26f3d0b04fec438400d337c2d4ace218225b7ecb) [#5761](https://github.com/npm/cli/pull/5761) use hosted-git-info to parse registry urls (#5761) (@lukekarrys)
+
 ## [5.6.2](https://github.com/npm/cli/compare/arborist-v5.6.1...arborist-v5.6.2) (2022-09-13)
 
 ### Bug Fixes
