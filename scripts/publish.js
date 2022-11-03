@@ -7,7 +7,7 @@ const resetdeps = () => npm('run', 'resetdeps')
 
 const op = () => spawn('op', 'item', 'get', 'npm', '--otp', { out: true, ok: true })
 
-const missingVersion = ({ name, version }) => {
+const missingVersion = async ({ name, version }) => {
   const mani = await pacote.manifest(`${name}@${version}`, { preferOnline: true })
     .catch(() => null)
   return !mani
