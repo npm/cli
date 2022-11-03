@@ -9,6 +9,10 @@ on:
         description: "The npm spec to create the PR from"
         required: true
         default: 'latest'
+      branch:
+        description: "The major node version to serve as the base of the PR. Should be `main` or a number like `18`, `19`, etc."
+        required: true
+        default: 'main'
       dryRun:
         description: "Setting this to anything will run all the steps except opening the PR"
 
@@ -23,6 +27,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Setup Git User
         run: |
           git config --global user.email "npm-cli+bot@github.com"
@@ -46,4 +52,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.NODE_PULL_REQUEST_TOKEN }}
         run: |
           DRY_RUN=$([ -z "${{ inputs.dryRun }}" ] && echo "" || echo "--dry-run")
-          node scripts/create-node-pr.js "${{ inputs.spec }}" "$DRY_RUN"
+          node scripts/create-node-pr.js ${{ inputs.spec }} ${{ inputs.branch }} "$DRY_RUN"

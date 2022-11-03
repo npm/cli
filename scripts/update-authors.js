@@ -4,6 +4,7 @@ const { CWD, run, git, fs } = require('./util.js')
 const main = async () => {
   const allAuthors = await git('log', '--use-mailmap', '--reverse', '--format=%aN <%aE>', {
     lines: true,
+    quiet: true,
   })
 
   const authors = new Set()
