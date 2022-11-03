@@ -12,7 +12,6 @@ graph LR;
   cacache-->npmcli-move-file["@npmcli/move-file"];
   cacache-->ssri;
   cacache-->unique-filename;
-  dezalgo-->wrappy;
   init-package-json-->npm-package-arg;
   init-package-json-->promzard;
   init-package-json-->read-package-json;
@@ -133,7 +132,6 @@ graph LR;
   npm-->read-package-json-fast;
   npm-->read-package-json;
   npm-->read;
-  npm-->readdir-scoped-modules;
   npm-->semver;
   npm-->ssri;
   npm-->treeverse;
@@ -167,10 +165,10 @@ graph LR;
   npmcli-arborist-->npm-pick-manifest;
   npmcli-arborist-->npm-registry-fetch;
   npmcli-arborist-->npmcli-eslint-config["@npmcli/eslint-config"];
+  npmcli-arborist-->npmcli-fs["@npmcli/fs"];
   npmcli-arborist-->npmcli-installed-package-contents["@npmcli/installed-package-contents"];
   npmcli-arborist-->npmcli-map-workspaces["@npmcli/map-workspaces"];
   npmcli-arborist-->npmcli-metavuln-calculator["@npmcli/metavuln-calculator"];
-  npmcli-arborist-->npmcli-move-file["@npmcli/move-file"];
   npmcli-arborist-->npmcli-name-from-folder["@npmcli/name-from-folder"];
   npmcli-arborist-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-arborist-->npmcli-package-json["@npmcli/package-json"];
@@ -182,7 +180,6 @@ graph LR;
   npmcli-arborist-->parse-conflict-json;
   npmcli-arborist-->proc-log;
   npmcli-arborist-->read-package-json-fast;
-  npmcli-arborist-->readdir-scoped-modules;
   npmcli-arborist-->semver;
   npmcli-arborist-->ssri;
   npmcli-arborist-->treeverse;
@@ -238,7 +235,6 @@ graph LR;
   read-package-json-->npm-normalize-package-bin;
   read-package-json-fast-->json-parse-even-better-errors;
   read-package-json-fast-->npm-normalize-package-bin;
-  readdir-scoped-modules-->dezalgo;
   unique-filename-->unique-slug;
 ```
 
@@ -290,8 +286,6 @@ graph LR;
   columnify-->wcwidth;
   debug-->ms;
   defaults-->clone;
-  dezalgo-->asap;
-  dezalgo-->wrappy;
   encoding-->iconv-lite;
   fs-minipass-->minipass;
   gauge-->aproba;
@@ -535,7 +529,6 @@ graph LR;
   npm-->read-package-json-fast;
   npm-->read-package-json;
   npm-->read;
-  npm-->readdir-scoped-modules;
   npm-->remark-gfm;
   npm-->remark-github;
   npm-->remark;
@@ -591,10 +584,10 @@ graph LR;
   npmcli-arborist-->npm-pick-manifest;
   npmcli-arborist-->npm-registry-fetch;
   npmcli-arborist-->npmcli-eslint-config["@npmcli/eslint-config"];
+  npmcli-arborist-->npmcli-fs["@npmcli/fs"];
   npmcli-arborist-->npmcli-installed-package-contents["@npmcli/installed-package-contents"];
   npmcli-arborist-->npmcli-map-workspaces["@npmcli/map-workspaces"];
   npmcli-arborist-->npmcli-metavuln-calculator["@npmcli/metavuln-calculator"];
-  npmcli-arborist-->npmcli-move-file["@npmcli/move-file"];
   npmcli-arborist-->npmcli-name-from-folder["@npmcli/name-from-folder"];
   npmcli-arborist-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-arborist-->npmcli-package-json["@npmcli/package-json"];
@@ -608,7 +601,6 @@ graph LR;
   npmcli-arborist-->promise-all-reject-late;
   npmcli-arborist-->promise-call-limit;
   npmcli-arborist-->read-package-json-fast;
-  npmcli-arborist-->readdir-scoped-modules;
   npmcli-arborist-->semver;
   npmcli-arborist-->ssri;
   npmcli-arborist-->tap;
@@ -708,10 +700,6 @@ graph LR;
   readable-stream-->inherits;
   readable-stream-->string_decoder;
   readable-stream-->util-deprecate;
-  readdir-scoped-modules-->debuglog;
-  readdir-scoped-modules-->dezalgo;
-  readdir-scoped-modules-->graceful-fs;
-  readdir-scoped-modules-->once;
   rimraf-->glob;
   semver-->lru-cache;
   smoke-tests-->minify-registry-metadata;
@@ -769,6 +757,6 @@ packages higher up the chain.
  - pacote, libnpmaccess, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, npm-profile
  - npm-registry-fetch, libnpmversion
  - @npmcli/git, make-fetch-happen, @npmcli/config, init-package-json
- - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, @npmcli/run-script, read-package-json, readdir-scoped-modules, promzard
- - @npmcli/docs, npm-bundled, read-package-json-fast, @npmcli/fs, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, @npmcli/package-json, bin-links, nopt, npmlog, parse-conflict-json, dezalgo, read
- - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, semver, @npmcli/move-file, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, wrappy, treeverse, minify-registry-metadata, ini, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, npm-audit-report, npm-user-validate
+ - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, @npmcli/run-script, read-package-json, promzard
+ - @npmcli/docs, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, @npmcli/package-json, bin-links, nopt, npmlog, parse-conflict-json, read
+ - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, @npmcli/move-file, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, treeverse, minify-registry-metadata, ini, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, npm-audit-report, npm-user-validate
