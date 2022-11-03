@@ -7,9 +7,8 @@ const cacache = require('cacache')
 const promiseCallLimit = require('promise-call-limit')
 const realpath = require('../../lib/realpath.js')
 const { resolve, dirname } = require('path')
-const { promisify } = require('util')
 const treeCheck = require('../tree-check.js')
-const readdir = promisify(require('readdir-scoped-modules'))
+const { readdirScoped } = require('@npmcli/fs')
 const { lstat, readlink } = require('fs/promises')
 const { depth } = require('treeverse')
 const log = require('proc-log')
@@ -447,7 +446,8 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     const globalExplicitUpdateNames = []
     if (this[_global] && (this[_updateAll] || this[_updateNames].length)) {
       const nm = resolve(this.path, 'node_modules')
-      for (const name of await readdir(nm).catch(() => [])) {
+      const paths = await readdirScoped(nm).catch(() => [])
+      for (const name of paths.map((p) => p.replace(/\\/g, '/'))) {
         tree.package.dependencies = tree.package.dependencies || {}
         const updateName = this[_updateNames].includes(name)
         if (this[_updateAll] || updateName) {

@@ -19,7 +19,7 @@ const {
   rm,
   symlink,
 } = require('fs/promises')
-const moveFile = require('@npmcli/move-file')
+const { moveFile } = require('@npmcli/fs')
 const PackageJson = require('@npmcli/package-json')
 const packageContents = require('@npmcli/installed-package-contents')
 const runScript = require('@npmcli/run-script')
