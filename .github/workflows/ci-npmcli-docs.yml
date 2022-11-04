@@ -87,3 +87,45 @@ jobs:
       - name: Check Git Status
         if: matrix && matrix.platform.os != 'windows-latest'
         run: node scripts/git-dirty.js
+
+  compare-docs:
+    name: Compare Docs
+    if: github.repository_owner == 'npm' && github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: npm
+      - name: Reset Deps
+        run: node . run resetdeps
+      - name: Build Docs
+        run: |
+          node . run build -w docs
+          mv man/ man-update/
+          mv docs/output/ docs/output-update/
+          mv docs/content/ docs/content-update/
+      - name: Get Current Docs
+        run: |
+          git clean -fd
+          git checkout ${{ github.event.pull_request.base.ref }}
+          node . run resetdeps
+          node . run build -w docs
+      - name: Diff Man
+        run: diff -r --color=always man/ man-update/ || true
+      - name: Diff HTML
+        run: diff -r --color=always docs/output/ docs/output-update/ || true
+      - name: Diff Markdown
+        run: diff -r --color=always docs/content/ docs/content-update/ || true
