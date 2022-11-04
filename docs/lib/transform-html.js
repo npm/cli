@@ -1,22 +1,18 @@
-const cmark = require('cmark-gfm')
 const jsdom = require('jsdom')
 
-function transformHTML (src, { path, template, data }) {
-  // Render the markdown into an HTML snippet using a GFM renderer.
-  // This has to use the sync API due to a bug where the promise method
-  // doesn't properly apply the extensions so links dont get autolinked.
-  const content = cmark.renderHtmlSync(src, {
-    smart: false,
-    githubPreLang: true,
-    strikethroughDoubleTilde: true,
-    unsafe: false,
-    extensions: {
-      table: true,
-      strikethrough: true,
-      tagfilter: true,
-      autolink: true,
-    },
-  })
+function transformHTML (
+  src,
+  { path, template, data, unified, remarkParse, remarkGfm, remarkRehype, rehypeStringify }
+) {
+  const content = unified()
+    .use(remarkParse)
+    .use(remarkGfm, {
+      singleTilde: false,
+    })
+    .use(remarkRehype)
+    .use(rehypeStringify)
+    .processSync(src)
+    .toString()
 
   // Inject this data into the template, using a mustache-like
   // replacement scheme.

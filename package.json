@@ -214,7 +214,6 @@
     "dependencies": "node scripts/bundle-and-gitignore-deps.js && node scripts/dependency-graph.js",
     "dumpconf": "env | grep npm | sort | uniq",
     "licenses": "licensee --production --errors-only",
-    "pretest": "node scripts/rebuild.js cmark-gfm",
     "test": "tap",
     "test-all": "node . run test -ws -iwr --if-present",
     "snap": "tap",
