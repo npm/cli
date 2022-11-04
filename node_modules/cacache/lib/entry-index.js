@@ -17,7 +17,7 @@ const uniqueFilename = require('unique-filename')
 const contentPath = require('./content/path')
 const hashToSegments = require('./util/hash-to-segments')
 const indexV = require('../package.json')['cache-version'].index
-const moveFile = require('@npmcli/move-file')
+const { moveFile } = require('@npmcli/fs')
 
 module.exports.NotFoundError = class NotFoundError extends Error {
   constructor (cache, key) {
