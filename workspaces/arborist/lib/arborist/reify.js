@@ -668,7 +668,7 @@ module.exports = cls => class Reifier extends cls {
     const nm = resolve(node.parent.path, 'node_modules')
     await this[_validateNodeModules](nm)
 
-    if (node.isLink) {
+    if (node.isLink && (node.isWorkspace || !node.installLinks)) {
       await rm(node.path, { recursive: true, force: true })
       await this[_symlink](node)
     } else {
@@ -687,6 +687,7 @@ module.exports = cls => class Reifier extends cls {
         Arborist: this.constructor,
         resolved: node.resolved,
         integrity: node.integrity,
+        where: dirname(node.path),
       })
     }
   }

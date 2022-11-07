@@ -28,6 +28,7 @@ const Shrinkwrap = require('../shrinkwrap.js')
 const { defaultLockfileVersion } = Shrinkwrap
 const Node = require('../node.js')
 const Link = require('../link.js')
+const Edge = require('../edge.js')
 const addRmPkgDeps = require('../add-rm-pkg-deps.js')
 const optionalSet = require('../optional-set.js')
 const { checkEngine, checkPlatform } = require('npm-install-checks')
@@ -1045,14 +1046,18 @@ This is a one-time fix-up, please be patient...
   // loads a node from an edge, and then loads its peer deps (and their
   // peer deps, on down the line) into a virtual root parent.
   async [_nodeFromEdge] (edge, parent_, secondEdge, required) {
+    let from = edge.from
+    if (from.installLinks && from.linksIn.size) {
+      from = from.linksIn.values().next().value
+    }
     // create a virtual root node with the same deps as the node that
     // is requesting this one, so that we can get all the peer deps in
     // a context where they're likely to be resolvable.
     // Note that the virtual root will also have virtual copies of the
     // targets of any child Links, so that they resolve appropriately.
-    const parent = parent_ || this[_virtualRoot](edge.from)
+    const parent = parent_ || this[_virtualRoot](from)
 
-    const spec = npa.resolve(edge.name, edge.spec, edge.from.path)
+    const spec = npa.resolve(edge.name, edge.spec, from.path)
     const first = await this[_nodeFromSpec](edge.name, spec, parent, edge)
 
     // we might have a case where the parent has a peer dependency on
@@ -1114,7 +1119,7 @@ This is a one-time fix-up, please be patient...
     // also need to set up any targets from any link deps, so that
     // they are properly reflected in the virtual environment
     for (const child of node.children.values()) {
-      if (child.isLink) {
+      if (child.isLink && (child.isWorkspace || !child.installLinks)) {
         new Node({
           path: child.realpath,
           sourceReference: child.target,
@@ -1228,7 +1233,7 @@ This is a one-time fix-up, please be patient...
     const isWorkspace = this.idealTree.workspaces && this.idealTree.workspaces.has(spec.name)
 
     // spec is a directory, link it unless installLinks is set or it's a workspace
-    if (spec.type === 'directory' && (isWorkspace || !installLinks)) {
+    if (spec.type === 'directory') {
       return this[_linkFromSpec](name, spec, parent, edge)
     }
 
@@ -1407,6 +1412,13 @@ This is a one-time fix-up, please be patient...
 
       // link we never ended up placing, skip it
       if (link.root !== this.idealTree) {
+        continue
+      }
+
+      // if installLinks is set then we want to install deps no matter what
+      if (link.installLinks) {
+        this.addTracker('idealTree', link.target.name, link.target.location)
+        this[_depsQueue].push(link.target)
         continue
       }
 
