@@ -123,6 +123,7 @@ graph LR;
   npm-->npmcli-package-json["@npmcli/package-json"];
   npm-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npm-->npmcli-run-script["@npmcli/run-script"];
+  npm-->npmcli-smoke-tests["@npmcli/smoke-tests"];
   npm-->npmcli-template-oss["@npmcli/template-oss"];
   npm-->npmlog;
   npm-->pacote;
@@ -210,6 +211,10 @@ graph LR;
   npmcli-run-script-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-run-script-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-run-script-->read-package-json-fast;
+  npmcli-smoke-tests-->minify-registry-metadata;
+  npmcli-smoke-tests-->npmcli-eslint-config["@npmcli/eslint-config"];
+  npmcli-smoke-tests-->npmcli-promise-spawn["@npmcli/promise-spawn"];
+  npmcli-smoke-tests-->npmcli-template-oss["@npmcli/template-oss"];
   npmlog-->are-we-there-yet;
   npmlog-->gauge;
   pacote-->cacache;
@@ -518,6 +523,7 @@ graph LR;
   npm-->npmcli-package-json["@npmcli/package-json"];
   npm-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npm-->npmcli-run-script["@npmcli/run-script"];
+  npm-->npmcli-smoke-tests["@npmcli/smoke-tests"];
   npm-->npmcli-template-oss["@npmcli/template-oss"];
   npm-->npmlog;
   npm-->p-map;
@@ -533,7 +539,6 @@ graph LR;
   npm-->remark;
   npm-->rimraf;
   npm-->semver;
-  npm-->smoke-tests;
   npm-->spawk;
   npm-->ssri;
   npm-->tap;
@@ -662,6 +667,12 @@ graph LR;
   npmcli-run-script-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-run-script-->read-package-json-fast;
   npmcli-run-script-->which;
+  npmcli-smoke-tests-->minify-registry-metadata;
+  npmcli-smoke-tests-->npmcli-eslint-config["@npmcli/eslint-config"];
+  npmcli-smoke-tests-->npmcli-promise-spawn["@npmcli/promise-spawn"];
+  npmcli-smoke-tests-->npmcli-template-oss["@npmcli/template-oss"];
+  npmcli-smoke-tests-->tap;
+  npmcli-smoke-tests-->which;
   npmlog-->are-we-there-yet;
   npmlog-->console-control-strings;
   npmlog-->gauge;
@@ -705,13 +716,6 @@ graph LR;
   readable-stream-->util-deprecate;
   rimraf-->glob;
   semver-->lru-cache;
-  smoke-tests-->minify-registry-metadata;
-  smoke-tests-->npmcli-eslint-config["@npmcli/eslint-config"];
-  smoke-tests-->npmcli-promise-spawn["@npmcli/promise-spawn"];
-  smoke-tests-->npmcli-template-oss["@npmcli/template-oss"];
-  smoke-tests-->rimraf;
-  smoke-tests-->tap;
-  smoke-tests-->which;
   socks-->ip;
   socks-->smart-buffer;
   socks-proxy-agent-->agent-base;
@@ -761,5 +765,5 @@ packages higher up the chain.
  - npm-registry-fetch, libnpmversion
  - @npmcli/git, make-fetch-happen, @npmcli/config, init-package-json
  - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, @npmcli/run-script, read-package-json, promzard
- - @npmcli/docs, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, @npmcli/package-json, bin-links, nopt, npmlog, parse-conflict-json, read
- - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, treeverse, minify-registry-metadata, ini, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, npm-audit-report, npm-user-validate
+ - @npmcli/docs, @npmcli/smoke-tests, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, @npmcli/package-json, bin-links, nopt, npmlog, parse-conflict-json, read
+ - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, @npmcli/promise-spawn, minify-registry-metadata, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, treeverse, ini, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, npm-audit-report, npm-user-validate

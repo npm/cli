@@ -1,130 +1,17 @@
-const { readFileSync, realpathSync, mkdirSync, existsSync, writeFileSync } = require('fs')
-const spawn = require('@npmcli/promise-spawn')
-const { join, resolve, sep } = require('path')
+const { join } = require('path')
 const t = require('tap')
-const rimraf = require('rimraf')
-const which = require('which').sync
-const { start, stop, registry } = require('./fixtures/server.js')
+const setup = require('./fixtures/setup.js')
 
-const { SMOKE_PUBLISH_NPM, CI, PATH } = process.env
-const log = CI ? console.error : () => {}
-
-const cwd = resolve(__dirname, '..', '..')
-const npmCli = join('bin', 'npm-cli.js')
-const execArgv = SMOKE_PUBLISH_NPM ? ['npm'] : [process.execPath, join(cwd, npmCli)]
-const npmDir = SMOKE_PUBLISH_NPM ? realpathSync(which('npm')).replace(sep + npmCli, '') : cwd
-
-// setup server
-t.before(start)
-t.teardown(stop)
-// update notifier should never be written
-t.afterEach((t) => {
-  const updateExists = existsSync(join(cacheLocation, '_update-notifier-last-checked'))
-  t.equal(updateExists, false)
-})
-
-const readFile = filename => readFileSync(resolve(localPrefix, filename), 'utf-8')
-const normalizePath = path => path.replace(/[A-Z]:/, '').replace(/\\/g, '/')
-
-t.cleanSnapshot = s =>
-  s
-    // sometimes we print normalized paths in snapshots regardless of
-    // platform so replace those first
-    .split(normalizePath(npmDir))
-    .join('{CWD}')
-    .split(normalizePath(cwd))
-    .join('{CWD}')
-    .split(registry)
-    .join('https://registry.npmjs.org/')
-    .split(normalizePath(process.execPath))
-    .join('node')
-    // then replace platform style paths
-    .split(npmDir)
-    .join('{CWD}')
-    .split(cwd)
-    .join('{CWD}')
-    .replace(/\\+/g, '/')
-    .replace(/\r\n/g, '\n')
-    .replace(/ \(in a browser\)/g, '')
-    .replace(/^npm@.* /gm, 'npm ')
-    .replace(/^.*debug-[0-9]+.log$/gm, '')
-
-// setup fixtures
-const path = t.testdir({
-  '.npmrc': '',
-  cache: {},
-  project: {},
-  bin: {},
-})
-const localPrefix = resolve(path, 'project')
-const userconfigLocation = resolve(path, '.npmrc')
-const cacheLocation = resolve(path, 'cache')
-const binLocation = resolve(path, 'bin')
-
-const exec = async (...args) => {
-  const cmd = []
-  const opts = [
-    `--registry=${registry}`,
-    `--cache=${cacheLocation}`,
-    `--userconfig=${userconfigLocation}`,
-    '--no-audit',
-    '--no-update-notifier',
-    '--loglevel=silly',
-  ]
-  for (const arg of args) {
-    if (arg.startsWith('--')) {
-      opts.push(arg)
-    } else {
-      cmd.push(arg)
-    }
-  }
-
-  // XXX: not sure why outdated fails with no-workspaces but works without it
-  if (!opts.includes('--workspaces') && cmd[0] !== 'outdated') {
-    // This is required so we dont detect any workspace roots above the testdir
-    opts.push('--no-workspaces')
-  }
-
-  const spawnArgs = [execArgv[0], [...execArgv.slice(1), ...cmd, ...opts]]
-  log([spawnArgs[0], ...spawnArgs[1]].join(' '))
-
-  const res = await spawn(...spawnArgs, {
-    cwd: localPrefix,
-    env: {
-      HOME: path,
-      PATH: `${PATH}:${binLocation}`,
-      COMSPEC: process.env.COMSPEC,
-    },
-    encoding: 'utf-8',
-  })
-
-  log(res.stderr)
-  return res.stdout
-}
+const { exec, isSmokePublish, readFile, writeFile, rmDir } = setup(t)
 
 // this test must come first, its package.json will be destroyed and the one
 // created in the next test (npm init) will create a new one that must be
 // present for later tests
 t.test('npm install sends correct user-agent', async t => {
-  const pkgPath = join(localPrefix, 'package.json')
-  const pkgContent = JSON.stringify({
-    name: 'smoke-test-workspaces',
-    workspaces: ['packages/*'],
-  })
-  writeFileSync(pkgPath, pkgContent, { encoding: 'utf8' })
+  writeFile('package.json', JSON.stringify({ name: 'smoke-test-workspaces' }))
+  t.teardown(() => rmDir())
 
-  const wsRoot = join(localPrefix, 'packages')
-  mkdirSync(wsRoot)
-
-  const wsPath = join(wsRoot, 'foo')
-  mkdirSync(wsPath)
-
-  const wsPkgPath = join(wsPath, 'package.json')
-  const wsContent = JSON.stringify({
-    name: 'foo',
-  })
-  writeFileSync(wsPkgPath, wsContent, { encoding: 'utf8' })
-  t.teardown(() => rimraf.sync(`${localPrefix}/*`))
+  await exec('init', '-y', `--workspace=${join('packages', 'foo')}`)
 
   await t.rejects(
     exec('install', 'fail_reflect_user_agent'),
@@ -147,7 +34,7 @@ t.test('npm init', async t => {
   const cmdRes = await exec('init', '-y')
 
   t.matchSnapshot(cmdRes, 'should have successful npm init result')
-  const pkg = JSON.parse(readFileSync(resolve(localPrefix, 'package.json')))
+  const pkg = JSON.parse(readFile('package.json'))
   t.equal(pkg.name, 'project', 'should have expected generated name')
   t.equal(pkg.version, '1.0.0', 'should have expected generated version')
 })
@@ -155,7 +42,7 @@ t.test('npm init', async t => {
 t.test('npm --version', async t => {
   const v = await exec('--version')
 
-  if (SMOKE_PUBLISH_NPM) {
+  if (isSmokePublish) {
     t.match(v.trim(), /-[0-9a-f]{40}\.\d$/, 'must have a git version')
   } else {
     t.skip('not checking version')
