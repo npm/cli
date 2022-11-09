@@ -4,6 +4,7 @@ const baseOpts = {
   args: [],
   call: '',
   color: false,
+  flatOptions: {},
   path: '',
   runPath: '',
   shell: process.platform === 'win32'
@@ -73,7 +74,7 @@ t.test('colorized interactive mode msg', async t => {
       OUTPUT.push(msg)
     },
     runPath: '/foo/',
-    color: true,
+    flatOptions: { color: true },
   })
   t.matchSnapshot(OUTPUT.join('\n'), 'should print colorized output')
 })

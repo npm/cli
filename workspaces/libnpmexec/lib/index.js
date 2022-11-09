@@ -79,7 +79,6 @@ const exec = async (opts) => {
   const {
     args = [],
     call = '',
-    color = false,
     localBin = resolve('./node_modules/.bin'),
     locationMsg = undefined,
     globalBin = '',
@@ -97,7 +96,6 @@ const exec = async (opts) => {
   const run = () => runScript({
     args,
     call,
-    color,
     flatOptions,
     locationMsg,
     output,
@@ -114,20 +112,36 @@ const exec = async (opts) => {
 
   const needPackageCommandSwap = (args.length > 0) && (packages.length === 0)
   // If they asked for a command w/o specifying a package, see if there is a
-  // bin that directly matches that name either globally or in the local tree.
+  // bin that directly matches that name:
+  // - in the local package itself
+  // - in the local tree
+  // - globally
   if (needPackageCommandSwap) {
-    const dir = dirname(dirname(localBin))
-    const localBinPath = await localFileExists(dir, args[0], '/')
-    if (localBinPath) {
-      binPaths.push(localBinPath)
-      return await run()
-    } else if (globalPath && await fileExists(`${globalBin}/${args[0]}`)) {
-      binPaths.push(globalBin)
-      return await run()
+    let localManifest
+    try {
+      localManifest = await pacote.manifest(path, flatOptions)
+    } catch {
+      // no local package.json? no problem, move one.
     }
-
-    // We swap out args[0] with the bin from the manifest later
-    packages.push(args[0])
+    if (localManifest?.bin?.[args[0]]) {
+      // we have to install the local package into the npx cache so that its
+      // bin links get set up
+      packages.push(path)
+      yes = true
+      flatOptions.installLinks = false
+    } else {
+      const dir = dirname(dirname(localBin))
+      const localBinPath = await localFileExists(dir, args[0], '/')
+      if (localBinPath) {
+        binPaths.push(localBinPath)
+        return await run()
+      } else if (globalPath && await fileExists(`${globalBin}/${args[0]}`)) {
+        binPaths.push(globalBin)
+        return await run()
+      }
+      // We swap out args[0] with the bin from the manifest later
+      packages.push(args[0])
+    }
   }
 
   // Resolve any directory specs so that the npx directory is unique to the
