@@ -15,7 +15,6 @@ const nocolor = {
 const run = async ({
   args,
   call,
-  color,
   flatOptions,
   locationMsg,
   output = () => {},
@@ -26,6 +25,7 @@ const run = async ({
 }) => {
   // turn list of args into command string
   const script = call || args.shift() || scriptShell
+  const color = !!flatOptions.color
   const colorize = color ? chalk : nocolor
 
   // do the fakey runScript dance
