@@ -31,7 +31,7 @@ const testdirHelper = (obj) => {
   return obj
 }
 
-const getSpawnArgs = async ({ log }) => {
+const getSpawnArgs = async () => {
   const cliBin = join('bin', 'npm')
   const cliJsBin = join('bin', 'npm-cli.js')
   const npmLinks = await which('npm', { all: true })
@@ -44,9 +44,8 @@ const getSpawnArgs = async ({ log }) => {
     ...npmLinks,
     ...npmPaths,
     ...npmPaths.map(n => n.replace(sep + cliBin, '')),
+    ...npmPaths.map(n => n.replace(sep + cliJsBin, '')),
   ])]
-
-  log({ cleanNpmPaths })
 
   if (SMOKE_PUBLISH_NPM) {
     return {
@@ -101,8 +100,8 @@ module.exports = async (t, { testdir = {}, debug } = {}) => {
     t.strictSame(registry.nock.activeMocks(), [], 'no active mocks after each')
   })
 
-  const _log = debug || CI ? (...a) => console.error(...a) : () => {}
-  const { command, ...spawnPaths } = await getSpawnArgs({ log: _log })
+  const debugLog = debug || CI ? (...a) => console.error(...a) : () => {}
+  const { command, ...spawnPaths } = await getSpawnArgs({ log: debugLog })
   const cleanPaths = Object.entries(spawnPaths)
 
   const cleanOutput = s => {
@@ -131,7 +130,7 @@ module.exports = async (t, { testdir = {}, debug } = {}) => {
       .replace(/^.*debug-[0-9]+.log$/gm, '')
       .replace(/in \d+ms$/gm, 'in {TIME}')
   }
-  const log = (...a) => _log(cleanOutput(a.join(' ')))
+  const log = (...a) => debugLog(cleanOutput(a.join(' ')))
   t.cleanSnapshot = cleanOutput
 
   const npm = async (...args) => {
