@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.1.2](https://github.com/npm/cli/compare/arborist-v6.1.1...arborist-v6.1.2) (2022-11-09)
+
+### Dependencies
+
+* [`335c7e4`](https://github.com/npm/cli/commit/335c7e4348f5505fad33b8a78348a02a82b91426) [#5813](https://github.com/npm/cli/pull/5813) `cacache@17.0.2`
+* [`878ddfb`](https://github.com/npm/cli/commit/878ddfb5b68c03bdcd7d7da8dae92c4947942801) `@npmcli/fs@3.1.0`
+
 ## [6.1.1](https://github.com/npm/cli/compare/arborist-v6.1.0...arborist-v6.1.1) (2022-11-02)
 
 ### Bug Fixes
