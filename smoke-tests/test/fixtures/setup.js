@@ -32,19 +32,32 @@ const testdirHelper = (obj) => {
 }
 
 const getSpawnArgs = async () => {
-  const cliBin = join('bin', 'npm-cli.js')
+  const cliBin = join('bin', 'npm')
+  const cliJsBin = join('bin', 'npm-cli.js')
+  const npmLinks = await which('npm', { all: true })
+  const npmPaths = await Promise.all(npmLinks.map(npm => fs.realpath(npm)))
+
+  const cleanNpmPaths = [...new Set([
+    CLI_ROOT,
+    join(CLI_ROOT, cliBin),
+    join(CLI_ROOT, cliJsBin),
+    ...npmLinks,
+    ...npmPaths,
+    ...npmPaths.map(n => n.replace(sep + cliBin, '')),
+    ...npmPaths.map(n => n.replace(sep + cliJsBin, '')),
+  ])]
 
   if (SMOKE_PUBLISH_NPM) {
     return {
       command: ['npm'],
-      NPM: await which('npm').then(p => fs.realpath(p).replace(sep + cliBin)),
+      NPM: cleanNpmPaths,
     }
   }
 
   return {
-    command: [process.execPath, join(CLI_ROOT, cliBin)],
+    command: [process.execPath, join(CLI_ROOT, cliJsBin)],
     NODE: process.execPath,
-    NPM: join(CLI_ROOT, cliBin),
+    NPM: cleanNpmPaths,
   }
 }
 
@@ -87,17 +100,24 @@ module.exports = async (t, { testdir = {}, debug } = {}) => {
     t.strictSame(registry.nock.activeMocks(), [], 'no active mocks after each')
   })
 
-  const { command, ...spawnPaths } = await getSpawnArgs()
-  const cleanPaths = Object.entries({ ...spawnPaths, CWD: CLI_ROOT })
+  const debugLog = debug || CI ? (...a) => console.error(...a) : () => {}
+  const { command, ...spawnPaths } = await getSpawnArgs({ log: debugLog })
+  const cleanPaths = Object.entries(spawnPaths)
 
   const cleanOutput = s => {
     // sometimes we print normalized paths in snapshots regardless of
     // platform so replace those first then replace platform style paths
     for (const [key, value] of cleanPaths) {
-      s = s.split(normalizePath(value)).join(`{${key}}`)
+      const values = [].concat(value)
+      for (const v of values) {
+        s = s.split(normalizePath(v)).join(`{${key}}`)
+      }
     }
     for (const [key, value] of cleanPaths) {
-      s = s.split(value).join(`{${key}}`)
+      const values = [].concat(value)
+      for (const v of values) {
+        s = s.split(v).join(`{${key}}`)
+      }
     }
     return s
       .split(relative(CLI_ROOT, t.testdirName)).join('{TESTDIR}')
@@ -110,7 +130,7 @@ module.exports = async (t, { testdir = {}, debug } = {}) => {
       .replace(/^.*debug-[0-9]+.log$/gm, '')
       .replace(/in \d+ms$/gm, 'in {TIME}')
   }
-  const log = debug || CI ? (...a) => console.error(cleanOutput(a.join(' '))) : () => {}
+  const log = (...a) => debugLog(cleanOutput(a.join(' ')))
   t.cleanSnapshot = cleanOutput
 
   const npm = async (...args) => {

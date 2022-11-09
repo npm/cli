@@ -32,13 +32,13 @@ All commands:
     unstar, update, version, view, whoami
 
 Specify configs in the ini-formatted file:
-    {CWD}/{TESTDIR}/project/.npmrc
+    {NPM}/{TESTDIR}/project/.npmrc
 or on the command line via: npm <command> --key=value
 
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm {CWD}
+npm {NPM}
 `
 
 exports[`test/index.js TAP basic npm ci > should throw mismatch deps in lock file error 1`] = `
@@ -107,7 +107,7 @@ project@1.0.0
 `
 
 exports[`test/index.js TAP basic npm init > should have successful npm init result 1`] = `
-Wrote to {CWD}/{TESTDIR}/project/package.json:
+Wrote to {NPM}/{TESTDIR}/project/package.json:
 
 {
   "name": "project",
@@ -231,7 +231,7 @@ Object {
 `
 
 exports[`test/index.js TAP basic npm ls > should have expected ls output 1`] = `
-project@1.0.0 {CWD}/{TESTDIR}/project
+project@1.0.0 {NPM}/{TESTDIR}/project
 +-- abbrev@1.0.4
 \`-- promise-all-reject-late@5.0.0
 `
@@ -347,7 +347,7 @@ exports[`test/index.js TAP basic npm pkg set scripts > should have expected set-
 `
 
 exports[`test/index.js TAP basic npm prefix > should have expected prefix output 1`] = `
-{CWD}/{TESTDIR}/project
+{NPM}/{TESTDIR}/project
 `
 
 exports[`test/index.js TAP basic npm run-script > should have expected run-script output 1`] = `
