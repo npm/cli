@@ -1,157 +1,204 @@
-const fs = require('fs')
-const { join, resolve, sep, basename } = require('path')
-const which = require('which').sync
-const http = require('http')
+const fs = require('fs/promises')
+const { join, resolve, sep, extname, relative, delimiter } = require('path')
+const which = require('which')
 const spawn = require('@npmcli/promise-spawn')
+const justExtend = require('just-extend')
+const justSet = require('just-safe-set')
+const MockRegistry = require('@npmcli/mock-registry')
+const { Blob } = require('buffer')
+const http = require('http')
+const httpProxy = require('http-proxy')
 
-const { SMOKE_PUBLISH_NPM, CI, PATH, TAP_CHILD_ID = '0' } = process.env
-const PORT = 12345 + Number(TAP_CHILD_ID)
-const log = CI ? console.error : () => {}
-const registry = `http://localhost:${PORT}/`
-const corgiDoc = 'application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*'
+const { SMOKE_PUBLISH_NPM, CI, PATH, Path, TAP_CHILD_ID = '0' } = process.env
+const PORT = 12345 + (+TAP_CHILD_ID)
 
+const set = (obj, ...args) => justSet(obj, ...args) && obj
+const merge = (...args) => justExtend(true, ...args)
 const normalizePath = path => path.replace(/[A-Z]:/, '').replace(/\\/g, '/')
+const exists = (f) => fs.access(f, fs.constants.F_OK).catch(() => false)
 
-const cwd = resolve(__dirname, '..', '..', '..')
-const npmCli = join('bin', 'npm-cli.js')
-const execArgv = SMOKE_PUBLISH_NPM ? ['npm'] : [process.execPath, join(cwd, npmCli)]
-const npmDir = SMOKE_PUBLISH_NPM ? fs.realpathSync(which('npm')).replace(sep + npmCli, '') : cwd
+const testdirHelper = (obj) => {
+  for (const [key, value] of Object.entries(obj)) {
+    if (extname(key) === '.json') {
+      obj[key] = JSON.stringify(value, null, 2)
+    } else if (typeof value === 'object') {
+      obj[key] = testdirHelper(value)
+    } else {
+      obj[key] = value
+    }
+  }
+  return obj
+}
 
-module.exports = (t) => {
+const getNpm = async () => {
+  const cliRoot = resolve(__dirname, '..', '..', '..')
+  const cliBin = join('bin', 'npm-cli.js')
+
+  if (SMOKE_PUBLISH_NPM) {
+    return {
+      command: ['npm'],
+      cleanPaths: [
+        cliRoot,
+        await which('npm').then(p => fs.realpath(p).replace(sep + cliBin)),
+      ],
+    }
+  }
+
+  return {
+    command: [process.execPath, join(cliRoot, cliBin)],
+    cleanPaths: [process.execPath, cliRoot],
+  }
+}
+
+module.exports = async (t, { testdir = {}, debug } = {}) => {
+  const { command, cleanPaths } = await getNpm(t)
+
   // setup fixtures
-  const path = t.testdir({
-    '.npmrc': '',
+  const root = t.testdir({
     cache: {},
-    project: {},
+    project: { '.npmrc': '' },
     bin: {},
+    global: { '.npmrc': '' },
+    ...testdirHelper(testdir),
   })
-  const localPrefix = resolve(path, 'project')
-  const userconfigLocation = resolve(path, '.npmrc')
-  const cacheLocation = resolve(path, 'cache')
-  const binLocation = resolve(path, 'bin')
+  const paths = {
+    root,
+    project: join(root, 'project'),
+    global: join(root, 'global'),
+    userConfig: join(root, 'project', '.npmrc'),
+    globalConfig: join(root, 'global', '.npmrc'),
+    cache: join(root, 'cache'),
+    bin: join(root, 'bin'),
+  }
 
-  // setup server
-  let server = null
-  t.before(() => new Promise((resolvePromise) => {
-    server = http.createServer((req, res) => {
-      res.setHeader('connection', 'close')
-
-      const f = join(__dirname, join('/', req.url.replace(/@/, '').replace(/%2f/i, '/')))
-
-      // a magic package that causes us to return an error that will be logged
-      if (basename(f) === 'fail_reflect_user_agent') {
-        res.statusCode = 404
-        res.setHeader('npm-notice', req.headers['user-agent'])
-        return res.end()
-      }
-
-      const isCorgi = req.headers.accept.includes('application/vnd.npm.install-v1+json')
-      const file = f + (
-        isCorgi && fs.existsSync(`${f}.min.json`) ? '.min.json'
-        : fs.existsSync(`${f}.json`) ? '.json'
-        : fs.existsSync(`${f}/index.json`) ? 'index.json'
-        : ''
-      )
-
-      try {
-        const body = fs.readFileSync(file)
-        res.setHeader('content-length', body.length)
-        res.setHeader('content-type', /\.min\.json$/.test(file) ? corgiDoc
-          : /\.json$/.test(file) ? 'application/json'
-          : 'application/octet-stream')
-        res.end(body)
-      } catch {
-        res.statusCode = 500
-        res.setHeader('content-type', 'text/plain')
-        res.end('bad')
-      }
-    }).listen(PORT, resolvePromise)
-  }))
+  const registry = new MockRegistry({
+    tap: t,
+    registry: 'http://smoke-test-registry.club/',
+    debug,
+  })
+  const httpProxyRegistry = `http://localhost:${PORT}/`
+  const proxy = httpProxy.createProxyServer({})
+  const server = http.createServer((req, res) => proxy.web(req, res, { target: registry.origin }))
+  await new Promise(res => server.listen(PORT, res))
   t.teardown(() => server.close())
 
   // update notifier should never be written
-  t.afterEach((t) => {
-    const updateExists = fs.existsSync(join(cacheLocation, '_update-notifier-last-checked'))
+  t.afterEach(async (t) => {
+    const updateExists = await exists(join(paths.cache, '_update-notifier-last-checked'))
     t.equal(updateExists, false)
+    // this requires that mocks not be shared between sub tests but it helps
+    // find mistakes quicker instead of waiting for the entire test to end
+    t.strictSame(registry.nock.pendingMocks(), [], 'no pending mocks after each')
+    t.strictSame(registry.nock.activeMocks(), [], 'no active mocks after each')
   })
 
-  t.cleanSnapshot = s =>
-    s
+  const cleanOutput = s => {
     // sometimes we print normalized paths in snapshots regardless of
-    // platform so replace those first
-      .split(normalizePath(npmDir))
-      .join('{CWD}')
-      .split(normalizePath(cwd))
-      .join('{CWD}')
-      .split(registry)
-      .join('https://registry.npmjs.org/')
-      .split(normalizePath(process.execPath))
-      .join('node')
-    // then replace platform style paths
-      .split(npmDir)
-      .join('{CWD}')
-      .split(cwd)
-      .join('{CWD}')
+    // platform so replace those first then replace platform style paths
+    for (const cleanPath of cleanPaths) {
+      s = s
+        .split(normalizePath(cleanPath)).join('{CWD}')
+        .split(cleanPath).join('{CWD}')
+        .split(relative(cleanPath, t.testdirName)).join('{TESTDIR}')
+    }
+
+    return s.split(httpProxyRegistry).join('{REGISTRY}')
       .replace(/\\+/g, '/')
       .replace(/\r\n/g, '\n')
       .replace(/ \(in a browser\)/g, '')
       .replace(/^npm@.* /gm, 'npm ')
       .replace(/^.*debug-[0-9]+.log$/gm, '')
+      .replace(/in \d+ms$/gm, 'in {TIME}')
+  }
+  t.cleanSnapshot = cleanOutput
+  const log = !debug && !CI ? () => {} : (...args) => {
+    console.error(...args.map(a => cleanOutput(a.toString())))
+  }
 
-  const exec = async (...args) => {
-    const cmd = []
-    const opts = [
-    `--registry=${registry}`,
-    `--cache=${cacheLocation}`,
-    `--userconfig=${userconfigLocation}`,
+  const npm = async (...args) => {
+    const defaultCmd = []
+    const defaultOpts = [
+    `--registry=${httpProxyRegistry}`,
+    `--cache=${paths.cache}`,
+    `--prefix=${paths.project}`,
+    `--userconfig=${paths.userConfig}`,
+    `--globalconfig=${paths.globalConfig}`,
     '--no-audit',
     '--no-update-notifier',
     '--loglevel=silly',
+    '--fetch-timeout=5000',
+    '--fetch-retries=0',
     ]
-    for (const arg of args) {
+
+    const [cmd, opts] = args.reduce((acc, arg) => {
       if (arg.startsWith('--')) {
-        opts.push(arg)
+        acc[1].push(arg)
       } else {
-        cmd.push(arg)
+        acc[0].push(arg)
       }
-    }
+      return acc
+    }, [defaultCmd, defaultOpts])
 
-    const hasWorkspaceOpt = opts.some(o => /^--workspaces?($|=)/.test(o))
-    // XXX: not sure why outdated fails with no-workspaces but works without it
-    if (!hasWorkspaceOpt && cmd[0] !== 'outdated') {
-    // This is required so we dont detect any workspace roots above the testdir
-      opts.push('--no-workspaces')
-    }
+    const spawnCmd = command[0]
+    const spawnArgs = [...command.slice(1), ...cmd, ...opts]
 
-    const spawnArgs = [execArgv[0], [...execArgv.slice(1), ...cmd, ...opts]]
-    log([spawnArgs[0], ...spawnArgs[1]].join('\n'))
+    log('='.repeat(40))
+    log(`\n${spawnCmd} ${spawnArgs.join(' ')}`)
 
-    const res = await spawn(...spawnArgs, {
-      cwd: localPrefix,
+    const { stderr, stdout } = await spawn(spawnCmd, spawnArgs, {
+      cwd: paths.project,
       env: {
-        HOME: path,
-        PATH: `${PATH}:${binLocation}`,
+        HTTP_PROXY: httpProxyRegistry,
+        HOME: paths.root,
+        [Path ? 'Path' : 'PATH']: `${Path || PATH}${delimiter}${paths.bin}`,
         COMSPEC: process.env.COMSPEC,
       },
     })
 
-    log(res.stderr)
-    return res.stdout
+    log('\n' + stderr)
+    log('\n' + stdout)
+    log('='.repeat(40))
+
+    return cleanOutput(stdout)
   }
 
-  const readFile = (f) => fs.readFileSync(resolve(localPrefix, f), 'utf-8')
-  const writeFile = (f, d) => fs.writeFileSync(resolve(localPrefix, f), d, 'utf-8')
-  const rmDir = () => {
-    for (const f of fs.readdirSync(localPrefix)) {
-      fs.rmSync(join(localPrefix, f), { recursive: true, force: true })
+  // helpers for reading/writing files and their source
+  const readFile = async (f) => {
+    const file = await fs.readFile(join(paths.project, f), 'utf-8')
+    return extname(f) === '.json' ? JSON.parse(file) : file
+  }
+
+  // Returns a recurisve list of relative file paths in the testdir root
+  // will also follow symlinks and print their relative paths
+  const tree = async (rootDir = paths.project, dir = rootDir) => {
+    const results = {}
+    for (const item of await fs.readdir(dir)) {
+      const itemPath = join(dir, item)
+      const relPath = relative(rootDir, itemPath)
+      const stat = await fs.lstat(itemPath)
+
+      if (stat.isSymbolicLink()) {
+        const realpath = await fs.realpath(itemPath)
+        merge(results, await tree(rootDir, realpath))
+      } else if (stat.isDirectory()) {
+        merge(results, await tree(rootDir, itemPath))
+      } else {
+        const raw = await readFile(relPath)
+        const content = typeof raw === 'string' ? `${new Blob([raw]).size} bytes` : raw
+        merge(results, set({}, relPath.split(sep), content))
+      }
     }
+    return results
   }
 
   return {
-    exec,
+    npm,
     readFile,
-    writeFile,
-    rmDir,
+    tree,
+    paths,
+    registry,
     isSmokePublish: !!SMOKE_PUBLISH_NPM,
   }
 }
+
+module.exports.testdir = testdirHelper

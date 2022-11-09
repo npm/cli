@@ -19,8 +19,12 @@
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/mock-registry": "^1.0.0",
     "@npmcli/promise-spawn": "^6.0.1",
     "@npmcli/template-oss": "4.8.0",
+    "http-proxy": "^1.18.1",
+    "just-extend": "^6.1.1",
+    "just-safe-set": "^4.1.1",
     "minify-registry-metadata": "^2.2.0",
     "tap": "^16.0.1",
     "which": "^3.0.0"
@@ -34,8 +38,8 @@
   },
   "tap": {
     "no-coverage": true,
-    "timeout": 300,
-    "files": "test/*.js",
+    "timeout": 600,
+    "test-ignore": "fixtures/*",
     "nyc-arg": [
       "--exclude",
       "tap-snapshots/**"
