@@ -1,6 +1,6 @@
 const t = require('tap')
 const { load: _loadMockNpm } = require('../../fixtures/mock-npm')
-const MockRegistry = require('../../fixtures/mock-registry.js')
+const MockRegistry = require('@npmcli/mock-registry')
 
 const path = require('path')
 const fs = require('fs')

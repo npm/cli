@@ -4,7 +4,7 @@ const path = require('path')
 const t = require('tap')
 
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
-const MockRegistry = require('../../fixtures/mock-registry.js')
+const MockRegistry = require('@npmcli/mock-registry')
 
 const gunzip = zlib.gunzipSync
 const gzip = zlib.gzipSync

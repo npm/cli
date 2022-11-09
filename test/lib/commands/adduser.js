@@ -5,7 +5,7 @@ const ini = require('ini')
 
 const { load: loadMockNpm } = require('../../fixtures/mock-npm.js')
 const mockGlobals = require('../../fixtures/mock-globals.js')
-const MockRegistry = require('../../fixtures/mock-registry.js')
+const MockRegistry = require('@npmcli/mock-registry')
 const stream = require('stream')
 
 t.test('usage', async t => {
