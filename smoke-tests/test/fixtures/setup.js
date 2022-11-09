@@ -31,28 +31,34 @@ const testdirHelper = (obj) => {
   return obj
 }
 
-const getSpawnArgs = async () => {
+const getSpawnArgs = async ({ log }) => {
   const cliBin = join('bin', 'npm')
+  const cliJsBin = join('bin', 'npm-cli.js')
+  const npmLinks = await which('npm', { all: true })
+  const npmPaths = await Promise.all(npmLinks.map(npm => fs.realpath(npm)))
+
+  const cleanNpmPaths = [...new Set([
+    CLI_ROOT,
+    join(CLI_ROOT, cliBin),
+    join(CLI_ROOT, cliJsBin),
+    ...npmLinks,
+    ...npmPaths,
+    ...npmPaths.map(n => n.replace(sep + cliBin, '')),
+  ])]
+
+  log({ cleanNpmPaths })
 
   if (SMOKE_PUBLISH_NPM) {
     return {
       command: ['npm'],
-      NPM: [
-        CLI_ROOT,
-        await which('npm').then(p => fs.realpath(p)).then(p => p.replace(sep + cliBin, '')),
-      ],
+      NPM: cleanNpmPaths,
     }
   }
 
-  const cliJsBin = join('bin', 'npm-cli.js')
   return {
     command: [process.execPath, join(CLI_ROOT, cliJsBin)],
     NODE: process.execPath,
-    NPM: [
-      CLI_ROOT,
-      join(CLI_ROOT, cliBin),
-      join(CLI_ROOT, cliJsBin),
-    ],
+    NPM: cleanNpmPaths,
   }
 }
 
@@ -95,7 +101,8 @@ module.exports = async (t, { testdir = {}, debug } = {}) => {
     t.strictSame(registry.nock.activeMocks(), [], 'no active mocks after each')
   })
 
-  const { command, ...spawnPaths } = await getSpawnArgs()
+  const _log = debug || CI ? (...a) => console.error(...a) : () => {}
+  const { command, ...spawnPaths } = await getSpawnArgs({ log: _log })
   const cleanPaths = Object.entries(spawnPaths)
 
   const cleanOutput = s => {
@@ -124,7 +131,7 @@ module.exports = async (t, { testdir = {}, debug } = {}) => {
       .replace(/^.*debug-[0-9]+.log$/gm, '')
       .replace(/in \d+ms$/gm, 'in {TIME}')
   }
-  const log = debug || CI ? (...a) => console.error(cleanOutput(a.join(' '))) : () => {}
+  const log = (...a) => _log(cleanOutput(a.join(' ')))
   t.cleanSnapshot = cleanOutput
 
   const npm = async (...args) => {
