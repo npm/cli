@@ -1,5 +1,15 @@
 # Changelog
 
+## [5.0.3](https://github.com/npm/cli/compare/libnpmexec-v5.0.2...libnpmexec-v5.0.3) (2022-11-09)
+
+### Bug Fixes
+
+* [`a767aae`](https://github.com/npm/cli/commit/a767aae7148dbbc943095ba994bbfab58bf2a8be) npx: look for bins in local package.json (@wraithgar)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.1.1...arborist-v6.1.2): `@npmcli/arborist@6.1.2`
+
 ## [5.0.2](https://github.com/npm/cli/compare/libnpmexec-v5.0.1...libnpmexec-v5.0.2) (2022-11-02)
 
 ### Bug Fixes

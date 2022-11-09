@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.0.3](https://github.com/npm/cli/compare/libnpmpublish-v7.0.2...libnpmpublish-v7.0.3) (2022-11-09)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/compare/libnpmpack-v5.0.2...libnpmpack-v5.0.3): `libnpmpack@5.0.3`
+
 ## [7.0.2](https://github.com/npm/cli/compare/libnpmpublish-v7.0.1...libnpmpublish-v7.0.2) (2022-11-02)
 
 ### Dependencies

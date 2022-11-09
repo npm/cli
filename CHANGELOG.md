@@ -1,5 +1,22 @@
 # Changelog
 
+## [9.1.1](https://github.com/npm/cli/compare/v9.1.0...v9.1.1) (2022-11-09)
+
+### Documentation
+
+* [`1bff064`](https://github.com/npm/cli/commit/1bff0640ccb8414e2d416a5cf9d64e9ff03c6403) [#5819](https://github.com/npm/cli/pull/5819) config: document `npm config fix` (#5819) (@wraithgar)
+
+### Dependencies
+
+* [`335c7e4`](https://github.com/npm/cli/commit/335c7e4348f5505fad33b8a78348a02a82b91426) [#5813](https://github.com/npm/cli/pull/5813) `cacache@17.0.2`
+* [`878ddfb`](https://github.com/npm/cli/commit/878ddfb5b68c03bdcd7d7da8dae92c4947942801) `@npmcli/fs@3.1.0`
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.1.1...arborist-v6.1.2): `@npmcli/arborist@6.1.2`
+* [Workspace](https://github.com/npm/cli/compare/libnpmdiff-v5.0.2...libnpmdiff-v5.0.3): `libnpmdiff@5.0.3`
+* [Workspace](https://github.com/npm/cli/compare/libnpmexec-v5.0.2...libnpmexec-v5.0.3): `libnpmexec@5.0.3`
+* [Workspace](https://github.com/npm/cli/compare/libnpmfund-v4.0.2...libnpmfund-v4.0.3): `libnpmfund@4.0.3`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpack-v5.0.2...libnpmpack-v5.0.3): `libnpmpack@5.0.3`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpublish-v7.0.2...libnpmpublish-v7.0.3): `libnpmpublish@7.0.3`
+
 ## [9.1.0](https://github.com/npm/cli/compare/v9.0.1...v9.1.0) (2022-11-02)
 
 ### Features
