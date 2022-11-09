@@ -32,19 +32,23 @@ const testdirHelper = (obj) => {
 }
 
 const getSpawnArgs = async () => {
-  const cliBin = join('bin', 'npm-cli.js')
+  const cliBin = join('bin', 'npm')
 
   if (SMOKE_PUBLISH_NPM) {
     return {
       command: ['npm'],
-      NPM: await which('npm').then(p => fs.realpath(p)).then(p => p.replace(sep + cliBin)),
+      NPM_BIN: cliBin,
+      NPM: await which('npm').then(p => fs.realpath(p)).then(p => p.replace(sep + cliBin, '')),
+      NPM_DIR: CLI_ROOT,
     }
   }
 
   return {
-    command: [process.execPath, join(CLI_ROOT, cliBin)],
+    command: [process.execPath, join(CLI_ROOT, join('bin', 'npm-cli.js'))],
     NODE: process.execPath,
+    NPM_BIN: cliBin,
     NPM: join(CLI_ROOT, cliBin),
+    NPM_DIR: CLI_ROOT,
   }
 }
 
@@ -88,7 +92,7 @@ module.exports = async (t, { testdir = {}, debug } = {}) => {
   })
 
   const { command, ...spawnPaths } = await getSpawnArgs()
-  const cleanPaths = Object.entries({ ...spawnPaths, CWD: CLI_ROOT })
+  const cleanPaths = Object.entries(spawnPaths)
 
   const cleanOutput = s => {
     // sometimes we print normalized paths in snapshots regardless of
