@@ -37,18 +37,22 @@ const getSpawnArgs = async () => {
   if (SMOKE_PUBLISH_NPM) {
     return {
       command: ['npm'],
-      NPM_BIN: cliBin,
-      NPM: await which('npm').then(p => fs.realpath(p)).then(p => p.replace(sep + cliBin, '')),
-      NPM_DIR: CLI_ROOT,
+      NPM: [
+        CLI_ROOT,
+        await which('npm').then(p => fs.realpath(p)).then(p => p.replace(sep + cliBin, '')),
+      ],
     }
   }
 
+  const cliJsBin = join('bin', 'npm-cli.js')
   return {
-    command: [process.execPath, join(CLI_ROOT, join('bin', 'npm-cli.js'))],
+    command: [process.execPath, join(CLI_ROOT, cliJsBin)],
     NODE: process.execPath,
-    NPM_BIN: cliBin,
-    NPM: join(CLI_ROOT, cliBin),
-    NPM_DIR: CLI_ROOT,
+    NPM: [
+      CLI_ROOT,
+      join(CLI_ROOT, cliBin),
+      join(CLI_ROOT, cliJsBin),
+    ],
   }
 }
 
@@ -98,10 +102,16 @@ module.exports = async (t, { testdir = {}, debug } = {}) => {
     // sometimes we print normalized paths in snapshots regardless of
     // platform so replace those first then replace platform style paths
     for (const [key, value] of cleanPaths) {
-      s = s.split(normalizePath(value)).join(`{${key}}`)
+      const values = [].concat(value)
+      for (const v of values) {
+        s = s.split(normalizePath(v)).join(`{${key}}`)
+      }
     }
     for (const [key, value] of cleanPaths) {
-      s = s.split(value).join(`{${key}}`)
+      const values = [].concat(value)
+      for (const v of values) {
+        s = s.split(v).join(`{${key}}`)
+      }
     }
     return s
       .split(relative(CLI_ROOT, t.testdirName)).join('{TESTDIR}')
