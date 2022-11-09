@@ -24,39 +24,31 @@ const baseOpts = {
   yes: true,
 }
 
-t.test('local pkg', async t => {
+t.test('bin in local pkg', async t => {
   const pkg = {
-    name: 'pkg',
+    name: '@npmcli/local-pkg-bin-test',
     bin: {
-      a: 'index.js',
+      a: 'local-bin-test.js',
     },
   }
   const path = t.testdir({
     cache: {},
     npxCache: {},
-    node_modules: {
-      '.bin': {},
-      a: {
-        'index.js': `#!/usr/bin/env node
+    'local-bin-test.js': `#!/usr/bin/env node
 require('fs').writeFileSync(process.argv.slice(2)[0], 'LOCAL PKG')`,
-      },
-    },
     'package.json': JSON.stringify(pkg),
   })
   const localBin = resolve(path, 'node_modules/.bin')
   const runPath = path
+  const npxCache = resolve(path, 'npxCache')
 
-  const executable = resolve(path, 'node_modules/a')
+  const executable = resolve(path, 'local-bin-test.js')
   fs.chmodSync(executable, 0o775)
-
-  await binLinks({
-    path: resolve(path, 'node_modules/a'),
-    pkg,
-  })
 
   await libexec({
     ...baseOpts,
     args: ['a', 'resfile'],
+    npxCache,
     localBin,
     path,
     runPath,
