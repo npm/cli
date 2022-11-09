@@ -140,7 +140,7 @@ Object {
       "version": "1.0.0",
     },
     "node_modules/abbrev": Object {
-      "resolved": "http://smoke-test-registry.club/abbrev/-/abbrev-1.0.4.tgz",
+      "resolved": "{REGISTRY}/abbrev/-/abbrev-1.0.4.tgz",
       "version": "1.0.4",
     },
     "node_modules/promise-all-reject-late": Object {
@@ -148,7 +148,7 @@ Object {
       "funding": Object {
         "url": "https://github.com/sponsors",
       },
-      "resolved": "http://smoke-test-registry.club/promise-all-reject-late/-/promise-all-reject-late-5.0.0.tgz",
+      "resolved": "{REGISTRY}/promise-all-reject-late/-/promise-all-reject-late-5.0.0.tgz",
       "version": "5.0.0",
     },
   },
@@ -203,7 +203,7 @@ Object {
       "version": "1.0.0",
     },
     "node_modules/abbrev": Object {
-      "resolved": "http://smoke-test-registry.club/abbrev/-/abbrev-1.0.4.tgz",
+      "resolved": "{REGISTRY}/abbrev/-/abbrev-1.0.4.tgz",
       "version": "1.0.4",
     },
   },
@@ -371,7 +371,7 @@ Object {
       "version": "1.0.0",
     },
     "node_modules/abbrev": Object {
-      "resolved": "http://smoke-test-registry.club/abbrev/-/abbrev-1.1.1.tgz",
+      "resolved": "{REGISTRY}/abbrev/-/abbrev-1.1.1.tgz",
       "version": "1.1.1",
     },
   },
@@ -420,7 +420,7 @@ Object {
       "version": "1.0.0",
     },
     "node_modules/abbrev": Object {
-      "resolved": "http://smoke-test-registry.club/abbrev/-/abbrev-1.1.1.tgz",
+      "resolved": "{REGISTRY}/abbrev/-/abbrev-1.1.1.tgz",
       "version": "1.1.1",
     },
     "node_modules/promise-all-reject-late": Object {
@@ -428,7 +428,7 @@ Object {
       "funding": Object {
         "url": "https://github.com/sponsors",
       },
-      "resolved": "http://smoke-test-registry.club/promise-all-reject-late/-/promise-all-reject-late-5.0.0.tgz",
+      "resolved": "{REGISTRY}/promise-all-reject-late/-/promise-all-reject-late-5.0.0.tgz",
       "version": "5.0.0",
     },
   },
@@ -471,7 +471,7 @@ abbrev@1.0.4 | Proprietary | deps: none | versions: 2
 mocked test package
 
 dist
-.tarball: http://smoke-test-registry.club/abbrev/-/abbrev-1.0.4.tgz
+.tarball: {REGISTRY}/abbrev/-/abbrev-1.0.4.tgz
 .shasum: undefined
 
 dist-tags:

@@ -1,6 +1,6 @@
 const t = require('tap')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
-const MockRegistry = require('../../fixtures/mock-registry.js')
+const MockRegistry = require('@npmcli/mock-registry')
 const pacote = require('pacote')
 const Arborist = require('@npmcli/arborist')
 const path = require('path')

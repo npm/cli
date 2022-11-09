@@ -1,7 +1,7 @@
 const t = require('tap')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
 
-const MockRegistry = require('../../fixtures/mock-registry.js')
+const MockRegistry = require('@npmcli/mock-registry')
 
 const user = 'test-user'
 const token = 'test-auth-token'
