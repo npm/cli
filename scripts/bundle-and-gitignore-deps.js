@@ -4,6 +4,7 @@ const { join, relative } = require('path')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 const PackageJson = require('@npmcli/package-json')
 const { run, CWD, git, fs } = require('./util')
+const npmGit = require('@npmcli/git')
 
 const ALWAYS_IGNORE = `
 .bin/
@@ -226,6 +227,12 @@ const main = async () => {
 
   const NODE_MODULES = join(CWD, 'node_modules')
   const res = await fs.writeFile(join(NODE_MODULES, '.gitignore'), ignoreFile.join('\n'))
+
+  if (!await npmGit.is({ cwd: CWD })) {
+    // if we are not running in a git repo then write the files but we do not
+    // need to run any git commands to check if we have unmatched files in source
+    return res
+  }
 
   // After we write the file we have to check if any of the paths already checked in
   // inside node_modules are now going to be ignored. If we find any then fail with
