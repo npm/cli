@@ -40,6 +40,7 @@
 !/test/
 !/docs/
 !/smoke-tests/
+!/mock-registry/
 !/workspaces/
 /workspaces/*
 !/workspaces/arborist/

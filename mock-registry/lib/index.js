@@ -1,18 +1,15 @@
-/*
- * Mock registry class
- *
- * This should end up as the centralized place where we generate test fixtures
- * for tests against any registry data.
- */
 const pacote = require('pacote')
 const Arborist = require('@npmcli/arborist')
 const npa = require('npm-package-arg')
+const Nock = require('nock')
+
 class MockRegistry {
   #tap
   #nock
   #registry
   #authorization
   #basic
+  #debug
 
   constructor (opts) {
     if (!opts.registry) {
@@ -21,8 +18,26 @@ class MockRegistry {
     this.#registry = (new URL(opts.registry)).origin
     this.#authorization = opts.authorization
     this.#basic = opts.basic
+    this.#debug = opts.debug
     // Required for this.package
     this.#tap = opts.tap
+  }
+
+  static tnock (t, host, opts, { debug = false } = {}) {
+    if (debug) {
+      Nock.emitter.on('no match', req => console.error('NO MATCH', req.options))
+    }
+    Nock.disableNetConnect()
+    const server = Nock(host, opts)
+    t.teardown(() => {
+      Nock.enableNetConnect()
+      server.done()
+    })
+    return server
+  }
+
+  get origin () {
+    return this.#registry
   }
 
   get nock () {
@@ -30,7 +45,6 @@ class MockRegistry {
       if (!this.#tap) {
         throw new Error('cannot mock packages without a tap fixture')
       }
-      const tnock = require('./tnock.js')
       const reqheaders = {}
       if (this.#authorization) {
         reqheaders.authorization = `Bearer ${this.#authorization}`
@@ -38,7 +52,12 @@ class MockRegistry {
       if (this.#basic) {
         reqheaders.authorization = `Basic ${this.#basic}`
       }
-      this.#nock = tnock(this.#tap, this.#registry, { reqheaders })
+      this.#nock = MockRegistry.tnock(
+        this.#tap,
+        this.#registry,
+        { reqheaders },
+        { debug: this.#debug }
+      )
     }
     return this.#nock
   }
@@ -260,7 +279,7 @@ class MockRegistry {
   // or an array of versions
   // the last packument in the packuments or versions array will be tagged latest
   manifest ({ name = 'test-package', users, packuments, versions } = {}) {
-    packuments = this.packuments(packuments, name)
+    packuments = this.packuments(versions || packuments, name)
     const latest = packuments.slice(-1)[0]
     const manifest = {
       _id: `${name}@${latest.version}`,
@@ -276,10 +295,6 @@ class MockRegistry {
     if (users) {
       manifest.users = users
     }
-    if (versions) {
-      packuments = versions.map(version => ({ version }))
-    }
-
     for (const packument of packuments) {
       manifest.versions[packument.version] = {
         _id: `${name}@${packument.version}`,

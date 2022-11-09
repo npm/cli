@@ -120,6 +120,7 @@ graph LR;
   npm-->npmcli-fs["@npmcli/fs"];
   npm-->npmcli-git["@npmcli/git"];
   npm-->npmcli-map-workspaces["@npmcli/map-workspaces"];
+  npm-->npmcli-mock-registry["@npmcli/mock-registry"];
   npm-->npmcli-package-json["@npmcli/package-json"];
   npm-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npm-->npmcli-run-script["@npmcli/run-script"];
@@ -207,12 +208,18 @@ graph LR;
   npmcli-metavuln-calculator-->json-parse-even-better-errors;
   npmcli-metavuln-calculator-->pacote;
   npmcli-metavuln-calculator-->semver;
+  npmcli-mock-registry-->npm-package-arg;
+  npmcli-mock-registry-->npmcli-arborist["@npmcli/arborist"];
+  npmcli-mock-registry-->npmcli-eslint-config["@npmcli/eslint-config"];
+  npmcli-mock-registry-->npmcli-template-oss["@npmcli/template-oss"];
+  npmcli-mock-registry-->pacote;
   npmcli-package-json-->json-parse-even-better-errors;
   npmcli-run-script-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-run-script-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-run-script-->read-package-json-fast;
   npmcli-smoke-tests-->minify-registry-metadata;
   npmcli-smoke-tests-->npmcli-eslint-config["@npmcli/eslint-config"];
+  npmcli-smoke-tests-->npmcli-mock-registry["@npmcli/mock-registry"];
   npmcli-smoke-tests-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-smoke-tests-->npmcli-template-oss["@npmcli/template-oss"];
   npmlog-->are-we-there-yet;
@@ -520,6 +527,7 @@ graph LR;
   npm-->npmcli-fs["@npmcli/fs"];
   npm-->npmcli-git["@npmcli/git"];
   npm-->npmcli-map-workspaces["@npmcli/map-workspaces"];
+  npm-->npmcli-mock-registry["@npmcli/mock-registry"];
   npm-->npmcli-package-json["@npmcli/package-json"];
   npm-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npm-->npmcli-run-script["@npmcli/run-script"];
@@ -657,6 +665,13 @@ graph LR;
   npmcli-metavuln-calculator-->json-parse-even-better-errors;
   npmcli-metavuln-calculator-->pacote;
   npmcli-metavuln-calculator-->semver;
+  npmcli-mock-registry-->nock;
+  npmcli-mock-registry-->npm-package-arg;
+  npmcli-mock-registry-->npmcli-arborist["@npmcli/arborist"];
+  npmcli-mock-registry-->npmcli-eslint-config["@npmcli/eslint-config"];
+  npmcli-mock-registry-->npmcli-template-oss["@npmcli/template-oss"];
+  npmcli-mock-registry-->pacote;
+  npmcli-mock-registry-->tap;
   npmcli-move-file-->mkdirp;
   npmcli-move-file-->rimraf;
   npmcli-package-json-->json-parse-even-better-errors;
@@ -667,8 +682,12 @@ graph LR;
   npmcli-run-script-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-run-script-->read-package-json-fast;
   npmcli-run-script-->which;
+  npmcli-smoke-tests-->http-proxy;
+  npmcli-smoke-tests-->just-extend;
+  npmcli-smoke-tests-->just-safe-set;
   npmcli-smoke-tests-->minify-registry-metadata;
   npmcli-smoke-tests-->npmcli-eslint-config["@npmcli/eslint-config"];
+  npmcli-smoke-tests-->npmcli-mock-registry["@npmcli/mock-registry"];
   npmcli-smoke-tests-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-smoke-tests-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-smoke-tests-->tap;
@@ -757,13 +776,13 @@ Each group depends on packages lower down the chain, nothing depends on
 packages higher up the chain.
 
  - npm
- - libnpmpublish
- - libnpmdiff, libnpmexec, libnpmfund, libnpmpack
+ - @npmcli/smoke-tests, libnpmpublish
+ - @npmcli/mock-registry, libnpmdiff, libnpmexec, libnpmfund, libnpmpack
  - @npmcli/arborist
  - @npmcli/metavuln-calculator
  - pacote, libnpmaccess, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, npm-profile
  - npm-registry-fetch, libnpmversion
  - @npmcli/git, make-fetch-happen, @npmcli/config, init-package-json
  - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, @npmcli/run-script, read-package-json, promzard
- - @npmcli/docs, @npmcli/smoke-tests, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, @npmcli/package-json, bin-links, nopt, npmlog, parse-conflict-json, read
- - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, @npmcli/promise-spawn, minify-registry-metadata, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, treeverse, ini, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, npm-audit-report, npm-user-validate
+ - @npmcli/docs, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, @npmcli/package-json, bin-links, nopt, npmlog, parse-conflict-json, read
+ - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, treeverse, minify-registry-metadata, ini, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, npm-audit-report, npm-user-validate
