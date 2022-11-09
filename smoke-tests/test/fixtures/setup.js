@@ -37,7 +37,7 @@ const getSpawnArgs = async () => {
   if (SMOKE_PUBLISH_NPM) {
     return {
       command: ['npm'],
-      NPM: await which('npm').then(p => fs.realpath(p).replace(sep + cliBin)),
+      NPM: await which('npm').then(p => fs.realpath(p)).then(p => p.replace(sep + cliBin)),
     }
   }
 
