@@ -79,6 +79,154 @@ t.test('basic publish', async t => {
   t.ok(ret, 'publish succeeded')
 })
 
+t.test('basic publish w/ provenance', async t => {
+  // Data for mocking the OIDC token request
+  const oidcURL = 'https://mock.oidc'
+  const requestToken = 'decafbad'
+  const oidcClaims = {
+    iss: 'https://oauth2.sigstore.dev/auth',
+    email: 'foo@bar.com',
+  };
+  const idToken = `.${Buffer.from(JSON.stringify(oidcClaims)).toString('base64')}.`;
+
+  // Data for mocking Fulcio certifcate request
+  const fulcioURL = 'https://mock.fulcio'
+  const leafCertificate = `-----BEGIN CERTIFICATE-----\nabc\n-----END CERTIFICATE-----\n`;
+  const rootCertificate = `-----BEGIN CERTIFICATE-----\nxyz\n-----END CERTIFICATE-----\n`;
+  const certificate = [leafCertificate, rootCertificate].join()
+
+  // Data for mocking Rekor upload
+  const rekorURL = 'https://mock.rekor'
+  const signature = 'ABC123';
+  const b64Cert = Buffer.from(leafCertificate).toString('base64');
+  const uuid =
+    '69e5a0c1663ee4452674a5c9d5050d866c2ee31e2faaf79913aea7cc27293cf6';
+
+  const signatureBundle = {
+    kind: 'hashedrekord',
+    apiVersion: '0.0.1',
+    spec: {
+      signature: {
+        content: signature,
+        publicKey: { content: b64Cert },
+      },
+    },
+  };
+
+  const rekorEntry = {
+    [uuid]: {
+      body: Buffer.from(JSON.stringify(signatureBundle)).toString(
+        'base64'
+      ),
+      integratedTime: 1654015743,
+      logID:
+        'c0d23d6ad406973f9559f3ba2d1ca01f84147d8ffc5b8445c224f98b9591801d',
+      logIndex: 2513258,
+      verification: {
+        signedEntryTimestamp:
+          'MEUCIQD6CD7ZNLUipFoxzmSL/L8Ewic4SRkXN77UjfJZ7d/wAAIgatokSuX9Rg0iWxAgSfHMtcsagtDCQalU5IvXdQ+yLEA=',
+      },
+    },
+  };
+
+  // Set-up GHA environment variables
+  process.env.CI = true
+  process.env.GITHUB_ACTIONS = true
+  process.env.ACTIONS_ID_TOKEN_REQUEST_URL = oidcURL
+  process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN = requestToken
+
+  t.on('end', () => {
+    delete process.env.CI
+    delete process.env.GITHUB_ACTIONS
+    delete process.env.ACTIONS_ID_TOKEN_REQUEST_URL
+    delete process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN
+  })
+
+  const manifest = {
+    name: 'libnpmpublish',
+    version: '1.0.0',
+    description: 'some stuff',
+  }
+
+  const tarData = await pack(`file:${testDir}`, { ...OPTS })
+  const shasum = crypto.createHash('sha1').update(tarData).digest('hex')
+  const integrity = ssri.fromData(tarData, { algorithms: ['sha512'] })
+  const packument = {
+    _id: 'libnpmpublish',
+    name: 'libnpmpublish',
+    description: 'some stuff',
+    'dist-tags': {
+      latest: '1.0.0',
+    },
+    versions: {
+      '1.0.0': {
+        _id: 'libnpmpublish@1.0.0',
+        _nodeVersion: process.versions.node,
+        name: 'libnpmpublish',
+        version: '1.0.0',
+        description: 'some stuff',
+        dist: {
+          shasum,
+          integrity: integrity.toString(),
+          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz',
+        },
+      },
+    },
+    access: 'public',
+    _attachments: {
+      'libnpmpublish-1.0.0.tgz': {
+        content_type: 'application/octet-stream',
+        data: tarData.toString('base64'),
+        length: tarData.length,
+      },
+      'libnpmpublish-1.0.0.sigstore': {
+        content_type: 'application/vnd.dev.sigstore.bundle+json;version=0.1',
+        data: /.*/, // Can't match against static valud as signature is always different
+        length: 1870,
+      }
+    },
+  }
+
+  const oidcSrv = tnock(t, oidcURL)
+  oidcSrv.get('/?audience=sigstore', undefined, { 
+    authorization: `Bearer ${requestToken}`
+  }).reply(200, { value: idToken });
+
+  const fulcioSrv = tnock(t, fulcioURL)
+  fulcioSrv.matchHeader('Accept', 'application/pem-certificate-chain')
+    .matchHeader('Content-Type', 'application/json')
+    .matchHeader('Authorization', `Bearer ${idToken}`)
+    .post('/api/v1/signingCert', {
+      publicKey: { content: /.+/i },
+      signedEmailAddress: /.+/i,
+    })
+    .reply(200, certificate);
+
+  const rekorSrv = tnock(t, rekorURL)
+  rekorSrv
+    .matchHeader('Accept', 'application/json')
+    .matchHeader('Content-Type', 'application/json')
+    .post('/api/v1/log/entries')
+    .reply(201, rekorEntry);
+
+  const srv = tnock(t, REG)
+  srv.put('/libnpmpublish', body => {
+    t.match(body, packument, 'posted packument matches expectations')
+    return true
+  }, {
+    authorization: 'Bearer deadbeef',
+  }).reply(201, {})
+
+  const ret = await publish(manifest, tarData, {
+    ...OPTS,
+    token: 'deadbeef',
+    provenance: true,
+    fulcioBaseURL: fulcioURL,
+    rekorBaseURL: rekorURL,
+  })
+  t.ok(ret, 'publish succeeded')
+})
+
 t.test('scoped publish - default access', async t => {
   const manifest = {
     name: '@claudiahdz/libnpmpublish',
