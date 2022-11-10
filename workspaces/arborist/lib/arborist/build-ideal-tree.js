@@ -1115,7 +1115,6 @@ This is a one-time fix-up, please be patient...
       legacyPeerDeps: this.legacyPeerDeps,
       overrides: node.overrides,
     })
-
     // also need to set up any targets from any link deps, so that
     // they are properly reflected in the virtual environment
     for (const child of node.children.values()) {
@@ -1234,7 +1233,7 @@ This is a one-time fix-up, please be patient...
 
     // spec is a directory, link it unless installLinks is set or it's a workspace
     if (spec.type === 'directory') {
-      return this[_linkFromSpec](name, spec, parent, edge)
+      return this[_linkFromSpec](name, spec, parent)
     }
 
     // if the spec matches a workspace name, then see if the workspace node will
@@ -1268,7 +1267,7 @@ This is a one-time fix-up, please be patient...
       })
   }
 
-  [_linkFromSpec] (name, spec, parent, edge) {
+  [_linkFromSpec] (name, spec, parent) {
     const realpath = spec.fetchSpec
     const { installLinks, legacyPeerDeps } = this
     return rpj(realpath + '/package.json').catch(() => ({})).then(pkg => {
@@ -1415,6 +1414,22 @@ This is a one-time fix-up, please be patient...
         continue
       }
 
+      // XXX: maybe we need to replace the link with its target
+      // at this stage so it gets treated as a regular node at
+      // reified correctly inside node_modules?
+      // if (link.installLinks && !link.isWorkspace) {
+      //   // console.log(link)edg
+      //   // console.log(link.name)
+      //   // console.log(link.parent)
+      //   // console.log(link.path)
+      //   // console.log(link.realpath)
+      //   // console.log(link.pkg)
+      //   const target = link.target
+      //   link.replaceWith(target)
+      //   this.addTracker('idealTree', target.name, target.location)
+      //   this[_depsQueue].push(target)
+      //   continue
+      // }
       // if installLinks is set then we want to install deps no matter what
       if (link.installLinks) {
         this.addTracker('idealTree', link.target.name, link.target.location)
