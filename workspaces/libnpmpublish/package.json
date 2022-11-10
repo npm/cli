@@ -43,6 +43,7 @@
     "npm-package-arg": "^10.0.0",
     "npm-registry-fetch": "^14.0.2",
     "semver": "^7.3.7",
+    "sigstore": "^0.0.1-alpha.3",
     "ssri": "^10.0.0"
   },
   "engines": {
