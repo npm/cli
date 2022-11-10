@@ -71,9 +71,9 @@ jobs:
             const comments = await github.paginate(github.rest.issues.listComments, issue)
             let commentId = comments?.find(c => c.user.login === 'github-actions[bot]' && c.body.startsWith(body))?.id
 
-            body += `Release workflow run: ${workflow.html_url}\n\n#### Force CI to Rerun for This Release\n\n`
-            body += `This PR will be updated and CI will run for every non-\`chore:\` commit that is pushed to \`main\`. `
-            body += `To force CI to rerun, run this command:\n\n`
+            body += `Release workflow run: ${workflow.html_url}\n\n#### Force CI to Update This Release\n\n`
+            body += `This PR will be updated and CI will run for every non-\`chore:\` commit that is pushed to \`latest\`. `
+            body += `To force CI to update this PR, run this command:\n\n`
             body += `\`\`\`\ngh workflow run release.yml -r ${REF_NAME}\n\`\`\``
 
             if (commentId) {
@@ -162,7 +162,7 @@ jobs:
           RELEASE_COMMENT_ID: ${{ needs.release.outputs.comment-id }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          node . exec --offline -- template-oss-release-manager
+          node . exec --offline -- template-oss-release-manager --lockfile=true
           node . run rp-pull-request --ignore-scripts -ws -iwr --if-present
       - name: Commit
         id: commit
