@@ -1,6 +1,6 @@
 'use strict'
 
-const { mkdir } = require('fs/promises')
+const { mkdir, symlink, unlink, rm } = require('fs/promises')
 const { promisify } = require('util')
 
 const Arborist = require('@npmcli/arborist')
@@ -12,6 +12,7 @@ const npmlog = require('npmlog')
 const pacote = require('pacote')
 const read = promisify(require('read'))
 const semver = require('semver')
+const binLinks = require('bin-links')
 
 const { fileExists, localFileExists } = require('./file-exists.js')
 const getBinFromManifest = require('./get-bin-from-manifest.js')
@@ -117,31 +118,40 @@ const exec = async (opts) => {
   // - in the local tree
   // - globally
   if (needPackageCommandSwap) {
-    let localManifest
-    try {
-      localManifest = await pacote.manifest(path, flatOptions)
-    } catch {
-      // no local package.json? no problem, move one.
+    const localManifest = await pacote.manifest(path, flatOptions).catch(() => null)
+    const manifestBinPath = localManifest?.bin?.[args[0]]
+    if (manifestBinPath && await fileExists(resolve(path, manifestBinPath))) {
+      const tmpNmPath = resolve(path, 'node_modules', localManifest.name)
+      const tmpDir = await mkdir(dirname(tmpNmPath), { recursive: true })
+      await symlink(path, tmpNmPath, 'dir')
+      // only link the bin that we already know exists in case anything else would fail
+      await binLinks({ path: tmpNmPath, pkg: { bin: { [args[0]]: manifestBinPath } } })
+      binPaths.push(path)
+      return await run().finally(async () => {
+        // always unlink symlink when we are done
+        await unlink(tmpNmPath)
+        // Only if mkdir indicated that it created a dir should
+        // we cleanup that directory
+        if (tmpDir) {
+          await rm(tmpDir, { recursive: true, force: true })
+        }
+      })
     }
-    if (localManifest?.bin?.[args[0]]) {
-      // we have to install the local package into the npx cache so that its
-      // bin links get set up
-      packages.push(path)
-      yes = true
-      flatOptions.installLinks = false
-    } else {
-      const dir = dirname(dirname(localBin))
-      const localBinPath = await localFileExists(dir, args[0], '/')
-      if (localBinPath) {
-        binPaths.push(localBinPath)
-        return await run()
-      } else if (globalPath && await fileExists(`${globalBin}/${args[0]}`)) {
-        binPaths.push(globalBin)
-        return await run()
-      }
-      // We swap out args[0] with the bin from the manifest later
-      packages.push(args[0])
+
+    const localBinDir = dirname(dirname(localBin))
+    const localBinPath = await localFileExists(localBinDir, args[0], '/')
+    if (localBinPath) {
+      binPaths.push(localBinPath)
+      return await run()
     }
+
+    if (globalPath && await fileExists(`${globalBin}/${args[0]}`)) {
+      binPaths.push(globalBin)
+      return await run()
+    }
+
+    // We swap out args[0] with the bin from the manifest later
+    packages.push(args[0])
   }
 
   // Resolve any directory specs so that the npx directory is unique to the

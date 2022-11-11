@@ -5,6 +5,8 @@ const binLinks = require('bin-links')
 
 const libexec = require('../lib/index.js')
 
+const binWriteFile = (s) => `#!/usr/bin/env node\nrequire('fs').writeFileSync(${s})`
+
 // setup server
 const registryServer = require('./registry/server.js')
 const { registry } = registryServer
@@ -28,34 +30,60 @@ t.test('bin in local pkg', async t => {
   const pkg = {
     name: '@npmcli/local-pkg-bin-test',
     bin: {
+      b: 'does-not-exist.js',
       a: 'local-bin-test.js',
+      'a-nested': 'bin-dir/nested-bin-test.js',
     },
   }
   const path = t.testdir({
-    cache: {},
-    npxCache: {},
-    'local-bin-test.js': `#!/usr/bin/env node
-require('fs').writeFileSync(process.argv.slice(2)[0], 'LOCAL PKG')`,
+    node_modules: {
+      '.bin': {},
+      '@npmcli': {
+        'some-other-pkg-with-same-scope': {},
+      },
+    },
+    'local-bin-test.js': binWriteFile(`process.argv.slice(2)[0], 'LOCAL PKG'`),
+    'bin-dir': {
+      'nested-bin-test.js': binWriteFile(`process.argv.slice(2)[0], 'LOCAL PKG'`),
+    },
     'package.json': JSON.stringify(pkg),
   })
-  const localBin = resolve(path, 'node_modules/.bin')
-  const runPath = path
-  const npxCache = resolve(path, 'npxCache')
+  const opts = {
+    path,
+    runPath: path,
+    localBin: resolve(path, 'node_modules/.bin'),
+  }
 
-  const executable = resolve(path, 'local-bin-test.js')
-  fs.chmodSync(executable, 0o775)
+  fs.chmodSync(resolve(path, 'local-bin-test.js'), 0o775)
+  fs.chmodSync(resolve(path, 'bin-dir', 'nested-bin-test.js'), 0o775)
 
   await libexec({
     ...baseOpts,
-    args: ['a', 'resfile'],
-    npxCache,
-    localBin,
-    path,
-    runPath,
+    ...opts,
+    args: ['a', 'resfile-a'],
   })
 
-  const res = fs.readFileSync(resolve(path, 'resfile')).toString()
+  const res = fs.readFileSync(resolve(path, 'resfile-a')).toString()
   t.equal(res, 'LOCAL PKG', 'should run local pkg bin script')
+
+  // remove the existing scope dir from node_modules so that the next run
+  // will have to create and cleanup that directory
+  fs.rmSync(resolve(path, 'node_modules', '@npmcli'), { recursive: true, force: true })
+
+  await libexec({
+    ...baseOpts,
+    ...opts,
+    args: ['a-nested', 'resfile-nested'],
+  })
+
+  const res2 = fs.readFileSync(resolve(path, 'resfile-nested')).toString()
+  t.equal(res2, 'LOCAL PKG', 'should run local pkg bin script')
+
+  await t.rejects(() => libexec({
+    ...baseOpts,
+    ...opts,
+    args: ['b'],
+  }))
 })
 
 t.test('locally available pkg - by scoped name only', async t => {
@@ -74,8 +102,7 @@ t.test('locally available pkg - by scoped name only', async t => {
       '@npmcli': {
         'npx-local-test': {
           'package.json': JSON.stringify(pkg),
-          'index.js': `#!/usr/bin/env node
-  require('fs').writeFileSync(process.argv.slice(2)[0], 'LOCAL PKG')`,
+          'index.js': binWriteFile(`process.argv.slice(2)[0], 'LOCAL PKG'`),
         },
       },
     },
@@ -128,8 +155,7 @@ t.test('locally available pkg - by name', async t => {
       '@ruyadorno': {
         'create-index': {
           'package.json': JSON.stringify(pkg),
-          'index.js': `#!/usr/bin/env node
-  require('fs').writeFileSync(process.argv.slice(2)[0], 'LOCAL PKG')`,
+          'index.js': binWriteFile(`process.argv.slice(2)[0], 'LOCAL PKG'`),
         },
       },
     },
@@ -183,8 +209,7 @@ t.test('locally available pkg - by version', async t => {
       '@ruyadorno': {
         'create-index': {
           'package.json': JSON.stringify(pkg),
-          'index.js': `#!/usr/bin/env node
-  require('fs').writeFileSync('resfile', 'LOCAL PKG')`,
+          'index.js': binWriteFile(`'resfile', 'LOCAL PKG'`),
         },
       },
     },
@@ -237,8 +262,7 @@ t.test('locally available pkg - by range', async t => {
       '@ruyadorno': {
         'create-index': {
           'package.json': JSON.stringify(pkg),
-          'index.js': `#!/usr/bin/env node
-  require('fs').writeFileSync(process.argv.slice(2)[0], 'LOCAL PKG')`,
+          'index.js': binWriteFile(`process.argv.slice(2)[0], 'LOCAL PKG'`),
         },
       },
     },
@@ -293,8 +317,7 @@ t.test('locally available pkg - by tag', async t => {
       '@ruyadorno': {
         'create-index': {
           'package.json': JSON.stringify(pkg),
-          'index.js': `#!/usr/bin/env node
-  require('fs').writeFileSync(process.argv.slice(2)[0], 'LOCAL PKG')`,
+          'index.js': binWriteFile(`process.argv.slice(2)[0], 'LOCAL PKG'`),
         },
       },
       '.package-lock.json': JSON.stringify({
@@ -370,13 +393,11 @@ t.test('multiple local pkgs', async t => {
       '@ruyadorno': {
         'create-foo': {
           'package.json': JSON.stringify(foo),
-          'index.js': `#!/usr/bin/env node
-  require('fs').writeFileSync(process.argv.slice(2)[0], 'foo')`,
+          'index.js': binWriteFile(`process.argv.slice(2)[0], 'foo'`),
         },
         'create-bar': {
           'package.json': JSON.stringify(bar),
-          'index.js': `#!/usr/bin/env node
-  require('fs').writeFileSync(process.argv.slice(2)[0], 'bar')`,
+          'index.js': binWriteFile(`process.argv.slice(2)[0], 'bar'`),
         },
       },
     },
@@ -433,8 +454,7 @@ t.test('no npxCache', async t => {
           a: './index.js',
         },
       }),
-      'index.js': `#!/usr/bin/env node
-require('fs').writeFileSync(process.argv.slice(2)[0], 'LOCAL PKG')`,
+      'index.js': binWriteFile(`process.argv.slice(2)[0], 'LOCAL PKG'`),
     },
   })
   const runPath = path
@@ -463,8 +483,7 @@ t.test('local file system path', async t => {
           a: './index.js',
         },
       }),
-      'index.js': `#!/usr/bin/env node
-require('fs').writeFileSync(process.argv.slice(2)[0], 'LOCAL PKG')`,
+      'index.js': binWriteFile(`process.argv.slice(2)[0], 'LOCAL PKG'`),
     },
   })
   const runPath = path
@@ -510,8 +529,7 @@ t.test('global space pkg', async t => {
       node_modules: {
         '.bin': {},
         a: {
-          'index.js': `#!/usr/bin/env node
-  require('fs').writeFileSync(process.argv.slice(2)[0], 'GLOBAL PKG')`,
+          'index.js': binWriteFile(`process.argv.slice(2)[0], 'GLOBAL PKG'`),
           'package.json': JSON.stringify(pkg),
         },
       },
@@ -557,8 +575,7 @@ t.test('global scoped pkg', async t => {
         '.bin': {},
         '@ruyadorno': {
           'create-test': {
-            'index.js': `#!/usr/bin/env node
-    require('fs').writeFileSync(process.argv.slice(2)[0], 'GLOBAL PKG')`,
+            'index.js': binWriteFile(`process.argv.slice(2)[0], 'GLOBAL PKG'`),
             'package.json': JSON.stringify(pkg),
           },
         },
@@ -1206,8 +1223,7 @@ t.test('workspaces', async t => {
       '@ruyadorno': {
         'create-index': {
           'package.json': JSON.stringify(pkg),
-          'index.js': `#!/usr/bin/env node
-  require('fs').writeFileSync('resfile', 'LOCAL PKG')`,
+          'index.js': binWriteFile(`'resfile', 'LOCAL PKG'`),
         },
       },
       a: t.fixture('symlink', '../a'),
