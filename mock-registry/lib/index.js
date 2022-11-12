@@ -10,6 +10,7 @@ class MockRegistry {
   #authorization
   #basic
   #debug
+  #strict
 
   constructor (opts) {
     if (!opts.registry) {
@@ -19,20 +20,33 @@ class MockRegistry {
     this.#authorization = opts.authorization
     this.#basic = opts.basic
     this.#debug = opts.debug
+    this.#strict = opts.strict
     // Required for this.package
     this.#tap = opts.tap
+    if (this.#tap) {
+      this.startNock()
+    }
   }
 
-  static tnock (t, host, opts, { debug = false } = {}) {
-    if (debug) {
-      Nock.emitter.on('no match', req => console.error('NO MATCH', req.options))
+  static tnock (t, host, opts, { debug = false, strict } = {}) {
+    const noMatch = (req) => {
+      if (strict) {
+        t.fail(`Unmatched request: ${JSON.stringify(req.options, null, 2)}`)
+      }
+      if (debug) {
+        console.error('NO MATCH', t.name, req.options)
+      }
     }
+
+    Nock.emitter.on('no match', noMatch)
     Nock.disableNetConnect()
     const server = Nock(host, opts)
     t.teardown(() => {
       Nock.enableNetConnect()
       server.done()
+      Nock.emitter.off('no match', noMatch)
     })
+
     return server
   }
 
@@ -41,29 +55,36 @@ class MockRegistry {
   }
 
   get nock () {
-    if (!this.#nock) {
-      if (!this.#tap) {
-        throw new Error('cannot mock packages without a tap fixture')
-      }
-      const reqheaders = {}
-      if (this.#authorization) {
-        reqheaders.authorization = `Bearer ${this.#authorization}`
-      }
-      if (this.#basic) {
-        reqheaders.authorization = `Basic ${this.#basic}`
-      }
-      this.#nock = MockRegistry.tnock(
-        this.#tap,
-        this.#registry,
-        { reqheaders },
-        { debug: this.#debug }
-      )
-    }
     return this.#nock
   }
 
   set nock (nock) {
     this.#nock = nock
+  }
+
+  startNock () {
+    if (this.nock) {
+      return
+    }
+
+    if (!this.#tap) {
+      throw new Error('cannot mock packages without a tap fixture')
+    }
+
+    const reqheaders = {}
+    if (this.#authorization) {
+      reqheaders.authorization = `Bearer ${this.#authorization}`
+    }
+    if (this.#basic) {
+      reqheaders.authorization = `Basic ${this.#basic}`
+    }
+
+    this.nock = MockRegistry.tnock(
+      this.#tap,
+      this.#registry,
+      { reqheaders },
+      { debug: this.#debug, strict: this.#strict }
+    )
   }
 
   search ({ responseCode = 200, results = [], error }) {
@@ -296,13 +317,14 @@ class MockRegistry {
       manifest.users = users
     }
     for (const packument of packuments) {
+      const unscoped = name.includes('/') ? name.split('/')[1] : name
       manifest.versions[packument.version] = {
         _id: `${name}@${packument.version}`,
         name,
         description: 'test package mock manifest',
         dependencies: {},
         dist: {
-          tarball: `${this.#registry}/${name}/-/${name}-${packument.version}.tgz`,
+          tarball: `${this.#registry}/${name}/-/${unscoped}-${packument.version}.tgz`,
         },
         maintainers: [],
         ...packument,

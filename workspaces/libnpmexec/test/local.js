@@ -1,0 +1,335 @@
+const log = require('proc-log')
+const { resolve } = require('path')
+const t = require('tap')
+const { setup, createPkg, merge } = require('./fixtures/setup.js')
+
+t.test('bin in local pkg', async t => {
+  const { pkg, fixtures } = createPkg({
+    versions: ['1.0.0'],
+    name: '@npmcli/local-pkg-bin-test',
+    bin: {
+      b: 'does-not-exist.js',
+      a: 'local-bin-test.js',
+      'a-nested': 'bin-dir/nested-bin-test.js',
+    },
+    files: {
+      'local-bin-test.js': { key: 'local-bin', value: 'LOCAL PKG' },
+      'bin-dir': {
+        'nested-bin-test.js': { key: 'nested-bin', value: 'LOCAL PKG' },
+      },
+    },
+  })
+
+  const { exec, chmod, readOutput, rimraf, registry } = setup(t, {
+    pkg,
+    testdir: {
+      ...fixtures.packages[`@npmcli-local-pkg-bin-test-1.0.0`],
+      node_modules: {
+        '@npmcli': {
+          'some-other-pkg-with-same-scope': {},
+        },
+      },
+    },
+  })
+
+  await chmod('local-bin-test.js')
+  await chmod('bin-dir/nested-bin-test.js')
+
+  await exec({ args: ['a', 'argument-a'] })
+
+  t.match(await readOutput('local-bin'), {
+    value: 'LOCAL PKG',
+    args: ['argument-a'],
+  })
+
+  // remove the existing scope dir from node_modules so that the next run
+  // will have to create and cleanup that directory
+  await rimraf('node_modules/@npmcli')
+
+  await exec({ args: ['a-nested', 'argument-a-nested'] })
+
+  t.match(await readOutput('nested-bin'), {
+    value: 'LOCAL PKG',
+    args: ['argument-a-nested'],
+  })
+
+  // this will hit the registry because the file does not exist
+  registry.nock.get('/b').times(2).reply(404)
+  await t.rejects(() => exec({ args: ['b'] }))
+})
+
+t.test('locally available pkg - by scoped name only', async t => {
+  const { pkg, fixtures } = createPkg({
+    name: '@npmcli/npx-local-test',
+    localVersion: '2.0.0',
+  })
+
+  const { exec, chmod, binLinks, readOutput } = setup(t, {
+    pkg,
+    testdir: fixtures,
+  })
+
+  await chmod()
+  await binLinks()
+  await exec({ args: ['@npmcli/npx-local-test', 'arg'] })
+
+  t.match(await readOutput(), {
+    value: 'local-2.0.0',
+    args: ['arg'],
+  })
+})
+
+t.test('locally available pkg - by name', async t => {
+  const { pkg, fixtures } = createPkg({
+    name: '@npmcli/create-index',
+    localVersion: '2.0.0',
+  })
+
+  const { chmod, binLinks, exec, readOutput } = setup(t, {
+    pkg,
+    testdir: fixtures,
+  })
+
+  await chmod()
+  await binLinks()
+  await exec({
+    packages: ['@npmcli/create-index'],
+    call: 'create-index arg',
+  })
+
+  t.match(await readOutput(), {
+    value: 'local-2.0.0',
+    args: ['arg'],
+  })
+})
+
+t.test('locally available pkg - by version', async t => {
+  const { pkg, fixtures } = createPkg({
+    name: '@npmcli/create-index',
+    localVersion: '1.0.0',
+  })
+  const { chmod, binLinks, exec, readOutput } = setup(t, {
+    pkg,
+    testdir: fixtures,
+  })
+
+  await chmod()
+  await binLinks()
+  await exec({ args: ['@npmcli/create-index@1.0.0'] })
+
+  t.match(await readOutput(), {
+    value: 'local-1.0.0',
+    args: [],
+  })
+})
+
+t.test('locally available pkg - by range', async t => {
+  const { pkg, fixtures } = createPkg({
+    name: '@npmcli/create-index',
+    localVersion: '2.0.0',
+  })
+  const { chmod, binLinks, exec, readOutput } = setup(t, {
+    pkg,
+    testdir: fixtures,
+  })
+
+  await chmod()
+  await binLinks()
+  await exec({
+    packages: ['@npmcli/create-index@^2.0.0'],
+    call: 'create-index resfile',
+  })
+
+  t.match(await readOutput(), {
+    value: 'local-2.0.0',
+    args: ['resfile'],
+  })
+})
+
+t.test('locally available pkg - by latest tag', async t => {
+  const { pkg, fixtures, package } = createPkg({
+    name: '@npmcli/create-index',
+    localVersion: '1.0.0',
+  })
+  const { chmod, binLinks, exec, readOutput, registry, path } = setup(t, {
+    pkg,
+    testdir: merge(fixtures, {
+      node_modules: {
+        '.package-lock.json': {
+          name: 'lock',
+          lockfileVersion: 3,
+          requires: true,
+          packages: {
+            [`node_modules/${pkg.name}`]: {
+              ...pkg,
+              resolved: `{REGISTRY}/${pkg.name}/-/create-index-${pkg.version}.tgz`,
+            },
+          },
+        },
+      },
+    }),
+  })
+
+  // latest forces the manifest to be fetched
+  await package({ registry, path, times: 1, tarballs: [] })
+
+  await chmod()
+  await binLinks()
+  await exec({
+    packages: ['@npmcli/create-index@latest'],
+    call: 'create-index resfile',
+  })
+
+  t.match(await readOutput(), {
+    value: 'local-1.0.0',
+    args: ['resfile'],
+  })
+})
+
+t.test('multiple local pkgs', async t => {
+  const pkgFoo = createPkg({
+    name: '@npmcli/create-foo',
+    localVersion: '2.0.0',
+  })
+
+  const pkgBar = createPkg({
+    name: '@npmcli/create-bar',
+    localVersion: '1.0.0',
+  })
+
+  const { readOutput, chmod, exec, binLinks } = setup(t, {
+    pkg: [pkgFoo.pkg, pkgBar.pkg],
+    testdir: merge(pkgFoo.fixtures, pkgBar.fixtures),
+  })
+
+  await chmod()
+  await binLinks()
+
+  await exec({
+    packages: ['@npmcli/create-foo', '@npmcli/create-bar'],
+    call: 'create-foo resfile && create-bar bar',
+  })
+
+  t.match(await readOutput('@npmcli-create-foo'), {
+    value: 'local-2.0.0',
+    args: ['resfile'],
+  })
+  t.match(await readOutput('@npmcli-create-bar'), {
+    value: 'local-1.0.0',
+    args: ['bar'],
+  })
+})
+
+t.test('no npxCache', async t => {
+  const { chmod, exec, path } = setup(t, {
+    testdir: {
+      npxCache: null,
+      a: {
+        'package.json': {
+          name: 'a',
+          bin: {
+            a: './index.js',
+          },
+        },
+        'index.js': { key: 'a', value: 'LOCAL PKG' },
+      },
+    },
+  })
+
+  await chmod('a/index.js')
+
+  await t.rejects(() => exec({
+    args: [`file:${resolve(path, 'a')}`, 'resfile'],
+  }), /Must provide a valid npxCache path/)
+})
+
+t.test('local file system path', async t => {
+  const { exec, chmod, readOutput, path } = setup(t, {
+    mocks: {
+      '@npmcli/ci-detect': () => true,
+      'proc-log': {
+        ...log,
+        warn () {
+          t.fail('should not warn about local file package install')
+        },
+      },
+    },
+    testdir: {
+      a: {
+        'package.json': {
+          name: 'a',
+          bin: {
+            a: './index.js',
+          },
+        },
+        'index.js': { key: 'a', value: 'LOCAL PKG' },
+      },
+    },
+  })
+
+  await chmod('a/index.js')
+
+  await exec({
+    args: [`file:${resolve(path, 'a')}`, 'resfile'],
+
+  })
+
+  t.match(await readOutput('a'), {
+    value: 'LOCAL PKG',
+    args: ['resfile'],
+  })
+})
+
+t.test('global space pkg', async t => {
+  const { pkg, fixtures } = createPkg({
+    name: 'a',
+    localVersion: '1.0.0',
+  })
+
+  const { exec, chmod, readOutput, binLinks } = setup(t, {
+    pkg,
+    global: true,
+    testdir: fixtures,
+  })
+
+  await chmod()
+  await binLinks()
+
+  await exec({
+    args: ['a', 'resfile'],
+  })
+
+  t.match(await readOutput(), {
+    value: 'local-1.0.0',
+    args: [],
+    created: 'global/node_modules/a/bin-file.js',
+  })
+})
+
+t.test('global scoped pkg', async t => {
+  const { pkg, fixtures, package } = createPkg({
+    localVersion: '1.0.0',
+    name: '@npmcli/create-test',
+  })
+
+  const { chmod, exec, readOutput, binLinks, registry, path } = setup(t, {
+    pkg,
+    global: true,
+    testdir: fixtures,
+  })
+
+  await chmod()
+  await binLinks()
+
+  await package({ registry, path, times: 1, tarballs: [] })
+
+  await exec({
+    args: ['@npmcli/create-test', 'resfile'],
+  })
+
+  t.match(await readOutput(), {
+    value: 'local-1.0.0',
+    args: ['resfile'],
+    created: 'global/node_modules/@npmcli/create-test/bin-file.js',
+  })
+})
