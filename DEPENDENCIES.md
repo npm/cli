@@ -33,6 +33,7 @@ graph LR;
   libnpmexec-->npm-package-arg;
   libnpmexec-->npmcli-arborist["@npmcli/arborist"];
   libnpmexec-->npmcli-eslint-config["@npmcli/eslint-config"];
+  libnpmexec-->npmcli-mock-registry["@npmcli/mock-registry"];
   libnpmexec-->npmcli-run-script["@npmcli/run-script"];
   libnpmexec-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmexec-->npmlog;
@@ -352,11 +353,14 @@ graph LR;
   libnpmexec-->bin-links;
   libnpmexec-->chalk;
   libnpmexec-->ci-info;
+  libnpmexec-->just-extend;
+  libnpmexec-->just-safe-set;
   libnpmexec-->minify-registry-metadata;
   libnpmexec-->mkdirp;
   libnpmexec-->npm-package-arg;
   libnpmexec-->npmcli-arborist["@npmcli/arborist"];
   libnpmexec-->npmcli-eslint-config["@npmcli/eslint-config"];
+  libnpmexec-->npmcli-mock-registry["@npmcli/mock-registry"];
   libnpmexec-->npmcli-run-script["@npmcli/run-script"];
   libnpmexec-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmexec-->npmlog;
@@ -772,8 +776,8 @@ Each group depends on packages lower down the chain, nothing depends on
 packages higher up the chain.
 
  - npm
- - @npmcli/smoke-tests, libnpmpublish
- - @npmcli/mock-registry, libnpmdiff, libnpmexec, libnpmfund, libnpmpack
+ - @npmcli/smoke-tests, libnpmexec, libnpmpublish
+ - @npmcli/mock-registry, libnpmdiff, libnpmfund, libnpmpack
  - @npmcli/arborist
  - @npmcli/metavuln-calculator
  - pacote, libnpmaccess, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, npm-profile
