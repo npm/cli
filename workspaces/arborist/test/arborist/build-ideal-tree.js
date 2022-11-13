@@ -73,10 +73,10 @@ const generateNocks = (t, spec) => {
           ...result,
           [dep]: version,
         }
-      } else {
+      } else if (typeof dep[version] === 'string') {
         return {
           ...result,
-          ...(version in dep ? { [dep[version]]: version } : {}),
+          [dep[version]]: version,
         }
       }
     }, {})
@@ -96,7 +96,12 @@ const generateNocks = (t, spec) => {
             name,
             version,
             dependencies: getDeps(version, pkg.dependencies),
+            optionalDependencies: getDeps(version, pkg.optionalDependencies),
             peerDependencies: getDeps(version, pkg.peerDependencies),
+            peerDependenciesMeta: (pkg.peerOptional || []).reduce((meta, peer) => {
+              meta[peer] = { optional: true }
+              return meta
+            }, {}),
           },
         }
       }, {}),
@@ -822,7 +827,7 @@ t.test('workspaces', t => {
     return t.resolveMatchSnapshot(printIdeal(path))
   })
 
-  t.test('should handle conflicting peer deps ranges', t => {
+  t.test('should handle conflicting peer deps ranges', async t => {
     const path = resolve(__dirname, '../fixtures/workspaces-peer-ranges')
     return t.rejects(
       printIdeal(path),
@@ -2119,11 +2124,11 @@ t.test('do not ever nest peer deps underneath their dependent ever', async t => 
   t.rejects(printIdeal(path), { code: 'ERESOLVE' })
 })
 
-t.test('properly fail on conflicted peerOptionals', async t => {
+t.test('allows a peerOptional to conflict and be invalid', async t => {
   // react-refresh-webpack-plugin has a peerOptional dep on
   // type-fest 0.13.0, but the root package is stipulating 0.12
-  // we would not normally install type-fest, but if we DO install it,
-  // it must not be a version that conflicts.
+  // in this scenario we allow 0.12 to be installed and the peerOptional
+  // edge to become invalid
   const path = t.testdir({
     'package.json': JSON.stringify({
       dependencies: {
@@ -2132,7 +2137,8 @@ t.test('properly fail on conflicted peerOptionals', async t => {
       },
     }),
   })
-  await t.rejects(printIdeal(path), { code: 'ERESOLVE' })
+  const tree = await printIdeal(path)
+  t.matchSnapshot(tree)
 })
 
 t.test('properly assign fsParent when paths have .. in them', async t => {
@@ -2315,13 +2321,13 @@ t.test('detect conflicts in transitive peerOptional deps', t => {
     t.equal(peers.size, 2, 'installed the peer dep twice to avoid conflict')
   })
 
-  t.test('omit peerOptionals when not needed for conflicts', async t => {
+  t.test('do not omit peerOptionals', async t => {
     const path = resolve(base, 'omit-peer-optional')
     const tree = await buildIdeal(path)
     t.matchSnapshot(printTree(tree))
     const name = '@isaacs/test-conflicted-optional-peer-dep-peer'
     const peers = tree.inventory.query('name', name)
-    t.equal(peers.size, 0, 'omit peerOptional, not needed')
+    t.equal(peers.size, 1, 'install the peer dep once')
   })
 })
 
@@ -2467,14 +2473,17 @@ t.test('allow ERESOLVE to be forced when not in the source', async t => {
         const path = t.testdir({
           'package.json': JSON.stringify(pj(type)),
         })
-        t.matchSnapshot(await printIdeal(path, { force: true }), 'use the force')
-        t.rejects(printIdeal(path), { code: 'ERESOLVE' }, 'no force')
+        if (type === 'peerDependencies') {
+          t.matchSnapshot(await printIdeal(path, { force: true }), 'do need to force peers')
+        } else {
+          t.matchSnapshot(await printIdeal(path), 'do not need to force non peers')
+        }
       })
     }
   })
 
   // in these, the peer is a peer dep of the root, and b is a different type
-  t.test('peer is peer, b is some other type', t => {
+  t.test('b is peer, peer is some other type', t => {
     t.plan(types.length - 1)
     const pj = type => ({
       name: '@isaacs/conflicted-peer-optional-from-dev-dep',
@@ -2494,8 +2503,7 @@ t.test('allow ERESOLVE to be forced when not in the source', async t => {
         const path = t.testdir({
           'package.json': JSON.stringify(pj(type)),
         })
-        t.matchSnapshot(await printIdeal(path, { force: true }), 'use the force')
-        t.rejects(printIdeal(path), { code: 'ERESOLVE' }, 'no force')
+        t.matchSnapshot(await printIdeal(path), 'do not need to force')
       })
     }
   })
@@ -2521,8 +2529,7 @@ t.test('allow ERESOLVE to be forced when not in the source', async t => {
         const path = t.testdir({
           'package.json': JSON.stringify(pj(type)),
         })
-        t.matchSnapshot(await printIdeal(path, { force: true }), 'use the force')
-        t.rejects(printIdeal(path), { code: 'ERESOLVE' }, 'no force')
+        t.matchSnapshot(await printIdeal(path), 'do not need to force')
       })
     }
   })
@@ -3919,6 +3926,45 @@ t.test('overrides', t => {
   })
 
   t.end()
+})
+
+t.test('correctly resolves optional peer with conflicting transient dep', async t => {
+  generateNocks(t, {
+    a: {
+      versions: ['1.0.0'],
+      peerDependencies: ['c'],
+      peerOptional: ['c'],
+    },
+    b: {
+      versions: ['2.0.0'],
+      dependencies: ['c'],
+    },
+    c: {
+      versions: ['1.0.0', '2.0.0'],
+    },
+  })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      dependencies: {
+        a: '^1.0.0',
+        b: '^2.0.0',
+      },
+    }),
+  })
+
+  const tree = await buildIdeal(path)
+
+  const checkEdges = (node) => {
+    for (const edge of node.edgesOut.values()) {
+      t.ok(edge.valid, `edge ${edge.name}@${edge.spec} is valid`)
+      t.ok(edge.to, 'edge has a target')
+      checkEdges(edge.to)
+    }
+  }
+
+  checkEdges(tree)
 })
 
 t.test('store files with a custom indenting', async t => {

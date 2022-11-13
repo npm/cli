@@ -493,7 +493,27 @@ class PlaceDep {
   }
 
   get conflictOk () {
-    return this.force || (!this.isMine && !this.strictPeerDeps)
+    if (this.force) {
+      return true
+    }
+
+    if (!this.isMine && !this.strictPeerDeps) {
+      return true
+    }
+
+    if (this.top.edge.type === 'peerOptional') {
+      return true
+    }
+
+    let fromIsOptional = !!this.top.edge.from.edgesIn.size
+    for (const edgeIn of this.top.edge.from.edgesIn.values()) {
+      if (edgeIn.type !== 'peerOptional') {
+        fromIsOptional = false
+        break
+      }
+    }
+
+    return fromIsOptional
   }
 
   get isMine () {

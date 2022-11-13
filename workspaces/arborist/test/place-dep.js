@@ -1368,6 +1368,81 @@ t.test('placement tests', t => {
     force: true,
   })
 
+  runTest('peerOptional can be invalid when peers conflict', {
+    tree: new Node({
+      path,
+      pkg: { dependencies: { a: '1', b: '2' } },
+      children: [{
+        pkg: {
+          name: 'a',
+          version: '1.0.0',
+          peerDependencies: { c: '1' },
+        },
+      }, {
+        pkg: {
+          name: 'b',
+          version: '2.0.0',
+          peerDependencies: { c: '2' },
+          peerDependenciesMeta: { c: { optional: true } },
+        },
+      }, {
+        pkg: {
+          name: 'c',
+          version: '1.0.0',
+        },
+      }],
+    }),
+    dep: new Node({
+      pkg: {
+        name: 'c',
+        version: '2.0.0',
+      },
+    }),
+    peerSet: [],
+    nodeLoc: 'node_modules/b',
+  })
+
+  runTest('conflicted optional peer fails when it has a non-peerOptional edgeIn', {
+    tree: new Node({
+      path,
+      pkg: { dependencies: { a: '1', b: '2', d: '2' } },
+      children: [{
+        pkg: {
+          name: 'a',
+          version: '1.0.0',
+          peerDependencies: { c: '1' },
+        },
+      }, {
+        pkg: {
+          name: 'b',
+          version: '2.0.0',
+          peerDependencies: { c: '2' },
+        },
+      }, {
+        pkg: {
+          name: 'c',
+          version: '1.0.0',
+        },
+      }, {
+        pkg: {
+          name: 'd',
+          version: '2.0.0',
+          peerDependencies: { b: '2' },
+          peerDependenciesMeta: { b: { optional: true } },
+        },
+      }],
+    }),
+    dep: new Node({
+      pkg: {
+        name: 'c',
+        version: '2.0.0',
+      },
+    }),
+    peerSet: [],
+    nodeLoc: 'node_modules/b',
+    error: true,
+  })
+
   // root -> (c@1||2, a@2)
   // a@1 -> PEER(b@1)
   // a@2 -> PEER(b@2)

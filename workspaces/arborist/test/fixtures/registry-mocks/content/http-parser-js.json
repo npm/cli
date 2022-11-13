@@ -1,0 +1,2376 @@
+{
+  "_id": "http-parser-js",
+  "_rev": "47-b3687c1cff8b4332ca1832665845eb18",
+  "name": "http-parser-js",
+  "description": "A pure JS HTTP parser for node.",
+  "dist-tags": {
+    "latest": "0.5.8"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "http-parser-js",
+      "version": "0.0.0",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell"
+      },
+      "license": "MIT",
+      "_id": "http-parser-js@0.0.0",
+      "dist": {
+        "shasum": "909deb52b955712b99dd0385e6ecad96b2fb4ce9",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.0.0.tgz",
+        "integrity": "sha512-+qEoeTq1sUzdqNHnxPFihYxv4pVcWvinaCDkSijZu0ezCd18IMg/1MqgCjhvE2tDgA8WP3gO1g7zOQhKybwdBQ==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIA/xAaCnm2kMv2fyz2c1uPE6CNbTIOFaUvgJ05F5wHVJAiBUMyaMaScb1U0efc05ReJpTkA9P2m7yVSu5vTlVIexKA=="
+          }
+        ]
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "http-parser-js",
+      "version": "0.1.0",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js",
+      "_id": "http-parser-js@0.1.0",
+      "dist": {
+        "shasum": "9c4fc9b9a692edb4ccbc571ef072f70fed56dd1c",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.1.0.tgz",
+        "integrity": "sha512-ltJUcKvMoehl/eM/+8dVW0h0OPDNSLQbg6llPvfcPUL+hU33hWdbwfMw6Yh/71vyNUKCFNQKtsbgbeRutrgNZw==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEYCIQCgetGfz59ht3nAbWOymT81Jly2VNAed4xgwK99R43m8gIhAKGfCp0fZ2bBaUfHryJ+0EUCcpZzNZEVmjRhXAeJtHEm"
+          }
+        ]
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "creationix",
+        "email": "tim@creationix.com"
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "http-parser-js",
+      "version": "0.2.0",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "3a41f4a5c61853ff68b8498c4f24c908e8ea3a46",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js",
+      "_id": "http-parser-js@0.2.0",
+      "_shasum": "3f1ab609051fd93d607fb9d3e4ae4b097e8c5bce",
+      "_from": ".",
+      "_npmVersion": "1.4.20",
+      "_npmUser": {
+        "name": "Jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "Jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3f1ab609051fd93d607fb9d3e4ae4b097e8c5bce",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.2.0.tgz",
+        "integrity": "sha512-XQ0zvi1HxA9U30G5QpRx9c1KbZMQmNph1JmOqW4nTzkTl4UrGy6kXHP777ZMnS8CvF98/u0O8qJrnQYVQOjKUg==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQCdS38eU7tYvZjxn6XRBahO3Bmm/eox2H25WWs/Kz5MQQIgUubMp4PhozOn8AortZgaEwGu7Cj1XV4WyL6+CVS1+9Y="
+          }
+        ]
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "http-parser-js",
+      "version": "0.2.1",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "1f9904bb409e8d6d87600d730dcea156388edc9e",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js",
+      "_id": "http-parser-js@0.2.1",
+      "_shasum": "43670c1f4f9df1e87fda9399ef58b5c40460b24c",
+      "_from": ".",
+      "_npmVersion": "1.4.20",
+      "_npmUser": {
+        "name": "Jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "Jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "43670c1f4f9df1e87fda9399ef58b5c40460b24c",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.2.1.tgz",
+        "integrity": "sha512-EUJkN9yBDBFnYEvFWjX2IlEN1zP2pJY9hFiQIB3Xmol/DquLc5hj3bHi4gc3tAWqQF/VFFxa84KY7LdRJNcqqQ==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQCv52ighTL7qMLCpDyiZrrDf5Oyr7BEtCtxTD2bp/ZUAwIgTyqqDgoHINPobb6NZ9cNeOzph6b/6IB2CKrScFLWSO4="
+          }
+        ]
+      },
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "http-parser-js",
+      "version": "0.2.2",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "727deec93cc373b82029302de977b0acd2be47d0",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js",
+      "_id": "http-parser-js@0.2.2",
+      "_shasum": "8f1b8f6c1f3ac2f52b04e5d48cd5c6e7285c634c",
+      "_from": ".",
+      "_npmVersion": "1.4.20",
+      "_npmUser": {
+        "name": "Jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "Jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8f1b8f6c1f3ac2f52b04e5d48cd5c6e7285c634c",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.2.2.tgz",
+        "integrity": "sha512-qRYI00U/DSaw5Uf6Bda10raRZXHQLb1Ne1sNpeUpG2I8DzXDlcl6IiM8jx4qTIVX0Kly7ZIv6I/ETWjb7qWScA==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEYCIQDo5cnGyP1M664ZzuaUab2FXASfHq1chnP5ZPMssbn4LAIhAIeAl9KvhxLOUhCFw0b6q85v8IcAuoU9r/hFjKXVgkd+"
+          }
+        ]
+      },
+      "directories": {}
+    },
+    "0.2.3": {
+      "name": "http-parser-js",
+      "version": "0.2.3",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "4d2d03a2417cf4bd4a93386572b9ac9692e70f3e",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js",
+      "_id": "http-parser-js@0.2.3",
+      "_shasum": "1766743ea1e80ac1b1793a44fa3989fb8cdacc33",
+      "_from": ".",
+      "_npmVersion": "1.4.20",
+      "_npmUser": {
+        "name": "Jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "Jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1766743ea1e80ac1b1793a44fa3989fb8cdacc33",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.2.3.tgz",
+        "integrity": "sha512-Jw/pVkAdBVLRt3NUQrf/dz8/p9E711IT8lqOuFlWh2sSV+pYQiLXvn2OHOmZoOrIlR3WqewJyMogONbIEVwobQ==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIDvdZ9FzVAPsK0LoxY7K/ObUm5fOOA0zVTBE1SpyTaalAiEAwvpiWXD0JEfAd/ADCximm0syQjHxM2y+BVZ0nDAgqg8="
+          }
+        ]
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "http-parser-js",
+      "version": "0.3.0",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "87f6949402279deb84313baa08d0268fcaf25ff9",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.3.0",
+      "_shasum": "293844fe61246fcc46c55c2c23790d7a550549a3",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "creationix",
+        "email": "tim@creationix.com"
+      },
+      "dist": {
+        "shasum": "293844fe61246fcc46c55c2c23790d7a550549a3",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.3.0.tgz",
+        "integrity": "sha512-vrBL/AmpkjjyopV3yVZ0DDwjUACwXZoJEv96KOfOz197f/NcEPgxiY5596hmaokn9QO7KxJvTriKGk58tIYRog==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQCr9fn46JVwQcBEBfcKo/zw8NTsDjJlz0TqYt4MouBF+AIgLNoPHJThWugUgSAOMZs/1ag0GTVw1BBfHyimGrtNHxM="
+          }
+        ]
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "Jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "http-parser-js",
+      "version": "0.4.0",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "0912515b5fda5f7423495fe0129ef901d88f13da",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js",
+      "_id": "http-parser-js@0.4.0",
+      "_shasum": "5e501b0d1008e7f7f8bf05eba70e7d716f29148d",
+      "_from": ".",
+      "_npmVersion": "1.4.15",
+      "_npmUser": {
+        "name": "Jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "Jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5e501b0d1008e7f7f8bf05eba70e7d716f29148d",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.4.0.tgz",
+        "integrity": "sha512-+/BXd6UcMbc0juUNeqQv7TxXx+2C65+agcxr6cPVF6vM6dhpxGtz8fuexkp2TYwjaNxVz6x9HaPbSEfId21ziQ==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIDhhS0r/WOo7xrDHysy85oz9hgyYVpbYSOJ+C+HS8knfAiEAt1SYHtj5M9PieElhtNOXlfe09UINfDbhJKGcoF/hvf8="
+          }
+        ]
+      },
+      "directories": {}
+    },
+    "0.4.1": {
+      "name": "http-parser-js",
+      "version": "0.4.1",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "7155edeb76e904017f82c1da0ab4857af942bf63",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.4.1",
+      "_shasum": "cd89d63d494d46720866a859540106ae63c47fea",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "0.10.40",
+      "_npmUser": {
+        "name": "Jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "Jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "cd89d63d494d46720866a859540106ae63c47fea",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.4.1.tgz",
+        "integrity": "sha512-Wc9i+/7TcDWVMAaCEOHVpnHEKzJOX34GxUQfvjZgcp2v2NkkPiv0Po9GoG6WT5Dthj0VQdtlfE5PYidf4qfy+g==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIHmBvNuE9q4asNnYqzf1v7mjbBSey+JghbLQ41WTjWG/AiBGpbgl83tA4MJrASXGT1GpFcqMTShR8+3JIe3etV286Q=="
+          }
+        ]
+      },
+      "directories": {}
+    },
+    "0.4.2": {
+      "name": "http-parser-js",
+      "version": "0.4.2",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "files": [
+        "http-parser.js"
+      ],
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "6cb142a52b8d31910c17bf86f8738f6ab7c6b167",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.4.2",
+      "_shasum": "4e0ef98aa1f629898b018bdcf1b919013ab15bee",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.10.36",
+      "_npmUser": {
+        "name": "Jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "Jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4e0ef98aa1f629898b018bdcf1b919013ab15bee",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.4.2.tgz",
+        "integrity": "sha512-pSlUwN4nCaHYWWDzGhcZQ7JrBFi7Nkn026fNTuvyJ1EdsAE3Fs7i6IuRQN+HhE2QslQvuJT41wUlkFFKL32PKQ==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIEN3Uc+l0CYohv83l5SXOU+AyibGChTemWdh69z1ypdcAiEAwcncVUWTjM6eH49mE7uZcKhIFf4zPQ/ezAPxvuPI+Pw="
+          }
+        ]
+      },
+      "directories": {}
+    },
+    "0.4.3": {
+      "name": "http-parser-js",
+      "version": "0.4.3",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "files": [],
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "8ee9ae7c04d509c5a6d60caba70f4e7639a40f3c",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.4.3",
+      "_shasum": "89da65699a7f5eacd57d4ff93f0d104b1a960046",
+      "_from": ".",
+      "_npmVersion": "3.9.5",
+      "_nodeVersion": "6.2.2",
+      "_npmUser": {
+        "name": "creationix",
+        "email": "tim@creationix.com"
+      },
+      "dist": {
+        "shasum": "89da65699a7f5eacd57d4ff93f0d104b1a960046",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.4.3.tgz",
+        "integrity": "sha512-h6JH0SMk+EN2km8zN3ZV/yCx7pwAsVAMo9OGjVJhhmD63HIgEDlUPxhXwDL0QWGcgUCclInwy3fnHkaoQbpCeg==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCICuWZdqbWOYMMlrlcn1143v0Zn8KqsuBcxidnCZE1VVhAiEAz9mtWLcsX8E39nwHsyMFeao9UI7Wt4K9MMNvr360V20="
+          }
+        ]
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "Jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/http-parser-js-0.4.3.tgz_1468351192405_0.8753873123787344"
+      },
+      "directories": {}
+    },
+    "0.4.4": {
+      "name": "http-parser-js",
+      "version": "0.4.4",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "files": [],
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Sch�r",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul R�tter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "faf2a077f66be35fb57b07847bbb48a4e6d35a19",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.4.4",
+      "_shasum": "c1273cf9897ac2caccc4779959780aa903de41a4",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.1",
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "dist": {
+        "shasum": "c1273cf9897ac2caccc4779959780aa903de41a4",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.4.4.tgz",
+        "integrity": "sha512-SO7X60M8KyoCVswcSpcE7aY9h/+IsvDc+zKOfGafs2DDp7VstvJ7WmgU5DcAo/AdkrizEciGAn36Ee6nQlBe3g==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQDPw1U9uE0AeBGqb6bREBXnuImNLnwkftmER9e5iFolLQIgQXcSAk6x/Ph6Pa+tOQZorh/IaL++f5JLUJG2tvT3Wj8="
+          }
+        ]
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/http-parser-js-0.4.4.tgz_1473285598103_0.5152257131412625"
+      },
+      "directories": {}
+    },
+    "0.4.5": {
+      "name": "http-parser-js",
+      "version": "0.4.5",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "files": [],
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Sch�r",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul R�tter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "4da1ccd4d5e9fd5cca958253bcd84ae8afadfab5",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.4.5",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "creationix",
+        "email": "tim@creationix.com"
+      },
+      "dist": {
+        "integrity": "sha512-sYaqbMBf8hoS6OZBwMygxdLD3TsWgzheP55nkQ7GiR7gsn8x+2oTMCoJSAQmNm3obzOjJYT6tdTz1XcYjKyUqg==",
+        "shasum": "a3ecf39a667481a38ca60882ab57a2db578b9970",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.4.5.tgz",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCICC1tytZnPj5tJEOqwaDglvmXZAV1cbF+EuwcKsoRZgmAiEAsxd82qsoQyHPAWTZVewkIkIL87Vy0unhIQc349G+fUU="
+          }
+        ]
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js-0.4.5.tgz_1497981315615_0.9391212973278016"
+      },
+      "directories": {}
+    },
+    "0.4.6": {
+      "name": "http-parser-js",
+      "version": "0.4.6",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "files": [],
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "889370edae7402a930bf77a5a20eb1d15825318a",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.4.6",
+      "_shasum": "195273f58704c452d671076be201329dd341dc55",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "dist": {
+        "shasum": "195273f58704c452d671076be201329dd341dc55",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.4.6.tgz",
+        "integrity": "sha512-YgMNpDj4EEyCxfghswDfXdUqgnXjuYZhMy2vMtn9x1X5BykwPN0xU5EbTqbtqAWe7XQCK8mfPvr+Li+xcG+5Hw==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIBzcW+ZpljnbnLX/N2A+SKdLv8zg5kWED/tjAN/lKCliAiBtAo3Xyb6Lb6zDhPK1DZJO4uuiiYrbLQKMwivohpRxNA=="
+          }
+        ]
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js-0.4.6.tgz_1505312062736_0.7489412378054112"
+      },
+      "directories": {}
+    },
+    "0.4.7": {
+      "name": "http-parser-js",
+      "version": "0.4.7",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "files": [
+        "http-parser.js"
+      ],
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "494a6bc0f82a1980d7f04baa416ec7b6f49da028",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.4.7",
+      "_shasum": "1cecc9c4ce845c0288224d8844854c1ef08c9ad7",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "dist": {
+        "shasum": "1cecc9c4ce845c0288224d8844854c1ef08c9ad7",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.4.7.tgz",
+        "integrity": "sha512-FVvV9FhabRz56S+4EeGev20Ius5Cbdnz7FKQcknF/nVzJTgE4uU/GR+6+mB989c1kUHL9/IfdAlpGuKDitHkyA==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIDlCHdVn4Q2vzm/AGCBc344+5kwkwytCvLq2QzbhRFS+AiEA4iMpNnEd5eXCBcHJOGICYJ9gIivzy3OEcMDoduG1BbE="
+          }
+        ]
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js-0.4.7.tgz_1506002581189_0.4852926495950669"
+      },
+      "directories": {}
+    },
+    "0.4.8": {
+      "name": "http-parser-js",
+      "version": "0.4.8",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "files": [
+        "http-parser.js"
+      ],
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "12e0c91a7ff989a0687f81e059e7ddb5e5e35ea3",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.4.8",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.5.0",
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-jmHp99g6/fLx0pRNJqzsQgjsclCHAY7NhIeA3/U+bsGNvgbvUCQFQY9m5AYpqpAxY/2VcikfbKpjQozSTiz0jA==",
+        "shasum": "763f75c4b771a0bb44653b07070bff6ca7bc5561",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.4.8.tgz",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEYCIQDQ3ytPXgQXXK8oo1M6nF6u86KANmk/4NVYUWKHc8+mHwIhANbjnPDQdmcQy42eT4HBDzQin1NRkTIAZT6cHManJOEe"
+          }
+        ]
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js-0.4.8.tgz_1506030686540_0.7717220701742917"
+      },
+      "directories": {}
+    },
+    "0.4.9": {
+      "name": "http-parser-js",
+      "version": "0.4.9",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "files": [
+        "http-parser.js"
+      ],
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "287dd0cd76a512d67d52e19e8b0fa4d40e07fa19",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.4.9",
+      "_shasum": "ea1a04fb64adff0242e9974f297dd4c3cad271e1",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "dist": {
+        "shasum": "ea1a04fb64adff0242e9974f297dd4c3cad271e1",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.4.9.tgz",
+        "integrity": "sha512-gmzoCd68gAuhyr4mOLSm4loH3Pv9fn0+YL7lItcK4BbGaxc9g+lQ7As4LhU8ZMqaPcSt4nSquIaUVbcXF/adqw==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQD7nfxRWCmJcCYpEYLXVGpQs9XmUxFBCZqCOLDrH3OlSwIgCDoW43FGw/P/rMDXqdDPSM9GG+vWDgsb1qgZ8eXP/cs="
+          }
+        ]
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js-0.4.9.tgz_1507127716935_0.974934829166159"
+      },
+      "directories": {}
+    },
+    "0.4.10": {
+      "name": "http-parser-js",
+      "version": "0.4.10",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "files": [
+        "http-parser.js"
+      ],
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "d9d54127d1b72f40c7fc3e5052e625e07ae8d235",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.4.10",
+      "_shasum": "92c9c1374c35085f75db359ec56cc257cbb93fa4",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "dist": {
+        "shasum": "92c9c1374c35085f75db359ec56cc257cbb93fa4",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.4.10.tgz",
+        "integrity": "sha512-ln7+HeZl3lL3PNRX9Y6ub4i8xcgQ0mO2J//ic97dR7tEXB+6IKAjx8JCCmEkwKiMcR2jidU9xNolz1fEyyf/Jg==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIGnk2ZQEJUO/OFR7rnJgulLYMLBAxCMy9BFIao7r05lBAiEAxrLUoKnDc8dUZsZCwerxh90OEnwPluikacMlAwVBPZw="
+          }
+        ]
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js-0.4.10.tgz_1517680010410_0.576178319985047"
+      },
+      "directories": {}
+    },
+    "0.4.11": {
+      "name": "http-parser-js",
+      "version": "0.4.11",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "files": [
+        "http-parser.js"
+      ],
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "489cdde533551fba7a46b6582b04b1a01de1e1ed",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.4.11",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.5.0",
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-QCR5O2AjjMW8Mo4HyI1ctFcv+O99j/0g367V3YoVnrNw5hkDvAWZD0lWGcc+F4yN3V55USPCVix4efb75HxFfA==",
+        "shasum": "5b720849c650903c27e521633d94696ee95f3529",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.4.11.tgz",
+        "fileCount": 5,
+        "unpackedSize": 19802,
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQDAWw0nhqwkaM1J4y4pv5La8WnUjV53i06J/4IDM35BVwIgD4RcrYI0tDA/Jgxex5pnJI3YoV3OBrVG7ACzbCGjifU="
+          }
+        ]
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js_0.4.11_1520472647280_0.10777481557930746"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.4.12": {
+      "name": "http-parser-js",
+      "version": "0.4.12",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "files": [
+        "http-parser.js"
+      ],
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "a7609249a04a2300beec67c1ceeab00681792c58",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.4.12",
+      "_shasum": "b9cfbf4a2cf26f0fc34b10ca1489a27771e3474f",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "dist": {
+        "shasum": "b9cfbf4a2cf26f0fc34b10ca1489a27771e3474f",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.4.12.tgz",
+        "fileCount": 5,
+        "unpackedSize": 19971,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa34NmCRA9TVsSAnZWagAA1MkP/joyGEDusAGZ9ijeijw4\ncXqMfBSb++f2Qfs5rkwAbgIEtQS+EhT5ucbt0J4sF3895JDfvr4OZm9kKmRI\npVlUuPiO5n44GHasQt7Ms1IJa+g/+74TLJz+ZSxaOnYzD9mF1ETBqWjAKn1n\nP50dPJboJIG/Txw8QCXXR5bHyqCk9+OLXYcHgW/+fC2ORer1WpA0oqclLzKS\nYpbLWgzK8NrgeSMQJeA3AIhwMIY6bAD4vfsfq2G7HlgYAM1rUWKPcwp34SC4\n5jBMmoGRNXtK/ojlvHk8DPEVsbmz86hxBSTXiUkqAlYBEz0QaynJXjHmSRhR\n2vxmRx9vq802Yv3UV4d47EOetBhLAGHzfkBMZRw9oiv5nqyvEzrC9wrhNjh2\nxomNnwBProasD2nBji2b5dkg/q6KFL0b2k8cHUlEbtloud/arMt1B2y/V/Z5\nKSB+iJINCFEmb6L9dKGAuzGLB+ZkOrNYjcDAQpYiFYfOUOmG0vrf7IZC5mQC\nPrCnYtlMgD/+YPzY6GIUhL1biF9LSAnO42sfyUxgJo6SHjDiWXLF2YyGcBFX\nZEtDNVEh0Q2jtfgtdcz5AKcMAXujLu9/xF0lSzXzUbPB4u/d0VB55nxXNHXF\nCtYtGn1GAdqdHkhdT7hPVZVIikzDjiTznikSUv/F7J3HVIL1NcLnEN4iExnZ\n9wdu\r\n=Go4K\r\n-----END PGP SIGNATURE-----\r\n",
+        "integrity": "sha512-LtkiEz56UfM3hBaJnGst0+W+FHfweYH0+atbVDqCp/LsfnK1eEiupUEz5aQGi2Xnd4BPxAnZWsSvZmcmjLDSUA==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIFUZBtY4zhZ7t0N5CQEGihP1ZTHpQ1FAUbCuwCl/k3UtAiEAmj+iaG02jxnQQYsi+Gx0Z/lplBkUA+XYU43p2Erzvrw="
+          }
+        ]
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js_0.4.12_1524597605164_0.18220543950262913"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.4.13": {
+      "name": "http-parser-js",
+      "version": "0.4.13",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "files": [
+        "http-parser.js"
+      ],
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "90aa81ddf3761fbf1b406e958a95aadea49d1517",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.4.13",
+      "_shasum": "3bd6d6fde6e3172c9334c3b33b6c193d80fe1137",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "dist": {
+        "shasum": "3bd6d6fde6e3172c9334c3b33b6c193d80fe1137",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.4.13.tgz",
+        "fileCount": 5,
+        "unpackedSize": 20026,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbAy4ICRA9TVsSAnZWagAAKwwP/1/o+p0E6VUsA9drTm13\nA7S+W4hfjcVyvZKRT/nJc9P0HBhbuL4gvXrxgAgi/WxFPxJG3TmqEE8YdMiC\n5gPAo7hie27cP+ExOhMGvec2KI/xjAUVqEDMg2xkJTOvjhOSg6j1H+Pzk6dE\n34jXfOB14EEMGhbvGKDsepD0X2MWvw0Vry2l2zaGZ43KLGWDktyha2CseWrf\n4x7GRqMNMP66vl8wv7il9Kugy23dKeqoYyYkntHn34+4AY3SDFw9FwyPE7BG\n8qVuKbf3HjJQGtL+OUrFyB4GgrPVLWvZxvHpCEAMtc8SUXK7tiRWu70A6ZFm\nSKZXGnAwE5oDKnZDFr8f1bKyF0Q5tY1v9WbZH2csSy9MUVv1/+UglxBR7faM\nxDOYNihesCiEnUrFH7Nr5K+Wf1uPU49lbGzfwUTdOSV8s6PcERfjFKQdFQvf\nOB0oxT+gyPHerPSWnB+V7VT9nvpN129G1guLBf7lJmo2+GJzZlyPbp6wLotB\navLPUreTU6LUaaeV00cVXOdyf4pmEnjjHvdeKo/sMMFbx0CF6ATcqUiSPt4Z\nIoBzlbgNbziBXpFoWWDh2q26laPw4j6r3vb1cX33Zu/zUA0qz8v3za8YIP5X\nSXwOzur+KpHWNg19Pf8N9sblBoUUgVNFUlMXnquV0dBnEh2nkqKGxhcP9Img\nluH2\r\n=rCrf\r\n-----END PGP SIGNATURE-----\r\n",
+        "integrity": "sha512-u8u5ZaG0Tr/VvHlucK2ufMuOp4/5bvwgneXle+y228K5rMbJOlVjThONcaAw3ikAy8b2OO9RfEucdMHFz3UWMA==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCICEaEPEuA5FJxyRbwaG6RD7/dF45p4rS4QrVnWjvAMNqAiEAlC6wazOZL6TYao8c+rahrdgPhAb/hAWReJIW7WGWScc="
+          }
+        ]
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js_0.4.13_1526935046779_0.30690059401088154"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.5.0": {
+      "name": "http-parser-js",
+      "version": "0.5.0",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "97765b86ad501ef739b3950d6bb887c376509773",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.5.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.12.0",
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-cZdEF7r4gfRIq7ezX9J0T+kQmJNOub71dWbgAXVHDct80TKP4MCETtZQ31xyv38UwgzkWPYF/Xc0ge55dW9Z9w==",
+        "shasum": "d65edbede84349d0dc30320815a15d39cc3cbbd8",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.5.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 20175,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbzgvBCRA9TVsSAnZWagAAj1sP/37FZmRI1vb9tnrdtTSY\ngazBAitumsXSdtlob5up1Nk4nBaqgu9RyefuLMsVJRL1z4pP2F4bQrHbtEBt\nJrDtbl6/zS51G17jsye1XHquJmUmB9S47y8lua2AiWOc7zYAaI7vM5FicpcI\nYiXTFdbpUU1gHtDDiSL1j1i5QCiIJKkhzAPkoUL6XLhrRoL9F3HKjeU8rWC6\n2k0A2VtHrr56sA5mgjGIC9Tia9KkF8mELIrB9XximVAVH/s96Tt0tfSbUXqb\nxwoy+NevyB0iW0ISzLys1eASpgr9llOciQv0ljF2XJGyFhDKI4v7j3em9DMe\nVq0k4xnCjio+tbOVSPFlweGeIODt1H2KJJHj9LtRCcdTdGCG2CEg0ywqDBwd\nZogvLkX6crmtrudbrvRT8zBEfBDIyypzgDNF1pXIOqiCvOnncSmh4PmacPWA\ngL7R5iOXFmqHMs1aagg+uE95IgDFtoE5dJW38UazWfzAS3CKMG4TKMQlrdoE\nBhJ4GzFxJKXWxqOfsUUQ9Ch9uhCW3gCaAfOXqasg+jxVp19/hBVd6cD3pG2+\nNeBVXg2CshfucUhVUMHQra4/UIiHpAeYoPO4N6kp2GbmxkrzkLqmes0UG6nV\n7/tCIw+K2vmDCvDQhBV2t6EIVuuB3HX3DkwXrUGBcgrWyYMDG8mtkHMc9kzH\nPF+p\r\n=P4Mn\r\n-----END PGP SIGNATURE-----\r\n",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIC7T0Wvhizzyarc1Bo7kIJTepGzKU9C0O08XOsWBtFuaAiBV4cr9DxB5OuqduxIeF0v0DA8XOLJl4Y7G66Xam0I27w=="
+          }
+        ]
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js_0.5.0_1540230080476_0.9944727732624825"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.5.1": {
+      "name": "http-parser-js",
+      "version": "0.5.1",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "38e59fa94364bccf58e477799899f9e774096860",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.5.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-klJydAEoXHWYRtOoDwtNVIF6xrYCMTHnG8hu8uASFCmj9qNZ9R3kWeZ7NgqLctY9QRkvsNoqOmN6Lw2qZmGgVQ==",
+        "shasum": "6b197a6226ccb96e52c32e8f0973b5dd923e1ba0",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.5.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 20254,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdA6uXCRA9TVsSAnZWagAABR0P/3tW6B63BvZyW2OKuw+7\n5v7Q8WqR8RdYZ2AlUzZ2W61d/F/u/nHyBPeVGOLY6Iv24Sn/ShgQzr3wHgIU\nREoD4ZSG3DUIeaRFa2yNNMUTK64IDObuojIIl4tmWkuKy2axQSwWrvd9Q91N\n4WXQSob/+n0F9O0kwOvz8QpKr6BN+Er/vREDagLWMZ3gQ/iwOMT5/NmVPYjn\nxr9G05JB2ilkDS2tcibnP5f9BfH9S1989FCH6zLpZZ1MeYpX0aAjsTykABeU\nu6mDDmcNXgP6RUWt3dhjeVPIVH8fOOYPZkGc+BpGPAoYG1w8Y7gZDxVEQwGo\nBATI5e8nTJYLEZMkPFX85kz9ktugFK2Ci+xIs2/xis+WlCbw9qDZphEjRrkj\n2Ptv6NkpYbR/RoJzAtUeb3sAkPQgq5TNvL1hBjYLzMvSciJyOm2GQMt/Yr/a\nv6Xob/78yJZ1WNXbBU+pF/6r0uyUVY25mtpNA8iSfkg/KelKhAuucJFkDmeY\n3NoXCqcUkSkvvArmgYyL9rbJz+bteXI9kroZCXBcfH1q+Rya0kAKn4Inx2Fk\nnsaPulNujdoroO9WTIalEVvnVlQTooTBPsdlAR4YwImclHvJ8Z1wqKOlyk3X\nHlp9JndiSAJXr9uT/r6ObNTbYS4X9sh7rTOwevSWK+c/rVBL0IMFLd6vl3WM\nQqKv\r\n=R5bz\r\n-----END PGP SIGNATURE-----\r\n",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIG7mYj3tcM+mUAdiXa7af9yWJmArA+DEQHQs7cJmOrtYAiEAxiHWXJLemnjwjp7ypxpg8F9pqz7L9LjlelJft0PPSAY="
+          }
+        ]
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js_0.5.1_1560521622564_0.6479751474822308"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.5.2": {
+      "name": "http-parser-js",
+      "version": "0.5.2",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js",
+        "testv12": "python tests/test.py --node-args=\"--http-parser=legacy\" && node --http-parser=legacy tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "cfc5ece8232db8ff189ca6fe5ada48fbab8ceb05",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.5.2",
+      "_nodeVersion": "12.10.0",
+      "_npmVersion": "6.10.3",
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-opCO9ASqg5Wy2FNo7A0sxy71yGbbkJJXLdgMK04Tcypw9jr2MgWbyubb0+WdmDmGnFflO7fRbqbaihh/ENDlRQ==",
+        "shasum": "da2e31d237b393aae72ace43882dd7e270a8ff77",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.5.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 20832,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdvba9CRA9TVsSAnZWagAAdFgP/1YyaFkhzzMYllUyCT3x\n30ik86ymWvn7vvOl6Esv4ahd06KnpPO9/RCTTqGnHSLBa98D2IB+Ub9SynbN\nX6GVbe1XXZQL+r4FFTnr7PPvrN7ehluJq2pAU/xQrkIB6BGzSEy3txQFHmRw\nXHZjcGCA8ja16oXuiofb745NM7qYHvM+w7mF7BFZ5Y4I5GgP4jAdZgLhMuO7\nP9KEl15FTdw2jDO9Sa4ze06Gjx5cq3cOxKegyC/z3GCXJqyt7Z0x+U5cjqbI\nEYEJZxy2B2qf2s+rGiyhPS3mMHpfsxaOi1NffIBrutPwANMp375Z6/SQxgOi\n2L6zCYCDZ9neiL86MgZtbiIXEUmKIGDlkXLgHTYVBc/K03Ya/EjhcuB0n/m8\nmX5kSCM5q6PlcXN3TNZ8gSh8d+3QPzUgo3nan4As5GAcNfCosxBqiqEq4tft\nWucg1oa7Vibf6F5K46D+6HbfI2/kk0yEpGnrHQTdvcGV8dgdAnlhaDWcukHS\n/U1A+PB6XqNK0VdCl2wMmK66tPCMhwLYigJoTe0OrOSdJ9EVxiZGIsU1qlpM\n7RwsMDr2LB6okCXwOJ5CI732sGpkLiV6XpObePmxdgkpTzT1I6VlnB90Plgq\nZUIfF//OZLVFZpKjFzV0HfMNTYB8eAI7qq3NBLbGl45vqjYGC8DkP+D9RkBz\n/Of0\r\n=3GlX\r\n-----END PGP SIGNATURE-----\r\n",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEYCIQDYGg3sgvjTQNJPnkHzbjupwC+t/WiZ0GCvDavr57gOmwIhAIZabc9PB5tvfNUxXlWw2CaxadYuZHm2pzpdNgQYq4SX"
+          }
+        ]
+      },
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js_0.5.2_1572714172970_0.28779021124361326"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.5.3": {
+      "name": "http-parser-js",
+      "version": "0.5.3",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js",
+        "testv12": "python tests/test.py --node-args=\"--http-parser=legacy\" && node --http-parser=legacy tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "6bbab2ce3f0e387c3c8727a68cdc4b7ee383afa0",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.5.3",
+      "_nodeVersion": "12.18.1",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-t7hjvef/5HEK7RWTdUzVUhl8zkEu+LlaE0IYzdMuvbSDipxBRpOn4Uhw8ZyECEa808iVT8XCjzo6xmYt4CiLZg==",
+        "shasum": "01d2709c79d41698bb01d4decc5e9da4e4a033d9",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.5.3.tgz",
+        "fileCount": 5,
+        "unpackedSize": 20985,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJf76d4CRA9TVsSAnZWagAAFAQP/R0mHU3SQ+Bf58ECVRj6\nQPy3H7QryO66hHfZQjsrxP+kETMg1xWMsPcvonFe1FkQfkbG7etjizMoPTyS\nba4Bjrwi191hwCwwX/UtezbA2C/G6rA0SCVB4EZL+CGSyY1tYKezDd/KmNIb\n85OmNcBkhSF5fEqWM6+Ed0YPIHOZWBffZ4NmMVyPgE4V8LwO3hDMyQq2u34Y\n/8LfMWkhn//IUqGdmRrLon5sxiesv9Fy8ejTwg2CT52/KCkb0Do8cttedP1w\noh39VyChnXXjN35dLJEx00RD9ucuiuAXi0WG3R0FKkVg9dN4IjPwWkZIm6Bc\nXxU47Jbn3mPIjyqjrM72a7Hu7UxnWYYHW19deM7rwNKEoAC6puCSe2eNz7kS\ng7uw7xj/kYHUcutKrMouJH61qNSxxVVZeJi/b1B13YsOP2qiKQzULScYjp1N\nopHQJW15a6vZanDylKFzuTmyXCU5oykQSTpNnUHhR2sHxiBcco26jMnXStvg\nS1+jwZxbf/CLIcFJZW/ZfM2lFXRlC4Y7e3G90J09keZHg1TFAOI73p0TmkZW\nLpBpt48u/aKUZZZCeK78p35SOxvM/RtnYFYpPlw7KAjpYseZAdPnsm5SNhg0\nl++GamrRPlNWOQwk2hTKenJ02cMF+Vu/+yFxi8voK6CjToSGzN8C/pYCdHEj\n7iJN\r\n=VgsK\r\n-----END PGP SIGNATURE-----\r\n",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIBhfQ1xq4y1c7iAflxQCBaql6OX815URyWFjvI4lVdoIAiEA+es7gy7ZvaO9r4TbFn5j/HHprjdCO7qQyQpkAuYZVq4="
+          }
+        ]
+      },
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js_0.5.3_1609541496032_0.06813886534832791"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.5.4": {
+      "name": "http-parser-js",
+      "version": "0.5.4",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js",
+        "testv12": "python tests/test.py --node-args=\"--http-parser=legacy\" && node --http-parser=legacy tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "types": "./http-parser.d.ts",
+      "gitHead": "f37d4e4926ab9309aabe7fa35fef88df0d5290e6",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.5.4",
+      "_nodeVersion": "16.13.0",
+      "_npmVersion": "8.1.0",
+      "dist": {
+        "integrity": "sha512-Qn1yyi10ipcylSSqlTFsj7bhimACWbFm5w5JNMxhLKfcJAeWFBc+/VBv4mu5qlWSKr0cjXqtwM6HISZkESUILA==",
+        "shasum": "d1f3e45f31973de8393af2c725da5d42919ab2bb",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.5.4.tgz",
+        "fileCount": 5,
+        "unpackedSize": 25540,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJhoQzZCRA9TVsSAnZWagAAeicQAKGMv3hLESxXZQaTz80v\nqHh3WSx8IAOki6gJKc3utuaHBH66PjoHH8b1shczSBWPwQPazNPKgmVWKHjO\nLugELYbKjuVotBrUoUaPYs0McflmIawMJ8v64xy+qfBfVUcXKq49lxNaQHKY\n4POzq+QwmIfXWmAmK+D3z0i441DuuC3mqaXHl8ORKomJBo7vl3mdnP0uJF2T\ni0f0BbK8CPoWhT+3BnI9xwUVANGkGkJ3olCzZx9x3WqKmO6TnGV/oHTB1PlF\n6A/0X49jfnCLjLpdjDhuN7g6JMsnmCfFysF0lD2IpyTWyt7ya72oL/klD+wi\nV9Tm+/6EyEVp1HRjyOaczPzOOGBKk7RKCVmw0v2xq4cb4IovngnmNsTban1K\n6ZWwd7PfGkgViJu4Ui4SqF8UwXEji8vp152aaKvLexMitx86rYOj7PG/aLmz\nWpZS1FImo74/A3vN3ueIoo78Rxs7M2RuVuujDSNGM0YxGeMkgSpzcREo/Zoh\nYyjOfoCUcHXB1XSGe4wYcE2WP4+kjTcP9+1wwJ9O9QBfAE1g/vj06EPKcw9P\nztN98nZnXBdtZrRq78LH+Opua5l587PW3RKt6Jf5qparVEy7SE20Bw4Lwl+m\n9KqVXVnPIjPhhIcY7mqRJ5qJWz/ucaK0H4ErzYtxlVPnaXkbvC3sK3Ieke3t\nxfvR\r\n=WDPX\r\n-----END PGP SIGNATURE-----\r\n",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEYCIQDmn/NkrWT5oLxEN0u8uPJjq0oLeT9Dl39ohuwsOUBAPgIhAKrhocNDWkv6DDMCRmiTcKYdkUQcCEprmBQDqQZkanwf"
+          }
+        ]
+      },
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js_0.5.4_1637944537620_0.515816090428874"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.5.5": {
+      "name": "http-parser-js",
+      "version": "0.5.5",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js",
+        "testv12": "python tests/test.py --node-args=\"--http-parser=legacy\" && node --http-parser=legacy tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "types": "./http-parser.d.ts",
+      "gitHead": "31158c1361cfa62fc3b2dccd4bbcc56f65e89d94",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.5.5",
+      "_nodeVersion": "16.13.0",
+      "_npmVersion": "8.1.0",
+      "dist": {
+        "integrity": "sha512-x+JVEkO2PoM8qqpbPbOL3cqHPwerep7OwzK7Ay+sMQjKzaKCqWvjoXm5tqMP9tXWWTnTzAjIhXg+J99XYuPhPA==",
+        "shasum": "d7c30d5d3c90d865b4a2e870181f9d6f22ac7ac5",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.5.5.tgz",
+        "fileCount": 5,
+        "unpackedSize": 25368,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJhoj0ACRA9TVsSAnZWagAA0s8P/3KQQ/7VIGcDkDW/cWYX\n51oR7iqcmZKwI9Xk7cURDyLaEHBaNE7NX/Q+fd0J9KEaez91QLqz+28X0e7M\nkd+BGxgwyfKLS9f5MCHz/MhwfGnU3gFH32dzcdQcC2bE/soZxdEuhi7h5/XK\nBYTrvHP720r3fM5oNmfnN2qjfpHUqrM4vKOHcUxwn6PWHHY1Q/AOmKOB4wk1\nBqdhPQQxAWEShMM7AN9oCN0Oie62woaduGqOX4MhcbdJbc64kpEn1MpuF0Iu\nWGSYacFLPQvkXjIYCEl6qWYxEnHHB0QJmIG/S4fTDzJb+YrCYCAhTNqDWdKb\nu8i6vcZEAXYO/gZr020s+3AVqYhsAm8HpBOltW39fbpeldIT3E06GR29pBiv\ng+HlSoiDel9VphipX7eLU2KNciVK5llHkESMy1bacmUnK9KM6GtCS9R35jeb\nFOy68j6+e02FIyFjwYyPUxHZpDXzgMs3Rug6g3VpDy2XsH4o/9SaDJfW/XNB\naYAVztSVdc2APkw63CbFwcMkD059xVrYjuhpDQBVg2bM+ofR39mrEn9vCEy/\nKK5Uf8rtsBase5K2+pxQXpD89ivsX+4y4zX//ODn/cQmubMjJXTrvYNPplMA\ntQC6d4Xa0CEOc7SPTUWzac6Fx2lPO9cVSnRzNcip1GV/ML2lu+1cnsa9Jg11\nWO1A\r\n=q9yl\r\n-----END PGP SIGNATURE-----\r\n",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEYCIQCQLgs6AJOFrSr9gvYYYTqz8YeESjZMy1fgkvUIdmq4+QIhAPz/rLBb+mBK/xSwRjIp/nh26X8DFCmfS/o2Rs1UPUtS"
+          }
+        ]
+      },
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js_0.5.5_1638022400171_0.7304446611128557"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.5.6": {
+      "name": "http-parser-js",
+      "version": "0.5.6",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js",
+        "testv12": "python tests/test.py --node-args=\"--http-parser=legacy\" && node --http-parser=legacy tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "types": "./http-parser.d.ts",
+      "gitHead": "8a13b79e0d9ddadbb0997eaf3d375aa5bc89e0f1",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.5.6",
+      "_nodeVersion": "16.13.0",
+      "_npmVersion": "8.1.0",
+      "dist": {
+        "integrity": "sha512-vDlkRPDJn93swjcjqMSaGSPABbIarsr1TLAui/gLDXzV5VsJNdXNzMYDyNBLQkjWQCJ1uizu8T2oDMhmGt0PRA==",
+        "shasum": "2e02406ab2df8af8a7abfba62e0da01c62b95afd",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.5.6.tgz",
+        "fileCount": 5,
+        "unpackedSize": 25723,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJiJN8GACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2VmpZAg//WVa+oW1mgIV9WcuR9YChxCu17cReOHJmNIQf0Mmjt3kgaAbl\r\nSZMs5/Jwabg7Xe4NymiIpfV3NvY/QXg4bfL6LR4k17pSkXmU2khr+7U7Y3lh\r\nftTgL6mdzlysS+fMkceF4X2r4OYzJoA5LwRLRg5nn+Gg9EswhxtrBrUOumej\r\nr9wZ6jIfCbJH7pb6T8rppr8rRPJHr+C9uDjtN7MWIJTOn4wLivqLluC2WOPF\r\nsheSmmD9KVMWJTY9OvuAxFMi75KLYd+hBE2OZVnpDkG7+Xp+GxsVO2rinZjJ\r\nfO6eRRat19gxy8eM7rZFD3x/fl5sXF1jkLZTlw9a/YT503Y+MjlBqFjaK6e/\r\n1al/CePrvrQoKtCyKaORNWwy3n4lBzjdbtnq8CceLfrElTiqDeE0M2Z/p/UT\r\nLaBV7lrqrEQ89jQCpG3ZFO3edh2/JQm8uD+X8/AcN97cYrw0w1ZP6JdtKLcw\r\ny7o5Lz9ZGz5y4tKmX5DdXLNrE9qSbz8aNolvIlx2k+sm62U+mDqX9FLJjkM1\r\n51hEcOFKYYzd7L33dj3SGhWePoTHr4xY69qut1VOaGji2gxTWIRDu90oAWoS\r\n6cltsit5aG9J7NEg1fJoctAoGn1wqV0iJwzSvlRrxl4M3jvR9jqNjip5fBp1\r\nMmIJnmCclM00Jznjii58XLDIHu+7oXozLpU=\r\n=G26P\r\n-----END PGP SIGNATURE-----\r\n",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIBLqKF0kXGdQKgh2d0+QOHogNMW1yHFe/TbEbC6TNg1qAiBvSEzR2Jt6YRnhZWKHL38GVcdLbfY8ADAAAMX79bU9fA=="
+          }
+        ]
+      },
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js_0.5.6_1646583558230_0.6859935124047458"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.5.7": {
+      "name": "http-parser-js",
+      "version": "0.5.7",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "types": "http-parser.d.ts",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js",
+        "testv12": "python tests/test.py --node-args=\"--http-parser=legacy\" && node --http-parser=legacy tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "a1d3449683f6f8334852fa5b7f06f79eca508b5f",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.5.7",
+      "_nodeVersion": "16.13.0",
+      "_npmVersion": "8.1.0",
+      "dist": {
+        "integrity": "sha512-8gQM8ZcewlONQLnik2AKzS13euQhaZcu4rK5QBSYOszW0T1upLW9VA2MdWvTvMmRo42HjXp7igFmdROoBCCrfg==",
+        "shasum": "39bde369fb8a57235121bb69d05f079fa1b598f4",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.5.7.tgz",
+        "fileCount": 5,
+        "unpackedSize": 25744,
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIG+mU1BEtPe1Fy8upfOZY0OiCc56teqSmnrv9MK+BYR5AiEA/Tnk8EOBhd5rh6nL/KvYlGUf2I81uR7XtpIpaLNzK0U="
+          }
+        ],
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJitF4lACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2VmpNhw//TQemHNy3YaW8+6nSbz3N9TRvqRrg+2rf7Z9JAMFwyIBNM8sI\r\n0w0cLFD7W2w558n+4HldVPRvgF4NPOTktI3i5U5zJrx/Kb/V/4esz7887rgG\r\nGYay4ImB6jkGwFaZAfoacboI8hKSkZloAxKrpBodIaibC7shNJs42EpBurli\r\nJRl4o6mpmuD2sTXnFNRLsFF17jpRwqSuqork3eQGFi++dEU6YSbyrjlGsfSd\r\nO6oxSY8p2vhbt400YcHS44oKVR/FhaxBFlQ+1issvjbWFzkZLNCZQQ4zTUeo\r\ncHOVhKd3j+cEs+KfD+57woNO69IPySjSF6xi0Gj6LDNM13YRtEKeLmgFQCnq\r\nJQeC4iUVhvZtJrn20GXtXq+DQC5ezGpmU//Rjyhras1kpyuLm3waOujP2DCc\r\nrYmENq8Z6WA/upQzdUMY4j2NlDerapvmmUx6eHbV9+z9I91GHIN4sewZle7n\r\neUwKtiTUYGPhk7uWkHmpkcIvj8kokx7r6QL11aIkhVzVik3QBz6stlBGzpjw\r\nD1EQzo4dO7eq3bmWtkzeZLf+YX87/WXlQDo5fVnrZf8xlw/DrALggdiZ5p8f\r\nWMlNYN+gWvbm4LAxq883NqbVwzkwVkHyqfFqMrqW9e9qxMlYxJ3VpRHmzN9I\r\nSAbp7TeQLRXdZYyd2A27XcVuXt/CWLrCcR8=\r\n=YiPE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js_0.5.7_1655987749308_0.10012081778319226"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.5.8": {
+      "name": "http-parser-js",
+      "version": "0.5.8",
+      "description": "A pure JS HTTP parser for node.",
+      "main": "http-parser.js",
+      "types": "http-parser.d.ts",
+      "scripts": {
+        "test": "python tests/test.py && node tests/iojs/test-http-parser-durability.js",
+        "testv12": "python tests/test.py --node-args=\"--http-parser=legacy\" && node --http-parser=legacy tests/iojs/test-http-parser-durability.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/creationix/http-parser-js.git"
+      },
+      "keywords": [
+        "http"
+      ],
+      "author": {
+        "name": "Tim Caswell",
+        "url": "https://github.com/creationix"
+      },
+      "contributors": [
+        {
+          "name": "Jimb Esser",
+          "url": "https://github.com/Jimbly"
+        },
+        {
+          "name": "Lawrence Rowe",
+          "url": "https://github.com/lrowe"
+        },
+        {
+          "name": "Jan Schär",
+          "url": "https://github.com/jscissr"
+        },
+        {
+          "name": "Paul Rütter",
+          "url": "https://github.com/paulrutter"
+        }
+      ],
+      "license": "MIT",
+      "gitHead": "88c665381470e27cd428a728447a13dce198f782",
+      "bugs": {
+        "url": "https://github.com/creationix/http-parser-js/issues"
+      },
+      "homepage": "https://github.com/creationix/http-parser-js#readme",
+      "_id": "http-parser-js@0.5.8",
+      "_nodeVersion": "16.13.0",
+      "_npmVersion": "8.1.0",
+      "dist": {
+        "integrity": "sha512-SGeBX54F94Wgu5RH3X5jsDtf4eHyRogWX1XGT3b4HuW3tQPM4AaBzoUji/4AAJNXCEOWZ5O0DgZmJw1947gD5Q==",
+        "shasum": "af23090d9ac4e24573de6f6aecc9d84a48bf20e3",
+        "tarball": "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.5.8.tgz",
+        "fileCount": 5,
+        "unpackedSize": 25812,
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQDNrmE7zAEhQsfRnOp39ekVYzBGrfOf3ngcffxiUERWNQIgN4CxBKTXKBJBfOtBz/eRfAWHUOomrPZdGF3Gp+qzAg0="
+          }
+        ],
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJiuaf+ACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2Vmr74A//VyzC1Lf2s+2FsCYNCgujbU6p1VA3eiH2sQBaDm4jxVSsWYpg\r\nNzsdCstWeWBuZuxn9U5hghMzK+qWvDGwOXPBY5ulJbo0z29HPuqaTtZlr0JS\r\n649+cKmCc6uP5veM2g9a9DxKBrmxFijabw3lNvmPUpERxWTX4RSKv/BjldDb\r\n9pqrQ+ehu2RUPluWBBBCn0ktpL/ACDFXCxk5CI6to4Rx8jSvX04ty49FBUWH\r\nXeNTuvoJXh3k1m2JK/tWCdi5wO+exYoDGqMBjNBuenM4nXPy1prffpTRy4UK\r\nn8Pc95g7C2Fo2o8QLmudkZNEQBLi8fBW/i6cM9NS6IUPxZT/7T7Gn1pjSqv1\r\nt41GM4EOhu56JK9CG+fsZJYibvmKuKNUMMKFGsIj7gdu8VJnrsAkpnDPd64T\r\n5qPB5Q0wdrnAKhIA7XwrP/9dH2C2C+nUU+QvrQKg/NqISon0OInlLYGib+1u\r\nIOePc+Fm9G0iR/ayiEsSNyxqxEp6kKDtjuRtYX5tDSLE/j8tW29jIE0sFdKW\r\njJ4M7t+tPwiBsU0SqstU4etsZQEsucnVlChBiYjTZl3Lr0Y+6ODQLbEvRyRf\r\n5zfVnEepzFs5uZsPyISqKwcANEI+Nrmc1aIZjlPwMF7VKFhvlBJkedrcthXv\r\np2mHXTkzUGUD6cnrWkc0dFBns6G/bFQt588=\r\n=5FOU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "jimbly",
+        "email": "wasteland@gmail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "creationix",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "jimbly",
+          "email": "wasteland@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/http-parser-js_0.5.8_1656334334085_0.4293312687656228"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "![Node](https://github.com/creationix/http-parser-js/workflows/Node/badge.svg)\n![Node-v12](https://github.com/creationix/http-parser-js/workflows/Node-v12/badge.svg)\n\n# HTTP Parser\n\nThis library parses HTTP protocol for requests and responses.\nIt was created to replace `http_parser.c` since calling C++ functions from JS is really slow in V8.\nHowever, it is now primarily useful in having a more flexible/tolerant HTTP parser when dealing with legacy services that do not meet the strict HTTP parsing rules Node's parser follows.\n\nThis is packaged as a standalone npm module.\nTo use in node, monkeypatch HTTPParser.\n\n```js\n// Monkey patch before you require http for the first time.\nprocess.binding('http_parser').HTTPParser = require('http-parser-js').HTTPParser;\n\nvar http = require('http');\n// ...\n```\n\n## Testing\n\nSimply run `npm test`.\nThe tests are copied from node and mscedex/io.js, with some modifcations.\n\n## Status\n\nThis should now be usable in any node application, it now supports (nearly) everything `http_parser.c` does while still being tolerant with corrupted headers, and other kinds of malformed data.\n\n### Node versions\n\n`http-parser-js` should work via monkey-patching on Node v6-v11, and v13-14.\n\nNode v12.x renamed the internal http parser, and did not expose it for monkey-patching, so to be able to monkey-patch on Node v12, you must run `node --http-parser=legacy file.js` to opt in to the old, monkey-patchable http_parser binding.\n\n## Standalone usage\n\nWhile this module is intended to be used as a replacement for the internal Node.js parser, it can be used as a standalone parser. The [`standalone-example.js`](standalone-example.js) demonstrates how to use the somewhat awkward API (coming from compatibility with the Node.js internals) to parse HTTP from raw Buffers.\n\n## License\n\nMIT.\nSee [LICENSE.md](LICENSE.md)\n",
+  "maintainers": [
+    {
+      "name": "creationix",
+      "email": "tim@creationix.com"
+    },
+    {
+      "name": "jimbly",
+      "email": "wasteland@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2022-06-27T12:52:14.374Z",
+    "created": "2012-07-26T04:26:16.853Z",
+    "0.0.0": "2012-07-26T04:26:17.652Z",
+    "0.1.0": "2014-04-17T13:30:22.887Z",
+    "0.2.0": "2014-12-09T18:01:35.311Z",
+    "0.2.1": "2015-02-05T05:28:10.222Z",
+    "0.2.2": "2015-02-17T17:35:25.113Z",
+    "0.2.3": "2015-03-03T16:42:30.114Z",
+    "0.3.0": "2015-05-28T22:21:37.780Z",
+    "0.4.0": "2015-09-28T16:18:33.159Z",
+    "0.4.1": "2015-11-19T19:17:13.341Z",
+    "0.4.2": "2016-01-16T18:37:03.542Z",
+    "0.4.3": "2016-07-12T19:19:55.076Z",
+    "0.4.4": "2016-09-07T22:00:00.163Z",
+    "0.4.5": "2017-06-20T17:55:16.483Z",
+    "0.4.6": "2017-09-13T14:14:22.885Z",
+    "0.4.7": "2017-09-21T14:03:01.327Z",
+    "0.4.8": "2017-09-21T21:51:26.652Z",
+    "0.4.9": "2017-10-04T14:35:16.998Z",
+    "0.4.10": "2018-02-03T17:46:50.647Z",
+    "0.4.11": "2018-03-08T01:30:47.417Z",
+    "0.4.12": "2018-04-24T19:20:06.057Z",
+    "0.4.13": "2018-05-21T20:37:26.963Z",
+    "0.5.0": "2018-10-22T17:41:20.614Z",
+    "0.5.1": "2019-06-14T14:13:42.726Z",
+    "0.5.2": "2019-11-02T17:02:53.104Z",
+    "0.5.3": "2021-01-01T22:51:36.165Z",
+    "0.5.4": "2021-11-26T16:35:37.787Z",
+    "0.5.5": "2021-11-27T14:13:20.356Z",
+    "0.5.6": "2022-03-06T16:19:18.370Z",
+    "0.5.7": "2022-06-23T12:35:49.487Z",
+    "0.5.8": "2022-06-27T12:52:14.268Z"
+  },
+  "author": {
+    "name": "Tim Caswell",
+    "url": "https://github.com/creationix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/creationix/http-parser-js.git"
+  },
+  "users": {
+    "fgribreau": true,
+    "jaredreich": true,
+    "evanshortiss": true
+  },
+  "homepage": "https://github.com/creationix/http-parser-js#readme",
+  "keywords": [
+    "http"
+  ],
+  "bugs": {
+    "url": "https://github.com/creationix/http-parser-js/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "contributors": [
+    {
+      "name": "Jimb Esser",
+      "url": "https://github.com/Jimbly"
+    },
+    {
+      "name": "Lawrence Rowe",
+      "url": "https://github.com/lrowe"
+    },
+    {
+      "name": "Jan Schär",
+      "url": "https://github.com/jscissr"
+    },
+    {
+      "name": "Paul Rütter",
+      "url": "https://github.com/paulrutter"
+    }
+  ],
+  "_cached": false,
+  "_contentLength": 0
+}

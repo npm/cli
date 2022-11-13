@@ -1149,21 +1149,19 @@ This is a one-time fix-up, please be patient...
           return false
         }
 
+        // If the edge has no destination, that's a problem
+        if (!edge.to) {
+          return true
+        }
+
         // If it's already been logged as a load failure, skip it.
-        if (edge.to && this[_loadFailures].has(edge.to)) {
+        if (this[_loadFailures].has(edge.to)) {
           return false
         }
 
         // If it's shrinkwrapped, we use what the shrinkwap wants.
-        if (edge.to && edge.to.inShrinkwrap) {
+        if (edge.to.inShrinkwrap) {
           return false
-        }
-
-        // If the edge has no destination, that's a problem, unless
-        // if it's peerOptional and not explicitly requested.
-        if (!edge.to) {
-          return edge.type !== 'peerOptional' ||
-            this[_explicitRequests].has(edge)
         }
 
         // If the edge has an error, there's a problem.
