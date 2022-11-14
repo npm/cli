@@ -32,7 +32,6 @@ graph LR;
   libnpmexec-->minify-registry-metadata;
   libnpmexec-->npm-package-arg;
   libnpmexec-->npmcli-arborist["@npmcli/arborist"];
-  libnpmexec-->npmcli-ci-detect["@npmcli/ci-detect"];
   libnpmexec-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmexec-->npmcli-run-script["@npmcli/run-script"];
   libnpmexec-->npmcli-template-oss["@npmcli/template-oss"];
@@ -113,7 +112,6 @@ graph LR;
   npm-->npm-registry-fetch;
   npm-->npm-user-validate;
   npm-->npmcli-arborist["@npmcli/arborist"];
-  npm-->npmcli-ci-detect["@npmcli/ci-detect"];
   npm-->npmcli-config["@npmcli/config"];
   npm-->npmcli-docs["@npmcli/docs"];
   npm-->npmcli-eslint-config["@npmcli/eslint-config"];
@@ -353,11 +351,11 @@ graph LR;
   libnpmdiff-->tar;
   libnpmexec-->bin-links;
   libnpmexec-->chalk;
+  libnpmexec-->ci-info;
   libnpmexec-->minify-registry-metadata;
   libnpmexec-->mkdirp;
   libnpmexec-->npm-package-arg;
   libnpmexec-->npmcli-arborist["@npmcli/arborist"];
-  libnpmexec-->npmcli-ci-detect["@npmcli/ci-detect"];
   libnpmexec-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmexec-->npmcli-run-script["@npmcli/run-script"];
   libnpmexec-->npmcli-template-oss["@npmcli/template-oss"];
@@ -476,6 +474,7 @@ graph LR;
   npm-->archy;
   npm-->cacache;
   npm-->chalk;
+  npm-->ci-info;
   npm-->cli-columns;
   npm-->cli-table3;
   npm-->columnify;
@@ -519,7 +518,6 @@ graph LR;
   npm-->npm-registry-fetch;
   npm-->npm-user-validate;
   npm-->npmcli-arborist["@npmcli/arborist"];
-  npm-->npmcli-ci-detect["@npmcli/ci-detect"];
   npm-->npmcli-config["@npmcli/config"];
   npm-->npmcli-docs["@npmcli/docs"];
   npm-->npmcli-eslint-config["@npmcli/eslint-config"];
@@ -783,4 +781,4 @@ packages higher up the chain.
  - @npmcli/git, make-fetch-happen, @npmcli/config, init-package-json
  - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, @npmcli/run-script, read-package-json, promzard
  - @npmcli/docs, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, @npmcli/package-json, bin-links, nopt, npmlog, parse-conflict-json, read
- - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, treeverse, minify-registry-metadata, ini, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, npm-audit-report, npm-user-validate
+ - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, treeverse, minify-registry-metadata, ini, @npmcli/disparity-colors, mute-stream, npm-audit-report, npm-user-validate

@@ -475,7 +475,7 @@ require('fs').writeFileSync(process.argv.slice(2)[0], 'LOCAL PKG')`,
   fs.chmodSync(executable, 0o775)
 
   const mockexec = t.mock('../lib/index.js', {
-    '@npmcli/ci-detect': () => true,
+    'ci-info': { isCI: true },
     'proc-log': {
       warn (title, msg) {
         t.fail('should not warn about local file package install')
@@ -850,7 +850,7 @@ t.test('prompt, accepts', async t => {
   const npxCache = resolve(testdir, 'npxCache')
   t.test('with clearProgress function', async t => {
     const mockexec = t.mock('../lib/index.js', {
-      '@npmcli/ci-detect': () => false,
+      'ci-info': { isCI: false },
       npmlog: {
         clearProgress () {
           t.ok(true, 'should call clearProgress function')
@@ -881,7 +881,7 @@ t.test('prompt, accepts', async t => {
 
   t.test('without clearProgress function', async t => {
     const mockexec = t.mock('../lib/index.js', {
-      '@npmcli/ci-detect': () => false,
+      'ci-info': { isCI: false },
       read (opts, cb) {
         cb(null, 'y')
       },
@@ -916,7 +916,7 @@ t.test('prompt, refuses', async t => {
   const npxCache = resolve(testdir, 'npxCache')
   t.test('with clearProgress function', async t => {
     const mockexec = t.mock('../lib/index.js', {
-      '@npmcli/ci-detect': () => false,
+      'ci-info': { isCI: false },
       npmlog: {
         clearProgress () {
           t.ok(true, 'should call clearProgress function')
@@ -955,7 +955,7 @@ t.test('prompt, refuses', async t => {
 
   t.test('without clearProgress function', async t => {
     const mockexec = t.mock('../lib/index.js', {
-      '@npmcli/ci-detect': () => false,
+      'ci-info': { isCI: false },
       read (opts, cb) {
         cb(null, 'n')
       },
@@ -1062,7 +1062,7 @@ t.test('no prompt if CI', async t => {
   const cache = resolve(testdir, 'cache')
   const npxCache = resolve(testdir, 'npxCache')
   const mockexec = t.mock('../lib/index.js', {
-    '@npmcli/ci-detect': () => true,
+    'ci-info': { isCI: true },
   })
 
   await mockexec({
@@ -1091,7 +1091,7 @@ t.test('no prompt if CI, multiple packages', async t => {
   const cache = resolve(testdir, 'cache')
   const npxCache = resolve(testdir, 'npxCache')
   const mockexec = t.mock('../lib/index.js', {
-    '@npmcli/ci-detect': () => true,
+    'ci-info': { isCI: true },
     'proc-log': {
       warn (title, msg) {
         t.equal(title, 'exec', 'should warn exec title')

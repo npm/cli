@@ -21,7 +21,7 @@ t.test('disable, enable log progress', t => {
     }),
   })
   const runScript = t.mock('../lib/run-script.js', {
-    '@npmcli/ci-detect': () => false,
+    'ci-info': { isCI: false },
     '@npmcli/run-script': async () => {
       t.ok('should call run-script')
     },
@@ -46,7 +46,7 @@ t.test('no package.json', t => {
   t.plan(1)
 
   const runScript = t.mock('../lib/run-script.js', {
-    '@npmcli/ci-detect': () => false,
+    'ci-info': { isCI: false },
     '@npmcli/run-script': async () => {
       t.ok('should call run-script')
     },
@@ -60,7 +60,7 @@ t.test('colorized interactive mode msg', async t => {
   t.plan(2)
 
   const runScript = t.mock('../lib/run-script.js', {
-    '@npmcli/ci-detect': () => false,
+    'ci-info': { isCI: false },
     '@npmcli/run-script': async () => {
       t.ok('should call run-script')
     },
@@ -83,7 +83,7 @@ t.test('no color interactive mode msg', async t => {
   t.plan(2)
 
   const runScript = t.mock('../lib/run-script.js', {
-    '@npmcli/ci-detect': () => false,
+    'ci-info': { isCI: false },
     '@npmcli/run-script': async () => {
       t.ok('should call run-script')
     },
@@ -105,7 +105,7 @@ t.test('no tty', t => {
   t.plan(1)
 
   const runScript = t.mock('../lib/run-script.js', {
-    '@npmcli/ci-detect': () => false,
+    'ci-info': { isCI: false },
     '@npmcli/run-script': async () => {
       t.ok('should call run-script')
     },
@@ -119,7 +119,7 @@ t.test('ci env', t => {
   t.plan(2)
 
   const runScript = t.mock('../lib/run-script.js', {
-    '@npmcli/ci-detect': () => true,
+    'ci-info': { isCI: true },
     '@npmcli/run-script': async () => {
       throw new Error('should not call run-script')
     },
