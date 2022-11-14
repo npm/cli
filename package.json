@@ -60,7 +60,7 @@
     "fs-vacuum": "~1.2.10",
     "fs-write-stream-atomic": "~1.0.10",
     "gentle-fs": "^2.3.1",
-    "glob": "^7.1.6",
+    "glob": "^7.2.0",
     "graceful-fs": "^4.2.4",
     "has-unicode": "~2.0.1",
     "hosted-git-info": "^2.8.9",
