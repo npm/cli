@@ -2,7 +2,7 @@
 
 A minimal matching utility.
 
-[![Build Status](https://secure.travis-ci.org/isaacs/minimatch.svg)](http://travis-ci.org/isaacs/minimatch)
+[![Build Status](https://travis-ci.org/isaacs/minimatch.svg?branch=master)](http://travis-ci.org/isaacs/minimatch)
 
 
 This is the matching library used internally by npm.
