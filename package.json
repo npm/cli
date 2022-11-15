@@ -279,7 +279,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "bl": "^3.0.1",
     "cmark-gfm": "^0.8.3",
-    "deep-equal": "^1.0.1",
+    "deep-equal": "^1.1.1",
     "get-stream": "^4.1.0",
     "jsdom": "^16.4.0",
     "licensee": "^7.0.3",
