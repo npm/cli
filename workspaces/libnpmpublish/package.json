@@ -39,6 +39,7 @@
   "bugs": "https://github.com/npm/cli/issues",
   "homepage": "https://npmjs.com/package/libnpmpublish",
   "dependencies": {
+    "ci-info": "^3.6.1",
     "normalize-package-data": "^5.0.0",
     "npm-package-arg": "^10.0.0",
     "npm-registry-fetch": "^14.0.2",

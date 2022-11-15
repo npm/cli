@@ -393,6 +393,7 @@ graph LR;
   libnpmpack-->pacote;
   libnpmpack-->spawk;
   libnpmpack-->tap;
+  libnpmpublish-->ci-info;
   libnpmpublish-->libnpmpack;
   libnpmpublish-->lodash.clonedeep;
   libnpmpublish-->nock;
