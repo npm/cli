@@ -86,7 +86,7 @@ Most of these values can be found by stat'ing a file.
 {
   name: 'path/to/this/entry.txt',
   size: 1314,        // entry size. defaults to 0
-  mode: 0644,        // entry mode. defaults to to 0755 for dirs and 0644 otherwise
+  mode: 0o644,       // entry mode. defaults to to 0o755 for dirs and 0o644 otherwise
   mtime: new Date(), // last modified date for entry. defaults to now.
   type: 'file',      // type of entry. defaults to file. can be:
                      // file | link | symlink | directory | block-device
