@@ -92,7 +92,7 @@
     "meant": "^1.0.3",
     "minimatch": "^3.1.2",
     "mississippi": "^3.0.0",
-    "mkdirp": "^0.5.5",
+    "mkdirp": "^0.5.6",
     "move-concurrently": "^1.0.1",
     "node-gyp": "^5.1.0",
     "nopt": "^4.0.3",
