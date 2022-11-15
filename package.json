@@ -53,7 +53,7 @@
     "config-chain": "^1.1.13",
     "detect-indent": "~5.0.0",
     "detect-newline": "^2.1.0",
-    "dezalgo": "~1.0.3",
+    "dezalgo": "^1.0.4",
     "editor": "~1.0.0",
     "figgy-pudding": "^3.5.1",
     "find-npm-prefix": "^1.0.2",
