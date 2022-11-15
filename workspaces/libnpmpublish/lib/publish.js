@@ -4,6 +4,7 @@ const npa = require('npm-package-arg')
 const semver = require('semver')
 const { URL } = require('url')
 const ssri = require('ssri')
+const ciInfo = require('ci-info')
 
 const generateProvenance = require('./provenance')
 
@@ -139,16 +140,19 @@ const buildMetadata = async (registry, manifest, tarballData, opts) => {
     // Handle case where --provenance flag was set to true
     if (provenance === true) {
       // TODO: Insert to check to make sure we only generate provenance for
-      // public packages here
+      // public packages here, insist on an explicit access flag if it seems new
+      //
+      // TODO manifest _id exists?
 
-      provenanceBundle = await generateProvenance({
-        name: `pkg:npm/${manifest.name}@${manifest.version}`,
-        algorithm: 'sha512',
-        digest: integrity.sha512[0].hexDigest(),
-      }, {
-        fulcioBaseURL: opts.fulcioBaseURL,
-        rekorBaseURL: opts.rekorBaseURL
-      })
+      // Ensure that we're running in GHA and an OIDC token is available,
+      // currently the only supported build environment
+      if (ciInfo.name === 'Github Actions' && process.env.ACTIONS_ID_TOKEN_REQUEST_URL) {
+        provenanceBundle = await generateProvenance({ subject: [{
+          name: `pkg:npm/${manifest.name}@${manifest.version}`,
+          digest: { sha512: integrity.sha512[0].hexDigest() },
+        }],
+        }, opts)
+      }
     } else {
       // TODO: Handle case where an existing bundle was supplied. Read bundle
       // from disk and verify

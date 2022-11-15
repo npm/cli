@@ -86,21 +86,24 @@ t.test('basic publish w/ provenance', async t => {
   const oidcClaims = {
     iss: 'https://oauth2.sigstore.dev/auth',
     email: 'foo@bar.com',
-  };
-  const idToken = `.${Buffer.from(JSON.stringify(oidcClaims)).toString('base64')}.`;
+  }
+  const idToken = `.${Buffer.from(JSON.stringify(oidcClaims)).toString('base64')}.`
 
   // Data for mocking Fulcio certifcate request
+  // XXX find the real fulcioBaseURL and rekorBaseURL
+  // https://fulcio.sigstore.dev
+  // https://rekor.sigstore.dev
   const fulcioURL = 'https://mock.fulcio'
-  const leafCertificate = `-----BEGIN CERTIFICATE-----\nabc\n-----END CERTIFICATE-----\n`;
-  const rootCertificate = `-----BEGIN CERTIFICATE-----\nxyz\n-----END CERTIFICATE-----\n`;
+  const leafCertificate = `-----BEGIN CERTIFICATE-----\nabc\n-----END CERTIFICATE-----\n`
+  const rootCertificate = `-----BEGIN CERTIFICATE-----\nxyz\n-----END CERTIFICATE-----\n`
   const certificate = [leafCertificate, rootCertificate].join()
 
   // Data for mocking Rekor upload
   const rekorURL = 'https://mock.rekor'
-  const signature = 'ABC123';
-  const b64Cert = Buffer.from(leafCertificate).toString('base64');
+  const signature = 'ABC123'
+  const b64Cert = Buffer.from(leafCertificate).toString('base64')
   const uuid =
-    '69e5a0c1663ee4452674a5c9d5050d866c2ee31e2faaf79913aea7cc27293cf6';
+    '69e5a0c1663ee4452674a5c9d5050d866c2ee31e2faaf79913aea7cc27293cf6'
 
   const signatureBundle = {
     kind: 'hashedrekord',
@@ -111,7 +114,7 @@ t.test('basic publish w/ provenance', async t => {
         publicKey: { content: b64Cert },
       },
     },
-  };
+  }
 
   const rekorEntry = {
     [uuid]: {
@@ -123,11 +126,11 @@ t.test('basic publish w/ provenance', async t => {
         'c0d23d6ad406973f9559f3ba2d1ca01f84147d8ffc5b8445c224f98b9591801d',
       logIndex: 2513258,
       verification: {
-        signedEntryTimestamp:
-          'MEUCIQD6CD7ZNLUipFoxzmSL/L8Ewic4SRkXN77UjfJZ7d/wAAIgatokSuX9Rg0iWxAgSfHMtcsagtDCQalU5IvXdQ+yLEA=',
+          /* eslint-disable-next-line max-len */
+        signedEntryTimestamp: 'MEUCIQD6CD7ZNLUipFoxzmSL/L8Ewic4SRkXN77UjfJZ7d/wAAIgatokSuX9Rg0iWxAgSfHMtcsagtDCQalU5IvXdQ+yLEA=',
       },
     },
-  };
+  }
 
   // Set-up GHA environment variables
   process.env.CI = true
@@ -183,14 +186,14 @@ t.test('basic publish w/ provenance', async t => {
         content_type: 'application/vnd.dev.sigstore.bundle+json;version=0.1',
         data: /.*/, // Can't match against static valud as signature is always different
         length: 1870,
-      }
+      },
     },
   }
 
   const oidcSrv = tnock(t, oidcURL)
-  oidcSrv.get('/?audience=sigstore', undefined, { 
-    authorization: `Bearer ${requestToken}`
-  }).reply(200, { value: idToken });
+  oidcSrv.get('/?audience=sigstore', undefined, {
+    authorization: `Bearer ${requestToken}`,
+  }).reply(200, { value: idToken })
 
   const fulcioSrv = tnock(t, fulcioURL)
   fulcioSrv.matchHeader('Accept', 'application/pem-certificate-chain')
@@ -200,14 +203,14 @@ t.test('basic publish w/ provenance', async t => {
       publicKey: { content: /.+/i },
       signedEmailAddress: /.+/i,
     })
-    .reply(200, certificate);
+    .reply(200, certificate)
 
   const rekorSrv = tnock(t, rekorURL)
   rekorSrv
     .matchHeader('Accept', 'application/json')
     .matchHeader('Content-Type', 'application/json')
     .post('/api/v1/log/entries')
-    .reply(201, rekorEntry);
+    .reply(201, rekorEntry)
 
   const srv = tnock(t, REG)
   srv.put('/libnpmpublish', body => {
