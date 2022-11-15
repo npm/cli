@@ -128,9 +128,10 @@ Pack.prototype.entry = function (header, buffer, callback) {
   if (Buffer.isBuffer(buffer)) {
     header.size = buffer.length
     this._encode(header)
-    this.push(buffer)
+    var ok = this.push(buffer)
     overflow(self, header.size)
-    process.nextTick(callback)
+    if (ok) process.nextTick(callback)
+    else this._drain = callback
     return new Void()
   }
 
