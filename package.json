@@ -116,7 +116,7 @@
     "promise-inflight": "~1.0.1",
     "qrcode-terminal": "^0.12.0",
     "query-string": "^6.14.1",
-    "qw": "~1.0.1",
+    "qw": "^1.0.2",
     "read": "~1.0.7",
     "read-cmd-shim": "^1.0.5",
     "read-installed": "~4.0.3",
