@@ -22,10 +22,6 @@
     "package manager",
     "package.json"
   ],
-  "preferGlobal": true,
-  "config": {
-    "publishtest": false
-  },
   "homepage": "https://docs.npmjs.com/",
   "author": "GitHub Inc.",
   "repository": {
