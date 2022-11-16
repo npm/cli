@@ -1,5 +1,21 @@
 # Changelog
 
+## [9.1.2](https://github.com/npm/cli/compare/v9.1.1...v9.1.2) (2022-11-16)
+
+### Bug Fixes
+
+* [`d9654cf`](https://github.com/npm/cli/commit/d9654cffd7024ec2d068147868978fc994d696e4) [#5861](https://github.com/npm/cli/pull/5861) remove unwanted package.json entries (#5861) (@wraithgar)
+
+### Dependencies
+
+* [`a351685`](https://github.com/npm/cli/commit/a351685c4951b1d9e2ba86bc99e3706688813438) [#5858](https://github.com/npm/cli/pull/5858) move from @npmcli/ci-detect to ci-info (#5858)
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.1.2...arborist-v6.1.3): `@npmcli/arborist@6.1.3`
+* [Workspace](https://github.com/npm/cli/compare/libnpmdiff-v5.0.3...libnpmdiff-v5.0.4): `libnpmdiff@5.0.4`
+* [Workspace](https://github.com/npm/cli/compare/libnpmexec-v5.0.3...libnpmexec-v5.0.4): `libnpmexec@5.0.4`
+* [Workspace](https://github.com/npm/cli/compare/libnpmfund-v4.0.3...libnpmfund-v4.0.4): `libnpmfund@4.0.4`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpack-v5.0.3...libnpmpack-v5.0.4): `libnpmpack@5.0.4`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpublish-v7.0.3...libnpmpublish-v7.0.4): `libnpmpublish@7.0.4`
+
 ## [9.1.1](https://github.com/npm/cli/compare/v9.1.0...v9.1.1) (2022-11-09)
 
 ### Documentation

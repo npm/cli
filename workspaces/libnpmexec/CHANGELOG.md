@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.4](https://github.com/npm/cli/compare/libnpmexec-v5.0.3...libnpmexec-v5.0.4) (2022-11-16)
+
+### Bug Fixes
+
+* [`cc0ad27`](https://github.com/npm/cli/commit/cc0ad2798a3e9d2a25e9b3ac947c0324fa8b40c1) [#5842](https://github.com/npm/cli/pull/5842) npx: properly look for local bins when there are more than one (#5842) (@wraithgar)
+
+### Dependencies
+
+* [`a351685`](https://github.com/npm/cli/commit/a351685c4951b1d9e2ba86bc99e3706688813438) [#5858](https://github.com/npm/cli/pull/5858) move from @npmcli/ci-detect to ci-info (#5858)
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.1.2...arborist-v6.1.3): `@npmcli/arborist@6.1.3`
+
 ## [5.0.3](https://github.com/npm/cli/compare/libnpmexec-v5.0.2...libnpmexec-v5.0.3) (2022-11-09)
 
 ### Bug Fixes
