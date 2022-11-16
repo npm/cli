@@ -84,6 +84,7 @@ module.exports = async (t, { testdir = {}, debug } = {}) => {
     tap: t,
     registry: 'http://smoke-test-registry.club/',
     debug,
+    strict: true,
   })
   const httpProxyRegistry = `http://localhost:${PORT}`
   const proxy = httpProxy.createProxyServer({})
@@ -92,12 +93,8 @@ module.exports = async (t, { testdir = {}, debug } = {}) => {
   t.teardown(() => server.close())
 
   // update notifier should never be written
-  t.afterEach(async (t) => {
+  t.afterEach((t) => {
     t.equal(existsSync(join(paths.cache, '_update-notifier-last-checked')), false)
-    // this requires that mocks not be shared between sub tests but it helps
-    // find mistakes quicker instead of waiting for the entire test to end
-    t.strictSame(registry.nock.pendingMocks(), [], 'no pending mocks after each')
-    t.strictSame(registry.nock.activeMocks(), [], 'no active mocks after each')
   })
 
   const debugLog = debug || CI ? (...a) => console.error(...a) : () => {}

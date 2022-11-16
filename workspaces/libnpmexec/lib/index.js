@@ -1,6 +1,6 @@
 'use strict'
 
-const { mkdir } = require('fs/promises')
+const { mkdir, symlink, unlink, rm } = require('fs/promises')
 const { promisify } = require('util')
 
 const Arborist = require('@npmcli/arborist')
@@ -12,6 +12,8 @@ const npmlog = require('npmlog')
 const pacote = require('pacote')
 const read = promisify(require('read'))
 const semver = require('semver')
+const binLinks = require('bin-links')
+binLinks.linkBins = require('bin-links/lib/link-bins')
 
 const { fileExists, localFileExists } = require('./file-exists.js')
 const getBinFromManifest = require('./get-bin-from-manifest.js')
@@ -117,31 +119,64 @@ const exec = async (opts) => {
   // - in the local tree
   // - globally
   if (needPackageCommandSwap) {
-    let localManifest
-    try {
-      localManifest = await pacote.manifest(path, flatOptions)
-    } catch {
-      // no local package.json? no problem, move one.
-    }
-    if (localManifest?.bin?.[args[0]]) {
-      // we have to install the local package into the npx cache so that its
-      // bin links get set up
-      packages.push(path)
-      yes = true
-      flatOptions.installLinks = false
-    } else {
-      const dir = dirname(dirname(localBin))
-      const localBinPath = await localFileExists(dir, args[0], '/')
-      if (localBinPath) {
-        binPaths.push(localBinPath)
-        return await run()
-      } else if (globalPath && await fileExists(`${globalBin}/${args[0]}`)) {
-        binPaths.push(globalBin)
-        return await run()
+    const localManifest = await pacote.manifest(path, flatOptions).catch(() => null)
+    const manifestBinPath = localManifest?.bin?.[args[0]]
+    if (manifestBinPath && await fileExists(resolve(path, manifestBinPath))) {
+      const tmpNmPath = resolve(path, 'node_modules', localManifest.name)
+      const tmpDir = await mkdir(dirname(tmpNmPath), { recursive: true })
+      await symlink(path, tmpNmPath, 'dir')
+
+      // only link the bin that we already know exists in case anything else would fail
+      const binOpts = {
+        force: false,
+        path: tmpNmPath,
+        pkg: { bin: { [args[0]]: manifestBinPath } },
       }
-      // We swap out args[0] with the bin from the manifest later
-      packages.push(args[0])
+      // binLinks returns null if it was created and false if not so if we have
+      // a valid path here then we can keep going. if we did not create a bin
+      // here then keep trying the next steps below, since there is probably
+      // a bin that is already linked there which we will run.
+      const linkedBins = await binLinks.linkBins(binOpts).catch(() => []).then((r) => {
+        return r[0] === null ? binLinks.getPaths(binOpts) : []
+      })
+
+      const cleanupLinks = async () => {
+        // always unlink symlinks when we are done
+        await unlink(tmpNmPath)
+        if (linkedBins.length) {
+          await Promise.all(linkedBins.map(b => unlink(b)))
+        }
+        // Only if mkdir indicated that it created a dir should we cleanup
+        // that directory
+        if (tmpDir) {
+          await rm(tmpDir, { recursive: true, force: true })
+        }
+      }
+
+      if (linkedBins.length) {
+        binPaths.push(path)
+        return await run().finally(cleanupLinks)
+      } else {
+        // if we didnt create a bin then we still might need to cleanup the
+        // symlinked directory we created
+        await cleanupLinks()
+      }
     }
+
+    const localBinDir = dirname(dirname(localBin))
+    const localBinPath = await localFileExists(localBinDir, args[0], '/')
+    if (localBinPath) {
+      binPaths.push(localBinPath)
+      return await run()
+    }
+
+    if (globalPath && await fileExists(`${globalBin}/${args[0]}`)) {
+      binPaths.push(globalBin)
+      return await run()
+    }
+
+    // We swap out args[0] with the bin from the manifest later
+    packages.push(args[0])
   }
 
   // Resolve any directory specs so that the npx directory is unique to the

@@ -51,8 +51,10 @@
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/mock-registry": "^1.0.0",
     "@npmcli/template-oss": "4.10.0",
-    "bin-links": "^4.0.1",
+    "just-extend": "^6.1.1",
+    "just-safe-set": "^4.1.1",
     "minify-registry-metadata": "^2.2.0",
     "mkdirp": "^1.0.4",
     "tap": "^16.0.1"
@@ -61,6 +63,7 @@
     "@npmcli/arborist": "^6.1.2",
     "@npmcli/ci-detect": "^3.0.1",
     "@npmcli/run-script": "^6.0.0",
+    "bin-links": "^4.0.1",
     "chalk": "^4.1.0",
     "npm-package-arg": "^10.0.0",
     "npmlog": "^7.0.1",
