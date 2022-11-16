@@ -20,7 +20,6 @@ const aliases = {
 // If we see a bare package with just this name, it's NOT ours
 const namespaced = [
   'arborist',
-  'ci-detect',
   'config',
   'disparity-colors',
   'eslint-config',

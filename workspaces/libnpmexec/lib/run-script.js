@@ -1,5 +1,5 @@
 const chalk = require('chalk')
-const ciDetect = require('@npmcli/ci-detect')
+const ciInfo = require('ci-info')
 const runScript = require('@npmcli/run-script')
 const readPackageJson = require('read-package-json-fast')
 const npmlog = require('npmlog')
@@ -44,10 +44,8 @@ const run = async ({
 
   try {
     if (script === scriptShell) {
-      const isTTY = !noTTY()
-
-      if (isTTY) {
-        if (ciDetect()) {
+      if (!noTTY()) {
+        if (ciInfo.isCI) {
           return log.warn('exec', 'Interactive mode disabled in CI environment')
         }
 

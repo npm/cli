@@ -58,7 +58,6 @@
   "dependencies": {
     "@isaacs/string-locale-compare": "^1.1.0",
     "@npmcli/arborist": "^6.1.2",
-    "@npmcli/ci-detect": "^3.0.1",
     "@npmcli/config": "^6.1.0",
     "@npmcli/map-workspaces": "^3.0.0",
     "@npmcli/package-json": "^3.0.0",
@@ -67,6 +66,7 @@
     "archy": "~1.0.0",
     "cacache": "^17.0.2",
     "chalk": "^4.1.2",
+    "ci-info": "^3.6.1",
     "cli-columns": "^4.0.0",
     "cli-table3": "^0.6.3",
     "columnify": "^1.6.0",
@@ -128,7 +128,6 @@
   "bundleDependencies": [
     "@isaacs/string-locale-compare",
     "@npmcli/arborist",
-    "@npmcli/ci-detect",
     "@npmcli/config",
     "@npmcli/map-workspaces",
     "@npmcli/package-json",
@@ -137,6 +136,7 @@
     "archy",
     "cacache",
     "chalk",
+    "ci-info",
     "cli-columns",
     "cli-table3",
     "columnify",

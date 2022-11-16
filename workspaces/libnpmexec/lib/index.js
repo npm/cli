@@ -4,7 +4,7 @@ const { mkdir } = require('fs/promises')
 const { promisify } = require('util')
 
 const Arborist = require('@npmcli/arborist')
-const ciDetect = require('@npmcli/ci-detect')
+const ciInfo = require('ci-info')
 const crypto = require('crypto')
 const log = require('proc-log')
 const npa = require('npm-package-arg')
@@ -242,7 +242,7 @@ const exec = async (opts) => {
           throw new Error('canceled')
         }
 
-        if (noTTY() || ciDetect()) {
+        if (noTTY() || ciInfo.isCI) {
           log.warn('exec', `The following package${
             add.length === 1 ? ' was' : 's were'
           } not found and will be installed: ${

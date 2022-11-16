@@ -4,7 +4,6 @@ are-we-there-yet
 benchmarks
 bin-links
 cacache
-ci-detect
 cli
 cmd-shim
 config

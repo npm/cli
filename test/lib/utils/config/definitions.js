@@ -731,10 +731,10 @@ YYYY\r
 
 t.test('detect CI', t => {
   const defnNoCI = mockDefs({
-    '@npmcli/ci-detect': () => false,
+    'ci-info': { isCI: false, name: null },
   })
   const defnCIFoo = mockDefs({
-    '@npmcli/ci-detect': () => 'foo',
+    'ci-info': { isCI: false, name: 'foo' },
   })
   t.equal(defnNoCI['ci-name'].default, null, 'null when not in CI')
   t.equal(defnCIFoo['ci-name'].default, 'foo', 'name of CI when in CI')
