@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.1.3](https://github.com/npm/cli/compare/arborist-v6.1.2...arborist-v6.1.3) (2022-11-16)
+
+### Bug Fixes
+
+* [`3f13818`](https://github.com/npm/cli/commit/3f1381898ad6c8a477d32765d7304dd55a2c8c9d) [#5859](https://github.com/npm/cli/pull/5859) refactor / inline single use code (#5859) (@wraithgar)
+
 ## [6.1.2](https://github.com/npm/cli/compare/arborist-v6.1.1...arborist-v6.1.2) (2022-11-09)
 
 ### Dependencies
