@@ -15,7 +15,7 @@ exports[`test/place-dep.js TAP placement tests accept an older transitive depend
 Array [
   Object {
     "canPlace": null,
-    "canPlaceSelf": undefined,
+    "canPlaceSelf": null,
     "checks": Map {},
     "dep": "bar@1.0.1",
     "edge": "{ node_modules/foo prod bar@1 }",
@@ -3553,7 +3553,7 @@ exports[`test/place-dep.js TAP placement tests fail with ERESOLVE on deep peer d
 Array [
   Object {
     "canPlace": null,
-    "canPlaceSelf": undefined,
+    "canPlaceSelf": null,
     "checks": Map {},
     "dep": "b@2.0.0",
     "edge": "{ ROOT prod b@2 }",
@@ -6629,7 +6629,7 @@ exports[`test/place-dep.js TAP placement tests prod dep directly on conflicted p
 Array [
   Object {
     "canPlace": null,
-    "canPlaceSelf": undefined,
+    "canPlaceSelf": null,
     "checks": Map {},
     "dep": "b@2.0.0",
     "edge": "{ ROOT prod b@2 }",
@@ -8136,7 +8136,7 @@ exports[`test/place-dep.js TAP placement tests prod dep directly on conflicted p
 Array [
   Object {
     "canPlace": null,
-    "canPlaceSelf": undefined,
+    "canPlaceSelf": null,
     "checks": Map {},
     "dep": "b@1.0.0",
     "edge": "{ ROOT prod b@1 }",
@@ -10627,7 +10627,7 @@ exports[`test/place-dep.js TAP placement tests upgrade a transitive dependency >
 Array [
   Object {
     "canPlace": null,
-    "canPlaceSelf": undefined,
+    "canPlaceSelf": null,
     "checks": Map {},
     "dep": "bar@1.0.1",
     "edge": "{ node_modules/foo prod bar@1 }",

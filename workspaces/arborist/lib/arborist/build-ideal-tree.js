@@ -941,15 +941,15 @@ This is a one-time fix-up, please be patient...
         edge,
         dep,
 
-        explicitRequest: this[_explicitRequests].has(edge),
-        updateNames: this[_updateNames],
         auditReport: this.auditReport,
+        explicitRequest: this[_explicitRequests].has(edge),
         force: this[_force],
+        installLinks: this.installLinks,
+        installStrategy: this[_installStrategy],
+        legacyPeerDeps: this.legacyPeerDeps,
         preferDedupe: this[_preferDedupe],
         strictPeerDeps: this[_strictPeerDeps],
-        installLinks: this.installLinks,
-        legacyPeerDeps: this.legacyPeerDeps,
-        installStrategy: this[_installStrategy],
+        updateNames: this[_updateNames],
       }))
 
     const promises = []
