@@ -110,7 +110,7 @@ const exec = async (opts) => {
     return run()
   }
 
-  const needPackageCommandSwap = (args.length > 0) && (packages.length === 0)
+  let needPackageCommandSwap = (args.length > 0) && (packages.length === 0)
   // If they asked for a command w/o specifying a package, see if there is a
   // bin that directly matches that name:
   // - in the local package itself
@@ -126,9 +126,11 @@ const exec = async (opts) => {
     if (localManifest?.bin?.[args[0]]) {
       // we have to install the local package into the npx cache so that its
       // bin links get set up
+      flatOptions.installLinks = false
+      // args[0] will exist when the package is installed
       packages.push(path)
       yes = true
-      flatOptions.installLinks = false
+      needPackageCommandSwap = false
     } else {
       const dir = dirname(dirname(localBin))
       const localBinPath = await localFileExists(dir, args[0], '/')

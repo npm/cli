@@ -28,6 +28,7 @@ t.test('bin in local pkg', async t => {
   const pkg = {
     name: '@npmcli/local-pkg-bin-test',
     bin: {
+      b: 'echo this is something else',
       a: 'local-bin-test.js',
     },
   }
