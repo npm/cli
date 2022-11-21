@@ -27,7 +27,7 @@ where all specified packages are available.
 
 If any requested packages are not present in the local project
 dependencies, then a prompt is printed, which can be suppressed by
-providing either `--yes` or `--no`. When standard input is a TTY or a CI
+providing either `--yes` or `--no`. When standard input is not a TTY or a CI
 environment is detected, `--yes` is assumed. The requested packages are 
 installed to a folder in the npm cache, which is added to the `PATH`
 environment variable in the executed process.
