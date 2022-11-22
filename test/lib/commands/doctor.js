@@ -1,5 +1,6 @@
 const t = require('tap')
 const fs = require('fs')
+const path = require('path')
 
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
 const tnock = require('../../fixtures/tnock.js')
@@ -52,11 +53,14 @@ const dirs = {
   },
 }
 
-const globals = {
-  process: {
-    platform: 'test-not-windows',
-    version: 'v1.0.0',
-  },
+const globals = ({ globalPrefix }) => {
+  return {
+    process: {
+      'env.PATH': `${globalPrefix}:${path.join(globalPrefix, 'bin')}`,
+      platform: 'test-not-windows',
+      version: 'v1.0.0',
+    },
+  }
 }
 
 // getuid and getgid do not exist in windows, so we shim them
@@ -217,12 +221,16 @@ t.test('npm out of date', async t => {
 t.test('node out of date - lts', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
-    globals: {
-      ...globals,
-      process: {
-        platform: 'test-not-windows',
-        version: 'v0.0.1',
-      },
+    globals: (context) => {
+      const g = globals(context)
+      return {
+        ...g,
+        process: {
+          ...g.process,
+          platform: 'test-not-windows',
+          version: 'v0.0.1',
+        },
+      }
     },
     ...dirs,
   })
@@ -239,12 +247,15 @@ t.test('node out of date - lts', async t => {
 t.test('node out of date - current', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
-    globals: {
-      ...globals,
-      process: {
-        ...globals.process,
-        version: 'v2.0.0',
-      },
+    globals: (context) => {
+      const g = globals(context)
+      return {
+        ...g,
+        process: {
+          ...g.process,
+          version: 'v2.0.0',
+        },
+      }
     },
     ...dirs,
   })
@@ -299,12 +310,15 @@ t.test('missing git', async t => {
 t.test('windows skips permissions checks', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
-    globals: {
-      ...globals,
-      process: {
-        ...globals.process,
-        platform: 'win32',
-      },
+    globals: (context) => {
+      const g = globals(context)
+      return {
+        ...g,
+        process: {
+          ...g.process,
+          platform: 'win32',
+        },
+      }
     },
     prefixDir: {},
     globalPrefixDir: {},
@@ -587,17 +601,41 @@ t.test('discrete checks', t => {
   t.test('permissions - windows', async t => {
     const { joinedOutput, logs, npm } = await loadMockNpm(t, {
       mocks,
-      globals: {
-        ...globals,
-        process: {
-          ...globals.process,
-          platform: 'win32',
-        },
+      globals: (context) => {
+        const g = globals(context)
+        return {
+          ...g,
+          process: {
+            ...g.process,
+            platform: 'win32',
+          },
+        }
       },
       prefixDir: {},
       globalPrefixDir: {},
     })
     await npm.exec('doctor', ['permissions'])
+    t.matchSnapshot(joinedOutput(), 'output')
+    t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
+  })
+
+  t.test('invalid environment', async t => {
+    const { joinedOutput, logs, npm } = await loadMockNpm(t, {
+      mocks,
+      globals: (context) => {
+        const g = globals(context)
+        return {
+          ...g,
+          process: {
+            ...g.process,
+            'env.PATH': '/nope',
+          },
+        }
+      },
+      prefixDir: {},
+      globalPrefixDir: {},
+    })
+    await t.rejects(npm.exec('doctor', ['environment']))
     t.matchSnapshot(joinedOutput(), 'output')
     t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
   })

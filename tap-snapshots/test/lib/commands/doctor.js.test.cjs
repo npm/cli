@@ -43,6 +43,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [],
 }
@@ -61,6 +65,7 @@ Perms check on global node_modules[90m  [39mok    [90m  [39m
 Perms check on local bin folder   [90m  [39mok    [90m  [39m 
 Perms check on global bin folder  [90m  [39mok    [90m  [39m 
 Verify cache contents             [90m  [39mok    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-all-clear/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP all clear in color > everything is ok in color 1`] = `
@@ -76,6 +81,7 @@ Perms check on global node_modules[90m  [39m[32mok[39m    [90m  [39m
 Perms check on local bin folder   [90m  [39m[32mok[39m    [90m  [39m 
 Perms check on global bin folder  [90m  [39m[32mok[39m    [90m  [39m 
 Verify cache contents             [90m  [39m[32mok[39m    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39m[32mok[39m    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-all-clear-in-color/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP all clear in color > logs 1`] = `
@@ -115,6 +121,10 @@ Object {
           "verifiedContent": 0
         }
       ),
+    ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
     ],
   ],
   "warn": Array [],
@@ -159,6 +169,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [],
 }
@@ -177,6 +191,7 @@ Perms check on global node_modules[90m  [39mok    [90m  [39m
 Perms check on local bin folder   [90m  [39mok    [90m  [39m 
 Perms check on global bin folder  [90m  [39mok    [90m  [39m 
 Verify cache contents             [90m  [39mok    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-bad-proxy/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP cacache badContent > corrupted cache content 1`] = `
@@ -192,6 +207,7 @@ Perms check on global node_modules[90m  [39mok    [90m  [39m
 Perms check on local bin folder   [90m  [39mok    [90m  [39m 
 Perms check on global bin folder  [90m  [39mok    [90m  [39m 
 Verify cache contents             [90m  [39mok    [90m  [39mverified 2 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-cacache-badContent/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP cacache badContent > logs 1`] = `
@@ -231,6 +247,10 @@ Object {
           "verifiedContent": 2
         }
       ),
+    ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
     ],
   ],
   "warn": Array [
@@ -284,6 +304,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [
     Array [
@@ -311,6 +335,7 @@ Perms check on global node_modules[90m  [39mok    [90m  [39m
 Perms check on local bin folder   [90m  [39mok    [90m  [39m 
 Perms check on global bin folder  [90m  [39mok    [90m  [39m 
 Verify cache contents             [90m  [39mok    [90m  [39mverified 2 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-cacache-missingContent/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP cacache reclaimedCount > content garbage collected 1`] = `
@@ -326,6 +351,7 @@ Perms check on global node_modules[90m  [39mok    [90m  [39m
 Perms check on local bin folder   [90m  [39mok    [90m  [39m 
 Perms check on global bin folder  [90m  [39mok    [90m  [39m 
 Verify cache contents             [90m  [39mok    [90m  [39mverified 2 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-cacache-reclaimedCount/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP cacache reclaimedCount > logs 1`] = `
@@ -365,6 +391,10 @@ Object {
           "verifiedContent": 2
         }
       ),
+    ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
     ],
   ],
   "warn": Array [
@@ -431,6 +461,27 @@ Object {
 exports[`test/lib/commands/doctor.js TAP discrete checks git > output 1`] = `
 Check    [90m  [39mValue [90m  [39mRecommendation/Notes
 which git[90m  [39mok    [90m  [39m/path/to/git
+`
+
+exports[`test/lib/commands/doctor.js TAP discrete checks invalid environment > logs 1`] = `
+Object {
+  "error": Array [],
+  "info": Array [
+    Array [
+      "Running checkup",
+    ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
+  ],
+  "warn": Array [],
+}
+`
+
+exports[`test/lib/commands/doctor.js TAP discrete checks invalid environment > output 1`] = `
+Check                    [90m  [39mValue [90m  [39mRecommendation/Notes
+Global bin folder in PATH[90m  [39mnot ok[90m  [39mError: Add {CWD}/test/lib/commands/tap-testdir-doctor-discrete-checks-invalid-environment/global/bin to your $PATH
 `
 
 exports[`test/lib/commands/doctor.js TAP discrete checks permissions - not windows > logs 1`] = `
@@ -576,6 +627,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [
     Array [
@@ -615,6 +670,7 @@ Perms check on global node_modules[90m  [39mnot ok[90m  [39mCheck the permis
 Perms check on local bin folder   [90m  [39mnot ok[90m  [39mCheck the permissions of files in {CWD}/test/lib/commands/tap-testdir-doctor-error-reading-directory/prefix/node_modules/.bin
 Perms check on global bin folder  [90m  [39mnot ok[90m  [39mCheck the permissions of files in {CWD}/test/lib/commands/tap-testdir-doctor-error-reading-directory/global/bin
 Verify cache contents             [90m  [39mok    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-error-reading-directory/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP incorrect owner > incorrect owner 1`] = `
@@ -630,6 +686,7 @@ Perms check on global node_modules[90m  [39mok    [90m  [39m
 Perms check on local bin folder   [90m  [39mok    [90m  [39m 
 Perms check on global bin folder  [90m  [39mok    [90m  [39m 
 Verify cache contents             [90m  [39mok    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-incorrect-owner/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP incorrect owner > logs 1`] = `
@@ -670,6 +727,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [
     Array [
@@ -693,6 +754,7 @@ Perms check on global node_modules[90m  [39mnot ok[90m  [39mCheck the permis
 Perms check on local bin folder   [90m  [39mnot ok[90m  [39mCheck the permissions of files in {CWD}/test/lib/commands/tap-testdir-doctor-incorrect-permissions/prefix/node_modules/.bin
 Perms check on global bin folder  [90m  [39mnot ok[90m  [39mCheck the permissions of files in {CWD}/test/lib/commands/tap-testdir-doctor-incorrect-permissions/global/bin
 Verify cache contents             [90m  [39mok    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-incorrect-permissions/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP incorrect permissions > logs 1`] = `
@@ -754,6 +816,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [],
 }
@@ -797,6 +863,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [
     Array [
@@ -812,13 +882,14 @@ npm ping                          [90m  [39mok    [90m  [39m
 npm -v                            [90m  [39mok    [90m  [39mcurrent: v1.0.0, latest: v1.0.0
 node -v                           [90m  [39mok    [90m  [39mcurrent: v1.0.0, recommended: v1.0.0
 npm config get registry           [90m  [39mok    [90m  [39musing default registry (https://registry.npmjs.org/)
-which git                         [90m  [39mnot ok[90m  [39mInstall git and ensure it's in your PATH.
+which git                         [90m  [39mnot ok[90m  [39mError: Install git and ensure it's in your PATH.
 Perms check on cached files       [90m  [39mok    [90m  [39m 
 Perms check on local node_modules [90m  [39mok    [90m  [39m 
 Perms check on global node_modules[90m  [39mok    [90m  [39m 
 Perms check on local bin folder   [90m  [39mok    [90m  [39m 
 Perms check on global bin folder  [90m  [39mok    [90m  [39m 
 Verify cache contents             [90m  [39mok    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-missing-git/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP missing global directories > logs 1`] = `
@@ -859,6 +930,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [
     Array [
@@ -886,6 +961,7 @@ Perms check on global node_modules[90m  [39mnot ok[90m  [39mCheck the permis
 Perms check on local bin folder   [90m  [39mok    [90m  [39m 
 Perms check on global bin folder  [90m  [39mnot ok[90m  [39mCheck the permissions of files in {CWD}/test/lib/commands/tap-testdir-doctor-missing-global-directories/global/bin
 Verify cache contents             [90m  [39mok    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-missing-global-directories/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP missing local node_modules > logs 1`] = `
@@ -926,6 +1002,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [],
 }
@@ -944,6 +1024,7 @@ Perms check on global node_modules[90m  [39mok    [90m  [39m
 Perms check on local bin folder   [90m  [39mok    [90m  [39m 
 Perms check on global bin folder  [90m  [39mok    [90m  [39m 
 Verify cache contents             [90m  [39mok    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-missing-local-node_modules/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP node out of date - current > logs 1`] = `
@@ -984,6 +1065,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [],
 }
@@ -1002,6 +1087,7 @@ Perms check on global node_modules[90m  [39mok    [90m  [39m
 Perms check on local bin folder   [90m  [39mok    [90m  [39m 
 Perms check on global bin folder  [90m  [39mok    [90m  [39m 
 Verify cache contents             [90m  [39mok    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-node-out-of-date---current/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP node out of date - lts > logs 1`] = `
@@ -1042,6 +1128,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [],
 }
@@ -1060,6 +1150,7 @@ Perms check on global node_modules[90m  [39mok    [90m  [39m
 Perms check on local bin folder   [90m  [39mok    [90m  [39m 
 Perms check on global bin folder  [90m  [39mok    [90m  [39m 
 Verify cache contents             [90m  [39mok    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-node-out-of-date---lts/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP non-default registry > logs 1`] = `
@@ -1100,6 +1191,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [],
 }
@@ -1118,6 +1213,7 @@ Perms check on global node_modules[90m  [39mok    [90m  [39m
 Perms check on local bin folder   [90m  [39mok    [90m  [39m 
 Perms check on global bin folder  [90m  [39mok    [90m  [39m 
 Verify cache contents             [90m  [39mok    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-non-default-registry/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP npm out of date > logs 1`] = `
@@ -1158,6 +1254,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [],
 }
@@ -1176,6 +1276,7 @@ Perms check on global node_modules[90m  [39mok    [90m  [39m
 Perms check on local bin folder   [90m  [39mok    [90m  [39m 
 Perms check on global bin folder  [90m  [39mok    [90m  [39m 
 Verify cache contents             [90m  [39mok    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-npm-out-of-date/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP ping 404 > logs 1`] = `
@@ -1216,6 +1317,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [],
 }
@@ -1234,6 +1339,7 @@ Perms check on global node_modules[90m  [39mok    [90m  [39m
 Perms check on local bin folder   [90m  [39mok    [90m  [39m 
 Perms check on global bin folder  [90m  [39mok    [90m  [39m 
 Verify cache contents             [90m  [39mok    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-ping-404/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP ping 404 in color > logs 1`] = `
@@ -1274,6 +1380,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [],
 }
@@ -1292,6 +1402,7 @@ Perms check on global node_modules[90m  [39m[32mok[39m    [90m  [39m
 Perms check on local bin folder   [90m  [39m[32mok[39m    [90m  [39m 
 Perms check on global bin folder  [90m  [39m[32mok[39m    [90m  [39m 
 Verify cache contents             [90m  [39m[32mok[39m    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39m[32mok[39m    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-ping-404-in-color/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP ping exception with code > logs 1`] = `
@@ -1332,6 +1443,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [],
 }
@@ -1350,6 +1465,7 @@ Perms check on global node_modules[90m  [39mok    [90m  [39m
 Perms check on local bin folder   [90m  [39mok    [90m  [39m 
 Perms check on global bin folder  [90m  [39mok    [90m  [39m 
 Verify cache contents             [90m  [39mok    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-ping-exception-with-code/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP ping exception without code > logs 1`] = `
@@ -1390,6 +1506,10 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [],
 }
@@ -1408,6 +1528,7 @@ Perms check on global node_modules[90m  [39mok    [90m  [39m
 Perms check on local bin folder   [90m  [39mok    [90m  [39m 
 Perms check on global bin folder  [90m  [39mok    [90m  [39m 
 Verify cache contents             [90m  [39mok    [90m  [39mverified 0 tarballs
+Global bin folder in PATH         [90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-ping-exception-without-code/global/bin
 `
 
 exports[`test/lib/commands/doctor.js TAP silent > logs 1`] = `
@@ -1447,6 +1568,10 @@ Object {
           "verifiedContent": 0
         }
       ),
+    ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
     ],
   ],
   "warn": Array [],
@@ -1495,17 +1620,22 @@ Object {
         }
       ),
     ],
+    Array [
+      "checkBinPath",
+      "Finding npm global bin in your PATH",
+    ],
   ],
   "warn": Array [],
 }
 `
 
 exports[`test/lib/commands/doctor.js TAP windows skips permissions checks > no permissions checks 1`] = `
-Check                  [90m  [39mValue [90m  [39mRecommendation/Notes
-npm ping               [90m  [39mok    [90m  [39m 
-npm -v                 [90m  [39mok    [90m  [39mcurrent: v1.0.0, latest: v1.0.0
-node -v                [90m  [39mok    [90m  [39mcurrent: v1.0.0, recommended: v1.0.0
-npm config get registry[90m  [39mok    [90m  [39musing default registry (https://registry.npmjs.org/)
-which git              [90m  [39mok    [90m  [39m/path/to/git
-Verify cache contents  [90m  [39mok    [90m  [39mverified 0 tarballs
+Check                    [90m  [39mValue [90m  [39mRecommendation/Notes
+npm ping                 [90m  [39mok    [90m  [39m 
+npm -v                   [90m  [39mok    [90m  [39mcurrent: v1.0.0, latest: v1.0.0
+node -v                  [90m  [39mok    [90m  [39mcurrent: v1.0.0, recommended: v1.0.0
+npm config get registry  [90m  [39mok    [90m  [39musing default registry (https://registry.npmjs.org/)
+which git                [90m  [39mok    [90m  [39m/path/to/git
+Verify cache contents    [90m  [39mok    [90m  [39mverified 0 tarballs
+Global bin folder in PATH[90m  [39mok    [90m  [39m{CWD}/test/lib/commands/tap-testdir-doctor-windows-skips-permissions-checks/global
 `
