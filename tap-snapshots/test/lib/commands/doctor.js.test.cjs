@@ -380,6 +380,164 @@ Object {
 }
 `
 
+exports[`test/lib/commands/doctor.js TAP discrete checks cache > logs 1`] = `
+Object {
+  "error": Array [],
+  "info": Array [
+    Array [
+      "Running checkup",
+    ],
+    Array [
+      "verifyCachedFiles",
+      "Verifying the npm cache",
+    ],
+    Array [
+      "verifyCachedFiles",
+      String(
+        Verification complete. Stats: {
+          "badContentCount": 0,
+          "reclaimedCount": 0,
+          "missingContent": 0,
+          "verifiedContent": 0
+        }
+      ),
+    ],
+  ],
+  "warn": Array [],
+}
+`
+
+exports[`test/lib/commands/doctor.js TAP discrete checks cache > output 1`] = `
+Check                [90m  [39mValue [90m  [39mRecommendation/Notes
+Verify cache contents[90m  [39mok    [90m  [39mverified 0 tarballs
+`
+
+exports[`test/lib/commands/doctor.js TAP discrete checks git > logs 1`] = `
+Object {
+  "error": Array [],
+  "info": Array [
+    Array [
+      "Running checkup",
+    ],
+    Array [
+      "getGitPath",
+      "Finding git in your PATH",
+    ],
+  ],
+  "warn": Array [],
+}
+`
+
+exports[`test/lib/commands/doctor.js TAP discrete checks git > output 1`] = `
+Check    [90m  [39mValue [90m  [39mRecommendation/Notes
+which git[90m  [39mok    [90m  [39m/path/to/git
+`
+
+exports[`test/lib/commands/doctor.js TAP discrete checks permissions - not windows > logs 1`] = `
+Object {
+  "error": Array [],
+  "info": Array [
+    Array [
+      "Running checkup",
+    ],
+  ],
+  "warn": Array [],
+}
+`
+
+exports[`test/lib/commands/doctor.js TAP discrete checks permissions - not windows > output 1`] = `
+Check                             [90m  [39mValue [90m  [39mRecommendation/Notes
+Perms check on cached files       [90m  [39mok    [90m  [39m 
+Perms check on local node_modules [90m  [39mok    [90m  [39m 
+Perms check on global node_modules[90m  [39mok    [90m  [39m 
+Perms check on local bin folder   [90m  [39mok    [90m  [39m 
+Perms check on global bin folder  [90m  [39mok    [90m  [39m 
+`
+
+exports[`test/lib/commands/doctor.js TAP discrete checks permissions - windows > logs 1`] = `
+Object {
+  "error": Array [],
+  "info": Array [
+    Array [
+      "Running checkup",
+    ],
+  ],
+  "warn": Array [
+    Array [
+      "Ignoring permissions checks for windows",
+    ],
+  ],
+}
+`
+
+exports[`test/lib/commands/doctor.js TAP discrete checks permissions - windows > output 1`] = `
+Check[90m  [39mValue [90m  [39mRecommendation/Notes
+`
+
+exports[`test/lib/commands/doctor.js TAP discrete checks ping > logs 1`] = `
+Object {
+  "error": Array [],
+  "info": Array [
+    Array [
+      "Running checkup",
+    ],
+    Array [
+      "checkPing",
+      "Pinging registry",
+    ],
+  ],
+  "warn": Array [],
+}
+`
+
+exports[`test/lib/commands/doctor.js TAP discrete checks ping > output 1`] = `
+Check   [90m  [39mValue [90m  [39mRecommendation/Notes
+npm ping[90m  [39mok    [90m  [39m 
+`
+
+exports[`test/lib/commands/doctor.js TAP discrete checks registry > logs 1`] = `
+Object {
+  "error": Array [],
+  "info": Array [
+    Array [
+      "Running checkup",
+    ],
+  ],
+  "warn": Array [],
+}
+`
+
+exports[`test/lib/commands/doctor.js TAP discrete checks registry > output 1`] = `
+Check                  [90m  [39mValue [90m  [39mRecommendation/Notes
+npm config get registry[90m  [39mok    [90m  [39musing default registry (https://registry.npmjs.org/)
+`
+
+exports[`test/lib/commands/doctor.js TAP discrete checks versions > logs 1`] = `
+Object {
+  "error": Array [],
+  "info": Array [
+    Array [
+      "Running checkup",
+    ],
+    Array [
+      "getLatestNpmVersion",
+      "Getting npm package information",
+    ],
+    Array [
+      "getLatestNodejsVersion",
+      "Getting Node.js release information",
+    ],
+  ],
+  "warn": Array [],
+}
+`
+
+exports[`test/lib/commands/doctor.js TAP discrete checks versions > output 1`] = `
+Check  [90m  [39mValue [90m  [39mRecommendation/Notes
+npm -v [90m  [39mok    [90m  [39mcurrent: v1.0.0, latest: v1.0.0
+node -v[90m  [39mok    [90m  [39mcurrent: v1.0.0, recommended: v1.0.0
+`
+
 exports[`test/lib/commands/doctor.js TAP error reading directory > logs 1`] = `
 Object {
   "error": Array [],

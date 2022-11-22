@@ -510,3 +510,97 @@ t.test('bad proxy', async t => {
   t.matchSnapshot(joinedOutput(), 'output')
   t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
 })
+
+t.test('discrete checks', t => {
+  t.test('ping', async t => {
+    const { joinedOutput, logs, npm } = await loadMockNpm(t, {
+      mocks,
+      globals,
+      ...dirs,
+    })
+    tnock(t, npm.config.get('registry'))
+      .get('/-/ping?write=true').reply(200, '{}')
+    await npm.exec('doctor', ['ping'])
+    t.matchSnapshot(joinedOutput(), 'output')
+    t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
+  })
+
+  t.test('versions', async t => {
+    const { joinedOutput, logs, npm } = await loadMockNpm(t, {
+      mocks,
+      globals,
+      ...dirs,
+    })
+    tnock(t, npm.config.get('registry'))
+      .get('/npm').reply(200, npmManifest(npm.version))
+    tnock(t, 'https://nodejs.org')
+      .get('/dist/index.json').reply(200, nodeVersions)
+    await npm.exec('doctor', ['versions'])
+    t.matchSnapshot(joinedOutput(), 'output')
+    t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
+  })
+
+  t.test('registry', async t => {
+    const { joinedOutput, logs, npm } = await loadMockNpm(t, {
+      mocks,
+      globals,
+      ...dirs,
+    })
+    await npm.exec('doctor', ['registry'])
+    t.matchSnapshot(joinedOutput(), 'output')
+    t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
+  })
+
+  t.test('git', async t => {
+    const { joinedOutput, logs, npm } = await loadMockNpm(t, {
+      mocks,
+      globals,
+      ...dirs,
+    })
+    await npm.exec('doctor', ['git'])
+    t.matchSnapshot(joinedOutput(), 'output')
+    t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
+  })
+
+  t.test('permissions - not windows', async t => {
+    const { joinedOutput, logs, npm } = await loadMockNpm(t, {
+      mocks,
+      globals,
+      ...dirs,
+    })
+    await npm.exec('doctor', ['permissions'])
+    t.matchSnapshot(joinedOutput(), 'output')
+    t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
+  })
+
+  t.test('cache', async t => {
+    const { joinedOutput, logs, npm } = await loadMockNpm(t, {
+      mocks,
+      globals,
+      ...dirs,
+    })
+    await npm.exec('doctor', ['cache'])
+    t.matchSnapshot(joinedOutput(), 'output')
+    t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
+  })
+
+  t.test('permissions - windows', async t => {
+    const { joinedOutput, logs, npm } = await loadMockNpm(t, {
+      mocks,
+      globals: {
+        ...globals,
+        process: {
+          ...globals.process,
+          platform: 'win32',
+        },
+      },
+      prefixDir: {},
+      globalPrefixDir: {},
+    })
+    await npm.exec('doctor', ['permissions'])
+    t.matchSnapshot(joinedOutput(), 'output')
+    t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
+  })
+
+  t.end()
+})
