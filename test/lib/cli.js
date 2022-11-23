@@ -30,7 +30,7 @@ const cliMock = async (t, opts) => {
 }
 
 t.afterEach(() => {
-  delete process.exitCode
+  process.exitCode = undefined
 })
 
 t.test('print the version, and treat npm_g as npm -g', async t => {
