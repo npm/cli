@@ -134,40 +134,40 @@ const buildMetadata = async (registry, manifest, tarballData, opts) => {
     length: tarballData.length,
   }
 
-  if (provenance) {
-    let provenanceBundle
+  // if (provenance) {
+  //   let provenanceBundle
 
-    // Handle case where --provenance flag was set to true
-    if (provenance === true) {
-      // TODO: Insert to check to make sure we only generate provenance for
-      // public packages here, insist on an explicit access flag if it seems new
-      //
-      // TODO manifest _id exists?
+  //   // Handle case where --provenance flag was set to true
+  //   if (provenance === true) {
+  //     // TODO: Insert to check to make sure we only generate provenance for
+  //     // public packages here, insist on an explicit access flag if it seems new
+  //     //
+  //     // TODO manifest _id exists?
 
-      // Ensure that we're running in GHA and an OIDC token is available,
-      // currently the only supported build environment
-      if (ciInfo.name === 'Github Actions' && process.env.ACTIONS_ID_TOKEN_REQUEST_URL) {
-        provenanceBundle = await generateProvenance({ subject: [{
-          name: `pkg:npm/${manifest.name}@${manifest.version}`,
-          digest: { sha512: integrity.sha512[0].hexDigest() },
-        }],
-        }, opts)
-      }
-    } else {
-      // TODO: Handle case where an existing bundle was supplied. Read bundle
-      // from disk and verify
+  //     // Ensure that we're running in GHA and an OIDC token is available,
+  //     // currently the only supported build environment
+  //     if (ciInfo.name === 'Github Actions' && process.env.ACTIONS_ID_TOKEN_REQUEST_URL) {
+  //       provenanceBundle = await generateProvenance({ subject: [{
+  //         name: `pkg:npm/${manifest.name}@${manifest.version}`,
+  //         digest: { sha512: integrity.sha512[0].hexDigest() },
+  //       }],
+  //       }, opts)
+  //     }
+  //   } else {
+  //     // TODO: Handle case where an existing bundle was supplied. Read bundle
+  //     // from disk and verify
 
-    }
+  //   }
 
-    if (provenanceBundle) {
-      const serializedBundle = JSON.stringify(provenanceBundle)
-      root._attachments[provenanceBundleName] = {
-        content_type: provenanceBundle.mediaType,
-        data: serializedBundle,
-        length: Buffer.from(serializedBundle).length,
-      }
-    }
-  }
+  //   if (provenanceBundle) {
+  //     const serializedBundle = JSON.stringify(provenanceBundle)
+  //     root._attachments[provenanceBundleName] = {
+  //       content_type: provenanceBundle.mediaType,
+  //       data: serializedBundle,
+  //       length: Buffer.from(serializedBundle).length,
+  //     }
+  //   }
+  // }
 
   return root
 }

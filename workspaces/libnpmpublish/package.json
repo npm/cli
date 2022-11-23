@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/mock-registry": "^1.0.0",
     "@npmcli/template-oss": "4.10.0",
     "libnpmpack": "^5.0.4",
     "lodash.clonedeep": "^4.5.0",
