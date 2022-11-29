@@ -8,15 +8,15 @@ const BUILDER_ID_PREFIX = 'https://github.com/npm/slsa-provenance'
 const BUILD_TYPE_PREFIX = 'https://github.com/npm/slsa-provenance/gha'
 const BUILD_TYPE_VERSION = 'v0'
 
-const generateProvenance = async (subject, { npmVersion }) => {
+const generateProvenance = async (subject, opts) => {
   const { env } = process
-  const payload = Buffer.from(JSON.stringify({
+  const payload = {
     _type: INTOTO_STATEMENT_TYPE,
     subject,
     predicateType: SLSA_PREDICATE_TYPE,
     predicate: {
       buildType: `${BUILD_TYPE_PREFIX}@${BUILD_TYPE_VERSION}`,
-      builder: { id: `${BUILDER_ID_PREFIX}@${npmVersion}` },
+      builder: { id: `${BUILDER_ID_PREFIX}@${opts.npmVersion}` },
       invocation: {
         configSource: {
           uri: `git+${env.GITHUB_SERVER_URL}/${env.GITHUB_REPOSITORY}@${env.GITHUB_REF}`,
@@ -62,9 +62,9 @@ const generateProvenance = async (subject, { npmVersion }) => {
         },
       ],
     },
-  }))
+  }
 
-  return sigstore.signAttestation(payload, INTOTO_PAYLOAD_TYPE)
+  return sigstore.signAttestation(Buffer.from(JSON.stringify(payload)), INTOTO_PAYLOAD_TYPE, opts)
 }
 
 module.exports = generateProvenance
