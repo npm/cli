@@ -1,5 +1,16 @@
 # Changelog
 
+## [9.1.3](https://github.com/npm/cli/compare/v9.1.2...v9.1.3) (2022-11-29)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.1.3...arborist-v6.1.4): `@npmcli/arborist@6.1.4`
+* [Workspace](https://github.com/npm/cli/compare/libnpmdiff-v5.0.4...libnpmdiff-v5.0.5): `libnpmdiff@5.0.5`
+* [Workspace](https://github.com/npm/cli/compare/libnpmexec-v5.0.4...libnpmexec-v5.0.5): `libnpmexec@5.0.5`
+* [Workspace](https://github.com/npm/cli/compare/libnpmfund-v4.0.4...libnpmfund-v4.0.5): `libnpmfund@4.0.5`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpack-v5.0.4...libnpmpack-v5.0.5): `libnpmpack@5.0.5`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpublish-v7.0.4...libnpmpublish-v7.0.5): `libnpmpublish@7.0.5`
+
 ## [9.1.2](https://github.com/npm/cli/compare/v9.1.1...v9.1.2) (2022-11-16)
 
 ### Bug Fixes
