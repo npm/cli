@@ -4,8 +4,8 @@ const INTOTO_PAYLOAD_TYPE = 'application/vnd.in-toto+json'
 const INTOTO_STATEMENT_TYPE = 'https://in-toto.io/Statement/v0.1'
 const SLSA_PREDICATE_TYPE = 'https://slsa.dev/provenance/v0.2'
 
-const BUILDER_ID_PREFIX = 'https://github.com/npm/slsa-provenance'
-const BUILD_TYPE_PREFIX = 'https://github.com/npm/slsa-provenance/gha'
+const BUILDER_ID_PREFIX = 'https://github.com/npm/cli'
+const BUILD_TYPE_PREFIX = 'https://github.com/npm/cli/gha'
 const BUILD_TYPE_VERSION = 'v0'
 
 const generateProvenance = async (subject, opts) => {
