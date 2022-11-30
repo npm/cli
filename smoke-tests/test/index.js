@@ -267,9 +267,6 @@ t.test('basic', async t => {
     const manifest = abbrevManifest()
     await registry.package({
       manifest: manifest,
-      tarballs: {
-        '1.1.1': join(paths.root, 'packages', 'abbrev-1.1.1'),
-      },
     })
 
     await npm('update', '--no-save')

@@ -140,6 +140,7 @@ module.exports = async (t, { testdir = {}, debug } = {}) => {
     '--no-audit',
     '--no-update-notifier',
     '--loglevel=silly',
+    '--fetch-retries=0',
     ]
     const [positionals, flags] = args.reduce((acc, arg) => {
       if (arg.startsWith('-')) {
