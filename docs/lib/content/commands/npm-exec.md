@@ -26,10 +26,11 @@ specified multiple times, to execute the supplied command in an environment
 where all specified packages are available.
 
 If any requested packages are not present in the local project
-dependencies, then they are installed to a folder in the npm cache, which
-is added to the `PATH` environment variable in the executed process.  A
-prompt is printed (which can be suppressed by providing either `--yes` or
-`--no`).
+dependencies, then a prompt is printed, which can be suppressed by
+providing either `--yes` or `--no`. When standard input is not a TTY or a
+CI environment is detected, `--yes` is assumed. The requested packages are
+installed to a folder in the npm cache, which is added to the `PATH`
+environment variable in the executed process.
 
 Package names provided without a specifier will be matched with whatever
 version exists in the local project.  Package names with a specifier will
