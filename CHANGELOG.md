@@ -1,5 +1,28 @@
 # Changelog
 
+## [9.1.3](https://github.com/npm/cli/compare/v9.1.2...v9.1.3) (2022-11-30)
+
+### Bug Fixes
+
+* [`ffbdea2`](https://github.com/npm/cli/commit/ffbdea286a08eeaf40ab83eea5bfe0602dc6bbcd) [#5894](https://github.com/npm/cli/pull/5894) npm pack filename on scoped packages (#5894) (@HenryNguyen5)
+* [`c26d708`](https://github.com/npm/cli/commit/c26d708428a96da530092759b5ff6d67c7282348) [#5884](https://github.com/npm/cli/pull/5884) validate username at get-identity (#5884) (@sosoba, @nlf)
+
+### Documentation
+
+* [`ea948dc`](https://github.com/npm/cli/commit/ea948dceac5cfeef437c97874ab26c3275e75766) [#5881](https://github.com/npm/cli/pull/5881) update description of npm exec (#5881) (@styfle, @wraithgar)
+* [`40f2c21`](https://github.com/npm/cli/commit/40f2c213d75a252665311b4f8775d297390aeb70) [#5865](https://github.com/npm/cli/pull/5865) ci-info url (#5865) (@wraithgar)
+* [`681a45b`](https://github.com/npm/cli/commit/681a45bb48acd57aa64cb3241ea4915f5a12e029) [#5875](https://github.com/npm/cli/pull/5875) run the comand for directory workspaces (#5875) (@1aron)
+* [`681a45b`](https://github.com/npm/cli/commit/681a45bb48acd57aa64cb3241ea4915f5a12e029) [#5875](https://github.com/npm/cli/pull/5875) add workspace directory example (#5875) (@1aron)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/compare/arborist-v6.1.3...arborist-v6.1.4): `@npmcli/arborist@6.1.4`
+* [Workspace](https://github.com/npm/cli/compare/libnpmdiff-v5.0.4...libnpmdiff-v5.0.5): `libnpmdiff@5.0.5`
+* [Workspace](https://github.com/npm/cli/compare/libnpmexec-v5.0.4...libnpmexec-v5.0.5): `libnpmexec@5.0.5`
+* [Workspace](https://github.com/npm/cli/compare/libnpmfund-v4.0.4...libnpmfund-v4.0.5): `libnpmfund@4.0.5`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpack-v5.0.4...libnpmpack-v5.0.5): `libnpmpack@5.0.5`
+* [Workspace](https://github.com/npm/cli/compare/libnpmpublish-v7.0.4...libnpmpublish-v7.0.5): `libnpmpublish@7.0.5`
+
 ## [9.1.2](https://github.com/npm/cli/compare/v9.1.1...v9.1.2) (2022-11-16)
 
 ### Bug Fixes
