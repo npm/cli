@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.1.4](https://github.com/npm/cli/compare/arborist-v6.1.3...arborist-v6.1.4) (2022-11-30)
+
+### Bug Fixes
+
+* [`80c6c4a`](https://github.com/npm/cli/commit/80c6c4a5111ab1779256a779a2cba41eb2c8675f) [#5907](https://github.com/npm/cli/pull/5907) do not reset hidden lockfile data before saving (#5907) (@nlf)
+
 ## [6.1.3](https://github.com/npm/cli/compare/arborist-v6.1.2...arborist-v6.1.3) (2022-11-16)
 
 ### Bug Fixes
