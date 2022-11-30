@@ -758,7 +758,7 @@ npm exec --package yo --package generator-node --call "yo node"
 
 The name of a continuous integration system. If not set explicitly, npm will
 detect the current CI environment using the
-[\`ci-info\`](http://npm.im/@npmcli/ci-info) module.
+[\`ci-info\`](http://npm.im/ci-info) module.
 
 #### \`cidr\`
 
