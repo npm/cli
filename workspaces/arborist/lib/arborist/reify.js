@@ -1531,16 +1531,12 @@ module.exports = cls => class Reifier extends cls {
     this.idealTree.meta.filename =
       this.idealTree.realpath + '/node_modules/.package-lock.json'
     this.idealTree.meta.hiddenLockfile = true
-    const resetMeta = this.idealTree.meta && this.idealTree.meta.lockfileVersion !== defaultLockfileVersion
     this.idealTree.meta.lockfileVersion = defaultLockfileVersion
 
     this.actualTree = this.idealTree
     this.idealTree = null
 
     if (!this[_global]) {
-      if (resetMeta) {
-        await this.actualTree.meta.reset()
-      }
       await this.actualTree.meta.save()
       const ignoreScripts = !!this.options.ignoreScripts
       // if we aren't doing a dry run or ignoring scripts and we actually made changes to the dep
