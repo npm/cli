@@ -136,7 +136,7 @@ Array [
     String(
       name:          @npm/test-package                       
       version:       1.0.0                                   
-      filename:      @npm/test-package-1.0.0.tgz             
+      filename:      npm-test-package-1.0.0.tgz              
       package size:  147 B                                   
       unpacked size: 55 B                                    
       shasum:{sha}
@@ -191,7 +191,7 @@ Array [
     String(
       name:          @npm/test-package                       
       version:       1.0.0                                   
-      filename:      @npm/test-package-1.0.0.tgz             
+      filename:      npm-test-package-1.0.0.tgz              
       package size:  147 B                                   
       unpacked size: 55 B                                    
       shasum:{sha}
