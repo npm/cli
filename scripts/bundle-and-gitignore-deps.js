@@ -49,9 +49,7 @@ const lsAndRmIgnored = async (dir) => {
     { lines: true }
   )
 
-  for (const file of files) {
-    await git('rm', file)
-  }
+  await Promise.all(files.map((file) => git('rm', file)))
 
   // check if there are still ignored files left
   // if so we will error in the next step

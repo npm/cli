@@ -43,9 +43,7 @@ const createNodeTarball = async ({ mani, registryOnly, localTest, tag, dir: extr
   await fsp.writeFile(join(extractDir, '.npmrc'), '', 'utf-8')
 
   // copy our test dirs so that tests can be run
-  for (const path of ['tap-snapshots/', 'test/']) {
-    await cp(join(CWD, path), join(extractDir, path), { recursive: true })
-  }
+  await Promise.all(['tap-snapshots/', 'test/'].map((path) => cp(join(CWD, path), join(extractDir, path), { recursive: true })))
 
   // recreate the tarball as closely as possible to how we would before publishing
   // to the registry. the only difference here is the extra files we put in the dir
@@ -91,9 +89,11 @@ const getPrBody = async ({ releases, closePrs }) => {
   // Since we are putting this in a PR we can change those links back to the releases.
   prBody = prBody.replace(/\/npm\/cli\/compare\/v[\w.-]+\.\.\.v([\w.-]+)/g, releasePath('$1'))
 
-  const { remark } = await import('remark')
-  const { default: remarkGfm } = await import('remark-gfm')
-  const { default: remarkGithub } = await import('remark-github')
+  const [remark, { default: remarkGfm }, { default: remarkGithub }] = await Promise.all([
+    import('remark'),
+    import('remark-gfm'),
+    import('remark-github')
+  ])
 
   return remark()
     .use(remarkGfm)

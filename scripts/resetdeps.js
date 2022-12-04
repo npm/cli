@@ -6,9 +6,7 @@ const checkout = () => git('checkout', 'node_modules/')
 
 const main = async ({ packageLock }) => {
   await fs.rimraf(join(CWD, 'node_modules'))
-  for (const { path } of await pkg.mapWorkspaces()) {
-    await fs.rimraf(join(path, 'node_modules'))
-  }
+  await Promise.all((await pkg.mapWorkspaces()).map(({ path }) => fs.rimraf(join(path, 'node_modules'))))
 
   await checkout()
   await npm('i', '--ignore-scripts', '--no-audit', '--no-fund', packageLock && '--package-lock')
