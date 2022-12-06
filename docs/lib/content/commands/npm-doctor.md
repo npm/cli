@@ -31,8 +31,10 @@ Also, in addition to this, there are also very many issue reports due to
 using old versions of npm. Since npm is constantly improving, running
 `npm@latest` is better than an old version.
 
-`npm doctor` verifies the following items in your environment, and if there
-are any recommended changes, it will display them.
+`npm doctor` verifies the following items in your environment, and if
+there are any recommended changes, it will display them.  By default npm
+runs all of these checks. You can limit what checks are ran by
+specifying them as extra arguments.
 
 #### `npm ping`
 

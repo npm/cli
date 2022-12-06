@@ -118,7 +118,7 @@ t.test('all clear in color', async t => {
   t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
 })
 
-t.test('silent', async t => {
+t.test('silent success', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
     globals,
@@ -137,6 +137,24 @@ t.test('silent', async t => {
   t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
 })
 
+t.test('silent errors', async t => {
+  const { joinedOutput, logs, npm } = await loadMockNpm(t, {
+    mocks,
+    globals,
+    config: {
+      loglevel: 'silent',
+    },
+    ...dirs,
+  })
+  tnock(t, npm.config.get('registry'))
+    .get('/-/ping?write=true').reply(404, '{}')
+  await t.rejects(npm.exec('doctor', ['ping']), {
+    message: /Check logs/,
+  })
+  t.matchSnapshot(joinedOutput(), 'output')
+  t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
+})
+
 t.test('ping 404', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
@@ -148,7 +166,9 @@ t.test('ping 404', async t => {
     .get('/npm').reply(200, npmManifest(npm.version))
   tnock(t, 'https://nodejs.org')
     .get('/dist/index.json').reply(200, nodeVersions)
-  await t.rejects(npm.exec('doctor', []))
+  await t.rejects(npm.exec('doctor', []), {
+    message: /See above/,
+  })
   t.matchSnapshot(joinedOutput(), 'ping 404')
   t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
 })
@@ -560,6 +580,8 @@ t.test('discrete checks', t => {
       globals,
       ...dirs,
     })
+    tnock(t, npm.config.get('registry'))
+      .get('/-/ping?write=true').reply(200, '{}')
     await npm.exec('doctor', ['registry'])
     t.matchSnapshot(joinedOutput(), 'output')
     t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
