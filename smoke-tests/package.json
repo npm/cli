@@ -25,7 +25,7 @@
     "http-proxy": "^1.18.1",
     "just-extend": "^6.1.1",
     "just-safe-set": "^4.1.1",
-    "tap": "^16.0.1",
+    "tap": "^16.3.2",
     "which": "^3.0.0"
   },
   "author": "GitHub Inc.",
