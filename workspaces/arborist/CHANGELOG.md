@@ -1,5 +1,21 @@
 # Changelog
 
+## [6.1.5](https://github.com/npm/cli/compare/arborist-v6.1.4...arborist-v6.1.5) (2022-12-07)
+
+### Bug Fixes
+
+* [`83fb125`](https://github.com/npm/cli/commit/83fb125446a9fb217eedf53ca98c203d7d48527b) [#5923](https://github.com/npm/cli/pull/5923) audit package mismatch in special case (@fritzy)
+
+### Dependencies
+
+* [`372d158`](https://github.com/npm/cli/commit/372d158d2637120600a95abee64355ed1cb6f990) [#5935](https://github.com/npm/cli/pull/5935) `minimatch@5.1.1` (#5935)
+* [`0a3fe00`](https://github.com/npm/cli/commit/0a3fe000e2723ae6fdb8b1d3154fd3835057c992) [#5933](https://github.com/npm/cli/pull/5933) `minipass@4.0.0`
+* [`cf0a174`](https://github.com/npm/cli/commit/cf0a17407abc577c27420a1c8a4a0c08c7cefce9) `ssri@10.0.1`
+* [`3da9a1a`](https://github.com/npm/cli/commit/3da9a1a4ebcf1779035b5f9ae985c087f617efe3) `pacote@15.0.7`
+* [`fee9b66`](https://github.com/npm/cli/commit/fee9b6686892a1c7f976c36ddd5d89b70c416817) `npm-registry-fetch@14.0.3`
+* [`e940917`](https://github.com/npm/cli/commit/e940917befcdaf44ee7e24d31b540f4de8507734) `cacache@17.0.3`
+* [`875bd56`](https://github.com/npm/cli/commit/875bd56c33ca5eef80c2a50a11808445f2a39a2a) `npm-package-arg@10.1.0`
+
 ## [6.1.4](https://github.com/npm/cli/compare/arborist-v6.1.3...arborist-v6.1.4) (2022-11-30)
 
 ### Bug Fixes

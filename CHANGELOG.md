@@ -1,5 +1,40 @@
 # Changelog
 
+## [9.2.0](https://github.com/npm/cli/compare/v9.1.3...v9.2.0) (2022-12-07)
+
+### Features
+
+* [`cf57ffa`](https://github.com/npm/cli/commit/cf57ffa90088fcf5b028cc02938baae6228b5a40) [#5888](https://github.com/npm/cli/pull/5888) discrete npm doctor commands (#5888) (@wraithgar)
+
+### Bug Fixes
+
+* [`dfd5d46`](https://github.com/npm/cli/commit/dfd5d461e0ee2163e210cc136d2bb7873dfeb363) [#5932](https://github.com/npm/cli/pull/5932) ignore implicit workspaces for completion (#5932) (@wraithgar)
+
+### Dependencies
+
+* [`2f2b146`](https://github.com/npm/cli/commit/2f2b1469565894ec777e6eb77fea7b607b797adb) [#5936](https://github.com/npm/cli/pull/5936) `npm-packlist@7.0.4` (#5936)
+* [`372d158`](https://github.com/npm/cli/commit/372d158d2637120600a95abee64355ed1cb6f990) [#5935](https://github.com/npm/cli/pull/5935) `minimatch@5.1.1` (#5935)
+* [`0e6c28b`](https://github.com/npm/cli/commit/0e6c28ba093f8c5d35df98afca28e842b247004b) [#5934](https://github.com/npm/cli/pull/5934) `ci-info@3.7.0` (#5934)
+* [`0a3fe00`](https://github.com/npm/cli/commit/0a3fe000e2723ae6fdb8b1d3154fd3835057c992) [#5933](https://github.com/npm/cli/pull/5933) `minipass@4.0.0`
+* [`6b77340`](https://github.com/npm/cli/commit/6b7734009ecd939fbb3d382cb92eb0cdbec7dcd3) `tar@6.1.13`
+* [`cf0a174`](https://github.com/npm/cli/commit/cf0a17407abc577c27420a1c8a4a0c08c7cefce9) `ssri@10.0.1`
+* [`3da9a1a`](https://github.com/npm/cli/commit/3da9a1a4ebcf1779035b5f9ae985c087f617efe3) `pacote@15.0.7`
+* [`fee9b66`](https://github.com/npm/cli/commit/fee9b6686892a1c7f976c36ddd5d89b70c416817) `npm-registry-fetch@14.0.3`
+* [`e940917`](https://github.com/npm/cli/commit/e940917befcdaf44ee7e24d31b540f4de8507734) `cacache@17.0.3`
+* [`875bd56`](https://github.com/npm/cli/commit/875bd56c33ca5eef80c2a50a11808445f2a39a2a) `npm-package-arg@10.1.0`
+* [`280b7a4`](https://github.com/npm/cli/commit/280b7a445e4a83d70980cf3c436745a1faa50c67) [#5927](https://github.com/npm/cli/pull/5927) `npm-packlist@7.0.3`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.1.5): `@npmcli/arborist@6.1.5`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmaccess-v7.0.1): `libnpmaccess@7.0.1`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v5.0.6): `libnpmdiff@5.0.6`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v5.0.6): `libnpmexec@5.0.6`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v4.0.6): `libnpmfund@4.0.6`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmhook-v9.0.1): `libnpmhook@9.0.1`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmorg-v5.0.1): `libnpmorg@5.0.1`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v5.0.6): `libnpmpack@5.0.6`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v7.0.6): `libnpmpublish@7.0.6`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmsearch-v6.0.1): `libnpmsearch@6.0.1`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmteam-v5.0.1): `libnpmteam@5.0.1`
+
 ## [9.1.3](https://github.com/npm/cli/compare/v9.1.2...v9.1.3) (2022-11-30)
 
 ### Bug Fixes
