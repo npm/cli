@@ -52,7 +52,7 @@
     "@npmcli/installed-package-contents": "^2.0.0",
     "binary-extensions": "^2.2.0",
     "diff": "^5.1.0",
-    "minimatch": "^5.0.1",
+    "minimatch": "^5.1.1",
     "npm-package-arg": "^10.1.0",
     "pacote": "^15.0.7",
     "tar": "^6.1.13"
