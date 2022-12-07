@@ -38,7 +38,7 @@
   "dependencies": {
     "@npmcli/arborist": "^6.1.4",
     "@npmcli/run-script": "^6.0.0",
-    "npm-package-arg": "^10.0.0",
+    "npm-package-arg": "^10.1.0",
     "pacote": "^15.0.2"
   },
   "engines": {
