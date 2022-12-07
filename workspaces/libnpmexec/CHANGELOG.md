@@ -1,5 +1,15 @@
 # Changelog
 
+## [5.0.6](https://github.com/npm/cli/compare/libnpmexec-v5.0.5...libnpmexec-v5.0.6) (2022-12-07)
+
+### Dependencies
+
+* [`0e6c28b`](https://github.com/npm/cli/commit/0e6c28ba093f8c5d35df98afca28e842b247004b) [#5934](https://github.com/npm/cli/pull/5934) `ci-info@3.7.0` (#5934)
+* [`0a3fe00`](https://github.com/npm/cli/commit/0a3fe000e2723ae6fdb8b1d3154fd3835057c992) [#5933](https://github.com/npm/cli/pull/5933) `minipass@4.0.0`
+* [`3da9a1a`](https://github.com/npm/cli/commit/3da9a1a4ebcf1779035b5f9ae985c087f617efe3) `pacote@15.0.7`
+* [`875bd56`](https://github.com/npm/cli/commit/875bd56c33ca5eef80c2a50a11808445f2a39a2a) `npm-package-arg@10.1.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.1.5): `@npmcli/arborist@6.1.5`
+
 ## [5.0.5](https://github.com/npm/cli/compare/libnpmexec-v5.0.4...libnpmexec-v5.0.5) (2022-11-30)
 
 ### Dependencies

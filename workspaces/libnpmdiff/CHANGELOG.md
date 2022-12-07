@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.6](https://github.com/npm/cli/compare/libnpmdiff-v5.0.5...libnpmdiff-v5.0.6) (2022-12-07)
+
+### Dependencies
+
+* [`372d158`](https://github.com/npm/cli/commit/372d158d2637120600a95abee64355ed1cb6f990) [#5935](https://github.com/npm/cli/pull/5935) `minimatch@5.1.1` (#5935)
+* [`0a3fe00`](https://github.com/npm/cli/commit/0a3fe000e2723ae6fdb8b1d3154fd3835057c992) [#5933](https://github.com/npm/cli/pull/5933) `minipass@4.0.0`
+* [`6b77340`](https://github.com/npm/cli/commit/6b7734009ecd939fbb3d382cb92eb0cdbec7dcd3) `tar@6.1.13`
+* [`3da9a1a`](https://github.com/npm/cli/commit/3da9a1a4ebcf1779035b5f9ae985c087f617efe3) `pacote@15.0.7`
+* [`875bd56`](https://github.com/npm/cli/commit/875bd56c33ca5eef80c2a50a11808445f2a39a2a) `npm-package-arg@10.1.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.1.5): `@npmcli/arborist@6.1.5`
+
 ## [5.0.5](https://github.com/npm/cli/compare/libnpmdiff-v5.0.4...libnpmdiff-v5.0.5) (2022-11-30)
 
 ### Dependencies

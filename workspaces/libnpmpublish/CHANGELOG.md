@@ -1,5 +1,15 @@
 # Changelog
 
+## [7.0.6](https://github.com/npm/cli/compare/libnpmpublish-v7.0.5...libnpmpublish-v7.0.6) (2022-12-07)
+
+### Dependencies
+
+* [`0a3fe00`](https://github.com/npm/cli/commit/0a3fe000e2723ae6fdb8b1d3154fd3835057c992) [#5933](https://github.com/npm/cli/pull/5933) `minipass@4.0.0`
+* [`cf0a174`](https://github.com/npm/cli/commit/cf0a17407abc577c27420a1c8a4a0c08c7cefce9) `ssri@10.0.1`
+* [`fee9b66`](https://github.com/npm/cli/commit/fee9b6686892a1c7f976c36ddd5d89b70c416817) `npm-registry-fetch@14.0.3`
+* [`875bd56`](https://github.com/npm/cli/commit/875bd56c33ca5eef80c2a50a11808445f2a39a2a) `npm-package-arg@10.1.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v5.0.6): `libnpmpack@5.0.6`
+
 ## [7.0.5](https://github.com/npm/cli/compare/libnpmpublish-v7.0.4...libnpmpublish-v7.0.5) (2022-11-30)
 
 ### Dependencies

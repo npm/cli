@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.0.1](https://github.com/npm/cli/compare/libnpmteam-v5.0.0...libnpmteam-v5.0.1) (2022-12-07)
+
+### Dependencies
+
+* [`0a3fe00`](https://github.com/npm/cli/commit/0a3fe000e2723ae6fdb8b1d3154fd3835057c992) [#5933](https://github.com/npm/cli/pull/5933) `minipass@4.0.0`
+* [`fee9b66`](https://github.com/npm/cli/commit/fee9b6686892a1c7f976c36ddd5d89b70c416817) `npm-registry-fetch@14.0.3`
+
 ## [5.0.0](https://github.com/npm/cli/compare/libnpmteam-v5.0.0-pre.1...libnpmteam-v5.0.0) (2022-10-19)
 
 ### Features
