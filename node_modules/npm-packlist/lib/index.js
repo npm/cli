@@ -300,6 +300,8 @@ class PackWalker extends IgnoreWalker {
           file = file.slice(1)
         } else if (file.startsWith('./')) {
           file = file.slice(2)
+        } else if (file.endsWith('/*')) {
+          file = file.slice(0, -2)
         }
         const inverse = `!${file}`
         try {
