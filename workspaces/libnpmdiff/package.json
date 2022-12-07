@@ -55,7 +55,7 @@
     "minimatch": "^5.0.1",
     "npm-package-arg": "^10.1.0",
     "pacote": "^15.0.7",
-    "tar": "^6.1.0"
+    "tar": "^6.1.13"
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
