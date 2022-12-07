@@ -384,6 +384,11 @@ class PackWalker extends IgnoreWalker {
 
       // get a reference to the node we're bundling
       const node = this.tree.edgesOut.get(dep).to
+      // if there's no node, this is most likely an optional dependency that hasn't been
+      // installed. just skip it.
+      if (!node) {
+        continue
+      }
       // we use node.path for the path because we want the location the node was linked to,
       // not where it actually lives on disk
       const path = node.path

@@ -201,7 +201,7 @@
     "@npmcli/template-oss": "4.11.0",
     "licensee": "^9.0.0",
     "nock": "^13.2.4",
-    "npm-packlist": "^7.0.3",
+    "npm-packlist": "^7.0.4",
     "remark": "^14.0.2",
     "remark-gfm": "^3.0.1",
     "remark-github": "^11.2.4",
