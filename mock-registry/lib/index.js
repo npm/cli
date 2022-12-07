@@ -236,18 +236,22 @@ class MockRegistry {
   }
 
   // team can be a team or a username
-  getPackages ({ team, packages = {}, times = 1 }) {
-    if (team.startsWith('@')) {
-      team = team.slice(1)
-    }
-    const [scope, teamName] = team.split(':').map(encodeURIComponent)
+  getPackages ({ user, team, packages = {}, times = 1, responseCode = 200 }) {
     let uri
-    if (teamName) {
-      uri = `/-/team/${scope}/${teamName}/package`
+    if (user) {
+      uri = `/-/user/${user}/package`
     } else {
-      uri = `/-/org/${scope}/package`
+      if (team.startsWith('@')) {
+        team = team.slice(1)
+      }
+      const [scope, teamName] = team.split(':').map(encodeURIComponent)
+      if (teamName) {
+        uri = `/-/team/${scope}/${teamName}/package`
+      } else {
+        uri = `/-/org/${scope}/package`
+      }
     }
-    this.nock = this.nock.get(uri).times(times).reply(200, packages)
+    this.nock = this.nock.get(uri).times(times).reply(responseCode, packages)
   }
 
   getCollaborators ({ spec, collaborators = {} }) {
