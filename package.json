@@ -62,7 +62,7 @@
     "archy": "~1.0.0",
     "cacache": "^17.0.3",
     "chalk": "^4.1.2",
-    "ci-info": "^3.6.1",
+    "ci-info": "^3.7.0",
     "cli-columns": "^4.0.0",
     "cli-table3": "^0.6.3",
     "columnify": "^1.6.0",
