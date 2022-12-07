@@ -112,7 +112,7 @@
     "read-package-json-fast": "^3.0.1",
     "rimraf": "^3.0.2",
     "semver": "^7.3.8",
-    "ssri": "^10.0.0",
+    "ssri": "^10.0.1",
     "tar": "^6.1.12",
     "text-table": "~0.2.0",
     "tiny-relative-date": "^1.3.0",
