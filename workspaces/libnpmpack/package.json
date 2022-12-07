@@ -39,7 +39,7 @@
     "@npmcli/arborist": "^6.1.4",
     "@npmcli/run-script": "^6.0.0",
     "npm-package-arg": "^10.1.0",
-    "pacote": "^15.0.2"
+    "pacote": "^15.0.7"
   },
   "engines": {
     "node": "^14.17.0 || ^16.13.0 || >=18.0.0"
