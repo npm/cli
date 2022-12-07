@@ -14,7 +14,7 @@
     "@npmcli/query": "^3.0.0",
     "@npmcli/run-script": "^6.0.0",
     "bin-links": "^4.0.1",
-    "cacache": "^17.0.2",
+    "cacache": "^17.0.3",
     "common-ancestor-path": "^1.0.1",
     "hosted-git-info": "^6.1.1",
     "json-parse-even-better-errors": "^3.0.0",
