@@ -20,6 +20,7 @@ graph LR;
   libnpmaccess-->npm-package-arg;
   libnpmaccess-->npm-registry-fetch;
   libnpmaccess-->npmcli-eslint-config["@npmcli/eslint-config"];
+  libnpmaccess-->npmcli-mock-registry["@npmcli/mock-registry"];
   libnpmaccess-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmdiff-->npm-package-arg;
   libnpmdiff-->npmcli-arborist["@npmcli/arborist"];
@@ -336,6 +337,7 @@ graph LR;
   libnpmaccess-->npm-package-arg;
   libnpmaccess-->npm-registry-fetch;
   libnpmaccess-->npmcli-eslint-config["@npmcli/eslint-config"];
+  libnpmaccess-->npmcli-mock-registry["@npmcli/mock-registry"];
   libnpmaccess-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmaccess-->tap;
   libnpmdiff-->binary-extensions;
@@ -776,11 +778,11 @@ Each group depends on packages lower down the chain, nothing depends on
 packages higher up the chain.
 
  - npm
- - @npmcli/smoke-tests, libnpmexec, libnpmpublish
+ - @npmcli/smoke-tests, libnpmaccess, libnpmexec, libnpmpublish
  - @npmcli/mock-registry, libnpmdiff, libnpmfund, libnpmpack
  - @npmcli/arborist
  - @npmcli/metavuln-calculator
- - pacote, libnpmaccess, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, npm-profile
+ - pacote, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, npm-profile
  - npm-registry-fetch, libnpmversion
  - @npmcli/git, make-fetch-happen, @npmcli/config, init-package-json
  - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, @npmcli/run-script, read-package-json, promzard
