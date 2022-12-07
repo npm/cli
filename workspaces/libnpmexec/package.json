@@ -65,7 +65,7 @@
     "@npmcli/run-script": "^6.0.0",
     "chalk": "^4.1.0",
     "ci-info": "^3.6.1",
-    "npm-package-arg": "^10.0.0",
+    "npm-package-arg": "^10.1.0",
     "npmlog": "^7.0.1",
     "pacote": "^15.0.2",
     "proc-log": "^3.0.0",
