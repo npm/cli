@@ -548,7 +548,6 @@ graph LR;
   npm-->remark-gfm;
   npm-->remark-github;
   npm-->remark;
-  npm-->rimraf;
   npm-->semver;
   npm-->spawk;
   npm-->ssri;

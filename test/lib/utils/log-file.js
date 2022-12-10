@@ -4,7 +4,6 @@ const fs = _fs.promises
 const path = require('path')
 const os = require('os')
 const fsMiniPass = require('fs-minipass')
-const rimraf = require('rimraf')
 const LogFile = require('../../../lib/utils/log-file.js')
 const { cleanCwd, cleanDate } = require('../../fixtures/clean-snapshot')
 
@@ -275,12 +274,14 @@ t.test('rimraf error', async t => {
     logsMax,
     testdir: makeOldLogs(oldLogs),
     mocks: {
-      rimraf: (...args) => {
-        if (count >= 3) {
-          throw new Error('bad rimraf')
-        }
-        count++
-        return rimraf(...args)
+      'fs/promises': {
+        rm: async (...args) => {
+          if (count >= 3) {
+            throw new Error('bad rimraf')
+          }
+          count++
+          return fs.rm(...args)
+        },
       },
     },
   })
