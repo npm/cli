@@ -16,7 +16,7 @@ class MockRegistry {
     if (!opts.registry) {
       throw new Error('mock registry requires a registry value')
     }
-    this.#registry = (new URL(opts.registry)).origin
+    this.#registry = new URL(opts.registry)
     this.#authorization = opts.authorization
     this.#basic = opts.basic
     this.#debug = opts.debug
@@ -66,7 +66,14 @@ class MockRegistry {
   }
 
   get origin () {
-    return this.#registry
+    return this.#registry.origin
+  }
+
+  get pathname () {
+    if (this.#registry.pathname.endsWith('/')) {
+      return this.#registry.pathname.slice(0, -1)
+    }
+    return this.#registry.pathname
   }
 
   get nock () {
@@ -96,17 +103,21 @@ class MockRegistry {
 
     this.nock = MockRegistry.tnock(
       this.#tap,
-      this.#registry,
+      this.origin,
       { reqheaders },
       { debug: this.#debug, strict: this.#strict }
     )
+  }
+
+  fullPath (uri) {
+    return `${this.pathname}${uri}`
   }
 
   search ({ responseCode = 200, results = [], error }) {
     // the flags, score, and searchScore parts of the response are never used
     // by npm, only package is used
     const response = results.map(p => ({ package: p }))
-    this.nock = this.nock.get('/-/v1/search').query(true)
+    this.nock = this.nock.get(this.fullPath(`/-/v1/search`)).query(true)
     if (error) {
       this.nock = this.nock.replyWithError(error)
     } else {
@@ -117,21 +128,24 @@ class MockRegistry {
 
   whoami ({ username, body, responseCode = 200, times = 1 }) {
     if (username) {
-      this.nock = this.nock.get('/-/whoami').times(times).reply(responseCode, { username })
+      this.nock = this.nock.get(this.fullPath('/-/whoami')).times(times)
+        .reply(responseCode, { username })
     } else {
-      this.nock = this.nock.get('/-/whoami').times(times).reply(responseCode, body)
+      this.nock = this.nock.get(this.fullPath('/-/whoami')).times(times)
+        .reply(responseCode, body)
     }
   }
 
   setAccess ({ spec, body = {} }) {
     this.nock = this.nock.post(
-      `/-/package/${npa(spec).escapedName}/access`,
+      this.fullPath(`/-/package/${npa(spec).escapedName}/access`),
       body
     ).reply(200)
   }
 
   getVisibility ({ spec, visibility }) {
-    this.nock = this.nock.get(`/-/package/${npa(spec).escapedName}/visibility`)
+    this.nock = this.nock.get(
+      this.fullPath(`/-/package/${npa(spec).escapedName}/visibility`))
       .reply(200, visibility)
   }
 
@@ -141,7 +155,7 @@ class MockRegistry {
     }
     const [scope, teamName] = team.split(':')
     this.nock = this.nock.put(
-      `/-/team/${encodeURIComponent(scope)}/${encodeURIComponent(teamName)}/package`,
+      this.fullPath(`/-/team/${encodeURIComponent(scope)}/${encodeURIComponent(teamName)}/package`),
       { package: spec, permissions }
     ).reply(200)
   }
@@ -152,23 +166,25 @@ class MockRegistry {
     }
     const [scope, teamName] = team.split(':')
     this.nock = this.nock.delete(
-      `/-/team/${encodeURIComponent(scope)}/${encodeURIComponent(teamName)}/package`,
+      this.fullPath(`/-/team/${encodeURIComponent(scope)}/${encodeURIComponent(teamName)}/package`),
       { package: spec }
     ).reply(200)
   }
 
   couchuser ({ username, body, responseCode = 200 }) {
     if (body) {
-      this.nock = this.nock.get(`/-/user/org.couchdb.user:${encodeURIComponent(username)}`)
-        .reply(responseCode, body)
+      this.nock = this.nock.get(
+        this.fullPath(`/-/user/org.couchdb.user:${encodeURIComponent(username)}`)
+      ).reply(responseCode, body)
     } else {
-      this.nock = this.nock.get(`/-/user/org.couchdb.user:${encodeURIComponent(username)}`)
-        .reply(responseCode, { _id: `org.couchdb.user:${username}`, email: '', name: username })
+      this.nock = this.nock.get(
+        this.fullPath(`/-/user/org.couchdb.user:${encodeURIComponent(username)}`)
+      ).reply(responseCode, { _id: `org.couchdb.user:${username}`, email: '', name: username })
     }
   }
 
   couchadduser ({ username, email, password, token = 'npm_default-test-token' }) {
-    this.nock = this.nock.put(`/-/user/org.couchdb.user:${username}`, body => {
+    this.nock = this.nock.put(this.fullPath(`/-/user/org.couchdb.user:${username}`), body => {
       this.#tap.match(body, {
         _id: `org.couchdb.user:${username}`,
         name: username,
@@ -189,7 +205,7 @@ class MockRegistry {
   }
 
   couchlogin ({ username, password, token = 'npm_default-test-token' }) {
-    this.nock = this.nock.put(`/-/user/org.couchdb.user:${username}`, body => {
+    this.nock = this.nock.put(this.fullPath(`/-/user/org.couchdb.user:${username}`), body => {
       this.#tap.match(body, {
         _id: `org.couchdb.user:${username}`,
         name: username,
@@ -209,10 +225,10 @@ class MockRegistry {
   }
 
   webadduser ({ username, password, token = 'npm_default-test-token' }) {
-    const doneUrl = new URL('/npm-cli-test/done', this.#registry).href
-    const loginUrl = new URL('/npm-cli-test/login', this.#registry).href
+    const doneUrl = new URL('/npm-cli-test/done', this.origin).href
+    const loginUrl = new URL('/npm-cli-test/login', this.origin).href
     this.nock = this.nock
-      .post('/-/v1/login', body => {
+      .post(this.fullPath('/-/v1/login'), body => {
         this.#tap.ok(body.create) // Sole difference from weblogin
         this.#tap.ok(body.hostname)
         return true
@@ -223,10 +239,10 @@ class MockRegistry {
   }
 
   weblogin ({ token = 'npm_default-test-token' }) {
-    const doneUrl = new URL('/npm-cli-test/done', this.#registry).href
-    const loginUrl = new URL('/npm-cli-test/login', this.#registry).href
+    const doneUrl = new URL('/npm-cli-test/done', this.origin).href
+    const loginUrl = new URL('/npm-cli-test/login', this.origin).href
     this.nock = this.nock
-      .post('/-/v1/login', body => {
+      .post(this.fullPath('/-/v1/login'), body => {
         this.#tap.ok(body.hostname)
         return true
       })
@@ -251,12 +267,12 @@ class MockRegistry {
         uri = `/-/org/${scope}/package`
       }
     }
-    this.nock = this.nock.get(uri).times(times).reply(responseCode, packages)
+    this.nock = this.nock.get(this.fullPath(uri)).times(times).reply(responseCode, packages)
   }
 
   getCollaborators ({ spec, collaborators = {} }) {
-    this.nock = this.nock.get(`/-/package/${npa(spec).escapedName}/collaborators`)
-      .reply(200, collaborators)
+    this.nock = this.nock.get(this.fullPath(`/-/package/${npa(spec).escapedName}/collaborators`)
+    ).reply(200, collaborators)
   }
 
   advisory (advisory = {}) {
@@ -279,7 +295,7 @@ class MockRegistry {
 
   star (manifest, users) {
     const spec = npa(manifest.name)
-    this.nock = this.nock.put(`/${spec.escapedName}`, {
+    this.nock = this.nock.put(this.fullPath(`/${spec.escapedName}`), {
       _id: manifest._id,
       _rev: manifest._rev,
       users,
@@ -287,13 +303,21 @@ class MockRegistry {
   }
 
   ping ({ body = {}, responseCode = 200 } = {}) {
-    this.nock = this.nock.get('/-/ping?write=true').reply(responseCode, body)
+    this.nock = this.nock.get(this.fullPath('/-/ping?write=true')).reply(responseCode, body)
+  }
+
+  // full unpublish of an entire package
+  async unpublish ({ manifest }) {
+    let nock = this.nock
+    const spec = npa(manifest.name)
+    nock = nock.delete(this.fullPath(`/${spec.escapedName}/-rev/${manifest._rev}`)).reply(201)
+    return nock
   }
 
   async package ({ manifest, times = 1, query, tarballs }) {
     let nock = this.nock
     const spec = npa(manifest.name)
-    nock = nock.get(`/${spec.escapedName}`).times(times)
+    nock = nock.get(this.fullPath(`/${spec.escapedName}`)).times(times)
     if (query) {
       nock = nock.query(query)
     }
@@ -311,7 +335,7 @@ class MockRegistry {
     const nock = this.nock
     const dist = new URL(manifest.dist.tarball)
     const tar = await pacote.tarball(tarball, { Arborist })
-    nock.get(dist.pathname).reply(200, tar)
+    nock.get(this.fullPath(dist.pathname)).reply(200, tar)
     return nock
   }
 
@@ -343,7 +367,8 @@ class MockRegistry {
         description: 'test package mock manifest',
         dependencies: {},
         dist: {
-          tarball: `${this.#registry}/${name}/-/${unscoped}-${packument.version}.tgz`,
+          /* eslint-disable-next-line max-len */
+          tarball: `${this.origin}${this.fullPath(`/${name}/-/${unscoped}-${packument.version}.tgz`)}`,
         },
         maintainers: [],
         ...packument,
