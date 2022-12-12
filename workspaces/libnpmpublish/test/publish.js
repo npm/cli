@@ -1,62 +1,63 @@
 'use strict'
 
-const t = require('tap')
-const ssri = require('ssri')
-const crypto = require('crypto')
-const pack = require('libnpmpack')
 const cloneDeep = require('lodash.clonedeep')
+const crypto = require('crypto')
+const fs = require('fs')
+const npa = require('npm-package-arg')
+const ssri = require('ssri')
+const t = require('tap')
 
-const publish = require('../lib/publish.js')
-const tnock = require('./fixtures/tnock.js')
+const MockRegistry = require('@npmcli/mock-registry')
 
-const testDir = t.testdir({
-  'package.json': JSON.stringify({
-    name: 'libnpmpublish',
-    version: '1.0.0',
-  }, null, 2),
-  'index.js': 'hello',
-})
+// TODO use registry.manifest (requires json date wrangling for nock)
 
-const OPTS = {
-  registry: 'https://mock.reg/',
+const tarData = fs.readFileSync('./test/fixtures/npmcli-libnpmpublish-test-1.0.0.tgz')
+const shasum = crypto.createHash('sha1').update(tarData).digest('hex')
+const integrity = ssri.fromData(tarData, { algorithms: ['sha512'] })
+
+const token = 'test-auth-token'
+const opts = {
+  npmVersion: '1.0.0-test',
+  registry: 'https://mock.reg',
+  '//mock.reg/:_authToken': token,
 }
 
-const REG = OPTS.registry
-
-t.test('basic publish', async t => {
+t.test('basic publish - no npmVersion', async t => {
+  const { publish } = t.mock('..')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+  })
   const manifest = {
-    name: 'libnpmpublish',
+    name: 'libnpmpublish-test',
     version: '1.0.0',
-    description: 'some stuff',
+    description: 'test libnpmpublish package',
   }
+  const spec = npa(manifest.name)
 
-  const tarData = await pack(`file:${testDir}`, { ...OPTS })
-  const shasum = crypto.createHash('sha1').update(tarData).digest('hex')
-  const integrity = ssri.fromData(tarData, { algorithms: ['sha512'] })
   const packument = {
-    _id: 'libnpmpublish',
-    name: 'libnpmpublish',
-    description: 'some stuff',
+    _id: manifest.name,
+    name: manifest.name,
+    description: manifest.description,
     'dist-tags': {
       latest: '1.0.0',
     },
     versions: {
       '1.0.0': {
-        _id: 'libnpmpublish@1.0.0',
+        _id: `${manifest.name}@${manifest.version}`,
         _nodeVersion: process.versions.node,
-        name: 'libnpmpublish',
-        version: '1.0.0',
-        description: 'some stuff',
+        ...manifest,
         dist: {
           shasum,
-          integrity: integrity.toString(),
-          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz',
+          integrity: integrity.sha512[0].toString(),
+          tarball: 'http://mock.reg/libnpmpublish-test/-/libnpmpublish-test-1.0.0.tgz',
         },
       },
     },
     access: 'public',
     _attachments: {
-      'libnpmpublish-1.0.0.tgz': {
+      'libnpmpublish-test-1.0.0.tgz': {
         content_type: 'application/octet-stream',
         data: tarData.toString('base64'),
         length: tarData.length,
@@ -64,57 +65,52 @@ t.test('basic publish', async t => {
     },
   }
 
-  const srv = tnock(t, REG)
-  srv.put('/libnpmpublish', body => {
-    t.same(body, packument, 'posted packument matches expectations')
-    return true
-  }, {
-    authorization: 'Bearer deadbeef',
-  }).reply(201, {})
-
+  registry.nock.put(`/${spec.escapedName}`, packument).reply(201, {})
   const ret = await publish(manifest, tarData, {
-    ...OPTS,
-    token: 'deadbeef',
+    ...opts,
+    npmVersion: null,
   })
   t.ok(ret, 'publish succeeded')
 })
 
-t.test('scoped publish - default access', async t => {
+t.test('scoped publish', async t => {
+  const { publish } = t.mock('..')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+  })
   const manifest = {
-    name: '@claudiahdz/libnpmpublish',
+    name: '@npmcli/libnpmpublish-test',
     version: '1.0.0',
-    description: 'some stuff',
+    description: 'test libnpmpublish package',
   }
+  const spec = npa(manifest.name)
 
-  const tarData = await pack(`file:${testDir}`, { ...OPTS })
-  const shasum = crypto.createHash('sha1').update(tarData).digest('hex')
-  const integrity = ssri.fromData(tarData, { algorithms: ['sha512'] })
   const packument = {
-    _id: '@claudiahdz/libnpmpublish',
-    name: '@claudiahdz/libnpmpublish',
-    description: 'some stuff',
+    _id: manifest.name,
+    name: manifest.name,
+    description: manifest.description,
     'dist-tags': {
       latest: '1.0.0',
     },
     versions: {
       '1.0.0': {
-        _id: '@claudiahdz/libnpmpublish@1.0.0',
+        _id: `${manifest.name}@${manifest.version}`,
         _nodeVersion: process.versions.node,
-        _npmVersion: '6.13.7',
-        name: '@claudiahdz/libnpmpublish',
-        version: '1.0.0',
-        description: 'some stuff',
+        _npmVersion: opts.npmVersion,
+        ...manifest,
         dist: {
           shasum,
-          integrity: integrity.toString(),
-          tarball: 'http://mock.reg/@claudiahdz/libnpmpublish/'
-            + '-/@claudiahdz/libnpmpublish-1.0.0.tgz',
+          integrity: integrity.sha512[0].toString(),
+          /* eslint-disable-next-line max-len */
+          tarball: 'http://mock.reg/@npmcli/libnpmpublish-test/-/@npmcli/libnpmpublish-test-1.0.0.tgz',
         },
       },
     },
     access: 'public',
     _attachments: {
-      '@claudiahdz/libnpmpublish-1.0.0.tgz': {
+      '@npmcli/libnpmpublish-test-1.0.0.tgz': {
         content_type: 'application/octet-stream',
         data: tarData.toString('base64'),
         length: tarData.length,
@@ -122,58 +118,51 @@ t.test('scoped publish - default access', async t => {
     },
   }
 
-  const srv = tnock(t, REG)
-  srv.put('/@claudiahdz%2flibnpmpublish', body => {
-    t.same(body, packument, 'posted packument matches expectations')
-    return true
-  }, {
-    authorization: 'Bearer deadbeef',
-  }).reply(201, {})
+  registry.nock.put(`/${spec.escapedName}`, packument).reply(201, {})
 
-  const ret = await publish(manifest, tarData, {
-    ...OPTS,
-    npmVersion: '6.13.7',
-    token: 'deadbeef',
-  })
+  const ret = await publish(manifest, tarData, opts)
   t.ok(ret, 'publish succeeded')
 })
 
 t.test('scoped publish - restricted access', async t => {
+  const { publish } = t.mock('..')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+  })
   const manifest = {
-    name: '@claudiahdz/libnpmpublish',
+    name: '@npmcli/libnpmpublish-test',
     version: '1.0.0',
-    description: 'some stuff',
+    description: 'test libnpmpublish package',
   }
+  const spec = npa(manifest.name)
 
-  const tarData = await pack(`file:${testDir}`, { ...OPTS })
-  const shasum = crypto.createHash('sha1').update(tarData).digest('hex')
-  const integrity = ssri.fromData(tarData, { algorithms: ['sha512'] })
   const packument = {
-    _id: '@claudiahdz/libnpmpublish',
-    name: '@claudiahdz/libnpmpublish',
-    description: 'some stuff',
+    _id: manifest.name,
+    name: manifest.name,
+    description: manifest.description,
     'dist-tags': {
       latest: '1.0.0',
     },
     versions: {
       '1.0.0': {
-        _id: '@claudiahdz/libnpmpublish@1.0.0',
+        _id: '@npmcli/libnpmpublish-test@1.0.0',
         _nodeVersion: process.versions.node,
-        _npmVersion: '6.13.7',
-        name: '@claudiahdz/libnpmpublish',
-        version: '1.0.0',
-        description: 'some stuff',
+        _npmVersion: opts.npmVersion,
+        name: '@npmcli/libnpmpublish-test',
+        ...manifest,
         dist: {
           shasum,
-          integrity: integrity.toString(),
-          tarball: 'http://mock.reg/@claudiahdz/libnpmpublish/'
-            + '-/@claudiahdz/libnpmpublish-1.0.0.tgz',
+          integrity: integrity.sha512[0].toString(),
+          /* eslint-disable-next-line max-len */
+          tarball: 'http://mock.reg/@npmcli/libnpmpublish-test/-/@npmcli/libnpmpublish-test-1.0.0.tgz',
         },
       },
     },
     access: 'restricted',
     _attachments: {
-      '@claudiahdz/libnpmpublish-1.0.0.tgz': {
+      '@npmcli/libnpmpublish-test-1.0.0.tgz': {
         content_type: 'application/octet-stream',
         data: tarData.toString('base64'),
         length: tarData.length,
@@ -181,34 +170,28 @@ t.test('scoped publish - restricted access', async t => {
     },
   }
 
-  const srv = tnock(t, REG)
-  srv.put('/@claudiahdz%2flibnpmpublish', body => {
-    t.same(body, packument, 'posted packument matches expectations')
-    return true
-  }, {
-    authorization: 'Bearer deadbeef',
-  }).reply(201, {})
+  registry.nock.put(`/${spec.escapedName}`, packument).reply(201, {})
 
   const ret = await publish(manifest, tarData, {
-    ...OPTS,
+    ...opts,
     access: 'restricted',
-    npmVersion: '6.13.7',
-    token: 'deadbeef',
   })
   t.ok(ret, 'publish succeeded')
 })
 
 t.test('retry after a conflict', async t => {
+  const { publish } = t.mock('..')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+  })
   const REV = '72-47f2986bfd8e8b55068b204588bbf484'
   const manifest = {
     name: 'libnpmpublish',
     version: '1.0.0',
     description: 'some stuff',
   }
-
-  const tarData = await pack(`file:${testDir}`, { ...OPTS })
-  const shasum = crypto.createHash('sha1').update(tarData).digest('hex')
-  const integrity = ssri.fromData(tarData, { algorithms: ['sha512'] })
 
   const basePackument = {
     name: 'libnpmpublish',
@@ -231,7 +214,7 @@ t.test('retry after a conflict', async t => {
       '1.0.1': {
         _id: 'libnpmpublish@1.0.1',
         _nodeVersion: process.versions.node,
-        _npmVersion: '13.7.0',
+        _npmVersion: opts.npmVersion,
         name: 'libnpmpublish',
         version: '1.0.1',
         description: 'some stuff',
@@ -257,7 +240,7 @@ t.test('retry after a conflict', async t => {
       '1.0.0': {
         _id: 'libnpmpublish@1.0.0',
         _nodeVersion: process.versions.node,
-        _npmVersion: '6.13.7',
+        _npmVersion: opts.npmVersion,
         name: 'libnpmpublish',
         version: '1.0.0',
         description: 'some stuff',
@@ -284,19 +267,18 @@ t.test('retry after a conflict', async t => {
     _attachments: { ...currentPackument._attachments, ...newPackument._attachments },
   })
 
-  const srv = tnock(t, REG)
-  srv.put('/libnpmpublish', body => {
+  registry.nock.put('/libnpmpublish', body => {
     t.notOk(body._rev, 'no _rev in initial post')
     t.same(body, newPackument, 'got conflicting packument')
     return true
   }).reply(409, { error: 'gimme _rev plz' })
 
-  srv.get('/libnpmpublish?write=true').reply(200, {
+  registry.nock.get('/libnpmpublish?write=true').reply(200, {
     _rev: REV,
     ...currentPackument,
   })
 
-  srv.put('/libnpmpublish', body => {
+  registry.nock.put('/libnpmpublish', body => {
     t.same(body, {
       _rev: REV,
       ...mergedPackument,
@@ -304,26 +286,23 @@ t.test('retry after a conflict', async t => {
     return true
   }).reply(201, {})
 
-  const ret = await publish(manifest, tarData, {
-    ...OPTS,
-    token: 'deadbeef',
-    npmVersion: '6.13.7',
-  })
-
+  const ret = await publish(manifest, tarData, opts)
   t.ok(ret, 'publish succeeded')
 })
 
 t.test('retry after a conflict -- no versions on remote', async t => {
+  const { publish } = t.mock('..')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+  })
   const REV = '72-47f2986bfd8e8b55068b204588bbf484'
   const manifest = {
     name: 'libnpmpublish',
     version: '1.0.0',
     description: 'some stuff',
   }
-
-  const tarData = await pack(`file:${testDir}`, { ...OPTS })
-  const shasum = crypto.createHash('sha1').update(tarData).digest('hex')
-  const integrity = ssri.fromData(tarData, { algorithms: ['sha512'] })
 
   const basePackument = {
     name: 'libnpmpublish',
@@ -339,7 +318,7 @@ t.test('retry after a conflict -- no versions on remote', async t => {
       '1.0.0': {
         _id: 'libnpmpublish@1.0.0',
         _nodeVersion: process.versions.node,
-        _npmVersion: '6.13.7',
+        _npmVersion: opts.npmVersion,
         name: 'libnpmpublish',
         version: '1.0.0',
         description: 'some stuff',
@@ -365,19 +344,18 @@ t.test('retry after a conflict -- no versions on remote', async t => {
     _attachments: { ...newPackument._attachments },
   })
 
-  const srv = tnock(t, REG)
-  srv.put('/libnpmpublish', body => {
+  registry.nock.put('/libnpmpublish', body => {
     t.notOk(body._rev, 'no _rev in initial post')
     t.same(body, newPackument, 'got conflicting packument')
     return true
   }).reply(409, { error: 'gimme _rev plz' })
 
-  srv.get('/libnpmpublish?write=true').reply(200, {
+  registry.nock.get('/libnpmpublish?write=true').reply(200, {
     _rev: REV,
     ...currentPackument,
   })
 
-  srv.put('/libnpmpublish', body => {
+  registry.nock.put('/libnpmpublish', body => {
     t.same(body, {
       _rev: REV,
       ...mergedPackument,
@@ -385,16 +363,18 @@ t.test('retry after a conflict -- no versions on remote', async t => {
     return true
   }).reply(201, {})
 
-  const ret = await publish(manifest, tarData, {
-    ...OPTS,
-    npmVersion: '6.13.7',
-    token: 'deadbeef',
-  })
+  const ret = await publish(manifest, tarData, opts)
 
   t.ok(ret, 'publish succeeded')
 })
 
 t.test('version conflict', async t => {
+  const { publish } = t.mock('..')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+  })
   const REV = '72-47f2986bfd8e8b55068b204588bbf484'
   const manifest = {
     name: 'libnpmpublish',
@@ -402,9 +382,6 @@ t.test('version conflict', async t => {
     description: 'some stuff',
   }
 
-  const tarData = await pack(`file:${testDir}`, { ...OPTS })
-  const shasum = crypto.createHash('sha1').update(tarData).digest('hex')
-  const integrity = ssri.fromData(tarData, { algorithms: ['sha512'] })
   const basePackument = {
     name: 'libnpmpublish',
     description: 'some stuff',
@@ -440,21 +417,20 @@ t.test('version conflict', async t => {
     },
   }))
 
-  const srv = tnock(t, REG)
-  srv.put('/libnpmpublish', body => {
+  registry.nock.put('/libnpmpublish', body => {
     t.notOk(body._rev, 'no _rev in initial post')
     t.same(body, newPackument, 'got conflicting packument')
     return true
   }).reply(409, { error: 'gimme _rev plz' })
 
-  srv.get('/libnpmpublish?write=true').reply(200, {
+  registry.nock.get('/libnpmpublish?write=true').reply(200, {
     _rev: REV,
     ...newPackument,
   })
 
   try {
     await publish(manifest, tarData, {
-      ...OPTS,
+      ...opts,
       npmVersion: '6.13.7',
       token: 'deadbeef',
     })
@@ -464,34 +440,36 @@ t.test('version conflict', async t => {
 })
 
 t.test('refuse if package marked private', async t => {
-  const manifest = {
-    name: 'libnpmpublish',
-    version: '1.0.0',
-    description: 'some stuff',
-    private: true,
-  }
+  const { publish } = t.mock('..')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+  })
+  const manifest = registry.manifest({ name: '@npmcli/libnpmpublish-test' })
+  manifest.private = true
 
-  try {
-    await publish(manifest, Buffer.from(''), {
-      ...OPTS,
-      npmVersion: '6.9.0',
-      token: 'deadbeef',
-    })
-  } catch (err) {
-    t.equal(err.code, 'EPRIVATE', 'got correct error code')
-  }
+  await t.rejects(
+    publish(manifest, Buffer.from(''), opts),
+    { code: 'EPRIVATE' },
+    'got correct error code'
+  )
 })
 
 t.test('publish includes access', async t => {
+  const { publish } = t.mock('..')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+  })
+
   const manifest = {
     name: 'libnpmpublish',
     version: '1.0.0',
     description: 'some stuff',
   }
 
-  const tarData = await pack(`file:${testDir}`, { ...OPTS })
-  const shasum = crypto.createHash('sha1').update(tarData).digest('hex')
-  const integrity = ssri.fromData(tarData, { algorithms: ['sha512'] })
   const packument = {
     name: 'libnpmpublish',
     description: 'some stuff',
@@ -504,6 +482,7 @@ t.test('publish includes access', async t => {
       '1.0.0': {
         _id: 'libnpmpublish@1.0.0',
         _nodeVersion: process.versions.node,
+        _npmVersion: opts.npmVersion,
         name: 'libnpmpublish',
         version: '1.0.0',
         description: 'some stuff',
@@ -523,17 +502,10 @@ t.test('publish includes access', async t => {
     },
   }
 
-  const srv = tnock(t, REG)
-  srv.put('/libnpmpublish', body => {
-    t.same(body, packument, 'posted packument matches expectations')
-    return true
-  }, {
-    authorization: 'Bearer deadbeef',
-  }).reply(201, {})
+  registry.nock.put('/libnpmpublish', packument).reply(201, {})
 
   const ret = await publish(manifest, tarData, {
-    ...OPTS,
-    token: 'deadbeef',
+    ...opts,
     access: 'public',
   })
 
@@ -541,47 +513,49 @@ t.test('publish includes access', async t => {
 })
 
 t.test('refuse if package is unscoped plus `restricted` access', async t => {
-  const manifest = {
-    name: 'libnpmpublish',
-    version: '1.0.0',
-    description: 'some stuff',
-  }
-
-  try {
-    await publish(manifest, Buffer.from(''), {
-      ...OPTS,
-      npmVersion: '6.13.7',
-      access: 'restricted',
-    })
-  } catch (err) {
-    t.equal(err.code, 'EUNSCOPED', 'got correct error code')
-  }
+  const { publish } = t.mock('..')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+  })
+  const manifest = registry.manifest({ name: 'libnpmpublish-test' })
+  await t.rejects(publish(manifest, Buffer.from(''), {
+    ...opts,
+    access: 'restricted',
+  }),
+  { code: 'EUNSCOPED' }
+  )
 })
 
 t.test('refuse if bad semver on manifest', async t => {
-  const manifest = {
-    name: 'libnpmpublish',
-    version: 'lmao',
-    description: 'some stuff',
-  }
+  const { publish } = t.mock('..')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+  })
+  const manifest = registry.manifest({ name: 'libnpmpublish-test', versions: ['notsemver'] })
 
-  try {
-    await publish(manifest, Buffer.from(''), OPTS)
-  } catch (err) {
-    t.equal(err.code, 'EBADSEMVER', 'got correct error code')
-  }
+  await t.rejects(
+    publish(manifest, Buffer.from(''), opts),
+    { code: 'EBADSEMVER' }
+  )
 })
 
 t.test('other error code', async t => {
+  const { publish } = t.mock('..')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+  })
   const manifest = {
     name: 'libnpmpublish',
     version: '1.0.0',
     description: 'some stuff',
   }
 
-  const tarData = await pack(`file:${testDir}`, { ...OPTS })
-  const shasum = crypto.createHash('sha1').update(tarData).digest('hex')
-  const integrity = ssri.fromData(tarData, { algorithms: ['sha512'] })
   const packument = {
     name: 'libnpmpublish',
     description: 'some stuff',
@@ -594,7 +568,7 @@ t.test('other error code', async t => {
       '1.0.0': {
         _id: 'libnpmpublish@1.0.0',
         _nodeVersion: process.versions.node,
-        _npmVersion: '6.13.7',
+        _npmVersion: opts.npmVersion,
         name: 'libnpmpublish',
         version: '1.0.0',
         description: 'some stuff',
@@ -614,21 +588,11 @@ t.test('other error code', async t => {
     },
   }
 
-  const srv = tnock(t, REG)
-  srv.put('/libnpmpublish', body => {
-    t.same(body, packument, 'posted packument matches expectations')
-    return true
-  }, {
-    authorization: 'Bearer deadbeef',
-  }).reply(500, { error: 'go away' })
+  registry.nock.put('/libnpmpublish', packument).reply(500, { error: 'go away' })
 
-  try {
-    await publish(manifest, tarData, {
-      ...OPTS,
-      npmVersion: '6.13.7',
-      token: 'deadbeef',
-    })
-  } catch (err) {
-    t.match(err.message, /go away/, 'no retry on non-409')
-  }
+  await t.rejects(
+    publish(manifest, tarData, opts),
+    /go away/,
+    'no retry on non-409'
+  )
 })

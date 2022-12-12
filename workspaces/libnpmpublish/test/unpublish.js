@@ -1,297 +1,173 @@
 'use strict'
 
 const t = require('tap')
-const tnock = require('./fixtures/tnock.js')
+const MockRegistry = require('@npmcli/mock-registry')
+const npa = require('npm-package-arg')
 
-const OPTS = {
+const opts = {
   registry: 'https://mock.reg/',
 }
 
-const REG = OPTS.registry
-const REV = '72-47f2986bfd8e8b55068b204588bbf484'
-const unpub = require('../lib/unpublish.js')
+const { unpublish } = require('..')
 
-t.test('basic test', async t => {
-  const doc = {
-    _id: 'foo',
-    _rev: REV,
-    name: 'foo',
-    'dist-tags': {
-      latest: '1.0.0',
-    },
-    versions: {
-      '1.0.0': {
-        name: 'foo',
-        dist: {
-          tarball: `${REG}/foo/-/foo-1.0.0.tgz`,
-        },
-      },
-    },
-  }
-  const srv = tnock(t, REG)
-  srv.get('/foo?write=true').reply(200, doc)
-  srv.delete(`/foo/-rev/${REV}`).reply(201)
-  const ret = await unpub('foo', OPTS)
-  t.ok(ret, 'foo was unpublished')
+t.test('basic test with no scope', async t => {
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+  })
+  const manifest = registry.manifest({ name: 'npm-unpublish-test' })
+  registry.package({ manifest, query: { write: true } })
+  registry.unpublish({ manifest })
+  const ret = await unpublish('npm-unpublish-test', opts)
+  t.ok(ret, 'npm-unpublish-test was unpublished')
 })
 
-t.test('scoped basic test', async t => {
-  const doc = {
-    _id: '@foo/bar',
-    _rev: REV,
-    name: '@foo/bar',
-    'dist-tags': {
-      latest: '1.0.0',
-    },
-    versions: {
-      '1.0.0': {
-        name: '@foo/bar',
-        dist: {
-          tarball: `${REG}/@foo/bar/-/foo-1.0.0.tgz`,
-        },
-      },
-    },
-  }
-  const srv = tnock(t, REG)
-  srv.get('/@foo%2fbar?write=true').reply(200, doc)
-  srv.delete(`/@foo%2fbar/-rev/${REV}`).reply(201)
-  const ret = await unpub('@foo/bar', OPTS)
-  t.ok(ret, 'foo was unpublished')
+t.test('basic test with scope', async t => {
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+  })
+  const manifest = registry.manifest({ name: '@npmcli/npm-unpublish-test' })
+  registry.package({ manifest, query: { write: true } })
+  registry.unpublish({ manifest })
+  const ret = await unpublish('@npmcli/npm-unpublish-test', opts)
+  t.ok(ret, '@npmcli/npm-unpublish-test was unpublished')
 })
 
 t.test('unpublish specific, last version', async t => {
-  const doc = {
-    _id: 'foo',
-    _rev: REV,
-    name: 'foo',
-    'dist-tags': {
-      latest: '1.0.0',
-    },
-    versions: {
-      '1.0.0': {
-        name: 'foo',
-        dist: {
-          tarball: `${REG}/foo/-/foo-1.0.0.tgz`,
-        },
-      },
-    },
-  }
-  const srv = tnock(t, REG)
-  srv.get('/foo?write=true').reply(200, doc)
-  srv.delete(`/foo/-rev/${REV}`).reply(201)
-  const ret = await unpub('foo@1.0.0', OPTS)
-  t.ok(ret, 'foo was unpublished')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+  })
+  const manifest = registry.manifest({ name: 'npm-unpublish-test' })
+  registry.package({ manifest, query: { write: true } })
+  registry.unpublish({ manifest })
+  const ret = await unpublish('npm-unpublish-test@1.0.0', opts)
+  t.ok(ret, 'npm-unpublish-test was unpublished')
 })
 
 t.test('unpublish specific version', async t => {
-  const doc = {
-    _id: 'foo',
-    _rev: REV,
-    _revisions: [1, 2, 3],
-    _attachments: [1, 2, 3],
-    name: 'foo',
-    'dist-tags': {
-      latest: '1.0.1',
-    },
-    versions: {
-      '1.0.0': {
-        name: 'foo',
-        dist: {
-          tarball: `${REG}/foo/-/foo-1.0.0.tgz`,
-        },
-      },
-      '1.0.1': {
-        name: 'foo',
-        dist: {
-          tarball: `${REG}/foo/-/foo-1.0.1.tgz`,
-        },
-      },
-    },
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+  })
+  const manifest = registry.manifest({ name: 'npm-unpublish-test', versions: ['1.0.0', '1.0.1'] })
+  const unpublished = {
+    ...manifest,
+    versions: { '1.0.0': manifest.versions['1.0.0'] },
+    'dist-tags': { latest: '1.0.0' },
   }
-  const postEdit = {
-    _id: 'foo',
-    _rev: REV,
-    name: 'foo',
-    'dist-tags': {
-      latest: '1.0.0',
-    },
-    versions: {
-      '1.0.0': {
-        name: 'foo',
-        dist: {
-          tarball: `${REG}/foo/-/foo-1.0.0.tgz`,
-        },
-      },
-    },
-  }
-
-  const srv = tnock(t, REG)
-  srv.get('/foo?write=true').reply(200, doc)
-  srv.put(`/foo/-rev/${REV}`, postEdit).reply(200)
-  srv.get('/foo?write=true').reply(200, postEdit)
-  srv.delete(`/foo/-/foo-1.0.1.tgz/-rev/${REV}`).reply(200)
-  const ret = await unpub('foo@1.0.1', OPTS)
+  registry.package({ manifest, query: { write: true } })
+  // nock does not properly compare json payloads with Date objects in them,
+  // hence the pre-stringifying
+  /* eslint-disable-next-line max-len */
+  registry.nock.put(`/npm-unpublish-test/-rev/${manifest._rev}`, JSON.stringify(unpublished)).reply(200)
+  registry.package({ manifest: unpublished, query: { write: true } })
+  /* eslint-disable-next-line max-len */
+  registry.nock.delete(`/npm-unpublish-test/-/npm-unpublish-test-1.0.1.tgz/-rev/${manifest._rev}`).reply(200)
+  const ret = await unpublish('npm-unpublish-test@1.0.1', opts)
   t.ok(ret, 'foo was unpublished')
 })
 
-t.test('unpublishing from a custom registry', async t => {
-  const opt = {
+t.test('unpublishing specific version from a registry with a pathname', async t => {
+  const _opts = {
     registry: 'https://artifactory.example.com/api/npm/npm-snapshots/',
   }
-  const reg = opt.registry
-  const doc = {
-    _id: 'foo',
-    _rev: REV,
-    _revisions: [1, 2, 3],
-    _attachments: [1, 2, 3],
-    name: 'foo',
-    'dist-tags': {
-      latest: '1.0.1',
-    },
-    versions: {
-      '1.0.0': {
-        name: 'foo',
-        dist: {
-          tarball: `${reg}/foo/-/foo-1.0.0.tgz`,
-        },
-      },
-      '1.0.1': {
-        name: 'foo',
-        dist: {
-          tarball: `${reg}/foo/-/foo-1.0.1.tgz`,
-        },
-      },
-    },
+  const registry = new MockRegistry({
+    tap: t,
+    registry: _opts.registry,
+  })
+  const manifest = registry.manifest({ name: 'npm-unpublish-test', versions: ['1.0.0', '1.0.1'] })
+  const unpublished = {
+    ...manifest,
+    versions: { '1.0.0': manifest.versions['1.0.0'] },
+    'dist-tags': { latest: '1.0.0' },
   }
-  const postEdit = {
-    _id: 'foo',
-    _rev: REV,
-    name: 'foo',
-    'dist-tags': {
-      latest: '1.0.0',
-    },
-    versions: {
-      '1.0.0': {
-        name: 'foo',
-        dist: {
-          tarball: `${reg}/foo/-/foo-1.0.0.tgz`,
-        },
-      },
-    },
-  }
-
-  const srv = tnock(t, reg)
-  srv.get('/foo?write=true').reply(200, doc)
-  srv.put(`/foo/-rev/${REV}`, postEdit).reply(200)
-  srv.get('/foo?write=true').reply(200, postEdit)
-  srv.delete(`/foo/-/foo-1.0.1.tgz/-rev/${REV}`).reply(200)
-  const ret = await unpub('foo@1.0.1', opt)
-  t.ok(ret, 'foo was unpublished')
+  registry.package({ manifest, query: { write: true } })
+  // nock does not properly compare json payloads with Date objects in them,
+  // hence the pre-stringifying
+  /* eslint-disable-next-line max-len */
+  registry.nock.put(`${registry.pathname}/npm-unpublish-test/-rev/${manifest._rev}`, JSON.stringify(unpublished)).reply(200)
+  registry.package({ manifest: unpublished, query: { write: true } })
+  /* eslint-disable-next-line max-len */
+  registry.nock.delete(`${registry.pathname}/npm-unpublish-test/-/npm-unpublish-test-1.0.1.tgz/-rev/${manifest._rev}`).reply(200)
+  const ret = await unpublish('npm-unpublish-test@1.0.1', _opts)
+  t.ok(ret, 'npm-unpublish-test was unpublished')
 })
 
 t.test('404 considered a success', async t => {
-  const srv = tnock(t, REG)
-  srv.get('/foo?write=true').reply(404)
-  const ret = await unpub('foo', OPTS)
-  t.ok(ret, 'foo was unpublished')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+  })
+  const manifest = registry.manifest({ name: '@npmcli/npm-unpublish-test' })
+  const spec = npa(manifest.name)
+  registry.nock.get(`/${spec.escapedName}?write=true`).reply(404)
+  const ret = await unpublish('@npmcli/npm-unpublish-test', opts)
+  t.ok(ret, '@npmcli/npm-unpublish-test was unpublished')
 })
 
 t.test('non-404 errors', async t => {
-  const srv = tnock(t, REG)
-  srv.get('/foo?write=true').reply(500)
-
-  try {
-    await unpub('foo', OPTS)
-  } catch (err) {
-    t.equal(err.code, 'E500', 'got right error from server')
-  }
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+  })
+  const manifest = registry.manifest({ name: '@npmcli/npm-unpublish-test' })
+  const spec = npa(manifest.name)
+  registry.nock.get(`/${spec.escapedName}?write=true`).reply(500)
+  await t.rejects(
+    unpublish('@npmcli/npm-unpublish-test', opts),
+    { code: 'E500' },
+    'got correct error from server'
+  )
 })
 
 t.test('packument with missing versions unpublishes whole thing', async t => {
-  const doc = {
-    _id: 'foo',
-    _rev: REV,
-    name: 'foo',
-    'dist-tags': {
-      latest: '1.0.0',
-    },
-  }
-  const srv = tnock(t, REG)
-  srv.get('/foo?write=true').reply(200, doc)
-  srv.delete(`/foo/-rev/${REV}`).reply(201)
-  const ret = await unpub('foo@1.0.0', OPTS)
-  t.ok(ret, 'foo was unpublished')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+  })
+  const manifest = registry.manifest({ name: '@npmcli/npm-unpublish-test' })
+  delete manifest.versions
+  delete manifest.time
+  registry.package({ manifest, query: { write: true } })
+  registry.unpublish({ manifest })
+  const ret = await unpublish('@npmcli/npm-unpublish-test@1.0.0', opts)
+  t.ok(ret, '@npmcli/npm-unpublish-test was unpublished')
 })
 
 t.test('packument with missing specific version assumed unpublished', async t => {
-  const doc = {
-    _id: 'foo',
-    _rev: REV,
-    name: 'foo',
-    'dist-tags': {
-      latest: '1.0.0',
-    },
-    versions: {
-      '1.0.0': {
-        name: 'foo',
-        dist: {
-          tarball: `${REG}/foo/-/foo-1.0.0.tgz`,
-        },
-      },
-    },
-  }
-  const srv = tnock(t, REG)
-  srv.get('/foo?write=true').reply(200, doc)
-  const ret = await unpub('foo@1.0.1', OPTS)
-  t.ok(ret, 'foo was unpublished')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+  })
+  const manifest = registry.manifest({ name: '@npmcli/npm-unpublish-test' })
+  registry.package({ manifest, query: { write: true } })
+  const ret = await unpublish('@npmcli/npm-unpublish-test@1.0.1', opts)
+  t.ok(ret, '@npmcli/npm-unpublish-test was unpublished')
 })
 
 t.test('unpublish specific version without dist-tag update', async t => {
-  const doc = {
-    _id: 'foo',
-    _rev: REV,
-    _revisions: [1, 2, 3],
-    _attachments: [1, 2, 3],
-    name: 'foo',
-    'dist-tags': {
-      latest: '1.0.0',
-    },
-    versions: {
-      '1.0.0': {
-        name: 'foo',
-        dist: {
-          tarball: `${REG}/foo/-/foo-1.0.0.tgz`,
-        },
-      },
-      '1.0.1': {
-        name: 'foo',
-        dist: {
-          tarball: `${REG}/foo/-/foo-1.0.1.tgz`,
-        },
-      },
-    },
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+  })
+  const manifest = registry.manifest({ name: 'npm-unpublish-test', versions: ['1.0.0', '1.0.1'] })
+  manifest['dist-tags'].latest = '1.0.0'
+  const unpublished = {
+    ...manifest,
+    versions: { '1.0.0': manifest.versions['1.0.0'] },
+    'dist-tags': { latest: '1.0.0' },
   }
-  const postEdit = {
-    _id: 'foo',
-    _rev: REV,
-    name: 'foo',
-    'dist-tags': {
-      latest: '1.0.0',
-    },
-    versions: {
-      '1.0.0': {
-        name: 'foo',
-        dist: {
-          tarball: `${REG}/foo/-/foo-1.0.0.tgz`,
-        },
-      },
-    },
-  }
-  const srv = tnock(t, REG)
-  srv.get('/foo?write=true').reply(200, doc)
-  srv.put(`/foo/-rev/${REV}`, postEdit).reply(200)
-  srv.get('/foo?write=true').reply(200, postEdit)
-  srv.delete(`/foo/-/foo-1.0.1.tgz/-rev/${REV}`).reply(200)
-  const ret = await unpub('foo@1.0.1', OPTS)
+  registry.package({ manifest, query: { write: true } })
+  // nock does not properly compare json payloads with Date objects in them,
+  // hence the pre-stringifying
+  /* eslint-disable-next-line max-len */
+  registry.nock.put(`/npm-unpublish-test/-rev/${manifest._rev}`, JSON.stringify(unpublished)).reply(200)
+  /* eslint-disable-next-line max-len */
+  registry.package({ manifest: unpublished, query: { write: true } })
+  /* eslint-disable-next-line max-len */
+  registry.nock.delete(`/npm-unpublish-test/-/npm-unpublish-test-1.0.1.tgz/-rev/${manifest._rev}`).reply(200)
+  const ret = await unpublish('npm-unpublish-test@1.0.1', opts)
   t.ok(ret, 'foo was unpublished')
 })
