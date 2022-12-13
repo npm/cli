@@ -81,7 +81,6 @@
   "tap": {
     "color": true,
     "after": "test/fixtures/cleanup.js",
-    "coverage-map": "map.js",
     "test-env": [
       "NODE_OPTIONS=--no-warnings",
       "LC_ALL=sk"
