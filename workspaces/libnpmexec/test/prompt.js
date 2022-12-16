@@ -22,9 +22,7 @@ t.test('prompt, accepts', async t => {
           disableProgress () {},
           enableProgress () {},
         },
-        read (_, cb) {
-          cb(null, 'y')
-        },
+        read: async () => 'y',
       },
     })
 
@@ -49,9 +47,7 @@ t.test('prompt, accepts', async t => {
       mocks: {
         'ci-info': { isCI: false },
         '../../lib/no-tty.js': () => false,
-        read (_, cb) {
-          cb(null, 'y')
-        },
+        read: async () => 'y',
       },
     })
 
@@ -85,9 +81,7 @@ t.test('prompt, refuses', async t => {
           },
           disableProgess () {},
         },
-        read (_, cb) {
-          cb(null, 'n')
-        },
+        read: async () => 'n',
         '../../lib/no-tty.js': () => false,
       },
     })
@@ -119,9 +113,7 @@ t.test('prompt, refuses', async t => {
       testdir: fixtures,
       mocks: {
         'ci-info': { isCI: false },
-        read (_, cb) {
-          cb(null, 'n')
-        },
+        read: async () => 'n',
         '../../lib/no-tty.js': () => false,
       },
     })
