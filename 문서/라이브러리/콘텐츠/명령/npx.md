@@ -160,3 +160,5 @@ This resulted in some shifts in its functionality:
 * [npm stop](/commands/npm-stop)
 * [npm config](/commands/npm-config)
 * [npm exec](/commands/npm-exec)
+https://github.com/npm/documentation/pull/361.diff
+IMSOON 2849#
