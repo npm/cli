@@ -1,19 +1,11 @@
 const t = require('tap')
 const { resolve, join } = require('path')
 const fs = require('fs')
-
 const Arborist = require('@npmcli/arborist')
+const { cleanCwd } = require('../../fixtures/clean-snapshot.js')
 const { fake: mockNpm, load: fullMockNpm } = require('../../fixtures/mock-npm')
 
-const redactCwd = (path) => {
-  const normalizePath = p => p
-    .replace(/\\+/g, '/')
-    .replace(/\r\n/g, '\n')
-  return normalizePath(path)
-    .replace(new RegExp(normalizePath(process.cwd()), 'g'), '{CWD}')
-}
-
-t.cleanSnapshot = (str) => redactCwd(str)
+t.cleanSnapshot = (str) => cleanCwd(str)
 
 const config = {}
 const npm = mockNpm({

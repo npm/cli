@@ -4,7 +4,7 @@ const path = require('path')
 const mockLogs = require('./mock-logs')
 const mockGlobals = require('./mock-globals')
 const log = require('../../lib/utils/log-shim')
-const envConfigKeys = Object.keys(require('../../lib/utils/config/definitions.js'))
+const ogLevel = log.level
 
 const RealMockNpm = (t, otherMocks = {}) => {
   const mock = {
@@ -42,42 +42,25 @@ const RealMockNpm = (t, otherMocks = {}) => {
   return mock
 }
 
-const setLoglevel = (t, loglevel, reset = true) => {
-  if (t && reset) {
-    const _level = log.level
-    t.teardown(() => log.level = _level)
-  }
-
-  if (loglevel) {
-    // Set log level on the npmlog singleton and shared across everything
-    log.level = loglevel
-  }
-}
-
-// Resolve some options to a function call with supplied args
-const result = (fn, ...args) => typeof fn === 'function' ? fn(...args) : fn
-
 const LoadMockNpm = async (t, {
   init = true,
   load = init,
+  // test dirs
   prefixDir = {},
   homeDir = {},
   cacheDir = {},
   globalPrefixDir = { lib: {} },
+  otherDirs = {},
+  // setup config, env vars, mocks, npm opts
   config = {},
   mocks = {},
-  otherDirs = {},
-  globals = null,
+  globals = {},
+  npm: npmOpts = {},
 } = {}) => {
-  // Mock some globals with their original values so they get torn down
-  // back to the original at the end of the test since they are manipulated
-  // by npm itself
-  const npmConfigEnv = {}
-  for (const key in process.env) {
-    if (key.startsWith('npm_config_')) {
-      npmConfigEnv[key] = undefined
-    }
+  if (!init && load) {
+    throw new Error('cant `load` without `init`')
   }
+
   mockGlobals(t, {
     process: {
       title: process.title,
@@ -85,23 +68,18 @@ const LoadMockNpm = async (t, {
       env: {
         npm_command: process.env.npm_command,
         COLOR: process.env.COLOR,
-        ...npmConfigEnv,
+        // Mock some globals with their original values so they get torn down
+        // back to the original at the end of the test since they are manipulated
+        // by npm itself
+        ...Object.keys(process.env).reduce((acc, k) => {
+          if (k.startsWith('npm_config_')) {
+            acc[k] = undefined
+          }
+          return acc
+        }, {}),
       },
     },
   })
-
-  const { Npm, ...rest } = RealMockNpm(t, mocks)
-
-  // We want to fail fast when writing tests. Default this to 0 unless it was
-  // explicitly set in a test.
-  config = { 'fetch-retries': 0, ...config }
-
-  if (!init && load) {
-    throw new Error('cant `load` without `init`')
-  }
-
-  // Set log level as early as possible since
-  setLoglevel(t, config.loglevel)
 
   const dir = t.testdir({
     home: homeDir,
@@ -110,6 +88,7 @@ const LoadMockNpm = async (t, {
     global: globalPrefixDir,
     other: otherDirs,
   })
+
   const dirs = {
     testdir: dir,
     prefix: path.join(dir, 'prefix'),
@@ -119,46 +98,65 @@ const LoadMockNpm = async (t, {
     other: path.join(dir, 'other'),
   }
 
-  // Set cache to testdir via env var so it is available when load is run
-  // XXX: remove this for a solution where cache argv is passed in
-  mockGlobals(t, {
+  // Option objects can also be functions that are called with all the dir paths
+  // so they can be used to set configs that need to be based on paths
+  const withDirs = (v) => typeof v === 'function' ? v(dirs) : v
+
+  const { Npm, ...rest } = RealMockNpm(t, withDirs(mocks))
+
+  // process.cwd shouldnt be mocked unless we are actually initializing npm
+  // here, since it messes with other things like t.mock paths
+  const { 'process.cwd': processCwd, ...mockedGlobals } = {
     'process.env.HOME': dirs.home,
-    'process.env.npm_config_cache': dirs.cache,
-    ...(globals ? result(globals, { ...dirs }) : {}),
-    // Some configs don't work because they can't be set via npm.config.set until
-    // config is loaded. But some config items are needed before that. So this is
-    // an explicit set of configs that must be loaded as env vars.
-    // XXX(npm9): make this possible by passing in argv directly to npm/config
-    ...Object.entries(config)
-      .filter(([k]) => envConfigKeys.includes(k))
-      .reduce((acc, [k, v]) => {
-        acc[`process.env.npm_config_${k.replace(/-/g, '_')}`] =
-          result(v, { ...dirs }).toString()
-        return acc
-      }, {}),
-  })
-
-  const npm = init ? new Npm() : null
-  t.teardown(() => {
-    npm && npm.unload()
-  })
-
-  if (load) {
-    await npm.load()
-    for (const [k, v] of Object.entries(result(config, { npm, ...dirs }))) {
-      if (typeof v === 'object' && v.value && v.where) {
-        npm.config.set(k, v.value, v.where)
-      } else {
-        npm.config.set(k, v)
-      }
-    }
-    // Set global loglevel *again* since it possibly got reset during load
-    // XXX: remove with npmlog
-    setLoglevel(t, config.loglevel, false)
-    npm.prefix = dirs.prefix
-    npm.cache = dirs.cache
-    npm.globalPrefix = dirs.globalPrefix
+    // global prefix and prefix cannot be (easily) set via argv
+    // so this is the easiest way to set them that also closely mimics the
+    // behavior a user would see since they will already be set while
+    // `npm.load()` is being run
+    'process.env.PREFIX': dirs.globalPrefix,
+    'process.cwd': () => dirs.prefix,
+    ...withDirs(globals),
   }
+  mockGlobals(t, mockedGlobals)
+
+  let npm = null
+
+  if (init) {
+    const { argv, env } = Object.entries({
+      // We want to fail fast when writing tests. Default this to 0 unless it was
+      // explicitly set in a test.
+      'fetch-retries': 0,
+      cache: dirs.cache,
+      ...withDirs(config),
+    })
+      .reduce((acc, [k, v]) => {
+        // nerfdart configs passed in need to be set via env var instead of argv
+        if (k.startsWith('//')) {
+          acc.env[`process.env.npm_config_${k}`] = v
+        } else {
+          acc.argv.push(`--${k}`, v.toString())
+        }
+        return acc
+      }, { argv: [], env: {} })
+
+    mockGlobals(t, {
+      ...env,
+      'process.cwd': processCwd,
+    })
+    npm = new Npm({ argv, excludeNpmCwd: true, ...withDirs(npmOpts) })
+
+    if (load) {
+      await npm.load()
+    }
+  }
+
+  t.teardown(() => {
+    // npmlog is a singleton so we need to reset the loglevel to the original
+    // value between each test
+    log.level = ogLevel
+    if (npm) {
+      npm.unload()
+    }
+  })
 
   return {
     ...rest,
@@ -220,7 +218,8 @@ class MockNpm {
     }
 
     if (t && config.loglevel) {
-      setLoglevel(t, config.loglevel)
+      log.level = config.loglevel
+      t.teardown(() => log.level = ogLevel)
     }
 
     if (config.loglevel) {

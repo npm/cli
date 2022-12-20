@@ -106,13 +106,15 @@ t.test('all clear in color', async t => {
     mocks,
     globals,
     ...dirs,
+    config: {
+      color: 'always',
+    },
   })
   tnock(t, npm.config.get('registry'))
     .get('/-/ping?write=true').reply(200, '{}')
     .get('/npm').reply(200, npmManifest(npm.version))
   tnock(t, 'https://nodejs.org')
     .get('/dist/index.json').reply(200, nodeVersions)
-  npm.config.set('color', 'always')
   await npm.exec('doctor', [])
   t.matchSnapshot(joinedOutput(), 'everything is ok in color')
   t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
@@ -178,13 +180,15 @@ t.test('ping 404 in color', async t => {
     mocks,
     globals,
     ...dirs,
+    config: {
+      color: 'always',
+    },
   })
   tnock(t, npm.config.get('registry'))
     .get('/-/ping?write=true').reply(404, '{}')
     .get('/npm').reply(200, npmManifest(npm.version))
   tnock(t, 'https://nodejs.org')
     .get('/dist/index.json').reply(200, nodeVersions)
-  npm.config.set('color', 'always')
   await t.rejects(npm.exec('doctor', []))
   t.matchSnapshot(joinedOutput(), 'ping 404 in color')
   t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')

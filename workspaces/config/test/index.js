@@ -1266,6 +1266,27 @@ t.test('workspaces', async (t) => {
     t.equal(logs.length, 0, 'got no log messages')
   })
 
+  t.test('excludeNpmCwd skips auto detect', async (t) => {
+    const cwd = process.cwd()
+    t.teardown(() => process.chdir(cwd))
+    process.chdir(`${path}/workspaces/one`)
+
+    const config = new Config({
+      npmPath: process.cwd(),
+      env: {},
+      argv: [process.execPath, __filename],
+      cwd: `${path}/workspaces/one`,
+      shorthands,
+      definitions,
+      excludeNpmCwd: true,
+    })
+
+    await config.load()
+    t.equal(config.localPrefix, join(path, 'workspaces', 'one'), 'localPrefix is the root')
+    t.same(config.get('workspace'), [], 'did not set workspace')
+    t.equal(logs.length, 0, 'got no log messages')
+  })
+
   t.test('does not error for invalid package.json', async (t) => {
     const invalidPkg = join(path, 'workspaces', 'package.json')
     const cwd = process.cwd()

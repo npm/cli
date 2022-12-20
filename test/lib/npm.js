@@ -441,9 +441,9 @@ t.test('debug log', async t => {
   t.test('can load with bad dir', async t => {
     const { npm, testdir } = await loadMockNpm(t, {
       load: false,
-      config: {
-        'logs-dir': (c) => join(c.testdir, 'my_logs_dir'),
-      },
+      config: ({ testdir }) => ({
+        'logs-dir': join(testdir, 'my_logs_dir'),
+      }),
     })
     const logsDir = join(testdir, 'my_logs_dir')
 

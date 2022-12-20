@@ -505,7 +505,7 @@ Array [
   ],
   Array [
     "argv",
-    "",
+    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/test/lib/utils/tap-testdir-error-message-eacces-eperm--windows-false-loaded-true-cachePath-false-cacheDest-false-/cache/"",
   ],
   Array [
     "logfile",
@@ -545,7 +545,7 @@ Array [
   ],
   Array [
     "argv",
-    "",
+    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/test/lib/utils/tap-testdir-error-message-eacces-eperm--windows-false-loaded-true-cachePath-false-cacheDest-true-/cache/"",
   ],
   Array [
     "logfile",
@@ -554,9 +554,6 @@ Array [
   Array [
     "logfile",
     "{CWD}/test/lib/utils/tap-testdir-error-message-eacces-eperm--windows-false-loaded-true-cachePath-false-cacheDest-true-/cache/_logs/{DATE}-debug-0.log",
-  ],
-  Array [
-    "dummy stack trace",
   ],
 ]
 `
@@ -588,7 +585,7 @@ Array [
   ],
   Array [
     "argv",
-    "",
+    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/test/lib/utils/tap-testdir-error-message-eacces-eperm--windows-false-loaded-true-cachePath-true-cacheDest-false-/cache/"",
   ],
   Array [
     "logfile",
@@ -597,9 +594,6 @@ Array [
   Array [
     "logfile",
     "{CWD}/test/lib/utils/tap-testdir-error-message-eacces-eperm--windows-false-loaded-true-cachePath-true-cacheDest-false-/cache/_logs/{DATE}-debug-0.log",
-  ],
-  Array [
-    "dummy stack trace",
   ],
 ]
 `
@@ -631,7 +625,7 @@ Array [
   ],
   Array [
     "argv",
-    "",
+    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/test/lib/utils/tap-testdir-error-message-eacces-eperm--windows-false-loaded-true-cachePath-true-cacheDest-true-/cache/"",
   ],
   Array [
     "logfile",
@@ -640,9 +634,6 @@ Array [
   Array [
     "logfile",
     "{CWD}/test/lib/utils/tap-testdir-error-message-eacces-eperm--windows-false-loaded-true-cachePath-true-cacheDest-true-/cache/_logs/{DATE}-debug-0.log",
-  ],
-  Array [
-    "dummy stack trace",
   ],
 ]
 `
@@ -821,7 +812,7 @@ Array [
   ],
   Array [
     "argv",
-    "",
+    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/test/lib/utils/tap-testdir-error-message-eacces-eperm--windows-true-loaded-true-cachePath-false-cacheDest-false-/cache/"",
   ],
   Array [
     "logfile",
@@ -872,7 +863,7 @@ Array [
   ],
   Array [
     "argv",
-    "",
+    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/test/lib/utils/tap-testdir-error-message-eacces-eperm--windows-true-loaded-true-cachePath-false-cacheDest-true-/cache/"",
   ],
   Array [
     "logfile",
@@ -923,7 +914,7 @@ Array [
   ],
   Array [
     "argv",
-    "",
+    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/test/lib/utils/tap-testdir-error-message-eacces-eperm--windows-true-loaded-true-cachePath-true-cacheDest-false-/cache/"",
   ],
   Array [
     "logfile",
@@ -974,7 +965,7 @@ Array [
   ],
   Array [
     "argv",
-    "",
+    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/test/lib/utils/tap-testdir-error-message-eacces-eperm--windows-true-loaded-true-cachePath-true-cacheDest-true-/cache/"",
   ],
   Array [
     "logfile",
@@ -1280,7 +1271,7 @@ Object {
       String(
         Not compatible with your version of node/npm: some@package
         Required: undefined
-        Actual:   {"npm":"123.456.789-npm","node":"99.99.99"}
+        Actual:   {"npm":"123.456.789-npm","node":"123.456.789-node"}
       ),
     ],
   ],

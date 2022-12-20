@@ -1,15 +1,10 @@
 const t = require('tap')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
+const { cleanCwd } = require('../../fixtures/clean-snapshot.js')
 
-t.cleanSnapshot = (str) => {
-  const normalizePath = p => p
-    .replace(/\\+/g, '/')
-    .replace(/\r\n/g, '\n')
-  return normalizePath(str)
-    .replace(new RegExp(normalizePath(process.cwd()), 'g'), '{CWD}')
-    // normalize between windows and posix
-    .replace(new RegExp('lib/node_modules', 'g'), 'node_modules')
-}
+t.cleanSnapshot = (str) => cleanCwd(str)
+  // normalize between windows and posix
+  .replace(new RegExp('lib/node_modules', 'g'), 'node_modules')
 
 t.test('simple query', async t => {
   const { npm, joinedOutput } = await loadMockNpm(t, {

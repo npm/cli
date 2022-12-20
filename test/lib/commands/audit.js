@@ -1176,7 +1176,8 @@ t.test('audit signatures', async t => {
     const { npm } = await loadMockNpm(t, {
       prefixDir: installWithThirdPartyRegistry,
       config: {
-        '@npmcli:registry': registryUrl,
+        scope: '@npmcli',
+        registry: registryUrl,
       },
     })
     const registry = new MockRegistry({ tap: t, registry: registryUrl })
@@ -1205,7 +1206,8 @@ t.test('audit signatures', async t => {
     const { npm } = await loadMockNpm(t, {
       prefixDir: installWithThirdPartyRegistry,
       config: {
-        '@npmcli:registry': registryUrl,
+        scope: '@npmcli',
+        registry: registryUrl,
       },
     })
     const registry = new MockRegistry({ tap: t, registry: registryUrl })
@@ -1234,7 +1236,8 @@ t.test('audit signatures', async t => {
     const { npm, joinedOutput } = await loadMockNpm(t, {
       prefixDir: installWithThirdPartyRegistry,
       config: {
-        '@npmcli:registry': registryUrl,
+        scope: '@npmcli',
+        registry: registryUrl,
       },
     })
     const registry = new MockRegistry({ tap: t, registry: registryUrl })
@@ -1283,7 +1286,8 @@ t.test('audit signatures', async t => {
     const { npm, joinedOutput } = await loadMockNpm(t, {
       prefixDir: installWithThirdPartyRegistry,
       config: {
-        '@npmcli:registry': registryUrl,
+        scope: '@npmcli',
+        registry: registryUrl,
       },
     })
     const registry = new MockRegistry({ tap: t, registry: registryUrl })
@@ -1331,7 +1335,8 @@ t.test('audit signatures', async t => {
     const { npm, joinedOutput } = await loadMockNpm(t, {
       prefixDir: installWithThirdPartyRegistry,
       config: {
-        '@npmcli:registry': registryUrl,
+        scope: '@npmcli',
+        registry: registryUrl,
       },
     })
     const registry = new MockRegistry({ tap: t, registry: registryUrl })
@@ -1371,9 +1376,9 @@ t.test('audit signatures', async t => {
   t.test('multiple registries with keys and signatures', async t => {
     const registryUrl = 'https://verdaccio-clone.org'
     const { npm, joinedOutput } = await loadMockNpm(t, {
-      prefixDir: installWithMultipleRegistries,
-      config: {
-        '@npmcli:registry': registryUrl,
+      prefixDir: {
+        ...installWithMultipleRegistries,
+        '.npmrc': `@npmcli:registry=${registryUrl}\n`,
       },
     })
     const registry = new MockRegistry({ tap: t, registry: npm.config.get('registry') })
@@ -1653,7 +1658,7 @@ t.test('audit signatures', async t => {
     t.test('verifies registry deps when filtering by workspace name', async t => {
       const { npm, joinedOutput } = await loadMockNpm(t, {
         prefixDir: workspaceInstall,
-        config: { workspace: ['./packages/a'] },
+        config: { workspace: './packages/a' },
       })
       const registry = new MockRegistry({ tap: t, registry: npm.config.get('registry') })
       const asyncManifest = registry.manifest({
