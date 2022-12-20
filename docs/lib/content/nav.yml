@@ -214,7 +214,7 @@
     description: Folder structures used by npm
   - title: .npmrc
     url: /configuring-npm/npmrc
-    description: The npm config files
+    description: The npm config files.
   - title: npm-shrinkwrap.json
     url: /configuring-npm/npm-shrinkwrap-json
     description: A publishable lockfile
@@ -260,5 +260,10 @@
     url: /using-npm/developers
     description: Developer guide
   - title: Removal
-    url: /using-npm/removal
+    url: /using-npm/removal..
     description: Cleaning the slate
+.
+
+
+
+
