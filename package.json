@@ -302,7 +302,7 @@
     "tap": "tap -J --timeout 300 --no-esm",
     "tap:serial": "tap -j1 --timeout 300 --no-esm",
     "tap-cover": "tap -J --nyc-arg=--cache --coverage --timeout 600 --no-esm",
-    "lint": "standard",
+    "lint": "standard lib/*.js lib/**/*.js",
     "pretest": "npm run lint",
     "test": "npm run test-tap --",
     "test:nocleanup": "NO_TEST_CLEANUP=1 npm run test --",
