@@ -6,7 +6,7 @@ const mockGlobals = require('./mock-globals')
 const log = require('../../lib/utils/log-shim')
 const ogLevel = log.level
 
-const RealMockNpm = (t, otherMocks = {}) => {
+const RealMockNpm = (t, otherMocks = {}, initOpts = {}) => {
   const mock = {
     ...mockLogs(otherMocks),
     outputs: [],
@@ -21,6 +21,10 @@ const RealMockNpm = (t, otherMocks = {}) => {
   })
 
   mock.Npm = class MockNpm extends Npm {
+    constructor () {
+      super(initOpts)
+    }
+
     // lib/npm.js tests needs this to actually test the function!
     originalOutput (...args) {
       super.output(...args)
@@ -56,6 +60,7 @@ const LoadMockNpm = async (t, {
   mocks = {},
   globals = {},
   npm: npmOpts = {},
+  argv: rawArgv = [],
 } = {}) => {
   if (!init && load) {
     throw new Error('cant `load` without `init`')
@@ -102,8 +107,6 @@ const LoadMockNpm = async (t, {
   // so they can be used to set configs that need to be based on paths
   const withDirs = (v) => typeof v === 'function' ? v(dirs) : v
 
-  const { Npm, ...rest } = RealMockNpm(t, withDirs(mocks))
-
   // process.cwd shouldnt be mocked unless we are actually initializing npm
   // here, since it messes with other things like t.mock paths
   const { 'process.cwd': processCwd, ...mockedGlobals } = {
@@ -118,32 +121,32 @@ const LoadMockNpm = async (t, {
   }
   mockGlobals(t, mockedGlobals)
 
+  const { argv, env } = Object.entries({
+    // We want to fail fast when writing tests. Default this to 0 unless it was
+    // explicitly set in a test.
+    'fetch-retries': 0,
+    cache: dirs.cache,
+    ...withDirs(config),
+  })
+    .reduce((acc, [k, v]) => {
+      // nerfdart configs passed in need to be set via env var instead of argv
+      if (k.startsWith('//')) {
+        acc.env[`process.env.npm_config_${k}`] = v
+      } else {
+        acc.argv.push(`--${k}`, v.toString())
+      }
+      return acc
+    }, { argv: [...rawArgv], env: {} })
+
+  const { Npm, ...rest } = RealMockNpm(t,
+    withDirs(mocks),
+    { argv, excludeNpmCwd: true, ...withDirs(npmOpts) }
+  )
+
   let npm = null
-
   if (init) {
-    const { argv, env } = Object.entries({
-      // We want to fail fast when writing tests. Default this to 0 unless it was
-      // explicitly set in a test.
-      'fetch-retries': 0,
-      cache: dirs.cache,
-      ...withDirs(config),
-    })
-      .reduce((acc, [k, v]) => {
-        // nerfdart configs passed in need to be set via env var instead of argv
-        if (k.startsWith('//')) {
-          acc.env[`process.env.npm_config_${k}`] = v
-        } else {
-          acc.argv.push(`--${k}`, v.toString())
-        }
-        return acc
-      }, { argv: [], env: {} })
-
-    mockGlobals(t, {
-      ...env,
-      'process.cwd': processCwd,
-    })
-    npm = new Npm({ argv, excludeNpmCwd: true, ...withDirs(npmOpts) })
-
+    mockGlobals(t, { ...env, 'process.cwd': processCwd })
+    npm = new Npm()
     if (load) {
       await npm.load()
     }
