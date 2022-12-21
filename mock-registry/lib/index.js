@@ -39,7 +39,7 @@ class MockRegistry {
         t.fail(`Unmatched request: ${JSON.stringify(req.options, null, 2)}`)
       }
       if (debug) {
-        console.error('NO MATCH', t.name, req.options)
+        console.error('NO MATCH', t.name, req.options ? req.options : req.path)
       }
     }
 
@@ -312,6 +312,20 @@ class MockRegistry {
     const spec = npa(manifest.name)
     nock = nock.delete(this.fullPath(`/${spec.escapedName}/-rev/${manifest._rev}`)).reply(201)
     return nock
+  }
+
+  getPackage (name, { times = 1, code = 200, query, resp = {} }) {
+    let nock = this.nock
+    nock = nock.get(`/${npa(name).escapedName}`).times(times)
+    if (query) {
+      nock = nock.query(query)
+    }
+    if (code === 404) {
+      nock = nock.reply(code, { error: 'Not found' })
+    } else {
+      nock = nock.reply(code, resp)
+    }
+    this.nock = nock
   }
 
   async package ({ manifest, times = 1, query, tarballs }) {
