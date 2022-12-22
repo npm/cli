@@ -6,9 +6,15 @@ const mockGlobals = require('./mock-globals')
 const log = require('../../lib/utils/log-shim')
 const ogLevel = log.level
 
-const RealMockNpm = (t, otherMocks = {}, initOpts = {}) => {
+const getMockNpm = async (t, {
+  mocks = {},
+  globals = {},
+  npm = {},
+  init = false,
+  load = false,
+} = {}) => {
   const mock = {
-    ...mockLogs(otherMocks),
+    ...mockLogs(mocks),
     outputs: [],
     outputErrors: [],
     joinedOutput: () => mock.outputs.map(o => o.join(' ')).join('\n'),
@@ -16,13 +22,14 @@ const RealMockNpm = (t, otherMocks = {}, initOpts = {}) => {
 
   const Npm = t.mock('../../lib/npm.js', {
     '../../lib/utils/update-notifier.js': async () => {},
-    ...otherMocks,
+    ...mocks,
     ...mock.logMocks,
   })
 
   mock.Npm = class MockNpm extends Npm {
     constructor () {
-      super(initOpts)
+      mockGlobals(t, globals)
+      super(npm)
     }
 
     // lib/npm.js tests needs this to actually test the function!
@@ -43,10 +50,17 @@ const RealMockNpm = (t, otherMocks = {}, initOpts = {}) => {
     }
   }
 
+  if (init) {
+    mock.npm = new mock.Npm()
+    if (load) {
+      await mock.npm.load()
+    }
+  }
+
   return mock
 }
 
-const LoadMockNpm = async (t, {
+const setupMockNpm = async (t, {
   init = true,
   load = init,
   // test dirs
@@ -56,7 +70,7 @@ const LoadMockNpm = async (t, {
   globalPrefixDir = { lib: {} },
   otherDirs = {},
   // setup config, env vars, mocks, npm opts
-  config = {},
+  config: _config = {},
   mocks = {},
   globals = {},
   npm: npmOpts = {},
@@ -107,6 +121,23 @@ const LoadMockNpm = async (t, {
   // so they can be used to set configs that need to be based on paths
   const withDirs = (v) => typeof v === 'function' ? v(dirs) : v
 
+  const { argv, env } = Object.entries({
+    // We want to fail fast when writing tests. Default this to 0 unless it was
+    // explicitly set in a test.
+    'fetch-retries': 0,
+    cache: dirs.cache,
+    ...withDirs(_config),
+  })
+    .reduce((acc, [k, v]) => {
+      // nerfdart configs passed in need to be set via env var instead of argv
+      if (k.startsWith('//')) {
+        acc.env[`process.env.npm_config_${k}`] = v
+      } else {
+        acc.argv.push(`--${k}`, v.toString())
+      }
+      return acc
+    }, { argv: [...rawArgv], env: {} })
+
   // process.cwd shouldnt be mocked unless we are actually initializing npm
   // here, since it messes with other things like t.mock paths
   const { 'process.cwd': processCwd, ...mockedGlobals } = {
@@ -119,55 +150,31 @@ const LoadMockNpm = async (t, {
     'process.cwd': () => dirs.prefix,
     ...withDirs(globals),
   }
+
   mockGlobals(t, mockedGlobals)
 
-  const { argv, env } = Object.entries({
-    // We want to fail fast when writing tests. Default this to 0 unless it was
-    // explicitly set in a test.
-    'fetch-retries': 0,
-    cache: dirs.cache,
-    ...withDirs(config),
+  const mockNpm = await getMockNpm(t, {
+    init,
+    load,
+    mocks: withDirs(mocks),
+    npm: { argv, excludeNpmCwd: true, ...withDirs(npmOpts) },
+    globals: { ...env, 'process.cwd': processCwd },
   })
-    .reduce((acc, [k, v]) => {
-      // nerfdart configs passed in need to be set via env var instead of argv
-      if (k.startsWith('//')) {
-        acc.env[`process.env.npm_config_${k}`] = v
-      } else {
-        acc.argv.push(`--${k}`, v.toString())
-      }
-      return acc
-    }, { argv: [...rawArgv], env: {} })
-
-  const { Npm, ...rest } = RealMockNpm(t,
-    withDirs(mocks),
-    { argv, excludeNpmCwd: true, ...withDirs(npmOpts) }
-  )
-
-  let npm = null
-  if (init) {
-    mockGlobals(t, { ...env, 'process.cwd': processCwd })
-    npm = new Npm()
-    if (load) {
-      await npm.load()
-    }
-  }
 
   t.teardown(() => {
     // npmlog is a singleton so we need to reset the loglevel to the original
     // value between each test
     log.level = ogLevel
-    if (npm) {
-      npm.unload()
+    if (mockNpm.npm) {
+      mockNpm.npm.unload()
     }
   })
 
   return {
-    ...rest,
+    ...mockNpm,
     ...dirs,
-    Npm,
-    npm,
     debugFile: async () => {
-      const readFiles = npm.logFiles.map(f => fs.readFile(f))
+      const readFiles = mockNpm.npm.logFiles.map(f => fs.readFile(f))
       const logFiles = await Promise.all(readFiles)
       return logFiles
         .flatMap((d) => d.toString().trim().split(os.EOL))
@@ -175,12 +182,11 @@ const LoadMockNpm = async (t, {
         .join('\n')
     },
     timingFile: async () => {
-      const data = await fs.readFile(npm.timingFile, 'utf8')
+      const data = await fs.readFile(mockNpm.npm.timingFile, 'utf8')
       return JSON.parse(data)
     },
   }
 }
 
-module.exports = {
-  load: LoadMockNpm,
-}
+module.exports = setupMockNpm
+module.exports.load = setupMockNpm

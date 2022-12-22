@@ -1,13 +1,5 @@
 const t = require('tap')
-const { fake: mockNpm } = require('../../fixtures/mock-npm')
-
-let result = ''
-let log = ''
-
-t.afterEach(() => {
-  result = ''
-  log = ''
-})
+const setupMockNpm = require('../../fixtures/mock-npm')
 
 const routeMap = {
   '/-/package/@scoped%2fpkg/dist-tags': {
@@ -54,13 +46,7 @@ npmRegistryFetchMock.json = async (url, opts) => {
   return routeMap[url]
 }
 
-const logger = (...msgs) => {
-  for (const msg of [...msgs]) {
-    log += msg + ' '
-  }
 
-  log += '\n'
-}
 
 const DistTag = t.mock('../../../lib/commands/dist-tag.js', {
   'proc-log': {
