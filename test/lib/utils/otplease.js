@@ -1,6 +1,5 @@
 const t = require('tap')
 const setupMockNpm = require('../../fixtures/mock-npm')
-const mockGlobals = require('../../fixtures/mock-globals')
 
 const setupOtplease = async (t, { otp = {}, ...rest }, fn) => {
   const readUserInfo = {
