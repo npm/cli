@@ -19,8 +19,11 @@ const cleanCwd = (path) => normalizePath(path)
 const cleanDate = (str) =>
   str.replace(/\d{4}-\d{2}-\d{2}T\d{2}[_:]\d{2}[_:]\d{2}[_:.]\d{3}Z/g, '{DATE}')
 
+const cleanTime = str => str.replace(/in [0-9]+m?s\s*$/gm, 'in {TIME}')
+
 module.exports = {
   normalizePath,
   cleanCwd,
   cleanDate,
+  cleanTime,
 }

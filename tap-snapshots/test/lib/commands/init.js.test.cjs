@@ -5,30 +5,20 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/lib/commands/init.js TAP npm init workspces with root > does not print helper info 1`] = `
-Array []
+exports[`test/lib/commands/init.js TAP displays output  > displays helper info 1`] = `
+
 `
 
-exports[`test/lib/commands/init.js TAP workspaces no args > should print helper info 1`] = `
-Array []
+exports[`test/lib/commands/init.js TAP displays output  > displays helper info 2`] = `
+
 `
 
-exports[`test/lib/commands/init.js TAP workspaces no args, existing folder > should print helper info 1`] = `
-Array []
+exports[`test/lib/commands/init.js TAP workspaces no args -- yes > should print helper info 1`] = `
+
+added 1 package in {TIME}
 `
 
-exports[`test/lib/commands/init.js TAP workspaces post workspace-init reify > should print helper info 1`] = `
-Array [
-  Array [
-    String(
-      
-      added 1 package in 100ms
-    ),
-  ],
-]
-`
-
-exports[`test/lib/commands/init.js TAP workspaces post workspace-init reify > should reify tree on init ws complete 1`] = `
+exports[`test/lib/commands/init.js TAP workspaces no args -- yes > should reify tree on init ws complete 1`] = `
 {
   "name": "top-level",
   "lockfileVersion": 3,
@@ -52,8 +42,4 @@ exports[`test/lib/commands/init.js TAP workspaces post workspace-init reify > sh
   }
 }
 
-`
-
-exports[`test/lib/commands/init.js TAP workspaces with arg but missing workspace folder > should print helper info 1`] = `
-Array []
 `
