@@ -401,8 +401,7 @@ t.test('workspaces', async t => {
         }
         args[3]()
       },
-      argv: ['--workspace=a', '--workspace=c'],
-      config: { yes: true },
+      config: { yes: true, workspace: ['a', 'c'] },
     })
 
     await npm.exec('init', [])

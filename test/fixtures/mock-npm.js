@@ -86,6 +86,7 @@ const setupMockNpm = async (t, {
       execPath: process.execPath,
       env: {
         npm_command: process.env.npm_command,
+        NODE_ENV: process.env.NODE_ENV,
         COLOR: process.env.COLOR,
         // Mock some globals with their original values so they get torn down
         // back to the original at the end of the test since they are manipulated
@@ -128,12 +129,13 @@ const setupMockNpm = async (t, {
     cache: dirs.cache,
     ...withDirs(_config),
   })
-    .reduce((acc, [k, v]) => {
+    .reduce((acc, [key, value]) => {
       // nerfdart configs passed in need to be set via env var instead of argv
-      if (k.startsWith('//')) {
-        acc.env[`process.env.npm_config_${k}`] = v
+      if (key.startsWith('//')) {
+        acc.env[`process.env.npm_config_${key}`] = value
       } else {
-        acc.argv.push(`--${k}`, v.toString())
+        const values = [].concat(value)
+        acc.argv.push(...values.flatMap(v => [`--${key}`, v.toString()]))
       }
       return acc
     }, { argv: [...rawArgv], env: {} })

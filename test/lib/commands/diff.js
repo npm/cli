@@ -38,11 +38,14 @@ const mockDiff = async (t, {
   }, {})
 
   const { npm, ...res } = await loadMockNpm(t, {
-    argv: [].concat(diff).reduce((acc, d) => acc.concat(['--diff', d]), []),
     prefixDir: jsonifyTestdir(opts.prefixDir || {}),
     otherDirs: jsonifyTestdir({ tarballs: tarballFixtures }),
     globalPrefixDir: jsonifyTestdir(opts.globalPrefixDir || {}),
     ...opts,
+    config: {
+      ...opts.config,
+      diff: [].concat(diff),
+    },
   })
 
   const registry = new MockRegistry({
