@@ -256,14 +256,6 @@ const mockNpm = async (t, { prefixDir, ...opts } = {}) => {
     strict: true,
   })
 
-  if (opts?.config?.omit?.includes('prod')) {
-    // XXX: --omit=prod is not a valid config according to the definitions
-    // but it was being hacked in via flatOptions so this is to preserve that
-    // behavior and reduce churn in the snapshots. this should be removed or
-    // fixed in the future
-    res.npm.flatOptions.omit = opts.config.omit
-  }
-
   return {
     ...res,
     registry,

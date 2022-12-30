@@ -381,19 +381,19 @@ test-npm-ls@1.0.0 {CWD}/tap-testdir-ls-ls-extraneous-deps
 
 `
 
-exports[`test/lib/commands/ls.js TAP ls filter pkg arg using depth option > should list a in top-level only 1`] = `
+exports[`test/lib/commands/ls.js TAP ls filter pkg arg using depth option should list a in top-level only > output 1`] = `
 test-pkg-arg-filter-with-depth-opt@1.0.0 {CWD}/tap-testdir-ls-ls-filter-pkg-arg-using-depth-option
 \`-- a@1.0.0
 
 `
 
-exports[`test/lib/commands/ls.js TAP ls filter pkg arg using depth option > should print empty results msg 1`] = `
+exports[`test/lib/commands/ls.js TAP ls filter pkg arg using depth option should print empty results msg > output 1`] = `
 test-pkg-arg-filter-with-depth-opt@1.0.0 {CWD}/tap-testdir-ls-ls-filter-pkg-arg-using-depth-option
 \`-- (empty)
 
 `
 
-exports[`test/lib/commands/ls.js TAP ls filter pkg arg using depth option > should print expected result 1`] = `
+exports[`test/lib/commands/ls.js TAP ls filter pkg arg using depth option should print expected result > output 1`] = `
 test-pkg-arg-filter-with-depth-opt@1.0.0 {CWD}/tap-testdir-ls-ls-filter-pkg-arg-using-depth-option
 \`-- b@1.0.0
   \`-- c@1.0.0
@@ -452,14 +452,14 @@ exports[`test/lib/commands/ls.js TAP ls json read problems > should print empty 
 
 `
 
-exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces > should filter by parent folder workspace config 1`] = `
+exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces should filter by parent folder workspace config > output 1`] = `
 workspaces-tree@1.0.0 {CWD}/tap-testdir-ls-ls-loading-a-tree-containing-workspaces
 +-- e@1.0.0 -> ./group/e
 \`-- f@1.0.0 -> ./group/f
 
 `
 
-exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces > should filter single workspace 1`] = `
+exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces should filter single workspace > output 1`] = `
 workspaces-tree@1.0.0 {CWD}/tap-testdir-ls-ls-loading-a-tree-containing-workspaces
 +-- a@1.0.0 -> ./a
 | \`-- d@1.0.0 deduped -> ./d
@@ -467,7 +467,7 @@ workspaces-tree@1.0.0 {CWD}/tap-testdir-ls-ls-loading-a-tree-containing-workspac
 
 `
 
-exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces > should filter using workspace config 1`] = `
+exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces should filter using workspace config > output 1`] = `
 workspaces-tree@1.0.0 {CWD}/tap-testdir-ls-ls-loading-a-tree-containing-workspaces
 \`-- a@1.0.0 -> ./a
   +-- baz@1.0.0
@@ -478,7 +478,7 @@ workspaces-tree@1.0.0 {CWD}/tap-testdir-ls-ls-loading-a-tree-containing-workspac
 
 `
 
-exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces > should inlude root and specified workspace 1`] = `
+exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces should inlude root and specified workspace > output 1`] = `
 workspaces-tree@1.0.0 {CWD}/tap-testdir-ls-ls-loading-a-tree-containing-workspaces
 +-- d@1.0.0 -> ./d
 | \`-- foo@1.1.1
@@ -487,7 +487,7 @@ workspaces-tree@1.0.0 {CWD}/tap-testdir-ls-ls-loading-a-tree-containing-workspac
 
 `
 
-exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces > should list --all workspaces properly 1`] = `
+exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces should list --all workspaces properly > output 1`] = `
 workspaces-tree@1.0.0 {CWD}/tap-testdir-ls-ls-loading-a-tree-containing-workspaces
 +-- a@1.0.0 -> ./a
 | +-- baz@1.0.0
@@ -503,7 +503,7 @@ workspaces-tree@1.0.0 {CWD}/tap-testdir-ls-ls-loading-a-tree-containing-workspac
 
 `
 
-exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces > should list only prod deps of workspaces 1`] = `
+exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces should list only prod deps of workspaces > output 1`] = `
 workspaces-tree@1.0.0 {CWD}/tap-testdir-ls-ls-loading-a-tree-containing-workspaces
 +-- a@1.0.0 -> ./a
 | +-- c@1.0.0
@@ -518,7 +518,7 @@ workspaces-tree@1.0.0 {CWD}/tap-testdir-ls-ls-loading-a-tree-containing-workspac
 
 `
 
-exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces > should list workspaces properly with default configs 1`] = `
+exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces should list workspaces properly with default configs > output 1`] = `
 [0mworkspaces-tree@1.0.0 {CWD}/tap-testdir-ls-ls-loading-a-tree-containing-workspaces[0m
 [0m+-- [32ma@1.0.0[39m -> ./a[0m
 [0m| +-- baz@1.0.0[0m
@@ -533,13 +533,13 @@ exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces > s
 [0m[0m
 `
 
-exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces > should not list workspaces with --no-workspaces 1`] = `
+exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces should not list workspaces with --no-workspaces > output 1`] = `
 [0mworkspaces-tree@1.0.0 {CWD}/tap-testdir-ls-ls-loading-a-tree-containing-workspaces[0m
 [0m\`-- pacote@1.0.0[0m
 [0m[0m
 `
 
-exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces > should print all tree and filter by dep within only the ws subtree 1`] = `
+exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces should print all tree and filter by dep within only the ws subtree > output 1`] = `
 workspaces-tree@1.0.0 {CWD}/tap-testdir-ls-ls-loading-a-tree-containing-workspaces
 \`-- d@1.0.0 -> ./d
   \`-- foo@1.1.1

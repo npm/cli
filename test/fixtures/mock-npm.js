@@ -122,7 +122,7 @@ const setupMockNpm = async (t, {
   // so they can be used to set configs that need to be based on paths
   const withDirs = (v) => typeof v === 'function' ? v(dirs) : v
 
-  const { argv, env } = Object.entries({
+  const { argv, env, config } = Object.entries({
     // We want to fail fast when writing tests. Default this to 0 unless it was
     // explicitly set in a test.
     'fetch-retries': 0,
@@ -137,8 +137,9 @@ const setupMockNpm = async (t, {
         const values = [].concat(value)
         acc.argv.push(...values.flatMap(v => [`--${key}`, v.toString()]))
       }
+      acc.config[key] = value
       return acc
-    }, { argv: [...rawArgv], env: {} })
+    }, { argv: [...rawArgv], env: {}, config: {} })
 
   // process.cwd shouldnt be mocked unless we are actually initializing npm
   // here, since it messes with other things like t.mock paths
@@ -162,6 +163,14 @@ const setupMockNpm = async (t, {
     npm: { argv, excludeNpmCwd: true, ...withDirs(npmOpts) },
     globals: { ...env, 'process.cwd': processCwd },
   })
+
+  if (config.omit?.includes('prod')) {
+    // XXX: --omit=prod is not a valid config according to the definitions
+    // but it was being hacked in via flatOptions so this is to preserve that
+    // behavior and reduce churn in the snapshots. this should be removed or
+    // fixed in the future
+    mockNpm.npm.flatOptions.omit.push('prod')
+  }
 
   t.teardown(() => {
     // npmlog is a singleton so we need to reset the loglevel to the original
