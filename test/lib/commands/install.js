@@ -21,7 +21,7 @@ t.test('exec commands', async t => {
             REIFY_CALLED = true
           }
         },
-        '../../lib/utils/reify-finish.js': (npm, arb) => {
+        '../../lib/utils/reify-finish.js': (_, arb) => {
           if (arb !== ARB_OBJ) {
             throw new Error('got wrong object passed to reify-finish')
           }
@@ -65,7 +65,7 @@ t.test('exec commands', async t => {
             REIFY_CALLED = true
           }
         },
-        '../../lib/utils/reify-finish.js': (npm, arb) => {
+        '../../lib/utils/reify-finish.js': (_, arb) => {
           if (arb !== ARB_OBJ) {
             throw new Error('got wrong object passed to reify-finish')
           }

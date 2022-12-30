@@ -1,7 +1,7 @@
 const t = require('tap')
 const mockNpm = require('../../fixtures/mock-npm')
 
-const mockHook = async (t, { hookResponse, ...opts } = {}) => {
+const mockHook = async (t, { hookResponse, ...npmOpts } = {}) => {
   const now = Date.now()
 
   let hookArgs = null
@@ -50,10 +50,10 @@ const mockHook = async (t, { hookResponse, ...opts } = {}) => {
   }
 
   const mock = await mockNpm(t, {
-    ...opts,
+    ...npmOpts,
     mocks: {
       libnpmhook,
-      ...opts.mocks,
+      ...npmOpts.mocks,
     },
   })
 

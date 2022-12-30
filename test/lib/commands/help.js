@@ -51,11 +51,11 @@ const mockHelp = async (t, {
   } else if (!spawn || config.viewer) {
     mockSpawn = async (...a) => args = a
   } else {
-    mockSpawn = async (cmd, a, opts, extra) => {
+    mockSpawn = async (cmd, a, spawnOpts, extra) => {
       // if we are running the spawned command, make it pipe to stdio
       // so it doesnt print to the terminal and we can get the stdout/stderr
       // strings directly from the exec fn
-      return promiseSpawn(cmd, a, { ...opts, ...spawn }, extra)
+      return promiseSpawn(cmd, a, { ...spawnOpts, ...spawn }, extra)
     }
   }
 

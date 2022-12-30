@@ -1,5 +1,5 @@
 const t = require('tap')
-const path = require('path')
+const { resolve } = require('path')
 const fs = require('fs/promises')
 const { load: _loadMockNpm } = require('../../fixtures/mock-npm.js')
 const mockGlobals = require('../../fixtures/mock-globals.js')
@@ -214,12 +214,12 @@ t.test('json parse', t => {
   t.test('merge conflict in package.json', async t => {
     const prefixDir = {
       'package.json': await fs.readFile(
-        path.resolve(__dirname, '../../fixtures/merge-conflict.json'), 'utf-8'),
+        resolve(__dirname, '../../fixtures/merge-conflict.json'), 'utf-8'),
     }
     const { errorMessage, npm } = await loadMockNpm(t, { prefixDir })
     t.matchSnapshot(errorMessage(Object.assign(new Error('conflicted'), {
       code: 'EJSONPARSE',
-      path: path.resolve(npm.prefix, 'package.json'),
+      path: resolve(npm.prefix, 'package.json'),
     })))
     t.end()
   })
@@ -231,7 +231,7 @@ t.test('json parse', t => {
     const { errorMessage, npm } = await loadMockNpm(t, { prefixDir })
     t.matchSnapshot(errorMessage(Object.assign(new Error('not json'), {
       code: 'EJSONPARSE',
-      path: path.resolve(npm.prefix, 'package.json'),
+      path: resolve(npm.prefix, 'package.json'),
     })))
     t.end()
   })
@@ -243,7 +243,7 @@ t.test('json parse', t => {
     const { npm, errorMessage } = await loadMockNpm(t, { prefixDir })
     t.matchSnapshot(errorMessage(Object.assign(new Error('not json'), {
       code: 'EJSONPARSE',
-      path: path.resolve(npm.prefix, 'blerg.json'),
+      path: resolve(npm.prefix, 'blerg.json'),
     })))
     t.end()
   })

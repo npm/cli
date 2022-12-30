@@ -2,10 +2,10 @@ const t = require('tap')
 const MockRegistry = require('@npmcli/mock-registry')
 const _mockNpm = require('../../fixtures/mock-npm')
 const { cleanCwd } = require('../../fixtures/clean-snapshot')
-const { exitCode } = process
+const { exitCode: defExitCode } = process
 
 t.cleanSnapshot = (str) => cleanCwd(str)
-t.afterEach(() => process.exitCode = exitCode)
+t.afterEach(() => process.exitCode = defExitCode)
 
 const packument = spec => {
   const mocks = {

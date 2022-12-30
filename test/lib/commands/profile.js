@@ -12,7 +12,7 @@ const mockProfile = async (t, { npmProfile, readUserInfo, qrcode, ...opts } = {}
     'cli-table3': class extends Array {
       toString () {
         return this.filter(Boolean)
-          .map(i => [...Object.entries(i)].map(i => i.join(': ')))
+          .map(i => [...Object.entries(i)].map(v => v.join(': ')))
           .join('\n')
       }
     },
@@ -61,14 +61,14 @@ t.test('no args', async t => {
 })
 
 t.test('profile get no args', async t => {
-  const npmProfile = {
+  const defaultNpmProfile = {
     async get () {
       return userProfile
     },
   }
 
   t.test('default output', async t => {
-    const { profile, result } = await mockProfile(t, { npmProfile })
+    const { profile, result } = await mockProfile(t, { npmProfile: defaultNpmProfile })
     await profile.exec(['get'])
 
     t.matchSnapshot(result(), 'should output table with contents')
@@ -76,7 +76,7 @@ t.test('profile get no args', async t => {
 
   t.test('--json', async t => {
     const { profile, result } = await mockProfile(t, {
-      npmProfile,
+      npmProfile: defaultNpmProfile,
       config: { json: true },
     })
 
@@ -87,7 +87,7 @@ t.test('profile get no args', async t => {
 
   t.test('--parseable', async t => {
     const { profile, result } = await mockProfile(t, {
-      npmProfile,
+      npmProfile: defaultNpmProfile,
       config: { parseable: true },
     })
 
@@ -276,7 +276,7 @@ t.test('profile set <key> <value>', async t => {
     )
   })
 
-  const npmProfile = t => ({
+  const defaultNpmProfile = t => ({
     async get () {
       return userProfile
     },
@@ -300,7 +300,7 @@ t.test('profile set <key> <value>', async t => {
       t.plan(2)
 
       const { profile, result } = await mockProfile(t, {
-        npmProfile: npmProfile(t),
+        npmProfile: defaultNpmProfile(t),
       })
 
       await profile.exec(['set', 'fullname', 'Lorem Ipsum'])
@@ -313,7 +313,7 @@ t.test('profile set <key> <value>', async t => {
       const config = { json: true }
 
       const { profile, result } = await mockProfile(t, {
-        npmProfile: npmProfile(t),
+        npmProfile: defaultNpmProfile(t),
         config,
       })
 
@@ -333,7 +333,7 @@ t.test('profile set <key> <value>', async t => {
 
       const config = { parseable: true }
       const { profile, result } = await mockProfile(t, {
-        npmProfile: npmProfile(t),
+        npmProfile: defaultNpmProfile(t),
         config,
       })
 

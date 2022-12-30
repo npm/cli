@@ -4,7 +4,7 @@ const npmFetch = require('npm-registry-fetch')
 const mockNpm = require('../../fixtures/mock-npm')
 const { join } = require('path')
 
-const mockLogout = async (t, { userRc = [], ...opts } = {}) => {
+const mockLogout = async (t, { userRc = [], ...npmOpts } = {}) => {
   let result = null
 
   const mock = await mockNpm(t, {
@@ -14,7 +14,7 @@ const mockLogout = async (t, { userRc = [], ...opts } = {}) => {
         result = { url, opts }
       }, npmFetch),
     },
-    ...opts,
+    ...npmOpts,
     homeDir: {
       '.npmrc': userRc.join('\n'),
     },

@@ -299,11 +299,11 @@ t.test('multiple mocks and resets', async (t) => {
 
     await t.test('platforms', async (t) => {
       const resets = platforms.map((p) => {
-        const { teardown, reset } = mockGlobals(t, { 'process.platform': p })
+        const { teardown: nestedTeardown, reset } = mockGlobals(t, { 'process.platform': p })
         t.equal(process.platform, p)
         return [
           reset['process.platform'],
-          teardown,
+          nestedTeardown,
         ]
       })
 

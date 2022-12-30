@@ -160,8 +160,8 @@ t.test('npm.load', async t => {
       prefixDir: {
         bin: t.fixture('symlink', dirname(process.execPath)),
       },
-      globals: ({ prefix }) => ({
-        'process.env.PATH': resolve(prefix, 'bin'),
+      globals: (dirs) => ({
+        'process.env.PATH': resolve(dirs.prefix, 'bin'),
         'process.argv': [
           node,
           process.argv[1],
@@ -441,8 +441,8 @@ t.test('debug log', async t => {
   t.test('can load with bad dir', async t => {
     const { npm, testdir } = await loadMockNpm(t, {
       load: false,
-      config: ({ testdir }) => ({
-        'logs-dir': join(testdir, 'my_logs_dir'),
+      config: (dirs) => ({
+        'logs-dir': join(dirs.testdir, 'my_logs_dir'),
       }),
     })
     const logsDir = join(testdir, 'my_logs_dir')
