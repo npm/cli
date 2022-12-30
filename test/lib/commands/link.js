@@ -3,41 +3,51 @@ const { resolve, join } = require('path')
 const fs = require('fs')
 const Arborist = require('@npmcli/arborist')
 const { cleanCwd } = require('../../fixtures/clean-snapshot.js')
-const { fake: mockNpm, load: fullMockNpm } = require('../../fixtures/mock-npm')
+const mockNpm = require('../../fixtures/mock-npm')
 
 t.cleanSnapshot = (str) => cleanCwd(str)
+  .replace(/\/test\/lib\/commands\/tap-testdir-[a-zA-Z-]+\//g, '/')
 
-const config = {}
-const npm = mockNpm({
-  globalDir: null,
-  prefix: null,
-  config,
-})
+const mockLink = async (t, { globalPrefixDir, ...opts } = {}) => {
+  const mock = await mockNpm(t, {
+    ...opts,
+    globalPrefixDir,
+    mocks: {
+      ...opts.mocks,
+      '../../lib/utils/reify-output.js': async () => {},
+    },
+  })
 
-const printLinks = async (opts) => {
-  let res = ''
-  const arb = new Arborist(opts)
-  const tree = await arb.loadActual()
-  const linkedItems = [...tree.inventory.values()]
-    .sort((a, b) => a.pkgid.localeCompare(b.pkgid, 'en'))
-  for (const item of linkedItems) {
-    if (item.isLink) {
-      res += `${item.path} -> ${item.target.path}\n`
+  const printLinks = async ({ global = false } = {}) => {
+    let res = ''
+    const arb = new Arborist(global ? {
+      path: resolve(mock.npm.globalDir, '..'),
+      global: true,
+    } : { path: mock.prefix })
+    const tree = await arb.loadActual()
+    const linkedItems = [...tree.inventory.values()]
+      .sort((a, b) => a.pkgid.localeCompare(b.pkgid, 'en'))
+    for (const item of linkedItems) {
+      if (item.isLink) {
+        res += `${item.path} -> ${item.target.path}\n`
+      }
     }
+    return res
   }
-  return res
-}
 
-const mocks = {
-  '../../../lib/utils/reify-output.js': async () => {},
+  return {
+    ...mock,
+    link: {
+      exec: (args = []) => mock.npm.exec('link', args),
+      completion: (o) => mock.npm.cmd('link').then(c => c.completion(o)),
+    },
+    printLinks,
+  }
 }
-
-const Link = t.mock('../../../lib/commands/link.js', mocks)
-const link = new Link(npm)
 
 t.test('link to globalDir when in current working dir of pkg and no args', async t => {
-  const testdir = t.testdir({
-    'global-prefix': {
+  const { link, printLinks } = await mockLink(t, {
+    globalPrefixDir: {
       lib: {
         node_modules: {
           a: {
@@ -49,27 +59,21 @@ t.test('link to globalDir when in current working dir of pkg and no args', async
         },
       },
     },
-    'test-pkg-link': {
+    prefixDir: {
       'package.json': JSON.stringify({
         name: 'test-pkg-link',
         version: '1.0.0',
       }),
     },
   })
-  npm.globalDir = resolve(testdir, 'global-prefix', 'lib', 'node_modules')
-  npm.prefix = resolve(testdir, 'test-pkg-link')
 
-  await link.exec([])
-  const links = await printLinks({
-    path: resolve(npm.globalDir, '..'),
-    global: true,
-  })
-  t.matchSnapshot(links, 'should create a global link to current pkg')
+  await link.exec()
+  t.matchSnapshot(await printLinks({ global: true }), 'should create a global link to current pkg')
 })
 
 t.test('link ws to globalDir when workspace specified and no args', async t => {
-  const testdir = t.testdir({
-    'global-prefix': {
+  const { link, printLinks } = await mockLink(t, {
+    globalPrefixDir: {
       lib: {
         node_modules: {
           a: {
@@ -81,7 +85,7 @@ t.test('link ws to globalDir when workspace specified and no args', async t => {
         },
       },
     },
-    'test-pkg-link': {
+    prefixDir: {
       'package.json': JSON.stringify({
         name: 'test-pkg-link',
         version: '1.0.0',
@@ -96,25 +100,16 @@ t.test('link ws to globalDir when workspace specified and no args', async t => {
         },
       },
     },
-  })
-  npm.globalDir = resolve(testdir, 'global-prefix', 'lib', 'node_modules')
-  npm.prefix = resolve(testdir, 'test-pkg-link')
-  npm.localPrefix = resolve(testdir, 'test-pkg-link')
-
-  // link.workspaces = ['a']
-  // link.workspacePaths = [resolve(testdir, 'test-pkg-link/packages/a')]
-  await link.execWorkspaces([], ['a'])
-  const links = await printLinks({
-    path: resolve(npm.globalDir, '..'),
-    global: true,
+    config: { workspace: 'a' },
   })
 
-  t.matchSnapshot(links, 'should create a global link to current pkg')
+  await link.exec()
+  t.matchSnapshot(await printLinks({ global: true }), 'should create a global link to current pkg')
 })
 
 t.test('link global linked pkg to local nm when using args', async t => {
-  const testdir = t.testdir({
-    'global-prefix': {
+  const { link, printLinks } = await mockLink(t, {
+    globalPrefixDir: {
       lib: {
         node_modules: {
           '@myscope': {
@@ -130,7 +125,7 @@ t.test('link global linked pkg to local nm when using args', async t => {
                 version: '1.0.0',
               }),
             },
-            linked: t.fixture('symlink', '../../../../scoped-linked'),
+            linked: t.fixture('symlink', '../../../../other/scoped-linked'),
           },
           a: {
             'package.json': JSON.stringify({
@@ -144,29 +139,31 @@ t.test('link global linked pkg to local nm when using args', async t => {
               version: '1.0.0',
             }),
           },
-          'test-pkg-link': t.fixture('symlink', '../../../test-pkg-link'),
+          'test-pkg-link': t.fixture('symlink', '../../../other/test-pkg-link'),
         },
       },
     },
-    'test-pkg-link': {
-      'package.json': JSON.stringify({
-        name: 'test-pkg-link',
-        version: '1.0.0',
-      }),
+    otherDirs: {
+      'test-pkg-link': {
+        'package.json': JSON.stringify({
+          name: 'test-pkg-link',
+          version: '1.0.0',
+        }),
+      },
+      'link-me-too': {
+        'package.json': JSON.stringify({
+          name: 'link-me-too',
+          version: '1.0.0',
+        }),
+      },
+      'scoped-linked': {
+        'package.json': JSON.stringify({
+          name: '@myscope/linked',
+          version: '1.0.0',
+        }),
+      },
     },
-    'link-me-too': {
-      'package.json': JSON.stringify({
-        name: 'link-me-too',
-        version: '1.0.0',
-      }),
-    },
-    'scoped-linked': {
-      'package.json': JSON.stringify({
-        name: '@myscope/linked',
-        version: '1.0.0',
-      }),
-    },
-    'my-project': {
+    prefixDir: {
       'package.json': JSON.stringify({
         name: 'my-project',
         version: '1.0.0',
@@ -184,11 +181,6 @@ t.test('link global linked pkg to local nm when using args', async t => {
       },
     },
   })
-  npm.globalDir = resolve(testdir, 'global-prefix', 'lib', 'node_modules')
-  npm.prefix = resolve(testdir, 'my-project')
-
-  const _cwd = process.cwd()
-  process.chdir(npm.prefix)
 
   // installs examples for:
   // - test-pkg-link: pkg linked to globalDir from local fs
@@ -201,19 +193,15 @@ t.test('link global linked pkg to local nm when using args', async t => {
     '@myscope/linked',
     '@myscope/bar',
     'a',
-    'file:../link-me-too',
+    'file:../other/link-me-too',
   ])
-  process.chdir(_cwd)
-  const links = await printLinks({
-    path: npm.prefix,
-  })
 
-  t.matchSnapshot(links, 'should create a local symlink to global pkg')
+  t.matchSnapshot(await printLinks(), 'should create a local symlink to global pkg')
 })
 
 t.test('link global linked pkg to local workspace using args', async t => {
-  const testdir = t.testdir({
-    'global-prefix': {
+  const { link, printLinks } = await mockLink(t, {
+    globalPrefixDir: {
       lib: {
         node_modules: {
           '@myscope': {
@@ -229,7 +217,7 @@ t.test('link global linked pkg to local workspace using args', async t => {
                 version: '1.0.0',
               }),
             },
-            linked: t.fixture('symlink', '../../../../scoped-linked'),
+            linked: t.fixture('symlink', '../../../../other/scoped-linked'),
           },
           a: {
             'package.json': JSON.stringify({
@@ -243,29 +231,31 @@ t.test('link global linked pkg to local workspace using args', async t => {
               version: '1.0.0',
             }),
           },
-          'test-pkg-link': t.fixture('symlink', '../../../test-pkg-link'),
+          'test-pkg-link': t.fixture('symlink', '../../../other/test-pkg-link'),
         },
       },
     },
-    'test-pkg-link': {
-      'package.json': JSON.stringify({
-        name: 'test-pkg-link',
-        version: '1.0.0',
-      }),
+    otherDirs: {
+      'test-pkg-link': {
+        'package.json': JSON.stringify({
+          name: 'test-pkg-link',
+          version: '1.0.0',
+        }),
+      },
+      'link-me-too': {
+        'package.json': JSON.stringify({
+          name: 'link-me-too',
+          version: '1.0.0',
+        }),
+      },
+      'scoped-linked': {
+        'package.json': JSON.stringify({
+          name: '@myscope/linked',
+          version: '1.0.0',
+        }),
+      },
     },
-    'link-me-too': {
-      'package.json': JSON.stringify({
-        name: 'link-me-too',
-        version: '1.0.0',
-      }),
-    },
-    'scoped-linked': {
-      'package.json': JSON.stringify({
-        name: '@myscope/linked',
-        version: '1.0.0',
-      }),
-    },
-    'my-project': {
+    prefixDir: {
       'package.json': JSON.stringify({
         name: 'my-project',
         version: '1.0.0',
@@ -291,13 +281,8 @@ t.test('link global linked pkg to local workspace using args', async t => {
         },
       },
     },
+    config: { workspace: 'x' },
   })
-  npm.globalDir = resolve(testdir, 'global-prefix', 'lib', 'node_modules')
-  npm.prefix = resolve(testdir, 'my-project')
-  npm.localPrefix = resolve(testdir, 'my-project')
-
-  const _cwd = process.cwd()
-  process.chdir(npm.prefix)
 
   // installs examples for:
   // - test-pkg-link: pkg linked to globalDir from local fs
@@ -305,143 +290,117 @@ t.test('link global linked pkg to local workspace using args', async t => {
   // - @myscope/bar: prev installed scoped package available in globalDir
   // - a: prev installed package available in globalDir
   // - file:./link-me-too: pkg that needs to be reified in globalDir first
-  await link.execWorkspaces([
+  await link.exec([
     'test-pkg-link',
     '@myscope/linked',
     '@myscope/bar',
     'a',
-    'file:../link-me-too',
-  ], ['x'])
-  process.chdir(_cwd)
+    'file:../other/link-me-too',
+  ])
 
-  const links = await printLinks({
-    path: npm.prefix,
-  })
-
-  t.matchSnapshot(links, 'should create a local symlink to global pkg')
+  t.matchSnapshot(await printLinks(), 'should create a local symlink to global pkg')
 })
 
 t.test('link pkg already in global space', async t => {
-  const testdir = t.testdir({
-    'global-prefix': {
+  const { npm, link, printLinks, prefix } = await mockLink(t, {
+    globalPrefixDir: {
       lib: {
         node_modules: {
           '@myscope': {
-            linked: t.fixture('symlink', '../../../../scoped-linked'),
+            linked: t.fixture('symlink', '../../../../other/scoped-linked'),
           },
         },
       },
     },
-    'scoped-linked': {
-      'package.json': JSON.stringify({
-        name: '@myscope/linked',
-        version: '1.0.0',
-      }),
+    otherDirs: {
+      'scoped-linked': {
+        'package.json': JSON.stringify({
+          name: '@myscope/linked',
+          version: '1.0.0',
+        }),
+      },
     },
-    'my-project': {
+    prefixDir: {
       'package.json': JSON.stringify({
         name: 'my-project',
         version: '1.0.0',
       }),
     },
   })
-  npm.globalDir = resolve(testdir, 'global-prefix', 'lib', 'node_modules')
-  npm.prefix = resolve(testdir, 'my-project')
 
+  // XXX: how to convert this to a config that gets passed in?
   npm.config.find = () => 'default'
 
-  const _cwd = process.cwd()
-  process.chdir(npm.prefix)
-
-  // installs examples for:
-  // - test-pkg-link: pkg linked to globalDir from local fs
-  // - @myscope/linked: scoped pkg linked to globalDir from local fs
-  // - @myscope/bar: prev installed scoped package available in globalDir
-  // - a: prev installed package available in globalDir
-  // - file:./link-me-too: pkg that needs to be reified in globalDir first
   await link.exec(['@myscope/linked'])
-  process.chdir(_cwd)
-  npm.config.find = () => null
-
-  const links = await printLinks({
-    path: npm.prefix,
-  })
 
   t.equal(
-    require(resolve(testdir, 'my-project', 'package.json')).dependencies,
+    require(resolve(prefix, 'package.json')).dependencies,
     undefined,
     'should not save to package.json upon linking'
   )
 
-  t.matchSnapshot(links, 'should create a local symlink to global pkg')
+  t.matchSnapshot(await printLinks(), 'should create a local symlink to global pkg')
 })
 
 t.test('link pkg already in global space when prefix is a symlink', async t => {
-  const testdir = t.testdir({
-    'global-prefix': t.fixture('symlink', './real-global-prefix'),
-    'real-global-prefix': {
-      lib: {
-        node_modules: {
-          '@myscope': {
-            linked: t.fixture('symlink', '../../../../scoped-linked'),
+  const { npm, link, printLinks, prefix } = await mockLink(t, {
+    globalPrefixDir: t.fixture('symlink', './other/real-global-prefix'),
+    otherDirs: {
+      'real-global-prefix': {
+        lib: {
+          node_modules: {
+            '@myscope': {
+              linked: t.fixture('symlink', '../../../../scoped-linked'),
+            },
           },
         },
       },
+      'scoped-linked': {
+        'package.json': JSON.stringify({
+          name: '@myscope/linked',
+          version: '1.0.0',
+        }),
+      },
     },
-    'scoped-linked': {
-      'package.json': JSON.stringify({
-        name: '@myscope/linked',
-        version: '1.0.0',
-      }),
-    },
-    'my-project': {
+    prefixDir: {
       'package.json': JSON.stringify({
         name: 'my-project',
         version: '1.0.0',
       }),
     },
   })
-  npm.globalDir = resolve(testdir, 'global-prefix', 'lib', 'node_modules')
-  npm.prefix = resolve(testdir, 'my-project')
 
   npm.config.find = () => 'default'
 
-  const _cwd = process.cwd()
-  process.chdir(npm.prefix)
-
   await link.exec(['@myscope/linked'])
-  process.chdir(_cwd)
-  npm.config.find = () => null
-
-  const links = await printLinks({
-    path: npm.prefix,
-  })
 
   t.equal(
-    require(resolve(testdir, 'my-project', 'package.json')).dependencies,
+    require(resolve(prefix, 'package.json')).dependencies,
     undefined,
     'should not save to package.json upon linking'
   )
 
-  t.matchSnapshot(links, 'should create a local symlink to global pkg')
+  t.matchSnapshot(await printLinks(), 'should create a local symlink to global pkg')
 })
 
 t.test('should not prune dependencies when linking packages', async t => {
-  const testdir = t.testdir({
-    'global-prefix': {
+  const { link, prefix } = await mockLink(t, {
+    globalPrefixDir: {
       lib: {
         node_modules: {
-          linked: t.fixture('symlink', '../../../linked'),
+          linked: t.fixture('symlink', '../../../other/linked'),
         },
       },
     },
-    linked: {
-      'package.json': JSON.stringify({
-        name: 'linked',
-        version: '1.0.0',
-      }),
+    otherDirs: {
+      linked: {
+        'package.json': JSON.stringify({
+          name: 'linked',
+          version: '1.0.0',
+        }),
+      },
     },
-    'my-project': {
+    prefixDir: {
       node_modules: {
         foo: {
           'package.json': JSON.stringify({ name: 'foo', version: '1.0.0' }),
@@ -453,24 +412,18 @@ t.test('should not prune dependencies when linking packages', async t => {
       }),
     },
   })
-  npm.globalDir = resolve(testdir, 'global-prefix', 'lib', 'node_modules')
-  npm.prefix = resolve(testdir, 'my-project')
-
-  const _cwd = process.cwd()
-  process.chdir(npm.prefix)
 
   await link.exec(['linked'])
 
   t.ok(
-    fs.statSync(resolve(testdir, 'my-project/node_modules/foo')),
+    fs.statSync(resolve(prefix, 'node_modules/foo')),
     'should not prune any extraneous dep when running npm link'
   )
-  process.chdir(_cwd)
 })
 
 t.test('completion', async t => {
-  const testdir = t.testdir({
-    'global-prefix': {
+  const { link } = await mockLink(t, {
+    globalPrefixDir: {
       lib: {
         node_modules: {
           foo: {},
@@ -481,9 +434,9 @@ t.test('completion', async t => {
       },
     },
   })
-  npm.globalDir = resolve(testdir, 'global-prefix', 'lib', 'node_modules')
 
   const words = await link.completion({})
+
   t.same(
     words,
     ['bar', 'foo', 'ipsum', 'lorem'],
@@ -492,13 +445,9 @@ t.test('completion', async t => {
 })
 
 t.test('--global option', async t => {
-  t.teardown(() => {
-    npm.config = _config
+  const { link } = await mockLink(t, {
+    config: { global: true },
   })
-  const _config = npm.config
-  npm.config = { get () {
-    return true
-  } }
   await t.rejects(
     link.exec([]),
     /link should never be --global/,
@@ -507,8 +456,8 @@ t.test('--global option', async t => {
 })
 
 t.test('hash character in working directory path', async t => {
-  const testdir = t.testdir({
-    'global-prefix': {
+  const { link, printLinks } = await mockLink(t, {
+    globalPrefixDir: {
       lib: {
         node_modules: {
           a: {
@@ -520,31 +469,28 @@ t.test('hash character in working directory path', async t => {
         },
       },
     },
-    'i_like_#_in_my_paths': {
-      'test-pkg-link': {
-        'package.json': JSON.stringify({
-          name: 'test-pkg-link',
-          version: '1.0.0',
-        }),
+    otherDirs: {
+      'i_like_#_in_my_paths': {
+        'test-pkg-link': {
+          'package.json': JSON.stringify({
+            name: 'test-pkg-link',
+            version: '1.0.0',
+          }),
+        },
       },
     },
+    globals: ({ other }) => ({
+      'process.cwd': () => join(other, 'i_like_#_in_my_paths', 'test-pkg-link'),
+    }),
   })
-  npm.globalDir = resolve(testdir, 'global-prefix', 'lib', 'node_modules')
-  npm.prefix = resolve(testdir, 'i_like_#_in_my_paths', 'test-pkg-link')
-
-  link.workspacePaths = null
   await link.exec([])
-  const links = await printLinks({
-    path: resolve(npm.globalDir, '..'),
-    global: true,
-  })
 
-  t.matchSnapshot(links, 'should create a global link to current pkg, even within path with hash')
+  t.matchSnapshot(await printLinks({ global: true }),
+    'should create a global link to current pkg, even within path with hash')
 })
 
 t.test('test linked installed as symlinks', async t => {
-  // fakeMock is insufficient due to lack of flatOptions
-  const { npm } = await fullMockNpm(t, {
+  const { link, prefix, printLinks } = await mockLink(t, {
     otherDirs: {
       mylink: {
         'package.json': JSON.stringify({
@@ -555,20 +501,13 @@ t.test('test linked installed as symlinks', async t => {
     },
   })
 
-  const _cwd = process.cwd()
-  process.chdir(npm.prefix)
-
-  await npm.exec('link', [
+  await link.exec([
     join('file:../other/mylink'),
   ])
-  process.chdir(_cwd)
-  const links = await printLinks({
-    path: npm.prefix,
-  })
 
-  t.ok(fs.lstatSync(join(npm.prefix, 'node_modules', 'mylink')).isSymbolicLink(),
+  t.ok(fs.lstatSync(join(prefix, 'node_modules', 'mylink')).isSymbolicLink(),
     'linked path should by symbolic link'
   )
 
-  t.matchSnapshot(links, 'linked package should not be installed')
+  t.matchSnapshot(await printLinks(), 'linked package should not be installed')
 })
