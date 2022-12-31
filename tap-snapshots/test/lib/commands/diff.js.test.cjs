@@ -55,3 +55,34 @@ index v0.1.0..v1.0.0 100644
 -const b = "b@0.1.0"
 +const b = "b@1.0.0"
 `
+
+exports[`test/lib/commands/diff.js TAP various options using --name-only option > must match snapshot 1`] = `
+index.js
+package.json
+`
+
+exports[`test/lib/commands/diff.js TAP various options using diff option > must match snapshot 1`] = `
+diff --git a/index.js b/index.js
+index v2.0.0..v3.0.0 100644
+--- a/index.js
++++ b/index.js
+@@ -18,7 +18,7 @@
+ 17
+ 18
+ 19
+-202.0.0
++203.0.0
+ 21
+ 22
+ 23
+diff --git a/package.json b/package.json
+index v2.0.0..v3.0.0 100644
+--- a/package.json
++++ b/package.json
+@@ -1,4 +1,4 @@
+ {
+   "name": "bar",
+-  "version": "2.0.0"
++  "version": "3.0.0"
+ }
+`

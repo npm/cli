@@ -1,6 +1,5 @@
 {
   "rules": {
-
     "no-console": "error"
   },
   "overrides": [{
@@ -8,7 +7,6 @@
       "test/**"
     ],
     "rules": {
-
       "no-console": "off"
     }
   }]
