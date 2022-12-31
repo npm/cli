@@ -172,10 +172,8 @@ t.test('dry-run', async t => {
 })
 
 t.test('shows usage with wrong set of arguments', async t => {
-  t.plan(1)
-  const Publish = t.mock('../../../lib/commands/publish.js')
-  const publish = new Publish({ config: { validate: () => {} } })
-
+  const { npm } = await loadMockNpm(t)
+  const publish = await npm.cmd('publish')
   await t.rejects(publish.exec(['a', 'b', 'c']), publish.usage)
 })
 

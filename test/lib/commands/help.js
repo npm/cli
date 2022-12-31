@@ -223,5 +223,5 @@ t.test('npm help - works in the presence of strange man pages', async t => {
 t.test('rejects when cmd is not available', async t => {
   const { exec } = await mockHelp(t, { spawn: { env: { PATH: '' }, stdio: 'pipe' } })
 
-  await t.rejects(exec('whoami'), /help process exited with code: EACCES/)
+  await t.rejects(exec('whoami'), /help process exited with code: (EACCES|ENOENT)/)
 })
