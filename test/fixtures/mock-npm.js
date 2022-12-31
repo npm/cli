@@ -1,6 +1,8 @@
 const os = require('os')
 const fs = require('fs').promises
 const path = require('path')
+const tap = require('tap')
+const errorMessage = require('../../lib/utils/error-message')
 const mockLogs = require('./mock-logs')
 const mockGlobals = require('./mock-globals')
 const log = require('../../lib/utils/log-shim')
@@ -32,6 +34,20 @@ const getMockNpm = async (t, {
       super(npm)
     }
 
+    async exec (...args) {
+      const [res, err] = await super.exec(...args).then((r) => [r]).catch(e => [null, e])
+      // This mimics how the exit handler flushes output for commands that have
+      // buffered output. It also uses the same json error processing from the
+      // error message fn. This is necessary for commands with buffered output
+      // to read the output after exec is called. This is not *exactly* how it
+      // works in practice, but it is close enough for now.
+      this.flushOutput(err ? errorMessage(err, this).json : null)
+      if (err) {
+        throw err
+      }
+      return res
+    }
+
     // lib/npm.js tests needs this to actually test the function!
     originalOutput (...args) {
       super.output(...args)
@@ -60,9 +76,14 @@ const getMockNpm = async (t, {
   return mock
 }
 
+const mockNpms = new WeakMap()
+
 const setupMockNpm = async (t, {
   init = true,
   load = init,
+  // preload a command
+  command = null, // string name of the command
+  exec = null, // optionally exec the command before returning
   // test dirs
   prefixDir = {},
   homeDir = {},
@@ -76,25 +97,43 @@ const setupMockNpm = async (t, {
   npm: npmOpts = {},
   argv: rawArgv = [],
 } = {}) => {
+  // easy to accidentally forget to pass in tap
+  if (!(t instanceof tap.Test)) {
+    throw new Error('first argument must be a tap instance')
+  }
+
+  // mockNpm is designed to only be run once per test so we assign it to the
+  // test in the cache and error if it is attempted to run again
+  if (!mockNpms.has(t)) {
+    mockNpms.set(t, true)
+  } else {
+    throw new Error('each tap instance can only be used once with mockNpm')
+  }
+
   if (!init && load) {
     throw new Error('cant `load` without `init`')
   }
 
+  if (!init && load) {
+    throw new Error('cant `load` without `init`')
+  }
+
+  const npmEnvs = Object.keys(process.env).filter(k => k.startsWith('npm_'))
+
+  // These are globals manipulated by npm itself that we need to reset to their
+  // original values between tests
   mockGlobals(t, {
     process: {
       title: process.title,
       execPath: process.execPath,
       env: {
-        npm_command: process.env.npm_command,
         NODE_ENV: process.env.NODE_ENV,
         COLOR: process.env.COLOR,
-        // Mock some globals with their original values so they get torn down
-        // back to the original at the end of the test since they are manipulated
-        // by npm itself
-        ...Object.keys(process.env).reduce((acc, k) => {
-          if (k.startsWith('npm_config_')) {
-            acc[k] = undefined
-          }
+        // further, these are npm controlled envs that we need to zero out before
+        // before the test. setting them to undefined ensures they are not set and
+        // also returned to their original value after the test
+        ...npmEnvs.reduce((acc, k) => {
+          acc[k] = undefined
           return acc
         }, {}),
       },
@@ -156,7 +195,7 @@ const setupMockNpm = async (t, {
 
   mockGlobals(t, mockedGlobals)
 
-  const mockNpm = await getMockNpm(t, {
+  const { npm, ...mockNpm } = await getMockNpm(t, {
     init,
     load,
     mocks: withDirs(mocks),
@@ -165,27 +204,47 @@ const setupMockNpm = async (t, {
   })
 
   if (config.omit?.includes('prod')) {
-    // XXX: --omit=prod is not a valid config according to the definitions
-    // but it was being hacked in via flatOptions so this is to preserve that
-    // behavior and reduce churn in the snapshots. this should be removed or
-    // fixed in the future
-    mockNpm.npm.flatOptions.omit.push('prod')
+    // XXX: --omit=prod is not a valid config according to the definitions but
+    // it was being hacked in via flatOptions for older tests so this is to
+    // preserve that behavior and reduce churn in the snapshots. this should be
+    // removed or fixed in the future
+    npm.flatOptions.omit.push('prod')
   }
 
   t.teardown(() => {
     // npmlog is a singleton so we need to reset the loglevel to the original
     // value between each test
     log.level = ogLevel
-    if (mockNpm.npm) {
-      mockNpm.npm.unload()
+    if (npm) {
+      npm.unload()
     }
   })
 
+  const mockCommand = {}
+  if (command) {
+    const cmd = await npm.cmd(command)
+    const usage = await cmd.usage
+    mockCommand.cmd = cmd
+    mockCommand[command] = {
+      usage,
+      exec: (args) => npm.exec(command, args),
+      completion: (args) => cmd.completion(args),
+    }
+    if (exec) {
+      await mockCommand[command].exec(exec)
+      // assign string output to the command now that we have it
+      // for easier testing
+      mockCommand[command].output = mockNpm.joinedOutput()
+    }
+  }
+
   return {
+    npm,
     ...mockNpm,
     ...dirs,
+    ...mockCommand,
     debugFile: async () => {
-      const readFiles = mockNpm.npm.logFiles.map(f => fs.readFile(f))
+      const readFiles = npm.logFiles.map(f => fs.readFile(f))
       const logFiles = await Promise.all(readFiles)
       return logFiles
         .flatMap((d) => d.toString().trim().split(os.EOL))
@@ -193,7 +252,7 @@ const setupMockNpm = async (t, {
         .join('\n')
     },
     timingFile: async () => {
-      const data = await fs.readFile(mockNpm.npm.timingFile, 'utf8')
+      const data = await fs.readFile(npm.timingFile, 'utf8')
       return JSON.parse(data)
     },
   }

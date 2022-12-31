@@ -96,7 +96,7 @@ t.test('workspace query', async t => {
       }),
     },
   })
-  await npm.exec('query', [':scope'], ['c'])
+  await npm.exec('query', [':scope'])
   t.matchSnapshot(joinedOutput(), 'should return workspace object')
 })
 
@@ -134,7 +134,7 @@ t.test('include-workspace-root', async t => {
       }),
     },
   })
-  await npm.exec('query', [':scope'], ['c'])
+  await npm.exec('query', [':scope'])
   t.matchSnapshot(joinedOutput(), 'should return workspace object and root object')
 })
 t.test('linked node', async t => {

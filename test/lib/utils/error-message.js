@@ -9,6 +9,9 @@ t.formatSnapshot = (p) => {
   if (Array.isArray(p.files) && !p.files.length) {
     delete p.files
   }
+  if (p?.json === undefined) {
+    delete p.json
+  }
   return p
 }
 t.cleanSnapshot = p => cleanDate(cleanCwd(p))

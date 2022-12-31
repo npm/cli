@@ -105,6 +105,7 @@ const mockLs = async (t, { mocks, config, ...opts } = {}) => {
       all: true,
       ...config,
     },
+    command: 'ls',
     mocks: {
       path: {
         ...require('path'),
@@ -120,25 +121,6 @@ const mockLs = async (t, { mocks, config, ...opts } = {}) => {
 
   return {
     ...mock,
-    ls: {
-      // XXX: this is the only command with buffered output
-      // this should be made more ergonomic and put into mockNpm
-      // as more commands are likely to need buffered output
-      exec: async (args) => {
-        let res
-        let err
-        try {
-          res = await mock.npm.exec('ls', args)
-        } catch (e) {
-          err = e
-        }
-        mock.npm.flushOutput()
-        if (err) {
-          throw err
-        }
-        return res
-      },
-    },
     result: () => mock.joinedOutput(),
   }
 }
@@ -3294,6 +3276,15 @@ t.test('ls --json', async t => {
             problems: ['missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0'],
           },
         },
+        error: {
+          code: 'ELSPROBLEMS',
+          summary: [
+            'extraneous: chai@1.0.0 {PROJECT}/node_modules/chai',
+            'invalid: foo@1.0.0 {PROJECT}/node_modules/foo',
+            'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
+          ].join('\n'),
+          detail: '',
+        },
       },
       'should output json containing top-level deps and their deps only'
     )
@@ -3895,6 +3886,14 @@ t.test('ls --json', async t => {
         problems: [
           'error in {PROJECT}: Failed to parse root package.json',
         ],
+        error: {
+          code: 'EJSONPARSE',
+          summary: 'Failed to parse root package.json',
+          detail: [
+            'Failed to parse JSON data.',
+            'Note: package.json must be actual JSON, not just JavaScript.',
+          ].join('\n'),
+        },
       },
       'should print empty json result'
     )
@@ -3984,6 +3983,11 @@ t.test('ls --json', async t => {
               },
             },
           },
+        },
+        error: {
+          code: 'ELSPROBLEMS',
+          summary: 'invalid: peer-dep@1.0.0 {PROJECT}/node_modules/peer-dep',
+          detail: '',
         },
       },
       'should output json signaling missing peer dep in problems'
@@ -4075,6 +4079,11 @@ t.test('ls --json', async t => {
             },
           },
           'missing-optional-dep': {}, // missing optional dep has an empty entry in json output
+        },
+        error: {
+          code: 'ELSPROBLEMS',
+          summary: 'invalid: optional-dep@1.0.0 {PROJECT}/node_modules/optional-dep',
+          detail: '',
         },
       },
       'should output json with empty entry for missing optional deps'
@@ -5110,6 +5119,14 @@ t.test('ls --package-lock-only', async t => {
               missing: true,
               problems: ['missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0'],
             },
+          },
+          error: {
+            code: 'ELSPROBLEMS',
+            summary: [
+              'invalid: foo@1.0.0 {PROJECT}/node_modules/foo',
+              'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
+            ].join('\n'),
+            detail: '',
           },
         },
         'should output json containing top-level deps and their deps only'
