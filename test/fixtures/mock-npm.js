@@ -76,7 +76,7 @@ const getMockNpm = async (t, {
   return mock
 }
 
-const mockNpms = new WeakMap()
+const mockNpms = new Map()
 
 const setupMockNpm = async (t, {
   init = true,
@@ -104,11 +104,14 @@ const setupMockNpm = async (t, {
 
   // mockNpm is designed to only be run once per test so we assign it to the
   // test in the cache and error if it is attempted to run again
-  if (!mockNpms.has(t)) {
-    mockNpms.set(t, true)
-  } else {
-    throw new Error('each tap instance can only be used once with mockNpm')
+  let tapInstance = t
+  while (tapInstance) {
+    if (mockNpms.has(tapInstance)) {
+      throw new Error('mockNpm can only be called once in each t.test chain')
+    }
+    tapInstance = tapInstance.parent
   }
+  mockNpms.set(t, true)
 
   if (!init && load) {
     throw new Error('cant `load` without `init`')
