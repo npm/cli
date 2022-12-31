@@ -26,7 +26,7 @@ t.test('create a lifecycle command', async t => {
   t.same(runArgs, ['test-stage', 'some', 'args'])
   t.strictSame(result, 'called the right thing')
 
-  result = await cmd.execWorkspaces(['some', 'args'], [])
+  result = await cmd.execWorkspaces(['some', 'args'])
   t.same(runArgs, ['test-stage', 'some', 'args'])
   t.strictSame(result, 'called the right thing')
 })

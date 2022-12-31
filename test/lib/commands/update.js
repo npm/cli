@@ -27,7 +27,7 @@ const mockUpdate = async (t, { exec = [], ...opts } = {}) => {
     },
   })
 
-  await res.npm.exec('update', [])
+  await res.npm.exec('update', exec)
 
   return {
     ...res,
@@ -52,11 +52,11 @@ t.test('no args', async t => {
 t.test('with args', async t => {
   const { ctor, reify } = await mockUpdate(t, {
     config: { save: true },
-    exec: 'ipt',
+    exec: ['ipt'],
   })
 
   t.equal(ctor.save, true, 'save')
-  t.equal(reify.update, true, 'ipt')
+  t.strictSame(reify.update, ['ipt'], 'ipt')
 })
 
 t.test('update --depth=<number>', async t => {

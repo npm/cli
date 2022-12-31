@@ -66,7 +66,7 @@ t.test('recursive tree', async t => {
 t.test('workspace query', async t => {
   const { npm, joinedOutput } = await loadMockNpm(t, {
     config: {
-      workspaces: ['c'],
+      workspace: ['c'],
     },
     prefixDir: {
       node_modules: {
@@ -104,7 +104,7 @@ t.test('include-workspace-root', async t => {
   const { npm, joinedOutput } = await loadMockNpm(t, {
     config: {
       'include-workspace-root': true,
-      workspaces: ['c'],
+      workspace: ['c'],
     },
     prefixDir: {
       node_modules: {

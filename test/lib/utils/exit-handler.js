@@ -2,7 +2,7 @@ const t = require('tap')
 const os = require('os')
 const fs = require('fs')
 const fsMiniPass = require('fs-minipass')
-const { join } = require('path')
+const { join, resolve } = require('path')
 const EventEmitter = require('events')
 const { format } = require('../../../lib/utils/log-file')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
@@ -61,10 +61,10 @@ const mockExitHandler = async (t, { init, load, testdir, config, mocks, files } 
       },
       ...mocks,
     },
-    config: {
+    config: (dirs) => ({
       loglevel: 'notice',
-      ...config,
-    },
+      ...(typeof config === 'function' ? config(dirs) : config),
+    }),
     globals: {
       'console.error': (err) => errors.push(err),
     },
@@ -101,8 +101,8 @@ const mockExitHandler = async (t, { init, load, testdir, config, mocks, files } 
     // to t.plan() every test to make sure we get process.exit called. Also
     // introduce a small artificial delay so the logs are consistently finished
     // by the time the exit handler forces process.exit
-    exitHandler: (...args) => new Promise(resolve => setTimeout(() => {
-      process.once('exit', resolve)
+    exitHandler: (...args) => new Promise(res => setTimeout(() => {
+      process.once('exit', res)
       exitHandler(...args)
     }, 50)),
   }
@@ -352,10 +352,10 @@ t.test('timers fail to write', async (t) => {
   })
 
   const { exitHandler, logs } = await mockExitHandler(t, {
-    config: {
-      'logs-dir': 'LOGS_DIR',
+    config: (dirs) => ({
+      'logs-dir': resolve(dirs.prefix, 'LOGS_DIR'),
       timing: true,
-    },
+    }),
     mocks: {
       // note, this is relative to test/fixtures/mock-npm.js not this file
       '../../lib/utils/timers.js': mockTimers,
@@ -381,9 +381,9 @@ t.test('log files fail to write', async (t) => {
   })
 
   const { exitHandler, logs } = await mockExitHandler(t, {
-    config: {
-      'logs-dir': 'LOGS_DIR',
-    },
+    config: (dirs) => ({
+      'logs-dir': resolve(dirs.prefix, 'LOGS_DIR'),
+    }),
     mocks: {
       // note, this is relative to test/fixtures/mock-npm.js not this file
       '../../lib/utils/log-file.js': mockLogFile,
@@ -417,9 +417,9 @@ t.test('files from error message', async (t) => {
 
 t.test('files from error message with error', async (t) => {
   const { exitHandler, logs } = await mockExitHandler(t, {
-    config: {
-      'logs-dir': 'LOGS_DIR',
-    },
+    config: (dirs) => ({
+      'logs-dir': resolve(dirs.prefix, 'LOGS_DIR'),
+    }),
     files: [
       ['error-file.txt', '# error file content'],
     ],

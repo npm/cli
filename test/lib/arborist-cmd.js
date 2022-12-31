@@ -3,23 +3,15 @@ const t = require('tap')
 
 const { load: loadMockNpm } = require('../fixtures/mock-npm')
 
-const mockArboristCmd = async (t, exec, workspace, mocks = {}) => {
+const mockArboristCmd = async (t, exec, workspace, { mocks = {}, ...opts } = {}) => {
   const ArboristCmd = t.mock('../../lib/arborist-cmd.js', mocks)
 
-  let config = {}
-  let argv = []
+  const config = (typeof workspace === 'function')
+    ? (dirs) => ({ workspace: workspace(dirs) })
+    : { workspace }
 
-  if (typeof workspace === 'function') {
-    config = (dirs) => ({ workspace: workspace(dirs) })
-  } else if (Array.isArray(workspace)) {
-    argv = workspace.reduce((acc, w) => acc.concat(['--workspace', w]), [])
-  } else {
-    config = { workspace }
-  }
-
-  const { npm } = await loadMockNpm(t, {
+  const mock = await loadMockNpm(t, {
     config,
-    argv,
     prefixDir: {
       'package.json': JSON.stringify({
         name: 'simple-workspaces-list',
@@ -58,23 +50,22 @@ const mockArboristCmd = async (t, exec, workspace, mocks = {}) => {
         },
       },
     },
+    ...opts,
   })
 
   let execArg
-
   class TestCmd extends ArboristCmd {
     async exec (arg) {
       execArg = arg
     }
   }
 
-  const cmd = new TestCmd(npm)
-
+  const cmd = new TestCmd(mock.npm)
   if (exec) {
     await cmd.execWorkspaces(exec)
   }
 
-  return { cmd, getArg: () => execArg }
+  return { ...mock, cmd, getArg: () => execArg }
 }
 
 t.test('arborist-cmd', async t => {
@@ -114,17 +105,38 @@ t.test('arborist-cmd', async t => {
 
     t.same(cmd.workspaceNames, ['c', 'd'], 'should set array with single ws name')
   })
+
+  await t.test('parent path', async t => {
+    const { cmd } = await mockArboristCmd(t, [], './group')
+
+    t.same(cmd.workspaceNames, ['c', 'd'], 'should set array with single ws name')
+  })
+
+  await t.test('prefix inside cwd', async t => {
+    const { npm, cmd, prefix } = await mockArboristCmd(t, null, ['a', 'c'], {
+      globals: (dirs) => ({
+        'process.cwd': () => dirs.testdir,
+      }),
+    })
+
+    npm.localPrefix = prefix
+    await cmd.execWorkspaces([])
+
+    t.same(cmd.workspaceNames, ['a', 'c'], 'should set array with single ws name')
+  })
 })
 
 t.test('handle getWorkspaces raising an error', async t => {
   const { cmd } = await mockArboristCmd(t, null, 'a', {
-    '../../lib/workspaces/get-workspaces.js': async () => {
-      throw new Error('oopsie')
+    mocks: {
+      '../../lib/workspaces/get-workspaces.js': async () => {
+        throw new Error('oopsie')
+      },
     },
   })
 
   await t.rejects(
-    cmd.execWorkspaces(['foo'], ['a']),
+    cmd.execWorkspaces(['foo']),
     { message: 'oopsie' }
   )
 })
