@@ -4,15 +4,24 @@
 // may change when node-tap is updated.
 
 const t = require('tap')
+const { relative } = require('path')
 const { utimesSync } = require('fs')
 const mockNpm = require('../../fixtures/mock-npm.js')
+const cleanSnapshot = require('../../fixtures/clean-snapshot')
 
 const touchHiddenPackageLock = prefix => {
   const later = new Date(Date.now() + 10000)
   utimesSync(`${prefix}/node_modules/.package-lock.json`, later, later)
 }
 
-t.cleanSnapshot = str => str.split(/\r\n/).join('\n')
+const relativeDir = relative(process.cwd(), __dirname)
+const cleanCwd = (s) => cleanSnapshot.cleanCwd(s)
+  .replace(cleanSnapshot.pathRegex(relativeDir + '/'), '')
+  .replace(cleanSnapshot.pathRegex('/prefix'), '')
+  .replace(cleanSnapshot.pathRegex('/global/lib'), '')
+  .replace(/\{CWD\}\/tap-testdir-[\w-.]+/gi, '{PROJECT}')
+
+t.cleanSnapshot = str => cleanCwd(str)
 
 const simpleNmFixture = {
   node_modules: {
@@ -134,41 +143,17 @@ const mockLs = async (t, { mocks, config, ...opts } = {}) => {
   }
 }
 
-const redactCwd = (res, t) => {
-  if (!res) {
-    return ''
-  }
-  res = res
-    .replace(/\\+/g, '/')
-    .replace(new RegExp(__dirname.replace(/\\+/g, '/'), 'gi'), '{CWD}')
-    .replace(/\/prefix/gm, '')
-    .replace(/\/global\/lib/gm, '')
-
-  if (t) {
-    // during the latest refactor away from fake mock npm, some tests with
-    // snapshots needed to change their level of nesting. replacing the test
-    // name in paths helped keep snapshot churn to a minimum
-    res = res.replace('-' + t.name.replace(/\s/g, '-'), '')
-  }
-
-  return res
-}
-
 const redactCwdObj = obj => {
   if (Array.isArray(obj)) {
     return obj.map(o => redactCwdObj(o))
-  } else if (typeof obj === 'string') {
-    return redactCwd(obj)
-  } else if (!obj) {
-    return obj
-  } else if (typeof obj === 'object') {
+  }
+  if (obj && typeof obj === 'object') {
     return Object.keys(obj).reduce((o, k) => {
       o[k] = redactCwdObj(obj[k])
       return o
     }, {})
-  } else {
-    return obj
   }
+  return typeof obj === 'string' ? cleanCwd(obj) : obj
 }
 
 const jsonParse = res => redactCwdObj(JSON.parse(res))
@@ -191,7 +176,7 @@ t.test('ls', async t => {
     })
     await ls.exec([])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output tree representation of dependencies structure'
     )
   })
@@ -205,7 +190,7 @@ t.test('ls', async t => {
     })
     await ls.exec([])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output tree missing name/version of top-level package'
     )
   })
@@ -247,7 +232,7 @@ t.test('ls', async t => {
     })
 
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should omit missing optional dep')
+    t.matchSnapshot(cleanCwd(result()), 'should omit missing optional dep')
   })
 
   t.test('extraneous deps', async t => {
@@ -265,7 +250,7 @@ t.test('ls', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output containing problems info')
+    t.matchSnapshot(cleanCwd(result()), 'should output containing problems info')
   })
 
   t.test('overridden dep', async t => {
@@ -308,7 +293,7 @@ t.test('ls', async t => {
     await
 
     ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should contain overridden outout')
+    t.matchSnapshot(cleanCwd(result()), 'should contain overridden outout')
   })
 
   t.test('overridden dep w/ color', async t => {
@@ -350,7 +335,7 @@ t.test('ls', async t => {
     })
 
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should contain overridden outout')
+    t.matchSnapshot(cleanCwd(result()), 'should contain overridden outout')
   })
 
   t.test('with filter arg', async t => {
@@ -373,7 +358,7 @@ t.test('ls', async t => {
     })
     await ls.exec(['chai'])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output tree contaning only occurrences of filtered by package and colored output'
     )
   })
@@ -399,7 +384,7 @@ t.test('ls', async t => {
     })
     await ls.exec(['.'])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output tree contaning only occurrences of filtered by package and colored output'
     )
   })
@@ -421,7 +406,7 @@ t.test('ls', async t => {
     })
     await ls.exec(['dog'])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output tree contaning only occurrences of filtered package and its ancestors'
     )
   })
@@ -452,7 +437,7 @@ t.test('ls', async t => {
     })
     await ls.exec(['dog@*', 'chai@1.0.0'])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       /* eslint-disable-next-line max-len */
       'should output tree contaning only occurrences of multiple filtered packages and their ancestors'
     )
@@ -474,7 +459,7 @@ t.test('ls', async t => {
       },
     })
     await ls.exec(['notadep'])
-    t.matchSnapshot(redactCwd(result()), 'should output tree containing no dependencies info')
+    t.matchSnapshot(cleanCwd(result()), 'should output tree containing no dependencies info')
     t.equal(process.exitCode, 1, 'should exit with error code 1')
   })
 
@@ -497,7 +482,7 @@ t.test('ls', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()),
+    t.matchSnapshot(cleanCwd(result()),
       'should output tree containing only top-level dependencies')
   })
 
@@ -521,7 +506,7 @@ t.test('ls', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()),
+    t.matchSnapshot(cleanCwd(result()),
       'should output tree containing only top-level dependencies')
   })
 
@@ -584,7 +569,7 @@ t.test('ls', async t => {
     })
     await ls.exec([])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output tree containing top-level deps and their deps only'
     )
   })
@@ -608,16 +593,15 @@ t.test('ls', async t => {
     await ls.exec([]).catch(err => {
       t.equal(err.code, 'ELSPROBLEMS', 'should have error code')
       t.equal(
-        redactCwd(err.message).replace(/\r\n/g, '\n'),
-        /* eslint-disable-next-line max-len */
-        'extraneous: chai@1.0.0 {CWD}/tap-testdir-ls-ls-missing-invalid-extraneous/node_modules/chai\n' +
-        'invalid: foo@1.0.0 {CWD}/tap-testdir-ls-ls-missing-invalid-extraneous/node_modules/foo\n' +
+        cleanCwd(err.message),
+        'extraneous: chai@1.0.0 {PROJECT}/node_modules/chai\n' +
+        'invalid: foo@1.0.0 {PROJECT}/node_modules/foo\n' +
         'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
         'should log missing/invalid/extraneous errors'
       )
     })
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output tree containing missing, invalid, extraneous labels'
     )
   })
@@ -641,7 +625,7 @@ t.test('ls', async t => {
       },
     })
     await t.rejects(ls.exec([]), { code: 'ELSPROBLEMS' }, 'should have error code')
-    t.matchSnapshot(redactCwd(result()), 'should output tree containing color info')
+    t.matchSnapshot(cleanCwd(result()), 'should output tree containing color info')
   })
 
   t.test('--dev', async t => {
@@ -671,7 +655,7 @@ t.test('ls', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output tree containing dev deps')
+    t.matchSnapshot(cleanCwd(result()), 'should output tree containing dev deps')
   })
 
   t.test('--link', async t => {
@@ -712,7 +696,7 @@ t.test('ls', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output tree containing linked deps')
+    t.matchSnapshot(cleanCwd(result()), 'should output tree containing linked deps')
   })
 
   t.test('print deduped symlinks', async t => {
@@ -748,7 +732,7 @@ t.test('ls', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output tree containing linked deps')
+    t.matchSnapshot(cleanCwd(result()), 'should output tree containing linked deps')
   })
 
   t.test('--production', async t => {
@@ -776,7 +760,7 @@ t.test('ls', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output tree containing production deps')
+    t.matchSnapshot(cleanCwd(result()), 'should output tree containing production deps')
   })
 
   t.test('--long', async t => {
@@ -807,7 +791,7 @@ t.test('ls', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output tree info with descriptions')
+    t.matchSnapshot(cleanCwd(result()), 'should output tree info with descriptions')
   })
 
   t.test('--long --depth=0', async t => {
@@ -841,7 +825,7 @@ t.test('ls', async t => {
     })
     await ls.exec([])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output tree containing top-level deps with descriptions'
     )
   })
@@ -854,13 +838,13 @@ t.test('ls', async t => {
       },
     })
     await t.rejects(ls.exec([]), { code: 'EJSONPARSE' }, 'should throw EJSONPARSE error')
-    t.matchSnapshot(redactCwd(result()), 'should print empty result')
+    t.matchSnapshot(cleanCwd(result()), 'should print empty result')
   })
 
   t.test('empty location', async t => {
     const { ls, result } = await mockLs(t)
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should print empty result')
+    t.matchSnapshot(cleanCwd(result()), 'should print empty result')
   })
 
   t.test('invalid peer dep', async t => {
@@ -889,7 +873,7 @@ t.test('ls', async t => {
     })
     await t.rejects(ls.exec([]))
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output tree signaling mismatching peer dep in problems'
     )
   })
@@ -930,7 +914,7 @@ t.test('ls', async t => {
     })
     await t.rejects(ls.exec([]))
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output tree signaling mismatching peer dep in problems'
     )
   })
@@ -966,7 +950,7 @@ t.test('ls', async t => {
       'should list missing dep problem'
     )
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output parseable signaling missing peer dep in problems'
     )
   })
@@ -989,7 +973,7 @@ t.test('ls', async t => {
       { code: 'ELSPROBLEMS', message: 'missing: peer-dep@*, required by test-npm-ls@1.0.0' },
       'should have missing peer-dep error msg'
     )
-    t.matchSnapshot(redactCwd(result()),
+    t.matchSnapshot(cleanCwd(result()),
       'should output tree signaling missing peer dep in problems')
   })
 
@@ -1025,7 +1009,7 @@ t.test('ls', async t => {
       'should have invalid dep error msg'
     )
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output tree with empty entry for missing optional deps'
     )
   })
@@ -1064,7 +1048,7 @@ t.test('ls', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should print tree output containing deduped ref')
+    t.matchSnapshot(cleanCwd(result()), 'should print tree output containing deduped ref')
   })
 
   t.test('cycle deps with filter args', async t => {
@@ -1102,7 +1086,7 @@ t.test('ls', async t => {
       },
     })
     await ls.exec(['a'])
-    t.matchSnapshot(redactCwd(result()), 'should print tree output containing deduped ref')
+    t.matchSnapshot(cleanCwd(result()), 'should print tree output containing deduped ref')
   })
 
   t.test('with no args dedupe entries', async t => {
@@ -1149,7 +1133,7 @@ t.test('ls', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should print tree output containing deduped ref')
+    t.matchSnapshot(cleanCwd(result()), 'should print tree output containing deduped ref')
   })
 
   t.test('with no args dedupe entries and not displaying all', async t => {
@@ -1200,7 +1184,7 @@ t.test('ls', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should print tree output containing deduped ref')
+    t.matchSnapshot(cleanCwd(result()), 'should print tree output containing deduped ref')
   })
 
   t.test('with args and dedupe entries', async t => {
@@ -1248,7 +1232,7 @@ t.test('ls', async t => {
       },
     })
     await ls.exec(['@npmcli/b'])
-    t.matchSnapshot(redactCwd(result()), 'should print tree output containing deduped ref')
+    t.matchSnapshot(cleanCwd(result()), 'should print tree output containing deduped ref')
   })
 
   t.test('with args and different order of items', async t => {
@@ -1295,7 +1279,7 @@ t.test('ls', async t => {
       },
     })
     await ls.exec(['@npmcli/c'])
-    t.matchSnapshot(redactCwd(result()), 'should print tree output containing deduped ref')
+    t.matchSnapshot(cleanCwd(result()), 'should print tree output containing deduped ref')
   })
 
   t.test('using aliases', async t => {
@@ -1339,7 +1323,7 @@ t.test('ls', async t => {
     })
     touchHiddenPackageLock(npm.prefix)
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output tree containing aliases')
+    t.matchSnapshot(cleanCwd(result()), 'should output tree containing aliases')
   })
 
   t.test('resolved points to git ref', async t => {
@@ -1388,7 +1372,7 @@ t.test('ls', async t => {
     })
     touchHiddenPackageLock(npm.prefix)
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output tree containing git refs')
+    t.matchSnapshot(cleanCwd(result()), 'should output tree containing git refs')
   })
 
   t.test('broken resolved field', async t => {
@@ -1433,7 +1417,7 @@ t.test('ls', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should NOT print git refs in output tree')
+    t.matchSnapshot(cleanCwd(result()), 'should NOT print git refs in output tree')
   })
 
   t.test('from and resolved properties', async t => {
@@ -1485,7 +1469,7 @@ t.test('ls', async t => {
     })
     touchHiddenPackageLock(npm.prefix)
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should not be printed in tree output')
+    t.matchSnapshot(cleanCwd(result()), 'should not be printed in tree output')
   })
 
   t.test('global', async t => {
@@ -1523,7 +1507,7 @@ t.test('ls', async t => {
     })
 
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()),
+    t.matchSnapshot(cleanCwd(result()),
       'should print tree and not mark top-level items extraneous')
   })
 
@@ -1577,7 +1561,7 @@ t.test('ls', async t => {
 
     await ls.exec(['c'])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should print tree and not duplicate child of missing items'
     )
   })
@@ -1671,7 +1655,7 @@ t.test('ls', async t => {
 
       await ls.exec(exec)
 
-      t.matchSnapshot(redactCwd(result(), t), 'output')
+      t.matchSnapshot(cleanCwd(result(), t), 'output')
     }
 
     t.test('should list workspaces properly with default configs', t => mockWorkspaces(t, [], {
@@ -1772,7 +1756,7 @@ t.test('ls', async t => {
 
       await ls.exec(exec)
 
-      t.matchSnapshot(redactCwd(result(), t), 'output')
+      t.matchSnapshot(cleanCwd(result(), t), 'output')
     }
 
     t.test('should list a in top-level only', t => mock(t, ['a']))
@@ -1803,7 +1787,7 @@ t.test('ls --parseable', async t => {
     })
     await ls.exec([])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output parseable representation of dependencies structure'
     )
   })
@@ -1817,7 +1801,7 @@ t.test('ls --parseable', async t => {
     })
     await ls.exec([])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output parseable missing name/version of top-level package'
     )
   })
@@ -1837,7 +1821,7 @@ t.test('ls --parseable', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output containing problems info')
+    t.matchSnapshot(cleanCwd(result()), 'should output containing problems info')
   })
 
   t.test('overridden dep', async t => {
@@ -1875,7 +1859,7 @@ t.test('ls --parseable', async t => {
     })
 
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should contain overridden outout')
+    t.matchSnapshot(cleanCwd(result()), 'should contain overridden outout')
   })
 
   t.test('with filter arg', async t => {
@@ -1895,7 +1879,7 @@ t.test('ls --parseable', async t => {
     })
     await ls.exec(['chai'])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output parseable contaning only occurrences of filtered by package'
     )
   })
@@ -1917,7 +1901,7 @@ t.test('ls --parseable', async t => {
     })
     await ls.exec(['dog'])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output parseable contaning only occurrences of filtered package'
     )
   })
@@ -1948,7 +1932,7 @@ t.test('ls --parseable', async t => {
     })
     await ls.exec(['dog@*', 'chai@1.0.0'])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       /* eslint-disable-next-line max-len */
       'should output parseable contaning only occurrences of multiple filtered packages and their ancestors'
     )
@@ -1971,7 +1955,7 @@ t.test('ls --parseable', async t => {
     })
     await ls.exec(['notadep'])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output parseable output containing no dependencies info'
     )
   })
@@ -1993,7 +1977,7 @@ t.test('ls --parseable', async t => {
     })
     await ls.exec([])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output parseable output containing only top-level dependencies'
     )
   })
@@ -2014,7 +1998,7 @@ t.test('ls --parseable', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()),
+    t.matchSnapshot(cleanCwd(result()),
       'should output tree containing only top-level dependencies')
   })
 
@@ -2035,7 +2019,7 @@ t.test('ls --parseable', async t => {
     })
     await ls.exec([])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output parseable containing top-level deps and their deps only'
     )
   })
@@ -2057,7 +2041,7 @@ t.test('ls --parseable', async t => {
     })
     await t.rejects(ls.exec([]), { code: 'ELSPROBLEMS' }, 'should list dep problems')
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output parseable containing top-level deps and their deps only'
     )
   })
@@ -2090,7 +2074,7 @@ t.test('ls --parseable', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output tree containing dev deps')
+    t.matchSnapshot(cleanCwd(result()), 'should output tree containing dev deps')
   })
 
   t.test('--link', async t => {
@@ -2131,7 +2115,7 @@ t.test('ls --parseable', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output tree containing linked deps')
+    t.matchSnapshot(cleanCwd(result()), 'should output tree containing linked deps')
   })
 
   t.test('--production', async t => {
@@ -2162,7 +2146,7 @@ t.test('ls --parseable', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output tree containing production deps')
+    t.matchSnapshot(cleanCwd(result()), 'should output tree containing production deps')
   })
 
   t.test('--long', async t => {
@@ -2193,7 +2177,7 @@ t.test('ls --parseable', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output tree info with descriptions')
+    t.matchSnapshot(cleanCwd(result()), 'should output tree info with descriptions')
   })
 
   t.test('--long with extraneous deps', async t => {
@@ -2214,7 +2198,7 @@ t.test('ls --parseable', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output long parseable output with extraneous info')
+    t.matchSnapshot(cleanCwd(result()), 'should output long parseable output with extraneous info')
   })
 
   t.test('--long missing/invalid/extraneous', async t => {
@@ -2237,7 +2221,7 @@ t.test('ls --parseable', async t => {
     })
     await t.rejects(ls.exec([]), { code: 'ELSPROBLEMS' }, 'should list dep problems')
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output parseable result containing EXTRANEOUS/INVALID labels'
     )
   })
@@ -2280,7 +2264,7 @@ t.test('ls --parseable', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output parseable results with symlink targets')
+    t.matchSnapshot(cleanCwd(result()), 'should output parseable results with symlink targets')
   })
 
   t.test('--long --depth=0', async t => {
@@ -2314,7 +2298,7 @@ t.test('ls --parseable', async t => {
     })
     await ls.exec([])
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output tree containing top-level deps with descriptions'
     )
   })
@@ -2329,7 +2313,7 @@ t.test('ls --parseable', async t => {
       },
     })
     await t.rejects(ls.exec([]), { code: 'EJSONPARSE' }, 'should throw EJSONPARSE error')
-    t.matchSnapshot(redactCwd(result()), 'should print empty result')
+    t.matchSnapshot(cleanCwd(result()), 'should print empty result')
   })
 
   t.test('empty location', async t => {
@@ -2339,7 +2323,7 @@ t.test('ls --parseable', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should print empty result')
+    t.matchSnapshot(cleanCwd(result()), 'should print empty result')
   })
 
   t.test('unmet peer dep', async t => {
@@ -2370,7 +2354,7 @@ t.test('ls --parseable', async t => {
     })
     await t.rejects(ls.exec([]))
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output parseable signaling missing peer dep in problems'
     )
   })
@@ -2408,7 +2392,7 @@ t.test('ls --parseable', async t => {
       'should have invalid dep error msg'
     )
     t.matchSnapshot(
-      redactCwd(result()),
+      cleanCwd(result()),
       'should output parseable with empty entry for missing optional deps'
     )
   })
@@ -2449,7 +2433,7 @@ t.test('ls --parseable', async t => {
       },
     })
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should print tree output omitting deduped ref')
+    t.matchSnapshot(cleanCwd(result()), 'should print tree output omitting deduped ref')
   })
 
   t.test('using aliases', async t => {
@@ -2491,7 +2475,7 @@ t.test('ls --parseable', async t => {
     })
     touchHiddenPackageLock(npm.prefix)
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output tree containing aliases')
+    t.matchSnapshot(cleanCwd(result()), 'should output tree containing aliases')
   })
 
   t.test('resolved points to git ref', async t => {
@@ -2541,7 +2525,7 @@ t.test('ls --parseable', async t => {
     })
     touchHiddenPackageLock(npm.prefix)
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should output tree containing git refs')
+    t.matchSnapshot(cleanCwd(result()), 'should output tree containing git refs')
   })
 
   t.test('from and resolved properties', async t => {
@@ -2595,7 +2579,7 @@ t.test('ls --parseable', async t => {
     })
     touchHiddenPackageLock(npm.prefix)
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should not be printed in tree output')
+    t.matchSnapshot(cleanCwd(result()), 'should not be printed in tree output')
   })
 
   t.test('global', async t => {
@@ -2630,7 +2614,7 @@ t.test('ls --parseable', async t => {
     })
 
     await ls.exec([])
-    t.matchSnapshot(redactCwd(result()), 'should print parseable output for global deps')
+    t.matchSnapshot(cleanCwd(result()), 'should print parseable output for global deps')
   })
 })
 
@@ -2703,13 +2687,7 @@ t.test('ignore missing optional deps', async t => {
 
     await t.rejects(ls.exec([]), { code: 'ELSPROBLEMS' })
 
-    const problems = config.json ? jsonParse(result()).problems : redactCwd(result())
-
-    const replaceProject = (s) => s
-      .replace(/\{CWD\}\/tap-testdir-[a-zA-Z-]+/g, '{project}')
-      .toLowerCase()
-
-    return Array.isArray(problems) ? problems.map(replaceProject) : replaceProject(problems)
+    return config.json ? jsonParse(result()).problems : cleanCwd(result())
   }
 
   t.test('--json', async t => {
@@ -2788,12 +2766,9 @@ t.test('ls --json', async t => {
       jsonParse(result()),
       {
         problems: [
-          /* eslint-disable-next-line max-len */
-          'extraneous: chai@1.0.0 {CWD}/tap-testdir-ls-ls---json-missing-package.json/node_modules/chai',
-          /* eslint-disable-next-line max-len */
-          'extraneous: dog@1.0.0 {CWD}/tap-testdir-ls-ls---json-missing-package.json/node_modules/dog',
-          /* eslint-disable-next-line max-len */
-          'extraneous: foo@1.0.0 {CWD}/tap-testdir-ls-ls---json-missing-package.json/node_modules/foo',
+          'extraneous: chai@1.0.0 {PROJECT}/node_modules/chai',
+          'extraneous: dog@1.0.0 {PROJECT}/node_modules/dog',
+          'extraneous: foo@1.0.0 {PROJECT}/node_modules/foo',
         ],
         dependencies: {
           dog: {
@@ -2801,8 +2776,7 @@ t.test('ls --json', async t => {
             extraneous: true,
             overridden: false,
             problems: [
-              /* eslint-disable-next-line max-len */
-              'extraneous: dog@1.0.0 {CWD}/tap-testdir-ls-ls---json-missing-package.json/node_modules/dog',
+              'extraneous: dog@1.0.0 {PROJECT}/node_modules/dog',
             ],
           },
           foo: {
@@ -2810,8 +2784,7 @@ t.test('ls --json', async t => {
             extraneous: true,
             overridden: false,
             problems: [
-              /* eslint-disable-next-line max-len */
-              'extraneous: foo@1.0.0 {CWD}/tap-testdir-ls-ls---json-missing-package.json/node_modules/foo',
+              'extraneous: foo@1.0.0 {PROJECT}/node_modules/foo',
             ],
             dependencies: {
               dog: {
@@ -2824,8 +2797,7 @@ t.test('ls --json', async t => {
             extraneous: true,
             overridden: false,
             problems: [
-              /* eslint-disable-next-line max-len */
-              'extraneous: chai@1.0.0 {CWD}/tap-testdir-ls-ls---json-missing-package.json/node_modules/chai',
+              'extraneous: chai@1.0.0 {PROJECT}/node_modules/chai',
             ],
           },
         },
@@ -2857,7 +2829,7 @@ t.test('ls --json', async t => {
         name: 'test-npm-ls',
         version: '1.0.0',
         problems: [
-          'extraneous: chai@1.0.0 {CWD}/tap-testdir-ls-ls---json-extraneous-deps/node_modules/chai',
+          'extraneous: chai@1.0.0 {PROJECT}/node_modules/chai',
         ],
         dependencies: {
           foo: {
@@ -2875,8 +2847,7 @@ t.test('ls --json', async t => {
             extraneous: true,
             overridden: false,
             problems: [
-              /* eslint-disable-next-line max-len */
-              'extraneous: chai@1.0.0 {CWD}/tap-testdir-ls-ls---json-extraneous-deps/node_modules/chai',
+              'extraneous: chai@1.0.0 {PROJECT}/node_modules/chai',
             ],
           },
         },
@@ -2964,7 +2935,7 @@ t.test('ls --json', async t => {
 
     await ls.exec([]).catch(err => {
       t.equal(
-        redactCwd(err.message),
+        cleanCwd(err.message),
         'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
         'should log missing dep as error'
       )
@@ -3290,10 +3261,8 @@ t.test('ls --json', async t => {
         name: 'test-npm-ls',
         version: '1.0.0',
         problems: [
-          /* eslint-disable-next-line max-len */
-          'extraneous: chai@1.0.0 {CWD}/tap-testdir-ls-ls---json-missing-invalid-extraneous/node_modules/chai',
-          /* eslint-disable-next-line max-len */
-          'invalid: foo@1.0.0 {CWD}/tap-testdir-ls-ls---json-missing-invalid-extraneous/node_modules/foo',
+          'extraneous: chai@1.0.0 {PROJECT}/node_modules/chai',
+          'invalid: foo@1.0.0 {PROJECT}/node_modules/foo',
           'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
         ],
         dependencies: {
@@ -3302,8 +3271,7 @@ t.test('ls --json', async t => {
             invalid: '"^2.0.0" from the root project',
             overridden: false,
             problems: [
-              /* eslint-disable-next-line max-len */
-              'invalid: foo@1.0.0 {CWD}/tap-testdir-ls-ls---json-missing-invalid-extraneous/node_modules/foo',
+              'invalid: foo@1.0.0 {PROJECT}/node_modules/foo',
             ],
             dependencies: {
               dog: {
@@ -3317,8 +3285,7 @@ t.test('ls --json', async t => {
             extraneous: true,
             overridden: false,
             problems: [
-              /* eslint-disable-next-line max-len */
-              'extraneous: chai@1.0.0 {CWD}/tap-testdir-ls-ls---json-missing-invalid-extraneous/node_modules/chai',
+              'extraneous: chai@1.0.0 {PROJECT}/node_modules/chai',
             ],
           },
           ipsum: {
@@ -3632,7 +3599,7 @@ t.test('ls --json', async t => {
                 overridden: false,
                 problems: [
                   /* eslint-disable-next-line max-len */
-                  'extraneous: @isaacs/dedupe-tests-b@ {CWD}/tap-testdir-ls-ls---json-from-lockfile/node_modules/@isaacs/dedupe-tests-a/node_modules/@isaacs/dedupe-tests-b',
+                  'extraneous: @isaacs/dedupe-tests-b@ {PROJECT}/node_modules/@isaacs/dedupe-tests-a/node_modules/@isaacs/dedupe-tests-b',
                 ],
               },
             },
@@ -3646,7 +3613,7 @@ t.test('ls --json', async t => {
         },
         problems: [
           /* eslint-disable-next-line max-len */
-          'extraneous: @isaacs/dedupe-tests-b@ {CWD}/tap-testdir-ls-ls---json-from-lockfile/node_modules/@isaacs/dedupe-tests-a/node_modules/@isaacs/dedupe-tests-b',
+          'extraneous: @isaacs/dedupe-tests-b@ {PROJECT}/node_modules/@isaacs/dedupe-tests-a/node_modules/@isaacs/dedupe-tests-b',
         ],
       },
       'should output json containing only prod deps'
@@ -3696,7 +3663,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: {},
-            path: '{CWD}/tap-testdir-ls-ls---json---long/node_modules/peer-dep',
+            path: '{PROJECT}/node_modules/peer-dep',
             extraneous: false,
           },
           'dev-dep': {
@@ -3718,7 +3685,7 @@ t.test('ls --json', async t => {
                     devDependencies: {},
                     peerDependencies: {},
                     _dependencies: {},
-                    path: '{CWD}/tap-testdir-ls-ls---json---long/node_modules/dog',
+                    path: '{PROJECT}/node_modules/dog',
                     extraneous: false,
                   },
                 },
@@ -3726,7 +3693,7 @@ t.test('ls --json', async t => {
                 devDependencies: {},
                 peerDependencies: {},
                 _dependencies: { dog: '^1.0.0' },
-                path: '{CWD}/tap-testdir-ls-ls---json---long/node_modules/foo',
+                path: '{PROJECT}/node_modules/foo',
                 extraneous: false,
               },
             },
@@ -3734,7 +3701,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: { foo: '^1.0.0' },
-            path: '{CWD}/tap-testdir-ls-ls---json---long/node_modules/dev-dep',
+            path: '{PROJECT}/node_modules/dev-dep',
             extraneous: false,
           },
           chai: {
@@ -3745,7 +3712,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: {},
-            path: '{CWD}/tap-testdir-ls-ls---json---long/node_modules/chai',
+            path: '{PROJECT}/node_modules/chai',
             extraneous: false,
           },
           'optional-dep': {
@@ -3757,7 +3724,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: {},
-            path: '{CWD}/tap-testdir-ls-ls---json---long/node_modules/optional-dep',
+            path: '{PROJECT}/node_modules/optional-dep',
             extraneous: false,
           },
           'prod-dep': {
@@ -3775,8 +3742,7 @@ t.test('ls --json', async t => {
                 devDependencies: {},
                 peerDependencies: {},
                 _dependencies: {},
-                /* eslint-disable-next-line max-len */
-                path: '{CWD}/tap-testdir-ls-ls---json---long/node_modules/prod-dep/node_modules/dog',
+                path: '{PROJECT}/node_modules/prod-dep/node_modules/dog',
                 extraneous: false,
               },
             },
@@ -3784,7 +3750,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: { dog: '^2.0.0' },
-            path: '{CWD}/tap-testdir-ls-ls---json---long/node_modules/prod-dep',
+            path: '{PROJECT}/node_modules/prod-dep',
             extraneous: false,
           },
         },
@@ -3793,7 +3759,7 @@ t.test('ls --json', async t => {
         peerDependencies: { 'peer-dep': '^1.0.0' },
         _id: 'test-npm-ls@1.0.0',
         _dependencies: { 'prod-dep': '^1.0.0', chai: '^1.0.0', 'optional-dep': '^1.0.0' },
-        path: '{CWD}/tap-testdir-ls-ls---json---long',
+        path: '{PROJECT}',
         extraneous: false,
       },
       'should output long json info'
@@ -3845,7 +3811,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: {},
-            path: '{CWD}/tap-testdir-ls-ls---json---long---depth-0/node_modules/peer-dep',
+            path: '{PROJECT}/node_modules/peer-dep',
             extraneous: false,
           },
           'dev-dep': {
@@ -3857,7 +3823,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: { foo: '^1.0.0' },
-            path: '{CWD}/tap-testdir-ls-ls---json---long---depth-0/node_modules/dev-dep',
+            path: '{PROJECT}/node_modules/dev-dep',
             extraneous: false,
           },
           chai: {
@@ -3868,7 +3834,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: {},
-            path: '{CWD}/tap-testdir-ls-ls---json---long---depth-0/node_modules/chai',
+            path: '{PROJECT}/node_modules/chai',
             extraneous: false,
           },
           'optional-dep': {
@@ -3880,7 +3846,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: {},
-            path: '{CWD}/tap-testdir-ls-ls---json---long---depth-0/node_modules/optional-dep',
+            path: '{PROJECT}/node_modules/optional-dep',
             extraneous: false,
           },
           'prod-dep': {
@@ -3892,7 +3858,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: { dog: '^2.0.0' },
-            path: '{CWD}/tap-testdir-ls-ls---json---long---depth-0/node_modules/prod-dep',
+            path: '{PROJECT}/node_modules/prod-dep',
             extraneous: false,
           },
         },
@@ -3901,7 +3867,7 @@ t.test('ls --json', async t => {
         peerDependencies: { 'peer-dep': '^1.0.0' },
         _id: 'test-npm-ls@1.0.0',
         _dependencies: { 'prod-dep': '^1.0.0', chai: '^1.0.0', 'optional-dep': '^1.0.0' },
-        path: '{CWD}/tap-testdir-ls-ls---json---long---depth-0',
+        path: '{PROJECT}',
         extraneous: false,
       },
       'should output json containing top-level deps in long format'
@@ -3927,8 +3893,7 @@ t.test('ls --json', async t => {
       {
         invalid: true,
         problems: [
-          /* eslint-disable-next-line max-len */
-          'error in {CWD}/tap-testdir-ls-ls---json-json-read-problems: Failed to parse root package.json',
+          'error in {PROJECT}: Failed to parse root package.json',
         ],
       },
       'should print empty json result'
@@ -3974,8 +3939,7 @@ t.test('ls --json', async t => {
         name: 'test-npm-ls',
         version: '1.0.0',
         problems: [
-          /* eslint-disable-next-line max-len */
-          'invalid: peer-dep@1.0.0 {CWD}/tap-testdir-ls-ls---json-unmet-peer-dep/node_modules/peer-dep',
+          'invalid: peer-dep@1.0.0 {PROJECT}/node_modules/peer-dep',
         ],
         dependencies: {
           'peer-dep': {
@@ -3983,8 +3947,7 @@ t.test('ls --json', async t => {
             invalid: '"^2.0.0" from the root project',
             overridden: false,
             problems: [
-              /* eslint-disable-next-line max-len */
-              'invalid: peer-dep@1.0.0 {CWD}/tap-testdir-ls-ls---json-unmet-peer-dep/node_modules/peer-dep',
+              'invalid: peer-dep@1.0.0 {PROJECT}/node_modules/peer-dep',
             ],
           },
           'dev-dep': {
@@ -4065,8 +4028,8 @@ t.test('ls --json', async t => {
         name: 'test-npm-ls',
         version: '1.0.0',
         problems: [
-          /* eslint-disable-next-line max-len */
-          'invalid: optional-dep@1.0.0 {CWD}/tap-testdir-ls-ls---json-unmet-optional-dep/node_modules/optional-dep', // mismatching optional deps get flagged in problems
+          // mismatching optional deps get flagged in problems
+          'invalid: optional-dep@1.0.0 {PROJECT}/node_modules/optional-dep',
         ],
         dependencies: {
           'optional-dep': {
@@ -4074,8 +4037,7 @@ t.test('ls --json', async t => {
             invalid: '"^2.0.0" from the root project',
             overridden: false,
             problems: [
-              /* eslint-disable-next-line max-len */
-              'invalid: optional-dep@1.0.0 {CWD}/tap-testdir-ls-ls---json-unmet-optional-dep/node_modules/optional-dep',
+              'invalid: optional-dep@1.0.0 {PROJECT}/node_modules/optional-dep',
             ],
           },
           'peer-dep': {
@@ -4513,9 +4475,8 @@ t.test('show multiple invalid reasons', async t => {
     },
   })
 
-  const cleanupPaths = str => redactCwd(str).toLowerCase().replace(/\\/g, '/')
   await t.rejects(ls.exec([]), { code: 'ELSPROBLEMS' }, 'should list dep problems')
-  t.matchSnapshot(cleanupPaths(result()), 'ls result')
+  t.matchSnapshot(cleanCwd(result()), 'ls result')
 })
 
 t.test('ls --package-lock-only', async t => {
@@ -5126,8 +5087,7 @@ t.test('ls --package-lock-only', async t => {
           name: 'test-npm-ls',
           version: '1.0.0',
           problems: [
-            /* eslint-disable-next-line max-len */
-            'invalid: foo@1.0.0 {CWD}/tap-testdir-ls-ls---package-lock-only-ls---package-lock-only---json-missing-invalid-extraneous/node_modules/foo',
+            'invalid: foo@1.0.0 {PROJECT}/node_modules/foo',
             'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
           ],
           dependencies: {
@@ -5136,8 +5096,7 @@ t.test('ls --package-lock-only', async t => {
               overridden: false,
               invalid: '"^2.0.0" from the root project',
               problems: [
-                /* eslint-disable-next-line max-len */
-                'invalid: foo@1.0.0 {CWD}/tap-testdir-ls-ls---package-lock-only-ls---package-lock-only---json-missing-invalid-extraneous/node_modules/foo',
+                'invalid: foo@1.0.0 {PROJECT}/node_modules/foo',
               ],
               dependencies: {
                 dog: {

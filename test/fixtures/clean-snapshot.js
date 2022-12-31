@@ -6,15 +6,15 @@ const normalizePath = (str) => str
   .replace(/[A-z]:\\/g, '\\') // turn windows roots to posix ones
   .replace(/\\+/g, '/') // replace \ with /
 
-const cwdToRegex = () => new RegExp(normalizePath(process.cwd()), 'g')
+const pathRegex = (p) => new RegExp(normalizePath(p), 'gi')
 
 // create a cwd replacer in the module scope, since some tests
 // overwrite process.cwd()
-const CWD = cwdToRegex()
+const CWD = pathRegex(process.cwd())
 
 const cleanCwd = (path) => normalizePath(path)
   .replace(CWD, '{CWD}')
-  .replace(cwdToRegex(), '{CWD}')
+  .replace(pathRegex(process.cwd()), '{CWD}')
 
 const cleanDate = (str) =>
   str.replace(/\d{4}-\d{2}-\d{2}T\d{2}[_:]\d{2}[_:]\d{2}[_:.]\d{3}Z/g, '{DATE}')
@@ -23,6 +23,7 @@ const cleanTime = str => str.replace(/in [0-9]+m?s\s*$/gm, 'in {TIME}')
 
 module.exports = {
   normalizePath,
+  pathRegex,
   cleanCwd,
   cleanDate,
   cleanTime,
