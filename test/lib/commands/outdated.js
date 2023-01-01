@@ -76,14 +76,12 @@ const packument = spec => {
 
 const fixtures = {
   global: {
-    lib: {
-      node_modules: {
-        cat: {
-          'package.json': JSON.stringify({
-            name: 'cat',
-            version: '1.0.0',
-          }, null, 2),
-        },
+    node_modules: {
+      cat: {
+        'package.json': JSON.stringify({
+          name: 'cat',
+          version: '1.0.0',
+        }, null, 2),
       },
     },
   },

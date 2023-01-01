@@ -166,8 +166,6 @@ t.test('global', async t => {
     config: {
       global: true,
     },
-    // This is a global dir that works in both windows and non-windows, that's
-    // why it has two node_modules folders
     globalPrefixDir: {
       node_modules: {
         lorem: {
@@ -177,16 +175,7 @@ t.test('global', async t => {
           }),
         },
       },
-      lib: {
-        node_modules: {
-          lorem: {
-            'package.json': JSON.stringify({
-              name: 'lorem',
-              version: '2.0.0',
-            }),
-          },
-        },
-      },
+
     },
   })
   await npm.exec('query', ['[name=lorem]'])

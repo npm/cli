@@ -48,14 +48,12 @@ const mockLink = async (t, { globalPrefixDir, ...opts } = {}) => {
 t.test('link to globalDir when in current working dir of pkg and no args', async t => {
   const { link, printLinks } = await mockLink(t, {
     globalPrefixDir: {
-      lib: {
-        node_modules: {
-          a: {
-            'package.json': JSON.stringify({
-              name: 'a',
-              version: '1.0.0',
-            }),
-          },
+      node_modules: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+          }),
         },
       },
     },
@@ -74,14 +72,12 @@ t.test('link to globalDir when in current working dir of pkg and no args', async
 t.test('link ws to globalDir when workspace specified and no args', async t => {
   const { link, printLinks } = await mockLink(t, {
     globalPrefixDir: {
-      lib: {
-        node_modules: {
-          a: {
-            'package.json': JSON.stringify({
-              name: 'a',
-              version: '1.0.0',
-            }),
-          },
+      node_modules: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+          }),
         },
       },
     },
@@ -110,37 +106,35 @@ t.test('link ws to globalDir when workspace specified and no args', async t => {
 t.test('link global linked pkg to local nm when using args', async t => {
   const { link, printLinks } = await mockLink(t, {
     globalPrefixDir: {
-      lib: {
-        node_modules: {
-          '@myscope': {
-            foo: {
-              'package.json': JSON.stringify({
-                name: '@myscope/foo',
-                version: '1.0.0',
-              }),
-            },
-            bar: {
-              'package.json': JSON.stringify({
-                name: '@myscope/bar',
-                version: '1.0.0',
-              }),
-            },
-            linked: t.fixture('symlink', '../../../../other/scoped-linked'),
-          },
-          a: {
+      node_modules: {
+        '@myscope': {
+          foo: {
             'package.json': JSON.stringify({
-              name: 'a',
+              name: '@myscope/foo',
               version: '1.0.0',
             }),
           },
-          b: {
+          bar: {
             'package.json': JSON.stringify({
-              name: 'b',
+              name: '@myscope/bar',
               version: '1.0.0',
             }),
           },
-          'test-pkg-link': t.fixture('symlink', '../../../other/test-pkg-link'),
+          linked: t.fixture('symlink', '../../../other/scoped-linked'),
         },
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+          }),
+        },
+        b: {
+          'package.json': JSON.stringify({
+            name: 'b',
+            version: '1.0.0',
+          }),
+        },
+        'test-pkg-link': t.fixture('symlink', '../../other/test-pkg-link'),
       },
     },
     otherDirs: {
@@ -202,37 +196,35 @@ t.test('link global linked pkg to local nm when using args', async t => {
 t.test('link global linked pkg to local workspace using args', async t => {
   const { link, printLinks } = await mockLink(t, {
     globalPrefixDir: {
-      lib: {
-        node_modules: {
-          '@myscope': {
-            foo: {
-              'package.json': JSON.stringify({
-                name: '@myscope/foo',
-                version: '1.0.0',
-              }),
-            },
-            bar: {
-              'package.json': JSON.stringify({
-                name: '@myscope/bar',
-                version: '1.0.0',
-              }),
-            },
-            linked: t.fixture('symlink', '../../../../other/scoped-linked'),
-          },
-          a: {
+      node_modules: {
+        '@myscope': {
+          foo: {
             'package.json': JSON.stringify({
-              name: 'a',
+              name: '@myscope/foo',
               version: '1.0.0',
             }),
           },
-          b: {
+          bar: {
             'package.json': JSON.stringify({
-              name: 'b',
+              name: '@myscope/bar',
               version: '1.0.0',
             }),
           },
-          'test-pkg-link': t.fixture('symlink', '../../../other/test-pkg-link'),
+          linked: t.fixture('symlink', '../../../other/scoped-linked'),
         },
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+          }),
+        },
+        b: {
+          'package.json': JSON.stringify({
+            name: 'b',
+            version: '1.0.0',
+          }),
+        },
+        'test-pkg-link': t.fixture('symlink', '../../other/test-pkg-link'),
       },
     },
     otherDirs: {
@@ -304,11 +296,9 @@ t.test('link global linked pkg to local workspace using args', async t => {
 t.test('link pkg already in global space', async t => {
   const { npm, link, printLinks, prefix } = await mockLink(t, {
     globalPrefixDir: {
-      lib: {
-        node_modules: {
-          '@myscope': {
-            linked: t.fixture('symlink', '../../../../other/scoped-linked'),
-          },
+      node_modules: {
+        '@myscope': {
+          linked: t.fixture('symlink', '../../../other/scoped-linked'),
         },
       },
     },
@@ -346,15 +336,15 @@ t.test('link pkg already in global space when prefix is a symlink', async t => {
   const { npm, link, printLinks, prefix } = await mockLink(t, {
     globalPrefixDir: t.fixture('symlink', './other/real-global-prefix'),
     otherDirs: {
-      'real-global-prefix': {
-        lib: {
-          node_modules: {
-            '@myscope': {
-              linked: t.fixture('symlink', '../../../../scoped-linked'),
-            },
+      // mockNpm does this automatically but only for globalPrefixDir so here we
+      // need to do it manually since we are making a symlink somewhere else
+      'real-global-prefix': mockNpm.setGlobalNodeModules({
+        node_modules: {
+          '@myscope': {
+            linked: t.fixture('symlink', '../../../scoped-linked'),
           },
         },
-      },
+      }),
       'scoped-linked': {
         'package.json': JSON.stringify({
           name: '@myscope/linked',
@@ -386,10 +376,8 @@ t.test('link pkg already in global space when prefix is a symlink', async t => {
 t.test('should not prune dependencies when linking packages', async t => {
   const { link, prefix } = await mockLink(t, {
     globalPrefixDir: {
-      lib: {
-        node_modules: {
-          linked: t.fixture('symlink', '../../../other/linked'),
-        },
+      node_modules: {
+        linked: t.fixture('symlink', '../../other/linked'),
       },
     },
     otherDirs: {
@@ -424,13 +412,11 @@ t.test('should not prune dependencies when linking packages', async t => {
 t.test('completion', async t => {
   const { link } = await mockLink(t, {
     globalPrefixDir: {
-      lib: {
-        node_modules: {
-          foo: {},
-          bar: {},
-          lorem: {},
-          ipsum: {},
-        },
+      node_modules: {
+        foo: {},
+        bar: {},
+        lorem: {},
+        ipsum: {},
       },
     },
   })
@@ -458,14 +444,12 @@ t.test('--global option', async t => {
 t.test('hash character in working directory path', async t => {
   const { link, printLinks } = await mockLink(t, {
     globalPrefixDir: {
-      lib: {
-        node_modules: {
-          a: {
-            'package.json': JSON.stringify({
-              name: 'a',
-              version: '1.0.0',
-            }),
-          },
+      node_modules: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+          }),
         },
       },
     },

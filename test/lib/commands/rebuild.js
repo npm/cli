@@ -183,16 +183,14 @@ t.test('global prefix', async t => {
       global: true,
     },
     globalPrefixDir: {
-      lib: {
-        node_modules: {
-          a: {
-            'index.js': '',
-            'package.json': JSON.stringify({
-              name: 'a',
-              version: '1.0.0',
-              bin: 'index.js',
-            }),
-          },
+      node_modules: {
+        a: {
+          'index.js': '',
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+            bin: 'index.js',
+          }),
         },
       },
     },

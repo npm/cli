@@ -46,10 +46,7 @@ const dirs = {
   },
   globalPrefixDir: {
     bin: {},
-    lib: {
-      node_modules: {
-      },
-    },
+    node_modules: {},
   },
 }
 
@@ -362,6 +359,7 @@ t.test('missing global directories', async t => {
     mocks,
     globals,
     prefixDir: dirs.prefixDir,
+    globalPrefixDir: {},
   })
   tnock(t, npm.config.get('registry'))
     .get('/-/ping?write=true').reply(200, '{}')

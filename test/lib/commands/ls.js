@@ -1461,26 +1461,24 @@ t.test('ls', async t => {
     const { result, ls } = await mockLs(t, {
       config,
       globalPrefixDir: {
-        lib: {
-          node_modules: {
-            a: {
-              'package.json': JSON.stringify({
-                name: 'a',
-                version: '1.0.0',
-              }),
-            },
-            b: {
-              'package.json': JSON.stringify({
-                name: 'b',
-                version: '1.0.0',
-              }),
-              node_modules: {
-                c: {
-                  'package.json': JSON.stringify({
-                    name: 'c',
-                    version: '1.0.0',
-                  }),
-                },
+        node_modules: {
+          a: {
+            'package.json': JSON.stringify({
+              name: 'a',
+              version: '1.0.0',
+            }),
+          },
+          b: {
+            'package.json': JSON.stringify({
+              name: 'b',
+              version: '1.0.0',
+            }),
+            node_modules: {
+              c: {
+                'package.json': JSON.stringify({
+                  name: 'c',
+                  version: '1.0.0',
+                }),
               },
             },
           },
@@ -2568,26 +2566,24 @@ t.test('ls --parseable', async t => {
     const { result, ls } = await mockLs(t, {
       config: { ...parseable, global: true },
       globalPrefixDir: {
-        lib: {
-          node_modules: {
-            a: {
-              'package.json': JSON.stringify({
-                name: 'a',
-                version: '1.0.0',
-              }),
-            },
-            b: {
-              'package.json': JSON.stringify({
-                name: 'b',
-                version: '1.0.0',
-              }),
-              node_modules: {
-                c: {
-                  'package.json': JSON.stringify({
-                    name: 'c',
-                    version: '1.0.0',
-                  }),
-                },
+        node_modules: {
+          a: {
+            'package.json': JSON.stringify({
+              name: 'a',
+              version: '1.0.0',
+            }),
+          },
+          b: {
+            'package.json': JSON.stringify({
+              name: 'b',
+              version: '1.0.0',
+            }),
+            node_modules: {
+              c: {
+                'package.json': JSON.stringify({
+                  name: 'c',
+                  version: '1.0.0',
+                }),
               },
             },
           },
@@ -4386,26 +4382,24 @@ t.test('ls --json', async t => {
         global: true,
       },
       globalPrefixDir: {
-        lib: {
-          node_modules: {
-            a: {
-              'package.json': JSON.stringify({
-                name: 'a',
-                version: '1.0.0',
-              }),
-            },
-            b: {
-              'package.json': JSON.stringify({
-                name: 'b',
-                version: '1.0.0',
-              }),
-              node_modules: {
-                c: {
-                  'package.json': JSON.stringify({
-                    name: 'c',
-                    version: '1.0.0',
-                  }),
-                },
+        node_modules: {
+          a: {
+            'package.json': JSON.stringify({
+              name: 'a',
+              version: '1.0.0',
+            }),
+          },
+          b: {
+            'package.json': JSON.stringify({
+              name: 'b',
+              version: '1.0.0',
+            }),
+            node_modules: {
+              c: {
+                'package.json': JSON.stringify({
+                  name: 'c',
+                  version: '1.0.0',
+                }),
               },
             },
           },

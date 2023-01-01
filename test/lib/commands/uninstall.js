@@ -162,10 +162,8 @@ t.test('no args global', async t => {
       }),
     },
     globalPrefixDir: {
-      lib: {
-        node_modules: {
-          a: t.fixture('symlink', '../../../prefix'),
-        },
+      node_modules: {
+        a: t.fixture('symlink', '../../prefix'),
       },
     },
     config: { global: true },

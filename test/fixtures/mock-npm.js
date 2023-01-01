@@ -8,13 +8,36 @@ const mockGlobals = require('./mock-globals')
 const log = require('../../lib/utils/log-shim')
 const ogLevel = log.level
 
-const getMockNpm = async (t, {
-  mocks = {},
-  globals = {},
-  npm = {},
-  init = false,
-  load = false,
-} = {}) => {
+const setGlobalNodeModules = (globalDir) => {
+  const updateSymlinks = (obj, visit) => {
+    for (const [key, value] of Object.entries(obj)) {
+      if (/Fixture<symlink>/.test(value.toString())) {
+        obj[key] = tap.fixture('symlink', path.join('..', value.content))
+      } else if (typeof value === 'object') {
+        obj[key] = updateSymlinks(value, visit)
+      }
+    }
+    return obj
+  }
+
+  if (globalDir.lib) {
+    throw new Error('`globalPrefixDir` should not have a top-level `lib/` directory, only a ' +
+      'top-level `node_modules/` dir that gets set in the correct location based on platform'
+    )
+  }
+
+  if (process.platform !== 'win32' && globalDir.node_modules) {
+    const { node_modules: nm, ...rest } = globalDir
+    return {
+      ...rest,
+      lib: { node_modules: updateSymlinks(nm) },
+    }
+  }
+
+  return globalDir
+}
+
+const getMockNpm = async (t, { mocks, globals, npm, init, load }) => {
   const mock = {
     ...mockLogs(mocks),
     outputs: [],
@@ -88,7 +111,7 @@ const setupMockNpm = async (t, {
   prefixDir = {},
   homeDir = {},
   cacheDir = {},
-  globalPrefixDir = { lib: {} },
+  globalPrefixDir = { node_modules: {} },
   otherDirs = {},
   // setup config, env vars, mocks, npm opts
   config: _config = {},
@@ -147,7 +170,7 @@ const setupMockNpm = async (t, {
     home: homeDir,
     prefix: prefixDir,
     cache: cacheDir,
-    global: globalPrefixDir,
+    global: setGlobalNodeModules(globalPrefixDir),
     other: otherDirs,
   })
 
@@ -263,3 +286,4 @@ const setupMockNpm = async (t, {
 
 module.exports = setupMockNpm
 module.exports.load = setupMockNpm
+module.exports.setGlobalNodeModules = setGlobalNodeModules

@@ -4,7 +4,7 @@ const MockRegistry = require('@npmcli/mock-registry')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
 
 const jsonifyTestdir = (obj) => {
-  for (const [key, value] of Object.entries(obj)) {
+  for (const [key, value] of Object.entries(obj || {})) {
     if (extname(key) === '.json') {
       obj[key] = JSON.stringify(value, null, 2) + '\n'
     } else if (typeof value === 'object') {
@@ -39,9 +39,9 @@ const mockDiff = async (t, {
 
   const { prefixDir, globalPrefixDir, otherDirs, config, ...rest } = opts
   const { npm, ...res } = await loadMockNpm(t, {
-    prefixDir: jsonifyTestdir(prefixDir || {}),
+    prefixDir: jsonifyTestdir(prefixDir),
     otherDirs: jsonifyTestdir({ tarballs: tarballFixtures, ...otherDirs }),
-    globalPrefixDir: jsonifyTestdir(globalPrefixDir || {}),
+    globalPrefixDir: jsonifyTestdir(globalPrefixDir),
     config: {
       ...config,
       diff: [].concat(diff),
@@ -268,13 +268,11 @@ t.test('single arg', async t => {
         global: true,
       },
       globalPrefixDir: {
-        lib: {
-          node_modules: {
-            lorem: {
-              'package.json': {
-                name: 'lorem',
-                version: '2.0.0',
-              },
+        node_modules: {
+          lorem: {
+            'package.json': {
+              name: 'lorem',
+              version: '2.0.0',
             },
           },
         },
