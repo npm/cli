@@ -298,69 +298,67 @@ t.test('exec commands', async t => {
 })
 
 t.test('completion', async t => {
-  const cwd = process.cwd()
-  const testdir = t.testdir({
-    arborist: {
-      'package.json': '{}',
-    },
-    'arborist.txt': 'just a file',
-    'other-dir': { a: 'a' },
-  })
-  t.afterEach(() => {
-    process.chdir(cwd)
-  })
+  const mockComp = async (t, { chdir = true } = {}) => {
+    const cwd = process.cwd()
+
+    const mock = await loadMockNpm(t, {
+      command: 'install',
+      prefixDir: {
+        arborist: {
+          'package.json': '{}',
+        },
+        'arborist.txt': 'just a file',
+        'other-dir': { a: 'a' },
+      },
+    })
+
+    // cwd has been mocked by mockNpm but we have to chdir for completion
+    if (chdir) {
+      process.chdir(mock.prefix)
+      t.teardown(() => process.chdir(cwd))
+    }
+
+    return mock
+  }
 
   await t.test('completion to folder - has a match', async t => {
-    const { npm } = await loadMockNpm(t, { load: false })
-    const install = await npm.cmd('install')
-    process.chdir(testdir)
+    const { install } = await mockComp(t)
     const res = await install.completion({ partialWord: './ar' })
     t.strictSame(res, ['arborist'], 'package dir match')
   })
 
   await t.test('completion to folder - invalid dir', async t => {
-    const { npm } = await loadMockNpm(t, { load: false })
-    const install = await npm.cmd('install')
+    const { install } = await mockComp(t, { chdir: false })
     const res = await install.completion({ partialWord: '/does/not/exist' })
     t.strictSame(res, [], 'invalid dir: no matching')
   })
 
   await t.test('completion to folder - no matches', async t => {
-    const { npm } = await loadMockNpm(t, { load: false })
-    const install = await npm.cmd('install')
-    process.chdir(testdir)
+    const { install } = await mockComp(t)
     const res = await install.completion({ partialWord: './pa' })
     t.strictSame(res, [], 'no name match')
   })
 
   await t.test('completion to folder - match is not a package', async t => {
-    const { npm } = await loadMockNpm(t, { load: false })
-    const install = await npm.cmd('install')
-    process.chdir(testdir)
+    const { install } = await mockComp(t)
     const res = await install.completion({ partialWord: './othe' })
     t.strictSame(res, [], 'no name match')
   })
 
   await t.test('completion to url', async t => {
-    const { npm } = await loadMockNpm(t, { load: false })
-    const install = await npm.cmd('install')
-    process.chdir(testdir)
+    const { install } = await mockComp(t)
     const res = await install.completion({ partialWord: 'http://path/to/url' })
     t.strictSame(res, [])
   })
 
   await t.test('no /', async t => {
-    const { npm } = await loadMockNpm(t, { load: false })
-    const install = await npm.cmd('install')
-    process.chdir(testdir)
+    const { install } = await mockComp(t)
     const res = await install.completion({ partialWord: 'toto' })
     t.notOk(res)
   })
 
   await t.test('only /', async t => {
-    const { npm } = await loadMockNpm(t, { load: false })
-    const install = await npm.cmd('install')
-    process.chdir(testdir)
+    const { install } = await mockComp(t)
     const res = await install.completion({ partialWord: '/' })
     t.strictSame(res, [])
   })

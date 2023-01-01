@@ -154,7 +154,7 @@ t.test('no args local', async t => {
 })
 
 t.test('no args global', async t => {
-  const { uninstall, globalPrefix } = await mockNpm(t, {
+  const { uninstall, npm } = await mockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
         name: 'a',
@@ -169,7 +169,7 @@ t.test('no args global', async t => {
     config: { global: true },
   })
 
-  const a = resolve(globalPrefix, 'lib/node_modules/a')
+  const a = resolve(npm.globalDir, 'a')
   t.ok(fs.statSync(a))
 
   await uninstall([])

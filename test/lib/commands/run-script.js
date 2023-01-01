@@ -4,9 +4,6 @@ const realRunScript = require('@npmcli/run-script')
 const mockNpm = require('../../fixtures/mock-npm')
 const { cleanCwd } = require('../../fixtures/clean-snapshot')
 
-const cleanTestdir = (s) => cleanCwd(s)
-  .replace(/\/test\/lib\/commands\/tap-testdir-[a-zA-Z-]+\//g, '/')
-
 const mockRs = async (t, { windows = false, runScript, ...opts } = {}) => {
   let RUN_SCRIPTS = []
 
@@ -32,7 +29,7 @@ const mockRs = async (t, { windows = false, runScript, ...opts } = {}) => {
     ...mock,
     RUN_SCRIPTS: () => RUN_SCRIPTS,
     runScript: { exec: (args) => mock.npm.exec('run-script', args) },
-    cleanLogs: () => mock.logs.error.flat().map(v => v.toString()).map(cleanTestdir),
+    cleanLogs: () => mock.logs.error.flat().map(v => v.toString()).map(cleanCwd),
   }
 }
 

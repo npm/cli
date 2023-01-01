@@ -3,8 +3,6 @@ const { load: loadMockNpm } = require('../../fixtures/mock-npm')
 const { cleanCwd } = require('../../fixtures/clean-snapshot.js')
 
 t.cleanSnapshot = (str) => cleanCwd(str)
-  // normalize between windows and posix
-  .replace(new RegExp('lib/node_modules', 'g'), 'node_modules')
 
 t.test('simple query', async t => {
   const { npm, joinedOutput } = await loadMockNpm(t, {

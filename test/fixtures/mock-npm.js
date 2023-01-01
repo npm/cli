@@ -5,8 +5,6 @@ const tap = require('tap')
 const errorMessage = require('../../lib/utils/error-message')
 const mockLogs = require('./mock-logs')
 const mockGlobals = require('./mock-globals')
-const log = require('../../lib/utils/log-shim')
-const ogLevel = log.level
 
 const setGlobalNodeModules = (globalDir) => {
   const updateSymlinks = (obj, visit) => {
@@ -22,7 +20,8 @@ const setGlobalNodeModules = (globalDir) => {
 
   if (globalDir.lib) {
     throw new Error('`globalPrefixDir` should not have a top-level `lib/` directory, only a ' +
-      'top-level `node_modules/` dir that gets set in the correct location based on platform'
+      'top-level `node_modules/` dir that gets set in the correct location based on platform. ' +
+      `Received the following top level entries: ${Object.keys(globalDir).join(', ')}.`
     )
   }
 
@@ -125,8 +124,8 @@ const setupMockNpm = async (t, {
     throw new Error('first argument must be a tap instance')
   }
 
-  // mockNpm is designed to only be run once per test so we assign it to the
-  // test in the cache and error if it is attempted to run again
+  // mockNpm is designed to only be run once per test chain so we assign it to
+  // the test in the cache and error if it is attempted to run again
   let tapInstance = t
   while (tapInstance) {
     if (mockNpms.has(tapInstance)) {
@@ -238,9 +237,6 @@ const setupMockNpm = async (t, {
   }
 
   t.teardown(() => {
-    // npmlog is a singleton so we need to reset the loglevel to the original
-    // value between each test
-    log.level = ogLevel
     if (npm) {
       npm.unload()
     }

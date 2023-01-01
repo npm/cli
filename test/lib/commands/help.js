@@ -1,7 +1,7 @@
 const t = require('tap')
-const promiseSpawn = require('@npmcli/promise-spawn')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm.js')
+const { cleanCwd } = require('../../fixtures/clean-snapshot')
 
 const genManPages = (obj) => {
   const man = {}
@@ -28,7 +28,6 @@ const genManPages = (obj) => {
 }
 
 const mockHelp = async (t, {
-  spawn = { stdio: 'pipe' },
   man = {
     1: ['whoami', 'install', 'star', 'unstar', 'uninstall', 'unpublish'].map(p => `npm-${p}`),
     5: ['npmrc', 'install', 'package-json'],
@@ -37,27 +36,23 @@ const mockHelp = async (t, {
   browser = false,
   woman = false,
   exec: execArgs = null,
+  spawnErr,
   ...opts
 } = {}) => {
   const config = {
-    ...(browser ? { viewer: 'browser' } : woman ? { viewer: 'woman' } : {}),
+    // always set viewer to test the same on all platforms
+    viewer: browser ? 'browser' : woman ? 'woman' : 'man',
     ...opts.config,
   }
 
-  let mockSpawn
   let args = null
-  if (config.viewer === 'browser') {
-    mockSpawn = { open: async (...a) => args = a }
-  } else if (!spawn || config.viewer) {
-    mockSpawn = async (...a) => args = a
-  } else {
-    mockSpawn = async (cmd, a, spawnOpts, extra) => {
-      // if we are running the spawned command, make it pipe to stdio
-      // so it doesnt print to the terminal and we can get the stdout/stderr
-      // strings directly from the exec fn
-      return promiseSpawn(cmd, a, { ...spawnOpts, ...spawn }, extra)
+  const mockSpawn = async (...a) => {
+    args = a
+    if (spawnErr) {
+      throw spawnErr
     }
   }
+  mockSpawn.open = async (url) => args = [cleanCwd(decodeURI(url))]
 
   const manPages = genManPages(man)
 
@@ -113,9 +108,12 @@ t.test('npm help no matches calls search', async t => {
 })
 
 t.test('npm help whoami', async t => {
-  const { exec } = await mockHelp(t, { exec: ['whoami'] })
+  const { getArgs } = await mockHelp(t, { exec: ['whoami'] })
 
-  t.match(exec.stdout, 'NPM-WHOAMI(1)', 'calls man by default')
+  const [spawnBin, spawnArgs] = getArgs()
+  t.equal(spawnBin, 'man', 'calls man by default')
+  t.equal(spawnArgs.length, 1)
+  t.match(spawnArgs[0], /\/man\/man1\/npm-whoami\.1$/)
 })
 
 t.test('npm help 1 install', async t => {
@@ -125,7 +123,7 @@ t.test('npm help 1 install', async t => {
   })
 
   const [url] = getArgs()
-  t.match(url, /commands(\/|\\)npm-install.html$/, 'attempts to open the correct url')
+  t.match(url, /commands\/npm-install.html$/, 'attempts to open the correct url')
   t.ok(url.startsWith('file:///'), 'opens with the correct uri schema')
 })
 
@@ -136,7 +134,7 @@ t.test('npm help 5 install', async t => {
   })
 
   const [url] = getArgs()
-  t.match(url, /configuring-npm(\/|\\)install.html$/, 'attempts to open the correct url')
+  t.match(url, /configuring-npm\/install.html$/, 'attempts to open the correct url')
 })
 
 t.test('npm help 7 config', async t => {
@@ -146,13 +144,12 @@ t.test('npm help 7 config', async t => {
   })
 
   const [url] = getArgs()
-  t.match(url, /using-npm(\/|\\)config.html$/, 'attempts to open the correct url')
+  t.match(url, /using-npm\/config.html$/, 'attempts to open the correct url')
 })
 
 t.test('npm help package.json redirects to package-json', async t => {
   const { getArgs } = await mockHelp(t, {
     exec: ['package.json'],
-    spawn: false,
   })
 
   const [spawnBin, spawnArgs] = getArgs()
@@ -177,7 +174,6 @@ t.test('npm help ?(un)star', async t => {
 t.test('npm help un*', async t => {
   const { getArgs } = await mockHelp(t, {
     exec: ['un*'],
-    spawn: false,
   })
 
   const [spawnBin, spawnArgs] = getArgs()
@@ -194,7 +190,6 @@ t.test('npm help - prefers npm help pages', async t => {
       5: ['install', 'npm-install'],
     },
     exec: ['install'],
-    spawn: false,
   })
 
   const [spawnBin, spawnArgs] = getArgs()
@@ -211,7 +206,6 @@ t.test('npm help - works in the presence of strange man pages', async t => {
       '5ssl': ['config'],
     },
     exec: ['config'],
-    spawn: false,
   })
 
   const [spawnBin, spawnArgs] = getArgs()
@@ -220,8 +214,18 @@ t.test('npm help - works in the presence of strange man pages', async t => {
   t.match(spawnArgs[0], /\/man\/man1\/config\.1$/)
 })
 
-t.test('rejects when cmd is not available', async t => {
-  const { exec } = await mockHelp(t, { spawn: { env: { PATH: '' }, stdio: 'pipe' } })
+t.test('rejects with code', async t => {
+  const { exec } = await mockHelp(t, {
+    spawnErr: Object.assign(new Error('errrrr'), { code: 'SPAWN_ERR' }),
+  })
 
-  await t.rejects(exec('whoami'), /help process exited with code: (EACCES|ENOENT)/)
+  await t.rejects(exec('whoami'), /help process exited with code: SPAWN_ERR/)
+})
+
+t.test('rejects with no code', async t => {
+  const { exec } = await mockHelp(t, {
+    spawnErr: new Error('errrrr'),
+  })
+
+  await t.rejects(exec('whoami'), /errrrr/)
 })

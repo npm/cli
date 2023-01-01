@@ -6,7 +6,6 @@ const { cleanCwd } = require('../../fixtures/clean-snapshot.js')
 const mockNpm = require('../../fixtures/mock-npm')
 
 t.cleanSnapshot = (str) => cleanCwd(str)
-  .replace(/\/test\/lib\/commands\/tap-testdir-[a-zA-Z-]+\//g, '/')
 
 const mockLink = async (t, { globalPrefixDir, ...opts } = {}) => {
   const mock = await mockNpm(t, {

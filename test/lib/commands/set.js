@@ -2,6 +2,7 @@ const t = require('tap')
 const fs = require('fs/promises')
 const mockNpm = require('../../fixtures/mock-npm')
 const { join } = require('path')
+const { cleanNewlines } = require('../../fixtures/clean-snapshot')
 
 t.test('no args', async t => {
   const { npm } = await mockNpm(t)
@@ -37,7 +38,7 @@ t.test('test-config-item', async t => {
   )
 
   t.equal(
-    await fs.readFile(join(home, '.npmrc'), 'utf-8'),
+    cleanNewlines(await fs.readFile(join(home, '.npmrc'), 'utf-8')),
     [
       'original-config-test=original value',
       'fund=true',

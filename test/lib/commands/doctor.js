@@ -54,23 +54,22 @@ const globals = ({ globalPrefix }) => {
   return {
     process: {
       'env.PATH': `${globalPrefix}:${path.join(globalPrefix, 'bin')}`,
-      platform: 'test-not-windows',
       version: 'v1.0.0',
     },
   }
 }
 
-// getuid and getgid do not exist in windows, so we shim them
-// to return 0, as that is the value that lstat will assign the
-// gid and uid properties for fs.Stats objects
-if (process.platform === 'win32') {
-  mockGlobals(t, {
-    process: {
-      getuid: () => 0,
-      getgid: () => 0,
-    },
-  })
-}
+mockGlobals(t, {
+  process: {
+    // set platform to not-windows before any tests because mockNpm
+    // sets the platform specific location of node_modules based on it
+    platform: 'test-not-windows',
+    // getuid and getgid do not exist in windows, so we shim them
+    // to return 0, as that is the value that lstat will assign the
+    // gid and uid properties for fs.Stats objects
+    ...(process.platform === 'win32' ? { getuid: () => 0, getgid: () => 0 } : {}),
+  },
+})
 
 const mocks = {
   '../../package.json': { version: '1.0.0' },
@@ -248,7 +247,6 @@ t.test('node out of date - lts', async t => {
         ...g,
         process: {
           ...g.process,
-          platform: 'test-not-windows',
           version: 'v0.0.1',
         },
       }

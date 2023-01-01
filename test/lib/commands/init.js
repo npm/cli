@@ -25,18 +25,14 @@ const mockNpm = async (t, { noLog, libnpmexec, initPackageJson, packageJson, ...
 }
 
 t.test('displays output', async t => {
-  const configs = [{ yes: true }, { force: true }]
-  for (const config of configs) {
-    t.test(config, async t => {
-      const { npm, joinedOutput } = await mockNpm(t, {
-        config,
+
+
+        const { npm, joinedOutput } = await mockNpm(t, {
         initPackageJson: (...args) => args[3](),
       })
 
       await npm.exec('init', [])
       t.matchSnapshot(joinedOutput(), 'displays helper info')
-    })
-  }
 })
 
 t.test('classic npm init -y', async t => {

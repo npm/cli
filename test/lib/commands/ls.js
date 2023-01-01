@@ -4,22 +4,14 @@
 // may change when node-tap is updated.
 
 const t = require('tap')
-const { relative } = require('path')
 const { utimesSync } = require('fs')
 const mockNpm = require('../../fixtures/mock-npm.js')
-const cleanSnapshot = require('../../fixtures/clean-snapshot')
+const { cleanCwd } = require('../../fixtures/clean-snapshot')
 
 const touchHiddenPackageLock = prefix => {
   const later = new Date(Date.now() + 10000)
   utimesSync(`${prefix}/node_modules/.package-lock.json`, later, later)
 }
-
-const relativeDir = relative(process.cwd(), __dirname)
-const cleanCwd = (s) => cleanSnapshot.cleanCwd(s)
-  .replace(cleanSnapshot.pathRegex(relativeDir + '/'), '')
-  .replace(cleanSnapshot.pathRegex('/prefix'), '')
-  .replace(cleanSnapshot.pathRegex('/global/lib'), '')
-  .replace(/\{CWD\}\/tap-testdir-[\w-.]+/gi, '{PROJECT}')
 
 t.cleanSnapshot = str => cleanCwd(str)
 
@@ -576,8 +568,8 @@ t.test('ls', async t => {
       t.equal(err.code, 'ELSPROBLEMS', 'should have error code')
       t.equal(
         cleanCwd(err.message),
-        'extraneous: chai@1.0.0 {PROJECT}/node_modules/chai\n' +
-        'invalid: foo@1.0.0 {PROJECT}/node_modules/foo\n' +
+        'extraneous: chai@1.0.0 {CWD}/prefix/node_modules/chai\n' +
+        'invalid: foo@1.0.0 {CWD}/prefix/node_modules/foo\n' +
         'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
         'should log missing/invalid/extraneous errors'
       )
@@ -2744,9 +2736,9 @@ t.test('ls --json', async t => {
       jsonParse(result()),
       {
         problems: [
-          'extraneous: chai@1.0.0 {PROJECT}/node_modules/chai',
-          'extraneous: dog@1.0.0 {PROJECT}/node_modules/dog',
-          'extraneous: foo@1.0.0 {PROJECT}/node_modules/foo',
+          'extraneous: chai@1.0.0 {CWD}/prefix/node_modules/chai',
+          'extraneous: dog@1.0.0 {CWD}/prefix/node_modules/dog',
+          'extraneous: foo@1.0.0 {CWD}/prefix/node_modules/foo',
         ],
         dependencies: {
           dog: {
@@ -2754,7 +2746,7 @@ t.test('ls --json', async t => {
             extraneous: true,
             overridden: false,
             problems: [
-              'extraneous: dog@1.0.0 {PROJECT}/node_modules/dog',
+              'extraneous: dog@1.0.0 {CWD}/prefix/node_modules/dog',
             ],
           },
           foo: {
@@ -2762,7 +2754,7 @@ t.test('ls --json', async t => {
             extraneous: true,
             overridden: false,
             problems: [
-              'extraneous: foo@1.0.0 {PROJECT}/node_modules/foo',
+              'extraneous: foo@1.0.0 {CWD}/prefix/node_modules/foo',
             ],
             dependencies: {
               dog: {
@@ -2775,7 +2767,7 @@ t.test('ls --json', async t => {
             extraneous: true,
             overridden: false,
             problems: [
-              'extraneous: chai@1.0.0 {PROJECT}/node_modules/chai',
+              'extraneous: chai@1.0.0 {CWD}/prefix/node_modules/chai',
             ],
           },
         },
@@ -2807,7 +2799,7 @@ t.test('ls --json', async t => {
         name: 'test-npm-ls',
         version: '1.0.0',
         problems: [
-          'extraneous: chai@1.0.0 {PROJECT}/node_modules/chai',
+          'extraneous: chai@1.0.0 {CWD}/prefix/node_modules/chai',
         ],
         dependencies: {
           foo: {
@@ -2825,7 +2817,7 @@ t.test('ls --json', async t => {
             extraneous: true,
             overridden: false,
             problems: [
-              'extraneous: chai@1.0.0 {PROJECT}/node_modules/chai',
+              'extraneous: chai@1.0.0 {CWD}/prefix/node_modules/chai',
             ],
           },
         },
@@ -3239,8 +3231,8 @@ t.test('ls --json', async t => {
         name: 'test-npm-ls',
         version: '1.0.0',
         problems: [
-          'extraneous: chai@1.0.0 {PROJECT}/node_modules/chai',
-          'invalid: foo@1.0.0 {PROJECT}/node_modules/foo',
+          'extraneous: chai@1.0.0 {CWD}/prefix/node_modules/chai',
+          'invalid: foo@1.0.0 {CWD}/prefix/node_modules/foo',
           'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
         ],
         dependencies: {
@@ -3249,7 +3241,7 @@ t.test('ls --json', async t => {
             invalid: '"^2.0.0" from the root project',
             overridden: false,
             problems: [
-              'invalid: foo@1.0.0 {PROJECT}/node_modules/foo',
+              'invalid: foo@1.0.0 {CWD}/prefix/node_modules/foo',
             ],
             dependencies: {
               dog: {
@@ -3263,7 +3255,7 @@ t.test('ls --json', async t => {
             extraneous: true,
             overridden: false,
             problems: [
-              'extraneous: chai@1.0.0 {PROJECT}/node_modules/chai',
+              'extraneous: chai@1.0.0 {CWD}/prefix/node_modules/chai',
             ],
           },
           ipsum: {
@@ -3275,8 +3267,8 @@ t.test('ls --json', async t => {
         error: {
           code: 'ELSPROBLEMS',
           summary: [
-            'extraneous: chai@1.0.0 {PROJECT}/node_modules/chai',
-            'invalid: foo@1.0.0 {PROJECT}/node_modules/foo',
+            'extraneous: chai@1.0.0 {CWD}/prefix/node_modules/chai',
+            'invalid: foo@1.0.0 {CWD}/prefix/node_modules/foo',
             'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
           ].join('\n'),
           detail: '',
@@ -3586,7 +3578,7 @@ t.test('ls --json', async t => {
                 overridden: false,
                 problems: [
                   /* eslint-disable-next-line max-len */
-                  'extraneous: @isaacs/dedupe-tests-b@ {PROJECT}/node_modules/@isaacs/dedupe-tests-a/node_modules/@isaacs/dedupe-tests-b',
+                  'extraneous: @isaacs/dedupe-tests-b@ {CWD}/prefix/node_modules/@isaacs/dedupe-tests-a/node_modules/@isaacs/dedupe-tests-b',
                 ],
               },
             },
@@ -3600,7 +3592,7 @@ t.test('ls --json', async t => {
         },
         problems: [
           /* eslint-disable-next-line max-len */
-          'extraneous: @isaacs/dedupe-tests-b@ {PROJECT}/node_modules/@isaacs/dedupe-tests-a/node_modules/@isaacs/dedupe-tests-b',
+          'extraneous: @isaacs/dedupe-tests-b@ {CWD}/prefix/node_modules/@isaacs/dedupe-tests-a/node_modules/@isaacs/dedupe-tests-b',
         ],
       },
       'should output json containing only prod deps'
@@ -3650,7 +3642,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: {},
-            path: '{PROJECT}/node_modules/peer-dep',
+            path: '{CWD}/prefix/node_modules/peer-dep',
             extraneous: false,
           },
           'dev-dep': {
@@ -3672,7 +3664,7 @@ t.test('ls --json', async t => {
                     devDependencies: {},
                     peerDependencies: {},
                     _dependencies: {},
-                    path: '{PROJECT}/node_modules/dog',
+                    path: '{CWD}/prefix/node_modules/dog',
                     extraneous: false,
                   },
                 },
@@ -3680,7 +3672,7 @@ t.test('ls --json', async t => {
                 devDependencies: {},
                 peerDependencies: {},
                 _dependencies: { dog: '^1.0.0' },
-                path: '{PROJECT}/node_modules/foo',
+                path: '{CWD}/prefix/node_modules/foo',
                 extraneous: false,
               },
             },
@@ -3688,7 +3680,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: { foo: '^1.0.0' },
-            path: '{PROJECT}/node_modules/dev-dep',
+            path: '{CWD}/prefix/node_modules/dev-dep',
             extraneous: false,
           },
           chai: {
@@ -3699,7 +3691,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: {},
-            path: '{PROJECT}/node_modules/chai',
+            path: '{CWD}/prefix/node_modules/chai',
             extraneous: false,
           },
           'optional-dep': {
@@ -3711,7 +3703,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: {},
-            path: '{PROJECT}/node_modules/optional-dep',
+            path: '{CWD}/prefix/node_modules/optional-dep',
             extraneous: false,
           },
           'prod-dep': {
@@ -3729,7 +3721,7 @@ t.test('ls --json', async t => {
                 devDependencies: {},
                 peerDependencies: {},
                 _dependencies: {},
-                path: '{PROJECT}/node_modules/prod-dep/node_modules/dog',
+                path: '{CWD}/prefix/node_modules/prod-dep/node_modules/dog',
                 extraneous: false,
               },
             },
@@ -3737,7 +3729,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: { dog: '^2.0.0' },
-            path: '{PROJECT}/node_modules/prod-dep',
+            path: '{CWD}/prefix/node_modules/prod-dep',
             extraneous: false,
           },
         },
@@ -3746,7 +3738,7 @@ t.test('ls --json', async t => {
         peerDependencies: { 'peer-dep': '^1.0.0' },
         _id: 'test-npm-ls@1.0.0',
         _dependencies: { 'prod-dep': '^1.0.0', chai: '^1.0.0', 'optional-dep': '^1.0.0' },
-        path: '{PROJECT}',
+        path: '{CWD}/prefix',
         extraneous: false,
       },
       'should output long json info'
@@ -3798,7 +3790,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: {},
-            path: '{PROJECT}/node_modules/peer-dep',
+            path: '{CWD}/prefix/node_modules/peer-dep',
             extraneous: false,
           },
           'dev-dep': {
@@ -3810,7 +3802,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: { foo: '^1.0.0' },
-            path: '{PROJECT}/node_modules/dev-dep',
+            path: '{CWD}/prefix/node_modules/dev-dep',
             extraneous: false,
           },
           chai: {
@@ -3821,7 +3813,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: {},
-            path: '{PROJECT}/node_modules/chai',
+            path: '{CWD}/prefix/node_modules/chai',
             extraneous: false,
           },
           'optional-dep': {
@@ -3833,7 +3825,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: {},
-            path: '{PROJECT}/node_modules/optional-dep',
+            path: '{CWD}/prefix/node_modules/optional-dep',
             extraneous: false,
           },
           'prod-dep': {
@@ -3845,7 +3837,7 @@ t.test('ls --json', async t => {
             devDependencies: {},
             peerDependencies: {},
             _dependencies: { dog: '^2.0.0' },
-            path: '{PROJECT}/node_modules/prod-dep',
+            path: '{CWD}/prefix/node_modules/prod-dep',
             extraneous: false,
           },
         },
@@ -3854,7 +3846,7 @@ t.test('ls --json', async t => {
         peerDependencies: { 'peer-dep': '^1.0.0' },
         _id: 'test-npm-ls@1.0.0',
         _dependencies: { 'prod-dep': '^1.0.0', chai: '^1.0.0', 'optional-dep': '^1.0.0' },
-        path: '{PROJECT}',
+        path: '{CWD}/prefix',
         extraneous: false,
       },
       'should output json containing top-level deps in long format'
@@ -3880,7 +3872,7 @@ t.test('ls --json', async t => {
       {
         invalid: true,
         problems: [
-          'error in {PROJECT}: Failed to parse root package.json',
+          'error in {CWD}/prefix: Failed to parse root package.json',
         ],
         error: {
           code: 'EJSONPARSE',
@@ -3934,7 +3926,7 @@ t.test('ls --json', async t => {
         name: 'test-npm-ls',
         version: '1.0.0',
         problems: [
-          'invalid: peer-dep@1.0.0 {PROJECT}/node_modules/peer-dep',
+          'invalid: peer-dep@1.0.0 {CWD}/prefix/node_modules/peer-dep',
         ],
         dependencies: {
           'peer-dep': {
@@ -3942,7 +3934,7 @@ t.test('ls --json', async t => {
             invalid: '"^2.0.0" from the root project',
             overridden: false,
             problems: [
-              'invalid: peer-dep@1.0.0 {PROJECT}/node_modules/peer-dep',
+              'invalid: peer-dep@1.0.0 {CWD}/prefix/node_modules/peer-dep',
             ],
           },
           'dev-dep': {
@@ -3982,7 +3974,7 @@ t.test('ls --json', async t => {
         },
         error: {
           code: 'ELSPROBLEMS',
-          summary: 'invalid: peer-dep@1.0.0 {PROJECT}/node_modules/peer-dep',
+          summary: 'invalid: peer-dep@1.0.0 {CWD}/prefix/node_modules/peer-dep',
           detail: '',
         },
       },
@@ -4029,7 +4021,7 @@ t.test('ls --json', async t => {
         version: '1.0.0',
         problems: [
           // mismatching optional deps get flagged in problems
-          'invalid: optional-dep@1.0.0 {PROJECT}/node_modules/optional-dep',
+          'invalid: optional-dep@1.0.0 {CWD}/prefix/node_modules/optional-dep',
         ],
         dependencies: {
           'optional-dep': {
@@ -4037,7 +4029,7 @@ t.test('ls --json', async t => {
             invalid: '"^2.0.0" from the root project',
             overridden: false,
             problems: [
-              'invalid: optional-dep@1.0.0 {PROJECT}/node_modules/optional-dep',
+              'invalid: optional-dep@1.0.0 {CWD}/prefix/node_modules/optional-dep',
             ],
           },
           'peer-dep': {
@@ -4078,7 +4070,7 @@ t.test('ls --json', async t => {
         },
         error: {
           code: 'ELSPROBLEMS',
-          summary: 'invalid: optional-dep@1.0.0 {PROJECT}/node_modules/optional-dep',
+          summary: 'invalid: optional-dep@1.0.0 {CWD}/prefix/node_modules/optional-dep',
           detail: '',
         },
       },
@@ -4411,7 +4403,7 @@ t.test('ls --json', async t => {
     t.same(
       jsonParse(result()),
       {
-        name: 'lib',
+        name: process.platform === 'win32' ? 'global' : 'lib',
         dependencies: {
           a: {
             version: '1.0.0',
@@ -5090,7 +5082,7 @@ t.test('ls --package-lock-only', async t => {
           name: 'test-npm-ls',
           version: '1.0.0',
           problems: [
-            'invalid: foo@1.0.0 {PROJECT}/node_modules/foo',
+            'invalid: foo@1.0.0 {CWD}/prefix/node_modules/foo',
             'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
           ],
           dependencies: {
@@ -5099,7 +5091,7 @@ t.test('ls --package-lock-only', async t => {
               overridden: false,
               invalid: '"^2.0.0" from the root project',
               problems: [
-                'invalid: foo@1.0.0 {PROJECT}/node_modules/foo',
+                'invalid: foo@1.0.0 {CWD}/prefix/node_modules/foo',
               ],
               dependencies: {
                 dog: {
@@ -5117,7 +5109,7 @@ t.test('ls --package-lock-only', async t => {
           error: {
             code: 'ELSPROBLEMS',
             summary: [
-              'invalid: foo@1.0.0 {PROJECT}/node_modules/foo',
+              'invalid: foo@1.0.0 {CWD}/prefix/node_modules/foo',
               'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
             ].join('\n'),
             detail: '',

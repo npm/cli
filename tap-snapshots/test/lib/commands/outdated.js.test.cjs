@@ -25,7 +25,7 @@ exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated
     "wanted": "1.0.1",
     "latest": "1.0.1",
     "dependent": "prefix",
-    "location": "{CWD}/test/lib/commands/tap-testdir-outdated-should-display-outdated-deps-outdated---json---long/prefix/node_modules/cat",
+    "location": "{CWD}/prefix/node_modules/cat",
     "type": "dependencies"
   },
   "chai": {
@@ -33,7 +33,7 @@ exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated
     "wanted": "1.0.1",
     "latest": "1.0.1",
     "dependent": "prefix",
-    "location": "{CWD}/test/lib/commands/tap-testdir-outdated-should-display-outdated-deps-outdated---json---long/prefix/node_modules/chai",
+    "location": "{CWD}/prefix/node_modules/chai",
     "type": "peerDependencies"
   },
   "dog": {
@@ -41,7 +41,7 @@ exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated
     "wanted": "1.0.1",
     "latest": "2.0.0",
     "dependent": "prefix",
-    "location": "{CWD}/test/lib/commands/tap-testdir-outdated-should-display-outdated-deps-outdated---json---long/prefix/node_modules/dog",
+    "location": "{CWD}/prefix/node_modules/dog",
     "type": "dependencies"
   },
   "theta": {
@@ -60,21 +60,21 @@ exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated
     "wanted": "1.0.1",
     "latest": "1.0.1",
     "dependent": "prefix",
-    "location": "{CWD}/test/lib/commands/tap-testdir-outdated-should-display-outdated-deps-outdated---json/prefix/node_modules/cat"
+    "location": "{CWD}/prefix/node_modules/cat"
   },
   "chai": {
     "current": "1.0.0",
     "wanted": "1.0.1",
     "latest": "1.0.1",
     "dependent": "prefix",
-    "location": "{CWD}/test/lib/commands/tap-testdir-outdated-should-display-outdated-deps-outdated---json/prefix/node_modules/chai"
+    "location": "{CWD}/prefix/node_modules/chai"
   },
   "dog": {
     "current": "1.0.1",
     "wanted": "1.0.1",
     "latest": "2.0.0",
     "dependent": "prefix",
-    "location": "{CWD}/test/lib/commands/tap-testdir-outdated-should-display-outdated-deps-outdated---json/prefix/node_modules/dog"
+    "location": "{CWD}/prefix/node_modules/dog"
   },
   "theta": {
     "wanted": "1.0.1",
@@ -115,16 +115,16 @@ exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated
 `
 
 exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated --parseable --long > must match snapshot 1`] = `
-{CWD}/test/lib/commands/tap-testdir-outdated-should-display-outdated-deps-outdated---parseable---long/prefix/node_modules/cat:cat@1.0.1:cat@1.0.0:cat@1.0.1:prefix:dependencies:
-{CWD}/test/lib/commands/tap-testdir-outdated-should-display-outdated-deps-outdated---parseable---long/prefix/node_modules/chai:chai@1.0.1:chai@1.0.0:chai@1.0.1:prefix:peerDependencies:
-{CWD}/test/lib/commands/tap-testdir-outdated-should-display-outdated-deps-outdated---parseable---long/prefix/node_modules/dog:dog@1.0.1:dog@1.0.1:dog@2.0.0:prefix:dependencies:
+{CWD}/prefix/node_modules/cat:cat@1.0.1:cat@1.0.0:cat@1.0.1:prefix:dependencies:
+{CWD}/prefix/node_modules/chai:chai@1.0.1:chai@1.0.0:chai@1.0.1:prefix:peerDependencies:
+{CWD}/prefix/node_modules/dog:dog@1.0.1:dog@1.0.1:dog@2.0.0:prefix:dependencies:
 :theta@1.0.1:MISSING:theta@1.0.1:prefix:dependencies:
 `
 
 exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated --parseable > must match snapshot 1`] = `
-{CWD}/test/lib/commands/tap-testdir-outdated-should-display-outdated-deps-outdated---parseable/prefix/node_modules/cat:cat@1.0.1:cat@1.0.0:cat@1.0.1:prefix
-{CWD}/test/lib/commands/tap-testdir-outdated-should-display-outdated-deps-outdated---parseable/prefix/node_modules/chai:chai@1.0.1:chai@1.0.0:chai@1.0.1:prefix
-{CWD}/test/lib/commands/tap-testdir-outdated-should-display-outdated-deps-outdated---parseable/prefix/node_modules/dog:dog@1.0.1:dog@1.0.1:dog@2.0.0:prefix
+{CWD}/prefix/node_modules/cat:cat@1.0.1:cat@1.0.0:cat@1.0.1:prefix
+{CWD}/prefix/node_modules/chai:chai@1.0.1:chai@1.0.0:chai@1.0.1:prefix
+{CWD}/prefix/node_modules/dog:dog@1.0.1:dog@1.0.1:dog@2.0.0:prefix
 :theta@1.0.1:MISSING:theta@1.0.1:prefix
 `
 
@@ -161,7 +161,7 @@ exports[`test/lib/commands/outdated.js TAP workspaces should display json result
     "wanted": "1.0.1",
     "latest": "1.0.1",
     "dependent": "a",
-    "location": "{CWD}/test/lib/commands/tap-testdir-outdated-workspaces-should-display-json-results-filtered-by-ws/prefix/node_modules/cat"
+    "location": "{CWD}/prefix/node_modules/cat"
   }
 }
 `
@@ -186,7 +186,7 @@ exports[`test/lib/commands/outdated.js TAP workspaces should display only root o
 `
 
 exports[`test/lib/commands/outdated.js TAP workspaces should display parseable results filtered by ws > output 1`] = `
-{CWD}/test/lib/commands/tap-testdir-outdated-workspaces-should-display-parseable-results-filtered-by-ws/prefix/node_modules/cat:cat@1.0.1:cat@1.0.0:cat@1.0.1:a
+{CWD}/prefix/node_modules/cat:cat@1.0.1:cat@1.0.0:cat@1.0.1:a
 `
 
 exports[`test/lib/commands/outdated.js TAP workspaces should display results filtered by ws > output 1`] = `
@@ -208,14 +208,14 @@ exports[`test/lib/commands/outdated.js TAP workspaces should display ws outdated
     "wanted": "1.0.1",
     "latest": "1.0.1",
     "dependent": "a",
-    "location": "{CWD}/test/lib/commands/tap-testdir-outdated-workspaces-should-display-ws-outdated-deps-json-output/prefix/node_modules/cat"
+    "location": "{CWD}/prefix/node_modules/cat"
   },
   "dog": {
     "current": "1.0.1",
     "wanted": "1.0.1",
     "latest": "2.0.0",
     "dependent": "prefix",
-    "location": "{CWD}/test/lib/commands/tap-testdir-outdated-workspaces-should-display-ws-outdated-deps-json-output/prefix/node_modules/dog"
+    "location": "{CWD}/prefix/node_modules/dog"
   },
   "theta": {
     "wanted": "1.0.1",
@@ -226,8 +226,8 @@ exports[`test/lib/commands/outdated.js TAP workspaces should display ws outdated
 `
 
 exports[`test/lib/commands/outdated.js TAP workspaces should display ws outdated deps parseable output > output 1`] = `
-{CWD}/test/lib/commands/tap-testdir-outdated-workspaces-should-display-ws-outdated-deps-parseable-output/prefix/node_modules/cat:cat@1.0.1:cat@1.0.0:cat@1.0.1:a
-{CWD}/test/lib/commands/tap-testdir-outdated-workspaces-should-display-ws-outdated-deps-parseable-output/prefix/node_modules/dog:dog@1.0.1:dog@1.0.1:dog@2.0.0:prefix
+{CWD}/prefix/node_modules/cat:cat@1.0.1:cat@1.0.0:cat@1.0.1:a
+{CWD}/prefix/node_modules/dog:dog@1.0.1:dog@1.0.1:dog@2.0.0:prefix
 :theta@1.0.1:MISSING:theta@1.0.1:c
 `
 
