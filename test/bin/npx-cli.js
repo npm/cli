@@ -1,12 +1,12 @@
 const t = require('tap')
+const mockGlobals = require('../fixtures/mock-globals')
 const npx = require.resolve('../../bin/npx-cli.js')
 const cli = require.resolve('../../lib/cli.js')
 const npm = require.resolve('../../bin/npm-cli.js')
 
 const logs = []
-console.error = (...msg) => logs.push(msg)
-
 t.afterEach(() => (logs.length = 0))
+mockGlobals(t, { 'console.error': (...msg) => logs.push(msg) })
 
 t.test('npx foo -> npm exec -- foo', t => {
   process.argv = ['node', npx, 'foo']

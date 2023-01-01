@@ -164,7 +164,7 @@ loglevel = yolo
       npmPath: `${path}/npm`,
       env: {},
       argv: [process.execPath, __filename, '--userconfig', `${path}/npm/npmrc`],
-      cwd: `${path}/project`,
+      cwd: join(`${path}/project`),
       shorthands,
       definitions,
     })
@@ -179,7 +179,7 @@ loglevel = yolo
       npmPath: `${path}/npm`,
       env: {},
       argv: [process.execPath, __filename, '--global'],
-      cwd: `${path}/project`,
+      cwd: join(`${path}/project`),
       shorthands,
       definitions,
     })
@@ -195,7 +195,7 @@ loglevel = yolo
       npmPath: `${path}/npm`,
       env: {},
       argv: [process.execPath, __filename, '--location', 'global'],
-      cwd: `${path}/project`,
+      cwd: join(`${path}/project`),
       shorthands,
       definitions,
     })
@@ -238,7 +238,7 @@ loglevel = yolo
       npmPath: `${path}/npm`,
       env,
       argv,
-      cwd: `${path}/project`,
+      cwd: join(`${path}/project`),
 
       shorthands,
       definitions,
@@ -410,7 +410,7 @@ loglevel = yolo
       npmPath: `${path}/npm`,
       env,
       argv,
-      cwd: `${path}/project`,
+      cwd: join(`${path}/project`),
 
       shorthands,
       definitions,
@@ -443,7 +443,7 @@ loglevel = yolo
       npmPath: `${path}/npm`,
       env,
       argv: [process.execPath, __filename, '--userconfig', `${path}/project/.npmrc`],
-      cwd: `${path}/project`,
+      cwd: join(`${path}/project`),
 
       shorthands,
       definitions,
@@ -487,7 +487,7 @@ loglevel = yolo
       npmPath: path,
       env,
       argv,
-      cwd: `${path}/project-no-config`,
+      cwd: join(`${path}/project-no-config`),
 
       // should prepend DESTDIR to /global
       DESTDIR: path,
@@ -887,7 +887,7 @@ t.test('finding the local prefix', t => {
   })
   t.test('has node_modules', async t => {
     const c = new Config({
-      cwd: `${path}/hasNM/x/y/z`,
+      cwd: join(`${path}/hasNM/x/y/z`),
       shorthands,
       definitions,
       npmPath: path,
@@ -897,7 +897,7 @@ t.test('finding the local prefix', t => {
   })
   t.test('has package.json', async t => {
     const c = new Config({
-      cwd: `${path}/hasPJ/x/y/z`,
+      cwd: join(`${path}/hasPJ/x/y/z`),
       shorthands,
       definitions,
       npmPath: path,
@@ -907,13 +907,13 @@ t.test('finding the local prefix', t => {
   })
   t.test('nada, just use cwd', async t => {
     const c = new Config({
-      cwd: '/this/path/does/not/exist/x/y/z',
+      cwd: join('/this/path/does/not/exist/x/y/z'),
       shorthands,
       definitions,
       npmPath: path,
     })
     await c.load()
-    t.equal(c.localPrefix, '/this/path/does/not/exist/x/y/z')
+    t.equal(c.localPrefix, join('/this/path/does/not/exist/x/y/z'))
   })
   t.end()
 })
@@ -1131,7 +1131,7 @@ t.test('workspaces', async (t) => {
       npmPath: cwd,
       env: {},
       argv: [process.execPath, __filename],
-      cwd: `${path}/workspaces/one`,
+      cwd: join(`${path}/workspaces/one`),
       shorthands,
       definitions,
     })
@@ -1152,7 +1152,7 @@ t.test('workspaces', async (t) => {
       npmPath: process.cwd(),
       env: {},
       argv: [process.execPath, __filename, '--workspace', '../two'],
-      cwd: `${path}/workspaces/one`,
+      cwd: join(`${path}/workspaces/one`),
       shorthands,
       definitions,
     })
@@ -1173,7 +1173,7 @@ t.test('workspaces', async (t) => {
       npmPath: process.cwd(),
       env: {},
       argv: [process.execPath, __filename],
-      cwd: `${path}/workspaces/three`,
+      cwd: join(`${path}/workspaces/three`),
       shorthands,
       definitions,
     })
@@ -1195,7 +1195,7 @@ t.test('workspaces', async (t) => {
       npmPath: process.cwd(),
       env: {},
       argv: [process.execPath, __filename, '--prefix', './'],
-      cwd: `${path}/workspaces/one`,
+      cwd: join(`${path}/workspaces/one`),
       shorthands,
       definitions,
     })
@@ -1215,7 +1215,7 @@ t.test('workspaces', async (t) => {
       npmPath: process.cwd(),
       env: {},
       argv: [process.execPath, __filename, '--no-workspaces'],
-      cwd: `${path}/workspaces/one`,
+      cwd: join(`${path}/workspaces/one`),
       shorthands,
       definitions,
     })
@@ -1235,7 +1235,7 @@ t.test('workspaces', async (t) => {
       npmPath: process.cwd(),
       env: {},
       argv: [process.execPath, __filename, '--global'],
-      cwd: `${path}/workspaces/one`,
+      cwd: join(`${path}/workspaces/one`),
       shorthands,
       definitions,
     })
@@ -1255,9 +1255,30 @@ t.test('workspaces', async (t) => {
       npmPath: process.cwd(),
       env: {},
       argv: [process.execPath, __filename, '--location=global'],
-      cwd: `${path}/workspaces/one`,
+      cwd: join(`${path}/workspaces/one`),
       shorthands,
       definitions,
+    })
+
+    await config.load()
+    t.equal(config.localPrefix, join(path, 'workspaces', 'one'), 'localPrefix is the root')
+    t.same(config.get('workspace'), [], 'did not set workspace')
+    t.equal(logs.length, 0, 'got no log messages')
+  })
+
+  t.test('excludeNpmCwd skips auto detect', async (t) => {
+    const cwd = process.cwd()
+    t.teardown(() => process.chdir(cwd))
+    process.chdir(`${path}/workspaces/one`)
+
+    const config = new Config({
+      npmPath: process.cwd(),
+      env: {},
+      argv: [process.execPath, __filename],
+      cwd: join(`${path}/workspaces/one`),
+      shorthands,
+      definitions,
+      excludeNpmCwd: true,
     })
 
     await config.load()
@@ -1281,7 +1302,7 @@ t.test('workspaces', async (t) => {
       npmPath: cwd,
       env: {},
       argv: [process.execPath, __filename],
-      cwd: `${path}/workspaces/one`,
+      cwd: join(`${path}/workspaces/one`),
       shorthands,
       definitions,
     })

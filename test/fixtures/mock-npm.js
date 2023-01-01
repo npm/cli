@@ -1,14 +1,45 @@
 const os = require('os')
 const fs = require('fs').promises
 const path = require('path')
+const tap = require('tap')
+const errorMessage = require('../../lib/utils/error-message')
 const mockLogs = require('./mock-logs')
 const mockGlobals = require('./mock-globals')
-const log = require('../../lib/utils/log-shim')
-const envConfigKeys = Object.keys(require('../../lib/utils/config/definitions.js'))
+const defExitCode = process.exitCode
 
-const RealMockNpm = (t, otherMocks = {}) => {
+const setGlobalNodeModules = (globalDir) => {
+  const updateSymlinks = (obj, visit) => {
+    for (const [key, value] of Object.entries(obj)) {
+      if (/Fixture<symlink>/.test(value.toString())) {
+        obj[key] = tap.fixture('symlink', path.join('..', value.content))
+      } else if (typeof value === 'object') {
+        obj[key] = updateSymlinks(value, visit)
+      }
+    }
+    return obj
+  }
+
+  if (globalDir.lib) {
+    throw new Error('`globalPrefixDir` should not have a top-level `lib/` directory, only a ' +
+      'top-level `node_modules/` dir that gets set in the correct location based on platform. ' +
+      `Received the following top level entries: ${Object.keys(globalDir).join(', ')}.`
+    )
+  }
+
+  if (process.platform !== 'win32' && globalDir.node_modules) {
+    const { node_modules: nm, ...rest } = globalDir
+    return {
+      ...rest,
+      lib: { node_modules: updateSymlinks(nm) },
+    }
+  }
+
+  return globalDir
+}
+
+const getMockNpm = async (t, { mocks, globals, npm, init, load }) => {
   const mock = {
-    ...mockLogs(otherMocks),
+    ...mockLogs(mocks),
     outputs: [],
     outputErrors: [],
     joinedOutput: () => mock.outputs.map(o => o.join(' ')).join('\n'),
@@ -16,11 +47,30 @@ const RealMockNpm = (t, otherMocks = {}) => {
 
   const Npm = t.mock('../../lib/npm.js', {
     '../../lib/utils/update-notifier.js': async () => {},
-    ...otherMocks,
+    ...mocks,
     ...mock.logMocks,
   })
 
   mock.Npm = class MockNpm extends Npm {
+    constructor () {
+      mockGlobals(t, globals)
+      super(npm)
+    }
+
+    async exec (...args) {
+      const [res, err] = await super.exec(...args).then((r) => [r]).catch(e => [null, e])
+      // This mimics how the exit handler flushes output for commands that have
+      // buffered output. It also uses the same json error processing from the
+      // error message fn. This is necessary for commands with buffered output
+      // to read the output after exec is called. This is not *exactly* how it
+      // works in practice, but it is close enough for now.
+      this.flushOutput(err ? errorMessage(err, this).json : null)
+      if (err) {
+        throw err
+      }
+      return res
+    }
+
     // lib/npm.js tests needs this to actually test the function!
     originalOutput (...args) {
       super.output(...args)
@@ -39,77 +89,91 @@ const RealMockNpm = (t, otherMocks = {}) => {
     }
   }
 
+  if (init) {
+    mock.npm = new mock.Npm()
+    if (load) {
+      await mock.npm.load()
+    }
+  }
+
   return mock
 }
 
-const setLoglevel = (t, loglevel, reset = true) => {
-  if (t && reset) {
-    const _level = log.level
-    t.teardown(() => log.level = _level)
-  }
+const mockNpms = new Map()
 
-  if (loglevel) {
-    // Set log level on the npmlog singleton and shared across everything
-    log.level = loglevel
-  }
-}
-
-// Resolve some options to a function call with supplied args
-const result = (fn, ...args) => typeof fn === 'function' ? fn(...args) : fn
-
-const LoadMockNpm = async (t, {
+const setupMockNpm = async (t, {
   init = true,
   load = init,
+  // preload a command
+  command = null, // string name of the command
+  exec = null, // optionally exec the command before returning
+  // test dirs
   prefixDir = {},
   homeDir = {},
   cacheDir = {},
-  globalPrefixDir = { lib: {} },
-  config = {},
-  mocks = {},
+  globalPrefixDir = { node_modules: {} },
   otherDirs = {},
-  globals = null,
+  // setup config, env vars, mocks, npm opts
+  config: _config = {},
+  mocks = {},
+  globals = {},
+  npm: npmOpts = {},
+  argv: rawArgv = [],
 } = {}) => {
-  // Mock some globals with their original values so they get torn down
-  // back to the original at the end of the test since they are manipulated
-  // by npm itself
-  const npmConfigEnv = {}
-  for (const key in process.env) {
-    if (key.startsWith('npm_config_')) {
-      npmConfigEnv[key] = undefined
-    }
+  // easy to accidentally forget to pass in tap
+  if (!(t instanceof tap.Test)) {
+    throw new Error('first argument must be a tap instance')
   }
-  mockGlobals(t, {
-    process: {
-      title: process.title,
-      execPath: process.execPath,
-      env: {
-        npm_command: process.env.npm_command,
-        COLOR: process.env.COLOR,
-        ...npmConfigEnv,
-      },
-    },
-  })
 
-  const { Npm, ...rest } = RealMockNpm(t, mocks)
-
-  // We want to fail fast when writing tests. Default this to 0 unless it was
-  // explicitly set in a test.
-  config = { 'fetch-retries': 0, ...config }
+  // mockNpm is designed to only be run once per test chain so we assign it to
+  // the test in the cache and error if it is attempted to run again
+  let tapInstance = t
+  while (tapInstance) {
+    if (mockNpms.has(tapInstance)) {
+      throw new Error('mockNpm can only be called once in each t.test chain')
+    }
+    tapInstance = tapInstance.parent
+  }
+  mockNpms.set(t, true)
 
   if (!init && load) {
     throw new Error('cant `load` without `init`')
   }
 
-  // Set log level as early as possible since
-  setLoglevel(t, config.loglevel)
+  if (!init && load) {
+    throw new Error('cant `load` without `init`')
+  }
+
+  const npmEnvs = Object.keys(process.env).filter(k => k.startsWith('npm_'))
+
+  // These are globals manipulated by npm itself that we need to reset to their
+  // original values between tests
+  mockGlobals(t, {
+    process: {
+      title: process.title,
+      execPath: process.execPath,
+      env: {
+        NODE_ENV: process.env.NODE_ENV,
+        COLOR: process.env.COLOR,
+        // further, these are npm controlled envs that we need to zero out before
+        // before the test. setting them to undefined ensures they are not set and
+        // also returned to their original value after the test
+        ...npmEnvs.reduce((acc, k) => {
+          acc[k] = undefined
+          return acc
+        }, {}),
+      },
+    },
+  })
 
   const dir = t.testdir({
     home: homeDir,
     prefix: prefixDir,
     cache: cacheDir,
-    global: globalPrefixDir,
+    global: setGlobalNodeModules(globalPrefixDir),
     other: otherDirs,
   })
+
   const dirs = {
     testdir: dir,
     prefix: path.join(dir, 'prefix'),
@@ -119,52 +183,93 @@ const LoadMockNpm = async (t, {
     other: path.join(dir, 'other'),
   }
 
-  // Set cache to testdir via env var so it is available when load is run
-  // XXX: remove this for a solution where cache argv is passed in
-  mockGlobals(t, {
-    'process.env.HOME': dirs.home,
-    'process.env.npm_config_cache': dirs.cache,
-    ...(globals ? result(globals, { ...dirs }) : {}),
-    // Some configs don't work because they can't be set via npm.config.set until
-    // config is loaded. But some config items are needed before that. So this is
-    // an explicit set of configs that must be loaded as env vars.
-    // XXX(npm9): make this possible by passing in argv directly to npm/config
-    ...Object.entries(config)
-      .filter(([k]) => envConfigKeys.includes(k))
-      .reduce((acc, [k, v]) => {
-        acc[`process.env.npm_config_${k.replace(/-/g, '_')}`] =
-          result(v, { ...dirs }).toString()
-        return acc
-      }, {}),
-  })
+  // Option objects can also be functions that are called with all the dir paths
+  // so they can be used to set configs that need to be based on paths
+  const withDirs = (v) => typeof v === 'function' ? v(dirs) : v
 
-  const npm = init ? new Npm() : null
-  t.teardown(() => {
-    npm && npm.unload()
+  const { argv, env, config } = Object.entries({
+    // We want to fail fast when writing tests. Default this to 0 unless it was
+    // explicitly set in a test.
+    'fetch-retries': 0,
+    cache: dirs.cache,
+    ...withDirs(_config),
   })
-
-  if (load) {
-    await npm.load()
-    for (const [k, v] of Object.entries(result(config, { npm, ...dirs }))) {
-      if (typeof v === 'object' && v.value && v.where) {
-        npm.config.set(k, v.value, v.where)
+    .reduce((acc, [key, value]) => {
+      // nerfdart configs passed in need to be set via env var instead of argv
+      if (key.startsWith('//')) {
+        acc.env[`process.env.npm_config_${key}`] = value
       } else {
-        npm.config.set(k, v)
+        const values = [].concat(value)
+        acc.argv.push(...values.flatMap(v => [`--${key}`, v.toString()]))
       }
+      acc.config[key] = value
+      return acc
+    }, { argv: [...rawArgv], env: {}, config: {} })
+
+  // process.cwd shouldnt be mocked unless we are actually initializing npm
+  // here, since it messes with other things like t.mock paths
+  const { 'process.cwd': processCwd, ...mockedGlobals } = {
+    'process.env.HOME': dirs.home,
+    // global prefix and prefix cannot be (easily) set via argv
+    // so this is the easiest way to set them that also closely mimics the
+    // behavior a user would see since they will already be set while
+    // `npm.load()` is being run
+    'process.env.PREFIX': dirs.globalPrefix,
+    'process.cwd': () => dirs.prefix,
+    ...withDirs(globals),
+  }
+
+  mockGlobals(t, mockedGlobals)
+
+  const { npm, ...mockNpm } = await getMockNpm(t, {
+    init,
+    load,
+    mocks: withDirs(mocks),
+    npm: { argv, excludeNpmCwd: true, ...withDirs(npmOpts) },
+    globals: { ...env, 'process.cwd': processCwd },
+  })
+
+  if (config.omit?.includes('prod')) {
+    // XXX: --omit=prod is not a valid config according to the definitions but
+    // it was being hacked in via flatOptions for older tests so this is to
+    // preserve that behavior and reduce churn in the snapshots. this should be
+    // removed or fixed in the future
+    npm.flatOptions.omit.push('prod')
+  }
+
+  t.teardown(() => {
+    if (npm) {
+      npm.unload()
     }
-    // Set global loglevel *again* since it possibly got reset during load
-    // XXX: remove with npmlog
-    setLoglevel(t, config.loglevel, false)
-    npm.prefix = dirs.prefix
-    npm.cache = dirs.cache
-    npm.globalPrefix = dirs.globalPrefix
+    // only set exitCode back if we're passing tests
+    if (t.passing()) {
+      process.exitCode = defExitCode
+    }
+  })
+
+  const mockCommand = {}
+  if (command) {
+    const cmd = await npm.cmd(command)
+    const usage = await cmd.usage
+    mockCommand.cmd = cmd
+    mockCommand[command] = {
+      usage,
+      exec: (args) => npm.exec(command, args),
+      completion: (args) => cmd.completion(args),
+    }
+    if (exec) {
+      await mockCommand[command].exec(exec)
+      // assign string output to the command now that we have it
+      // for easier testing
+      mockCommand[command].output = mockNpm.joinedOutput()
+    }
   }
 
   return {
-    ...rest,
-    ...dirs,
-    Npm,
     npm,
+    ...mockNpm,
+    ...dirs,
+    ...mockCommand,
     debugFile: async () => {
       const readFiles = npm.logFiles.map(f => fs.readFile(f))
       const logFiles = await Promise.all(readFiles)
@@ -180,80 +285,6 @@ const LoadMockNpm = async (t, {
   }
 }
 
-const realConfig = require('../../lib/utils/config')
-
-// Basic npm fixture that you can give a config object that acts like
-// npm.config You still need a separate flatOptions. Tests should migrate to
-// using the real npm mock above
-class MockNpm {
-  constructor (base = {}, t) {
-    this._mockOutputs = []
-    this.isMockNpm = true
-    this.base = base
-
-    const config = base.config || {}
-
-    for (const attr in base) {
-      if (attr !== 'config') {
-        this[attr] = base[attr]
-      }
-    }
-
-    this.flatOptions = base.flatOptions || {}
-    this.config = {
-      // for now just set `find` to what config.find should return
-      // this works cause `find` is not an existing config entry
-      find: (k) => ({ ...realConfig.defaults, ...config })[k],
-      // for now isDefault is going to just return false if a value was defined
-      isDefault: (k) => !Object.prototype.hasOwnProperty.call(config, k),
-      get: (k) => ({ ...realConfig.defaults, ...config })[k],
-      set: (k, v) => {
-        config[k] = v
-        // mock how real npm derives silent
-        if (k === 'loglevel') {
-          this.flatOptions.silent = v === 'silent'
-          this.silent = v === 'silent'
-        }
-      },
-      list: [{ ...realConfig.defaults, ...config }],
-      validate: () => {},
-    }
-
-    if (t && config.loglevel) {
-      setLoglevel(t, config.loglevel)
-    }
-
-    if (config.loglevel) {
-      this.config.set('loglevel', config.loglevel)
-    }
-  }
-
-  get global () {
-    return this.config.get('global') || this.config.get('location') === 'global'
-  }
-
-  output (...msg) {
-    if (this.base.output) {
-      return this.base.output(msg)
-    }
-    this._mockOutputs.push(msg)
-  }
-
-  // with the older fake mock npm there is no
-  // difference between output and outputBuffer
-  // since it just collects the output and never
-  // calls the exit handler, so we just mock the
-  // method the same as output.
-  outputBuffer (...msg) {
-    this.output(...msg)
-  }
-}
-
-const FakeMockNpm = (base = {}, t) => {
-  return new MockNpm(base, t)
-}
-
-module.exports = {
-  fake: FakeMockNpm,
-  load: LoadMockNpm,
-}
+module.exports = setupMockNpm
+module.exports.load = setupMockNpm
+module.exports.setGlobalNodeModules = setGlobalNodeModules
