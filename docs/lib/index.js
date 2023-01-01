@@ -40,11 +40,12 @@ const getCommandByDoc = (docFile, docExt) => {
   // `npx` is not technically a command in and of itself,
   // so it just needs the usage of npm exex
   const srcName = name === 'npx' ? 'exec' : name
-  const { params, usage = [''] } = require(`../../lib/commands/${srcName}`)
+  const { params, usage = [''], workspaces } = require(`../../lib/commands/${srcName}`)
   const usagePrefix = name === 'npx' ? 'npx' : `npm ${name}`
 
   return {
     name,
+    workspaces,
     params: name === 'npx' ? null : params,
     usage: usage.map(u => `${usagePrefix} ${u}`.trim()).join('\n'),
   }
@@ -54,7 +55,7 @@ const replaceVersion = (src) => src.replace(/@VERSION@/g, version)
 
 const replaceUsage = (src, { path }) => {
   const replacer = assertPlaceholder(src, path, TAGS.USAGE)
-  const { usage, name } = getCommandByDoc(path, DOC_EXT)
+  const { usage, name, workspaces } = getCommandByDoc(path, DOC_EXT)
 
   const synopsis = ['```bash', usage]
 
@@ -66,14 +67,16 @@ const replaceUsage = (src, { path }) => {
   }, [])
 
   if (cmdAliases.length === 1) {
-    synopsis.push('')
-    synopsis.push(`alias: ${cmdAliases[0]}`)
+    synopsis.push('', `alias: ${cmdAliases[0]}`)
   } else if (cmdAliases.length > 1) {
-    synopsis.push('')
-    synopsis.push(`aliases: ${cmdAliases.join(', ')}`)
+    synopsis.push('', `aliases: ${cmdAliases.join(', ')}`)
   }
 
   synopsis.push('```')
+
+  if (!workspaces) {
+    synopsis.push('', 'Note: This command is unaware of workspaces.')
+  }
 
   return src.replace(replacer, synopsis.join('\n'))
 }
