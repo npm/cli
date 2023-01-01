@@ -2491,6 +2491,8 @@ npm access grant <read-only|read-write> <scope:team> [<package>]
 npm access revoke <scope:team> [<package>]
 \`\`\`
 
+Note: This command is unaware of workspaces.
+
 #### \`json\`
 #### \`otp\`
 #### \`registry\`
@@ -2514,6 +2516,8 @@ npm adduser
 
 alias: add-user
 \`\`\`
+
+Note: This command is unaware of workspaces.
 
 #### \`registry\`
 #### \`scope\`
@@ -2603,6 +2607,8 @@ npm cache ls [<name>@<version>]
 npm cache verify
 \`\`\`
 
+Note: This command is unaware of workspaces.
+
 #### \`cache\`
 `
 
@@ -2665,6 +2671,8 @@ Run "npm help completion" for more info
 npm completion
 \`\`\`
 
+Note: This command is unaware of workspaces.
+
 NO PARAMS
 `
 
@@ -2697,6 +2705,8 @@ npm config fix
 
 alias: c
 \`\`\`
+
+Note: This command is unaware of workspaces.
 
 #### \`json\`
 #### \`global\`
@@ -2760,6 +2770,8 @@ Run "npm help deprecate" for more info
 \`\`\`bash
 npm deprecate <package-spec> <message>
 \`\`\`
+
+Note: This command is unaware of workspaces.
 
 #### \`registry\`
 #### \`otp\`
@@ -2872,6 +2884,8 @@ Run "npm help doctor" for more info
 npm doctor [ping] [registry] [versions] [environment] [permissions] [cache]
 \`\`\`
 
+Note: This command is unaware of workspaces.
+
 #### \`registry\`
 `
 
@@ -2889,6 +2903,8 @@ Run "npm help edit" for more info
 \`\`\`bash
 npm edit <pkg>[/<subpkg>...]
 \`\`\`
+
+Note: This command is unaware of workspaces.
 
 #### \`editor\`
 `
@@ -2965,6 +2981,8 @@ Run "npm help explore" for more info
 npm explore <pkg> [ -- <command>]
 \`\`\`
 
+Note: This command is unaware of workspaces.
+
 #### \`shell\`
 `
 
@@ -3040,6 +3058,8 @@ Run "npm help get" for more info
 npm get [<key> ...] (See \`npm config\`)
 \`\`\`
 
+Note: This command is unaware of workspaces.
+
 NO PARAMS
 `
 
@@ -3062,6 +3082,8 @@ npm help <term> [<terms..>]
 alias: hlep
 \`\`\`
 
+Note: This command is unaware of workspaces.
+
 #### \`viewer\`
 `
 
@@ -3079,6 +3101,8 @@ Run "npm help help-search" for more info
 \`\`\`bash
 npm help-search <text>
 \`\`\`
+
+Note: This command is unaware of workspaces.
 
 #### \`long\`
 `
@@ -3103,6 +3127,8 @@ npm hook ls [pkg]
 npm hook rm <id>
 npm hook update <id> <url> <secret>
 \`\`\`
+
+Note: This command is unaware of workspaces.
 
 #### \`registry\`
 #### \`otp\`
@@ -3380,6 +3406,8 @@ Run "npm help login" for more info
 npm login
 \`\`\`
 
+Note: This command is unaware of workspaces.
+
 #### \`registry\`
 #### \`scope\`
 #### \`auth-type\`
@@ -3399,6 +3427,8 @@ Run "npm help logout" for more info
 \`\`\`bash
 npm logout
 \`\`\`
+
+Note: This command is unaware of workspaces.
 
 #### \`registry\`
 #### \`scope\`
@@ -3448,6 +3478,8 @@ exports[`test/lib/docs.js TAP usage npm > must match snapshot 1`] = `
 npm
 \`\`\`
 
+Note: This command is unaware of workspaces.
+
 NO PARAMS
 `
 
@@ -3484,6 +3516,8 @@ npm org ls orgname [<username>]
 
 alias: ogr
 \`\`\`
+
+Note: This command is unaware of workspaces.
 
 #### \`registry\`
 #### \`otp\`
@@ -3586,6 +3620,8 @@ Run "npm help ping" for more info
 npm ping
 \`\`\`
 
+Note: This command is unaware of workspaces.
+
 #### \`registry\`
 `
 
@@ -3635,6 +3671,8 @@ Run "npm help prefix" for more info
 npm prefix [-g]
 \`\`\`
 
+Note: This command is unaware of workspaces.
+
 #### \`global\`
 `
 
@@ -3658,6 +3696,8 @@ npm profile disable-2fa
 npm profile get [<key>]
 npm profile set <key> <value>
 \`\`\`
+
+Note: This command is unaware of workspaces.
 
 #### \`registry\`
 #### \`json\`
@@ -3832,6 +3872,8 @@ Run "npm help root" for more info
 npm root
 \`\`\`
 
+Note: This command is unaware of workspaces.
+
 #### \`global\`
 `
 
@@ -3886,6 +3928,8 @@ npm search [search terms ...]
 aliases: find, s, se
 \`\`\`
 
+Note: This command is unaware of workspaces.
+
 #### \`long\`
 #### \`json\`
 #### \`color\`
@@ -3911,6 +3955,8 @@ Run "npm help set" for more info
 npm set <key>=<value> [<key>=<value> ...] (See \`npm config\`)
 \`\`\`
 
+Note: This command is unaware of workspaces.
+
 NO PARAMS
 `
 
@@ -3925,6 +3971,8 @@ Run "npm help shrinkwrap" for more info
 \`\`\`bash
 npm shrinkwrap
 \`\`\`
+
+Note: This command is unaware of workspaces.
 
 NO PARAMS
 `
@@ -3943,6 +3991,8 @@ Run "npm help star" for more info
 \`\`\`bash
 npm star [<package-spec>...]
 \`\`\`
+
+Note: This command is unaware of workspaces.
 
 #### \`registry\`
 #### \`unicode\`
@@ -3963,6 +4013,8 @@ Run "npm help stars" for more info
 \`\`\`bash
 npm stars [<user>]
 \`\`\`
+
+Note: This command is unaware of workspaces.
 
 #### \`registry\`
 `
@@ -4028,6 +4080,8 @@ npm team rm <scope:team> <user> [--otp <otpcode>]
 npm team ls <scope>|<scope:team>
 \`\`\`
 
+Note: This command is unaware of workspaces.
+
 #### \`registry\`
 #### \`otp\`
 #### \`parseable\`
@@ -4076,6 +4130,8 @@ npm token list
 npm token revoke <id|token>
 npm token create [--read-only] [--cidr=list]
 \`\`\`
+
+Note: This command is unaware of workspaces.
 
 #### \`read-only\`
 #### \`cidr\`
@@ -4148,6 +4204,8 @@ Run "npm help unstar" for more info
 \`\`\`bash
 npm unstar [<package-spec>...]
 \`\`\`
+
+Note: This command is unaware of workspaces.
 
 #### \`registry\`
 #### \`unicode\`
@@ -4273,6 +4331,8 @@ Run "npm help whoami" for more info
 \`\`\`bash
 npm whoami
 \`\`\`
+
+Note: This command is unaware of workspaces.
 
 #### \`registry\`
 `
