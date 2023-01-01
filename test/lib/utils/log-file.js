@@ -7,7 +7,7 @@ const fsMiniPass = require('fs-minipass')
 const LogFile = require('../../../lib/utils/log-file.js')
 const { cleanCwd, cleanDate } = require('../../fixtures/clean-snapshot')
 
-t.cleanSnapshot = (path) => cleanDate(cleanCwd(path))
+t.cleanSnapshot = (s) => cleanDate(cleanCwd(s))
 
 const getId = (d = new Date()) => d.toISOString().replace(/[.:]/g, '_')
 const last = arr => arr[arr.length - 1]

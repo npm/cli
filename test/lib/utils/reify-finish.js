@@ -1,4 +1,5 @@
 const t = require('tap')
+const { cleanNewlines } = require('../../fixtures/clean-snapshot')
 
 const npm = {
   config: {
@@ -74,6 +75,6 @@ t.test('should write if everything above passes', async t => {
     },
   })
   // windowwwwwwssss!!!!!
-  const data = fs.readFileSync(`${path}/npmrc`, 'utf8').replace(/\r\n/g, '\n')
+  const data = cleanNewlines(fs.readFileSync(`${path}/npmrc`, 'utf8'))
   t.matchSnapshot(data, 'written config')
 })

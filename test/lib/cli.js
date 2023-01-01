@@ -28,10 +28,6 @@ const cliMock = async (t, opts) => {
   }
 }
 
-t.afterEach(() => {
-  process.exitCode = undefined
-})
-
 t.test('print the version, and treat npm_g as npm -g', async t => {
   const { logsBy, logs, cli, Npm, outputs, exitHandlerCalled } = await cliMock(t, {
     globals: { 'process.argv': ['node', 'npm_g', '-v'] },
