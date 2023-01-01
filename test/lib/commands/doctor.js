@@ -72,7 +72,7 @@ mockGlobals(t, {
 })
 
 const mocks = {
-  '../../package.json': { version: '1.0.0' },
+  '{ROOT}/package.json': { version: '1.0.0' },
   which: async () => '/path/to/git',
   cacache: {
     verify: () => {

@@ -484,9 +484,7 @@ t.test('workspaces', async t => {
   t.test('owner ls implicit workspace', async t => {
     const { npm, joinedOutput } = await loadMockNpm(t, {
       prefixDir: workspaceFixture,
-      globals: ({ prefix }) => ({
-        'process.cwd': () => path.join(prefix, 'workspace-a'),
-      }),
+      chdir: ({ prefix }) => path.join(prefix, 'workspace-a'),
     })
     await registryPackage(t, npm.config.get('registry'), 'workspace-a')
     await npm.exec('owner', ['ls'])
@@ -508,9 +506,7 @@ t.test('workspaces', async t => {
   t.test('owner ls <pkg> implicit workspace', async t => {
     const { npm, joinedOutput } = await loadMockNpm(t, {
       prefixDir: workspaceFixture,
-      globals: ({ prefix }) => ({
-        'process.cwd': () => path.join(prefix, 'workspace-a'),
-      }),
+      chdir: ({ prefix }) => path.join(prefix, 'workspace-a'),
     })
     await registryPackage(t, npm.config.get('registry'), packageName)
     await npm.exec('owner', ['ls', packageName])
@@ -532,9 +528,7 @@ t.test('workspaces', async t => {
   t.test('owner add implicit workspace', async t => {
     const { npm, joinedOutput } = await loadMockNpm(t, {
       prefixDir: workspaceFixture,
-      globals: ({ prefix }) => ({
-        'process.cwd': () => path.join(prefix, 'workspace-a'),
-      }),
+      chdir: ({ prefix }) => path.join(prefix, 'workspace-a'),
     })
     const username = 'foo'
     const registry = new MockRegistry({ tap: t, registry: npm.config.get('registry') })
@@ -594,9 +588,7 @@ t.test('workspaces', async t => {
   t.test('owner rm --workspace', async t => {
     const { npm, joinedOutput } = await loadMockNpm(t, {
       prefixDir: workspaceFixture,
-      globals: ({ prefix }) => ({
-        'process.cwd': () => path.join(prefix, 'workspace-a'),
-      }),
+      chdir: ({ prefix }) => path.join(prefix, 'workspace-a'),
     })
     const registry = new MockRegistry({ tap: t, registry: npm.config.get('registry') })
 

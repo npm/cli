@@ -21,7 +21,7 @@ const mockRs = async (t, { windows = false, runScript, ...opts } = {}) => {
         },
         realRunScript
       ),
-      '../../lib/utils/is-windows.js': { isWindowsShell: windows },
+      '{LIB}/utils/is-windows.js': { isWindowsShell: windows },
     },
   })
 

@@ -1,10 +1,11 @@
 const t = require('tap')
 const mockLogs = require('../../fixtures/mock-logs')
 const mockNpm = require('../../fixtures/mock-npm')
+const tmock = require('../../fixtures/tmock')
 
 const auditError = async (t, { command, error, ...config } = {}) => {
   const { logs, logMocks } = mockLogs()
-  const mockAuditError = t.mock('../../../lib/utils/audit-error', logMocks)
+  const mockAuditError = tmock(t, '{LIB}/utils/audit-error', logMocks)
 
   const mock = await mockNpm(t, {
     command,

@@ -1,5 +1,6 @@
 const t = require('tap')
 const { load: loadMockNpm } = require('../fixtures/mock-npm.js')
+const tmock = require('../fixtures/tmock')
 
 const cliMock = async (t, opts) => {
   let exitHandlerArgs = null
@@ -11,9 +12,9 @@ const cliMock = async (t, opts) => {
   exitHandlerMock.setNpm = _npm => npm = _npm
 
   const { Npm, outputs, logMocks, logs } = await loadMockNpm(t, { ...opts, init: false })
-  const cli = t.mock('../../lib/cli.js', {
-    '../../lib/npm.js': Npm,
-    '../../lib/utils/exit-handler.js': exitHandlerMock,
+  const cli = tmock(t, '{LIB}/cli.js', {
+    '{LIB}/npm.js': Npm,
+    '{LIB}/utils/exit-handler.js': exitHandlerMock,
     ...logMocks,
   })
 
@@ -133,7 +134,7 @@ t.test('load error calls error handler', async t => {
   const err = new Error('test load error')
   const { cli, exitHandlerCalled } = await cliMock(t, {
     mocks: {
-      '../../lib/utils/config/index.js': {
+      '{LIB}/utils/config/index.js': {
         definitions: null,
         flatten: null,
         shorthands: null,

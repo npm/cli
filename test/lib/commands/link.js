@@ -13,7 +13,7 @@ const mockLink = async (t, { globalPrefixDir, ...opts } = {}) => {
     globalPrefixDir,
     mocks: {
       ...opts.mocks,
-      '../../lib/utils/reify-output.js': async () => {},
+      '{LIB}/utils/reify-output.js': async () => {},
     },
   })
 
@@ -462,9 +462,7 @@ t.test('hash character in working directory path', async t => {
         },
       },
     },
-    globals: ({ other }) => ({
-      'process.cwd': () => join(other, 'i_like_#_in_my_paths', 'test-pkg-link'),
-    }),
+    chdir: ({ other }) => join(other, 'i_like_#_in_my_paths', 'test-pkg-link'),
   })
   await link.exec([])
 

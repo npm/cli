@@ -1,5 +1,6 @@
 const t = require('tap')
 const setupMockNpm = require('../../fixtures/mock-npm')
+const tmock = require('../../fixtures/tmock')
 
 const setupOtplease = async (t, { otp = {}, ...rest }, fn) => {
   const readUserInfo = {
@@ -11,10 +12,10 @@ const setupOtplease = async (t, { otp = {}, ...rest }, fn) => {
     return '1234'
   }
 
-  const otplease = t.mock('../../../lib/utils/otplease.js', {
-    '../../../lib/utils/read-user-info.js': readUserInfo,
-    '../../../lib/utils/open-url-prompt.js': () => {},
-    '../../../lib/utils/web-auth': webAuth,
+  const otplease = tmock(t, '{LIB}/utils/otplease.js', {
+    '{LIB}/utils/read-user-info.js': readUserInfo,
+    '{LIB}/utils/open-url-prompt.js': () => {},
+    '{LIB}/utils/web-auth': webAuth,
   })
 
   const { npm } = await setupMockNpm(t, rest)

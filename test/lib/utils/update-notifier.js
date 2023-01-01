@@ -1,4 +1,6 @@
 const t = require('tap')
+const tmock = require('../../fixtures/tmock')
+
 let ciMock = {}
 const flatOptions = { global: false, cache: t.testdir() + '/_cacache' }
 
@@ -77,7 +79,7 @@ t.afterEach(() => {
 
 const runUpdateNotifier = async ({ color = true, ...npmOptions } = {}) => {
   const _npm = { ...defaultNpm, ...npmOptions, logColor: color }
-  return t.mock('../../../lib/utils/update-notifier.js', {
+  return tmock(t, '{LIB}/utils/update-notifier.js', {
     'ci-info': ciMock,
     pacote,
     fs,

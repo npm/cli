@@ -9,7 +9,7 @@ const mockNpm = async (t, opts = {}) => {
     ...opts,
     mocks: {
       ...opts.mocks,
-      '../../package.json': { version: '1.0.0' },
+      '{ROOT}/package.json': { version: '1.0.0' },
     },
   })
   return {

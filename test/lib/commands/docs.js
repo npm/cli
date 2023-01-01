@@ -84,7 +84,7 @@ const setup = async (t, { prefixDir = fixtures.pkg, config } = {}) => {
   const res = await mockNpm(t, {
     prefixDir,
     mocks: {
-      '../../lib/utils/open-url.js': openUrl,
+      '{LIB}/utils/open-url.js': openUrl,
     },
     config,
   })
@@ -106,7 +106,7 @@ t.test('open docs urls', async t => {
   }
 
   for (const [key, url] of Object.entries(expect)) {
-    await t.test(key, async t => {
+    await t.test(`open ${key} url`, async t => {
       const { npm, opened } = await setup(t)
       await npm.exec('docs', [['.', key].join(sep)])
       t.strictSame({ [url]: 1 }, opened, `opened ${url}`)

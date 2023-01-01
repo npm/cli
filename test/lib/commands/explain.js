@@ -6,7 +6,7 @@ const mockExplain = async (t, opts) => {
   const mock = await mockNpm(t, {
     mocks: {
       // keep the snapshots pared down a bit, since this has its own tests.
-      '../../lib/utils/explain-dep.js': {
+      '{LIB}/utils/explain-dep.js': {
         explainNode: (expl, depth, color) => {
           return `${expl.name}@${expl.version} depth=${depth} color=${color}`
         },

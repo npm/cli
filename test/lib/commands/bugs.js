@@ -60,7 +60,7 @@ t.test('open bugs urls & emails', async t => {
   const { npm } = await loadMockNpm(t, {
     mocks: {
       pacote,
-      '../../lib/utils/open-url.js': openUrl,
+      '{LIB}/utils/open-url.js': openUrl,
     },
   })
 

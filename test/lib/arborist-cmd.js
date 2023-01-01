@@ -1,10 +1,10 @@
 const { resolve } = require('path')
 const t = require('tap')
-
 const { load: loadMockNpm } = require('../fixtures/mock-npm')
+const tmock = require('../fixtures/tmock')
 
 const mockArboristCmd = async (t, exec, workspace, { mocks = {}, ...opts } = {}) => {
-  const ArboristCmd = t.mock('../../lib/arborist-cmd.js', mocks)
+  const ArboristCmd = tmock(t, '{LIB}/arborist-cmd.js', mocks)
 
   const config = (typeof workspace === 'function')
     ? (dirs) => ({ workspace: workspace(dirs) })
@@ -114,9 +114,7 @@ t.test('arborist-cmd', async t => {
 
   await t.test('prefix inside cwd', async t => {
     const { npm, cmd, prefix } = await mockArboristCmd(t, null, ['a', 'c'], {
-      globals: (dirs) => ({
-        'process.cwd': () => dirs.testdir,
-      }),
+      chdir: (dirs) => dirs.testdir,
     })
 
     npm.localPrefix = prefix
@@ -129,7 +127,7 @@ t.test('arborist-cmd', async t => {
 t.test('handle getWorkspaces raising an error', async t => {
   const { cmd } = await mockArboristCmd(t, null, 'a', {
     mocks: {
-      '../../lib/workspaces/get-workspaces.js': async () => {
+      '{LIB}/workspaces/get-workspaces.js': async () => {
         throw new Error('oopsie')
       },
     },

@@ -8,7 +8,7 @@ const mockNpm = async (t, opts = {}) => {
     ...opts,
     mocks: {
       ...opts.mocks,
-      '../../lib/utils/reify-finish.js': async () => {},
+      '{LIB}/utils/reify-finish.js': async () => {},
     },
   })
 

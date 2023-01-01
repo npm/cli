@@ -90,18 +90,6 @@ latest-a: 1.0.0
 latest: 1.0.0
 `
 
-exports[`test/lib/commands/dist-tag.js TAP workspaces one arg -- . > printed the expected output 1`] = `
-workspace-a:
-latest-a: 1.0.0
-latest: 1.0.0
-workspace-b:
-latest-b: 2.0.0
-latest: 2.0.0
-workspace-c:
-latest-c: 3.0.0
-latest: 3.0.0
-`
-
 exports[`test/lib/commands/dist-tag.js TAP workspaces one arg -- .@1, ignores version spec > printed the expected output 1`] = `
 workspace-a:
 latest-a: 1.0.0
@@ -114,7 +102,7 @@ latest-c: 3.0.0
 latest: 3.0.0
 `
 
-exports[`test/lib/commands/dist-tag.js TAP workspaces one arg -- list > printed the expected output 1`] = `
+exports[`test/lib/commands/dist-tag.js TAP workspaces one arg -- cwd > printed the expected output 1`] = `
 workspace-a:
 latest-a: 1.0.0
 latest: 1.0.0
@@ -126,7 +114,7 @@ latest-c: 3.0.0
 latest: 3.0.0
 `
 
-exports[`test/lib/commands/dist-tag.js TAP workspaces two args -- list, . > printed the expected output 1`] = `
+exports[`test/lib/commands/dist-tag.js TAP workspaces one arg -- list > printed the expected output 1`] = `
 workspace-a:
 latest-a: 1.0.0
 latest: 1.0.0
@@ -154,4 +142,16 @@ exports[`test/lib/commands/dist-tag.js TAP workspaces two args -- list, @scoped/
 a: 0.0.1
 b: 0.5.0
 latest: 1.0.0
+`
+
+exports[`test/lib/commands/dist-tag.js TAP workspaces two args -- list, cwd > printed the expected output 1`] = `
+workspace-a:
+latest-a: 1.0.0
+latest: 1.0.0
+workspace-b:
+latest-b: 2.0.0
+latest: 2.0.0
+workspace-c:
+latest-c: 3.0.0
+latest: 3.0.0
 `
