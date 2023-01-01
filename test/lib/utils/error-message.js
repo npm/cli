@@ -26,7 +26,7 @@ mockGlobals(t, {
   },
 })
 
-const loadMockNpm = async (t, { command, errorMocks, ...opts } = {}) => {
+const loadMockNpm = async (t, { errorMocks, ...opts } = {}) => {
   const mockError = t.mock('../../../lib/utils/error-message.js', errorMocks)
   const res = await _loadMockNpm(t, {
     ...opts,
@@ -37,9 +37,6 @@ const loadMockNpm = async (t, { command, errorMocks, ...opts } = {}) => {
       },
     },
   })
-  if (command !== undefined) {
-    res.npm.command = command
-  }
   return {
     ...res,
     errorMessage: (er) => mockError(er, res.npm),

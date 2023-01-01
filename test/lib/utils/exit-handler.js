@@ -594,10 +594,7 @@ t.test('exits uncleanly when only emitting exit event', async (t) => {
 t.test('do no fancy handling for shellouts', async t => {
   const { exitHandler, npm, logs } = await mockExitHandler(t)
 
-  const exec = await npm.cmd('exec')
-
-  npm.command = 'exec'
-  npm.commandInstance = exec
+  await npm.cmd('exec')
 
   const loudNoises = () =>
     logs.filter(([level]) => ['warn', 'error'].includes(level))

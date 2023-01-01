@@ -270,9 +270,6 @@ t.test('npm.load', async t => {
       },
     })
 
-    // verify that calling the command with a short name still sets
-    // the npm.command property to the full canonical name of the cmd.
-    npm.command = null
     await npm.exec('run', [])
 
     t.equal(npm.command, 'run-script', 'npm.command set to canonical name')
@@ -328,9 +325,7 @@ t.test('npm.load', async t => {
         ],
       },
     })
-    // verify that calling the command with a short name still sets
-    // the npm.command property to the full canonical name of the cmd.
-    npm.command = null
+
     await t.rejects(
       npm.exec('run', []),
       /Workspaces not supported for global packages/
