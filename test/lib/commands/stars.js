@@ -8,7 +8,7 @@ const mockStars = async (t, { npmFetch = noop, exec = true, ...opts }) => {
   const mock = await mockNpm(t, {
     mocks: {
       'npm-registry-fetch': Object.assign(noop, realFetch, { json: npmFetch }),
-      '../../lib/utils/get-identity.js': async () => 'foo',
+      '{LIB}/utils/get-identity.js': async () => 'foo',
     },
     ...opts,
   })

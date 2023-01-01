@@ -16,7 +16,7 @@ const mockProfile = async (t, { npmProfile, readUserInfo, qrcode, ...opts } = {}
           .join('\n')
       }
     },
-    '../../lib/utils/read-user-info.js': readUserInfo || {
+    '{LIB}/utils/read-user-info.js': readUserInfo || {
       async password () {},
       async otp () {},
     },

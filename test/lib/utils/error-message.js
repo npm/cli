@@ -3,6 +3,7 @@ const { resolve } = require('path')
 const fs = require('fs/promises')
 const { load: _loadMockNpm } = require('../../fixtures/mock-npm.js')
 const mockGlobals = require('../../fixtures/mock-globals.js')
+const tmock = require('../../fixtures/tmock')
 const { cleanCwd, cleanDate } = require('../../fixtures/clean-snapshot.js')
 
 t.formatSnapshot = (p) => {
@@ -27,12 +28,12 @@ mockGlobals(t, {
 })
 
 const loadMockNpm = async (t, { errorMocks, ...opts } = {}) => {
-  const mockError = t.mock('../../../lib/utils/error-message.js', errorMocks)
+  const mockError = tmock(t, '{LIB}/utils/error-message.js', errorMocks)
   const res = await _loadMockNpm(t, {
     ...opts,
     mocks: {
       ...opts.mocks,
-      '../../package.json': {
+      '{ROOT}/package.json': {
         version: '123.456.789-npm',
       },
     },
@@ -390,7 +391,7 @@ t.test('explain ERESOLVE errors', async t => {
 
   const { errorMessage } = await loadMockNpm(t, {
     errorMocks: {
-      '../../../lib/utils/explain-eresolve.js': {
+      '{LIB}/utils/explain-eresolve.js': {
         report: (...args) => {
           EXPLAIN_CALLED.push(args)
           return { explanation: 'explanation', file: 'report' }

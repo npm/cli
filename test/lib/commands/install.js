@@ -1,5 +1,4 @@
 const t = require('tap')
-
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
 
 t.test('exec commands', async t => {
@@ -21,7 +20,7 @@ t.test('exec commands', async t => {
             REIFY_CALLED = true
           }
         },
-        '../../lib/utils/reify-finish.js': (_, arb) => {
+        '{LIB}/utils/reify-finish.js': (_, arb) => {
           if (arb !== ARB_OBJ) {
             throw new Error('got wrong object passed to reify-finish')
           }
@@ -65,7 +64,7 @@ t.test('exec commands', async t => {
             REIFY_CALLED = true
           }
         },
-        '../../lib/utils/reify-finish.js': (_, arb) => {
+        '{LIB}/utils/reify-finish.js': (_, arb) => {
           if (arb !== ARB_OBJ) {
             throw new Error('got wrong object passed to reify-finish')
           }
@@ -95,7 +94,7 @@ t.test('exec commands', async t => {
     let REIFY_CALLED = false
     const { npm } = await loadMockNpm(t, {
       mocks: {
-        '../../lib/utils/reify-finish.js': async () => {},
+        '{LIB}/utils/reify-finish.js': async () => {},
         '@npmcli/run-script': ({ event }) => {
           SCRIPTS.push(event)
         },
@@ -124,7 +123,7 @@ t.test('exec commands', async t => {
         '@npmcli/run-script': ({ event }) => {
           SCRIPTS.push(event)
         },
-        '../../lib/utils/reify-finish.js': async () => {},
+        '{LIB}/utils/reify-finish.js': async () => {},
         '@npmcli/arborist': function (args) {
           ARB_ARGS = args
           this.reify = () => {
@@ -150,7 +149,7 @@ t.test('exec commands', async t => {
     const { npm } = await loadMockNpm(t, {
       mocks: {
         '@npmcli/run-script': () => {},
-        '../../lib/utils/reify-finish.js': async () => {},
+        '{LIB}/utils/reify-finish.js': async () => {},
         '@npmcli/arborist': function (args) {
           throw new Error('should not reify')
         },
@@ -169,7 +168,7 @@ t.test('exec commands', async t => {
   await t.test('npm i -g npm engines check success', async t => {
     const { npm } = await loadMockNpm(t, {
       mocks: {
-        '../../lib/utils/reify-finish.js': async () => {},
+        '{LIB}/utils/reify-finish.js': async () => {},
         '@npmcli/arborist': function () {
           this.reify = () => {}
         },
@@ -231,7 +230,7 @@ t.test('exec commands', async t => {
   await t.test('npm i -g npm engines check failure forced override', async t => {
     const { npm } = await loadMockNpm(t, {
       mocks: {
-        '../../lib/utils/reify-finish.js': async () => {},
+        '{LIB}/utils/reify-finish.js': async () => {},
         '@npmcli/arborist': function () {
           this.reify = () => {}
         },
@@ -259,7 +258,7 @@ t.test('exec commands', async t => {
   await t.test('npm i -g npm@version engines check failure', async t => {
     const { npm } = await loadMockNpm(t, {
       mocks: {
-        '../../lib/utils/reify-finish.js': async () => {},
+        '{LIB}/utils/reify-finish.js': async () => {},
         '@npmcli/arborist': function () {
           this.reify = () => {}
         },
@@ -298,28 +297,17 @@ t.test('exec commands', async t => {
 })
 
 t.test('completion', async t => {
-  const mockComp = async (t, { chdir = true } = {}) => {
-    const cwd = process.cwd()
-
-    const mock = await loadMockNpm(t, {
-      command: 'install',
-      prefixDir: {
-        arborist: {
-          'package.json': '{}',
-        },
-        'arborist.txt': 'just a file',
-        'other-dir': { a: 'a' },
+  const mockComp = async (t, { noChdir } = {}) => loadMockNpm(t, {
+    command: 'install',
+    prefixDir: {
+      arborist: {
+        'package.json': '{}',
       },
-    })
-
-    // cwd has been mocked by mockNpm but we have to chdir for completion
-    if (chdir) {
-      process.chdir(mock.prefix)
-      t.teardown(() => process.chdir(cwd))
-    }
-
-    return mock
-  }
+      'arborist.txt': 'just a file',
+      'other-dir': { a: 'a' },
+    },
+    ...(noChdir ? { chdir: false } : {}),
+  })
 
   await t.test('completion to folder - has a match', async t => {
     const { install } = await mockComp(t)
@@ -328,7 +316,7 @@ t.test('completion', async t => {
   })
 
   await t.test('completion to folder - invalid dir', async t => {
-    const { install } = await mockComp(t, { chdir: false })
+    const { install } = await mockComp(t, { noChdir: true })
     const res = await install.completion({ partialWord: '/does/not/exist' })
     t.strictSame(res, [], 'invalid dir: no matching')
   })

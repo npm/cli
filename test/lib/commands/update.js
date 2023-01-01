@@ -21,7 +21,7 @@ const mockUpdate = async (t, { exec = [], ...opts } = {}) => {
           reify = o
         }
       },
-      '../../lib/utils/reify-finish.js': (_, o) => {
+      '{LIB}/utils/reify-finish.js': (_, o) => {
         finish = o
       },
     },

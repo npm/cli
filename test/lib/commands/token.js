@@ -9,7 +9,7 @@ const mockToken = async (t, { profile, getCredentialsByURI, readUserInfo, ...opt
   }
 
   if (readUserInfo) {
-    mocks['../../lib/utils/read-user-info.js'] = readUserInfo
+    mocks['{LIB}/utils/read-user-info.js'] = readUserInfo
   }
 
   const mock = await mockNpm(t, {

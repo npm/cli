@@ -4,7 +4,7 @@
 // Hopefully it can be removed for a feature in tap in the future
 
 const sep = '.'
-const reLastSep = new RegExp(`\\${sep}(?=[^${sep}]+$)`)
+const escapeSep = '"'
 const has = (o, k) => Object.prototype.hasOwnProperty.call(o, k)
 const opd = (o, k) => Object.getOwnPropertyDescriptor(o, k)
 const po = (o) => Object.getPrototypeOf(o)
@@ -13,14 +13,28 @@ const last = (arr) => arr[arr.length - 1]
 const dupes = (arr) => arr.filter((k, i) => arr.indexOf(k) !== i)
 const dupesStartsWith = (arr) => arr.filter((k1) => arr.some((k2) => k2.startsWith(k1 + sep)))
 
-const splitLast = (str) => {
-  const hasNerf = str.includes('process.env') && str.includes('//')
-  if (hasNerf) {
-    const startPosition = str.indexOf('//')
-    const index = str.lastIndexOf(sep, startPosition)
-    return [str.slice(0, index), str.slice(index + 1)]
+const splitLastSep = (str) => {
+  let escaped = false
+  for (let i = str.length - 1; i >= 0; i--) {
+    const c = str[i]
+    const cp = str[i + 1]
+    const cn = str[i - 1]
+    if (!escaped && c === escapeSep && (cp == null || cp === sep)) {
+      escaped = true
+      continue
+    }
+    if (escaped && c === escapeSep && cn === sep) {
+      escaped = false
+      continue
+    }
+    if (!escaped && c === sep) {
+      return [
+        str.slice(0, i),
+        str.slice(i + 1).replace(new RegExp(`^${escapeSep}(.*)${escapeSep}$`), '$1'),
+      ]
+    }
   }
-  return str.split(reLastSep)
+  return [str]
 }
 
 // A weird getter that can look up keys on nested objects but also
@@ -29,8 +43,10 @@ const splitLast = (str) => {
 const get = (obj, key, childKey = '') => {
   if (has(obj, key)) {
     return childKey ? get(obj[key], childKey) : obj[key]
-  } else if (key.includes(sep)) {
-    const [parentKey, prefix] = splitLast(key)
+  }
+  const split = splitLastSep(key)
+  if (split.length === 2) {
+    const [parentKey, prefix] = split
     return get(
       obj,
       parentKey,
@@ -91,7 +107,7 @@ class DescriptorStack {
   #isDelete = (o) => o && o.DELETE === true
 
   constructor (key) {
-    const keys = splitLast(key)
+    const keys = splitLastSep(key)
     this.#global = keys.length === 1 ? global : get(global, keys[0])
     this.#valueKey = specialCaseKeys(key) || last(keys)
     // If the global object doesnt return a descriptor for the key

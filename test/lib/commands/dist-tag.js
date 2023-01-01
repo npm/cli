@@ -226,7 +226,7 @@ t.test('workspaces', async t => {
     t.matchSnapshot(result(), 'printed the expected output')
   })
 
-  t.test('one arg -- .', async t => {
+  t.test('one arg -- cwd', async t => {
     const { result } = await mockWorkspaces(t, ['.'])
     t.matchSnapshot(result(), 'printed the expected output')
   })
@@ -241,7 +241,7 @@ t.test('workspaces', async t => {
     t.matchSnapshot(result(), 'printed the expected output')
   })
 
-  t.test('two args -- list, .', async t => {
+  t.test('two args -- list, cwd', async t => {
     const { result } = await mockWorkspaces(t, ['list', '.'])
     t.matchSnapshot(result(), 'printed the expected output')
   })

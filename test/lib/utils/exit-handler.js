@@ -8,6 +8,7 @@ const { format } = require('../../../lib/utils/log-file')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
 const mockGlobals = require('../../fixtures/mock-globals')
 const { cleanCwd, cleanDate } = require('../../fixtures/clean-snapshot')
+const tmock = require('../../fixtures/tmock')
 
 const pick = (obj, ...keys) => keys.reduce((acc, key) => {
   acc[key] = obj[key]
@@ -35,7 +36,8 @@ t.cleanSnapshot = (path) => cleanDate(cleanCwd(path))
 // nerf itself, thinking global.process is broken or gone.
 mockGlobals(t, {
   process: Object.assign(new EventEmitter(), {
-    ...pick(process, 'execPath', 'stdout', 'stderr', 'cwd', 'env', 'umask'),
+    // these are process properties that are needed in the running code and tests
+    ...pick(process, 'execPath', 'stdout', 'stderr', 'cwd', 'chdir', 'env', 'umask'),
     argv: ['/node', ...process.argv.slice(1)],
     version: 'v1.0.0',
     kill: () => {},
@@ -56,7 +58,7 @@ const mockExitHandler = async (t, { init, load, testdir, config, mocks, files } 
     load,
     testdir,
     mocks: {
-      '../../package.json': {
+      '{ROOT}/package.json': {
         version: '1.0.0',
       },
       ...mocks,
@@ -70,8 +72,8 @@ const mockExitHandler = async (t, { init, load, testdir, config, mocks, files } 
     },
   })
 
-  const exitHandler = t.mock('../../../lib/utils/exit-handler.js', {
-    '../../../lib/utils/error-message.js': (err) => ({
+  const exitHandler = tmock(t, '{LIB}/utils/exit-handler.js', {
+    '{LIB}/utils/error-message.js': (err) => ({
       summary: [['ERR SUMMARY', err.message]],
       detail: [['ERR DETAIL', err.message]],
       ...(files ? { files } : {}),
@@ -344,7 +346,7 @@ t.test('no logs dir', async (t) => {
 
 t.test('timers fail to write', async (t) => {
   // we want the fs.writeFileSync in the Timers class to fail
-  const mockTimers = t.mock('../../../lib/utils/timers.js', {
+  const mockTimers = tmock(t, '{LIB}/utils/timers.js', {
     fs: {
       ...fs,
       writeFileSync: (file, ...rest) => {
@@ -364,7 +366,7 @@ t.test('timers fail to write', async (t) => {
     }),
     mocks: {
       // note, this is relative to test/fixtures/mock-npm.js not this file
-      '../../lib/utils/timers.js': mockTimers,
+      '{LIB}/utils/timers.js': mockTimers,
     },
   })
 
@@ -375,7 +377,7 @@ t.test('timers fail to write', async (t) => {
 
 t.test('log files fail to write', async (t) => {
   // we want the fsMiniPass.WriteStreamSync in the LogFile class to fail
-  const mockLogFile = t.mock('../../../lib/utils/log-file.js', {
+  const mockLogFile = tmock(t, '{LIB}/utils/log-file.js', {
     'fs-minipass': {
       ...fsMiniPass,
       WriteStreamSync: (file, ...rest) => {
@@ -392,7 +394,7 @@ t.test('log files fail to write', async (t) => {
     }),
     mocks: {
       // note, this is relative to test/fixtures/mock-npm.js not this file
-      '../../lib/utils/log-file.js': mockLogFile,
+      '{LIB}/utils/log-file.js': mockLogFile,
     },
   })
 

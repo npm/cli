@@ -237,6 +237,14 @@ t.test('replace', async (t) => {
   t.strictSame(process.env, originals.env)
 })
 
+t.test('dot key', async t => {
+  const dotKey = 'this.is.a.single.key'
+  mockGlobals(t, {
+    [`process.env."${dotKey}"`]: 'value',
+  })
+  t.strictSame(process.env[dotKey], 'value')
+})
+
 t.test('multiple mocks and resets', async (t) => {
   const initial = 'a'
   const platforms = ['b', 'c', 'd', 'e', 'f', 'g']
