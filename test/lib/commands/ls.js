@@ -107,10 +107,6 @@ const mockLs = async (t, { mocks, config, ...opts } = {}) => {
     },
   })
 
-  t.teardown(() => {
-    process.exitCode = 0
-  })
-
   return {
     ...mock,
     result: () => mock.joinedOutput(),
@@ -3079,7 +3075,6 @@ t.test('ls --json', async t => {
       'should output json containing no dependencies info'
     )
     t.equal(process.exitCode, 1, 'should exit with error code 1')
-    process.exitCode = 0
   })
 
   t.test('default --depth value should now be 0', async t => {
@@ -4696,7 +4691,7 @@ t.test('ls --package-lock-only', async t => {
         },
         'should output json contaning only occurrences of filtered by package'
       )
-      t.equal(process.exitCode, 0, 'should exit with error code 0')
+      t.notOk(process.exitCode, 'should not set exit code')
     })
 
     t.test('with filter arg nested dep', async t => {
@@ -4866,7 +4861,6 @@ t.test('ls --package-lock-only', async t => {
         'should output json containing no dependencies info'
       )
       t.equal(process.exitCode, 1, 'should exit with error code 1')
-      process.exitCode = 0
     })
 
     t.test('default --depth value should now be 0', async t => {

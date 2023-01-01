@@ -96,7 +96,6 @@ const mockExitHandler = async (t, { init, load, testdir, config, mocks, files } 
   }
 
   t.teardown(() => {
-    delete process.exitCode
     process.removeAllListeners('exit')
   })
 
