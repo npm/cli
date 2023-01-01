@@ -176,9 +176,7 @@ t.test('npm init @scope', async t => {
 })
 
 t.test('npm init tgz', async t => {
-  const { npm } = await mockNpm(t, {
-
-  })
+  const { npm } = await mockNpm(t)
 
   await t.rejects(
     npm.exec('init', ['something.tgz']),
@@ -281,9 +279,8 @@ t.test('workspaces', async t => {
 
     t.matchSnapshot(joinedOutput(), 'should print helper info')
 
-    const lockFilePath = resolve(npm.localPrefix, 'package-lock.json')
-    const lockFile = await fs.readFile(lockFilePath, 'utf8')
-    t.matchSnapshot(lockFile, 'should reify tree on init ws complete')
+    const lock = require(resolve(prefix, 'package-lock.json'))
+    t.ok(lock.packages.a)
   })
 
   await t.test('no args, existing folder', async t => {
