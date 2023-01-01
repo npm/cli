@@ -4,14 +4,24 @@
 // Hopefully it can be removed for a feature in tap in the future
 
 const sep = '.'
+const reLastSep = new RegExp(`\\${sep}(?=[^${sep}]+$)`)
 const has = (o, k) => Object.prototype.hasOwnProperty.call(o, k)
 const opd = (o, k) => Object.getOwnPropertyDescriptor(o, k)
 const po = (o) => Object.getPrototypeOf(o)
 const pojo = (o) => Object.prototype.toString.call(o) === '[object Object]'
 const last = (arr) => arr[arr.length - 1]
-const splitLast = (str) => str.split(new RegExp(`\\${sep}(?=[^${sep}]+$)`))
 const dupes = (arr) => arr.filter((k, i) => arr.indexOf(k) !== i)
 const dupesStartsWith = (arr) => arr.filter((k1) => arr.some((k2) => k2.startsWith(k1 + sep)))
+
+const splitLast = (str) => {
+  const hasNerf = str.includes('process.env') && str.includes('//')
+  if (hasNerf) {
+    const startPosition = str.indexOf('//')
+    const index = str.lastIndexOf(sep, startPosition)
+    return [str.slice(0, index), str.slice(index + 1)]
+  }
+  return str.split(reLastSep)
+}
 
 // A weird getter that can look up keys on nested objects but also
 // match keys with dots in their names, eg { 'process.env': { TERM: 'a' } }

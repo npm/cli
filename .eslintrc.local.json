@@ -1,14 +1,5 @@
 {
   "rules": {
-    "no-shadow": "off",
     "no-console": "error"
-  },
-  "overrides": [{
-    "files": [
-      "test/**"
-    ],
-    "rules": {
-      "no-console": "off"
-    }
-  }]
+  }
 }

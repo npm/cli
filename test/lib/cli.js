@@ -1,5 +1,4 @@
 const t = require('tap')
-
 const { load: loadMockNpm } = require('../fixtures/mock-npm.js')
 
 const cliMock = async (t, opts) => {
@@ -42,24 +41,18 @@ t.test('print the version, and treat npm_g as npm -g', async t => {
   t.strictSame(process.argv, ['node', 'npm', '-g', '-v'], 'system process.argv was rewritten')
   t.strictSame(logsBy('cli'), [['node npm']])
   t.strictSame(logsBy('title'), [['npm']])
-  t.strictSame(logsBy('argv'), [['"--global" "--version"']])
+  t.match(logsBy('argv'), [['"--global" "--version"']])
   t.strictSame(logs.info, [
     ['using', 'npm@%s', Npm.version],
     ['using', 'node@%s', process.version],
   ])
+  t.equal(outputs.length, 1)
   t.strictSame(outputs, [[Npm.version]])
   t.strictSame(exitHandlerCalled(), [])
 })
 
 t.test('calling with --versions calls npm version with no args', async t => {
   const { logsBy, cli, outputs, exitHandlerCalled } = await cliMock(t, {
-    mocks: {
-      '../../lib/commands/version.js': class Version {
-        async exec (args) {
-          t.strictSame(args, [])
-        }
-      },
-    },
     globals: {
       'process.argv': ['node', 'npm', 'install', 'or', 'whatever', '--versions'],
     },
@@ -69,18 +62,14 @@ t.test('calling with --versions calls npm version with no args', async t => {
   t.equal(process.title, 'npm install or whatever')
   t.strictSame(logsBy('cli'), [['node npm']])
   t.strictSame(logsBy('title'), [['npm install or whatever']])
-  t.strictSame(logsBy('argv'), [['"install" "or" "whatever" "--versions"']])
-  t.strictSame(outputs, [])
+  t.match(logsBy('argv'), [['"install" "or" "whatever" "--versions"']])
+  t.equal(outputs.length, 1)
+  t.match(outputs[0][0], { npm: String, node: String, v8: String })
   t.strictSame(exitHandlerCalled(), [])
 })
 
 t.test('logged argv is sanitized', async t => {
   const { logsBy, cli } = await cliMock(t, {
-    mocks: {
-      '../../lib/commands/version.js': class Version {
-        async exec () {}
-      },
-    },
     globals: {
       'process.argv': [
         'node',
@@ -96,16 +85,11 @@ t.test('logged argv is sanitized', async t => {
   t.equal(process.title, 'npm version')
   t.strictSame(logsBy('cli'), [['node npm']])
   t.strictSame(logsBy('title'), [['npm version']])
-  t.strictSame(logsBy('argv'), [['"version" "--registry" "https://u:***@npmjs.org/password"']])
+  t.match(logsBy('argv'), [['"version" "--registry" "https://u:***@npmjs.org/password"']])
 })
 
 t.test('logged argv is sanitized with equals', async t => {
   const { logsBy, cli } = await cliMock(t, {
-    mocks: {
-      '../../lib/commands/version.js': class Version {
-        async exec () {}
-      },
-    },
     globals: {
       'process.argv': [
         'node',
@@ -117,7 +101,7 @@ t.test('logged argv is sanitized with equals', async t => {
   })
   await cli(process)
 
-  t.strictSame(logsBy('argv'), [['"version" "--registry" "https://u:***@npmjs.org"']])
+  t.match(logsBy('argv'), [['"version" "--registry" "https://u:***@npmjs.org"']])
 })
 
 t.test('print usage if no params provided', async t => {
