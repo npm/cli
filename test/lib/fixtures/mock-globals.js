@@ -1,6 +1,7 @@
 const t = require('tap')
 const mockGlobals = require('../../fixtures/mock-globals')
 
+/* eslint-disable no-console */
 const originals = {
   platform: process.platform,
   error: console.error,
@@ -28,6 +29,7 @@ t.test('console', async t => {
 
   t.equal(console.error, originals.error)
 })
+/* eslint-enable no-console */
 
 t.test('platform', async (t) => {
   t.equal(process.platform, originals.platform)
