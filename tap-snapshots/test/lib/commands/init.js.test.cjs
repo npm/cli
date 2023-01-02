@@ -22,29 +22,3 @@ exports[`test/lib/commands/init.js TAP workspaces no args -- yes > should print 
 
 added 1 package in {TIME}
 `
-
-exports[`test/lib/commands/init.js TAP workspaces no args -- yes > should reify tree on init ws complete 1`] = `
-{
-  "name": "top-level",
-  "lockfileVersion": 3,
-  "requires": true,
-  "packages": {
-    "": {
-      "name": "top-level",
-      "workspaces": [
-        "a"
-      ]
-    },
-    "a": {
-      "version": "1.0.0",
-      "license": "ISC",
-      "devDependencies": {}
-    },
-    "node_modules/a": {
-      "resolved": "a",
-      "link": true
-    }
-  }
-}
-
-`
