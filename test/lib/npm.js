@@ -664,45 +664,59 @@ t.test('usage', async t => {
   t.test('with browser', async t => {
     mockGlobals(t, { process: { platform: 'posix' } })
     const { npm } = await loadMockNpm(t)
-    const usage = await npm.usage
-    npm.config.set('viewer', 'browser')
-    const browserUsage = await npm.usage
-    t.notMatch(usage, '(in a browser)')
-    t.match(browserUsage, '(in a browser)')
+    t.notMatch(await npm.usage, '(in a browser)')
+  })
+
+  t.test('without browser', async t => {
+    mockGlobals(t, { process: { platform: 'posix' } })
+    const { npm } = await loadMockNpm(t, { config: { viewer: 'browser' } })
+    t.match(await npm.usage, '(in a browser)')
   })
 
   t.test('windows always uses browser', async t => {
     mockGlobals(t, { process: { platform: 'win32' } })
-    const { npm } = await loadMockNpm(t)
+    const { npm } = await loadMockNpm(t, { config: { viewer: 'browser' } })
     const usage = await npm.usage
-    npm.config.set('viewer', 'browser')
     const browserUsage = await npm.usage
     t.match(usage, '(in a browser)')
     t.match(browserUsage, '(in a browser)')
   })
 
   t.test('includes commands', async t => {
-    const { npm } = await loadMockNpm(t)
-    const usage = await npm.usage
-    npm.config.set('long', true)
-    const longUsage = await npm.usage
-
-    const lastCmd = commands[commands.length - 1]
-    for (const cmd of commands) {
+    const rCmd = (cmd) => {
+      const lastCmd = commands[commands.length - 1]
       const isLast = cmd === lastCmd
       const shortCmd = new RegExp(`\\s${cmd}${isLast ? '\\n' : ',[\\s\\n]'}`)
       const longCmd = new RegExp(`^\\s+${cmd}\\s+\\w.*\n\\s+Usage:\\n`, 'm')
+      return { last: isLast, short: shortCmd, long: longCmd }
+    }
 
-      t.match(usage, shortCmd, `usage includes ${cmd}`)
-      t.notMatch(usage, longCmd, `usage does not include long ${cmd}`)
+    t.test('usage', async t => {
+      const { npm } = await loadMockNpm(t)
+      const usage = await npm.usage
 
-      t.match(longUsage, longCmd, `long usage includes ${cmd}`)
-      if (!isLast) {
+      for (const cmd of commands) {
+        const { short, long } = rCmd(cmd)
+
+        t.match(usage, short, `usage includes ${cmd}`)
+        t.notMatch(usage, long, `usage does not include long ${cmd}`)
+      }
+    })
+
+    t.test('long usage', async t => {
+      const { npm } = await loadMockNpm(t, { config: { long: true } })
+      const usage = await npm.usage
+
+      for (const cmd of commands) {
+        const { short, long, last } = rCmd(cmd)
+        t.match(usage, long, `long usage includes ${cmd}`)
+        if (!last) {
         // long usage includes false positives for the last command since it is
         // not followed by a comma
-        t.notMatch(longUsage, shortCmd, `long usage does not include short ${cmd}`)
+          t.notMatch(usage, short, `long usage does not include short ${cmd}`)
+        }
       }
-    }
+    })
   })
 
   t.test('set process.stdout.columns', async t => {

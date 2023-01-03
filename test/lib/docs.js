@@ -43,9 +43,9 @@ t.test('basic usage', async t => {
     mocks: {
       '{LIB}/utils/cmd-list.js': { commands: [] },
     },
+    config: { userconfig: '/some/config/file/.npmrc' },
   })
 
-  npm.config.set('userconfig', '/some/config/file/.npmrc')
   t.matchSnapshot(await npm.usage)
 })
 
