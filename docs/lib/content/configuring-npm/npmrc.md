@@ -1,4 +1,4 @@
----
+cli/docs/lib/content/configuring-npm/npmrc.md---
 title: npmrc
 section: 5
 description: The npm config files
