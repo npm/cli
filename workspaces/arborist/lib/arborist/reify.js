@@ -10,21 +10,35 @@ const debug = require('../debug.js')
 const walkUp = require('walk-up-path')
 const log = require('proc-log')
 const hgi = require('hosted-git-info')
+const crypto = require('crypto')
 
-const { dirname, resolve, relative } = require('path')
+const { dirname, normalize, sep, resolve, relative } = require('path')
 const { depth: dfwalk } = require('treeverse')
 const {
   lstat,
   mkdir,
   rm,
+  rmdir,
   symlink,
+  realpath,
 } = require('fs/promises')
+/*
+const mkdir = async (...args) => {
+  try {
+    return await mkdir2(...args)
+  } catch (e) {
+    log.warn(e)
+  }
+}
+*/
 const { moveFile } = require('@npmcli/fs')
 const PackageJson = require('@npmcli/package-json')
 const packageContents = require('@npmcli/installed-package-contents')
 const runScript = require('@npmcli/run-script')
 const { checkEngine, checkPlatform } = require('npm-install-checks')
 const _force = Symbol.for('force')
+const _getRes = Symbol.for('getRes')
+const _getStorePath = Symbol.for('getStorePath')
 
 const treeCheck = require('../tree-check.js')
 const relpath = require('../relpath.js')
@@ -98,6 +112,7 @@ const _omitOptional = Symbol('omitOptional')
 const _omitPeer = Symbol('omitPeer')
 
 const _global = Symbol.for('global')
+const _resolveLinkedDir = Symbol('resolveLinkedDir')
 
 const _pruneBundledMetadeps = Symbol('pruneBundledMetadeps')
 
@@ -633,14 +648,7 @@ module.exports = cls => class Reifier extends cls {
     await rm(nm, { recursive: true, force: true })
   }
 
-  async [_extractOrLink] (node) {
-    // in normal cases, node.resolved should *always* be set by now.
-    // however, it is possible when a lockfile is damaged, or very old,
-    // or in some other race condition bugs in npm v6, that a previously
-    // bundled dependency will have just a version, but no resolved value,
-    // and no 'bundled: true' setting.
-    // Do the best with what we have, or else remove it from the tree
-    // entirely, since we can't possibly reify it.
+  [_getRes] (node) {
     let res = null
     if (node.resolved) {
       const registryResolved = this[_registryResolved](node.resolved)
@@ -650,6 +658,26 @@ module.exports = cls => class Reifier extends cls {
     } else if (node.packageName && node.version) {
       res = `${node.packageName}@${node.version}`
     }
+    return res
+  }
+
+  [_getStorePath] (node, res) {
+    const storeHash = crypto.createHash('shake256', { outputLength: 24 })
+      .update(res)
+      .digest('base64url')
+    return resolve(node.root.path, 'node_modules', '.store', `${node.name}-${storeHash}`)
+  }
+
+  async [_extractOrLink] (node) {
+    // in normal cases, node.resolved should *always* be set by now.
+    // however, it is possible when a lockfile is damaged, or very old,
+    // or in some other race condition bugs in npm v6, that a previously
+    // bundled dependency will have just a version, but no resolved value,
+    // and no 'bundled: true' setting.
+    // Do the best with what we have, or else remove it from the tree
+    // entirely, since we can't possibly reify it.
+
+    const res = this[_getRes](node)
 
     // no idea what this thing is.  remove it from the tree.
     if (!res) {
@@ -671,6 +699,40 @@ module.exports = cls => class Reifier extends cls {
     if (node.isLink) {
       await rm(node.path, { recursive: true, force: true })
       await this[_symlink](node)
+    } else if (this.options.linkedInstall && !node.inBundle) {
+      const storePath = this[_getStorePath](node, res)
+      if (node.parent && !node.parent.isRoot) {
+        const parentPath = this[_getStorePath](node.parent, this[_getRes](node.parent))
+        const paths = node.path.split(sep)
+        node.path = [parentPath, ...paths.slice(paths.lastIndexOf('node_modules'))].join(sep)
+      }
+      const storeStat = await lstat(storePath).catch(e => null)
+      if (!storeStat || !storeStat.isDirectory()) {
+        await pacote.extract(res, storePath, {
+          ...this.options,
+          Arborist: this.constructor,
+          resolved: node.resolved,
+          integrity: node.integrity,
+        })
+      }
+      try {
+        await rm(node.path, { recursive: true, force: true })
+      } catch (e) {
+        await rmdir(node.path, { recursive: true, force: true })
+      }
+      try {
+        await this[_symlink]({
+          ...node,
+          path: node.path,
+          realpath: storePath,
+        })
+      } catch (err) {
+        if (err.code === 'EEXIST') {
+          log.silly('reify', `duplicate symlink for ${node.path}`)
+        } else {
+          throw err
+        }
+      }
     } else {
       await debug(async () => {
         const st = await lstat(node.path).catch(e => null)
@@ -691,10 +753,23 @@ module.exports = cls => class Reifier extends cls {
     }
   }
 
+  async [_resolveLinkedDir] (dir) {
+    dir = normalize(dir)
+    const chunks = dir.split(sep)
+    let idx = chunks.length
+    let currdir = dir
+    while (!await lstat(currdir)) {
+      idx--
+      currdir = chunks.slice(0, idx).join(sep)
+    }
+    return resolve([currdir, ...chunks.slice(idx)].join(sep))
+  }
+
   async [_symlink] (node) {
     const dir = dirname(node.path)
     const target = node.realpath
     const rel = relative(dir, target)
+    log.silly('reify', `link ${rel} -> ${node.path}`)
     await mkdir(dir, { recursive: true })
     return symlink(rel, node.path, 'junction')
   }
