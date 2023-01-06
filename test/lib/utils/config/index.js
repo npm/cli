@@ -1,6 +1,6 @@
 const t = require('tap')
 const config = require('../../../../lib/utils/config/index.js')
-const definitions = require('../../../../lib/utils/config/definitions.js')
+const { definitions } = require('../../../../lib/utils/config/definitions.js')
 const mockGlobals = require('../../../fixtures/mock-globals.js')
 
 t.test('defaults', t => {

@@ -39,11 +39,12 @@
   "dependencies": {
     "@npmcli/map-workspaces": "^3.0.0",
     "ini": "^3.0.0",
-    "nopt": "^7.0.0",
+    "nopt": "file:../../../nopt/nopt-7.0.0.tgz",
     "proc-log": "^3.0.0",
     "read-package-json-fast": "^3.0.0",
     "semver": "^7.3.5",
-    "walk-up-path": "^1.0.0"
+    "walk-up-path": "^1.0.0",
+    "which": "^3.0.0"
   },
   "engines": {
     "node": "^14.17.0 || ^16.13.0 || >=18.0.0"

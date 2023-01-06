@@ -2,11 +2,13 @@ const os = require('os')
 const fs = require('fs').promises
 const path = require('path')
 const tap = require('tap')
+const { EnvKeys, ProcessKeys } = require('@npmcli/config')
 const errorMessage = require('../../lib/utils/error-message')
 const mockLogs = require('./mock-logs')
 const mockGlobals = require('./mock-globals')
 const tmock = require('./tmock')
 const defExitCode = process.exitCode
+const npmRoot = path.resolve(__dirname, '../../')
 
 const changeDir = (dir) => {
   if (dir) {
@@ -149,18 +151,23 @@ const setupMockNpm = async (t, {
 
   // These are globals manipulated by npm itself that we need to reset to their
   // original values between tests
-  const npmEnvs = Object.keys(process.env).filter(k => k.startsWith('npm_'))
   mockGlobals(t, {
     process: {
-      title: process.title,
-      execPath: process.execPath,
+      ...['title', ...ProcessKeys].reduce((acc, k) => {
+        acc[k] = process[k]
+        return acc
+      }, {}),
       env: {
-        NODE_ENV: process.env.NODE_ENV,
-        COLOR: process.env.COLOR,
+        ...EnvKeys.reduce((acc, k) => {
+          // XXX: we could ensure an original value for all these configs if we wanted
+          // to normalize them across all tests and require tests set them explicitly
+          acc[k] = process.env[k]
+          return acc
+        }, {}),
         // further, these are npm controlled envs that we need to zero out before
-        // before the test. setting them to undefined ensures they are not set and
+        // the test. setting them to undefined ensures they are not set and
         // also returned to their original value after the test
-        ...npmEnvs.reduce((acc, k) => {
+        ...Object.keys(process.env).filter(k => k.startsWith('npm_')).reduce((acc, k) => {
           acc[k] = undefined
           return acc
         }, {}),
@@ -198,7 +205,7 @@ const setupMockNpm = async (t, {
     cache: dirs.cache,
   }
 
-  const { argv, env, config } = Object.entries({ ...defaultConfigs, ...withDirs(_config) })
+  const { argv, env } = Object.entries({ ...defaultConfigs, ...withDirs(_config) })
     .reduce((acc, [key, value]) => {
       // nerfdart configs passed in need to be set via env var instead of argv
       // and quoted with `"` so mock globals will ignore that it contains dots
@@ -208,9 +215,8 @@ const setupMockNpm = async (t, {
         const values = [].concat(value)
         acc.argv.push(...values.flatMap(v => [`--${key}`, v.toString()]))
       }
-      acc.config[key] = value
       return acc
-    }, { argv: [...rawArgv], env: {}, config: {} })
+    }, { argv: [...rawArgv], env: {} })
 
   mockGlobals(t, {
     'process.env.HOME': dirs.home,
@@ -227,16 +233,8 @@ const setupMockNpm = async (t, {
     init,
     load,
     mocks: withDirs(mocks),
-    npm: { argv, excludeNpmCwd: true, ...withDirs(npmOpts) },
+    npm: { argv, npmRoot, cwdRoot: dir, ...withDirs(npmOpts) },
   })
-
-  if (config.omit?.includes('prod')) {
-    // XXX(HACK): --omit=prod is not a valid config according to the definitions but
-    // it was being hacked in via flatOptions for older tests so this is to
-    // preserve that behavior and reduce churn in the snapshots. this should be
-    // removed or fixed in the future
-    npm.flatOptions.omit.push('prod')
-  }
 
   t.teardown(() => {
     if (npm) {

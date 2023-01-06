@@ -7,7 +7,7 @@ const pkg = require('../../../../package.json')
 // have to fake the node version, or else it'll only pass on this one
 mockGlobals(t, { 'process.version': 'v14.8.0', 'process.env.NODE_ENV': undefined })
 
-const mockDefs = (mocks = {}) => tmock(t, '{LIB}/utils/config/definitions.js', mocks)
+const mockDefs = (mocks = {}) => tmock(t, '{LIB}/utils/config/definitions.js', mocks).definitions
 
 const isWin = (isWindows) => ({ '{LIB}/utils/is-windows.js': { isWindows } })
 

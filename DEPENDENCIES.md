@@ -631,6 +631,7 @@ graph LR;
   npmcli-config-->semver;
   npmcli-config-->tap;
   npmcli-config-->walk-up-path;
+  npmcli-config-->which;
   npmcli-disparity-colors-->ansi-styles;
   npmcli-docs-->front-matter;
   npmcli-docs-->ignore-walk;
