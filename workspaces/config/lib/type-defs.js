@@ -1,5 +1,6 @@
 const nopt = require('nopt').lib
 const semver = require('semver')
+const querystring = require('querystring')
 const { resolve } = require('path')
 const { networkInterfaces } = require('os')
 
@@ -44,6 +45,29 @@ const validatePath = (data, k, val) => {
   }
 }
 
+function validatePositiveNumber (data, k, val) {
+  if (isNaN(val)) {
+    return false
+  }
+  val = +val
+  if (val < 1) {
+    return false
+  }
+  data[k] = val
+}
+
+const validateQs = (data, k, val) => {
+  data[k] = querystring.parse(val.replace(/\s+/g, '&'))
+}
+
+const validateCsv = (data, k, val) => {
+  data[k] = val.split(',')
+}
+
+const validateScope = (data, k, val) => {
+  data[k] = !/^@/.test(val) ? `@${val}` : val
+}
+
 const IpAddress = (() => {
   try {
     return [
@@ -61,11 +85,6 @@ const isStrictBool = (val) => {
   }
 }
 
-// These properties are only used for displaying appropriate config usage
-const isString = { isString: true }
-const isBoolean = { isBoolean: true }
-const isNumber = { isNumber: true }
-
 // `description` gets shown during a runtime validation warning
 // `typeDescription` gets displayed in the docs for the `Type:`
 const typeDefs = {
@@ -73,47 +92,77 @@ const typeDefs = {
     ...nopt.typeDefs.String,
     type: Symbol('String'),
     typeDescription: 'String',
-    ...isString,
+    description: 'a string',
   },
   Boolean: {
     ...nopt.typeDefs.Boolean,
     type: Symbol('Boolean'),
     typeDescription: 'Boolean',
-    description: 'boolean value (true or false)',
-    ...isBoolean,
+    description: 'a boolean value (true or false)',
+    isBoolean: true,
   },
+  // todo: when type is all numbers, allow string verion of those numbers too
   Number: {
     ...nopt.typeDefs.Number,
     type: Symbol('Number'),
     typeDescription: 'Number',
-    description: 'numeric value',
-    ...isNumber,
+    description: 'a numeric value',
+    hint: 'number',
+  },
+  PositiveInteger: {
+    type: Symbol('PositiveInteger'),
+    validate: validatePositiveNumber,
+    typeDescription: 'Positive integer',
+    description: 'an integer greater than or equal to 1',
+    hint: '1|2|3|n',
   },
   Date: {
     ...nopt.typeDefs.Date,
     type: Symbol('Date'),
     typeDescription: 'Date',
-    description: 'valid Date string',
+    description: 'a valid Date string',
   },
-  url: {
+  URL: {
     ...nopt.typeDefs.url,
     type: Symbol('URL'),
     typeDescription: 'URL',
-    description: 'full url with "http://"',
+    description: 'a full url with "http://"',
   },
-  path: {
+  Querystring: {
+    type: Symbol('Querystring'),
+    validate: validateQs,
+    typeDescription: 'Querystring',
+    description: 'a space-delimited querystring',
+    hint: 'key=val key2=val2',
+  },
+  CSV: {
+    type: Symbol('CSV'),
+    validate: validateCsv,
+    typeDescription: 'Comma-delimited string',
+    description: 'a comma-delimited string',
+  },
+  Scope: {
+    type: Symbol('Scope'),
+    validate: validateScope,
+    typeDescription: 'Scope',
+    description: 'an npm scope with or without the leading @',
+    hint: '@scope',
+  },
+  Spec: {
+    type: Symbol('Spec'),
+    validate: nopt.typeDefs.String.validate,
+    typeDescription: 'Spec',
+    description: 'an npm package spec',
+    hint: 'package-spec',
+  },
+  Path: {
     ...nopt.typeDefs.path,
     type: Symbol('Path'),
     validate: validatePath,
     typeDescription: 'Path',
-    description: 'valid filesystem path',
+    description: 'a valid filesystem path',
   },
-  Stream: {
-    ...nopt.typeDefs.Stream,
-    type: Symbol('Stream'),
-    typeDescription: 'Stream',
-  },
-  semver: {
+  Semver: {
     type: Symbol('Semver'),
     validate: (data, k, val) => {
       const valid = semver.valid(val)
@@ -123,19 +172,22 @@ const typeDefs = {
       data[k] = valid
     },
     typeDescription: 'SemVer string',
-    description: 'full valid SemVer string',
+    description: 'a full valid SemVer string',
   },
   Umask: {
     type: Symbol('Umask'),
     validate: validateUmask,
     typeDescription: 'Octal numeric string in range 0000..0777 (0..511)',
-    description: 'octal number in range 0o000..0o777 (0..511)',
+    description: 'an octal number in range 0o000..0o777 (0..511)',
   },
   IpAddress: {
     // this one cant be a symbol because it is an actual array of local
     // ip addresses for the current runtime
     type: IpAddress,
     typeDescription: 'IP Address',
+    // this explicitly has no description since it is an array of values
+    // that will be shown to the user when it is invalid
+    description: null,
   },
   BooleanOrString: {
     type: Symbol('BooleanOrString'),
@@ -146,9 +198,8 @@ const typeDefs = {
       return nopt.typeDefs.String.validate(data, k, val)
     },
     typeDescription: ['Boolean', 'String'],
-    description: 'boolean value (true or false) or a string',
-    ...isBoolean,
-    ...isString,
+    description: ['a boolean value (true or false)', 'a string'],
+    isBoolean: true,
   },
   BooleanOrNumber: {
     type: Symbol('BooleanOrNumber'),
@@ -159,10 +210,11 @@ const typeDefs = {
       return nopt.typeDefs.Number.validate(data, k, val)
     },
     typeDescription: ['Boolean', 'Number'],
-    description: 'boolean value (true or false) or a string',
-    ...isBoolean,
-    ...isNumber,
+    description: ['a boolean value (true or false)', 'a a numeric valid'],
+    isBoolean: true,
   },
+  // the array type has no validation or description its presence in a
+  // definition signals that more than one value of the other types are allowed
   Array: {
     type: Symbol('Array'),
   },
@@ -170,20 +222,18 @@ const typeDefs = {
 
 const byType = new Map()
 const Types = {}
+const TypesList = []
 const getType = (k) => byType.get(k)
 
 for (const [key, value] of Object.entries(typeDefs)) {
-  // allow looking up a full type def by string key or type value
   byType.set(value.type, value)
-  byType.set(key, value)
   Types[key] = value.type
+  TypesList.push(value.type)
 }
 
 module.exports = {
   typeDefs,
   Types,
+  TypesList,
   getType,
-  isString: (ts) => [].concat(ts).some(t => getType(t)?.isString),
-  isBoolean: (ts) => [].concat(ts).some(t => getType(t)?.isBoolean),
-  isNumber: (ts) => [].concat(ts).some(t => getType(t)?.isNumber),
 }

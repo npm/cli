@@ -1,5 +1,6 @@
 const NPM_PREFIX = `npm_`
 const CONFIG_PREFIX = `${NPM_PREFIX}config_`
+const rePrefix = new RegExp(`^${CONFIG_PREFIX}`, 'i')
 
 // This is an allow list of env variables that this config
 // module can set. Note that this only applies to environs
@@ -36,10 +37,6 @@ const envVal = val => Array.isArray(val) ? val.map(v => envVal(v)).join('\n\n')
   : typeof val === 'object' ? null
   : String(val)
 
-const sameConfigValue = (def, val) =>
-  !Array.isArray(val) || !Array.isArray(def) ? def === val
-  : sameArrayValue(def, val)
-
 const sameArrayValue = (def, val) => {
   if (def.length !== val.length) {
     return false
@@ -56,6 +53,10 @@ const sameArrayValue = (def, val) => {
   return true
 }
 
+const sameValue = (def, val) =>
+  !Array.isArray(val) || !Array.isArray(def) ? def === val
+  : sameArrayValue(def, val)
+
 const setNpmEnv = (env, rawKey, rawVal) => {
   const val = envVal(rawVal)
   const key = envKey(rawKey, val)
@@ -66,7 +67,7 @@ const setNpmEnv = (env, rawKey, rawVal) => {
 
 const setEnv = (env, key, rawVal) => {
   if (!key.startsWith(NPM_PREFIX) && !ALLOWED_ENV_KEYS.has(key)) {
-    throw new Error(`attempted to set non-allowed environ: ${key}`)
+    throw new Error(`not allowed to to set environ: \`${key}\``)
   }
   const val = envVal(rawVal)
   if (key && val !== null) {
@@ -79,6 +80,10 @@ module.exports = {
   ALLOWED_ENV_KEYS,
   setProcess,
   setEnv,
-  setNpmEnv,
-  sameConfigValue,
+  sameValue,
+  npm: {
+    setEnv: setNpmEnv,
+    testKey: (k) => rePrefix.test(k),
+    prefix: CONFIG_PREFIX,
+  },
 }

@@ -1,70 +1,68 @@
 const nopt = require('nopt').lib
 const log = require('proc-log')
-const envReplace = require('./env-replace')
-const nerfDart = require('./nerf-dart')
-const { typeDefs, Types, getType } = require('./type-defs')
 const ini = require('ini')
+const fs = require('fs/promises')
+const { dirname } = require('path')
+const nerfDart = require('./nerf-dart')
+const envReplace = require('./env-replace')
+const { typeDefs } = require('./type-defs')
+const { definitions, shorthands, types } = require('./config')
 
 const SYMBOLS = {
   set: Symbol('set'),
   delete: Symbol('delete'),
-}
-
-const typeDescription = type => {
-  if (Array.isArray(type)) {
-    return type.map(t => typeDescription(t))
-  }
-  const def = getType(type)
-  return def ? def.description ?? def.typeDescription : type
+  clear: Symbol('clear'),
 }
 
 class ConfigData extends Map {
-  #type = null
-
-  #data = null
-  #source = null
-  #valid = true
+  static mutateSymbols = SYMBOLS
 
   #parent = null
-  #deprecated = null
-  #shorthands = null
-  #types = null
-  #env = null
+  #where = null
+  #description = null
+  #type = null
 
-  static get mutateSymbols () {
-    return SYMBOLS
-  }
+  #envReplace = null
 
-  constructor (type, { parent, deprecated, shorthands, types, env }) {
+  #data = {}
+  #file = null
+  #loaded = null
+  #valid = true
+
+  constructor (type, { parent, data, env }) {
     super()
-    this.#type = type
 
     this.#parent = parent
-    this.#deprecated = deprecated
-    this.#shorthands = shorthands
-    this.#types = types
-    this.#env = env
+
+    const { where, description = where, ...opts } = typeof type === 'string'
+      ? { where: type } : type
+
+    this.#where = where
+    this.#description = description
+    this.#type = opts
+
+    this.#envReplace = (v) => envReplace(v, env)
 
     for (const key of Object.keys(SYMBOLS)) {
       this[key] = () => {
-        throw new Error(`attempted to call \`${key}\` directly on ConfigData:${this.#type.where}`)
+        throw new Error(`Cannot call \`${key}\` directly on ConfigData:${this.where}`)
       }
+    }
+
+    if (data) {
+      this.load(data)
     }
   }
 
   get where () {
-    return this.#type.where
+    return this.#where
   }
 
-  get source () {
-    return this.#source
+  get file () {
+    return this.#file
   }
 
   get data () {
-    if (this.#data) {
-      return this.#data
-    }
-    this.#data = Object.fromEntries([...this.entries()])
     return this.#data
   }
 
@@ -72,80 +70,153 @@ class ConfigData extends Map {
     return ini.stringify(this.data).trim()
   }
 
-  [SYMBOLS.set] (key, value) {
-    // XXX(npm9+) make this throw an error
-    if (!this.#type.allowDeprecated && this.#deprecated[key]) {
-      log.warn('config', key, this.#deprecated[key])
+  #assertLoaded (val = true) {
+    if (!!this.#loaded === val) {
+      throw new Error(`Cannot load a config type more than once: ` +
+        `\`${this.where}\` previously loaded from \`${this.source}\``)
     }
-    // this is now dirty, the next call to this.valid will have to check it
+  }
+
+  [SYMBOLS.set] (key, value) {
     this.#valid = false
-    // data will also be regnerated
-    this.#data = null
-    return super.set(key, value)
+    return this.#set(key, value)
   }
 
   [SYMBOLS.delete] (key) {
-    this.#data = null
+    this.#valid = false
+    return this.#delete(key)
+  }
+
+  #set (key, value) {
+    // XXX(npm9+) make this throw an error
+    const dep = definitions[key]?.deprecated
+    if (!this.#type.allowDeprecated && dep) {
+      log.warn('config', key, dep)
+    }
+    Object.defineProperty(this.#data, key, {
+      configurable: true,
+      enumerable: true,
+      get () {
+        return value
+      },
+    })
+    return super.set(key, value)
+  }
+
+  #delete (key) {
+    delete this.#data[key]
     return super.delete(key)
   }
 
-  clear () {
-    throw new Error(`attempted to call \`clear\` directly on ConfigData:${this.#type.where}`)
+  ignore (reason) {
+    this.#assertLoaded(false)
+    this.#loaded = `${this.description}, ignored: ${reason}`
   }
 
-  load (data, error, source = this.#type.defaultSource) {
-    this.#data = null
+  load (data, error, file) {
+    this.#assertLoaded(false)
 
-    if (this.source) {
-      throw new Error(`Double load ${this.where} ${this.source}`)
+    if (file) {
+      this.#file = file
+      this.#loaded = `${this.description}, file: ${file}`
+    } else {
+      this.#loaded = this.description
     }
 
-    if (error) {
-      if (error.code !== 'ENOENT') {
-        log.verbose('config', `error loading ${this.where} config`, error)
-      }
+    if (error?.code !== 'ENOENT') {
+      log.verbose('config', `error loading ${this.where} config`, error)
+    }
+
+    if (error || !data) {
       return
     }
 
-    const result = {}
-    let cleanData = null
-
+    // an array comes from argv so we parse it in the standard nopt way
     if (Array.isArray(data)) {
       const { argv, ...parsedData } = nopt.nopt(data, {
         typeDefs,
-        types: this.#types,
-        shorthands: this.#shorthands,
+        shorthands,
+        types,
         invalidHandler: (...args) => this.#invalidHandler(...args),
       })
-      result.argv = argv
-      cleanData = parsedData
-    } else if (data) {
-      if (typeof data === 'string') {
-        data = ini.parse(data)
-      }
-      cleanData = {}
-      for (const [k, v] of Object.entries(data)) {
-        cleanData[envReplace(k, this.#env)] = typeof v === 'string' ? envReplace(v, this.#env) : v
-      }
-      this.#clean(cleanData)
+      this.#setAll(parsedData)
+      return { argv }
     }
 
-    if (cleanData) {
-      // this.set reset #valid so we check the status before and reset
-      // it after setting all the properties because we just validated
-      // everything with nopt
-      const isValid = this.#valid
-      for (const [k, v] of Object.entries(cleanData)) {
-        this[SYMBOLS.set](k, v)
-      }
-      this.#valid = isValid
-      return result
+    // if its a string then it came from a file and we need to parse
+    // it with ini first
+    if (typeof data === 'string') {
+      data = ini.parse(data)
     }
 
-    this.#source = `(${source}, ignored)`
+    // then do any env specific replacements
+    const parsed = Object.entries(data).reduce((acc, [k, v]) => {
+      acc[this.#envReplace(k)] = typeof v === 'string' ? this.#envReplace(v) : v
+      return acc
+    })
+
+    // and finally only do a nopt clean since it is already parsed
+    this.#setAll(this.#clean(parsed))
+  }
+
+  #setAll (data) {
+    for (const [key, value] of Object.entries(data)) {
+      this.#set(key, value)
+    }
+  }
+
+  #clean (d) {
+    nopt.clean(d, {
+      typeDefs,
+      types,
+      invalidHandler: (...args) => this.#invalidHandler(...args),
+    })
+    return d
+  }
+
+  #invalidHandler (k, val) {
+    this.#valid = false
+    const def = definitions[k]
+    const msg = def
+      ? `invalid item \`${k}\`, ${definitions[k].mustBe()} and got \`${val}\``
+      : `unknown item \`${k}\``
+    log.warn('config', msg)
+  }
+
+  async save () {
+    this.#assertLoaded()
+
+    if (!this.file) {
+      throw new Error(`Cannot save config since it was not loaded from a file: ` +
+        `\`${this.where}\` from \`${this.#description}\``)
+    }
+
+    const { user } = this.#parent.constructor.Locations
+    if (this.where === user) {
+      // if email is nerfed, then we want to de-nerf it
+      const nerfed = nerfDart(this.get('registry'))
+      const email = this.get(`${nerfed}:email`, user)
+      if (email) {
+        this.delete(`${nerfed}:email`, user)
+        this.set('email', email, user)
+      }
+    }
+
+    const data = this.toString()
+    if (!data) {
+      // ignore the unlink error (eg, if file doesn't exist)
+      await fs.unlink(this.file).catch(() => {})
+      return
+    }
+
+    await fs.mkdir(dirname(this.file), { recursive: true })
+    await fs.writeFile(this.file, data + '\n', 'utf8')
+    await fs.chmod(this.file, this.#type.mode || 0o666)
   }
 
   validate () {
+    this.#assertLoaded()
+
     if (this.#valid) {
       return true
     }
@@ -198,47 +269,6 @@ class ConfigData extends Map {
     }
 
     return this.#valid
-  }
-
-  #clean (d) {
-    nopt.clean(d, {
-      typeDefs,
-      types: this.#types,
-      invalidHandler: (...args) => this.#invalidHandler(...args),
-    })
-  }
-
-  #invalidHandler (k, val, type) {
-    this.#valid = false
-
-    if (Array.isArray(type)) {
-      if (type.includes(Types.url)) {
-        type = Types.url
-      } else /* istanbul ignore next */ if (type.includes(Types.path)) {
-        /* no actual configs matching this, but
-          * path types SHOULD be handled this way, like URLs, for the
-          * same reason */
-        type = Types.path
-      }
-    }
-
-    const typeDesc = [].concat(typeDescription(type))
-    const oneOrMore = typeDesc.includes(Types.Array)
-    const mustBe = typeDesc.filter(m => m !== Types.Array)
-
-    const oneOf = mustBe.length === 1 && oneOrMore ? 'one or more'
-      : mustBe.length > 1 && oneOrMore ? 'one or more of:'
-      : mustBe.length > 1 ? 'one of:'
-      : ''
-    const desc = mustBe.length === 1 ? mustBe[0] : mustBe.filter(m => m !== Types.Array)
-      .map(n => typeof n === 'string' ? n : JSON.stringify(n))
-      .join(', ')
-
-    log.warn('config',
-      `invalid item \`${k}\`.`,
-      `Must be ${oneOf}`.trim(),
-      `${desc}. Received value of \`${val}\``
-    )
   }
 }
 

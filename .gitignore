@@ -56,3 +56,4 @@
 !/workspaces/libnpmsearch/
 !/workspaces/libnpmteam/
 !/workspaces/libnpmversion/
+!/mock-globals/

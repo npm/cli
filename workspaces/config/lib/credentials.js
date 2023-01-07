@@ -1,7 +1,21 @@
 const nerfDart = require('./nerf-dart.js')
 const { ConfTypes } = require('./config-data')
 
+// These are the configs that we can nerf-dart. Not all of them currently even
+// *have* config definitions so we have to explicitly validate them here
+const nerfDarts = [
+  '_auth',
+  '_authToken',
+  'username',
+  '_password',
+  'email',
+  'certfile',
+  'keyfile',
+]
+
 class Credentials {
+  static nerfDarts = nerfDarts
+
   #config = null
 
   constructor (config) {
@@ -33,13 +47,9 @@ class Credentials {
         this.#set('email', email)
       }
     }
-    this.#delete(`${nerfed}:_authToken`)
-    this.#delete(`${nerfed}:_auth`)
-    this.#delete(`${nerfed}:_password`)
-    this.#delete(`${nerfed}:username`)
-    this.#delete(`${nerfed}:email`)
-    this.#delete(`${nerfed}:certfile`)
-    this.#delete(`${nerfed}:keyfile`)
+    for (const k of nerfDarts) {
+      this.#delete(`${nerfed}:${k}`)
+    }
   }
 
   setByURI (uri, { token, username, password, email, certfile, keyfile }) {

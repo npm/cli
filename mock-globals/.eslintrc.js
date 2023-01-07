@@ -10,13 +10,6 @@ const localConfigs = readdir(__dirname)
 
 module.exports = {
   root: true,
-  ignorePatterns: [
-    'docs/**',
-    'smoke-tests/**',
-    'mock-registry/**',
-    'workspaces/**',
-    'mock-globals/**',
-  ],
   extends: [
     '@npmcli',
     ...localConfigs,

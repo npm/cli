@@ -6,7 +6,8 @@
     "docs",
     "smoke-tests",
     "mock-registry",
-    "workspaces/*"
+    "workspaces/*",
+    "mock-globals"
   ],
   "files": [
     "bin/",
@@ -244,9 +245,11 @@
       "--exclude",
       "workspaces/**",
       "--exclude",
+      "mock-globals/**",
+      "--exclude",
       "tap-snapshots/**"
     ],
-    "test-ignore": "^(docs|smoke-tests|mock-registry|workspaces)/"
+    "test-ignore": "^(docs|smoke-tests|mock-registry|workspaces|mock-globals)/"
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",

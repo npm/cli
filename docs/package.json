@@ -63,5 +63,8 @@
         ".github/workflows/ci-{{ pkgNameFs }}.yml": "ci-npmcli-docs.yml"
       }
     }
+  },
+  "dependencies": {
+    "@npmcli/config": "^6.1.0"
   }
 }

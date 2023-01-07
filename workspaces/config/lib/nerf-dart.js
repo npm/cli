@@ -16,3 +16,5 @@ module.exports = (url) => {
   const res = `//${rel.host}${rel.pathname}`
   return res
 }
+
+module.exports.isNerfed = (s) => s.startsWith('//')

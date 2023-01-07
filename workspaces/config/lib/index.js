@@ -8,11 +8,12 @@ const { resolve, dirname, join } = require('path')
 const { homedir } = require('os')
 const fs = require('fs/promises')
 const TypeDefs = require('./type-defs.js')
-const nerfDart = require('./nerf-dart.js')
-const { setEnv, setProcess, setNpmEnv, sameConfigValue, ...SetEnv } = require('./set-envs.js')
+const SetEnv = require('./set-envs.js')
 const { ErrInvalidAuth } = require('./errors')
-const ConfigTypes = require('./config-types')
 const Credentials = require('./credentials.js')
+const ConfigTypes = require('./config-locations')
+const { definitions, defaults } = require('./config')
+const { isNerfed } = require('./nerf-dart.js')
 const ConfTypes = ConfigTypes.ConfTypes
 
 const fileExists = (...p) => fs.stat(resolve(...p))
@@ -40,73 +41,56 @@ const settableGetter = (get, ...args) => Object.defineProperty(...args, {
 })
 
 class Config {
-  static get TypeDefs () {
-    return TypeDefs
-  }
+  static TypeDefs = TypeDefs
+  static Types = TypeDefs.Types
+  static ConfigTypes = ConfigTypes.ConfigTypes
+  static EnvKeys = [...SetEnv.ALLOWED_ENV_KEYS.values()]
+  static ProcessKeys = [...SetEnv.ALLOWED_ENV_KEYS.values()]
+  static nerfDarts = Credentials.nerfDarts
 
-  static get Types () {
-    return TypeDefs.Types
-  }
-
-  static get ConfTypes () {
-    return ConfTypes
-  }
-
-  static get EnvKeys () {
-    return [...SetEnv.ALLOWED_ENV_KEYS.values()]
-  }
-
-  static get ProcessKeys () {
-    return [...SetEnv.ALLOWED_PROCESS_KEYS.values()]
-  }
+  // state
+  #configData = null
 
   // required options in constructor
-  #definitions = null
-  #npmPath = null
-  #derived = null
+  #npmRoot = null
+  #argv = null
+  #cwdRoot = null
 
   // options just to override in tests, mostly
   #process = null
-  #argv = null
   #env = null
-  #execPath = null
   #platform = null
+  #execPath = null
   #cwd = null
-  #cwdRoot = null
 
   // set when we load configs
   #globalPrefix = null
   #localPrefix = null
   #localPackage = null
-
   #loaded = false
   #home = null
-  #parsedArgv = null // from nopt
-  // built in constructor from definitions
-  #defaults = {}
-  // data configs for each config type
-  #configData = null
+  #parsedArgv = null
+
+  // functions
+  #setEnv = null
+  #setNpmEnv = null
   #credentials = null
 
   constructor ({
-    definitions,
-    shorthands,
-    flatten,
-    npmPath,
-    derived,
+    npmRoot,
+    argv,
+    cwdRoot,
 
     // pass in process to set everything, but also allow
     // overriding specific parts of process that are used
+    // these are only used for testing
     process: _process = process,
     env = _process.env,
-    argv = _process.argv,
     platform = _process.platform,
     execPath = _process.execPath,
     cwd = _process.cwd(),
-    cwdRoot = null,
   }) {
-    this.#definitions = definitions
-    this.#npmPath = npmPath
+    this.#npmRoot = npmRoot
 
     this.#process = _process
     this.#env = env
@@ -120,36 +104,11 @@ class Config {
     TypeDefs.typeDefs.path.HOME = this.#home
     TypeDefs.typeDefs.path.PLATFORM = this.#platform
 
-    // turn the definitions into nopt's weirdo syntax
-    const types = {}
-    const deprecated = {}
-    const effects = {}
-    for (const [key, def] of Object.entries(this.#definitions)) {
-      this.#defaults[key] = def.default
-      types[key] = def.type
-      if (def.deprecated) {
-        deprecated[key] = def.deprecated.trim().replace(/\n +/, '\n')
-      }
-      if (def.derived) {
-        effects[key] = def.derived
-      }
-    }
-    Object.freeze(this.#definitions)
-    Object.freeze(this.#defaults)
-    Object.freeze(types)
-    Object.freeze(deprecated)
-
-    this.#configData = new ConfigTypes({
-      flatten,
-      deprecated,
-      shorthands,
-      effects,
-      derived,
-      types,
-      env: this.#env,
-    })
+    this.#configData = new ConfigTypes({ env: this.#env })
 
     this.#credentials = new Credentials(this)
+    this.#setEnv = (...args) => SetEnv.setEnv(this.#env, ...args)
+    this.#setNpmEnv = (...args) => SetEnv.npm.setEnv(this.#env, ...args)
   }
 
   // =============================================
@@ -214,13 +173,22 @@ class Config {
   // Get/Set/Find/Delete, etc.
   //
   // =============================================
-  find (key) {
+  find (key, where) {
     this.#assertLoaded()
-    return this.#find(key)
+    return this.#find(key, where)
   }
 
-  #find (key) {
-    return this.#configData.find(key)
+  #find (key, where = null) {
+    return this.#configData.find(where, key)
+  }
+
+  has (key, where) {
+    this.#assertLoaded()
+    return this.#has(key, where)
+  }
+
+  #has (key, where = null) {
+    return this.#configData.has(where, key)
   }
 
   get (key, where) {
@@ -263,10 +231,12 @@ class Config {
   // Config Type Loaders
   //
   // =============================================
-  async load () {
-    if (this.#loaded) {
-      throw new Error(`attempting to call config.load() multiple times`)
+  async load (where, data) {
+    if (where) {
+      this.#assertLoaded()
+      return this.#configData.add(where, data)
     }
+    this.#assertLoaded(false)
     return this.#time('load', () => this.#load())
   }
 
@@ -307,7 +277,7 @@ class Config {
       if (node?.toUpperCase() !== this.#execPath.toUpperCase()) {
         log.verbose('node symlink', node)
         this.#execPath = node
-        setProcess(this.#process, 'execPath', node)
+        SetEnv.setProcess(this.#process, 'execPath', node)
       }
     })
 
@@ -326,7 +296,7 @@ class Config {
       }
     }
 
-    this.#loadObject({ ...this.#defaults, prefix: this.#globalPrefix }, ConfTypes.default)
+    this.#loadObject(ConfTypes.default, { ...defaults, prefix: this.#globalPrefix })
 
     const { data } = this.#configData.get(ConfTypes.default)
 
@@ -342,7 +312,7 @@ class Config {
   }
 
   async #loadBuiltin () {
-    await this.#loadFile(resolve(this.#npmPath, 'npmrc'), ConfTypes.builtin)
+    await this.#loadFile(resolve(this.#npmRoot, 'npmrc'), ConfTypes.builtin)
   }
 
   async #loadGlobal () {
@@ -370,7 +340,7 @@ class Config {
     const config = this.#configData.get(ConfTypes.project)
 
     if (this.global) {
-      config.load(null, null, 'global mode enabled')
+      config.ignore('global mode enabled')
       return
     }
 
@@ -381,44 +351,45 @@ class Config {
     // which causes some calamaties.  So, we only load project config if
     // it doesn't match what the userconfig will be.
     if (projectFile === this.#get('userconfig')) {
-      config.load(null, null, 'same as "user" config')
+      config.ignore('same as "user" config')
       return
     }
     await this.#loadFile(projectFile, ConfTypes.project)
   }
 
   #loadEnv () {
-    const data = Object.entries(this.#env).reduce((acc, [envKey, envVal]) => {
-      if (!/^npm_config_/i.test(envKey) || envVal === '') {
+    const data = Object.entries(this.#env).reduce((acc, [key, val]) => {
+      if (SetEnv.npm.testKey(key) || !val) {
         return acc
       }
-      let key = envKey.slice('npm_config_'.length)
-      if (!key.startsWith('//')) {
+      const configKey = key.slice(SetEnv.npm.prefix.length)
+      if (isNerfed(configKey)) {
         // don't normalize nerf-darted keys
-        // don't replace _ at the start of the key
-        key = key.replace(/(?!^)_/g, '-').toLowerCase()
+        acc[configKey] = val
+        return acc
       }
-      acc[key] = envVal
+      // don't replace _ at the start of the key
+      acc[configKey.replace(/(?!^)_/g, '-').toLowerCase()] = val
       return acc
     }, {})
-    this.#loadObject(data, ConfTypes.env)
+    this.#loadObject(ConfTypes.env, data)
   }
 
   #loadCli () {
-    const res = this.#loadObject(this.#argv.slice(2), ConfTypes.cli)
-    this.#parsedArgv = res?.argv ?? null
+    const { argv } = this.#loadObject(ConfTypes.cli, this.#argv.slice(2))
+    this.#parsedArgv = argv
   }
 
   async #loadFile (file, where) {
     // only catch the error from readFile, not from the loadObject call
     await this.#time(`load:file:${file}`, () => fs.readFile(file, 'utf8').then(
-      data => this.#loadObject(data, where, file),
-      er => this.#loadObject(null, where, file, er)
+      data => this.#loadObject(where, data, file),
+      er => this.#loadObject(where, null, file, er)
     ))
   }
 
-  #loadObject (data, where, source, error) {
-    return this.#configData.get(where).load(data, error, source)
+  #loadObject (where, data, file, error) {
+    return this.#configData.get(where).load(data, error, file)
   }
 
   async #loadLocalPrefix () {
@@ -497,8 +468,8 @@ class Config {
   // This ensures that all npm config values that are not the defaults are
   // shared appropriately with child processes, without false positives.
   #setEnvs () {
-    setNpmEnv(this.#env, 'global-prefix', this.#globalPrefix)
-    setNpmEnv(this.#env, 'local-prefix', this.#localPrefix)
+    this.#setNpmEnv('global-prefix', this.#globalPrefix)
+    this.#setNpmEnv('local-prefix', this.#localPrefix)
 
     // if the key is deprecated, skip it always.
     // if the key is the default value,
@@ -508,84 +479,64 @@ class Config {
     // if the key is NOT the default value,
     //   if the env is setting it, then leave it (already set)
     //   otherwise, set the env
-    const configValues = this.#configData.reverseValues()
-    const cliConf = configValues.next().value
-    const envConf = configValues.next().value
+    const cliConf = this.#configData.get(ConfTypes.cli)
+    const envConf = this.#configData.get(ConfTypes.env)
 
     for (const [key, value] in cliConf.entries()) {
-      const { deprecated, envExport = true } = this.#definitions[key] || {}
-      if (deprecated || envExport === false) {
+      const def = definitions[key]
+      if (def?.deprecated || !def?.envExport) {
         continue
       }
 
-      if (sameConfigValue(this.#defaults[key], value)) {
+      if (SetEnv.sameValue(defaults[key], value)) {
         // config is the default, if the env thought different, then we
         // have to set it BACK to the default in the environment.
-        if (!sameConfigValue(envConf.get(key), value)) {
-          setNpmEnv(this.#env, key, value)
+        if (!SetEnv.sameValue(envConf.get(key), value)) {
+          this.#setNpmEnv(key, value)
         }
       } else {
         // config is not the default.  if the env wasn't the one to set
         // it that way, then we have to put it in the env
         if (!(envConf.has(key) && !cliConf.has(key))) {
-          setNpmEnv(this.#env, key, value)
+          this.#setNpmEnv(key, value)
         }
       }
     }
 
+    // these depend on derived values so they use the flat data
+    this.#setNpmEnv('user-agent', this.flat.userAgent)
+    this.#setEnv('COLOR', this.flat.color ? '1' : '0')
+    this.#setEnv('NODE_ENV', this.flat.omit.includes('dev') ? 'production' : null)
+    // XXX make this the bin/npm-cli.js file explicitly instead
+    // otherwise using npm programmatically is a bit of a pain.
+    this.#setEnv('npm_execpath', this.flat.npmBin ?? null)
+
     // also set some other common nice envs that we want to rely on
-    setEnv(this.#env, 'INIT_CWD', this.#cwd)
-    setEnv(this.#env, 'HOME', this.#home)
-    setEnv(this.#env, 'NODE', this.#execPath)
-    setEnv(this.#env, 'npm_node_execpath', this.#execPath)
-    setEnv(this.#env, 'npm_execpath', require.main?.filename ?? null)
-    setEnv(this.#env, 'EDITOR', cliConf.has('editor') ? cliConf.get('editor') : null)
+    this.#setEnv('INIT_CWD', this.#cwd)
+    this.#setEnv('HOME', this.#home)
+    this.#setEnv('NODE', this.#execPath)
+    this.#setEnv('npm_node_execpath', this.#execPath)
+    this.#setEnv('EDITOR', cliConf.has('editor') ? cliConf.get('editor') : null)
 
     // note: this doesn't afect the *current* node process, of course, since
     // it's already started, but it does affect the options passed to scripts.
     if (cliConf.has('node-options')) {
-      setEnv(this.#env, 'NODE_OPTIONS', cliConf.get('node-options'))
+      this.#setEnv('NODE_OPTIONS', cliConf.get('node-options'))
     }
   }
 
   // =============================================
   //
-  // Save
+  // Save / Validation / Repair
   //
   // =============================================
   async save (where) {
     this.#assertLoaded()
-
-    if (where === ConfTypes.user) {
-      // if email is nerfed, then we want to de-nerf it
-      const nerfed = nerfDart(this.get('registry'))
-      const email = this.get(`${nerfed}:email`, where)
-      if (email) {
-        this.delete(`${nerfed}:email`, where)
-        this.set('email', email, where)
-      }
-    }
-
     const conf = this.#configData.get(where)
-    const data = conf.toString()
-
-    if (!data) {
-      // ignore the unlink error (eg, if file doesn't exist)
-      await fs.unlink(conf.source).catch(() => {})
-      return
-    }
-    const dir = dirname(conf.source)
-    await fs.mkdir(dir, { recursive: true })
-    await fs.writeFile(conf.source, data + '\n', 'utf8')
-    const mode = where === ConfTypes.user ? 0o600 : 0o666
-    await fs.chmod(conf.source, mode)
+    await conf.save()
+    return conf
   }
 
-  // =============================================
-  //
-  // Validation / Repair
-  //
-  // =============================================
   validate () {
     this.#assertLoaded()
 
@@ -649,9 +600,9 @@ class Config {
   // Utils/Misc
   //
   // =============================================
-  #assertLoaded () {
-    if (!this.loaded) {
-      throw new Error('call config.load() before reading values')
+  #assertLoaded (val = true) {
+    if (this.loaded !== val) {
+      throw new Error(`config ${val ? 'must' : 'must not'} be loaded to perform this action`)
     }
   }
 
