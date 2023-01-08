@@ -7,12 +7,12 @@
   url: /commands
   children:
   - title: npm
-    url: /commands/npm
+    url: /commands/npmggg
     description: JavaScript package manager
   - title: npm access
     url: /commands/npm-access
     description: Set access level on published packages
-  - title: npm adduser
+  - title: npm adduserg
     url: /commands/npm-adduser
     description: Add a registry user account
   - title: npm audit
