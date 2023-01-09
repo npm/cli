@@ -42,6 +42,7 @@
     "ci-info": "^3.7.1",
     "ini": "^3.0.0",
     "nopt": "file:../../../nopt/nopt-7.0.0.tgz",
+    "npm-registry-fetch": "^14.0.3",
     "proc-log": "^3.0.0",
     "read-package-json-fast": "^3.0.0",
     "semver": "^7.3.5",

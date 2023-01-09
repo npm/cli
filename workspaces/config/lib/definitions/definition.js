@@ -42,19 +42,28 @@ class Definition {
       }
     }
 
-    for (const req of required) {
-      if (!hasOwn(this.#def, req)) {
-        throw new Error(`config \`${this.#key}\` lacks key \`${req}\``)
-      }
-    }
+    // needs a key
     if (!this.#key) {
       throw new Error(`config lacks key: ${this.#key}`)
     }
+
+    // needs required keys
+    for (const req of required) {
+      if (typeof req === 'string' && !this.#hasOwn(req)) {
+        throw new Error(`config \`${this.#key}\` lacks required key: \`${req}\``)
+      }
+    }
+
+    // only allowed fields
     for (const field of Object.keys(this.#def)) {
       if (!allowed.includes(field)) {
         throw new Error(`config defines unknown field ${field}: ${this.#key}`)
       }
     }
+  }
+
+  #hasOwn (k) {
+    return hasOwn(this.#def, k)
   }
 
   get default () {

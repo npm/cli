@@ -4,9 +4,8 @@ const ini = require('ini')
 const fs = require('fs/promises')
 const { dirname } = require('path')
 const nerfDart = require('./nerf-dart')
-const envReplace = require('./env-replace')
 const { typeDefs } = require('./type-defs')
-const { definitions, shorthands, types } = require('./config')
+const { definitions, shorthands, types } = require('./definitions')
 
 const SYMBOLS = {
   set: Symbol('set'),
@@ -29,7 +28,7 @@ class ConfigData extends Map {
   #loaded = null
   #valid = true
 
-  constructor (type, { parent, data, env }) {
+  constructor (type, { parent, data, envReplace }) {
     super()
 
     this.#parent = parent
@@ -40,8 +39,7 @@ class ConfigData extends Map {
     this.#where = where
     this.#description = description
     this.#type = opts
-
-    this.#envReplace = (v) => envReplace(v, env)
+    this.#envReplace = envReplace
 
     for (const key of Object.keys(SYMBOLS)) {
       this[key] = () => {
@@ -116,31 +114,23 @@ class ConfigData extends Map {
   load (data, error, file) {
     this.#assertLoaded(false)
 
-    if (file) {
-      this.#file = file
-      this.#loaded = `${this.description}, file: ${file}`
-    } else {
-      this.#loaded = this.description
-    }
+    this.#file = file
+    this.#loaded = this.description + (file ? `, file: ${file}` : '')
 
-    if (error?.code !== 'ENOENT') {
-      log.verbose('config', `error loading ${this.where} config`, error)
-    }
-
-    if (error || !data) {
+    if (error) {
+      if (error.code !== 'ENOENT') {
+        log.verbose('config', `error loading ${this.where} config`, error)
+      }
       return
+    }
+
+    if (!data) {
+      throw new Error(`Cannot load config location without data: ${this.where}`)
     }
 
     // an array comes from argv so we parse it in the standard nopt way
     if (Array.isArray(data)) {
-      const { argv, ...parsedData } = nopt.nopt(data, {
-        typeDefs,
-        shorthands,
-        types,
-        invalidHandler: (...args) => this.#invalidHandler(...args),
-      })
-      this.#setAll(parsedData)
-      return { argv }
+      return this.#loadArgv(data)
     }
 
     // if its a string then it came from a file and we need to parse
@@ -157,6 +147,17 @@ class ConfigData extends Map {
 
     // and finally only do a nopt clean since it is already parsed
     this.#setAll(this.#clean(parsed))
+  }
+
+  #loadArgv (data) {
+    const { argv, ...parsedData } = nopt.nopt(data, {
+      typeDefs,
+      shorthands,
+      types,
+      invalidHandler: (...args) => this.#invalidHandler(...args),
+    })
+    this.#setAll(parsedData)
+    return argv
   }
 
   #setAll (data) {

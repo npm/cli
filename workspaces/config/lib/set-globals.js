@@ -1,13 +1,13 @@
-const NPM_PREFIX = `npm_`
-const CONFIG_PREFIX = `${NPM_PREFIX}config_`
-const rePrefix = new RegExp(`^${CONFIG_PREFIX}`, 'i')
+const NpmPrefix = `npm_`
+const NpmConfigPrefx = `${NpmPrefix}config_`
+const rePrefix = new RegExp(`^${NpmConfigPrefx}`, 'i')
 
 // This is an allow list of env variables that this config
 // module can set. Note that this only applies to environs
 // that do not start with `npm_` which are always allowed.
 // This list is exported so that the npm tests can reset any
 // env vars between tests.
-const ALLOWED_ENV_KEYS = new Set([
+const EnvKeys = new Set([
   'INIT_CWD',
   'HOME',
   'EDITOR',
@@ -17,12 +17,25 @@ const ALLOWED_ENV_KEYS = new Set([
   'NODE_ENV',
 ])
 
-const ALLOWED_PROCESS_KEYS = new Set([
+const ProcessKeys = new Set([
   'execPath',
 ])
 
+// replace any ${ENV} values with the appropriate environ.
+const envExpr = /(?<!\\)(\\*)\$\{([^${}]+)\}/g
+const envReplace = (env, f) => f.replace(envExpr, (orig, esc, name) => {
+  const val = env[name] !== undefined ? env[name] : `$\{${name}}`
+
+  // consume the escape chars that are relevant.
+  if (esc.length % 2) {
+    return orig.slice((esc.length + 1) / 2)
+  }
+
+  return (esc.slice(esc.length / 2)) + val
+})
+
 const setProcess = (proc, key, val) => {
-  if (ALLOWED_PROCESS_KEYS.has(key)) {
+  if (ProcessKeys.has(key)) {
     throw new Error(`attempted to set non-allowed process: ${key}`)
   }
   proc[key] = val
@@ -30,7 +43,7 @@ const setProcess = (proc, key, val) => {
 
 const envKey = (key, val) => !/^[/@_]/.test(key) &&
   typeof envVal(val) === 'string' &&
-  `${CONFIG_PREFIX}${key.replace(/-/g, '_').toLowerCase()}`
+  `${NpmConfigPrefx}${key.replace(/-/g, '_').toLowerCase()}`
 
 const envVal = val => Array.isArray(val) ? val.map(v => envVal(v)).join('\n\n')
   : val === null || val === undefined || val === false ? ''
@@ -66,7 +79,7 @@ const setNpmEnv = (env, rawKey, rawVal) => {
 }
 
 const setEnv = (env, key, rawVal) => {
-  if (!key.startsWith(NPM_PREFIX) && !ALLOWED_ENV_KEYS.has(key)) {
+  if (!key.startsWith(NpmPrefix) && !EnvKeys.has(key)) {
     throw new Error(`not allowed to to set environ: \`${key}\``)
   }
   const val = envVal(rawVal)
@@ -76,14 +89,15 @@ const setEnv = (env, key, rawVal) => {
 }
 
 module.exports = {
-  ALLOWED_PROCESS_KEYS,
-  ALLOWED_ENV_KEYS,
+  ProcessKeys,
+  EnvKeys,
   setProcess,
   setEnv,
   sameValue,
+  replaceEnv: envReplace,
   npm: {
     setEnv: setNpmEnv,
     testKey: (k) => rePrefix.test(k),
-    prefix: CONFIG_PREFIX,
+    envPrefix: NpmConfigPrefx,
   },
 }

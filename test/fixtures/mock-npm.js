@@ -10,6 +10,8 @@ const tmock = require('./tmock')
 const defExitCode = process.exitCode
 const npmRoot = path.resolve(__dirname, '../../')
 
+// changes to the supplied directory and returns a function
+// to reset at the end of a test
 const changeDir = (dir) => {
   if (dir) {
     const cwd = process.cwd()
@@ -19,6 +21,10 @@ const changeDir = (dir) => {
   return () => {}
 }
 
+// takes the passed in testdir options for the global directory and rewrites
+// the nested depth and any symlinks to match the desired location based on the
+// platform. windows wants everything at `GLOBAL/node_modules` and other platforms
+// want `GLOBAL/lib/node_modules`
 const setGlobalNodeModules = (globalDir) => {
   const updateSymlinks = (obj, visit) => {
     for (const [key, value] of Object.entries(obj)) {
@@ -58,12 +64,15 @@ const getMockNpm = async (t, { mocks, init, load, npm: npmOpts }) => {
   }
 
   const Npm = tmock(t, '{LIB}/npm.js', {
-    '{LIB}/utils/update-notifier.js': async () => {},
+    // update-notifier is designed to not await until its finished
+    // so we always mock it to a sync noop function so tests will
+    // always complete. the actual update notifier is tested separately
+    '{LIB}/utils/update-notifier.js': () => {},
     ...mocks,
     ...mock.logMocks,
   })
 
-  class MockNpm extends Npm {
+  mock.Npm = class extends Npm {
     async exec (...args) {
       const [res, err] = await super.exec(...args).then((r) => [r]).catch(e => [null, e])
       // This mimics how the exit handler flushes output for commands that have
@@ -96,9 +105,8 @@ const getMockNpm = async (t, { mocks, init, load, npm: npmOpts }) => {
     }
   }
 
-  mock.Npm = MockNpm
   if (init) {
-    mock.npm = new MockNpm(npmOpts)
+    mock.npm = new mock.Npm(npmOpts)
     if (load) {
       await mock.npm.load()
     }
@@ -220,10 +228,11 @@ const setupMockNpm = async (t, {
 
   mockGlobals(t, {
     'process.env.HOME': dirs.home,
-    // global prefix cannot be (easily) set via argv so this is the easiest way
-    // to set it that also closely mimics the behavior a user would see since it
-    // will already be set while `npm.load()` is being run
-    // Note that this only sets the global prefix and the prefix is set via chdir
+    // global prefix cannot be set via argv without affecting other prefixes so
+    // this is the easiest way to set it that also closely mimics the behavior a
+    // user would see since it will already be set while `npm.load()` is being
+    // run Note that this only sets the global prefix and the prefix is set via
+    // chdir
     'process.env.PREFIX': dirs.globalPrefix,
     ...withDirs(globals),
     ...env,

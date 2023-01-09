@@ -8,13 +8,14 @@ const { resolve, dirname, join } = require('path')
 const { homedir } = require('os')
 const fs = require('fs/promises')
 const TypeDefs = require('./type-defs.js')
-const SetEnv = require('./set-envs.js')
+const SetGlobal = require('./set-globals.js')
 const { ErrInvalidAuth } = require('./errors')
 const Credentials = require('./credentials.js')
 const ConfigTypes = require('./config-locations')
-const { definitions, defaults } = require('./config')
+const { definitions, defaults } = require('./definitions')
 const { isNerfed } = require('./nerf-dart.js')
-const ConfTypes = ConfigTypes.ConfTypes
+const replaceInfo = require('./replace-info')
+const Locations = ConfigTypes.Locations
 
 const fileExists = (...p) => fs.stat(resolve(...p))
   .then((st) => st.isFile())
@@ -24,28 +25,12 @@ const dirExists = (...p) => fs.stat(resolve(...p))
   .then((st) => st.isDirectory())
   .catch(() => false)
 
-// define a custom getter, but turn into a normal prop
-// if we set it.  otherwise it can't be set on child objects
-const settableGetter = (get, ...args) => Object.defineProperty(...args, {
-  configurable: true,
-  enumerable: true,
-  get,
-  set (value) {
-    Object.defineProperty(...args, {
-      value,
-      configurable: true,
-      writable: true,
-      enumerable: true,
-    })
-  },
-})
-
 class Config {
   static TypeDefs = TypeDefs
   static Types = TypeDefs.Types
-  static ConfigTypes = ConfigTypes.ConfigTypes
-  static EnvKeys = [...SetEnv.ALLOWED_ENV_KEYS.values()]
-  static ProcessKeys = [...SetEnv.ALLOWED_ENV_KEYS.values()]
+  static Locations = Locations
+  static EnvKeys = [...SetGlobal.EnvKeys.values()]
+  static ProcessKeys = [...SetGlobal.ProcessKeys.values()]
   static nerfDarts = Credentials.nerfDarts
 
   // state
@@ -63,17 +48,23 @@ class Config {
   #execPath = null
   #cwd = null
 
+  // set during init which is called in ctor
+  #command = null
+  #args = null
+  #clean = null
+  #title = null
+
   // set when we load configs
   #globalPrefix = null
   #localPrefix = null
   #localPackage = null
   #loaded = false
   #home = null
-  #parsedArgv = null
 
   // functions
   #setEnv = null
   #setNpmEnv = null
+  #setProc = null
   #credentials = null
 
   constructor ({
@@ -104,11 +95,18 @@ class Config {
     TypeDefs.typeDefs.path.HOME = this.#home
     TypeDefs.typeDefs.path.PLATFORM = this.#platform
 
-    this.#configData = new ConfigTypes({ env: this.#env })
+    this.#configData = new ConfigTypes({
+      envReplace: (k) => SetGlobal.replaceEnv(this.#env),
+      config: this,
+    })
 
     this.#credentials = new Credentials(this)
-    this.#setEnv = (...args) => SetEnv.setEnv(this.#env, ...args)
-    this.#setNpmEnv = (...args) => SetEnv.npm.setEnv(this.#env, ...args)
+
+    this.#setProc = (...args) => SetGlobal.setProcess(this.#process, ...args)
+    this.#setEnv = (...args) => SetGlobal.setEnv(this.#env, ...args)
+    this.#setNpmEnv = (...args) => SetGlobal.npm.setEnv(this.#env, ...args)
+
+    this.#init()
   }
 
   // =============================================
@@ -120,38 +118,23 @@ class Config {
     return this.#loaded
   }
 
-  get prefix () {
-    this.#assertLoaded()
-    return this.#global ? this.globalPrefix : this.localPrefix
-  }
-
   get globalPrefix () {
-    this.#assertLoaded()
     return this.#globalPrefix
   }
 
   get localPrefix () {
-    this.#assertLoaded()
     return this.#localPrefix
   }
 
   get localPackage () {
-    this.#assertLoaded()
     return this.#localPackage
   }
 
-  get parsedArgv () {
-    this.#assertLoaded()
-    return this.#parsedArgv
-  }
-
   get flat () {
-    this.#assertLoaded()
     return this.#configData.data
   }
 
   get valid () {
-    this.#assertLoaded()
     for (const conf of this.#configData.values()) {
       if (!conf.validate()) {
         return false
@@ -164,13 +147,29 @@ class Config {
     return this.#credentials
   }
 
-  get #global () {
-    return this.#get('global') === true || this.#get('location') === 'global'
+  get command () {
+    return this.#command
+  }
+
+  get args () {
+    return this.#args
+  }
+
+  get clean () {
+    return this.#clean
+  }
+
+  get title () {
+    return this.#title
   }
 
   // =============================================
   //
-  // Get/Set/Find/Delete, etc.
+  // Data getters/setters
+  //
+  // * set/delete default to manipulating the CLI location
+  // * get/find/has default to null which will search through
+  //   all the locations
   //
   // =============================================
   find (key, where) {
@@ -205,7 +204,7 @@ class Config {
     return this.#set(key, val, where)
   }
 
-  #set (key, val, where = ConfTypes.cli) {
+  #set (key, val, where = Locations.cli) {
     return this.#configData.setData(where, key, val)
   }
 
@@ -214,7 +213,7 @@ class Config {
     return this.#delete(key, where)
   }
 
-  #delete (key, where = ConfTypes.cli) {
+  #delete (key, where = Locations.cli) {
     return this.#configData.deleteData(where, key)
   }
 
@@ -223,27 +222,88 @@ class Config {
   // coming from any other different source, returns false
   isDefault (key) {
     this.#assertLoaded()
-    return this.#find(key) === ConfTypes.default
+    return this.#find(key) === Locations.default
   }
 
   // =============================================
   //
-  // Config Type Loaders
+  // Config type loaders
   //
   // =============================================
-  async load (where, data) {
-    if (where) {
-      this.#assertLoaded()
-      return this.#configData.add(where, data)
+  #init () {
+    // load env first because it has no dependencies
+    this.#loadEnv()
+
+    // then load the cli options since those have no dependencies but can have env
+    // vars replaced in them. this gives us the command name and any remaining args
+    // which will be passed to npm.exec().
+    // NOTE: this is where command specific config could go since we now have a parsed
+    // command name, the remaining args, and config values from the CLI and can rewrite
+    // them or parse the remaining config files with this information.
+    const { remain, cooked } = this.#loadObject(Locations.cli, this.#argv)
+    this.#command = remain[0]
+    this.#args = remain.slice(1)
+
+    if (this.#get('versions', Locations.cli) || this.#get('version', Locations.cli)) {
+      // npm --versions or npm --version both run the version command
+      this.#command = 'version'
+      this.#args = []
+      this.#set('usage', false, Locations.cli)
+    } else if (!this.#command) {
+      // if there is no command, then we run the basic help command which print usage
+      // but its an error so we need to set the exit code too
+      this.#command = 'help'
+      this.#args = []
+      process.exitCode = 1
     }
+
+    // Secrets are mostly in configs, so title is set using only the positional args
+    // to keep those from being leaked.
+    this.#title = `npm ${replaceInfo(remain).join(' ')}`.trim()
+    this.#setProc('title', this.#title)
+    log.verbose('title', this.#title)
+
+    // The cooked argv is also logged separately for debugging purposes. It is
+    // cleaned as a best effort by replacing known secrets like basic auth
+    // password and strings that look like npm tokens. XXX: for this to be
+    // safer the config should create a sanitized version of the argv as it
+    // has the full context of what each option contains.
+    this.#clean = replaceInfo(cooked)
+    log.verbose('argv', this.#clean.map(JSON.stringify).join(' '))
+
+    // Options are prefixed by a hyphen-minus (-, \u2d).
+    // Other dash-type chars look similar but are invalid.
+    const nonDashArgs = remain.filter(a => /^[\u2010-\u2015\u2212\uFE58\uFE63\uFF0D]/.test(a))
+    if (nonDashArgs.length) {
+      log.error(
+        'arg',
+        'Argument starts with non-ascii dash, this is probably invalid:',
+        nonDashArgs.join(', ')
+      )
+    }
+  }
+
+  async add (where, data) {
+    this.#assertLoaded()
+    return this.#configData.add(where, data)
+  }
+
+  async load () {
     this.#assertLoaded(false)
     return this.#time('load', () => this.#load())
   }
 
   async #load () {
-    for (const { where } of this.#configData.values()) {
-      await this.#time(`load:${where}`, () => this.#loadType(where))
-    }
+    // first load the defaults, which sets the global prefix
+    await this.#time(`load:${Locations.defaults}`, () => this.#loadDefaults())
+    // next load the builtin config, as this sets new effective defaults
+    await this.#time(`load:${Locations.builtin}`, () => this.#loadBuiltin())
+    // next project config, which can affect userconfig location
+    await this.#time(`load:${Locations.project}`, () => this.#loadProject())
+    // then user config, which can affect globalconfig location
+    await this.#time(`load:${Locations.user}`, () => this.#loadUser())
+    // last but not least, global config file
+    await this.#time(`load:${Locations.global}`, () => this.#loadGlobal())
 
     // set proper globalPrefix now that everything is loaded
     // needs to be set before setEnvs to use it
@@ -252,34 +312,15 @@ class Config {
     this.#loaded = true
   }
 
-  #loadType (where) {
-    switch (where) {
-      case ConfTypes.default:
-        return this.#loadDefaults()
-      case ConfTypes.builtin:
-        return this.#loadBuiltin()
-      case ConfTypes.global:
-        return this.#loadGlobal()
-      case ConfTypes.user:
-        return this.#loadUser()
-      case ConfTypes.project:
-        return this.#loadProject()
-      case ConfTypes.env:
-        return this.#loadEnv()
-      case ConfTypes.cli:
-        return this.#loadCli()
-    }
-  }
-
   async #loadDefaults () {
     await this.#time('whichnode', async () => {
       const node = await which(this.#argv[0]).catch(() => {})
       if (node?.toUpperCase() !== this.#execPath.toUpperCase()) {
         log.verbose('node symlink', node)
         this.#execPath = node
-        SetEnv.setProcess(this.#process, 'execPath', node)
+        SetGlobal.setProcess(this.#process, 'execPath', node)
       }
-    })
+    }) 
 
     if (this.#env.PREFIX) {
       this.#globalPrefix = this.#env.PREFIX
@@ -289,38 +330,29 @@ class Config {
     } else {
       // /usr/local/bin/node --> prefix=/usr/local
       this.#globalPrefix = dirname(dirname(this.#execPath))
-
       // destdir only is respected on Unix
       if (this.#env.DESTDIR) {
         this.#globalPrefix = join(this.#env.DESTDIR, this.#globalPrefix)
       }
     }
 
-    this.#loadObject(ConfTypes.default, { ...defaults, prefix: this.#globalPrefix })
-
-    const { data } = this.#configData.get(ConfTypes.default)
-
-    // the metrics-registry defaults to the current resolved value of
-    // the registry, unless overridden somewhere else.
-    settableGetter(() => this.#get('registry'), data, 'metrics-registry')
-
-    // if the prefix is set on cli, env, or userconfig, then we need to
-    // default the globalconfig file to that location, instead of the default
-    // global prefix.  It's weird that `npm get globalconfig --prefix=/foo`
-    // returns `/foo/etc/npmrc`, but better to not change it at this point.
-    settableGetter(() => resolve(this.#get('prefix'), 'etc/npmrc'), data, 'globalconfig')
+    this.#loadObject(Locations.default, {
+      ...defaults,
+      prefix: this.#globalPrefix,
+      globalconfig: resolve(this.#get('prefix'), 'etc/npmrc'),
+    })
   }
 
   async #loadBuiltin () {
-    await this.#loadFile(resolve(this.#npmRoot, 'npmrc'), ConfTypes.builtin)
+    await this.#loadFile(resolve(this.#npmRoot, 'npmrc'), Locations.builtin)
   }
 
   async #loadGlobal () {
-    await this.#loadFile(this.#get('globalconfig'), ConfTypes.global)
+    await this.#loadFile(this.#configData.data.globalconfig, Locations.global)
   }
 
   async #loadUser () {
-    await this.#loadFile(this.#get('userconfig'), ConfTypes.user)
+    await this.#loadFile(this.#get('userconfig'), Locations.user)
   }
 
   async #loadProject () {
@@ -337,7 +369,7 @@ class Config {
       }
     })
 
-    const config = this.#configData.get(ConfTypes.project)
+    const config = this.#configData.get(Locations.project)
 
     if (this.global) {
       config.ignore('global mode enabled')
@@ -354,30 +386,25 @@ class Config {
       config.ignore('same as "user" config')
       return
     }
-    await this.#loadFile(projectFile, ConfTypes.project)
+    await this.#loadFile(projectFile, Locations.project)
   }
 
   #loadEnv () {
     const data = Object.entries(this.#env).reduce((acc, [key, val]) => {
-      if (SetEnv.npm.testKey(key) || !val) {
+      if (!SetGlobal.npm.testKey(key) || !val) {
         return acc
       }
-      const configKey = key.slice(SetEnv.npm.prefix.length)
+      const configKey = key.slice(SetGlobal.npm.envPrefix.length)
       if (isNerfed(configKey)) {
         // don't normalize nerf-darted keys
         acc[configKey] = val
-        return acc
+      } else {
+        // don't replace _ at the start of the key
+        acc[configKey.replace(/(?!^)_/g, '-').toLowerCase()] = val
       }
-      // don't replace _ at the start of the key
-      acc[configKey.replace(/(?!^)_/g, '-').toLowerCase()] = val
       return acc
     }, {})
-    this.#loadObject(ConfTypes.env, data)
-  }
-
-  #loadCli () {
-    const { argv } = this.#loadObject(ConfTypes.cli, this.#argv.slice(2))
-    this.#parsedArgv = argv
+    this.#loadObject(Locations.env, data)
   }
 
   async #loadFile (file, where) {
@@ -393,13 +420,13 @@ class Config {
   }
 
   async #loadLocalPrefix () {
-    const cliPrefix = this.#get('prefix', ConfTypes.cli)
+    const cliPrefix = this.#get('prefix', Locations.cli)
     if (cliPrefix) {
       this.#localPrefix = cliPrefix
       return
     }
 
-    const cliWorkspaces = this.#get('workspaces', ConfTypes.cli)
+    const cliWorkspaces = this.#get('workspaces', Locations.cli)
 
     for (const p of walkUp(this.#cwd)) {
       if (p === this.#cwdRoot) {
@@ -439,7 +466,7 @@ class Config {
             }
 
             // set the workspace in the default layer, which allows it to be overridden easily
-            const { data } = this.#configData.get(ConfTypes.default)
+            const { data } = this.#configData.get(Locations.default)
             data.workspace = [this.#localPrefix]
             this.#localPrefix = p
             this.#localPackage = hasPackageJson
@@ -479,8 +506,8 @@ class Config {
     // if the key is NOT the default value,
     //   if the env is setting it, then leave it (already set)
     //   otherwise, set the env
-    const cliConf = this.#configData.get(ConfTypes.cli)
-    const envConf = this.#configData.get(ConfTypes.env)
+    const cliConf = this.#configData.get(Locations.cli)
+    const envConf = this.#configData.get(Locations.env)
 
     for (const [key, value] in cliConf.entries()) {
       const def = definitions[key]
@@ -488,10 +515,10 @@ class Config {
         continue
       }
 
-      if (SetEnv.sameValue(defaults[key], value)) {
+      if (SetGlobal.sameValue(defaults[key], value)) {
         // config is the default, if the env thought different, then we
         // have to set it BACK to the default in the environment.
-        if (!SetEnv.sameValue(envConf.get(key), value)) {
+        if (!SetGlobal.sameValue(envConf.get(key), value)) {
           this.#setNpmEnv(key, value)
         }
       } else {
@@ -516,6 +543,7 @@ class Config {
     this.#setEnv('HOME', this.#home)
     this.#setEnv('NODE', this.#execPath)
     this.#setEnv('npm_node_execpath', this.#execPath)
+    this.#setEnv('npm_command', this.#command)
     this.#setEnv('EDITOR', cliConf.has('editor') ? cliConf.get('editor') : null)
 
     // note: this doesn't afect the *current* node process, of course, since

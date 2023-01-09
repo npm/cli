@@ -1,6 +1,6 @@
 const ciInfo = require('ci-info')
 const { tmpdir } = require('os')
-const { join } = require('path')
+const { join, resolve } = require('path')
 const fs = require('fs')
 const Arborist = require('@npmcli/arborist')
 const { Types } = require('../type-defs')
@@ -764,7 +764,7 @@ define('global', {
 
 define('globalconfig', {
   type: Types.Path,
-  default: '',
+  default: '', // default is derived when config loads
   defaultDescription: `
     The global --prefix setting plus 'etc/npmrc'. For example,
     '/usr/local/etc/npmrc'
@@ -1430,11 +1430,10 @@ define('prefer-online', {
   flatten: true,
 })
 
-// `prefix` has its default defined outside of this module
 define('prefix', {
   type: Types.Path,
   short: 'C',
-  default: '',
+  default: '', // default is derived when config loads,
   defaultDescription: `
     In global mode, the folder where the node executable is installed.
     Otherwise, the nearest parent folder containing either a package.json
@@ -2125,6 +2124,22 @@ derive(['global', 'location'], ({ global, location }) => {
   const isGlobal = global || location === 'global'
   return isGlobal ? { global: true, location: 'global' } : { global, location }
 })
+
+derive('prefix', ({ prefix, globalconfig }) => {
+  // if the prefix is set on cli, env, or userconfig, then we need to
+  // default the globalconfig file to that location, instead of the default
+  // global prefix.  It's weird that `npm get globalconfig --prefix=/foo`
+  // returns `/foo/etc/npmrc`, but better to not change it at this point.
+  return globalconfig ?? resolve(prefix, 'etc/npmrc')
+}, ['prefix'])
+
+derive('globalconfig', ({ prefix, globalconfig }) => {
+  // if the prefix is set on cli, env, or userconfig, then we need to
+  // default the globalconfig file to that location, instead of the default
+  // global prefix.  It's weird that `npm get globalconfig --prefix=/foo`
+  // returns `/foo/etc/npmrc`, but better to not change it at this point.
+  return globalconfig ?? resolve(prefix, 'etc/npmrc')
+}, ['prefix'])
 
 derive(['cache', 'npx-cache', 'logs-dir'], ({ cache, logsDir }) => {
   return {

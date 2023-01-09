@@ -1,5 +1,5 @@
 const ConfigData = require('./config-data')
-const { derived, definitions, camelCase, keys: configKeys } = require('./config')
+const { derived, definitions, camelCase, keys: configKeys } = require('./definitions')
 
 // this is in order from least -> most precedence
 const LocationsList = Object.entries({
@@ -21,7 +21,8 @@ const Locations = LocationsList.reduce((acc, [location]) => {
 class ConfigLocations extends Map {
   static Locations = Locations
 
-  #env = null
+  #envReplace = null
+  #config = null
 
   #list = []
   #revList = []
@@ -33,10 +34,11 @@ class ConfigLocations extends Map {
   #base = new Map()
   #derived = new Map()
 
-  constructor ({ env }) {
+  constructor ({ envReplace, config }) {
     super()
 
-    this.#env = env
+    this.#envReplace = envReplace
+    this.#config = config
 
     for (const key of configKeys) {
       this.#createBaseDescriptor(key)
@@ -71,7 +73,11 @@ class ConfigLocations extends Map {
   }
 
   add (location, configData) {
-    const data = new ConfigData(location, { parent: this, data: configData, env: this.#env })
+    const data = new ConfigData(location, {
+      parent: this,
+      data: configData,
+      envReplace: this.#envReplace,
+    })
 
     this.#indexes[data.where] = this.#list.push(data.where) - 1
     this.#revList.unshift(data.where)
@@ -174,7 +180,7 @@ class ConfigLocations extends Map {
         if (this.#derived.has(k)) {
           return this.#derived.get(k)
         }
-        const value = derive.set(this.#baseData)
+        const value = derive.set(this.#baseData, this.#config)
         this.#derived.set(k, value)
         return value
       },
