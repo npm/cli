@@ -12,7 +12,7 @@ const SetGlobal = require('./set-globals.js')
 const { ErrInvalidAuth } = require('./errors')
 const Credentials = require('./credentials.js')
 const ConfigTypes = require('./config-locations')
-const { definitions, defaults, definitionKeys, values } = require('./definitions')
+const Definitions = require('./definitions')
 const { isNerfed } = require('./nerf-dart.js')
 const replaceInfo = require('./replace-info')
 const Locations = ConfigTypes.Locations
@@ -31,7 +31,11 @@ class Config {
   static ProcessKeys = [...SetGlobal.ProcessKeys.values()]
   static NerfDarts = Credentials.nerfDarts
   static replaceInfo = replaceInfo
-  static configKeys = definitionKeys
+  static configKeys = Definitions.definitionKeys
+  static definitions = Definitions.definitions
+  static shortKeys = Definitions.shortKeys
+  static shorthands = Definitions.shorthands
+  static types = Definitions.types
 
   // state
   #configData = null
@@ -177,7 +181,7 @@ class Config {
   // but to not have breakages there we need to have an instance getter
   // to return the raw data there
   get defaults () {
-    return defaults
+    return Definitions.defaults
   }
 
   // =============================================
@@ -258,7 +262,7 @@ class Config {
     // command name, the remaining args, and config values from the CLI and can rewrite
     // them or parse the remaining config files with this information.
     const { remain, cooked } = this.#loadObject(Locations.cli, this.#argv.slice(2))
-    this.#configData.get(Locations.cli).loadObject({ ...values })
+    this.#configData.get(Locations.cli).loadObject({ ...Definitions.values })
 
     let command = remain[0]
     this.#args = remain.slice(1)
@@ -359,7 +363,7 @@ class Config {
       }
     }
 
-    this.#loadObject(Locations.default, defaults)
+    this.#loadObject(Locations.default, Definitions.defaults)
   }
 
   async #loadBuiltin () {
@@ -528,12 +532,12 @@ class Config {
     const envConf = this.#configData.get(Locations.env)
 
     for (const [key, value] in cliConf.entries()) {
-      const def = definitions[key]
+      const def = Definitions.definitions[key]
       if (def?.deprecated || !def?.envExport) {
         continue
       }
 
-      if (SetGlobal.sameValue(defaults[key], value)) {
+      if (SetGlobal.sameValue(Definitions.defaults[key], value)) {
         // config is the default, if the env thought different, then we
         // have to set it BACK to the default in the environment.
         if (!SetGlobal.sameValue(envConf.get(key), value)) {

@@ -122,7 +122,7 @@ class Definition {
   }
 
   get short () {
-    return [].concat(this.#def.short)
+    return [].concat(this.#def.short ?? [])
   }
 
   get isBoolean () {
@@ -142,7 +142,7 @@ class Definition {
   }
 
   get #typeMultiple () {
-    return this.#typeDefs.includes(Types.Array)
+    return this.#types.includes(Types.Array)
   }
 
   get #typeDefs () {
@@ -151,10 +151,6 @@ class Definition {
 
   get #defaultDescription () {
     return this.#def.defaultDescription ?? describeValue(this.#def.default)
-  }
-
-  get #typeDescription () {
-    return this.#describeTypes()
   }
 
   addDerived (...keys) {
@@ -171,18 +167,21 @@ class Definition {
   describe () {
     const sections = [
       ['Default', this.#defaultDescription],
-      ['Type', this.#typeDescription],
+      ['Type', this.#describeTypes()],
       this.deprecated ? ['DEPRECATED', this.deprecated] : null,
+      '',
       this.#def.description,
-      !this.envExport && 'This value is not exported to the environment for child processes.',
+      ...(this.envExport ? [] : ['',
+        'This value is not exported to the environment for child processes.',
+      ]),
     ].map((s) => {
       if (Array.isArray(s)) {
         return `* ${s[0]}: ${unindent(s[1])}`
       }
-      return s ? unindent(s) : null
+      return typeof s === 'string' ? unindent(s) : null
     })
 
-    return wrapAll(`#### \`${this.key}\`\n\n${sections.filter(Boolean).join('\n')}`)
+    return wrapAll(`#### \`${this.#key}\`\n\n${sections.filter(v => v != null).join('\n')}`)
   }
 
   mustBe () {
@@ -224,7 +223,7 @@ class Definition {
 
       if (valueTypes.some(t => typeof t !== 'string' && typeof t !== 'number')) {
       // Generic values, use hint
-        description = this.#def.hint ? [].concat(this.#def.hint) : this.typeDefs.map(t => t?.hint)
+        description = this.#def.hint ? [].concat(this.#def.hint) : this.#typeDefs.map(t => t?.hint)
       } else {
       // Specific values, use specifics given
         description = valueTypes
@@ -234,14 +233,27 @@ class Definition {
     const d = description.filter(Boolean).join('|')
     const usageDesc = `${usage.join('|')} ${d ? `<${d}>` : ''}`.trim()
 
-    return this.$typeMultiple ? `${usageDesc} [${usageDesc} ...]` : usageDesc
+    return this.#typeMultiple ? `${usageDesc} [${usageDesc} ...]` : usageDesc
   }
 
   #describeTypes () {
-    const descriptions = this.#typeDefs
-      .filter(t => t?.type !== Types.Array)
-      .flatMap(t => t?.typeDescription ?? t)
-      .map(describeValue)
+    let descriptions
+
+    const type = getType(this.#def.type)
+    if (type) {
+      descriptions = [].concat(type.typeDescription)
+    } else {
+      const types = this.#typeDefs.filter(t => t?.type !== Types.Array)
+      descriptions = types.flatMap(t => {
+        if (t?.typeDescription) {
+          return [].concat(t.typeDescription)
+        }
+        return { value: t }
+      })
+    }
+
+    descriptions = descriptions
+      .map(v => hasOwn(v, 'value') ? JSON.stringify(v.value) : v)
 
     // [a] => "a"
     // [a, b] => "a or b"

@@ -19,6 +19,7 @@ const EnvKeys = new Set([
 
 const ProcessKeys = new Set([
   'execPath',
+  'title',
 ])
 
 // replace any ${ENV} values with the appropriate environ.
@@ -35,7 +36,7 @@ const envReplace = (env, f) => f.replace(envExpr, (orig, esc, name) => {
 })
 
 const setProcess = (proc, key, val) => {
-  if (ProcessKeys.has(key)) {
+  if (!ProcessKeys.has(key)) {
     throw new Error(`attempted to set non-allowed process: ${key}`)
   }
   proc[key] = val

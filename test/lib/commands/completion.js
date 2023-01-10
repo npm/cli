@@ -7,7 +7,7 @@ const completionScript = fs
   .replace(/^#!.*?\n/, '')
 
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
-const mockGlobals = require('../../fixtures/mock-globals')
+const mockGlobals = require('@npmcli/mock-globals')
 
 const loadMockCompletion = async (t, o = {}) => {
   const { globals = {}, windows, ...options } = o

@@ -2,7 +2,7 @@ const t = require('tap')
 const { resolve } = require('path')
 const fs = require('fs/promises')
 const { load: _loadMockNpm } = require('../../fixtures/mock-npm.js')
-const mockGlobals = require('../../fixtures/mock-globals.js')
+const mockGlobals = require('@npmcli/mock-globals')
 const tmock = require('../../fixtures/tmock')
 const { cleanCwd, cleanDate } = require('../../fixtures/clean-snapshot.js')
 

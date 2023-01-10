@@ -3,10 +3,10 @@ const { join, resolve, basename, extname, dirname } = require('path')
 const fs = require('fs/promises')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 const docs = require('@npmcli/docs')
+const { definitions } = require('@npmcli/config')
+const mockGlobals = require('@npmcli/mock-globals')
 
 const { load: loadMockNpm } = require('../fixtures/mock-npm.js')
-const mockGlobals = require('../fixtures/mock-globals.js')
-const { definitions } = require('../../lib/utils/config/index.js')
 const cmdList = require('../../lib/utils/cmd-list.js')
 const pkg = require('../../package.json')
 
@@ -22,7 +22,7 @@ t.test('shorthands', async t => {
 
 t.test('config', async t => {
   const keys = Object.keys(definitions)
-  const flat = Object.entries(definitions).filter(([_, d]) => d.flatten).map(([k]) => k)
+  const flat = Object.entries(definitions).filter(([k, d]) => d.derived.length).map(([k]) => k)
   const notFlat = keys.filter(k => !flat.includes(k))
   t.matchSnapshot(keys, 'all keys')
   t.matchSnapshot(flat, 'keys that are flattened')
@@ -46,7 +46,7 @@ t.test('basic usage', async t => {
     config: { userconfig: '/some/config/file/.npmrc' },
   })
 
-  t.matchSnapshot(await npm.usage)
+  t.matchSnapshot(npm.usage)
 })
 
 t.test('usage', async t => {
@@ -81,9 +81,9 @@ t.test('usage', async t => {
     t.test(cmd, async t => {
       let output = null
       if (!bareCommands.includes(cmd)) {
-        const { npm } = await loadMockNpm(t)
-        const impl = await npm.cmd(cmd)
-        output = impl.usage
+        const { Npm } = await loadMockNpm(t, { load: false })
+        const { describeUsage } = Npm.derefCommand(cmd)
+        output = describeUsage
       }
 
       const usage = docs.usage(docs.TAGS.USAGE, { path: cmd })

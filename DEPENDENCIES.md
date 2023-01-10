@@ -187,6 +187,8 @@ graph LR;
   npmcli-arborist-->treeverse;
   npmcli-config-->ini;
   npmcli-config-->nopt;
+  npmcli-config-->npm-registry-fetch;
+  npmcli-config-->npmcli-arborist["@npmcli/arborist"];
   npmcli-config-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-config-->npmcli-map-workspaces["@npmcli/map-workspaces"];
   npmcli-config-->npmcli-template-oss["@npmcli/template-oss"];
@@ -194,6 +196,7 @@ graph LR;
   npmcli-config-->read-package-json-fast;
   npmcli-config-->semver;
   npmcli-docs-->ignore-walk;
+  npmcli-docs-->npmcli-config["@npmcli/config"];
   npmcli-docs-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-docs-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-fs-->semver;
@@ -628,6 +631,8 @@ graph LR;
   npmcli-config-->ci-info;
   npmcli-config-->ini;
   npmcli-config-->nopt;
+  npmcli-config-->npm-registry-fetch;
+  npmcli-config-->npmcli-arborist["@npmcli/arborist"];
   npmcli-config-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-config-->npmcli-map-workspaces["@npmcli/map-workspaces"];
   npmcli-config-->npmcli-template-oss["@npmcli/template-oss"];
@@ -643,6 +648,7 @@ graph LR;
   npmcli-docs-->isaacs-string-locale-compare["@isaacs/string-locale-compare"];
   npmcli-docs-->jsdom;
   npmcli-docs-->mkdirp;
+  npmcli-docs-->npmcli-config["@npmcli/config"];
   npmcli-docs-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-docs-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-docs-->rehype-stringify;
@@ -786,13 +792,13 @@ Each group depends on packages lower down the chain, nothing depends on
 packages higher up the chain.
 
  - npm
- - @npmcli/smoke-tests, libnpmaccess, libnpmexec, libnpmpublish
- - @npmcli/mock-registry, libnpmdiff, libnpmfund, libnpmpack
+ - @npmcli/docs, @npmcli/smoke-tests, libnpmaccess, libnpmexec, libnpmpublish
+ - @npmcli/config, @npmcli/mock-registry, libnpmdiff, libnpmfund, libnpmpack
  - @npmcli/arborist
  - @npmcli/metavuln-calculator
  - pacote, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, npm-profile
  - npm-registry-fetch, libnpmversion
- - @npmcli/git, make-fetch-happen, @npmcli/config, init-package-json
+ - @npmcli/git, make-fetch-happen, init-package-json
  - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, @npmcli/run-script, read-package-json, promzard
- - @npmcli/docs, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, @npmcli/package-json, bin-links, nopt, npmlog, parse-conflict-json, read, @npmcli/mock-globals
- - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, treeverse, minify-registry-metadata, ini, @npmcli/disparity-colors, mute-stream, npm-audit-report, npm-user-validate
+ - @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, @npmcli/package-json, bin-links, nopt, npmlog, parse-conflict-json, read, @npmcli/mock-globals
+ - semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, ignore-walk, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, treeverse, @npmcli/eslint-config, @npmcli/template-oss, minify-registry-metadata, ini, @npmcli/disparity-colors, mute-stream, npm-audit-report, npm-user-validate

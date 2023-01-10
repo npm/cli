@@ -363,7 +363,7 @@ define('cafile', {
   default: null,
   type: [null, Types.Path],
   description: `
-    A Types.Path to a file containing one or multiple Certificate Authority signing
+    A path to a file containing one or multiple Certificate Authority signing
     certificates. Similar to the \`ca\` setting, but allows for multiple
     CA's, as well as for the CA information to be stored in a file on disk.
   `,
@@ -529,7 +529,7 @@ define('diff-no-prefix', {
 
 define('diff-dst-prefix', {
   default: 'b/',
-  type: Types.Path,
+  type: Types.String,
   description: `
     Destination prefix to be used in \`npm diff\` output.
   `,
@@ -538,7 +538,7 @@ define('diff-dst-prefix', {
 
 define('diff-src-prefix', {
   default: 'a/',
-  type: Types.Path,
+  type: Types.String,
   description: `
     Source prefix to be used in \`npm diff\` output.
   `,

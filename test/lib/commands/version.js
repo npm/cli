@@ -2,7 +2,7 @@ const { readFileSync, statSync } = require('fs')
 const { resolve } = require('path')
 const t = require('tap')
 const _mockNpm = require('../../fixtures/mock-npm')
-const mockGlobals = require('../../fixtures/mock-globals.js')
+const mockGlobals = require('@npmcli/mock-globals')
 
 const mockNpm = async (t, opts = {}) => {
   const res = await _mockNpm(t, {
