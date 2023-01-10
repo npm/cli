@@ -1,81 +1,73 @@
 const t = require('tap')
+const fs = require('fs')
+const { join } = require('path')
 const { cleanNewlines } = require('../../fixtures/clean-snapshot')
 const tmock = require('../../fixtures/tmock')
+const mockNpm = require('../../fixtures/mock-npm')
 
-const npm = {
-  config: {
-    data: {
-      get: () => builtinConfMock,
+const mockReififyFinish = async (t, { actualTree = {}, ...config }) => {
+  const mock = await mockNpm(t, {
+    npm: ({ other }) => ({
+      npmRoot: other,
+    }),
+    otherDirs: {
+      npmrc: `key=value`,
     },
-  },
-}
-
-const builtinConfMock = {
-  loadError: new Error('no builtin config'),
-  raw: { hasBuiltinConfig: true, x: 'y', nested: { foo: 'bar' } },
-}
-
-const reifyOutput = () => {}
-
-let expectWrite = false
-const realFs = require('fs')
-const fs = {
-  ...realFs,
-  promises: realFs.promises && {
-    ...realFs.promises,
-    writeFile: async (path, data) => {
-      if (!expectWrite) {
-        throw new Error('did not expect to write builtin config file')
-      }
-      return realFs.promises.writeFile(path, data)
-    },
-  },
-}
-
-const reifyFinish = tmock(t, '{LIB}/utils/reify-finish.js', {
-  fs,
-  '{LIB}/utils/reify-output.js': reifyOutput,
-})
-
-t.test('should not write if not global', async t => {
-  expectWrite = false
-  await reifyFinish(npm, {
-    options: { global: false },
-    actualTree: {},
+    config,
   })
+
+  const reifyFinish = tmock(t, '{LIB}/utils/reify-finish.js', {
+    '{LIB}/utils/reify-output.js': () => {},
+  })
+
+  await reifyFinish(mock.npm, {
+    options: { global: config.global },
+    actualTree: typeof actualTree === 'function' ? actualTree(mock) : actualTree,
+  })
+
+  return mock
+}
+
+t.test('ok by default', async t => {
+  const mock = await mockReififyFinish(t, {
+    global: false,
+  })
+  t.strictSame(mock.npm.config.data.get('builtin').data, {})
 })
 
 t.test('should not write if no global npm module', async t => {
-  expectWrite = false
-  await reifyFinish(npm, {
-    options: { global: true },
+  const mock = await mockReififyFinish(t, {
+    global: true,
     actualTree: {
       inventory: new Map(),
     },
   })
+  t.strictSame(mock.npm.config.data.get('builtin').data, {})
 })
 
 t.test('should not write if builtin conf had load error', async t => {
-  expectWrite = false
-  await reifyFinish(npm, {
-    options: { global: true },
+  const mock = await mockReififyFinish(t, {
+    global: true,
     actualTree: {
       inventory: new Map([['node_modules/npm', {}]]),
     },
   })
+  t.strictSame(mock.npm.config.data.get('builtin').data, {})
 })
 
 t.test('should write if everything above passes', async t => {
-  expectWrite = true
-  delete builtinConfMock.loadError
-  const path = t.testdir()
-  await reifyFinish(npm, {
-    options: { global: true },
-    actualTree: {
-      inventory: new Map([['node_modules/npm', { path }]]),
-    },
+  const mock = await mockReififyFinish(t, {
+    global: true,
+    actualTree: ({ other }) => ({
+      inventory: new Map([['node_modules/npm', { path: join(other, 'new-npm') }]]),
+    }),
   })
+
+  t.strictSame(mock.npm.config.data.get('builtin').data, {})
+
   // windowwwwwwssss!!!!!
-  const data = cleanNewlines(fs.readFileSync(`${path}/npmrc`, 'utf8'))
-  t.matchSnapshot(data, 'written config')
+  const oldFile = cleanNewlines(fs.readFileSync(join(mock.other, 'npmrc'), 'utf8'))
+  const newFile = cleanNewlines(fs.readFileSync(join(mock.other, 'new-npm/npmrc'), 'utf8'))
+  t.equal(oldFile, newFile)
+  t.matchSnapshot(newFile, 'written config')
 })

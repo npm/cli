@@ -15,6 +15,7 @@ const mockLink = async (t, { globalPrefixDir, ...opts } = {}) => {
       ...opts.mocks,
       '{LIB}/utils/reify-output.js': async () => {},
     },
+    command: 'link',
   })
 
   const printLinks = async ({ global = false } = {}) => {
@@ -36,10 +37,6 @@ const mockLink = async (t, { globalPrefixDir, ...opts } = {}) => {
 
   return {
     ...mock,
-    link: {
-      exec: (args = []) => mock.npm.exec('link', args),
-      completion: (o) => mock.npm.cmd('link').then(c => c.completion(o)),
-    },
     printLinks,
   }
 }

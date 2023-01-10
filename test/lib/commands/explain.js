@@ -13,17 +13,10 @@ const mockExplain = async (t, opts) => {
       },
     },
     ...opts,
+    command: 'explain',
   })
 
-  const usage = await mock.npm.cmd('explain').then(c => c.usage)
-
-  return {
-    ...mock,
-    explain: {
-      usage,
-      exec: (args) => mock.npm.exec('explain', args),
-    },
-  }
+  return mock
 }
 
 t.test('no args throws usage', async t => {

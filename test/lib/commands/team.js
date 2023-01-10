@@ -384,8 +384,7 @@ t.test('team rm <scope:team> <user>', async t => {
 })
 
 t.test('completion', async t => {
-  const { npm } = await mockTeam(t)
-  const { completion } = await npm.cmd('team')
+  const { team: { completion } } = await mockTeam(t, { command: 'team' })
 
   t.test('npm team autocomplete', async t => {
     const res = await completion({

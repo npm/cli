@@ -50,13 +50,14 @@ mockGlobals(t, {
   }),
 }, { replace: true })
 
-const mockExitHandler = async (t, { init, load, testdir, config, mocks, files } = {}) => {
+const mockExitHandler = async (t, { init, load, testdir, config, mocks, files, command } = {}) => {
   const errors = []
 
   const { npm, logMocks, ...rest } = await loadMockNpm(t, {
     init,
     load,
     testdir,
+    command,
     mocks: {
       '{ROOT}/package.json': {
         version: '1.0.0',
@@ -593,9 +594,7 @@ t.test('exits uncleanly when only emitting exit event', async (t) => {
 })
 
 t.test('do no fancy handling for shellouts', async t => {
-  const { exitHandler, npm, logs } = await mockExitHandler(t)
-
-  await npm.cmd('exec')
+  const { exitHandler, logs } = await mockExitHandler(t, { command: 'exec' })
 
   const loudNoises = () =>
     logs.filter(([level]) => ['warn', 'error'].includes(level))

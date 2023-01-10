@@ -55,8 +55,7 @@ t.test('node@1', async t => {
   })
 
   t.test('completion', async t => {
-    const { npm } = await mockNpm(t)
-    const version = await npm.cmd('version')
+    const { version } = await mockNpm(t, { command: 'version' })
     const testComp = async (argv, expect) => {
       const res = await version.completion({ conf: { argv: { remain: argv } } })
       t.strictSame(res, expect, argv.join(' '))

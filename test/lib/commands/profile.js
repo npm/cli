@@ -28,15 +28,12 @@ const mockProfile = async (t, { npmProfile, readUserInfo, qrcode, ...opts } = {}
       ...mocks,
       ...opts.mocks,
     },
+    command: 'profile',
   })
 
   return {
     ...mock,
     result: () => mock.joinedOutput(),
-    profile: {
-      exec: (args) => mock.npm.exec('profile', args),
-      usage: () => mock.npm.cmd('profile').then(c => c.usage),
-    },
   }
 }
 
@@ -1067,8 +1064,7 @@ t.test('unknown subcommand', async t => {
 
 t.test('completion', async t => {
   const testComp = async (t, { argv, expect, title } = {}) => {
-    const { npm } = await mockProfile(t)
-    const profile = await npm.cmd('profile')
+    const { profile } = await mockProfile(t)
     t.resolveMatch(profile.completion({ conf: { argv: { remain: argv } } }), expect, title)
   }
 
@@ -1100,8 +1096,7 @@ t.test('completion', async t => {
   })
 
   t.test('npm profile unknown subcommand autocomplete', async t => {
-    const { npm } = await mockProfile(t)
-    const profile = await npm.cmd('profile')
+    const { profile } = await mockProfile(t)
     t.rejects(
       profile.completion({ conf: { argv: { remain: ['npm', 'profile', 'asdf'] } } }),
       { message: 'asdf not recognized' },

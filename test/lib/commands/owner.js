@@ -614,8 +614,7 @@ t.test('workspaces', async t => {
 
 t.test('completion', async t => {
   t.test('basic commands', async t => {
-    const { npm } = await loadMockNpm(t)
-    const owner = await npm.cmd('owner')
+    const { owner } = await loadMockNpm(t, { command: 'owner' })
     const testComp = async (argv, expect) => {
       const res = await owner.completion({ conf: { argv: { remain: argv } } })
       t.strictSame(res, expect, argv.join(' '))
@@ -631,10 +630,10 @@ t.test('completion', async t => {
   })
 
   t.test('completion npm owner rm', async t => {
-    const { npm } = await loadMockNpm(t, {
+    const { npm, owner } = await loadMockNpm(t, {
       prefixDir: { 'package.json': JSON.stringify({ name: packageName }) },
+      command: 'owner',
     })
-    const owner = await npm.cmd('owner')
     const registry = new MockRegistry({
       tap: t,
       registry: npm.config.get('registry'),
@@ -649,26 +648,25 @@ t.test('completion', async t => {
   })
 
   t.test('completion npm owner rm no cwd package', async t => {
-    const { npm } = await loadMockNpm(t)
-    const owner = await npm.cmd('owner')
+    const { owner } = await loadMockNpm(t, { command: 'owner' })
     const res = await owner.completion({ conf: { argv: { remain: ['npm', 'owner', 'rm'] } } })
     t.strictSame(res, [], 'should have no owners to autocomplete if not cwd package')
   })
 
   t.test('completion npm owner rm global', async t => {
-    const { npm } = await loadMockNpm(t, {
+    const { owner } = await loadMockNpm(t, {
       config: { global: true },
+      command: 'owner',
     })
-    const owner = await npm.cmd('owner')
     const res = await owner.completion({ conf: { argv: { remain: ['npm', 'owner', 'rm'] } } })
     t.strictSame(res, [], 'should have no owners to autocomplete if global')
   })
 
   t.test('completion npm owner rm no owners found', async t => {
-    const { npm } = await loadMockNpm(t, {
+    const { npm, owner } = await loadMockNpm(t, {
+      command: 'owner',
       prefixDir: { 'package.json': JSON.stringify({ name: packageName }) },
     })
-    const owner = await npm.cmd('owner')
     const registry = new MockRegistry({
       tap: t,
       registry: npm.config.get('registry'),

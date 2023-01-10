@@ -35,11 +35,12 @@ const mockRs = async (t, { windows = false, runScript, ...opts } = {}) => {
 
 t.test('completion', async t => {
   const completion = async (t, remain, pkg) => {
-    const { npm } = await mockRs(t,
-      pkg ? { prefixDir: { 'package.json': JSON.stringify(pkg) } } : {}
-    )
-    const cmd = await npm.cmd('run-script')
-    return cmd.completion({ conf: { argv: { remain } } })
+    const { runScript } = await mockRs(t, {
+      command: 'run-script',
+      ...(pkg ? { prefixDir: { 'package.json': JSON.stringify(pkg) } } : {}),
+    })
+
+    return runScript.completion({ conf: { argv: { remain } } })
   }
 
   t.test('already have a script name', async t => {

@@ -238,7 +238,7 @@ const setupMockNpm = async (t, {
     ...env,
   })
 
-  const { npm, ...mockNpm } = await getMockNpm(t, {
+  const { npm, Npm, ...mockNpm } = await getMockNpm(t, {
     init,
     load,
     mocks: withDirs(mocks),
@@ -258,13 +258,13 @@ const setupMockNpm = async (t, {
 
   const mockCommand = {}
   if (command) {
-    const cmd = await npm.cmd(command)
-    const usage = await cmd.usage
-    mockCommand.cmd = cmd
-    mockCommand[command] = {
-      usage,
+    const camelCommand = command.replace(/-[a-z]/g, (...a) => a[1].toUpperCase())
+    const Cmd = Npm.cmd(command)
+    mockCommand.Cmd = Cmd
+    mockCommand[camelCommand] = {
+      usage: Cmd.describeUsage,
       exec: (args) => npm.exec(command, args),
-      completion: (args) => cmd.completion(args),
+      completion: (args) => Cmd.completion(args, npm),
     }
     if (exec) {
       await mockCommand[command].exec(exec)
@@ -275,6 +275,7 @@ const setupMockNpm = async (t, {
   }
 
   return {
+    Npm,
     npm,
     ...mockNpm,
     ...dirs,

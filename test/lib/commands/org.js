@@ -34,15 +34,11 @@ const mockOrg = async (t, { orgSize = 1, orgList = {}, ...npmOpts } = {}) => {
       libnpmorg,
       ...npmOpts.mocks,
     },
+    commands: 'org',
   })
 
   return {
     ...mock,
-    org: {
-      exec: (args) => mock.npm.exec('org', args),
-      completion: (arg) => mock.npm.cmd('org').then(c => c.completion(arg)),
-      usage: () => mock.npm.cmd('org').then(c => c.usage),
-    },
     setArgs: () => setArgs,
     rmArgs: () => rmArgs,
     lsArgs: () => lsArgs,

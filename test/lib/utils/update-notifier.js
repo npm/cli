@@ -79,8 +79,6 @@ const runUpdateNotifier = async (t, {
   })
   const updateNotifier = tmock(t, '{LIB}/utils/update-notifier.js', mocks)
 
-  await mock[command].cmd()
-
   const result = await updateNotifier(mock.npm)
 
   return {

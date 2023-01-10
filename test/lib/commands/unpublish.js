@@ -397,13 +397,13 @@ t.test('publishConfig with spec', async t => {
 })
 
 t.test('completion', async t => {
-  const { npm } = await loadMockNpm(t, {
+  const { npm, unpublish } = await loadMockNpm(t, {
     config: {
       ...auth,
     },
+    command: 'unpublish',
   })
 
-  const unpublish = await npm.cmd('unpublish')
   const testComp =
     async (t, { argv, partialWord, expect, title }) => {
       const res = await unpublish.completion(

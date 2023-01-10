@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@isaacs/string-locale-compare": "^1.1.0",
+    "@npmcli/config": "^6.1.0",
     "@npmcli/eslint-config": "^4.0.0",
     "@npmcli/template-oss": "4.11.0",
     "front-matter": "^4.0.2",
@@ -63,8 +64,5 @@
         ".github/workflows/ci-{{ pkgNameFs }}.yml": "ci-npmcli-docs.yml"
       }
     }
-  },
-  "dependencies": {
-    "@npmcli/config": "^6.1.0"
   }
 }

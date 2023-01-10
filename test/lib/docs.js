@@ -82,7 +82,7 @@ t.test('usage', async t => {
       let output = null
       if (!bareCommands.includes(cmd)) {
         const { Npm } = await loadMockNpm(t, { load: false })
-        const { describeUsage } = Npm.derefCommand(cmd)
+        const { describeUsage } = Npm.cmd(cmd)
         output = describeUsage
       }
 

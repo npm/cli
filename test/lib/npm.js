@@ -52,6 +52,7 @@ t.test('npm.load', async t => {
       otherDirs: {
         newCache: {},
       },
+      globals: { platform: 'posix' },
     })
 
     t.equal(npm.loaded, true)
@@ -59,28 +60,21 @@ t.test('npm.load', async t => {
     t.equal(npm.config.get('force'), false)
     t.ok(npm.usage, 'has usage')
 
-    t.match(npm, {
-      flatOptions: {},
-    })
     t.match(logs.timing.filter(([p]) => p === 'npm:load'), [
       ['npm:load', /Completed in [0-9.]+ms/],
     ])
 
-    mockGlobals(t, { process: { platform: 'posix' } })
-    t.equal(resolve(npm.cache), resolve(cache), 'cache is cache')
-    npm.cache = other.newCache
-    t.equal(npm.config.get('cache'), other.newCache, 'cache setter sets config')
-    t.equal(npm.cache, other.newCache, 'cache getter gets new config')
+    t.match(npm, { flatOptions: {} })
     t.equal(npm.lockfileVersion, 2, 'lockfileVersion getter')
+
+    t.equal(resolve(npm.cache), resolve(cache), 'cache is cache')
     t.equal(npm.prefix, npm.localPrefix, 'prefix is local prefix')
     t.not(npm.prefix, npm.globalPrefix, 'prefix is not global prefix')
-    npm.globalPrefix = npm.prefix
-    t.equal(npm.prefix, npm.globalPrefix, 'globalPrefix setter')
-    npm.localPrefix = dir + '/extra/prefix'
-    t.equal(npm.prefix, npm.localPrefix, 'prefix is local prefix after localPrefix setter')
-    t.not(npm.prefix, npm.globalPrefix, 'prefix is not global prefix after localPrefix setter')
 
-    npm.prefix = dir + '/some/prefix'
+    npm.config.set('cache', other.newCache)
+    t.equal(resolve(npm.cache), other.newCache, 'cache setter sets config')
+
+    npm.config.set('prefix', dir + '/some/prefix')
     t.equal(npm.prefix, npm.localPrefix, 'prefix is local prefix after prefix setter')
     t.not(npm.prefix, npm.globalPrefix, 'prefix is not global prefix after prefix setter')
     t.equal(npm.bin, npm.localBin, 'bin is local bin after prefix setter')
@@ -96,19 +90,21 @@ t.test('npm.load', async t => {
     t.equal(npm.dir, npm.globalDir, 'dir is global dir after setting global')
     t.not(npm.dir, npm.localDir, 'dir is not local dir after setting global')
 
-    npm.prefix = dir + '/new/global/prefix'
+    npm.config.set('prefix', dir + '/new/global/prefix')
     t.equal(npm.prefix, npm.globalPrefix, 'prefix is global prefix after prefix setter')
     t.not(npm.prefix, npm.localPrefix, 'prefix is not local prefix after prefix setter')
     t.equal(npm.bin, npm.globalBin, 'bin is global bin after prefix setter')
     t.not(npm.bin, npm.localBin, 'bin is not local bin after prefix setter')
+  })
 
-    mockGlobals(t, { process: { platform: 'win32' } })
+  await t.test('basic loading windows', async t => {
+    const { npm } = await loadMockNpm(t, {
+      prefixDir: { node_modules: {} },
+      globals: { platform: 'win32' },
+    })
+
     t.equal(npm.bin, npm.globalBin, 'bin is global bin in windows mode')
     t.equal(npm.dir, npm.globalDir, 'dir is global dir in windows mode')
-
-    const tmp = npm.tmp
-    t.match(tmp, String, 'npm.tmp is a string')
-    t.equal(tmp, npm.tmp, 'getter only generates it once')
   })
 
   await t.test('forceful loading', async t => {
@@ -127,7 +123,7 @@ t.test('npm.load', async t => {
 
   await t.test('node is a symlink', async t => {
     const node = process.platform === 'win32' ? 'node.exe' : 'node'
-    const { npm, logs, outputs, prefix } = await loadMockNpm(t, {
+    const { Npm, npm, logs, outputs, prefix } = await loadMockNpm(t, {
       prefixDir: {
         bin: t.fixture('symlink', dirname(process.execPath)),
       },
@@ -168,8 +164,8 @@ t.test('npm.load', async t => {
     t.equal(npm.command, 'll', 'command set to first npm command')
     t.equal(npm.flatOptions.npmCommand, 'll', 'npmCommand flatOption set')
 
-    const ll = await npm.cmd('ll')
-    t.same(outputs, [[ll.usage]], 'print usage')
+    const ll = Npm.cmd('ll')
+    t.same(outputs, [[ll.describeUsage]], 'print usage')
     npm.config.set('usage', false)
 
     outputs.length = 0
@@ -554,13 +550,13 @@ t.test('output clears progress and console.logs the message', async t => {
 })
 
 t.test('aliases and typos', async t => {
-  const { npm } = await loadMockNpm(t, { load: false })
-  await t.rejects(npm.cmd('thisisnotacommand'), { code: 'EUNKNOWNCOMMAND' })
-  await t.rejects(npm.cmd(''), { code: 'EUNKNOWNCOMMAND' })
-  await t.rejects(npm.cmd('birthday'), { code: 'EUNKNOWNCOMMAND' })
-  await t.resolves(npm.cmd('it'), { name: 'install-test' })
-  await t.resolves(npm.cmd('installTe'), { name: 'install-test' })
-  await t.resolves(npm.cmd('access'), { name: 'access' })
+  const { Npm } = await loadMockNpm(t, { init: false })
+  t.throws(() => Npm.cmd('thisisnotacommand'), { code: 'EUNKNOWNCOMMAND' })
+  t.throws(() => Npm.cmd(''), { code: 'EUNKNOWNCOMMAND' })
+  t.throws(() => Npm.cmd('birthday'), { code: 'EUNKNOWNCOMMAND' })
+  t.match(Npm.cmd('it'), { name: 'install-test' })
+  t.match(Npm.cmd('installTe'), { name: 'install-test' })
+  t.match(Npm.cmd('access'), { name: 'access' })
 })
 
 t.test('explicit workspace rejection', async t => {

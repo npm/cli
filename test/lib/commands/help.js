@@ -61,17 +61,16 @@ const mockHelp = async (t, {
     mocks: { '@npmcli/promise-spawn': mockSpawn },
     otherDirs: { ...manPages.fixtures },
     config,
+    command: 'help',
     ...opts,
   })
 
-  const help = await npm.cmd('help')
   const exec = execArgs
     ? await npm.exec('help', execArgs)
     : (...a) => npm.exec('help', a)
 
   return {
     npm,
-    help,
     exec,
     manPages: manPages.pages,
     getArgs: () => args,

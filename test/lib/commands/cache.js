@@ -302,12 +302,11 @@ t.test('cache verify w/ extra output', async t => {
 })
 
 t.test('cache completion', async t => {
-  const { npm } = await loadMockNpm(t)
-  const cache = await npm.cmd('cache')
-  const { completion } = cache
+  const { cache } = await loadMockNpm(t, { command: 'cache' })
 
   const testComp = (argv, expect) => {
-    return t.resolveMatch(completion({ conf: { argv: { remain: argv } } }), expect, argv.join(' '))
+    const opts = { conf: { argv: { remain: argv } } }
+    return t.resolveMatch(cache.completion(opts), expect, argv.join(' '))
   }
 
   await Promise.all([

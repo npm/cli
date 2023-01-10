@@ -80,19 +80,11 @@ const mockDist = async (t, { ...npmOpts } = {}) => {
     mocks: {
       'npm-registry-fetch': Object.assign(nrf, realFetch, { json: getTag }),
     },
+    command: 'dist-tag',
   })
-
-  const usage = await mock.npm.cmd('dist-tag').then(c => c.usage)
 
   return {
     ...mock,
-    distTag: {
-      exec: (args) => mock.npm.exec('dist-tag', args),
-      usage,
-      completion: (remain) => mock.npm.cmd('dist-tag').then(c => c.completion({
-        conf: { argv: { remain } },
-      })),
-    },
     fetchOpts: () => fetchOpts,
     result: () => mock.joinedOutput(),
     logs: () => {

@@ -20,11 +20,10 @@ const loadMockCompletion = async (t, o = {}) => {
   }).reset
   const res = await loadMockNpm(t, {
     ...options,
+    command: 'completion',
   })
-  const completion = await res.npm.cmd('completion')
   return {
     resetGlobals,
-    completion,
     ...res,
   }
 }

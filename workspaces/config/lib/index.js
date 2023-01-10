@@ -148,6 +148,10 @@ class Config {
     return this.#configData.data
   }
 
+  get data () {
+    return this.#configData
+  }
+
   get valid () {
     for (const conf of this.#configData.values()) {
       if (!conf.validate()) {

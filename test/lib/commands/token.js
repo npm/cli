@@ -33,8 +33,7 @@ const mockToken = async (t, { profile, getCredentialsByURI, readUserInfo, ...opt
 }
 
 t.test('completion', async t => {
-  const { npm } = await mockToken(t)
-  const { completion } = await npm.cmd('token')
+  const { token: { completion } } = await mockToken(t, { command: 'token' })
 
   const testComp = (argv, expect) => {
     t.resolveMatch(completion({ conf: { argv: { remain: argv } } }), expect, argv.join(' '))

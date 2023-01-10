@@ -27,6 +27,7 @@ class ConfigData extends Map {
   #file = null
   #loaded = null
   #valid = true
+  #error = null
 
   constructor (type, { parent, data, envReplace }) {
     super()
@@ -121,6 +122,7 @@ class ConfigData extends Map {
       if (error.code !== 'ENOENT') {
         log.verbose('config', `error loading ${this.where} config`, error)
       }
+      this.#error = error
       return
     }
 
@@ -187,12 +189,23 @@ class ConfigData extends Map {
     log.warn('config', msg)
   }
 
-  async save () {
+  async save (newFile) {
     this.#assertLoaded()
 
     if (!this.file) {
       throw new Error(`Cannot save config since it was not loaded from a file: ` +
         `\`${this.where}\` from \`${this.#description}\``)
+    }
+
+    if (this.#error) {
+      // Dont save a file that had an error while loading
+      return
+    }
+
+    if (newFile) {
+      // allow saving a config file to a new location. used by reify-finish
+      // to preserve builtin config when installing global npm
+      this.#file = newFile
     }
 
     const { user } = this.#parent.constructor.Locations
