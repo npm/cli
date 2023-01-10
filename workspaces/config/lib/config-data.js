@@ -69,9 +69,9 @@ class ConfigData extends Map {
   }
 
   #assertLoaded (val = true) {
-    if (!!this.#loaded === val) {
-      throw new Error(`Cannot load a config type more than once: ` +
-        `\`${this.where}\` previously loaded from \`${this.source}\``)
+    if (!!this.#loaded !== val) {
+      throw new Error(`config data ${this.where} ${val ? 'must' : 'must not'} ` +
+        `be loaded to perform this action`)
     }
   }
 
@@ -130,26 +130,16 @@ class ConfigData extends Map {
 
     // an array comes from argv so we parse it in the standard nopt way
     if (Array.isArray(data)) {
-      return this.#loadArgv(data)
+      return this.loadArray(data)
     }
 
-    // if its a string then it came from a file and we need to parse
-    // it with ini first
-    if (typeof data === 'string') {
-      data = ini.parse(data)
-    }
-
-    // then do any env specific replacements
-    const parsed = Object.entries(data).reduce((acc, [k, v]) => {
-      acc[this.#envReplace(k)] = typeof v === 'string' ? this.#envReplace(v) : v
-      return acc
-    })
-
-    // and finally only do a nopt clean since it is already parsed
-    this.#setAll(this.#clean(parsed))
+    // if its a string then it came from a file and we need to parse it with ini
+    // first
+    return this.loadObject(typeof data === 'string' ? ini.parse(data) : data)
   }
 
-  #loadArgv (data) {
+  loadArray (data) {
+    this.#assertLoaded()
     const { argv, ...parsedData } = nopt.nopt(data, {
       typeDefs,
       shorthands,
@@ -158,6 +148,18 @@ class ConfigData extends Map {
     })
     this.#setAll(parsedData)
     return argv
+  }
+
+  loadObject (data) {
+    this.#assertLoaded()
+    // then do any env specific replacements
+    const parsed = Object.entries(data).reduce((acc, [k, v]) => {
+      acc[this.#envReplace(k)] = typeof v === 'string' ? this.#envReplace(v) : v
+      return acc
+    }, {})
+
+    // and finally only do a nopt clean since it is already parsed
+    this.#setAll(this.#clean(parsed))
   }
 
   #setAll (data) {
@@ -175,12 +177,13 @@ class ConfigData extends Map {
     return d
   }
 
-  #invalidHandler (k, val) {
+  #invalidHandler (key, val) {
+    console.log(key, val, this.where)
     this.#valid = false
-    const def = definitions[k]
+    const def = definitions[key]
     const msg = def
-      ? `invalid item \`${k}\`, ${definitions[k].mustBe()} and got \`${val}\``
-      : `unknown item \`${k}\``
+      ? `invalid item \`${key}\`, ${definitions[key].mustBe()} and got \`${val}\``
+      : `unknown item \`${key}\``
     log.warn('config', msg)
   }
 

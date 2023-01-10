@@ -34,9 +34,9 @@ const validatePath = (data, k, val) => {
     return false
   }
 
-  const isWin = typeDefs.path.PLATFORM === 'win32'
+  const isWin = typeDefs.Path.PLATFORM === 'win32'
   const homePattern = isWin ? /^~(\/|\\)/ : /^~\//
-  const home = typeDefs.path.HOME
+  const home = typeDefs.Path.HOME
 
   if (home && val.match(homePattern)) {
     data[k] = resolve(home, val.slice(2))

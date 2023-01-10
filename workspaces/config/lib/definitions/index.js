@@ -4,7 +4,7 @@ const { join, resolve } = require('path')
 const fs = require('fs')
 const Arborist = require('@npmcli/arborist')
 const { Types } = require('../type-defs')
-const Definition = require('./definition')
+const { Definition, Derived } = require('./definition')
 const { version } = require('../../../../package.json')
 
 const {
@@ -40,15 +40,21 @@ const maybeReadFile = file => {
   }
 }
 
-const camelCase = (k) => k.replace(/-(ssl|[a-z])/g, (...a) => a[1].toUpperCase())
 module.exports = {
+  // definition instances and their keys
   definitions: {},
+  definitionKeys: [],
+  // type data and default values collected
+  // from definitions since we need this info often
+  // in object form
   defaults: {},
-  keys: [],
-  shortKeys: [],
-  derivedKeys: [],
   types: {},
+  // derived instances and their keys
   derived: {},
+  derivedKeys: [],
+  // values
+  values: {},
+  valueKeys: [],
   // aliases where they get expanded into a completely different thing
   // these are NOT supported in the environment or npmrc files, only
   // expanded on the CLI.
@@ -74,78 +80,74 @@ module.exports = {
     reg: ['--registry'],
     iwr: ['--include-workspace-root'],
   },
-  camelCase,
+  shortKeys: [],
 }
 
-//     // TODO: move nerfdart auth stuff into a nested object that
-// // is only passed along to paths that end up calling npm-registry-fetch.
-// const flatten = (obj, flat = {}) => {
-//   for (const [key, val] of Object.entries(obj)) {
-//     const def = definitions[key]
-//     if (def?.flatten) {
-//       def.flatten(key, obj, flat)
-//     } else if (/@.*:registry$/i.test(key) || /^\/\//.test(key)) {
-//       flat[key] = val
-//     }
-//   }
-
-//   return flat
-// }
-
-class Derived {
-  #set = null
-
-  get set () {
-    return this.#set
+const finish = () => {
+  for (const definitionKey of module.exports.definitionKeys) {
+    const definition = module.exports.definitions[definitionKey]
+    for (const derivedKey of definition.derived) {
+      if (!module.exports.derived[derivedKey]) {
+        derive(derivedKey, { key: definitionKey })
+      }
+    }
   }
 
-  constructor (key, { set, value, nested, sources = [] } = {}) {
-    const camelKey = camelCase(key)
-
-    if (value) {
-      this.#set = () => value
-    } else if (set) {
-      this.#set = nested
-        ? (d) => set(d)[camelKey]
-        : set
-    } else {
-      this.#set = (d) => d[camelKey]
-    }
-
-    for (const s of new Set([key, ...sources]).values()) {
-      module.exports.definitions[s].addFlatten(key)
-    }
-
-    module.exports.derivedKeys.push(key)
+  for (const value of Object.values(module.exports)) {
+    Object.freeze(value)
   }
 }
 
 const define = (key, data) => {
   const def = new Definition(key, data)
+
+  module.exports.definitions[key] = def
+  module.exports.definitionKeys.push(key)
+
+  module.exports.defaults[key] = def.default
+  module.exports.types[key] = def.type
+
   for (const s of def.short) {
     module.exports.shorthands[s] = [`--${key}`]
     module.exports.shortKeys.push(s)
   }
-  module.exports.defaults[key] = def.default
-  module.exports.types[key] = def.type
-  module.exports.keys.push(key)
-  module.exports.definitions[key] = def
-  for (const f of def.flatten.values()) {
-    module.exports.derived[f] = new Derived(f)
-  }
 }
 
 const derive = (keys, set, sources) => {
-  const nested = Array.isArray(keys)
-  for (const key of [].concat(keys)) {
-    const d = new Derived(key, { nested, sources: sources.concat(keys), set })
-    module.exports.derived[key] = d
+  // All definitions need to be created before creating derived values
+  Object.freeze(module.exports.definitions)
+  Object.freeze(module.exports.values)
+
+  const keysArr = [].concat(keys)
+  const defSources = keysArr.filter((k) => module.exports.definitions[k])
+
+  const opts = {
+    nested: Array.isArray(keys),
+    sources,
+    defSources,
+    ...(typeof set === 'object' ? set : { set }),
+  }
+
+  for (const key of keysArr) {
+    const derived = new Derived(key, opts)
+
+    module.exports.derived[key] = derived
+    module.exports.derivedKeys.push(key)
+
+    for (const source of derived.sources) {
+      const definition = module.exports.definitions[source]
+      if (!definition && !module.exports.values[source]) {
+        throw new Error(`Derived key ${key} depends on missing definition: ${source}`)
+      } else if (definition) {
+        definition.addDerived(key)
+      }
+    }
   }
 }
 
-const flat = (key, value) => {
-  const d = new Derived(key, { value })
-  module.exports.derived[key] = d
+const value = (key, v) => {
+  module.exports.values[key] = v
+  module.exports.valueKeys.push(key)
 }
 
 // Define all config keys we know about
@@ -763,8 +765,8 @@ define('global', {
 })
 
 define('globalconfig', {
-  type: Types.Path,
-  default: '', // default is derived when config loads
+  type: [null, Types.Path],
+  default: null,
   defaultDescription: `
     The global --prefix setting plus 'etc/npmrc'. For example,
     '/usr/local/etc/npmrc'
@@ -1431,9 +1433,9 @@ define('prefer-online', {
 })
 
 define('prefix', {
-  type: Types.Path,
+  type: [null, Types.Path],
   short: 'C',
-  default: '', // default is derived when config loads,
+  default: null,
   defaultDescription: `
     In global mode, the folder where the node executable is installed.
     Otherwise, the nearest parent folder containing either a package.json
@@ -1669,8 +1671,7 @@ define('scope', {
     npm init --scope=@foo --yes
     \`\`\`
   `,
-  // projectScope is kept for compatibility with npm-registry-fetch
-  flatten: [true, 'project-scope'],
+  flatten: true,
 })
 
 define('script-shell', {
@@ -1745,6 +1746,7 @@ define('shrinkwrap', {
   description: `
     Alias for --package-lock
   `,
+  // TODO: is this ok?
   flatten: 'package-lock',
 })
 
@@ -2070,26 +2072,24 @@ define('yes', {
   `,
 })
 
-// These are default values that cannot be overridden at any
-// other level so they are defined here instead of definitions
-// since we do not want to document them but they should still
-// be applied to flat options
-
-flat('npm-command', '')
-flat('npm-version', version)
+// These are default values that cannot be overridden at any other level so they
+// are defined here instead of definitions since we do not want to document them
+// but they should still be applied to flat options, and derived configs can depend
+// on them unlike other derived configs.
+value('npm-command', '')
+value('npm-version', version)
 
 // the Arborist constructor is used almost everywhere we call pacote, it's
 // easiest to attach it to flatOptions so it goes everywhere without having
 // to touch every call
-flat('Arborist', Arborist)
+value('Arborist', Arborist)
 
 // XXX should this be sha512?  is it even relevant?
-flat('hash-algorithm', 'sha1')
+value('hash-algorithm', 'sha1')
 
-// env vars have already been set in @npmcli/config based on
-// other logic so it is safe to use it here
-derive('npm-bin', () => process.env.npm_execpath)
-derive('node-bin', () => process.env.NODE)
+// derived values can read directly from config if necessary
+derive('npm-bin', (_, config) => config.npmExecPath)
+derive('node-bin', (_, config) => config.execPath)
 
 derive(['omit', 'include'], ({ omit, include, dev, production, optional, also, only }) => {
   const derived = { omit: [...omit], include: [...include] }
@@ -2125,21 +2125,17 @@ derive(['global', 'location'], ({ global, location }) => {
   return isGlobal ? { global: true, location: 'global' } : { global, location }
 })
 
-derive('prefix', ({ prefix, globalconfig }) => {
+derive(['prefix', 'globalconfig'], ({ prefix, globalconfig }, config) => {
+  const defaultPrefix = prefix ?? config.globalPrefix
   // if the prefix is set on cli, env, or userconfig, then we need to
   // default the globalconfig file to that location, instead of the default
   // global prefix.  It's weird that `npm get globalconfig --prefix=/foo`
   // returns `/foo/etc/npmrc`, but better to not change it at this point.
-  return globalconfig ?? resolve(prefix, 'etc/npmrc')
-}, ['prefix'])
-
-derive('globalconfig', ({ prefix, globalconfig }) => {
-  // if the prefix is set on cli, env, or userconfig, then we need to
-  // default the globalconfig file to that location, instead of the default
-  // global prefix.  It's weird that `npm get globalconfig --prefix=/foo`
-  // returns `/foo/etc/npmrc`, but better to not change it at this point.
-  return globalconfig ?? resolve(prefix, 'etc/npmrc')
-}, ['prefix'])
+  return {
+    prefix: defaultPrefix,
+    globalconfig: globalconfig ?? resolve(defaultPrefix, 'etc/npmrc'),
+  }
+})
 
 derive(['cache', 'npx-cache', 'logs-dir'], ({ cache, logsDir }) => {
   return {
@@ -2232,20 +2228,21 @@ derive('save-type', ({ saveDev, saveOptional, savePeer, saveProd }) => {
   }
 }, ['save-dev', 'save-optional', 'save-peer', 'save-prod'])
 
+// projectScope is kept for compatibility with npm-registry-fetch
 derive('project-scope', ({ scope }) => {
   return scope
 }, ['scope'])
 
-derive('user-agent', ({ userAgent, ciName, workspaces, workspace }) => {
+derive('user-agent', ({ userAgent, ciName, workspaces, workspace, npmVersion }) => {
   const ws = !!(workspaces || workspace?.length)
   return userAgent.replace(/\{node-version\}/gi, process.version)
-    .replace(/\{npm-version\}/gi, version)
+    .replace(/\{npm-version\}/gi, npmVersion)
     .replace(/\{platform\}/gi, process.platform)
     .replace(/\{arch\}/gi, process.arch)
     .replace(/\{workspaces\}/gi, ws)
     .replace(/\{ci\}/gi, ciName ? `ci/${ciName}` : '')
     .trim()
-}, ['ci-name', 'workspaces', 'workspace'])
+}, ['ci-name', 'workspaces', 'workspace', 'npm-version'])
 
 derive('silent', ({ loglevel }) => {
   return loglevel === 'silent'
@@ -2262,3 +2259,5 @@ derive(['package-lock', 'package-lock-only'], ({ packageLock, packageLockOnly })
     packageLockOnly: lock,
   }
 })
+
+finish()

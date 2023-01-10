@@ -12,7 +12,7 @@ const SetGlobal = require('./set-globals.js')
 const { ErrInvalidAuth } = require('./errors')
 const Credentials = require('./credentials.js')
 const ConfigTypes = require('./config-locations')
-const { definitions, defaults } = require('./definitions')
+const { definitions, defaults, definitionKeys, values } = require('./definitions')
 const { isNerfed } = require('./nerf-dart.js')
 const replaceInfo = require('./replace-info')
 const Locations = ConfigTypes.Locations
@@ -26,12 +26,12 @@ const dirExists = (...p) => fs.stat(resolve(...p))
   .catch(() => false)
 
 class Config {
-  static TypeDefs = TypeDefs
-  static Types = TypeDefs.Types
   static Locations = Locations
   static EnvKeys = [...SetGlobal.EnvKeys.values()]
   static ProcessKeys = [...SetGlobal.ProcessKeys.values()]
-  static nerfDarts = Credentials.nerfDarts
+  static NerfDarts = Credentials.nerfDarts
+  static replaceInfo = replaceInfo
+  static configKeys = definitionKeys
 
   // state
   #configData = null
@@ -47,6 +47,7 @@ class Config {
   #platform = null
   #execPath = null
   #cwd = null
+  #npmExecPath = null
 
   // set during init which is called in ctor
   #command = null
@@ -88,15 +89,16 @@ class Config {
     this.#argv = argv
     this.#platform = platform
     this.#execPath = execPath
+    this.#npmExecPath = require.main?.filename
     this.#cwd = cwd
     this.#cwdRoot = cwdRoot
 
     this.#home = this.#env.HOME || homedir()
-    TypeDefs.typeDefs.path.HOME = this.#home
-    TypeDefs.typeDefs.path.PLATFORM = this.#platform
+    TypeDefs.typeDefs.Path.HOME = this.#home
+    TypeDefs.typeDefs.Path.PLATFORM = this.#platform
 
     this.#configData = new ConfigTypes({
-      envReplace: (k) => SetGlobal.replaceEnv(this.#env),
+      envReplace: (k) => SetGlobal.replaceEnv(this.#env, k),
       config: this,
     })
 
@@ -130,6 +132,14 @@ class Config {
     return this.#localPackage
   }
 
+  get execPath () {
+    return this.#execPath
+  }
+
+  get npmExecPath () {
+    return this.#npmExecPath
+  }
+
   get flat () {
     return this.#configData.data
   }
@@ -148,7 +158,7 @@ class Config {
   }
 
   get command () {
-    return this.#command
+    return this.#get('npm-command')
   }
 
   get args () {
@@ -161,6 +171,13 @@ class Config {
 
   get title () {
     return this.#title
+  }
+
+  // this is used in init-package-json (which it probably shouldn't be)
+  // but to not have breakages there we need to have an instance getter
+  // to return the raw data there
+  get defaults () {
+    return defaults
   }
 
   // =============================================
@@ -240,22 +257,26 @@ class Config {
     // NOTE: this is where command specific config could go since we now have a parsed
     // command name, the remaining args, and config values from the CLI and can rewrite
     // them or parse the remaining config files with this information.
-    const { remain, cooked } = this.#loadObject(Locations.cli, this.#argv)
-    this.#command = remain[0]
+    const { remain, cooked } = this.#loadObject(Locations.cli, this.#argv.slice(2))
+    this.#configData.get(Locations.cli).loadObject({ ...values })
+
+    let command = remain[0]
     this.#args = remain.slice(1)
 
     if (this.#get('versions', Locations.cli) || this.#get('version', Locations.cli)) {
       // npm --versions or npm --version both run the version command
-      this.#command = 'version'
+      command = 'version'
       this.#args = []
       this.#set('usage', false, Locations.cli)
-    } else if (!this.#command) {
+    } else if (!command) {
       // if there is no command, then we run the basic help command which print usage
       // but its an error so we need to set the exit code too
-      this.#command = 'help'
+      command = 'help'
       this.#args = []
       process.exitCode = 1
     }
+
+    this.#set('npm-command', command, Locations.cli)
 
     // Secrets are mostly in configs, so title is set using only the positional args
     // to keep those from being leaked.
@@ -307,7 +328,9 @@ class Config {
 
     // set proper globalPrefix now that everything is loaded
     // needs to be set before setEnvs to use it
-    this.#globalPrefix = this.#get('prefix')
+    // this is a derived value that has been defaulted to the previous value
+    // of global prefix determined in loadDefaults
+    this.#globalPrefix = this.#configData.data.prefix
     this.#time('load:setEnvs', () => this.#setEnvs())
     this.#loaded = true
   }
@@ -320,7 +343,7 @@ class Config {
         this.#execPath = node
         SetGlobal.setProcess(this.#process, 'execPath', node)
       }
-    }) 
+    })
 
     if (this.#env.PREFIX) {
       this.#globalPrefix = this.#env.PREFIX
@@ -336,11 +359,7 @@ class Config {
       }
     }
 
-    this.#loadObject(Locations.default, {
-      ...defaults,
-      prefix: this.#globalPrefix,
-      globalconfig: resolve(this.#get('prefix'), 'etc/npmrc'),
-    })
+    this.#loadObject(Locations.default, defaults)
   }
 
   async #loadBuiltin () {
@@ -466,8 +485,7 @@ class Config {
             }
 
             // set the workspace in the default layer, which allows it to be overridden easily
-            const { data } = this.#configData.get(Locations.default)
-            data.workspace = [this.#localPrefix]
+            this.#set('workspace', [this.#localPrefix], Locations.default)
             this.#localPrefix = p
             this.#localPackage = hasPackageJson
             log.info(`found workspace root at ${this.#localPrefix}`)
@@ -629,7 +647,7 @@ class Config {
   //
   // =============================================
   #assertLoaded (val = true) {
-    if (this.loaded !== val) {
+    if (!!this.#loaded !== val) {
       throw new Error(`config ${val ? 'must' : 'must not'} be loaded to perform this action`)
     }
   }

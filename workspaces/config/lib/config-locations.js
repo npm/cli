@@ -1,5 +1,17 @@
 const ConfigData = require('./config-data')
-const { derived, definitions, camelCase, keys: configKeys } = require('./definitions')
+const { camelCase } = require('./definitions/definition')
+const {
+  definitions,
+  definitionKeys,
+  derived,
+  derivedKeys,
+  valueKeys,
+} = require('./definitions')
+
+// TODO: flatten based on key
+// if (/@.*:registry$/i.test(key) || /^\/\//.test(key)) {
+//   flat[key] = val
+// }
 
 // this is in order from least -> most precedence
 const LocationsList = Object.entries({
@@ -40,16 +52,20 @@ class ConfigLocations extends Map {
     this.#envReplace = envReplace
     this.#config = config
 
-    for (const key of configKeys) {
+    for (const key of definitionKeys) {
       this.#createBaseDescriptor(key)
     }
 
-    for (const key of Object.keys(derived)) {
+    for (const key of valueKeys) {
+      this.#createBaseDescriptor(key)
+    }
+
+    for (const key of derivedKeys) {
       this.#createDerivedDescriptor(key)
     }
 
     for (const [where, conf] of LocationsList) {
-      this.add({ ...conf, where })
+      this.add({ ...conf, where }, conf.data)
     }
 
     // symbols for mutating config data are shared here so that no method is exposed
@@ -149,16 +165,21 @@ class ConfigLocations extends Map {
 
   #mutateData (key) {
     this.#base.delete(key)
-    for (const s of definitions[key].flatten.values()) {
-      this.#derived.delete(s)
+    const definition = definitions[key]
+    if (definition) {
+      for (const s of definition.derived) {
+        this.#derived.delete(s)
+      }
     }
   }
 
+  // TODO: move nerfdart auth stuff into a nested object that
+  // is only passed along to paths that end up calling npm-registry-fetch.
   #createBaseDescriptor (k) {
     const descriptor = {
       configurable: true,
       enumerable: true,
-      get () {
+      get: () => {
         if (this.#base.has(k)) {
           return this.#base.get(k)
         }
@@ -176,7 +197,7 @@ class ConfigLocations extends Map {
     Object.defineProperty(this.#data, camelCase(k), {
       configurable: true,
       enumerable: true,
-      get () {
+      get: () => {
         if (this.#derived.has(k)) {
           return this.#derived.get(k)
         }
