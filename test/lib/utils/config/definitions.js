@@ -931,3 +931,12 @@ t.test('remap global-style', t => {
   t.strictSame(flat, { installStrategy: 'shallow' })
   t.end()
 })
+
+t.test('otp changes auth-type', t => {
+  const obj = { 'auth-type': 'web', otp: 123456 }
+  const flat = {}
+  mockDefs().otp.flatten('otp', obj, flat)
+  t.strictSame(flat, { authType: 'legacy', otp: 123456 })
+  t.strictSame(obj, { 'auth-type': 'legacy', otp: 123456 })
+  t.end()
+})
