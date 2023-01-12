@@ -3139,7 +3139,7 @@ exports[`test/lib/docs.js TAP usage init > must match snapshot 1`] = `
 Create a package.json file
 
 Usage:
-npm init <package-spec> (same as \`npx <package-spec>)
+npm init <package-spec> (same as \`npx <package-spec>\`)
 npm init <@scope> (same as \`npx <@scope>/create\`)
 
 Options:
@@ -3152,7 +3152,7 @@ aliases: create, innit
 Run "npm help init" for more info
 
 \`\`\`bash
-npm init <package-spec> (same as \`npx <package-spec>)
+npm init <package-spec> (same as \`npx <package-spec>\`)
 npm init <@scope> (same as \`npx <@scope>/create\`)
 
 aliases: create, innit
