@@ -1,21 +1,22 @@
 const ConfigData = require('./config-data')
-const { camelCase } = require('./definitions/definition')
+const { getFlatKey } = require('./definitions/definition')
 const {
   definitions,
   definitionKeys,
   derived,
   derivedKeys,
   valueKeys,
+  values,
 } = require('./definitions')
 
-// TODO: flatten based on key
+// TODO: flatten based on key match
 // if (/@.*:registry$/i.test(key) || /^\/\//.test(key)) {
 //   flat[key] = val
 // }
 
 // this is in order from least -> most precedence
 const LocationsList = Object.entries({
-  default: { description: `npm's default values`, allowDeprecated: true },
+  default: { description: `npm's default values`, allowDeprecated: true, throw: true },
   builtin: { description: `npm's builtin npmrc file` },
   global: { description: 'global .npmrc file', validateAuth: true },
   user: { description: 'user .npmrc file', validateAuth: true, mode: 0o600 },
@@ -29,6 +30,29 @@ const Locations = LocationsList.reduce((acc, [location]) => {
   acc[location] = location
   return acc
 }, {})
+
+const hasOwn = (o, k) => Object.prototype.hasOwnProperty.call(o, k)
+
+const cacheDescriptor = ({ key, cache }, getValue) => ({
+  configurable: false,
+  enumerable: true,
+  get: () => {
+    if (cache.has(key)) {
+      return cache.get(key)
+    }
+    const value = getValue()
+    cache.set(key, value)
+    return value
+  },
+})
+
+const defineBaseAndFlat = (obj, key, descriptor) => {
+  Object.defineProperty(obj, key, descriptor)
+  const flatKey = getFlatKey(key)
+  if (key !== flatKey) {
+    Object.defineProperty(obj, flatKey, descriptor)
+  }
+}
 
 class ConfigLocations extends Map {
   static Locations = Locations
@@ -57,7 +81,7 @@ class ConfigLocations extends Map {
     }
 
     for (const key of valueKeys) {
-      this.#createBaseDescriptor(key)
+      this.#createValueDescriptor(key)
     }
 
     for (const key of derivedKeys) {
@@ -112,7 +136,7 @@ class ConfigLocations extends Map {
   }
 
   // cli -> defaults
-  * reverseValues (startWhere) {
+  * #reverseValues (startWhere) {
     const index = startWhere ? this.#revList.length - 1 - this.#indexes[startWhere] : 0
     const locations = index ? this.#revList.slice(index) : this.#revList
     for (const where of locations) {
@@ -121,7 +145,7 @@ class ConfigLocations extends Map {
   }
 
   find (where, key) {
-    for (const config of this.reverseValues(where)) {
+    for (const config of this.#reverseValues(where)) {
       if (config.has(key)) {
         return config.where
       }
@@ -131,7 +155,17 @@ class ConfigLocations extends Map {
 
   getData (where, key) {
     if (where === null) {
-      for (const config of this.reverseValues()) {
+      const [found, value] = this.#getDerivedData(key)
+      if (found) {
+        return value
+      }
+    }
+    return this.#getBaseData(where, key)
+  }
+
+  #getBaseData (where, key) {
+    if (where === null) {
+      for (const config of this.#reverseValues()) {
         if (config.has(key)) {
           return config.get(key)
         }
@@ -141,9 +175,18 @@ class ConfigLocations extends Map {
     return this.get(where).get(key)
   }
 
+  #getDerivedData (k, data = this.#data) {
+    const key = getFlatKey(k)
+    const split = key.indexOf('.')
+    if (split !== -1) {
+      return this.#getDerivedData(key.slice(split + 1), data[key.slice(0, split)])
+    }
+    return hasOwn(data, key) ? [true, data[key]] : [false]
+  }
+
   hasData (where, key) {
     if (where === null) {
-      for (const config of this.reverseValues()) {
+      for (const config of this.#reverseValues()) {
         if (config.has(key)) {
           return true
         }
@@ -165,47 +208,49 @@ class ConfigLocations extends Map {
 
   #mutateData (key) {
     this.#base.delete(key)
+    this.#derived.delete(key)
     const definition = definitions[key]
-    if (definition) {
-      for (const s of definition.derived) {
-        this.#derived.delete(s)
-      }
+    for (const s of definition?.derived || []) {
+      this.#derived.delete(s)
     }
   }
 
   // TODO: move nerfdart auth stuff into a nested object that
   // is only passed along to paths that end up calling npm-registry-fetch.
-  #createBaseDescriptor (k) {
-    const descriptor = {
-      configurable: true,
-      enumerable: true,
-      get: () => {
-        if (this.#base.has(k)) {
-          return this.#base.get(k)
-        }
-        const value = this.getData(null, k)
-        this.#base.set(k, value)
-        return value
-      },
-    }
-    Object.defineProperty(this.#baseData, k, descriptor)
-    Object.defineProperty(this.#baseData, camelCase(k), descriptor)
+  #createBaseDescriptor (key, data = this.#baseData) {
+    defineBaseAndFlat(data, key, cacheDescriptor(
+      { key, cache: this.#base },
+      () => this.#getBaseData(null, key)
+    ))
   }
 
-  #createDerivedDescriptor (k) {
-    const derive = derived[k]
-    Object.defineProperty(this.#data, camelCase(k), {
-      configurable: true,
+  #createValueDescriptor (key) {
+    Object.defineProperty(this.#data, getFlatKey(key), {
+      configurable: false,
       enumerable: true,
-      get: () => {
-        if (this.#derived.has(k)) {
-          return this.#derived.get(k)
-        }
-        const value = derive.set(this.#baseData, this.#config)
-        this.#derived.set(k, value)
-        return value
-      },
+      value: values[key],
     })
+  }
+
+  #createDerivedDescriptor (key, data = this.#data) {
+    const split = key.indexOf('.')
+    if (split !== -1) {
+      const [parentKey, childKey] = [key.slice(0, split), key.slice(split + 1)]
+      if (!hasOwn(data, parentKey)) {
+        defineBaseAndFlat(data, parentKey, {
+          configurable: false,
+          enumerable: true,
+          value: {},
+        })
+      }
+      return this.#createBaseDescriptor(childKey, data[parentKey])
+    }
+
+    const derive = derived[key]
+    Object.defineProperty(data, derive.flatKey, cacheDescriptor(
+      { key, cache: this.#derived },
+      () => derive.get(this.#baseData, this.#config)
+    ))
   }
 }
 

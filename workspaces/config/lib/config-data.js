@@ -4,7 +4,7 @@ const ini = require('ini')
 const fs = require('fs/promises')
 const { dirname } = require('path')
 const nerfDart = require('./nerf-dart')
-const { typeDefs } = require('./type-defs')
+const { typeDefs } = require('./definitions/type-defs')
 const { definitions, shorthands, types } = require('./definitions')
 
 const SYMBOLS = {
@@ -180,13 +180,16 @@ class ConfigData extends Map {
   }
 
   #invalidHandler (key, val) {
-    console.log(key, val, this.where)
     this.#valid = false
     const def = definitions[key]
     const msg = def
       ? `invalid item \`${key}\`, ${definitions[key].mustBe()} and got \`${val}\``
       : `unknown item \`${key}\``
-    log.warn('config', msg)
+    if (this.#type.throw) {
+      throw new Error(msg)
+    } else {
+      log.warn('config', msg)
+    }
   }
 
   async save (newFile) {

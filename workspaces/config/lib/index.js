@@ -7,15 +7,25 @@ const log = require('proc-log')
 const { resolve, dirname, join } = require('path')
 const { homedir } = require('os')
 const fs = require('fs/promises')
-const TypeDefs = require('./type-defs.js')
 const SetGlobal = require('./set-globals.js')
 const { ErrInvalidAuth } = require('./errors')
-const Credentials = require('./credentials.js')
 const ConfigTypes = require('./config-locations')
 const Definitions = require('./definitions')
-const { isNerfed } = require('./nerf-dart.js')
+const nerfDart = require('./nerf-dart.js')
 const replaceInfo = require('./replace-info')
 const Locations = ConfigTypes.Locations
+
+// These are the configs that we can nerf-dart. Not all of them currently even
+// *have* config definitions so we have to explicitly validate them here
+const NerfDarts = [
+  '_auth',
+  '_authToken',
+  'username',
+  '_password',
+  'email',
+  'certfile',
+  'keyfile',
+]
 
 const fileExists = (...p) => fs.stat(resolve(...p))
   .then((st) => st.isFile())
@@ -29,7 +39,7 @@ class Config {
   static Locations = Locations
   static EnvKeys = [...SetGlobal.EnvKeys.values()]
   static ProcessKeys = [...SetGlobal.ProcessKeys.values()]
-  static NerfDarts = Credentials.nerfDarts
+  static NerfDarts = NerfDarts
   static replaceInfo = replaceInfo
   static configKeys = Definitions.definitionKeys
   static definitions = Definitions.definitions
@@ -41,9 +51,9 @@ class Config {
   #configData = null
 
   // required options in constructor
-  #npmRoot = null
+  #builtinRoot = null
   #argv = null
-  #cwdRoot = null
+  #localPrefixRoot = null
 
   // options just to override in tests, mostly
   #process = null
@@ -60,8 +70,8 @@ class Config {
   #title = null
 
   // set when we load configs
-  #globalPrefix = null
-  #localPrefix = null
+  #defaultGlobalPrefix = null
+  #defaultLocalPrefix = null
   #localPackage = null
   #loaded = false
   #home = null
@@ -70,12 +80,11 @@ class Config {
   #setEnv = null
   #setNpmEnv = null
   #setProc = null
-  #credentials = null
 
   constructor ({
-    npmRoot,
+    builtinRoot,
     argv,
-    cwdRoot,
+    localPrefixRoot,
 
     // pass in process to set everything, but also allow
     // overriding specific parts of process that are used
@@ -86,7 +95,7 @@ class Config {
     execPath = _process.execPath,
     cwd = _process.cwd(),
   }) {
-    this.#npmRoot = npmRoot
+    this.#builtinRoot = builtinRoot
 
     this.#process = _process
     this.#env = env
@@ -95,24 +104,32 @@ class Config {
     this.#execPath = execPath
     this.#npmExecPath = require.main?.filename
     this.#cwd = cwd
-    this.#cwdRoot = cwdRoot
+    this.#localPrefixRoot = localPrefixRoot
 
     this.#home = this.#env.HOME || homedir()
-    TypeDefs.typeDefs.Path.HOME = this.#home
-    TypeDefs.typeDefs.Path.PLATFORM = this.#platform
+    // this allows the Path type definition to do replacements
+    // using the detected home and platform
+    Definitions.updateType(Definitions.Types.Path, {
+      HOME: this.#home,
+      PLATFORM: this.#platform,
+    })
 
     this.#configData = new ConfigTypes({
       envReplace: (k) => SetGlobal.replaceEnv(this.#env, k),
       config: this,
     })
 
-    this.#credentials = new Credentials(this)
-
     this.#setProc = (...args) => SetGlobal.setProcess(this.#process, ...args)
     this.#setEnv = (...args) => SetGlobal.setEnv(this.#env, ...args)
     this.#setNpmEnv = (...args) => SetGlobal.npm.setEnv(this.#env, ...args)
 
-    this.#init()
+    // load env first because it has no dependencies
+    this.#loadEnv()
+
+    // then load the cli options since those have no dependencies but can have env
+    // vars replaced in them. this gives us the command name and any remaining args
+    // which will be passed to npm.exec().
+    this.#loadCli()
   }
 
   // =============================================
@@ -124,12 +141,24 @@ class Config {
     return this.#loaded
   }
 
+  get cwd () {
+    return this.#cwd
+  }
+
   get globalPrefix () {
-    return this.#globalPrefix
+    return this.flat.globalPrefix
+  }
+
+  get defaultGlobalPrefix () {
+    return this.#defaultGlobalPrefix
   }
 
   get localPrefix () {
-    return this.#localPrefix
+    return this.flat.localPrefix
+  }
+
+  get defaultLocalPrefix () {
+    return this.#defaultLocalPrefix
   }
 
   get localPackage () {
@@ -162,7 +191,11 @@ class Config {
   }
 
   get credentials () {
-    return this.#credentials
+    return {
+      setByURI: (uri) => this.#setByURI(uri),
+      getByURI: (uri) => this.#getByURI(uri),
+      clearByURI: (uri) => this.#clearByURI(uri),
+    }
   }
 
   get command () {
@@ -255,13 +288,25 @@ class Config {
   // Config type loaders
   //
   // =============================================
-  #init () {
-    // load env first because it has no dependencies
-    this.#loadEnv()
+  #loadEnv () {
+    const data = Object.entries(this.#env).reduce((acc, [key, val]) => {
+      if (!SetGlobal.npm.testKey(key) || !val) {
+        return acc
+      }
+      const configKey = key.slice(SetGlobal.npm.envPrefix.length)
+      if (nerfDart.isNerfed(configKey)) {
+        // don't normalize nerf-darted keys
+        acc[configKey] = val
+      } else {
+        // don't replace _ at the start of the key
+        acc[configKey.replace(/(?!^)_/g, '-').toLowerCase()] = val
+      }
+      return acc
+    }, {})
+    this.#loadObject(Locations.env, data)
+  }
 
-    // then load the cli options since those have no dependencies but can have env
-    // vars replaced in them. this gives us the command name and any remaining args
-    // which will be passed to npm.exec().
+  #loadCli () {
     // NOTE: this is where command specific config could go since we now have a parsed
     // command name, the remaining args, and config values from the CLI and can rewrite
     // them or parse the remaining config files with this information.
@@ -290,7 +335,7 @@ class Config {
     // to keep those from being leaked.
     this.#title = `npm ${replaceInfo(remain).join(' ')}`.trim()
     this.#setProc('title', this.#title)
-    log.verbose('title', this.#title)
+    log.verbose('config', 'title', this.#title)
 
     // The cooked argv is also logged separately for debugging purposes. It is
     // cleaned as a best effort by replacing known secrets like basic auth
@@ -298,14 +343,14 @@ class Config {
     // safer the config should create a sanitized version of the argv as it
     // has the full context of what each option contains.
     this.#clean = replaceInfo(cooked)
-    log.verbose('argv', this.#clean.map(JSON.stringify).join(' '))
+    log.verbose('config', 'argv', this.#clean.map(JSON.stringify).join(' '))
 
     // Options are prefixed by a hyphen-minus (-, \u2d).
     // Other dash-type chars look similar but are invalid.
     const nonDashArgs = remain.filter(a => /^[\u2010-\u2015\u2212\uFE58\uFE63\uFF0D]/.test(a))
     if (nonDashArgs.length) {
       log.error(
-        'arg',
+        'config',
         'Argument starts with non-ascii dash, this is probably invalid:',
         nonDashArgs.join(', ')
       )
@@ -319,7 +364,7 @@ class Config {
 
   async load () {
     this.#assertLoaded(false)
-    return this.#time('load', () => this.#load())
+    await this.#time('load', () => this.#load())
   }
 
   async #load () {
@@ -333,49 +378,22 @@ class Config {
     await this.#time(`load:${Locations.user}`, () => this.#loadUser())
     // last but not least, global config file
     await this.#time(`load:${Locations.global}`, () => this.#loadGlobal())
-
-    // set proper globalPrefix now that everything is loaded
-    // needs to be set before setEnvs to use it
-    // this is a derived value that has been defaulted to the previous value
-    // of global prefix determined in loadDefaults
-    this.#globalPrefix = this.#configData.data.prefix
+    // now that everything is loaded we can set our env vars
     this.#time('load:setEnvs', () => this.#setEnvs())
     this.#loaded = true
   }
 
   async #loadDefaults () {
-    await this.#time('whichnode', async () => {
-      const node = await which(this.#argv[0]).catch(() => {})
-      if (node?.toUpperCase() !== this.#execPath.toUpperCase()) {
-        log.verbose('node symlink', node)
-        this.#execPath = node
-        SetGlobal.setProcess(this.#process, 'execPath', node)
-      }
-    })
-
-    if (this.#env.PREFIX) {
-      this.#globalPrefix = this.#env.PREFIX
-    } else if (this.#platform === 'win32') {
-      // c:\node\node.exe --> prefix=c:\node\
-      this.#globalPrefix = dirname(this.#execPath)
-    } else {
-      // /usr/local/bin/node --> prefix=/usr/local
-      this.#globalPrefix = dirname(dirname(this.#execPath))
-      // destdir only is respected on Unix
-      if (this.#env.DESTDIR) {
-        this.#globalPrefix = join(this.#env.DESTDIR, this.#globalPrefix)
-      }
-    }
-
+    await this.#findGlobalPrefix()
     this.#loadObject(Locations.default, Definitions.defaults)
   }
 
   async #loadBuiltin () {
-    await this.#loadFile(resolve(this.#npmRoot, 'npmrc'), Locations.builtin)
+    await this.#loadFile(resolve(this.#builtinRoot, 'npmrc'), Locations.builtin)
   }
 
   async #loadGlobal () {
-    await this.#loadFile(this.#configData.data.globalconfig, Locations.global)
+    await this.#loadFile(this.#get('globalconfig'), Locations.global)
   }
 
   async #loadUser () {
@@ -386,24 +404,27 @@ class Config {
     // the localPrefix can be set by the CLI config, but otherwise is
     // found by walking up the folder tree. either way, we load it before
     // we return to make sure localPrefix is set
-    await this.#time('load:localprefix', async () => {
-      await this.#loadLocalPrefix()
+    await this.#time('load:localprefix', () => this.#findLocalPrefix())
+    const localPrefix = this.#get('local-prefix')
 
-      // if we have not detected a local package json yet, try now that we
-      // have a local prefix
-      if (this.#localPackage == null) {
-        this.#localPackage = await fileExists(this.#localPrefix, 'package.json')
+    if (this.#defaultLocalPrefix.workspace === localPrefix) {
+      // set the workspace in the default layer, which allows it to be overridden easily
+      this.#set('workspace', [localPrefix], Locations.default)
+      if (await fileExists(localPrefix, '.npmrc')) {
+        log.warn('config', `ignoring workspace config at ${localPrefix}/.npmrc`)
       }
-    })
+    }
+
+    this.#localPackage = await fileExists(localPrefix, 'package.json')
 
     const config = this.#configData.get(Locations.project)
 
-    if (this.global) {
+    if (this.#get('global')) {
       config.ignore('global mode enabled')
       return
     }
 
-    const projectFile = resolve(this.#localPrefix, '.npmrc')
+    const projectFile = resolve(localPrefix, '.npmrc')
     // if we're in the ~ directory, and there happens to be a node_modules
     // folder (which is not TOO uncommon, it turns out), then we can end
     // up loading the "project" config where the "userconfig" will be,
@@ -413,25 +434,8 @@ class Config {
       config.ignore('same as "user" config')
       return
     }
-    await this.#loadFile(projectFile, Locations.project)
-  }
 
-  #loadEnv () {
-    const data = Object.entries(this.#env).reduce((acc, [key, val]) => {
-      if (!SetGlobal.npm.testKey(key) || !val) {
-        return acc
-      }
-      const configKey = key.slice(SetGlobal.npm.envPrefix.length)
-      if (isNerfed(configKey)) {
-        // don't normalize nerf-darted keys
-        acc[configKey] = val
-      } else {
-        // don't replace _ at the start of the key
-        acc[configKey.replace(/(?!^)_/g, '-').toLowerCase()] = val
-      }
-      return acc
-    }, {})
-    this.#loadObject(Locations.env, data)
+    await this.#loadFile(projectFile, Locations.project)
   }
 
   async #loadFile (file, where) {
@@ -446,67 +450,72 @@ class Config {
     return this.#configData.get(where).load(data, error, file)
   }
 
-  async #loadLocalPrefix () {
-    const cliPrefix = this.#get('prefix', Locations.cli)
-    if (cliPrefix) {
-      this.#localPrefix = cliPrefix
-      return
+  async #findGlobalPrefix () {
+    await this.#time('whichnode', async () => {
+      const node = await which(this.#argv[0]).catch(() => {})
+      if (node?.toUpperCase() !== this.#execPath.toUpperCase()) {
+        log.verbose('config', 'node symlink', node)
+        this.#execPath = node
+        SetGlobal.setProcess(this.#process, 'execPath', node)
+      }
+    })
+
+    let prefix
+    if (this.#env.PREFIX) {
+      prefix = this.#env.PREFIX
+    } else if (this.#platform === 'win32') {
+      // c:\node\node.exe --> prefix=c:\node\
+      prefix = dirname(this.#execPath)
+    } else {
+      // /usr/local/bin/node --> prefix=/usr/local
+      prefix = dirname(dirname(this.#execPath))
+      // destdir only is respected on Unix
+      if (this.#env.DESTDIR) {
+        prefix = join(this.#env.DESTDIR, prefix)
+      }
     }
 
-    const cliWorkspaces = this.#get('workspaces', Locations.cli)
+    this.#defaultGlobalPrefix = prefix
+  }
+
+  async #findLocalPrefix () {
+    const prefix = { root: null, workspace: null }
 
     for (const p of walkUp(this.#cwd)) {
-      if (p === this.#cwdRoot) {
+      // This property tells us to stop looking if we reach this directory no
+      // matter what else has been found
+      if (p === this.#localPrefixRoot) {
         break
       }
 
       const hasPackageJson = await fileExists(p, 'package.json')
 
-      if (!this.#localPrefix && (hasPackageJson || await dirExists(p, 'node_modules'))) {
-        this.#localPrefix = p
-        this.#localPackage = hasPackageJson
-
-        // if workspaces are disabled, or we're in global mode, return now
-        if (cliWorkspaces === false || this.global) {
-          return
-        }
-
-        // otherwise, continue the loop
+      if (!prefix.root && (hasPackageJson || await dirExists(p, 'node_modules'))) {
+        prefix.root = p
         continue
       }
 
-      if (this.#localPrefix && hasPackageJson) {
-        // if we already set localPrefix but this dir has a package.json
+      if (prefix.root && hasPackageJson) {
+        // if we already set localPrefix but this dir up the chain has a package.json
         // then we need to see if `p` is a workspace root by reading its package.json
         // however, if reading it fails then we should just move on
         const pkg = await rpj(resolve(p, 'package.json')).catch(() => false)
+
         if (!pkg) {
           continue
         }
 
-        const workspaces = await mapWorkspaces({ cwd: p, pkg })
-        for (const w of workspaces.values()) {
-          if (w === this.#localPrefix) {
-            // see if there's a .npmrc file in the workspace, if so log a warning
-            if (await fileExists(this.#localPrefix, '.npmrc')) {
-              log.warn(`ignoring workspace config at ${this.#localPrefix}/.npmrc`)
-            }
-
-            // set the workspace in the default layer, which allows it to be overridden easily
-            this.#set('workspace', [this.#localPrefix], Locations.default)
-            this.#localPrefix = p
-            this.#localPackage = hasPackageJson
-            log.info(`found workspace root at ${this.#localPrefix}`)
+        for (const w of await mapWorkspaces({ cwd: p, pkg }).values()) {
+          if (w === prefix.root) {
+            prefix.workspace = p
             // we found a root, so we return now
-            return
+            break
           }
         }
       }
     }
 
-    if (!this.#localPrefix) {
-      this.#localPrefix = this.#cwd
-    }
+    this.#defaultLocalPrefix = prefix
   }
 
   // Set environment variables for any non-default configs,
@@ -521,9 +530,6 @@ class Config {
   // This ensures that all npm config values that are not the defaults are
   // shared appropriately with child processes, without false positives.
   #setEnvs () {
-    this.#setNpmEnv('global-prefix', this.#globalPrefix)
-    this.#setNpmEnv('local-prefix', this.#localPrefix)
-
     // if the key is deprecated, skip it always.
     // if the key is the default value,
     //   if the environ is NOT the default value,
@@ -556,13 +562,14 @@ class Config {
       }
     }
 
-    // these depend on derived values so they use the flat data
-    this.#setNpmEnv('user-agent', this.flat.userAgent)
-    this.#setEnv('COLOR', this.flat.color ? '1' : '0')
-    this.#setEnv('NODE_ENV', this.flat.omit.includes('dev') ? 'production' : null)
+    this.#setNpmEnv('global-prefix', this.#get('global-prefix'))
+    this.#setNpmEnv('local-prefix', this.#get('local-prefix'))
+    this.#setNpmEnv('user-agent', this.#get('user-agent'))
+    this.#setEnv('COLOR', this.#get('color') ? '1' : '0')
+    this.#setEnv('NODE_ENV', this.#get('omit').includes('dev') ? 'production' : null)
     // XXX make this the bin/npm-cli.js file explicitly instead
     // otherwise using npm programmatically is a bit of a pain.
-    this.#setEnv('npm_execpath', this.flat.npmBin ?? null)
+    this.#setEnv('npm_execpath', this.#get('npm-bin') ?? null)
 
     // also set some other common nice envs that we want to rely on
     this.#setEnv('INIT_CWD', this.#cwd)
@@ -647,6 +654,127 @@ class Config {
         this.delete(problem.from, problem.where)
       }
     }
+  }
+
+  // =============================================
+  //
+  // Credentials
+  //
+  // =============================================
+
+  #clearByURI (uri) {
+    const nerfed = nerfDart(uri)
+    const def = nerfDart(this.#get('registry'))
+    if (def === nerfed) {
+      this.#delete(`-authtoken`, Locations.user)
+      this.#delete(`_authToken`, Locations.user)
+      this.#delete(`_authtoken`, Locations.user)
+      this.#delete(`_auth`, Locations.user)
+      this.#delete(`_password`, Locations.user)
+      this.#delete(`username`, Locations.user)
+      // de-nerf email if it's nerfed to the default registry
+      const email = this.#get(`${nerfed}:email`, Locations.user)
+      if (email) {
+        this.#set('email', email)
+      }
+    }
+    for (const k of NerfDarts) {
+      this.#delete(`${nerfed}:${k}`)
+    }
+  }
+
+  #setByURI (uri, { token, username, password, email, certfile, keyfile }) {
+    const nerfed = nerfDart(uri)
+
+    // email is either provided, a top level key, or nothing
+    email = email || this.#get('email', Locations.user)
+
+    // field that hasn't been used as documented for a LONG time,
+    // and as of npm 7.10.0, isn't used at all.  We just always
+    // send auth if we have it, only to the URIs under the nerf dart.
+    this.#delete(`${nerfed}:always-auth`, Locations.user)
+
+    this.#delete(`${nerfed}:email`, Locations.user)
+    if (certfile && keyfile) {
+      this.#set(`${nerfed}:certfile`, certfile, Locations.user)
+      this.#set(`${nerfed}:keyfile`, keyfile, Locations.user)
+      // cert/key may be used in conjunction with other credentials, thus no `else`
+    }
+    if (token) {
+      this.#set(`${nerfed}:_authToken`, token, Locations.user)
+      this.#delete(`${nerfed}:_password`, Locations.user)
+      this.#delete(`${nerfed}:username`, Locations.user)
+    } else if (username || password) {
+      if (!username) {
+        throw new Error('must include username')
+      }
+      if (!password) {
+        throw new Error('must include password')
+      }
+      this.#delete(`${nerfed}:_authToken`, Locations.user)
+      this.#set(`${nerfed}:username`, username, Locations.user)
+      // note: not encrypted, no idea why we bothered to do this, but oh well
+      // protects against shoulder-hacks if password is memorable, I guess?
+      const encoded = Buffer.from(password, 'utf8').toString('base64')
+      this.#set(`${nerfed}:_password`, encoded, Locations.user)
+    } else if (!certfile || !keyfile) {
+      throw new Error('No credentials to set.')
+    }
+  }
+
+  // this has to be a bit more complicated to support legacy data of all forms
+  #getByURI (uri) {
+    const nerfed = nerfDart(uri)
+    const def = nerfDart(this.#get('registry'))
+    const creds = {}
+
+    // email is handled differently, it used to always be nerfed and now it never should be
+    // if it's set nerfed to the default registry, then we copy it to the unnerfed key
+    // TODO: evaluate removing 'email' from the credentials object returned here
+    const email = this.#get(`${nerfed}:email`) || this.#get('email')
+    if (email) {
+      if (nerfed === def) {
+        this.#set('email', email)
+      }
+      creds.email = email
+    }
+
+    const certfileReg = this.#get(`${nerfed}:certfile`)
+    const keyfileReg = this.#get(`${nerfed}:keyfile`)
+    if (certfileReg && keyfileReg) {
+      creds.certfile = certfileReg
+      creds.keyfile = keyfileReg
+      // cert/key may be used in conjunction with other credentials, thus no `return`
+    }
+
+    const tokenReg = this.#get(`${nerfed}:_authToken`)
+    if (tokenReg) {
+      creds.token = tokenReg
+      return creds
+    }
+
+    const userReg = this.#get(`${nerfed}:username`)
+    const passReg = this.#get(`${nerfed}:_password`)
+    if (userReg && passReg) {
+      creds.username = userReg
+      creds.password = Buffer.from(passReg, 'base64').toString('utf8')
+      const auth = `${creds.username}:${creds.password}`
+      creds.auth = Buffer.from(auth, 'utf8').toString('base64')
+      return creds
+    }
+
+    const authReg = this.#get(`${nerfed}:_auth`)
+    if (authReg) {
+      const authDecode = Buffer.from(authReg, 'base64').toString('utf8')
+      const authSplit = authDecode.split(':')
+      creds.username = authSplit.shift()
+      creds.password = authSplit.join(':')
+      creds.auth = authReg
+      return creds
+    }
+
+    // at this point, nothing else is usable so just return what we do have
+    return creds
   }
 
   // =============================================

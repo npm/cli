@@ -6,50 +6,57 @@
 // say "these are for registry access", "these are for
 // version resolution" etc.
 
-const { Types, getType } = require('../type-defs')
+const { Types, getType } = require('./type-defs')
 const hasOwn = (o, k) => Object.prototype.hasOwnProperty.call(o, k)
 
-const camelCase = (k) => k.replace(/-(ssl|[a-z])/g, (...a) => a[1].toUpperCase())
+// special affordance for ssl -> SSL
+const getFlatKey = (k) => k.replace(/-(ssl|[a-z])/g, (...a) => a[1].toUpperCase())
 
 class Derived {
-  #set = null
+  #get = null
+  #flatKey = null
   #sources = null
 
-  get set () {
-    return this.#set
+  get get () {
+    return this.#get
   }
 
   get sources () {
     return [...this.#sources.values()]
   }
 
-  constructor (key, { key: defKey, value, set, defSources, nested, sources } = {}) {
+  get flatKey () {
+    return this.#flatKey
+  }
+
+  constructor (key, { key: defKey, value, get, defSources, nested, sources } = {}) {
+    this.#flatKey = getFlatKey(key)
+
     if (defKey) {
-      const camelKey = camelCase(defKey)
-      this.#set = (d) => d[camelKey]
+      const defFlatKey = getFlatKey(defKey)
+      this.#get = (d) => d[defFlatKey]
       if (sources) {
         throw new Error('Derived configs based on a key cannot have other sources')
       }
     } else if (value !== undefined) {
-      this.#set = () => value
+      this.#get = () => value
       if (sources) {
         throw new Error('Derived configs based on a value cannot have other sources')
       }
-    } else if (typeof set === 'function') {
-      this.#set = set
+    } else if (typeof get === 'function') {
+      this.#get = get
     }
 
-    if (!this.#set) {
-      throw new Error(`Invalid value for derived key ${key} set: ${set}`)
+    if (!this.#get) {
+      throw new Error(`Invalid value for derived key ${key} get: ${get}`)
     }
 
     if (nested) {
-      const originalFn = this.#set
-      const camelKey = camelCase(key)
-      this.#set = (...args) => originalFn(...args)[camelKey]
+      const originalFn = this.#get
+      this.#get = (...args) => originalFn(...args)[this.#flatKey]
     }
 
-    this.#sources = new Set([...(sources || []), ...defSources])
+    this.#sources = new Set([key, ...(sources || []), ...defSources])
   }
 }
 
@@ -78,10 +85,24 @@ class Definition {
       this.#derived.add(key)
     } else if (typeof def.flatten === 'string') {
       this.#derived.add(def.flatten)
-    } else if (Array.isArray(def.flatten)) {
+    } else if (
+      Array.isArray(def.flatten) &&
+      def.flatten.every(f => f === true || typeof f === 'string')
+    ) {
       for (const f of def.flatten) {
         this.#derived.add(f)
       }
+    } else if (def.flatten) {
+      throw new Error('flatten must be true, a string or an array of those values')
+    }
+
+    if (!Array.isArray(this.#def.type)) {
+      this.#def.type = [this.#def.type]
+    }
+
+    // always add null to types if its the default
+    if (this.#def.default === null && !this.#def.type.includes(null)) {
+      this.#def.type.unshift(null)
     }
 
     // needs a key
@@ -91,7 +112,7 @@ class Definition {
 
     // needs required keys
     for (const req of Definition.required) {
-      if (typeof req === 'string' && !this.#hasOwn(req)) {
+      if (typeof req === 'string' && !hasOwn(this.#def, req)) {
         throw new Error(`config \`${this.#key}\` lacks required key: \`${req}\``)
       }
     }
@@ -104,12 +125,8 @@ class Definition {
     }
   }
 
-  #hasOwn (k) {
-    return hasOwn(this.#def, k)
-  }
-
   get default () {
-    return this.#def.default
+    return describeValue(this.#def.default)
   }
 
   get deprecated () {
@@ -126,7 +143,11 @@ class Definition {
   }
 
   get isBoolean () {
-    return this.#typeDefs.some(t => t?.isBoolean)
+    return this.#typeDefs.some(t => t?.isBoolean || typeof t === 'boolean')
+  }
+
+  get hasNonBoolean () {
+    return this.#typeDefs.some(t => !(t?.isBoolean || typeof t === 'boolean'))
   }
 
   get type () {
@@ -135,22 +156,6 @@ class Definition {
 
   get derived () {
     return [...this.#derived.values()]
-  }
-
-  get #types () {
-    return [].concat(this.#def.type)
-  }
-
-  get #typeMultiple () {
-    return this.#types.includes(Types.Array)
-  }
-
-  get #typeDefs () {
-    return this.#types.map((t) => getType(t) ?? t)
-  }
-
-  get #defaultDescription () {
-    return this.#def.defaultDescription ?? describeValue(this.#def.default)
   }
 
   addDerived (...keys) {
@@ -163,10 +168,18 @@ class Definition {
     return this.#derived.has(k)
   }
 
+  get #typeMultiple () {
+    return this.type.includes(Types.Array)
+  }
+
+  get #typeDefs () {
+    return this.type.map((t) => getType(t) ?? t)
+  }
+
   // a textual description of this config, suitable for help output
   describe () {
     const sections = [
-      ['Default', this.#defaultDescription],
+      ['Default', this.#def.defaultDescription ?? this.default],
       ['Type', this.#describeTypes()],
       this.deprecated ? ['DEPRECATED', this.deprecated] : null,
       '',
@@ -186,74 +199,69 @@ class Definition {
 
   mustBe () {
     const allowMultiple = this.#typeMultiple
-    const types = this.#types.includes(Types.Url) ? [Types.Url]
-    // no actual configs matching this, but path types SHOULD be handled
+    const types = this.type.includes(Types.URL) ? [Types.URL]
+      // no actual configs matching this, but path types SHOULD be handled
       // this way, like URLs, for the same reason
-      : /* istanbul ignore next */ this.#types.includes(Types.Path) ? [Types.Path]
-      : this.#types
+      : /* istanbul ignore next */ this.type.includes(Types.Path) ? [Types.Path]
+      : this.type
 
-    const mustBe = types.filter(t => t !== Types.Array).map((t) => {
+    const mustBe = types.filter(t => t !== Types.Array).flatMap((t) => {
       const type = getType(t)
-      return type?.description ?? type?.typeDescription ?? type
+      return type
+        ? type.values ?? type.description ?? type.typeDescription
+        : describeValue(t)
     })
-    const singleValue = mustBe.length === 1
 
+    const singleValue = mustBe.length === 1
     const oneOf = singleValue && allowMultiple ? 'one or more'
       : !singleValue && allowMultiple ? 'one or more of:'
       : !singleValue ? 'one of:'
       : ''
 
-    return `Must be ${oneOf} ${mustBe.map(describeValue).join(', ')}`.replace(/\s+/g, ' ')
+    return `Must be ${oneOf} ${mustBe.join(', ')}`.replace(/\s+/g, ' ')
   }
 
   describeUsage () {
     const usage = this.short.map(s => `-${s}`)
 
-    if (this.isBoolean && this.default !== false) {
-      usage.push(`--no-${this.#key}`)
+    if (this.isBoolean) {
+      if (this.default === true) {
+        usage.push(`--no-${this.#key}`)
+      } else if (this.default === false) {
+        usage.push(`--${this.#key}`)
+      } else {
+        usage.push(`--no-${this.#key}`, `--${this.#key}`)
+      }
+    } else {
+      usage.push(`--${this.#key}`)
     }
 
-    usage.push(`--${this.#key}`)
-
-    let description = []
-    if (!this.isBoolean) {
-      // null type means optional and doesn't currently affect usage output since
-      // all non-optional params have defaults so we render everything as optional
-      const valueTypes = this.#typeDefs.filter(t => t !== null && t.type !== Types.Array)
-
-      if (valueTypes.some(t => typeof t !== 'string' && typeof t !== 'number')) {
-      // Generic values, use hint
-        description = this.#def.hint ? [].concat(this.#def.hint) : this.#typeDefs.map(t => t?.hint)
+    let descriptions = []
+    if (this.hasNonBoolean) {
+      // only non booleans get hints
+      if (this.#def.hint) {
+        // if the definition itself has a hint, always use that
+        descriptions = [].concat(this.#def.hint)
       } else {
-      // Specific values, use specifics given
-        description = valueTypes
+        // otherwise use the types specific values, or the hint, or the value itself
+        descriptions = this.#typeDefs
+          // null type means optional and doesn't currently affect usage output since
+          // all non-optional params have defaults so we render everything as optional
+          .filter(t => t !== null && t.type !== Types.Array)
+          .flatMap(t => t?.hint ?? (t.type ? this.#key : t))
       }
     }
 
-    const d = description.filter(Boolean).join('|')
-    const usageDesc = `${usage.join('|')} ${d ? `<${d}>` : ''}`.trim()
+    const desc = descriptions.filter(Boolean).join('|')
+    const usageDesc = `${usage.join('|')} ${desc ? `<${desc}>` : ''}`.trim()
 
     return this.#typeMultiple ? `${usageDesc} [${usageDesc} ...]` : usageDesc
   }
 
   #describeTypes () {
-    let descriptions
-
-    const type = getType(this.#def.type)
-    if (type) {
-      descriptions = [].concat(type.typeDescription)
-    } else {
-      const types = this.#typeDefs.filter(t => t?.type !== Types.Array)
-      descriptions = types.flatMap(t => {
-        if (t?.typeDescription) {
-          return [].concat(t.typeDescription)
-        }
-        return { value: t }
-      })
-    }
-
-    descriptions = descriptions
-      .map(v => hasOwn(v, 'value') ? JSON.stringify(v.value) : v)
+    const descriptions = this.#typeDefs
+      .filter(t => t?.type !== Types.Array)
+      .flatMap(t => t?.typeDescription ?? t?.values ?? JSON.stringify(t))
 
     // [a] => "a"
     // [a, b] => "a or b"
@@ -269,7 +277,9 @@ class Definition {
 }
 
 // if it's a string, quote it.  otherwise, just cast to string.
-const describeValue = val => (typeof val === 'string' ? JSON.stringify(val) : String(val))
+const describeValue = val => Array.isArray(val)
+  ? JSON.stringify(val.map(describeValue))
+  : typeof val === 'string' ? JSON.stringify(val) : String(val)
 
 const unindent = s => {
   // get the first \n followed by a bunch of spaces, and pluck off
@@ -310,4 +320,4 @@ const wrapAll = s => {
   }).join('\n\n')
 }
 
-module.exports = { Definition, Derived, camelCase }
+module.exports = { Definition, Derived, getFlatKey }

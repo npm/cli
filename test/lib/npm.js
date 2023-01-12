@@ -25,25 +25,9 @@ t.test('not yet loaded', async t => {
 t.test('npm.load', async t => {
   await t.test('load error', async t => {
     const { npm } = await loadMockNpm(t, { load: false })
-    const loadError = new Error('load error')
-    npm.config.load = async () => {
-      throw loadError
-    }
-    await t.rejects(
-      () => npm.load(),
-      /load error/
-    )
 
-    t.equal(npm.loadErr, loadError)
-    npm.config.load = async () => {
-      throw new Error('different error')
-    }
-    await t.rejects(
-      () => npm.load(),
-      /load error/,
-      'loading again returns the original error'
-    )
-    t.equal(npm.loadErr, loadError)
+    await t.resolves(npm.load(), 'can load once')
+    await t.rejects(npm.load(), /not be loaded/, 'can only load once')
   })
 
   await t.test('basic loading', async t => {
@@ -68,18 +52,24 @@ t.test('npm.load', async t => {
     t.equal(npm.lockfileVersion, 2, 'lockfileVersion getter')
 
     t.equal(resolve(npm.cache), resolve(cache), 'cache is cache')
+    t.ok(npm.prefix, 'has prefix')
+    t.ok(npm.localPrefix, 'has local prefix')
+    t.ok(npm.globalPrefix, 'has global prefix')
     t.equal(npm.prefix, npm.localPrefix, 'prefix is local prefix')
     t.not(npm.prefix, npm.globalPrefix, 'prefix is not global prefix')
 
-    npm.config.set('cache', other.newCache)
-    t.equal(resolve(npm.cache), other.newCache, 'cache setter sets config')
+    npm.config.set('cache', join(other, 'newCache'))
+    t.equal(resolve(npm.cache), join(other, 'newCache'), 'cache setter sets config')
 
-    npm.config.set('prefix', dir + '/some/prefix')
+    console.log(npm.prefix)
+    npm.config.set('prefix', resolve(dir, 'some/prefix'))
+    console.log(npm.prefix)
+    t.equal(resolve(npm.prefix), resolve(dir, 'some/prefix'))
     t.equal(npm.prefix, npm.localPrefix, 'prefix is local prefix after prefix setter')
-    t.not(npm.prefix, npm.globalPrefix, 'prefix is not global prefix after prefix setter')
     t.equal(npm.bin, npm.localBin, 'bin is local bin after prefix setter')
-    t.not(npm.bin, npm.globalBin, 'bin is not global bin after prefix setter')
     t.equal(npm.dir, npm.localDir, 'dir is local dir after prefix setter')
+    t.not(npm.prefix, npm.globalPrefix, 'prefix is not global prefix after prefix setter')
+    t.not(npm.bin, npm.globalBin, 'bin is not global bin after prefix setter')
     t.not(npm.dir, npm.globalDir, 'dir is not global dir after prefix setter')
 
     npm.config.set('global', true)

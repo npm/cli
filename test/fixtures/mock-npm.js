@@ -242,7 +242,7 @@ const setupMockNpm = async (t, {
     init,
     load,
     mocks: withDirs(mocks),
-    npm: { argv, npmRoot, cwdRoot: dir, ...withDirs(npmOpts) },
+    npm: { argv, npmRoot, localPrefixRoot: dir, ...withDirs(npmOpts) },
   })
 
   t.teardown(() => {

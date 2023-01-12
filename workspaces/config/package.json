@@ -39,6 +39,7 @@
   "dependencies": {
     "@npmcli/arborist": "^6.1.5",
     "@npmcli/map-workspaces": "^3.0.0",
+    "@npmcli/mock-globals": "^1.0.0",
     "ci-info": "^3.7.1",
     "ini": "^3.0.0",
     "nopt": "file:../../../nopt/nopt-7.0.0.tgz",

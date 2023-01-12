@@ -37,7 +37,7 @@ const envReplace = (env, f) => f.replace(envExpr, (orig, esc, name) => {
 
 const setProcess = (proc, key, val) => {
   if (!ProcessKeys.has(key)) {
-    throw new Error(`attempted to set non-allowed process: ${key}`)
+    throw new Error(`not allowed to set process key: ${key}`)
   }
   proc[key] = val
 }
