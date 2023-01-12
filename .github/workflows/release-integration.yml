@@ -1,0 +1,45 @@
+name: release integration
+
+on:
+  release:
+    types:
+      - published
+  workflow_dispatch:
+    inputs:
+      npmVersion:
+        description: npm version to test
+        type: string
+        required: true
+
+jobs:
+  npm-version:
+    env:
+      npmVersion: ${{ inputs.npmVersion || github.ref_name }}
+    name: determine npm version
+    if: ${{ inputs.npmVersion || startsWith(github.ref_name, 'v') }}
+    runs-on: ubuntu-latest
+    outputs:
+      npmVersion: ${{ steps.version.outputs.npmVersion }}
+    steps:
+      - name: clean npm version
+        id: version
+        run: |
+          npmVersion="${{ env.npmVersion }}"
+          npmVersion="${npmVersion/#v}"
+          echo "npmVersion=${npmVersion}" >> $GITHUB_OUTPUT
+  node-integration:
+    name: nodejs@${{ matrix.nodeVersion }} integration
+    strategy:
+      fail-fast: false
+      matrix:
+        nodeVersion:
+          - 18
+          - 19
+          - nightly
+    needs:
+      - npm-version
+    uses: ./.github/workflows/node-integration.yml
+    with:
+      nodeVersion: ${{ matrix.nodeVersion }}
+      npmVersion: ${{ needs.npm-version.outputs.npmVersion }}
+
