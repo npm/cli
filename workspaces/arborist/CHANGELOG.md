@@ -1,5 +1,14 @@
 # Changelog
 
+## [6.1.6](https://github.com/npm/cli/compare/arborist-v6.1.5...arborist-v6.1.6) (2023-01-12)
+
+### Bug Fixes
+
+* [`b584af0`](https://github.com/npm/cli/commit/b584af0237eecd5c32cdab98b8a067798eb25eea) [#6022](https://github.com/npm/cli/pull/6022) remove unneeded param default (@wraithgar)
+* [`2ba1171`](https://github.com/npm/cli/commit/2ba1171f867bfacedbab056d165d50e58b0cb7ed) streamline workspace loading code (@wraithgar)
+* [`2383deb`](https://github.com/npm/cli/commit/2383deb9723593365cf748238f3b2388e7aaf6f5) [#6037](https://github.com/npm/cli/pull/6037) clean urls from arborist, owner, and ping commands (#6037) (@lukekarrys)
+* [`c52cf6b`](https://github.com/npm/cli/commit/c52cf6bc547268833cde2715fe4f6299240049f8) [#5960](https://github.com/npm/cli/pull/5960) properly handle directory, file, git and alias specs in overrides (@nlf)
+
 ## [6.1.5](https://github.com/npm/cli/compare/arborist-v6.1.4...arborist-v6.1.5) (2022-12-07)
 
 ### Bug Fixes

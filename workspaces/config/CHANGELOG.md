@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.1.1](https://github.com/npm/cli/compare/config-v6.1.0...config-v6.1.1) (2023-01-12)
+
+### Bug Fixes
+
+* [`450e50f`](https://github.com/npm/cli/commit/450e50fa555bfef869735b0195fe0a451e94eb3d) evaluate configs in command class (@lukekarrys)
+
 ## [6.1.0](https://github.com/npm/cli/compare/config-v6.0.1...config-v6.1.0) (2022-11-02)
 
 ### Features
