@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.3.1](https://github.com/npm/cli/compare/v9.3.0...v9.3.1) (2023-01-13)
+
+### Bug Fixes
+
+* [`8be672b`](https://github.com/npm/cli/commit/8be672b21f7d434c898bb4e97dc3fca6e54b29a1) [#6050](https://github.com/npm/cli/pull/6050) don't try to deprecate nonexistant versions (#6050) (@wraithgar)
+* [`1c3612c`](https://github.com/npm/cli/commit/1c3612cc2fe9974166b5aab92477b289a768c1e7) [#6054](https://github.com/npm/cli/pull/6054) use recursive rm in ci command (#6054) (@jamesshaw1987, @burkel24)
+
 ## [9.3.0](https://github.com/npm/cli/compare/v9.2.0...v9.3.0) (2023-01-12)
 
 ### Features
