@@ -6,6 +6,10 @@ t.cleanSnapshot = (s) => s
   .replace(ConfigItems.values['npm-version'], '{NPM-VERSION}')
   .replace(ConfigItems.typeDefs.IpAddress.values.join(', '), '{...LOCAL-IPS}')
 
+t.test('basic', async t => {
+  t.matchSnapshot(Object.keys(ConfigItems))
+})
+
 t.test('definitions', async t => {
   mockGlobals(t, {
     'process.platform': 'not-windows',
@@ -19,15 +23,18 @@ t.test('definitions', async t => {
   const entries = Object.entries(ConfigItems.definitions)
 
   t.equal(entries.length, ConfigItems.definitionKeys.length)
-  t.equal(entries.length, Object.entries(ConfigItems.types).length)
   t.equal(entries.length, Object.entries(ConfigItems.defaults).length)
+
+  const locationTypes = Object.entries(ConfigItems.types)
+  t.equal(ConfigItems.LocationEntries.length, locationTypes.length)
+  t.ok(locationTypes.every(([, t]) => Object.keys(t).length === entries.length))
 
   for (const [key, item] of entries) {
     t.test(key, async t => {
       t.matchSnapshot([
         item.describe(),
         `USAGE: ${item.describeUsage()}`,
-        `INVALID: ${item.mustBe()}`,
+        `INVALID: ${item.invalidUsage()}`,
         `DEFAULT: ${item.default}`,
         `TYPES: ${item.type.map(type => String(type))}`,
         `DERIVED: ${item.derived.map(d => ConfigItems.derived[d].flatKey)}`,

@@ -7,29 +7,13 @@ const {
   derivedKeys,
   valueKeys,
   values,
+  LocationEntries,
 } = require('./definitions')
 
 // TODO: flatten based on key match
 // if (/@.*:registry$/i.test(key) || /^\/\//.test(key)) {
 //   flat[key] = val
 // }
-
-// this is in order from least -> most precedence
-const LocationsList = Object.entries({
-  default: { description: `npm's default values`, allowDeprecated: true, throw: true },
-  builtin: { description: `npm's builtin npmrc file` },
-  global: { description: 'global .npmrc file', validateAuth: true },
-  user: { description: 'user .npmrc file', validateAuth: true, mode: 0o600 },
-  project: { description: 'project .npmrc file', validateAuth: true },
-  env: { description: 'environment variables' },
-  cli: { description: 'command line options' },
-})
-
-// an enum to export and use to make using `where` not rely on strings
-const Locations = LocationsList.reduce((acc, [location]) => {
-  acc[location] = location
-  return acc
-}, {})
 
 const hasOwn = (o, k) => Object.prototype.hasOwnProperty.call(o, k)
 
@@ -55,8 +39,6 @@ const defineBaseAndFlat = (obj, key, descriptor) => {
 }
 
 class ConfigLocations extends Map {
-  static Locations = Locations
-
   #envReplace = null
   #config = null
 
@@ -88,7 +70,7 @@ class ConfigLocations extends Map {
       this.#createDerivedDescriptor(key)
     }
 
-    for (const [where, conf] of LocationsList) {
+    for (const [where, conf] of LocationEntries) {
       this.add({ ...conf, where }, conf.data)
     }
 

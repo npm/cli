@@ -4,6 +4,7 @@ const derivations = require('./derived')
 const values = require('./values')
 const shorthands = require('./shorthands')
 const typeDefs = require('./type-defs')
+const { LocationEntries, Locations } = require('./locations')
 
 module.exports = {
   // definition instances and their keys
@@ -23,6 +24,8 @@ module.exports = {
   // derived instances and their keys
   derived: {},
   derivedKeys: [],
+  LocationEntries,
+  Locations,
   ...typeDefs,
 }
 
@@ -40,7 +43,18 @@ const define = (key, data) => {
   module.exports.definitionKeys.push(key)
 
   module.exports.defaults[key] = def.default
-  module.exports.types[key] = def.type
+
+  for (const [where] of LocationEntries) {
+    // a type is allowed for each location if the definition didnt specify any
+    // locations, or if the location is default or if this is one of the definitions
+    // valid locations. anything else gets set to a special type that will not allow
+    // any value
+    const allowed =
+      !def.location.length ||
+      def.location.includes(where) ||
+      [Locations.default, Locations.builtin].includes(where)
+    module.exports.types[where][key] = allowed ? def.type : [typeDefs.Types.NotAllowed]
+  }
 
   for (const s of def.short) {
     module.exports.shorthands[s] = [`--${key}`]
@@ -82,6 +96,10 @@ const value = (key, v) => {
 }
 
 const main = () => {
+  for (const [where] of LocationEntries) {
+    module.exports.types[where] = {}
+  }
+
   for (const [key, def] of Object.entries(definitions)) {
     define(key, def)
   }

@@ -24,8 +24,8 @@ const removed = new Set([
   ...removedOpts,
 ])
 
-const { definitions, shorthands, configKeys } = require('@npmcli/config')
-const npmSwitches = configKeys.filter(k => definitions[k].isBoolean)
+const { definitions, shorthands, definitionKeys } = require('@npmcli/config')
+const npmSwitches = definitionKeys.filter(k => definitions[k].hasNonBoolean)
 
 // things that don't take a value
 const switches = new Set([

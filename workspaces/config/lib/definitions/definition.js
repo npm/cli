@@ -71,6 +71,7 @@ class Definition {
     'short',
     'usage',
     'envExport',
+    'location',
   ]
 
   #key = null
@@ -126,7 +127,7 @@ class Definition {
   }
 
   get default () {
-    return describeValue(this.#def.default)
+    return this.#def.default
   }
 
   get deprecated () {
@@ -158,6 +159,10 @@ class Definition {
     return [...this.#derived.values()]
   }
 
+  get location () {
+    return [].concat(this.#def.location ?? [])
+  }
+
   addDerived (...keys) {
     for (const k of keys) {
       this.#derived.add(k)
@@ -179,7 +184,7 @@ class Definition {
   // a textual description of this config, suitable for help output
   describe () {
     const sections = [
-      ['Default', this.#def.defaultDescription ?? this.default],
+      ['Default', this.#def.defaultDescription ?? describeValue(this.default)],
       ['Type', this.#describeTypes()],
       this.deprecated ? ['DEPRECATED', this.deprecated] : null,
       '',
@@ -197,7 +202,7 @@ class Definition {
     return wrapAll(`#### \`${this.#key}\`\n\n${sections.filter(v => v != null).join('\n')}`)
   }
 
-  mustBe () {
+  invalidUsage () {
     const allowMultiple = this.#typeMultiple
     const types = this.type.includes(Types.URL) ? [Types.URL]
       // no actual configs matching this, but path types SHOULD be handled
@@ -205,7 +210,7 @@ class Definition {
       : /* istanbul ignore next */ this.type.includes(Types.Path) ? [Types.Path]
       : this.type
 
-    const mustBe = types.filter(t => t !== Types.Array).flatMap((t) => {
+    const mustBe = types.filter(t => t !== Types.Array && t !== null).flatMap((t) => {
       const type = getType(t)
       return type
         ? type.values ?? type.description ?? type.typeDescription

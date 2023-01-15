@@ -10,10 +10,12 @@ const fs = require('fs/promises')
 const SetGlobal = require('./set-globals.js')
 const { ErrInvalidAuth } = require('./errors')
 const ConfigTypes = require('./config-locations')
+const ConfigData = require('./config-data')
 const Definitions = require('./definitions')
 const nerfDart = require('./nerf-dart.js')
 const replaceInfo = require('./replace-info')
-const Locations = ConfigTypes.Locations
+
+const Locations = Definitions.Locations
 
 // These are the configs that we can nerf-dart. Not all of them currently even
 // *have* config definitions so we have to explicitly validate them here
@@ -37,76 +39,67 @@ const dirExists = (...p) => fs.stat(resolve(...p))
 
 class Config {
   static Locations = Locations
+  static ConfigData = ConfigData
   static EnvKeys = [...SetGlobal.EnvKeys.values()]
   static ProcessKeys = [...SetGlobal.ProcessKeys.values()]
   static NerfDarts = NerfDarts
   static replaceInfo = replaceInfo
-  static configKeys = Definitions.definitionKeys
+  static definitionKeys = Definitions.definitionKeys
   static definitions = Definitions.definitions
   static shortKeys = Definitions.shortKeys
   static shorthands = Definitions.shorthands
-  static types = Definitions.types
-
-  // state
-  #configData = null
 
   // required options in constructor
   #builtinRoot = null
   #argv = null
   #localPrefixRoot = null
 
-  // options just to override in tests, mostly
   #process = null
-  #env = null
   #platform = null
   #execPath = null
-  #cwd = null
   #npmExecPath = null
+  #cwd = null
+  #env = null
+  #home = null
 
   // set during init which is called in ctor
-  #command = null
-  #args = null
   #clean = null
   #title = null
 
   // set when we load configs
+  #loaded = false
+  #localPackage = null
   #defaultGlobalPrefix = null
   #defaultLocalPrefix = null
-  #localPackage = null
-  #loaded = false
-  #home = null
 
   // functions
   #setEnv = null
   #setNpmEnv = null
-  #setProc = null
+  #setProcess = null
+
+  // state
+  #configData = null
 
   constructor ({
     builtinRoot,
     argv,
     localPrefixRoot,
-
-    // pass in process to set everything, but also allow
-    // overriding specific parts of process that are used
-    // these are only used for testing
-    process: _process = process,
-    env = _process.env,
-    platform = _process.platform,
-    execPath = _process.execPath,
-    cwd = _process.cwd(),
   }) {
     this.#builtinRoot = builtinRoot
-
-    this.#process = _process
-    this.#env = env
     this.#argv = argv
-    this.#platform = platform
-    this.#execPath = execPath
-    this.#npmExecPath = require.main?.filename
-    this.#cwd = cwd
     this.#localPrefixRoot = localPrefixRoot
 
-    this.#home = this.#env.HOME || homedir()
+    // these are kept private for accessing throughout the class and some
+    // of them are allowed public access if they are needed in the derived
+    // property getters
+    this.#process = process
+    this.#platform = process.platform
+    this.#execPath = process.execPath
+    this.#npmExecPath = require.main?.filename
+    this.#cwd = process.cwd()
+    this.#env = process.env
+    this.#home = process.env.HOME || homedir()
+
     // this allows the Path type definition to do replacements
     // using the detected home and platform
     Definitions.updateType(Definitions.Types.Path, {
@@ -119,9 +112,10 @@ class Config {
       config: this,
     })
 
-    this.#setProc = (...args) => SetGlobal.setProcess(this.#process, ...args)
+    // bind some private helper functions to the process and env
     this.#setEnv = (...args) => SetGlobal.setEnv(this.#env, ...args)
     this.#setNpmEnv = (...args) => SetGlobal.npm.setEnv(this.#env, ...args)
+    this.#setProcess = (...args) => SetGlobal.setProcess(this.#process, ...args)
 
     // load env first because it has no dependencies
     this.#loadEnv()
@@ -146,7 +140,7 @@ class Config {
   }
 
   get globalPrefix () {
-    return this.flat.globalPrefix
+    return this.#get('global-prefix')
   }
 
   get defaultGlobalPrefix () {
@@ -154,7 +148,7 @@ class Config {
   }
 
   get localPrefix () {
-    return this.flat.localPrefix
+    return this.#get('local-prefix')
   }
 
   get defaultLocalPrefix () {
@@ -183,7 +177,7 @@ class Config {
 
   get valid () {
     for (const conf of this.#configData.values()) {
-      if (!conf.validate()) {
+      if (!conf.valid) {
         return false
       }
     }
@@ -203,7 +197,7 @@ class Config {
   }
 
   get args () {
-    return this.#args
+    return this.#get('npm-args')
   }
 
   get clean () {
@@ -289,6 +283,7 @@ class Config {
   //
   // =============================================
   #loadEnv () {
+    console.log(this.#env)
     const data = Object.entries(this.#env).reduce((acc, [key, val]) => {
       if (!SetGlobal.npm.testKey(key) || !val) {
         return acc
@@ -303,6 +298,8 @@ class Config {
       }
       return acc
     }, {})
+    log.silly('config:env', data)
+    console.log(data)
     this.#loadObject(Locations.env, data)
   }
 
@@ -310,31 +307,32 @@ class Config {
     // NOTE: this is where command specific config could go since we now have a parsed
     // command name, the remaining args, and config values from the CLI and can rewrite
     // them or parse the remaining config files with this information.
-    const { remain, cooked } = this.#loadObject(Locations.cli, this.#argv.slice(2))
+    const { argv: { remain, cooked } } = this.#loadObject(Locations.cli, this.#argv.slice(2))
     this.#configData.get(Locations.cli).loadObject({ ...Definitions.values })
 
     let command = remain[0]
-    this.#args = remain.slice(1)
+    let args = remain.slice(1)
 
     if (this.#get('versions', Locations.cli) || this.#get('version', Locations.cli)) {
       // npm --versions or npm --version both run the version command
       command = 'version'
-      this.#args = []
+      args = []
       this.#set('usage', false, Locations.cli)
     } else if (!command) {
       // if there is no command, then we run the basic help command which print usage
       // but its an error so we need to set the exit code too
       command = 'help'
-      this.#args = []
+      args = []
       process.exitCode = 1
     }
 
     this.#set('npm-command', command, Locations.cli)
+    this.#set('npm-args', args, Locations.cli)
 
     // Secrets are mostly in configs, so title is set using only the positional args
     // to keep those from being leaked.
     this.#title = `npm ${replaceInfo(remain).join(' ')}`.trim()
-    this.#setProc('title', this.#title)
+    this.#setProcess('title', this.#title)
     log.verbose('config', 'title', this.#title)
 
     // The cooked argv is also logged separately for debugging purposes. It is
@@ -405,7 +403,8 @@ class Config {
     // found by walking up the folder tree. either way, we load it before
     // we return to make sure localPrefix is set
     await this.#time('load:localprefix', () => this.#findLocalPrefix())
-    const localPrefix = this.#get('local-prefix')
+
+    const { localPrefix } = this
 
     if (this.#defaultLocalPrefix.workspace === localPrefix) {
       // set the workspace in the default layer, which allows it to be overridden easily
@@ -453,12 +452,14 @@ class Config {
   async #findGlobalPrefix () {
     await this.#time('whichnode', async () => {
       const node = await which(this.#argv[0]).catch(() => {})
+      console.log(node)
       if (node?.toUpperCase() !== this.#execPath.toUpperCase()) {
         log.verbose('config', 'node symlink', node)
         this.#execPath = node
-        SetGlobal.setProcess(this.#process, 'execPath', node)
+        this.#setProcess('execPath', node)
       }
     })
+    
 
     let prefix
     if (this.#env.PREFIX) {
@@ -475,6 +476,8 @@ class Config {
       }
     }
 
+    console.log(prefix, this.#execPath)
+
     this.#defaultGlobalPrefix = prefix
   }
 
@@ -482,12 +485,6 @@ class Config {
     const prefix = { root: null, workspace: null }
 
     for (const p of walkUp(this.#cwd)) {
-      // This property tells us to stop looking if we reach this directory no
-      // matter what else has been found
-      if (p === this.#localPrefixRoot) {
-        break
-      }
-
       const hasPackageJson = await fileExists(p, 'package.json')
 
       if (!prefix.root && (hasPackageJson || await dirExists(p, 'node_modules'))) {
@@ -505,13 +502,19 @@ class Config {
           continue
         }
 
-        for (const w of await mapWorkspaces({ cwd: p, pkg }).values()) {
+        for (const w of (await mapWorkspaces({ cwd: p, pkg })).values()) {
           if (w === prefix.root) {
             prefix.workspace = p
             // we found a root, so we return now
             break
           }
         }
+      }
+
+      // This property tells us to stop looking if we reach this directory no
+      // matter what else has been found
+      if (p === this.#localPrefixRoot) {
+        break
       }
     }
 
@@ -530,6 +533,7 @@ class Config {
   // This ensures that all npm config values that are not the defaults are
   // shared appropriately with child processes, without false positives.
   #setEnvs () {
+    return
     // if the key is deprecated, skip it always.
     // if the key is the default value,
     //   if the environ is NOT the default value,
@@ -565,8 +569,10 @@ class Config {
     this.#setNpmEnv('global-prefix', this.#get('global-prefix'))
     this.#setNpmEnv('local-prefix', this.#get('local-prefix'))
     this.#setNpmEnv('user-agent', this.#get('user-agent'))
+
     this.#setEnv('COLOR', this.#get('color') ? '1' : '0')
     this.#setEnv('NODE_ENV', this.#get('omit').includes('dev') ? 'production' : null)
+
     // XXX make this the bin/npm-cli.js file explicitly instead
     // otherwise using npm programmatically is a bit of a pain.
     this.#setEnv('npm_execpath', this.#get('npm-bin') ?? null)
@@ -576,14 +582,11 @@ class Config {
     this.#setEnv('HOME', this.#home)
     this.#setEnv('NODE', this.#execPath)
     this.#setEnv('npm_node_execpath', this.#execPath)
-    this.#setEnv('npm_command', this.#command)
-    this.#setEnv('EDITOR', cliConf.has('editor') ? cliConf.get('editor') : null)
-
+    this.#setEnv('npm_command', this.command)
+    this.#setEnv('EDITOR', cliConf.get('editor') ?? null)
     // note: this doesn't afect the *current* node process, of course, since
     // it's already started, but it does affect the options passed to scripts.
-    if (cliConf.has('node-options')) {
-      this.#setEnv('NODE_OPTIONS', cliConf.get('node-options'))
-    }
+    this.#setEnv('NODE_OPTIONS', cliConf.get('node-options') ?? null)
   }
 
   // =============================================
@@ -596,6 +599,12 @@ class Config {
     const conf = this.#configData.get(where)
     await conf.save()
     return conf
+  }
+
+  async edit (where, opts) {
+    this.#assertLoaded()
+    const conf = this.#configData.get(where)
+    await conf.edit(opts)
   }
 
   validate () {

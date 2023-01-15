@@ -7,6 +7,7 @@ const { networkInterfaces } = require('os')
 const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1)
 const noptValidators = Object.entries(noptDefs).reduce((acc, [k, v]) => {
   acc[capitalize(k)] = v.validate
+  acc[k.toUpperCase()] = v.validate
   return acc
 }, {})
 

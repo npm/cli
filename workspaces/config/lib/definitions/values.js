@@ -9,6 +9,7 @@ const { version } = require('../../../../package.json')
 const value = (key, v) => module.exports[key] = v
 
 value('npm-command', '')
+value('npm-args', [])
 value('npm-version', version)
 
 // the Arborist constructor is used almost everywhere we call pacote, it's

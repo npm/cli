@@ -24,7 +24,7 @@ const ProcessKeys = new Set([
 
 // replace any ${ENV} values with the appropriate environ.
 const envExpr = /(?<!\\)(\\*)\$\{([^${}]+)\}/g
-const envReplace = (env, f) => f.replace(envExpr, (orig, esc, name) => {
+const replaceEnv = (env, f) => f.replace(envExpr, (orig, esc, name) => {
   const val = env[name] !== undefined ? env[name] : `$\{${name}}`
 
   // consume the escape chars that are relevant.
@@ -95,7 +95,7 @@ module.exports = {
   setProcess,
   setEnv,
   sameValue,
-  replaceEnv: envReplace,
+  replaceEnv,
   npm: {
     setEnv: setNpmEnv,
     testKey: (k) => rePrefix.test(k),

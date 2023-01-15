@@ -1,6 +1,6 @@
 const ciInfo = require('ci-info')
-const { tmpdir } = require('os')
 const { Types } = require('./type-defs')
+const { Locations } = require('./locations')
 
 const {
   EDITOR,
@@ -24,6 +24,8 @@ const Unicode = /UTF-?8$/i.test(LC_ALL || LC_CTYPE || LANG)
 // use LOCALAPPDATA on Windows, if set https://github.com/npm/cli/pull/899
 const CacheRoot = (isWindows && LOCALAPPDATA) || '~'
 const Cache = `${CacheRoot}/${isWindows ? 'npm-cache' : '.npm'}`
+
+const CiName = ciInfo.name ? ciInfo.name.toLowerCase().split(' ').join('-') : null
 
 const define = (key, v) => module.exports[key] = v
 
@@ -287,7 +289,7 @@ define('cert', {
 })
 
 define('ci-name', {
-  default: ciInfo.name ? ciInfo.name.toLowerCase().split(' ').join('-') : null,
+  default: CiName,
   defaultDescription: `
     The name of the current CI system, or \`null\` when not on a known CI
     platform.
@@ -1733,24 +1735,6 @@ define('timing', {
   `,
 })
 
-define('tmp', {
-  default: tmpdir(),
-  defaultDescription: `
-    The value returned by the Node.js \`os.tmpdir()\` method
-    <https://nodejs.org/api/os.html#os_os_tmpdir>
-  `,
-  type: Types.Path,
-  deprecated: `
-    This setting is no longer used.  npm stores temporary files in a special
-    location in the cache, and they are managed by
-    [\`cacache\`](http://npm.im/cacache).
-  `,
-  description: `
-    Historically, the location where temporary files were stored.  No longer
-    relevant.
-  `,
-})
-
 define('umask', {
   default: 0,
   type: Types.Umask,
@@ -1839,6 +1823,7 @@ define('userconfig', {
     variable or the \`--userconfig\` command line option, but may _not_
     be overridden by settings in the \`globalconfig\` file.
   `,
+  location: [Locations.cli, Locations.env, Locations.project],
 })
 
 define('version', {
@@ -1850,6 +1835,7 @@ define('version', {
 
     Only relevant when specified explicitly on the command line.
   `,
+  location: Locations.cli,
 })
 
 define('versions', {
@@ -1862,6 +1848,7 @@ define('versions', {
 
     Only relevant when specified explicitly on the command line.
   `,
+  location: Locations.cli,
 })
 
 define('viewer', {

@@ -5,6 +5,27 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
+exports[`test/definitions/snapshots.js TAP basic > must match snapshot 1`] = `
+Array [
+  "definitions",
+  "definitionKeys",
+  "defaults",
+  "types",
+  "values",
+  "valueKeys",
+  "shorthands",
+  "shortKeys",
+  "derived",
+  "derivedKeys",
+  "LocationEntries",
+  "Locations",
+  "typeDefs",
+  "Types",
+  "getType",
+  "updateType",
+]
+`
+
 exports[`test/definitions/snapshots.js TAP definitions _auth > must match snapshot 1`] = `
 #### \`_auth\`
 
@@ -21,7 +42,7 @@ safer to use a registry-provided authentication bearer token stored in the
 ----------------------------------------
 USAGE: --_auth <_auth>
 ----------------------------------------
-INVALID: Must be one of: null, a string
+INVALID: Must be a string
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -49,7 +70,7 @@ status\` would.
 ----------------------------------------
 USAGE: --access <restricted|public>
 ----------------------------------------
-INVALID: Must be one of: null, "restricted", "public"
+INVALID: Must be one of: "restricted", "public"
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -68,7 +89,7 @@ When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show all
 outdated or installed packages, rather than only those directly depended
 upon by the current project.
 ----------------------------------------
-USAGE: -a|--no-all|--all
+USAGE: -a|--all
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -88,7 +109,7 @@ exports[`test/definitions/snapshots.js TAP definitions allow-same-version > must
 Prevents throwing an error when \`npm version\` is used to set the new version
 to the same value as the current version.
 ----------------------------------------
-USAGE: --no-allow-same-version|--allow-same-version
+USAGE: --allow-same-version
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -110,7 +131,7 @@ When set to \`dev\` or \`development\`, this is an alias for \`--include=dev\`.
 ----------------------------------------
 USAGE: --also <dev|development>
 ----------------------------------------
-INVALID: Must be one of: null, "dev", "development"
+INVALID: Must be one of: "dev", "development"
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -130,7 +151,7 @@ default registry and all registries configured for scopes. See the
 documentation for [\`npm audit\`](/commands/npm-audit) for details on what is
 submitted.
 ----------------------------------------
-USAGE: --no-audit|--audit
+USAGE: --no-audit
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -152,7 +173,7 @@ exit code.
 ----------------------------------------
 USAGE: --audit-level <info|low|moderate|high|critical|none>
 ----------------------------------------
-INVALID: Must be one of: null, "info", "low", "moderate", "high", "critical", "none"
+INVALID: Must be one of: "info", "low", "moderate", "high", "critical", "none"
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -173,7 +194,7 @@ USAGE: --auth-type <legacy|web>
 ----------------------------------------
 INVALID: Must be one of: "legacy", "web"
 ----------------------------------------
-DEFAULT: "web"
+DEFAULT: web
 ----------------------------------------
 TYPES: legacy,web
 ----------------------------------------
@@ -198,7 +219,7 @@ will be used. For example, \`foo@latest\` might install \`foo@1.2\` even though
 ----------------------------------------
 USAGE: --before <before>
 ----------------------------------------
-INVALID: Must be one of: null, a valid Date string
+INVALID: Must be a valid Date string
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -220,7 +241,7 @@ Set to false to have it not do this. This can be used to work around the
 fact that some file systems don't support symlinks, even on ostensibly Unix
 systems.
 ----------------------------------------
-USAGE: --no-bin-links|--bin-links
+USAGE: --no-bin-links
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -246,7 +267,7 @@ Set to \`true\` to use default system URL opener.
 ----------------------------------------
 USAGE: --no-browser|--browser <browser>
 ----------------------------------------
-INVALID: Must be one of: null, a boolean value (true or false), a string
+INVALID: Must be one of: a boolean value (true or false), a string
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -284,7 +305,7 @@ See also the \`strict-ssl\` config.
 ----------------------------------------
 USAGE: --ca <ca> [--ca <ca> ...]
 ----------------------------------------
-INVALID: Must be one or more of: null, a string
+INVALID: Must be one or more a string
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -305,7 +326,7 @@ USAGE: --cache <cache>
 ----------------------------------------
 INVALID: Must be a valid filesystem path
 ----------------------------------------
-DEFAULT: "~/.npm"
+DEFAULT: ~/.npm
 ----------------------------------------
 TYPES: Symbol(Path)
 ----------------------------------------
@@ -390,7 +411,7 @@ USAGE: -c|--call <call>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: ""
+DEFAULT: 
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -421,7 +442,7 @@ registry-scoped "certfile" path like
 ----------------------------------------
 USAGE: --cert <cert>
 ----------------------------------------
-INVALID: Must be one of: null, a string
+INVALID: Must be a string
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -443,7 +464,7 @@ detect the current CI environment using the
 ----------------------------------------
 USAGE: --ci-name <ci-name>
 ----------------------------------------
-INVALID: Must be one of: null, a string
+INVALID: Must be a string
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -463,7 +484,7 @@ tokens with the \`npm token create\` command.
 ----------------------------------------
 USAGE: --cidr <cidr> [--cidr <cidr> ...]
 ----------------------------------------
-INVALID: Must be one or more of: null, a string
+INVALID: Must be one or more a string
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -481,7 +502,7 @@ exports[`test/definitions/snapshots.js TAP definitions color > must match snapsh
 If false, never shows colors. If \`"always"\` then always shows colors. If
 true, then only prints color codes for tty file descriptors.
 ----------------------------------------
-USAGE: --no-color|--color <always|color>
+USAGE: --no-color <always|color>
 ----------------------------------------
 INVALID: Must be one of: "always", a boolean value (true or false)
 ----------------------------------------
@@ -500,7 +521,7 @@ exports[`test/definitions/snapshots.js TAP definitions commit-hooks > must match
 
 Run git commit hooks when using the \`npm version\` command.
 ----------------------------------------
-USAGE: --no-commit-hooks|--commit-hooks
+USAGE: --no-commit-hooks
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -524,7 +545,7 @@ project. If \`--all\` is set, then npm will show all dependencies by default.
 ----------------------------------------
 USAGE: --depth <number>
 ----------------------------------------
-INVALID: Must be one of: null, a numeric value
+INVALID: Must be a numeric value
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -541,7 +562,7 @@ exports[`test/definitions/snapshots.js TAP definitions description > must match 
 
 Show the description in \`npm search\`
 ----------------------------------------
-USAGE: --no-description|--description
+USAGE: --no-description
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -561,7 +582,7 @@ exports[`test/definitions/snapshots.js TAP definitions dev > must match snapshot
 
 Alias for \`--include=dev\`.
 ----------------------------------------
-USAGE: --no-dev|--dev
+USAGE: --dev
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -584,7 +605,7 @@ USAGE: --diff <package-spec> [--diff <package-spec> ...]
 ----------------------------------------
 INVALID: Must be one or more an npm package spec
 ----------------------------------------
-DEFAULT: []
+DEFAULT: 
 ----------------------------------------
 TYPES: Symbol(Spec),Symbol(Array)
 ----------------------------------------
@@ -603,7 +624,7 @@ USAGE: --diff-dst-prefix <diff-dst-prefix>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: "b/"
+DEFAULT: b/
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -618,7 +639,7 @@ exports[`test/definitions/snapshots.js TAP definitions diff-ignore-all-space > m
 
 Ignore whitespace when comparing lines in \`npm diff\`.
 ----------------------------------------
-USAGE: --no-diff-ignore-all-space|--diff-ignore-all-space
+USAGE: --diff-ignore-all-space
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -637,7 +658,7 @@ exports[`test/definitions/snapshots.js TAP definitions diff-name-only > must mat
 
 Prints only filenames when using \`npm diff\`.
 ----------------------------------------
-USAGE: --no-diff-name-only|--diff-name-only
+USAGE: --diff-name-only
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -659,7 +680,7 @@ Do not show any source or destination prefix in \`npm diff\` output.
 Note: this causes \`npm diff\` to ignore the \`--diff-src-prefix\` and
 \`--diff-dst-prefix\` configs.
 ----------------------------------------
-USAGE: --no-diff-no-prefix|--diff-no-prefix
+USAGE: --diff-no-prefix
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -682,7 +703,7 @@ USAGE: --diff-src-prefix <diff-src-prefix>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: "a/"
+DEFAULT: a/
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -697,7 +718,7 @@ exports[`test/definitions/snapshots.js TAP definitions diff-text > must match sn
 
 Treat all files as text in \`npm diff\`.
 ----------------------------------------
-USAGE: --no-diff-text|--diff-text
+USAGE: --diff-text
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -741,7 +762,7 @@ commands that modify your local installation, eg, \`install\`, \`update\`,
 Note: This is NOT honored by other network related commands, eg \`dist-tags\`,
 \`owner\`, etc.
 ----------------------------------------
-USAGE: --no-dry-run|--dry-run
+USAGE: --dry-run
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -765,7 +786,7 @@ USAGE: --editor <editor>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: "code -r -w"
+DEFAULT: code -r -w
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -784,7 +805,7 @@ Node.js version.
 
 This can be overridden by setting the \`--force\` flag.
 ----------------------------------------
-USAGE: --no-engine-strict|--engine-strict
+USAGE: --engine-strict
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -923,7 +944,7 @@ mistakes, unnecessary performance degradation, and malicious input.
 If you don't have a clear idea of what you want to do, it is strongly
 recommended that you do not use this option!
 ----------------------------------------
-USAGE: -f|--no-force|--force
+USAGE: -f|--force
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -947,7 +968,7 @@ input, output, and error with the main npm process.
 Note that this will generally make installs run slower, and be much noisier,
 but can be useful for debugging.
 ----------------------------------------
-USAGE: --no-foreground-scripts|--foreground-scripts
+USAGE: --foreground-scripts
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -967,7 +988,7 @@ exports[`test/definitions/snapshots.js TAP definitions format-package-lock > mus
 Format \`package-lock.json\` or \`npm-shrinkwrap.json\` as a human readable
 file.
 ----------------------------------------
-USAGE: --no-format-package-lock|--format-package-lock
+USAGE: --no-format-package-lock
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -988,7 +1009,7 @@ When "true" displays the message at the end of each \`npm install\`
 acknowledging the number of dependencies looking for funding. See [\`npm
 fund\`](/commands/npm-fund) for details.
 ----------------------------------------
-USAGE: --no-fund|--fund
+USAGE: --no-fund
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -1012,7 +1033,7 @@ USAGE: --git <git>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: "git"
+DEFAULT: git
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -1028,7 +1049,7 @@ exports[`test/definitions/snapshots.js TAP definitions git-tag-version > must ma
 Tag the commit when using the \`npm version\` command. Setting this to false
 results in no commit being made at all.
 ----------------------------------------
-USAGE: --no-git-tag-version|--git-tag-version
+USAGE: --no-git-tag-version
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -1054,7 +1075,7 @@ folder instead of the current working directory. See
 * bin files are linked to \`{prefix}/bin\`
 * man pages are linked to \`{prefix}/share/man\`
 ----------------------------------------
-USAGE: -g|--no-global|--global
+USAGE: -g|--global
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -1076,7 +1097,7 @@ exports[`test/definitions/snapshots.js TAP definitions global-style > must match
 Only install direct dependencies in the top level \`node_modules\`, but hoist
 on deeper dependendencies. Sets \`--install-strategy=shallow\`.
 ----------------------------------------
-USAGE: --no-global-style|--global-style
+USAGE: --global-style
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -1119,7 +1140,7 @@ USAGE: --heading <heading>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: "npm"
+DEFAULT: npm
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -1163,7 +1184,7 @@ CI setup.
 
 This value is not exported to the environment for child processes.
 ----------------------------------------
-USAGE: --no-if-present|--if-present
+USAGE: --if-present
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -1187,7 +1208,7 @@ Note that commands explicitly intended to run a particular script, such as
 will still run their intended script if \`ignore-scripts\` is set, but they
 will *not* run any pre- or post-scripts.
 ----------------------------------------
-USAGE: --no-ignore-scripts|--ignore-scripts
+USAGE: --ignore-scripts
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -1215,7 +1236,7 @@ USAGE: --include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ..
 ----------------------------------------
 INVALID: Must be one or more of: "prod", "dev", "optional", "peer"
 ----------------------------------------
-DEFAULT: []
+DEFAULT: 
 ----------------------------------------
 TYPES: Symbol(Array),prod,dev,optional,peer
 ----------------------------------------
@@ -1233,7 +1254,7 @@ Allow installing "staged" published packages, as defined by [npm RFC PR
 
 This is experimental, and not implemented by the npm public registry.
 ----------------------------------------
-USAGE: --no-include-staged|--include-staged
+USAGE: --include-staged
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -1258,7 +1279,7 @@ the specified workspaces, and not on the root project.
 
 This value is not exported to the environment for child processes.
 ----------------------------------------
-USAGE: -iwr|--no-include-workspace-root|--include-workspace-root
+USAGE: -iwr|--include-workspace-root
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -1281,7 +1302,7 @@ USAGE: --init-author-email <init-author-email>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: ""
+DEFAULT: 
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -1300,7 +1321,7 @@ USAGE: --init-author-name <init-author-name>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: ""
+DEFAULT: 
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -1320,7 +1341,7 @@ USAGE: --init-author-url <init-author-url>
 ----------------------------------------
 INVALID: Must be a full url with "http://"
 ----------------------------------------
-DEFAULT: ""
+DEFAULT: 
 ----------------------------------------
 TYPES: ,Symbol(URL)
 ----------------------------------------
@@ -1339,7 +1360,7 @@ USAGE: --init-license <init-license>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: "ISC"
+DEFAULT: ISC
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -1361,7 +1382,7 @@ USAGE: --init-module <init-module>
 ----------------------------------------
 INVALID: Must be a valid filesystem path
 ----------------------------------------
-DEFAULT: "~/.npm-init.js"
+DEFAULT: ~/.npm-init.js
 ----------------------------------------
 TYPES: Symbol(Path)
 ----------------------------------------
@@ -1381,7 +1402,7 @@ USAGE: --init-version <init-version>
 ----------------------------------------
 INVALID: Must be a full valid SemVer string
 ----------------------------------------
-DEFAULT: "1.0.0"
+DEFAULT: 1.0.0
 ----------------------------------------
 TYPES: Symbol(Semver)
 ----------------------------------------
@@ -1401,7 +1422,7 @@ USAGE: --init.author.email <init.author.email>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: ""
+DEFAULT: 
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -1421,7 +1442,7 @@ USAGE: --init.author.name <init.author.name>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: ""
+DEFAULT: 
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -1441,7 +1462,7 @@ USAGE: --init.author.url <init.author.url>
 ----------------------------------------
 INVALID: Must be a full url with "http://"
 ----------------------------------------
-DEFAULT: ""
+DEFAULT: 
 ----------------------------------------
 TYPES: ,Symbol(URL)
 ----------------------------------------
@@ -1461,7 +1482,7 @@ USAGE: --init.license <init.license>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: "ISC"
+DEFAULT: ISC
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -1481,7 +1502,7 @@ USAGE: --init.module <init.module>
 ----------------------------------------
 INVALID: Must be a valid filesystem path
 ----------------------------------------
-DEFAULT: "~/.npm-init.js"
+DEFAULT: ~/.npm-init.js
 ----------------------------------------
 TYPES: Symbol(Path)
 ----------------------------------------
@@ -1501,7 +1522,7 @@ USAGE: --init.version <init.version>
 ----------------------------------------
 INVALID: Must be a full valid SemVer string
 ----------------------------------------
-DEFAULT: "1.0.0"
+DEFAULT: 1.0.0
 ----------------------------------------
 TYPES: Symbol(Semver)
 ----------------------------------------
@@ -1518,7 +1539,7 @@ When set file: protocol dependencies will be packed and installed as regular
 dependencies instead of creating a symlink. This option has no effect on
 workspaces.
 ----------------------------------------
-USAGE: --no-install-links|--install-links
+USAGE: --no-install-links
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -1546,7 +1567,7 @@ USAGE: --install-strategy <hoisted|nested|shallow>
 ----------------------------------------
 INVALID: Must be one of: "hoisted", "nested", "shallow"
 ----------------------------------------
-DEFAULT: "hoisted"
+DEFAULT: hoisted
 ----------------------------------------
 TYPES: hoisted,nested,shallow
 ----------------------------------------
@@ -1566,7 +1587,7 @@ Whether or not to output JSON data, rather than the normal output.
 
 Not supported by all npm commands.
 ----------------------------------------
-USAGE: --no-json|--json
+USAGE: --json
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -1599,7 +1620,7 @@ It is _not_ the path to a key file, though you can set a registry-scoped
 ----------------------------------------
 USAGE: --key <key>
 ----------------------------------------
-INVALID: Must be one of: null, a string
+INVALID: Must be a string
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -1621,7 +1642,7 @@ the same manner that they are depended on. This may cause very deep
 directory structures and duplicate package installs as there is no
 de-duplicating. Sets \`--install-strategy=nested\`.
 ----------------------------------------
-USAGE: --no-legacy-bundling|--legacy-bundling
+USAGE: --legacy-bundling
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -1651,7 +1672,7 @@ This differs from \`--omit=peer\`, in that \`--omit=peer\` will avoid unpacking
 Use of \`legacy-peer-deps\` is not recommended, as it will not enforce the
 \`peerDependencies\` contract that meta-dependencies may rely on.
 ----------------------------------------
-USAGE: --no-legacy-peer-deps|--legacy-peer-deps
+USAGE: --legacy-peer-deps
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -1670,7 +1691,7 @@ exports[`test/definitions/snapshots.js TAP definitions link > must match snapsho
 
 Used with \`npm ls\`, limiting output to only those packages that are linked.
 ----------------------------------------
-USAGE: --no-link|--link
+USAGE: --link
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -1692,7 +1713,7 @@ npm registry. Must be IPv4 in versions of Node prior to 0.12.
 ----------------------------------------
 USAGE: --local-address <local-address>
 ----------------------------------------
-INVALID: Must be one of: null, {...LOCAL-IPS}
+INVALID: Must be one of: {...LOCAL-IPS}
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -1723,7 +1744,7 @@ USAGE: -L|--location <global|user|project>
 ----------------------------------------
 INVALID: Must be one of: "global", "user", "project"
 ----------------------------------------
-DEFAULT: "user"
+DEFAULT: user
 ----------------------------------------
 TYPES: global,user,project
 ----------------------------------------
@@ -1755,7 +1776,7 @@ Ideal if all users are on npm version 7 and higher.
 ----------------------------------------
 USAGE: --lockfile-version <lockfile-version>
 ----------------------------------------
-INVALID: Must be one of: null, 1, 2, 3
+INVALID: Must be one of: 1, 2, 3
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -1783,7 +1804,7 @@ USAGE: --loglevel <silent|error|warn|notice|http|info|verbose|silly>
 ----------------------------------------
 INVALID: Must be one of: "silent", "error", "warn", "notice", "http", "info", "verbose", "silly"
 ----------------------------------------
-DEFAULT: "notice"
+DEFAULT: notice
 ----------------------------------------
 TYPES: silent,error,warn,notice,http,info,verbose,silly
 ----------------------------------------
@@ -1839,7 +1860,7 @@ exports[`test/definitions/snapshots.js TAP definitions long > must match snapsho
 
 Show extended information in \`ls\`, \`search\`, and \`help-search\`.
 ----------------------------------------
-USAGE: -l|--no-long|--long
+USAGE: -l|--long
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -1884,7 +1905,7 @@ USAGE: -m|--message <message>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: "%s"
+DEFAULT: %s
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -1903,7 +1924,7 @@ how lifecycle scripts are called.
 ----------------------------------------
 USAGE: --node-options <node-options>
 ----------------------------------------
-INVALID: Must be one of: null, a string
+INVALID: Must be a string
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -1926,7 +1947,7 @@ USAGE: --noproxy <noproxy|noproxy> [--noproxy <noproxy|noproxy> ...]
 ----------------------------------------
 INVALID: Must be one or more of: a string, a comma-delimited string
 ----------------------------------------
-DEFAULT: ""
+DEFAULT: 
 ----------------------------------------
 TYPES: Symbol(String),Symbol(CSV),Symbol(Array)
 ----------------------------------------
@@ -1942,7 +1963,7 @@ exports[`test/definitions/snapshots.js TAP definitions offline > must match snap
 Force offline mode: no network requests will be done during install. To
 allow the CLI to fill in missing cache data, see \`--prefer-offline\`.
 ----------------------------------------
-USAGE: --no-offline|--offline
+USAGE: --offline
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -1976,7 +1997,7 @@ USAGE: --omit <prod|dev|optional|peer> [--omit <prod|dev|optional|peer> ...]
 ----------------------------------------
 INVALID: Must be one or more of: "prod", "dev", "optional", "peer"
 ----------------------------------------
-DEFAULT: []
+DEFAULT: 
 ----------------------------------------
 TYPES: Symbol(Array),prod,dev,optional,peer
 ----------------------------------------
@@ -1994,7 +2015,7 @@ registry dependencies. Subsequent installs will need to resolve tarball
 endpoints with the configured registry, likely resulting in a longer install
 time.
 ----------------------------------------
-USAGE: --no-omit-lockfile-registry-resolved|--omit-lockfile-registry-resolved
+USAGE: --omit-lockfile-registry-resolved
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2016,7 +2037,7 @@ When set to \`prod\` or \`production\`, this is an alias for \`--omit=dev\`.
 ----------------------------------------
 USAGE: --only <prod|production>
 ----------------------------------------
-INVALID: Must be one of: null, "prod", "production"
+INVALID: Must be one of: "prod", "production"
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -2039,7 +2060,7 @@ Alias for --include=optional or --omit=optional
 ----------------------------------------
 USAGE: --no-optional|--optional <optional>
 ----------------------------------------
-INVALID: Must be one of: null, a boolean value (true or false)
+INVALID: Must be a boolean value (true or false)
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -2062,7 +2083,7 @@ password, npm will prompt on the command line for one.
 ----------------------------------------
 USAGE: --otp <otp>
 ----------------------------------------
-INVALID: Must be one of: null, a string
+INVALID: Must be a string
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -2083,7 +2104,7 @@ USAGE: --pack-destination <pack-destination>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: "."
+DEFAULT: .
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -2102,7 +2123,7 @@ USAGE: --package <package-spec> [--package <package-spec> ...]
 ----------------------------------------
 INVALID: Must be one or more an npm package spec
 ----------------------------------------
-DEFAULT: []
+DEFAULT: 
 ----------------------------------------
 TYPES: Symbol(Spec),Symbol(Array)
 ----------------------------------------
@@ -2120,7 +2141,7 @@ will also prevent _writing_ \`package-lock.json\` if \`save\` is true.
 
 This configuration does not affect \`npm ci\`.
 ----------------------------------------
-USAGE: --no-package-lock|--package-lock
+USAGE: --no-package-lock
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2146,7 +2167,7 @@ instead of checking \`node_modules\` and downloading dependencies.
 For \`list\` this means the output will be based on the tree described by the
 \`package-lock.json\`, rather than the contents of \`node_modules\`.
 ----------------------------------------
-USAGE: --no-package-lock-only|--package-lock-only
+USAGE: --package-lock-only
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2166,7 +2187,7 @@ exports[`test/definitions/snapshots.js TAP definitions parseable > must match sn
 Output parseable results from commands that write to standard output. For
 \`npm search\`, this will be tab-separated table format.
 ----------------------------------------
-USAGE: -p|--no-parseable|--parseable
+USAGE: -p|--parseable
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2187,7 +2208,7 @@ If true, staleness checks for cached data will be bypassed, but missing data
 will be requested from the server. To force full offline mode, use
 \`--offline\`.
 ----------------------------------------
-USAGE: --no-prefer-offline|--prefer-offline
+USAGE: --prefer-offline
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2207,7 +2228,7 @@ exports[`test/definitions/snapshots.js TAP definitions prefer-online > must matc
 If true, staleness checks for cached data will be forced, making the CLI
 look for updates immediately even for fresh package data.
 ----------------------------------------
-USAGE: --no-prefer-online|--prefer-online
+USAGE: --prefer-online
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2253,7 +2274,7 @@ USAGE: --preid <prerelease-id>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: ""
+DEFAULT: 
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -2271,7 +2292,7 @@ Alias for \`--omit=dev\`
 ----------------------------------------
 USAGE: --no-production|--production <production>
 ----------------------------------------
-INVALID: Must be one of: null, a boolean value (true or false)
+INVALID: Must be a boolean value (true or false)
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -2291,7 +2312,7 @@ operations, if \`process.stderr\` is a TTY.
 
 Set to \`false\` to suppress the progress bar.
 ----------------------------------------
-USAGE: --no-progress|--progress
+USAGE: --no-progress
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2332,7 +2353,7 @@ exports[`test/definitions/snapshots.js TAP definitions read-only > must match sn
 This is used to mark a token as unable to publish when configuring limited
 access tokens with the \`npm token create\` command.
 ----------------------------------------
-USAGE: --no-read-only|--read-only
+USAGE: --read-only
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2351,7 +2372,7 @@ exports[`test/definitions/snapshots.js TAP definitions rebuild-bundle > must mat
 
 Rebuild bundled dependencies after installation.
 ----------------------------------------
-USAGE: --no-rebuild-bundle|--rebuild-bundle
+USAGE: --no-rebuild-bundle
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2374,7 +2395,7 @@ USAGE: --registry <registry>
 ----------------------------------------
 INVALID: Must be a full url with "http://"
 ----------------------------------------
-DEFAULT: "https://registry.npmjs.org/"
+DEFAULT: https://registry.npmjs.org/
 ----------------------------------------
 TYPES: Symbol(URL)
 ----------------------------------------
@@ -2401,7 +2422,7 @@ USAGE: --replace-registry-host <npmjs|never|always|replace-registry-host>
 ----------------------------------------
 INVALID: Must be one of: "npmjs", "never", "always", a string
 ----------------------------------------
-DEFAULT: "npmjs"
+DEFAULT: npmjs
 ----------------------------------------
 TYPES: npmjs,never,always,Symbol(String)
 ----------------------------------------
@@ -2421,7 +2442,7 @@ When used with the \`npm rm\` command, removes the dependency from
 
 Will also prevent writing to \`package-lock.json\` if set to \`false\`.
 ----------------------------------------
-USAGE: -S|--no-save|--save
+USAGE: -S|--no-save
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2444,7 +2465,7 @@ If a package would be saved at install time by the use of \`--save\`,
 
 Ignored if \`--save-peer\` is set, since peerDependencies cannot be bundled.
 ----------------------------------------
-USAGE: -B|--no-save-bundle|--save-bundle
+USAGE: -B|--save-bundle
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2463,7 +2484,7 @@ exports[`test/definitions/snapshots.js TAP definitions save-dev > must match sna
 
 Save installed packages to a package.json file as \`devDependencies\`.
 ----------------------------------------
-USAGE: -D|--no-save-dev|--save-dev
+USAGE: -D|--save-dev
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2483,7 +2504,7 @@ exports[`test/definitions/snapshots.js TAP definitions save-exact > must match s
 Dependencies saved to package.json will be configured with an exact version
 rather than using npm's default semver range operator.
 ----------------------------------------
-USAGE: -E|--no-save-exact|--save-exact
+USAGE: -E|--save-exact
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2502,7 +2523,7 @@ exports[`test/definitions/snapshots.js TAP definitions save-optional > must matc
 
 Save installed packages to a package.json file as \`optionalDependencies\`.
 ----------------------------------------
-USAGE: -O|--no-save-optional|--save-optional
+USAGE: -O|--save-optional
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2521,7 +2542,7 @@ exports[`test/definitions/snapshots.js TAP definitions save-peer > must match sn
 
 Save installed packages to a package.json file as \`peerDependencies\`
 ----------------------------------------
-USAGE: --no-save-peer|--save-peer
+USAGE: --save-peer
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2550,7 +2571,7 @@ USAGE: --save-prefix <save-prefix>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: "^"
+DEFAULT: ^
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -2570,7 +2591,7 @@ you want to move it to be a non-optional production dependency.
 This is the default behavior if \`--save\` is true, and neither \`--save-dev\`
 or \`--save-optional\` are true.
 ----------------------------------------
-USAGE: -P|--no-save-prod|--save-prod
+USAGE: -P|--save-prod
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2615,7 +2636,7 @@ USAGE: --scope <@scope>
 ----------------------------------------
 INVALID: Must be an npm scope with or without the leading @
 ----------------------------------------
-DEFAULT: ""
+DEFAULT: 
 ----------------------------------------
 TYPES: Symbol(Scope)
 ----------------------------------------
@@ -2633,7 +2654,7 @@ init <package-spec>\` commands.
 ----------------------------------------
 USAGE: --script-shell <script-shell>
 ----------------------------------------
-INVALID: Must be one of: null, a string
+INVALID: Must be a string
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -2654,7 +2675,7 @@ USAGE: --searchexclude <searchexclude>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: ""
+DEFAULT: 
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -2693,7 +2714,7 @@ USAGE: --searchopts <key=val key2=val2>
 ----------------------------------------
 INVALID: Must be a space-delimited querystring
 ----------------------------------------
-DEFAULT: ""
+DEFAULT: 
 ----------------------------------------
 TYPES: Symbol(Querystring)
 ----------------------------------------
@@ -2733,7 +2754,7 @@ USAGE: --shell <shell>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: "/bin/zsh"
+DEFAULT: /bin/zsh
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -2749,7 +2770,7 @@ exports[`test/definitions/snapshots.js TAP definitions shrinkwrap > must match s
 
 Alias for --package-lock
 ----------------------------------------
-USAGE: --no-shrinkwrap|--shrinkwrap
+USAGE: --no-shrinkwrap
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2772,7 +2793,7 @@ version using \`-S\` to add a signature.
 Note that git requires you to have set up GPG keys in your git configs for
 this to work properly.
 ----------------------------------------
-USAGE: --no-sign-git-commit|--sign-git-commit
+USAGE: --sign-git-commit
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2795,7 +2816,7 @@ If set to true, then the \`npm version\` command will tag the version using
 Note that git requires you to have set up GPG keys in your git configs for
 this to work properly.
 ----------------------------------------
-USAGE: --no-sign-git-tag|--sign-git-tag
+USAGE: --sign-git-tag
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2826,7 +2847,7 @@ When such and override is performed, a warning is printed, explaining the
 conflict and the packages involved. If \`--strict-peer-deps\` is set, then
 this warning is treated as a failure.
 ----------------------------------------
-USAGE: --no-strict-peer-deps|--strict-peer-deps
+USAGE: --strict-peer-deps
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2848,7 +2869,7 @@ via https.
 
 See also the \`ca\` config.
 ----------------------------------------
-USAGE: --no-strict-ssl|--strict-ssl
+USAGE: --no-strict-ssl
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -2878,7 +2899,7 @@ USAGE: --tag <tag>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: "latest"
+DEFAULT: latest
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -2903,7 +2924,7 @@ USAGE: --tag-version-prefix <tag-version-prefix>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: "v"
+DEFAULT: v
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -2925,37 +2946,13 @@ You can quickly view it with this [json](https://npm.im/json) command line:
 Timing information will also be reported in the terminal. To suppress this
 while still writing the timing file, use \`--silent\`.
 ----------------------------------------
-USAGE: --no-timing|--timing
+USAGE: --timing
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
 DEFAULT: false
 ----------------------------------------
 TYPES: Symbol(Boolean)
-----------------------------------------
-DERIVED: 
-`
-
-exports[`test/definitions/snapshots.js TAP definitions tmp > must match snapshot 1`] = `
-#### \`tmp\`
-
-* Default: The value returned by the Node.js \`os.tmpdir()\` method
-  <https://nodejs.org/api/os.html#os_os_tmpdir>
-* Type: Path
-* DEPRECATED: This setting is no longer used. npm stores temporary files in a
-  special location in the cache, and they are managed by
-  [\`cacache\`](http://npm.im/cacache).
-
-Historically, the location where temporary files were stored. No longer
-relevant.
-----------------------------------------
-USAGE: --tmp <tmp>
-----------------------------------------
-INVALID: Must be a valid filesystem path
-----------------------------------------
-DEFAULT: "/var/folders/yt/5msscr_d2g57cy9jdm_r1ndh0000gn/T"
-----------------------------------------
-TYPES: Symbol(Path)
 ----------------------------------------
 DERIVED: 
 `
@@ -3002,7 +2999,7 @@ exports[`test/definitions/snapshots.js TAP definitions unicode > must match snap
 When set to true, npm uses unicode characters in the tree output. When
 false, it uses ascii characters instead of unicode glyphs.
 ----------------------------------------
-USAGE: --no-unicode|--unicode
+USAGE: --no-unicode
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -3022,7 +3019,7 @@ exports[`test/definitions/snapshots.js TAP definitions update-notifier > must ma
 Set to false to suppress the update notification when using an older version
 of npm than the latest.
 ----------------------------------------
-USAGE: --no-update-notifier|--update-notifier
+USAGE: --no-update-notifier
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -3041,7 +3038,7 @@ exports[`test/definitions/snapshots.js TAP definitions usage > must match snapsh
 
 Show short usage output about the command specified.
 ----------------------------------------
-USAGE: -?|-H|-h|--no-usage|--usage
+USAGE: -?|-H|-h|--usage
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -3075,7 +3072,7 @@ USAGE: --user-agent <user-agent>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: "npm/{npm-version} node/{node-version} {platform} {arch} workspaces/{workspaces} {ci}"
+DEFAULT: npm/{npm-version} node/{node-version} {platform} {arch} workspaces/{workspaces} {ci}
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -3098,7 +3095,7 @@ USAGE: --userconfig <userconfig>
 ----------------------------------------
 INVALID: Must be a valid filesystem path
 ----------------------------------------
-DEFAULT: "~/.npmrc"
+DEFAULT: ~/.npmrc
 ----------------------------------------
 TYPES: Symbol(Path)
 ----------------------------------------
@@ -3115,7 +3112,7 @@ If true, output the npm version and exit successfully.
 
 Only relevant when specified explicitly on the command line.
 ----------------------------------------
-USAGE: -v|--no-version|--version
+USAGE: -v|--version
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -3138,7 +3135,7 @@ exists, and exit successfully.
 
 Only relevant when specified explicitly on the command line.
 ----------------------------------------
-USAGE: --no-versions|--versions
+USAGE: --versions
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -3163,7 +3160,7 @@ USAGE: --viewer <viewer>
 ----------------------------------------
 INVALID: Must be a string
 ----------------------------------------
-DEFAULT: "man"
+DEFAULT: man
 ----------------------------------------
 TYPES: Symbol(String)
 ----------------------------------------
@@ -3180,7 +3177,7 @@ If there are multiple funding sources, which 1-indexed source URL to open.
 ----------------------------------------
 USAGE: --which <1|2|3|n>
 ----------------------------------------
-INVALID: Must be one of: null, an integer greater than or equal to 1
+INVALID: Must be an integer greater than or equal to 1
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -3216,7 +3213,7 @@ USAGE: -w|--workspace <workspace-name|workspace-path> [-w|--workspace <workspace
 ----------------------------------------
 INVALID: Must be one or more a valid filesystem path
 ----------------------------------------
-DEFAULT: []
+DEFAULT: 
 ----------------------------------------
 TYPES: Symbol(String),Symbol(Path),Symbol(Array)
 ----------------------------------------
@@ -3244,7 +3241,7 @@ This value is not exported to the environment for child processes.
 ----------------------------------------
 USAGE: -ws|--no-workspaces|--workspaces <workspaces>
 ----------------------------------------
-INVALID: Must be one of: null, a boolean value (true or false)
+INVALID: Must be a boolean value (true or false)
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------
@@ -3262,7 +3259,7 @@ exports[`test/definitions/snapshots.js TAP definitions workspaces-update > must 
 If set to true, the npm cli will run an update after operations that may
 possibly change the workspaces installed to the \`node_modules\` folder.
 ----------------------------------------
-USAGE: --no-workspaces-update|--workspaces-update
+USAGE: --no-workspaces-update
 ----------------------------------------
 INVALID: Must be a boolean value (true or false)
 ----------------------------------------
@@ -3284,7 +3281,7 @@ command line.
 ----------------------------------------
 USAGE: -y|--no-yes|--yes <yes>
 ----------------------------------------
-INVALID: Must be one of: null, a boolean value (true or false)
+INVALID: Must be a boolean value (true or false)
 ----------------------------------------
 DEFAULT: null
 ----------------------------------------

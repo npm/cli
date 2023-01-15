@@ -1,11 +1,14 @@
 const nopt = require('nopt').lib
 const log = require('proc-log')
 const ini = require('ini')
+const spawn = require('@npmcli/promise-spawn')
 const fs = require('fs/promises')
 const { dirname } = require('path')
 const nerfDart = require('./nerf-dart')
 const { typeDefs } = require('./definitions/type-defs')
-const { definitions, shorthands, types } = require('./definitions')
+const { definitions, shorthands, types, Locations } = require('./definitions')
+const tmpFile = require('./tmp-file')
+const { EOL } = require('os')
 
 const SYMBOLS = {
   set: Symbol('set'),
@@ -25,7 +28,7 @@ class ConfigData extends Map {
 
   #data = {}
   #file = null
-  #loaded = null
+  #source = null
   #valid = true
   #error = null
 
@@ -65,12 +68,16 @@ class ConfigData extends Map {
     return this.#data
   }
 
+  get source () {
+    return this.#source
+  }
+
   toString () {
     return ini.stringify(this.data).trim()
   }
 
   #assertLoaded (val = true) {
-    if (!!this.#loaded !== val) {
+    if (!!this.#source !== val) {
       throw new Error(`config data ${this.where} ${val ? 'must' : 'must not'} ` +
         `be loaded to perform this action`)
     }
@@ -109,14 +116,14 @@ class ConfigData extends Map {
 
   ignore (reason) {
     this.#assertLoaded(false)
-    this.#loaded = `${this.description}, ignored: ${reason}`
+    this.#source = `${this.description}, ignored: ${reason}`
   }
 
   load (data, error, file) {
     this.#assertLoaded(false)
 
     this.#file = file
-    this.#loaded = this.description + (file ? `, file: ${file}` : '')
+    this.#source = this.description + (file ? `, file: ${file}` : '')
 
     if (error) {
       if (error.code !== 'ENOENT') {
@@ -145,11 +152,11 @@ class ConfigData extends Map {
     const { argv, ...parsedData } = nopt.nopt(data, {
       typeDefs,
       shorthands,
-      types,
+      types: types[this.where],
       invalidHandler: (...args) => this.#invalidHandler(...args),
     })
     this.#setAll(parsedData)
-    return argv
+    return { argv, ...parsedData }
   }
 
   loadObject (data) {
@@ -171,9 +178,10 @@ class ConfigData extends Map {
   }
 
   #clean (d) {
+    // console.log(typeDefs, types, types[this.where])
     nopt.clean(d, {
       typeDefs,
-      types,
+      types: types[this.where],
       invalidHandler: (...args) => this.#invalidHandler(...args),
     })
     return d
@@ -183,13 +191,20 @@ class ConfigData extends Map {
     this.#valid = false
     const def = definitions[key]
     const msg = def
-      ? `invalid item \`${key}\`, ${definitions[key].mustBe()} and got \`${val}\``
-      : `unknown item \`${key}\``
+      ? `invalid item \`${key}\`, ${def.invalidUsage()} and got \`${val}\``
+      : `unknown item \`${key}\`, with value \`${val}\``
     if (this.#type.throw) {
       throw new Error(msg)
     } else {
       log.warn('config', msg)
     }
+  }
+
+  async #writeFile (data) {
+    data = data.trim().split('\n').join(EOL) + EOL
+    await fs.mkdir(dirname(this.file), { recursive: true })
+    await fs.writeFile(this.file, data, 'utf8')
+    await fs.chmod(this.file, this.#type.mode || 0o666)
   }
 
   async save (newFile) {
@@ -211,14 +226,13 @@ class ConfigData extends Map {
       this.#file = newFile
     }
 
-    const { user } = this.#parent.constructor.Locations
-    if (this.where === user) {
+    if (this.where === Locations.user) {
       // if email is nerfed, then we want to de-nerf it
       const nerfed = nerfDart(this.get('registry'))
-      const email = this.get(`${nerfed}:email`, user)
+      const email = this.get(`${nerfed}:email`)
       if (email) {
-        this.delete(`${nerfed}:email`, user)
-        this.set('email', email, user)
+        this.#delete(`${nerfed}:email`)
+        this.#set('email', email)
       }
     }
 
@@ -229,9 +243,37 @@ class ConfigData extends Map {
       return
     }
 
-    await fs.mkdir(dirname(this.file), { recursive: true })
-    await fs.writeFile(this.file, data + '\n', 'utf8')
-    await fs.chmod(this.file, this.#type.mode || 0o666)
+    await this.#writeFile(data)
+  }
+
+  async edit ({ editor }) {
+    this.#assertLoaded()
+
+    if (!this.file) {
+      throw new Error(`Cannot edit config since it was not loaded from a file: ` +
+        `\`${this.where}\` from \`${this.#description}\``)
+    }
+
+    if (this.#error) {
+      // Dont save a file that had an error while loading
+      throw new Error(`Cannot edit config that had an error while loading: ` +
+        `\`${this.where}\` loaded with error: \`${this.#error}\``)
+    }
+
+    // save first, just to make sure it's synced up
+    // this also removes all the comments from the last time we edited it.
+    await this.save()
+
+    // then get the temporary file data, write it and open an editor
+    // for the user to edit it
+    const data = await tmpFile({ file: this.file, where: this.where })
+    await this.#writeFile(data)
+    const [bin, ...args] = editor.split(/\s+/)
+    try {
+      await spawn(bin, [...args, this.file], { stdio: 'inherit' })
+    } catch (er) {
+      throw new Error(`editor process exited with code: ${er.code}`)
+    }
   }
 
   validate () {
