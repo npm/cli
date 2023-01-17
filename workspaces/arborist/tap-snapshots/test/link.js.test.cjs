@@ -19,6 +19,8 @@ Link {
   "installLinks": false,
   "integrity": null,
   "inventory": Inventory {},
+  "isInStore": false,
+  "isStoreLink": false,
   "legacyPeerDeps": false,
   "linksIn": Set {},
   "location": "../../../../../some/other/path",
@@ -62,6 +64,7 @@ exports[`test/link.js TAP > instantiate without providing target 1`] = `
       "installLinks": false,
       "integrity": null,
       "inventory": Inventory {},
+      "isInStore": false,
       "legacyPeerDeps": false,
       "linksIn": Set {
         <*ref_1>,
@@ -78,6 +81,8 @@ exports[`test/link.js TAP > instantiate without providing target 1`] = `
       "tops": Set {},
     },
   },
+  "isInStore": false,
+  "isStoreLink": false,
   "legacyPeerDeps": false,
   "linksIn": Set {},
   "location": "../../../../../some/other/path",
@@ -103,6 +108,7 @@ exports[`test/link.js TAP > instantiate without providing target 1`] = `
       "installLinks": false,
       "integrity": null,
       "inventory": Inventory {},
+      "isInStore": false,
       "legacyPeerDeps": false,
       "linksIn": Set {
         <*ref_1>,

@@ -55,9 +55,9 @@ npm ERR! npm ci
 npm ERR! 
 npm ERR! Options:
 npm ERR! [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer|--save-bundle]
-npm ERR! [-E|--save-exact] [-g|--global] [--install-strategy <hoisted|nested|shallow>]
-npm ERR! [--legacy-bundling] [--global-style]
-npm ERR! [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm ERR! [-E|--save-exact] [-g|--global]
+npm ERR! [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+npm ERR! [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 npm ERR! [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
 npm ERR! [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 npm ERR! [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]

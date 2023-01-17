@@ -618,6 +618,7 @@ graph LR;
   npmcli-arborist-->semver;
   npmcli-arborist-->ssri;
   npmcli-arborist-->tap;
+  npmcli-arborist-->tar-stream;
   npmcli-arborist-->tcompare;
   npmcli-arborist-->treeverse;
   npmcli-arborist-->walk-up-path;

@@ -45,10 +45,12 @@
     "minify-registry-metadata": "^3.0.0",
     "nock": "^13.2.0",
     "tap": "^16.3.2",
+    "tar-stream": "^3.0.0",
     "tcompare": "^5.0.6"
   },
   "scripts": {
     "test": "tap",
+    "test-only": "tap --only",
     "posttest": "node ../.. run lint",
     "snap": "tap",
     "postsnap": "npm run lintfix",
