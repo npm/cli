@@ -186,7 +186,7 @@ const exec = async (opts) => {
 
     args[0] = getBinFromManifest(commandManifest)
 
-    if (needInstall.length > 0 && globalPath) {
+    if (needInstall.length > 0 && await fileExists(globalPath)) {
       // See if the package is installed globally, and run the translated bin
       const globalArb = new Arborist({ ...flatOptions, path: globalPath, global: true })
       const globalTree = await globalArb.loadActual()
