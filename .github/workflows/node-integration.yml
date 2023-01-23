@@ -82,12 +82,16 @@ jobs:
           echo "::endgroup::"
 
           if [[ "${{ inputs.npmVersion }}" != "git" ]]; then
-            echo "::group::checking out npm@${{ inputs.npmVersion }}"
+            npmVersion="${{ inputs.npmVersion }}"
+            npmVersion="${npmVersion#v}"
+            echo "::group::checking out npm@${npmVersion}"
             pushd "$npmDir" >/dev/null
-            npmVersion=$(curl -sSL https://registry.npmjs.org/npm |\
-              jq -r '.time | to_entries | map(select(.key | test("^${{ inputs.npmVersion }}"))) | sort_by(.value | split(".") | "\(.[0])Z" | fromdate) | .[-1].key')
-            npmGitHead=$(git show-ref --tags "v${npmVersion}" | cut -d' ' -f1)
-            git reset --hard "$npmGitHead"
+            taggedSha=$(git show-ref --tags "v${npmVersion}" | cut -d' ' -f1)
+            git reset --hard "$taggedSha"
+            publishedSha=$(curl -sSL https://registry.npmjs.org/npm | jq -r --arg ver "$npmVersion" '.versions[$ver].gitHead')
+            if [[ "$taggedSha" != "$publishedSha" ]]; then
+              echo "::warning ::git tag ($taggedSha) differs from published tag ($publishedSha)"
+            fi
             popd >/dev/null
             echo "::endgroup::"
           fi

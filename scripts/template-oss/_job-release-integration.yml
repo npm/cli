@@ -1,0 +1,3 @@
+uses: ./.github/workflows/release-integration.yml
+with:
+  npmVersion: $\{{ fromJSON(needs.release.outputs.release).version }}
