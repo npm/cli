@@ -19,8 +19,8 @@ jobs:
   release:
     outputs:
       pr: ${{ steps.release.outputs.pr }}
+      release: ${{ steps.release.outputs.release }}
       releases: ${{ steps.release.outputs.releases }}
-      release-flags: ${{ steps.release.outputs.release-flags }}
       branch: ${{ steps.release.outputs.pr-branch }}
       pr-number: ${{ steps.release.outputs.pr-number }}
       comment-id: ${{ steps.pr-comment.outputs.result }}
@@ -60,26 +60,25 @@ jobs:
           REF_NAME: ${{ github.ref_name }}
         with:
           script: |
-            const { REF_NAME, PR_NUMBER } = process.env
-            const repo = { owner: context.repo.owner, repo: context.repo.repo }
-            const issue = { ...repo, issue_number: PR_NUMBER }
+            const { REF_NAME, PR_NUMBER: issue_number } = process.env
+            const { runId, repo: { owner, repo } } = context
 
-            const { data: workflow } = await github.rest.actions.getWorkflowRun({ ...repo, run_id: context.runId })
+            const { data: workflow } = await github.rest.actions.getWorkflowRun({ owner, repo, run_id: runId })
 
             let body = '## Release Manager\n\n'
 
-            const comments = await github.paginate(github.rest.issues.listComments, issue)
-            let commentId = comments?.find(c => c.user.login === 'github-actions[bot]' && c.body.startsWith(body))?.id
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number })
+            let commentId = comments.find(c => c.user.login === 'github-actions[bot]' && c.body.startsWith(body))?.id
 
             body += `Release workflow run: ${workflow.html_url}\n\n#### Force CI to Update This Release\n\n`
             body += `This PR will be updated and CI will run for every non-\`chore:\` commit that is pushed to \`latest\`. `
             body += `To force CI to update this PR, run this command:\n\n`
-            body += `\`\`\`\ngh workflow run release.yml -r ${REF_NAME}\n\`\`\``
+            body += `\`\`\`\ngh workflow run release.yml -r ${REF_NAME} -R ${owner}/${repo}\n\`\`\``
 
             if (commentId) {
-              await github.rest.issues.updateComment({ ...repo, comment_id: commentId, body })
+              await github.rest.issues.updateComment({ owner, repo, comment_id: commentId, body })
             } else {
-              const { data: comment } = await github.rest.issues.createComment({ ...issue, body })
+              const { data: comment } = await github.rest.issues.createComment({ owner, repo, issue_number, body })
               commentId = comment?.id
             }
 
@@ -270,21 +269,86 @@ jobs:
       run:
         shell: bash
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Git User
-        run: |
-          git config --global user.email "npm-cli+bot@github.com"
-          git config --global user.name "npm CLI robot"
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-          cache: npm
-      - name: Reset Deps
-        run: node . run resetdeps
-      - name: Run Post Release Actions
+      - name: Create Release PR Comment
+        uses: actions/github-script@v6
         env:
           RELEASES: ${{ needs.release.outputs.releases }}
+        with:
+          script: |
+            const releases = JSON.parse(process.env.RELEASES)
+            const { runId, repo: { owner, repo } } = context
+            const issue_number = releases[0].prNumber
+
+            let body = '## Release Workflow\n\n'
+            for (const { pkgName, version, url } of releases) {
+              body += `- \`${pkgName}@${version}\` ${url}\n`
+            }
+
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number })
+            const releaseComments = comments.filter(c => c.user.login === 'github-actions[bot]' && c.body.includes('Release is at'))
+
+            for (const comment of releaseComments) {
+              await github.rest.issues.deleteComment({ owner, repo, comment_id: comment.id })
+            }
+
+            const runUrl = `https://github.com/${owner}/${repo}/actions/runs/${runId}`
+            await github.rest.issues.createComment({ 
+              owner,
+              repo,
+              issue_number,
+              body: `${body}- Workflow run: :arrows_counterclockwise: ${runUrl}`,
+            })
+
+  release-integration:
+    needs: release
+    name: Release Integration
+    if: needs.release.outputs.release
+    uses: ./.github/workflows/release-integration.yml
+    with:
+      npmVersion: ${{ fromJSON(needs.release.outputs.release).version }}
+
+  post-release-integration:
+    needs: [ release, release-integration ]
+    name: Post Release Integration - Release
+    if: github.repository_owner == 'npm' && needs.release.outputs.release && always()
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Get Needs Result
+        id: needs-result
         run: |
-          node . run rp-release --ignore-scripts --if-present ${{ join(fromJSON(needs.release.outputs.release-flags), ' ') }}
+          result=""
+          if [[ "${{ contains(needs.*.result, 'failure') }}" == "true" ]]; then
+            result="x"
+          elif [[ "${{ contains(needs.*.result, 'cancelled') }}" == "true" ]]; then
+            result="heavy_multiplication_x"
+          else
+            result="white_check_mark"
+          fi
+          echo "::set-output name=result::$result"
+      - name: Update Release PR Comment
+        uses: actions/github-script@v6
+        env:
+          PR_NUMBER: ${{ fromJSON(needs.release.outputs.release).prNumber }}
+          RESULT: ${{ steps.needs-result.outputs.result }}
+        with:
+          script: |
+            const { PR_NUMBER: issue_number, RESULT } = process.env
+            const { repo: { owner, repo } } = context
+
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number })
+            const updateComment = comments.find(c => c.user.login === 'github-actions[bot]' && c.body.startsWith('## Release Workflow\n\n'))
+
+            if (updateComment) {
+              console.log('Found comment to update:', JSON.stringify(updateComment, null, 2))
+              await github.rest.issues.updateComment({
+                owner,
+                repo,
+                comment_id: updateComment.id,
+                body: updateComment.body.replace(/Workflow run: :[a-z_]+:/, `Workflow run: :${RESULT}:`),
+              })
+            } else {
+              console.log('No matching comments found:', JSON.stringify(comments, null, 2))
+            }
