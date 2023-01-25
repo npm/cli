@@ -6,7 +6,7 @@
 // for a given branch of the tree being mutated.
 
 const { depth } = require('treeverse')
-const { existsSync } = require('fs')
+const { existsSync, lstatSync } = require('fs')
 
 const ssri = require('ssri')
 
@@ -112,6 +112,21 @@ const getAction = ({ actual, ideal }) => {
   // Otherwise, add the missing node.
   if (!actual) {
     return ideal.inDepBundle ? null : 'ADD'
+  }
+
+  if (actual.isLink) {
+    let stat
+    try {
+      stat = lstatSync(actual.path)
+    } catch {}
+
+    if (stat) {
+      if (ideal.installLinks && stat.isSymbolicLink()) {
+        return 'CHANGE'
+      } else if (!ideal.installLinks && !stat.isSymbolicLink()) {
+        return 'CHANGE'
+      }
+    }
   }
 
   // always ignore the root node
