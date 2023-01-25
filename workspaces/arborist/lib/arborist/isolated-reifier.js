@@ -7,6 +7,21 @@ const { join } = require('path')
 const { depth } = require('treeverse')
 const crypto = require('crypto')
 
+// cache complicated function results
+const memoize = (fn) => {
+  const memo = new Map()
+  return async function (arg) {
+    const key = arg
+    if (memo.has(key)) {
+      return memo.get(key)
+    }
+    const result = {}
+    memo.set(key, result)
+    await fn(result, arg)
+    return result
+  }
+}
+
 module.exports = cls => class IsolatedReifier extends cls {
   /**
    * Create an ideal graph.
@@ -14,15 +29,17 @@ module.exports = cls => class IsolatedReifier extends cls {
    * An implementation of npm RFC-0042
    * https://github.com/npm/rfcs/blob/main/accepted/0042-isolated-mode.md
    *
-   * This entire file should be considered technical debt that will be resolved with an Arborist
-   * refactor or rewrite. Embedded logic in Nodes and Links, and the incremental state of building
-   * trees and reifying contains too many assumptions to do a linked mode properly.
+   * This entire file should be considered technical debt that will be resolved
+   * with an Arborist refactor or rewrite. Embedded logic in Nodes and Links,
+   * and the incremental state of building trees and reifying contains too many
+   * assumptions to do a linked mode properly.
    *
-   * Instead, this approach takes a tree built from build-ideal-tree, and returns a new tree-like
-   * structure without the embedded logic of Node and Link classes.
+   * Instead, this approach takes a tree built from build-ideal-tree, and
+   * returns a new tree-like structure without the embedded logic of Node and
+   * Link classes.
    *
-   * Since the RFC requires leaving the package-lock in place, this approach temporarily replaces
-   * the tree state for a couple of steps of reifying.
+   * Since the RFC requires leaving the package-lock in place, this approach
+   * temporarily replaces the tree state for a couple of steps of reifying.
    *
    **/
   async [_makeIdealGraph] (options) {
@@ -36,20 +53,6 @@ module.exports = cls => class IsolatedReifier extends cls {
     await this.buildIdealTree(bitOpt)
     const idealTree = this.idealTree
 
-    function memoize (fn) {
-      const memo = new Map()
-      return async function (arg) {
-        const key = arg
-        if (memo.has(key)) {
-          return memo.get(key)
-        }
-        const result = {}
-        memo.set(key, result)
-        await fn(result, arg)
-        return result
-      }
-    }
-
     this.rootNode = {}
     const root = this.rootNode
     this.counter = 0
@@ -62,7 +65,8 @@ module.exports = cls => class IsolatedReifier extends cls {
     root.isProjectRoot = true
     root.localLocation = idealTree.location
     root.localPath = idealTree.path
-    root.workspaces = await Promise.all([...idealTree.fsChildren.values()].map(this.workspaceProxyMemo))
+    root.workspaces = await Promise.all(
+      Array.from(idealTree.fsChildren.values(), this.workspaceProxyMemo))
     const processed = new Set()
     const queue = [idealTree, ...idealTree.fsChildren]
     while (queue.length !== 0) {
