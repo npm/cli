@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.2.0](https://github.com/npm/cli/compare/arborist-v6.1.6...arborist-v6.2.0) (2023-01-25)
+
+### Features
+
+* [`8d6d851`](https://github.com/npm/cli/commit/8d6d8519fbbcebdca8834e19cb34ac71f045a010) [#6078](https://github.com/npm/cli/pull/6078) added --install-strategy=linked (#6078) (@fritzy)
+
 ## [6.1.6](https://github.com/npm/cli/compare/arborist-v6.1.5...arborist-v6.1.6) (2023-01-12)
 
 ### Bug Fixes
