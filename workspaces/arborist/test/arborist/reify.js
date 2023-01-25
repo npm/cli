@@ -3151,3 +3151,61 @@ t.only('should preserve exact ranges, missing actual tree', async (t) => {
     await arb.reify()
   })
 })
+
+t.test('install stategy linked', async (t) => {
+  const Arborist = require('../../lib/index.js')
+  const abbrev = resolve(__dirname,
+    '../fixtures/registry-mocks/content/abbrev/-/abbrev-1.1.1.tgz')
+  const abbrevTGZ = fs.readFileSync(abbrev)
+
+  const abbrevPackument = JSON.stringify({
+    _id: 'abbrev',
+    _rev: 'lkjadflkjasdf',
+    name: 'abbrev',
+    'dist-tags': { latest: '1.1.1' },
+    versions: {
+      '1.1.1': {
+        name: 'abbrev',
+        version: '1.1.1',
+        dist: {
+          tarball: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+        },
+      },
+    },
+  })
+
+  t.test('should install package linked', async (t) => {
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://registry.npmjs.org')
+      .get('/abbrev')
+      .reply(200, abbrevPackument)
+
+    tnock(t, 'https://registry.npmjs.org')
+      .get('/abbrev/-/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const path = resolve(testdir, 'project')
+    const arb = new Arborist({
+      path,
+      registry: 'https://registry.npmjs.org',
+      cache: resolve(testdir, 'cache'),
+      installStrategy: 'linked',
+    })
+    await arb.reify({ installStrategy: 'linked' })
+    const abbrev = fs.lstatSync(resolve(path, 'node_modules', 'abbrev'))
+    const store = fs.lstatSync(resolve(path, 'node_modules', '.store'))
+    t.ok(store.isDirectory(), 'abbrev got installed')
+    t.ok(abbrev.isSymbolicLink(), 'abbrev got installed')
+  })
+})
