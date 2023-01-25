@@ -1,5 +1,19 @@
 # Changelog
 
+## [9.4.0](https://github.com/npm/cli/compare/v9.3.1...v9.4.0) (2023-01-25)
+
+### Features
+
+* [`8d6d851`](https://github.com/npm/cli/commit/8d6d8519fbbcebdca8834e19cb34ac71f045a010) [#6078](https://github.com/npm/cli/pull/6078) added --install-strategy=linked (#6078) (@fritzy)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.2.0): `@npmcli/arborist@6.2.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v5.0.8): `libnpmdiff@5.0.8`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v5.0.8): `libnpmexec@5.0.8`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v4.0.8): `libnpmfund@4.0.8`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v5.0.8): `libnpmpack@5.0.8`
+
 ## [9.3.1](https://github.com/npm/cli/compare/v9.3.0...v9.3.1) (2023-01-13)
 
 ### Bug Fixes
