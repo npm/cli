@@ -10,6 +10,20 @@ const crypto = require('crypto')
 module.exports = cls => class IsolatedReifier extends cls {
   /**
    * Create an ideal graph.
+   *
+   * An implementation of npm RFC-0042
+   * https://github.com/npm/rfcs/blob/main/accepted/0042-isolated-mode.md
+   *
+   * This entire file should be considered technical debt that will be resolved with an Arborist
+   * refactor or rewrite. Embedded logic in Nodes and Links, and the incremental state of building
+   * trees and reifying contains too many assumptions to do a linked mode properly.
+   *
+   * Instead, this approach takes a tree built from build-ideal-tree, and returns a new tree-like
+   * structure without the embedded logic of Node and Link classes.
+   *
+   * Since the RFC requires leaving the package-lock in place, this approach temporarily replaces
+   * the tree state for a couple of steps of reifying.
+   *
    **/
   async [_makeIdealGraph] (options) {
     /* Make sure that the ideal tree is build as the rest of

@@ -140,9 +140,7 @@ module.exports = cls => class Reifier extends cls {
 
   // public method
   async reify (options = {}) {
-    const linked = (
-      options.installStrategy === 'linked'
-      || this.options.installStrategy === 'linked')
+    const linked = (options.installStrategy || this.options.installStrategy) === 'linked'
 
     if (this[_packageLockOnly] && this[_global]) {
       const er = new Error('cannot generate lockfile for global packages')
@@ -164,12 +162,16 @@ module.exports = cls => class Reifier extends cls {
     const oldTree = this.idealTree
     if (linked) {
       // swap out the tree with the isolated tree
+      // this is currently technical debt which will be resolved in a refactor
+      // of Node/Link trees
+      log.warn('reify', 'The "linked" install strategy is EXPERIMENTAL and may contain bugs.')
       this.idealTree = await this[_createIsolatedTree](this.idealTree)
     }
     await this[_diffTrees]()
     await this[_reifyPackages]()
     if (linked) {
       // swap back in the idealTree
+      // so that the lockfile is preserved
       this.idealTree = oldTree
     }
     await this[_saveIdealTree](options)

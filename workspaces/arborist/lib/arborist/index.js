@@ -79,9 +79,6 @@ class Arborist extends Base {
       lockfileVersion: lockfileVersion(options.lockfileVersion),
       installStrategy: options.global ? 'shallow' : (options.installStrategy ? options.installStrategy : 'hoisted'),
     }
-    if (this.options.installStrategy === 'linked') {
-      this.options.installLinks = false
-    }
     this.replaceRegistryHost = this.options.replaceRegistryHost =
       (!this.options.replaceRegistryHost || this.options.replaceRegistryHost === 'npmjs') ?
         'registry.npmjs.org' : this.options.replaceRegistryHost
