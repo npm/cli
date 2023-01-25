@@ -669,8 +669,8 @@ module.exports = cls => class Reifier extends cls {
         if (registryResolved) {
           res = `${node.name}@${registryResolved}`
         }
-      } else if (node.packageName && node.version) {
-        res = `${node.packageName}@${node.version}`
+      } else if (node.package.name && node.version) {
+        res = `${node.package.name}@${node.version}`
       }
 
       // no idea what this thing is.  remove it from the tree.

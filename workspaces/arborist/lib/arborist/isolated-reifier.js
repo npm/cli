@@ -319,6 +319,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         path: join(proxiedIdealTree.root.localPath, location),
         realpath: join(proxiedIdealTree.root.localPath, location),
         resolved: node.resolved,
+        version: pkg.version,
         package: pkg,
       }
       newChild.target = newChild
@@ -354,6 +355,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         return
       }
       memo.add(key)
+
       let from, nmFolder
       if (externalEdge) {
         const fromLocation = join('node_modules', '.store', key, 'node_modules', node.name)
@@ -367,8 +369,9 @@ module.exports = cls => class IsolatedReifier extends cls {
       const processDeps = (dep, optional, external) => {
         optional = !!optional
         external = !!external
-        const binNames = dep.package.bin && Object.keys(dep.package.bin) || []
 
+        const location = join(nmFolder, dep.name)
+        const binNames = dep.package.bin && Object.keys(dep.package.bin) || []
         const toKey = getKey(dep)
 
         let target
@@ -393,7 +396,7 @@ module.exports = cls => class IsolatedReifier extends cls {
           binPaths: [],
           isTop: false,
           optional,
-          location: join(nmFolder, dep.name),
+          location: location,
           path: join(dep.root.localPath, nmFolder, dep.name),
           realpath: target.path,
           name: toKey,
@@ -434,6 +437,9 @@ module.exports = cls => class IsolatedReifier extends cls {
     }
 
     processEdges(proxiedIdealTree, false)
+    for (const node of proxiedIdealTree.workspaces) {
+      processEdges(node, false)
+    }
     root.children.forEach(c => c.parent = root)
     root.children.forEach(c => c.root = root)
     root.root = root
