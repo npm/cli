@@ -264,11 +264,29 @@ jobs:
               'https-proxy-agent', // looks ssl related
               'node-gyp', // one test consistently times out
               'resolve', // compares results to require.resolve and fails, also missing inspector/promises
-              'serialport', // esbuild barfs on node 20.0.0-pre
-              'undici', // test failure in node >=19, unable to root cause
               'uuid', // tests that crypto.getRandomValues throws but it doesn't
               'weak', // doesn't seem to build in node >12
+              'mkdirp', // failing actions in own repo
             ]
+
+            if [[ "${{ startsWith(inputs.nodeVersion, '18.') }}" == "true" ]]; then
+              // build fails in node 18 only
+              knownFailures.push('multer')
+            fi
+
+            if [[ "${{ startsWith(inputs.nodeVersion, '19.') }}" == "true" ]]; then
+              // test failure in node >=19, unable to root cause
+              knownFailures.push('undici')
+            fi
+
+            if [[ "${{ inputs.nodeVersion }}" == "nightly" ]]; then
+              // test failure in node >=19, unable to root cause
+              knownFailures.push('undici')
+              // fails in node 20, looks like a streams issue
+              knownFailures.push('fastify')
+              // esbuild barfs on node 20.0.0-pre
+              knownFailures.push('serialport')
+            fi
 
             // this is a manually updated list of packages that are flaky
             const supplementalFlaky = [
