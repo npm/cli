@@ -303,8 +303,16 @@ jobs:
     needs: release
     name: Release Integration
     if: needs.release.outputs.release
-    uses: ./.github/workflows/release-integration.yml
+    strategy:
+      fail-fast: false
+      matrix:
+        nodeVersion:
+          - 18
+          - 19
+          - nightly
+    uses: ./.github/workflows/node-integration.yml
     with:
+      nodeVersion: ${{ matrix.nodeVersion }}
       npmVersion: ${{ fromJSON(needs.release.outputs.release).version }}
 
   post-release-integration:
