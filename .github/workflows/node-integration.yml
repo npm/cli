@@ -13,6 +13,11 @@ on:
         required: true
         type: string
         default: git
+      installFlags:
+        description: 'extra flags to pass to npm install'
+        required: false
+        type: string
+        default: ''
 
   workflow_dispatch:
     inputs:
@@ -26,6 +31,11 @@ on:
         required: true
         type: string
         default: git
+      installFlags:
+        description: 'extra flags to pass to npm install'
+        required: false
+        type: string
+        default: ''
 
 jobs:
   build-nodejs:
@@ -307,6 +317,9 @@ jobs:
               if (meta.install) {
                 install_flags.push(meta.install.slice(1))
               }
+              if [[ "${{ inputs.installFlags }}" != "" ]]; then
+                install_flags.push("${{ inputs.installFlags }}")
+              fi
               const context = JSON.parse(execSync(`npm show ${package} --json`))
               const test = meta.scripts ? meta.scripts.map((script) => `npm run ${script}`) : ['npm test']
 
