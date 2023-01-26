@@ -7,12 +7,22 @@ on:
         description: npm version to test
         type: string
         required: true
+      installFlags:
+        description: 'extra flags to pass to npm install'
+        required: false
+        type: string
+        default: ''
   workflow_dispatch:
     inputs:
       npmVersion:
         description: npm version to test
         type: string
         required: true
+      installFlags:
+        description: 'extra flags to pass to npm install'
+        required: false
+        type: string
+        default: ''
 
 jobs:
   node-integration:
@@ -28,3 +38,4 @@ jobs:
     with:
       nodeVersion: ${{ matrix.nodeVersion }}
       npmVersion: ${{ inputs.npmVersion }}
+      installFlags: ${{ inputs.installFlags }}
