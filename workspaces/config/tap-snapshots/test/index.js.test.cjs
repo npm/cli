@@ -25,6 +25,18 @@ exports[`test/index.js TAP credentials management def_auth > other registry 1`] 
 Object {}
 `
 
+exports[`test/index.js TAP credentials management def_authEnv > default registry 1`] = `
+Object {
+  "auth": "\${PATH}",
+  "password": "",
+  "username": "<\\u0004�",
+}
+`
+
+exports[`test/index.js TAP credentials management def_authEnv > other registry 1`] = `
+Object {}
+`
+
 exports[`test/index.js TAP credentials management def_passNoUser > default registry 1`] = `
 Object {
   "email": "i@izs.me",
