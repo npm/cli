@@ -701,6 +701,9 @@ email = i@izs.me
       '.npmrc': `_auth = ${Buffer.from('hello:world').toString('base64')}
 always-auth = true`,
     },
+    def_authEnv: {
+      '.npmrc': '_auth = ${PATH}',
+    },
     none_authToken: { '.npmrc': '_authToken = 0bad1de4' },
     none_lcAuthToken: { '.npmrc': '_authtoken = 0bad1de4' },
     none_emptyConfig: { '.npmrc': '' },
