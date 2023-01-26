@@ -32675,7 +32675,7 @@ exports[`test/arborist/reify.js TAP save package.json on update should update na
     "a": {
       "version": "file:a",
       "requires": {
-        "abbrev": "^1.0.4",
+        "abbrev": "^1.1.1",
         "once": "^1.3.2"
       }
     },
@@ -32687,7 +32687,7 @@ exports[`test/arborist/reify.js TAP save package.json on update should update na
     "b": {
       "version": "file:b",
       "requires": {
-        "abbrev": "^1.0.4"
+        "abbrev": "^1.1.1"
       }
     },
     "once": {
@@ -32766,7 +32766,7 @@ exports[`test/arborist/reify.js TAP save package.json on update should update si
       "version": "file:a",
       "requires": {
         "abbrev": "^1.0.4",
-        "once": "^1.3.2"
+        "once": "^1.4.0"
       }
     },
     "abbrev": {
