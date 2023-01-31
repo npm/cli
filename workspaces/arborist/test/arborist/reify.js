@@ -2997,6 +2997,22 @@ t.only('should preserve exact ranges, missing actual tree', async (t) => {
     },
   })
 
+  const abbrevPackument3 = JSON.stringify({
+    _id: 'abbrev',
+    _rev: 'lkjadflkjasdf',
+    name: 'abbrev',
+    'dist-tags': { latest: '1.1.1' },
+    versions: {
+      '1.1.1': {
+        name: 'abbrev',
+        version: '1.1.1',
+        dist: {
+          tarball: 'https://registry2.com/a/b/abbrev/-/abbrev-1.1.1.tgz',
+        },
+      },
+    },
+  })
+
   const gitSshPackument = JSON.stringify({
     _id: 'gitssh',
     _rev: 'lkjadflkjasdf',
@@ -3145,6 +3161,34 @@ t.only('should preserve exact ranges, missing actual tree', async (t) => {
     const arb = new Arborist({
       path: resolve(testdir, 'project'),
       registry: 'https://registry.github.com',
+      cache: resolve(testdir, 'cache'),
+      replaceRegistryHost: 'always',
+    })
+    await arb.reify()
+  })
+
+  t.only('host should be always replaceRegistryHost=customRegistry', async (t) => {
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+    tnock(t, 'https://registry1.com/a/b')
+      .get('/abbrev')
+      .reply(200, abbrevPackument3)
+    tnock(t, 'https://registry1.com/a/b')
+      .get('/abbrev/-/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry1.com/a/b',
       cache: resolve(testdir, 'cache'),
       replaceRegistryHost: 'always',
     })

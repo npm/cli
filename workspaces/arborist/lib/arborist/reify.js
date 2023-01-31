@@ -11,7 +11,7 @@ const log = require('proc-log')
 const hgi = require('hosted-git-info')
 const rpj = require('read-package-json-fast')
 
-const { dirname, resolve, relative, join } = require('path')
+const { dirname, resolve, relative, join, parse } = require('path')
 const { depth: dfwalk } = require('treeverse')
 const {
   lstat,
@@ -752,6 +752,7 @@ module.exports = cls => class Reifier extends cls {
     // Shrinkwrap and Node classes carefully, so for now, just treat
     // the default reg as the magical animal that it has been.
     const resolvedURL = hgi.parseUrl(resolved)
+    const parsedHostName = hgi.parseUrl(this.registry)
 
     if (!resolvedURL) {
       // if we could not parse the url at all then returning nothing
@@ -759,10 +760,10 @@ module.exports = cls => class Reifier extends cls {
       return
     }
 
-    if ((this.options.replaceRegistryHost === resolvedURL.hostname)
+    if (this.options.replaceRegistryHost === resolvedURL.hostname
       || this.options.replaceRegistryHost === 'always') {
-      // this.registry always has a trailing slash
-      return `${this.registry.slice(0, -1)}${resolvedURL.pathname}${resolvedURL.searchParams}`
+      const newRegistryHost = resolved.replace(resolvedURL.hostname, parsedHostName.hostname)
+      return newRegistryHost
     }
 
     return resolved
