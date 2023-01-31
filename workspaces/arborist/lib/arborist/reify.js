@@ -11,7 +11,7 @@ const log = require('proc-log')
 const hgi = require('hosted-git-info')
 const rpj = require('read-package-json-fast')
 
-const { dirname, resolve, relative, join, parse } = require('path')
+const { dirname, resolve, relative, join } = require('path')
 const { depth: dfwalk } = require('treeverse')
 const {
   lstat,
