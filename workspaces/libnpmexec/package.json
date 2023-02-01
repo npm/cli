@@ -70,7 +70,7 @@
     "pacote": "^15.0.8",
     "proc-log": "^3.0.0",
     "read": "^1.0.7",
-    "read-package-json-fast": "^3.0.1",
+    "read-package-json-fast": "^3.0.2",
     "semver": "^7.3.7",
     "walk-up-path": "^1.0.0"
   },
