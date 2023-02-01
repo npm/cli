@@ -1,5 +1,20 @@
 # Changelog
 
+## [6.2.1](https://github.com/npm/cli/compare/arborist-v6.2.0...arborist-v6.2.1) (2023-02-01)
+
+### Bug Fixes
+
+* [`72a7a59`](https://github.com/npm/cli/commit/72a7a5915e9d333d104d88bf73d7a555f9400e24) [#6095](https://github.com/npm/cli/pull/6095) only save package-lock when truly finished (@wraithgar)
+
+### Dependencies
+
+* [`721fe3f`](https://github.com/npm/cli/commit/721fe3fac383d714aa7fd7285b4392619903b1e7) [#6118](https://github.com/npm/cli/pull/6118) `read-package-json-fast@3.0.2`
+* [`6e4a649`](https://github.com/npm/cli/commit/6e4a64976dc9a359b97413cd725e93caa1f0fc28) `pacote@15.0.8`
+* [`1820afe`](https://github.com/npm/cli/commit/1820afe4b34909b8702da69032dde9d3ecdbb447) `cacache@17.0.4`
+* [`4b8046e`](https://github.com/npm/cli/commit/4b8046e680d5907d2df71d6d3775b66e0bea7ed2) `@npmcli/name-from-folder@2.0.0`
+* [`1d4be7a`](https://github.com/npm/cli/commit/1d4be7a5457fd0081696e29f8382645873cf13d9) `@npmcli/map-workspaces@3.0.1`
+* [`a39556f`](https://github.com/npm/cli/commit/a39556f1cff4526dcbcb7b65cdd86a1ba092e13e) `@npmcli/template-oss@4.11.3`
+
 ## [6.2.0](https://github.com/npm/cli/compare/arborist-v6.1.6...arborist-v6.2.0) (2023-01-25)
 
 ### Features

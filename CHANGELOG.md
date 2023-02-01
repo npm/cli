@@ -1,5 +1,35 @@
 # Changelog
 
+## [9.4.1](https://github.com/npm/cli/compare/v9.4.0...v9.4.1) (2023-02-01)
+
+### Bug Fixes
+
+* [`1525a5e`](https://github.com/npm/cli/commit/1525a5e7fba4c996ac3bed5fdb75da275c537da8) [#6082](https://github.com/npm/cli/pull/6082) unpublish with scoped registry (@wraithgar)
+
+### Dependencies
+
+* [`721fe3f`](https://github.com/npm/cli/commit/721fe3fac383d714aa7fd7285b4392619903b1e7) [#6118](https://github.com/npm/cli/pull/6118) `read-package-json-fast@3.0.2`
+* [`6e4a649`](https://github.com/npm/cli/commit/6e4a64976dc9a359b97413cd725e93caa1f0fc28) `pacote@15.0.8`
+* [`1820afe`](https://github.com/npm/cli/commit/1820afe4b34909b8702da69032dde9d3ecdbb447) `cacache@17.0.4`
+* [`24b2ec4`](https://github.com/npm/cli/commit/24b2ec4e156f98ef80ed5ac8751d35a32ad1251a) `@npmcli/promise-spawn@6.0.2`
+* [`4b8046e`](https://github.com/npm/cli/commit/4b8046e680d5907d2df71d6d3775b66e0bea7ed2) `@npmcli/name-from-folder@2.0.0`
+* [`1d4be7a`](https://github.com/npm/cli/commit/1d4be7a5457fd0081696e29f8382645873cf13d9) `@npmcli/map-workspaces@3.0.1`
+* [`a39556f`](https://github.com/npm/cli/commit/a39556f1cff4526dcbcb7b65cdd86a1ba092e13e) `@npmcli/template-oss@4.11.3`
+* [`64b06ed`](https://github.com/npm/cli/commit/64b06ed21fc165e413b3e6f1ae5a236350e5bfaf) [#6115](https://github.com/npm/cli/pull/6115) `http-cache-semantics@4.1.1`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.2.1): `@npmcli/arborist@6.2.1`
+* [Workspace](https://github.com/npm/cli/releases/tag/config-v6.1.2): `@npmcli/config@6.1.2`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmaccess-v7.0.2): `libnpmaccess@7.0.2`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v5.0.9): `libnpmdiff@5.0.9`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v5.0.9): `libnpmexec@5.0.9`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v4.0.9): `libnpmfund@4.0.9`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmhook-v9.0.2): `libnpmhook@9.0.2`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmorg-v5.0.2): `libnpmorg@5.0.2`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v5.0.9): `libnpmpack@5.0.9`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v7.0.7): `libnpmpublish@7.0.7`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmsearch-v6.0.2): `libnpmsearch@6.0.2`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmteam-v5.0.2): `libnpmteam@5.0.2`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmversion-v4.0.2): `libnpmversion@4.0.2`
+
 ## [9.4.0](https://github.com/npm/cli/compare/v9.3.1...v9.4.0) (2023-01-25)
 
 ### Features
