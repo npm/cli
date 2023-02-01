@@ -196,7 +196,7 @@
     "@npmcli/git": "^4.0.1",
     "@npmcli/mock-registry": "^1.0.0",
     "@npmcli/promise-spawn": "^6.0.1",
-    "@npmcli/template-oss": "4.11.1",
+    "@npmcli/template-oss": "4.11.3",
     "licensee": "^10.0.0",
     "nock": "^13.2.4",
     "npm-packlist": "^7.0.4",
