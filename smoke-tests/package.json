@@ -21,7 +21,7 @@
     "@npmcli/eslint-config": "^4.0.0",
     "@npmcli/mock-registry": "^1.0.0",
     "@npmcli/promise-spawn": "^6.0.1",
-    "@npmcli/template-oss": "4.11.1",
+    "@npmcli/template-oss": "4.11.3",
     "http-proxy": "^1.18.1",
     "just-extend": "^6.1.1",
     "just-safe-set": "^4.1.1",
@@ -32,7 +32,7 @@
   "license": "ISC",
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.11.1",
+    "version": "4.11.3",
     "content": "../scripts/template-oss/index.js"
   },
   "tap": {

@@ -351,11 +351,18 @@ jobs:
 
             if (updateComment) {
               console.log('Found comment to update:', JSON.stringify(updateComment, null, 2))
+              let body = updateComment.body.replace(/Workflow run: :[a-z_]+:/, `Workflow run: :${RESULT}:`)
+              if (RESULT === 'x') {
+                body += `\n\n:rotating_light:`
+                body += ` @npm/cli-team: The post-release workflow failed for this release.`
+                body += ` Manual steps may need to be taken after examining the workflow output`
+                body += ` from the above workflow run. :rotating_light:`
+              }
               await github.rest.issues.updateComment({
                 owner,
                 repo,
+                body,
                 comment_id: updateComment.id,
-                body: updateComment.body.replace(/Workflow run: :[a-z_]+:/, `Workflow run: :${RESULT}:`),
               })
             } else {
               console.log('No matching comments found:', JSON.stringify(comments, null, 2))
