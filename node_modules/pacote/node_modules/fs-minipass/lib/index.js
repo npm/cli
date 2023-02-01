@@ -290,7 +290,9 @@ class WriteStream extends EE {
     } else {
       this[_fd] = fd
       this.emit('open', fd)
-      this[_flush]()
+      if (!this[_writing]) {
+        this[_flush]()
+      }
     }
   }
 
