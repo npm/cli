@@ -31,7 +31,7 @@
     "proc-log": "^3.0.0",
     "promise-all-reject-late": "^1.0.0",
     "promise-call-limit": "^1.0.1",
-    "read-package-json-fast": "^3.0.1",
+    "read-package-json-fast": "^3.0.2",
     "semver": "^7.3.7",
     "ssri": "^10.0.1",
     "treeverse": "^3.0.0",
