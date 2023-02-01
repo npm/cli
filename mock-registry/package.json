@@ -49,7 +49,7 @@
     "@npmcli/template-oss": "4.11.3",
     "nock": "^13.2.9",
     "npm-package-arg": "^10.1.0",
-    "pacote": "^15.0.7",
+    "pacote": "^15.0.8",
     "tap": "^16.3.2"
   }
 }
