@@ -1,5 +1,14 @@
 # Changelog
 
+## [5.0.9](https://github.com/npm/cli/compare/libnpmdiff-v5.0.8...libnpmdiff-v5.0.9) (2023-02-01)
+
+### Dependencies
+
+* [`721fe3f`](https://github.com/npm/cli/commit/721fe3fac383d714aa7fd7285b4392619903b1e7) [#6118](https://github.com/npm/cli/pull/6118) `read-package-json-fast@3.0.2`
+* [`6e4a649`](https://github.com/npm/cli/commit/6e4a64976dc9a359b97413cd725e93caa1f0fc28) `pacote@15.0.8`
+* [`a39556f`](https://github.com/npm/cli/commit/a39556f1cff4526dcbcb7b65cdd86a1ba092e13e) `@npmcli/template-oss@4.11.3`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.2.1): `@npmcli/arborist@6.2.1`
+
 ## [5.0.8](https://github.com/npm/cli/compare/libnpmdiff-v5.0.7...libnpmdiff-v5.0.8) (2023-01-25)
 
 ### Dependencies

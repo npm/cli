@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.2](https://github.com/npm/cli/compare/libnpmversion-v4.0.1...libnpmversion-v4.0.2) (2023-02-01)
+
+### Dependencies
+
+* [`721fe3f`](https://github.com/npm/cli/commit/721fe3fac383d714aa7fd7285b4392619903b1e7) [#6118](https://github.com/npm/cli/pull/6118) `read-package-json-fast@3.0.2`
+* [`a39556f`](https://github.com/npm/cli/commit/a39556f1cff4526dcbcb7b65cdd86a1ba092e13e) `@npmcli/template-oss@4.11.3`
+
 ## [4.0.1](https://github.com/npm/cli/compare/libnpmversion-v4.0.0...libnpmversion-v4.0.1) (2022-11-02)
 
 ### Bug Fixes

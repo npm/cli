@@ -1,5 +1,17 @@
 # Changelog
 
+## [6.1.2](https://github.com/npm/cli/compare/config-v6.1.1...config-v6.1.2) (2023-02-01)
+
+### Bug Fixes
+
+* [`328c3d8`](https://github.com/npm/cli/commit/328c3d8e7362eb08ae2aebabc47f8f3c2537a1d2) [#6093](https://github.com/npm/cli/pull/6093) repair config items using raw values when possible (@nlf)
+
+### Dependencies
+
+* [`721fe3f`](https://github.com/npm/cli/commit/721fe3fac383d714aa7fd7285b4392619903b1e7) [#6118](https://github.com/npm/cli/pull/6118) `read-package-json-fast@3.0.2`
+* [`1d4be7a`](https://github.com/npm/cli/commit/1d4be7a5457fd0081696e29f8382645873cf13d9) `@npmcli/map-workspaces@3.0.1`
+* [`a39556f`](https://github.com/npm/cli/commit/a39556f1cff4526dcbcb7b65cdd86a1ba092e13e) `@npmcli/template-oss@4.11.3`
+
 ## [6.1.1](https://github.com/npm/cli/compare/config-v6.1.0...config-v6.1.1) (2023-01-12)
 
 ### Bug Fixes

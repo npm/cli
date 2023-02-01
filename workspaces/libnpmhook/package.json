@@ -1,6 +1,6 @@
 {
   "name": "libnpmhook",
-  "version": "9.0.1",
+  "version": "9.0.2",
   "description": "programmatic API for managing npm registry hooks",
   "main": "lib/index.js",
   "files": [
