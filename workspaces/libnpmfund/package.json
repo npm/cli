@@ -31,7 +31,6 @@
   ],
   "license": "ISC",
   "scripts": {
-    "eslint": "eslint",
     "lint": "eslint \"**/*.js\"",
     "lintfix": "node ../.. run lint -- --fix",
     "posttest": "node ../.. run lint",
