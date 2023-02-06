@@ -64,7 +64,7 @@
     "@npmcli/arborist": "^6.2.1",
     "@npmcli/run-script": "^6.0.0",
     "chalk": "^4.1.0",
-    "ci-info": "^3.7.0",
+    "ci-info": "^3.7.1",
     "npm-package-arg": "^10.1.0",
     "npmlog": "^7.0.1",
     "pacote": "^15.0.8",
