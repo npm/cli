@@ -26,7 +26,6 @@
     "front-matter": "^4.0.2",
     "ignore-walk": "^6.0.0",
     "jsdom": "^21.1.0",
-    "mkdirp": "^1.0.4",
     "rehype-stringify": "^9.0.3",
     "remark-gfm": "^3.0.1",
     "remark-man": "^8.0.1",
