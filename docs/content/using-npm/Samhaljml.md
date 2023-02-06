@@ -1,4 +1,4 @@
----
+npm install --save semver
 title: semver
 section: 7
 description: The semantic versioner for npm
