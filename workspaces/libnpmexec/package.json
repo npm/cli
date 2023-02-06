@@ -54,7 +54,7 @@
     "@npmcli/mock-registry": "^1.0.0",
     "@npmcli/template-oss": "4.11.3",
     "bin-links": "^4.0.1",
-    "just-extend": "^6.1.1",
+    "just-extend": "^6.2.0",
     "just-safe-set": "^4.2.1",
     "minify-registry-metadata": "^3.0.0",
     "tap": "^16.3.2"
