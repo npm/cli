@@ -26,7 +26,7 @@
     "@npmcli/template-oss": "4.11.3",
     "nock": "^13.0.7",
     "spawk": "^1.7.1",
-    "tap": "^16.3.2"
+    "tap": "^16.3.4"
   },
   "repository": {
     "type": "git",
