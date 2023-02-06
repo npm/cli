@@ -57,7 +57,6 @@
     "just-extend": "^6.1.1",
     "just-safe-set": "^4.2.1",
     "minify-registry-metadata": "^3.0.0",
-    "mkdirp": "^1.0.4",
     "tap": "^16.3.2"
   },
   "dependencies": {
