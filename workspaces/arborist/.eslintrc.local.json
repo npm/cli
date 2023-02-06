@@ -1,7 +1,6 @@
 {
   "ignorePatterns": [
-    "test/fixtures/",
-    "!test/fixtures/*.js"
+    "test/fixtures/*/"
   ],
   "rules": {
     "max-len": "off",

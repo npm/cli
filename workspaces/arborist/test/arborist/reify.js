@@ -127,7 +127,7 @@ const {
   stop,
   registry,
   advisoryBulkResponse,
-} = require('../fixtures/registry-mocks/server.js')
+} = require('../fixtures/server.js')
 
 t.before(start)
 t.teardown(stop)

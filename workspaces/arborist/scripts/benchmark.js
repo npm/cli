@@ -9,7 +9,7 @@ const currentSha = String(execSync(shaCmd)).trim() + (dirty ? '-dirty' : '')
 const { green, red } = require('chalk')
 const lastBenchmark = resolve(__dirname, 'benchmark/saved/last-benchmark.json')
 const { linkSync, writeFileSync, readdirSync } = require('fs')
-const registryServer = require('../test/fixtures/registry-mocks/server.js')
+const registryServer = require('../test/fixtures/server.js')
 
 const options = {
   previous: null,
