@@ -7,17 +7,17 @@ var requirements = exports.requirements = {
     lowerCase: 'Name must be lowercase',
     urlSafe: 'Name may not contain non-url-safe chars',
     dot: 'Name may not start with "."',
-    illegal: 'Name may not contain illegal character'
+    illegal: 'Name may not contain illegal character',
   },
   password: {},
   email: {
     length: 'Email length must be less then or equal to 254 characters long',
-    valid: 'Email must be an email address'
-  }
+    valid: 'Email must be an email address',
+  },
 }
 
 var illegalCharacterRe = new RegExp('([' + [
-  "'"
+  "'",
 ].join() + '])')
 
 function username (un) {
@@ -56,6 +56,6 @@ function email (em) {
   return null
 }
 
-function pw (pw) {
+function pw () {
   return null
 }
