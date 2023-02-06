@@ -8,8 +8,6 @@
     "lib/"
   ],
   "scripts": {
-    "prerelease": "npm t",
-    "postrelease": "npm publish && git push --follow-tags",
     "test": "tap",
     "lint": "eslint \"**/*.js\"",
     "postlint": "template-oss-check",
