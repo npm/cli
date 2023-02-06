@@ -196,7 +196,7 @@
     "@npmcli/promise-spawn": "^6.0.2",
     "@npmcli/template-oss": "4.11.3",
     "licensee": "^10.0.0",
-    "nock": "^13.2.4",
+    "nock": "^13.3.0",
     "npm-packlist": "^7.0.4",
     "remark": "^14.0.2",
     "remark-gfm": "^3.0.1",
