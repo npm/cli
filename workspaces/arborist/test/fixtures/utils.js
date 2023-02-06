@@ -2,23 +2,28 @@
 
 const normalizePath = path => path.replace(/[A-Z]:/, '').replace(/\\/g, '/')
 const normalizePaths = obj => {
-  if (obj instanceof Set)
+  if (obj instanceof Set) {
     return new Set(normalizePaths([...obj]))
+  }
 
-  if (Array.isArray(obj))
+  if (Array.isArray(obj)) {
     return obj.map(normalizePaths)
+  }
 
-  if (typeof obj === 'string')
+  if (typeof obj === 'string') {
     return normalizePath(obj)
+  }
 
-  if (obj instanceof Map)
+  if (obj instanceof Map) {
     return new Map([...obj].map(([name, val]) => [name, normalizePaths(val)]))
+  }
 
   for (const key in obj) {
-    if (['location', 'path', 'realpath', 'resolved', 'spec'].includes(key))
+    if (['location', 'path', 'realpath', 'resolved', 'spec'].includes(key)) {
       obj[key] = normalizePath(obj[key])
-    else if (typeof obj[key] === 'object' && obj[key] !== null)
+    } else if (typeof obj[key] === 'object' && obj[key] !== null) {
       obj[key] = normalizePaths(obj[key])
+    }
   }
   return obj
 }

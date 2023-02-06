@@ -51,7 +51,7 @@ The reify test case fixtures are stored in `test/fixtures/reify-cases/`.
 To generate a new test case:
 
 ```
-node test/fixtures/reify-cases/create.js <folder>
+node test/fixtures/create-reify-case.js <folder>
 ```
 
 where `<folder>` is a path to the test case example you wish to store.
@@ -61,14 +61,13 @@ much garbage or extraneous files that aren't relevant to the test.
 
 ## Mock Registry
 
-The mock registry is in `test/fixtures/registry-mocks`.  The server itself
-is in `test/fixtures/registry-mocks/server.js`.  The contents are in
+The mock registry server is in `test/fixtures/server.js` and the contents are in
 `test/fixtures/registry-mocks/content/`.
 
 You can run the server directly by running:
 
 ```
-node test/fixtures/registry-mocks/server.js
+node test/fixtures/server.js
 ```
 
 In tests, it's loaded by requiring the server module, and then running the
@@ -76,7 +75,7 @@ exported method, passing in a `tap` test object, and using the exported
 `registry` property as the registry config for all its business.
 
 ```js
-const {start, stop, registry} = require('../fixtures/registry-mocks/server.js')
+const {start, stop, registry} = require('../fixtures/server.js')
 t.before(start)
 t.teardown(stop)
 
@@ -103,7 +102,7 @@ The server will fetch whatever it doesn't have from the registry, and save
 it in the appropriate place under `test/fixtures/registry-mocks/content/`.
 
 There is also a script at
-`test/fixtures/registry-mocks/fetch-lock-contents.js` which will fetch and
+`test/fixtures/fetch-lock-contents.js` which will fetch and
 store the packuments and tarballs referenced in a `package-lock.json` file.
 
 And of course, you could just delete the entire `content` folder and run

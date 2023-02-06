@@ -10,7 +10,7 @@ const {
   writeFileSync,
 } = require('fs')
 
-const {resolve, relative, basename} = require('path')
+const { resolve, relative, basename } = require('path')
 
 if (!process.argv[2]) {
   console.error('pass in a folder as an argument')
@@ -18,8 +18,8 @@ if (!process.argv[2]) {
 }
 
 const fixture = resolve(process.argv[2])
-const rel = relative(resolve(__dirname, '../../..'), fixture)
-const outFile = resolve(__dirname, basename(fixture)) + '.js'
+const rel = relative(resolve(__dirname, '../..'), fixture)
+const outFile = resolve(__dirname, 'reify-cases', basename(fixture)) + '.js'
 
 // we build up an object and then JSON.stringify it, and string replace
 // the tokens with `t.fixture('symlink', ${symlinks.get(token)})`
@@ -34,18 +34,20 @@ const hiddenLocks = []
 const readFixture = dir => {
   const res = {}
   for (const ent of readdirSync(dir, { withFileTypes: true })) {
-    if (/^\..*\.swp/.test(ent.name))
+    if (/^\..*\.swp/.test(ent.name)) {
       continue
+    }
 
     const p = resolve(dir, ent.name)
-    if (ent.isDirectory())
+    if (ent.isDirectory()) {
       res[ent.name] = readFixture(p)
-    else if (ent.isFile()) {
+    } else if (ent.isFile()) {
       const content = readFileSync(p, 'utf8')
       const buf = readFileSync(p)
       // make sure hidden lockfiles are newer than the contents they cover
-      if (ent.name === '.package-lock.json')
+      if (ent.name === '.package-lock.json') {
         hiddenLocks.push(relative(fixture, p))
+      }
 
       // if it's JSON, then store it in a way that's easier to look at
       try {
@@ -60,8 +62,9 @@ const readFixture = dir => {
             const t = token(p)
             longFiles.set(t, content)
             res[ent.name] = t
-          } else
+          } else {
             res[ent.name] = content
+          }
         } else {
           // save as a buffer if it's binary data
           const t = token(p)

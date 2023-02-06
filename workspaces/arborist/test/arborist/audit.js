@@ -1,42 +1,27 @@
 const t = require('tap')
-const Arborist = require('../../lib/arborist/index.js')
-
 const { resolve } = require('path')
+const Arborist = require('../../lib/arborist/index.js')
+const { normalizePath, printTree } = require('../fixtures/utils.js')
+const { auditResponse, advisoryBulkResponse, ...mockRegistry } = require('../fixtures/server.js')
 
 const fixtures = resolve(__dirname, '../fixtures')
-
 const fixture = (t, p) => require(fixtures + '/reify-cases/' + p)(t)
 
-const {
-  start,
-  stop,
-  registry,
-  auditResponse,
-  advisoryBulkResponse,
-} = require('../fixtures/registry-mocks/server.js')
+t.before(mockRegistry.start)
+t.teardown(mockRegistry.stop)
+
 const cache = t.testdir()
-
-t.before(start)
-t.teardown(stop)
-
-const {
-  normalizePath,
-  printTree,
-} = require('../fixtures/utils.js')
-
 const newArb = (path, options = {}) =>
-  new Arborist({ path, cache, registry, ...options })
+  new Arborist({ path, cache, registry: mockRegistry.registry, ...options })
 
 const cwd = normalizePath(process.cwd())
 t.cleanSnapshot = s => s.split(cwd).join('{CWD}')
-  .split(registry).join('https://registry.npmjs.org/')
+  .split(mockRegistry.registry).join('https://registry.npmjs.org/')
 
 t.test('audit finds the bad deps', async t => {
   const path = resolve(fixtures, 'deprecated-dep')
   t.teardown(auditResponse(resolve(fixtures, 'audit-nyc-mkdirp/audit.json')))
-
   const arb = newArb(path)
-
   const report = await arb.audit()
   t.equal(report.topVulns.size, 0)
   t.equal(report.size, 2)

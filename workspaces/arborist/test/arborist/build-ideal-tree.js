@@ -11,7 +11,7 @@ const Arborist = require('../..')
 const fixtures = resolve(__dirname, '../fixtures')
 // load the symbolic links that we depend on
 require(fixtures)
-const { start, stop, registry, auditResponse } = require('../fixtures/registry-mocks/server.js')
+const { start, stop, registry, auditResponse } = require('../fixtures/server.js')
 const npa = require('npm-package-arg')
 const fs = require('fs')
 const nock = require('nock')
