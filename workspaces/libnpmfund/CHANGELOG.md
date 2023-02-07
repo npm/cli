@@ -1,5 +1,15 @@
 # Changelog
 
+## [4.0.10](https://github.com/npm/cli/compare/libnpmfund-v4.0.9...libnpmfund-v4.0.10) (2023-02-07)
+
+### Bug Fixes
+
+* [`12ec7ee`](https://github.com/npm/cli/commit/12ec7ee1983876565445ae7967e2f14f3d95e356) remove unused package.json scripts (@lukekarrys)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.2.2): `@npmcli/arborist@6.2.2`
+
 ## [4.0.9](https://github.com/npm/cli/compare/libnpmfund-v4.0.8...libnpmfund-v4.0.9) (2023-02-01)
 
 ### Dependencies

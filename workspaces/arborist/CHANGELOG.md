@@ -1,5 +1,16 @@
 # Changelog
 
+## [6.2.2](https://github.com/npm/cli/compare/arborist-v6.2.1...arborist-v6.2.2) (2023-02-07)
+
+### Bug Fixes
+
+* [`12ec7ee`](https://github.com/npm/cli/commit/12ec7ee1983876565445ae7967e2f14f3d95e356) remove unused package.json scripts (@lukekarrys)
+
+### Dependencies
+
+* [`d43f881`](https://github.com/npm/cli/commit/d43f8812af5900cce45364729871a745b379aea9) `map-workspaces@3.0.2`
+* [`99457f1`](https://github.com/npm/cli/commit/99457f1f48d57f913b398e25f4e5da066af71204) `minimatch@6.1.6`
+
 ## [6.2.1](https://github.com/npm/cli/compare/arborist-v6.2.0...arborist-v6.2.1) (2023-02-01)
 
 ### Bug Fixes

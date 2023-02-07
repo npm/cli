@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.1.3](https://github.com/npm/cli/compare/config-v6.1.2...config-v6.1.3) (2023-02-07)
+
+### Dependencies
+
+* [`d43f881`](https://github.com/npm/cli/commit/d43f8812af5900cce45364729871a745b379aea9) `map-workspaces@3.0.2`
+
 ## [6.1.2](https://github.com/npm/cli/compare/config-v6.1.1...config-v6.1.2) (2023-02-01)
 
 ### Bug Fixes
