@@ -61,7 +61,7 @@ npm ERR! [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer
 npm ERR! [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
 npm ERR! [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 npm ERR! [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-npm ERR! [-ws|--workspaces] [--include-workspace-root] [--no-install-links]
+npm ERR! [-ws|--workspaces] [--include-workspace-root] [--install-links]
 npm ERR! 
 npm ERR! aliases: clean-install, ic, install-clean, isntall-clean
 npm ERR! 
