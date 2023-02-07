@@ -247,8 +247,13 @@ jobs:
       - name: generate matrix
         id: generate-matrix
         uses: actions/github-script@v6
+        env:
+          NODE_VERSION: "${{ inputs.nodeVersion }}"
+          INSTALL_FLAGS: "${{ inputs.installFlags }}"
         with:
           script: |
+            const { NODE_VERSION, INSTALL_FLAGS } = process.env
+
             const { execSync } = require('child_process')
             const npa = require('npm-package-arg')
 
@@ -279,24 +284,19 @@ jobs:
               'mkdirp', // failing actions in own repo
             ]
 
-            if [[ "${{ startsWith(inputs.nodeVersion, '18.') }}" == "true" ]]; then
-              // build fails in node 18 only
+            if (NODE_VERSION.startsWith('18.')) {
               knownFailures.push('multer')
-            fi
-
-            if [[ "${{ startsWith(inputs.nodeVersion, '19.') }}" == "true" ]]; then
+            } else if (NODE_VERSION.startsWith('19.')) {
               // test failure in node >=19, unable to root cause
               knownFailures.push('undici')
-            fi
-
-            if [[ "${{ inputs.nodeVersion }}" == "nightly" ]]; then
+            } else if (NODE_VERSION === 'nightly') {
               // test failure in node >=19, unable to root cause
               knownFailures.push('undici')
               // fails in node 20, looks like a streams issue
               knownFailures.push('fastify')
               // esbuild barfs on node 20.0.0-pre
               knownFailures.push('serialport')
-            fi
+            }
 
             // this is a manually updated list of packages that are flaky
             const supplementalFlaky = [
@@ -317,9 +317,9 @@ jobs:
               if (meta.install) {
                 install_flags.push(meta.install.slice(1))
               }
-              if [[ "${{ inputs.installFlags }}" != "" ]]; then
-                install_flags.push("${{ inputs.installFlags }}")
-              fi
+              if (INSTALL_FLAGS) {
+                install_flags.push(INSTALL_FLAGS)
+              }
               const context = JSON.parse(execSync(`npm show ${package} --json`))
               const test = meta.scripts ? meta.scripts.map((script) => `npm run ${script}`) : ['npm test']
 
