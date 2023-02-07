@@ -1,5 +1,11 @@
 # Changelog
 
+## [9.0.3](https://github.com/npm/cli/compare/libnpmhook-v9.0.2...libnpmhook-v9.0.3) (2023-02-07)
+
+### Bug Fixes
+
+* [`12ec7ee`](https://github.com/npm/cli/commit/12ec7ee1983876565445ae7967e2f14f3d95e356) remove unused package.json scripts (@lukekarrys)
+
 ## [9.0.2](https://github.com/npm/cli/compare/libnpmhook-v9.0.1...libnpmhook-v9.0.2) (2023-02-01)
 
 ### Dependencies

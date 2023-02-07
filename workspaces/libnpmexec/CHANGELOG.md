@@ -1,5 +1,15 @@
 # Changelog
 
+## [5.0.10](https://github.com/npm/cli/compare/libnpmexec-v5.0.9...libnpmexec-v5.0.10) (2023-02-07)
+
+### Dependencies
+
+* [`f4c8c62`](https://github.com/npm/cli/commit/f4c8c62baf532b7599e3760f959788bbda97ba0b) `init-package-json@5.0.0`
+* [`10445ca`](https://github.com/npm/cli/commit/10445ca4a09df590777a9289ab1ed0f41449c85d) remove mkdirp
+* [`5c84a99`](https://github.com/npm/cli/commit/5c84a99f5a141a632bd644ca97505010c2842eb2) `ci-info@3.7.1`
+* [`fc5332f`](https://github.com/npm/cli/commit/fc5332f4027f3019a855f12a66e29bca1b143364) `read@2.0.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.2.2): `@npmcli/arborist@6.2.2`
+
 ## [5.0.9](https://github.com/npm/cli/compare/libnpmexec-v5.0.8...libnpmexec-v5.0.9) (2023-02-01)
 
 ### Dependencies

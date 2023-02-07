@@ -1,5 +1,41 @@
 # Changelog
 
+## [9.4.2](https://github.com/npm/cli/compare/v9.4.1...v9.4.2) (2023-02-07)
+
+### Bug Fixes
+
+* [`d02da52`](https://github.com/npm/cli/commit/d02da52dc1ac6520223e9e7e8fdcbd9e27b5333f) [#6142](https://github.com/npm/cli/pull/6142) revert `install-links` default back to `false` (#6142) (@nlf)
+
+### Documentation
+
+* [`6ea2cd7`](https://github.com/npm/cli/commit/6ea2cd77c6ba92f213e4833c746f032ef9bfcc3d) [#6134](https://github.com/npm/cli/pull/6134) update references to OTP to be accurate (#6134) (@MylesBorins)
+
+### Dependencies
+
+* [`cb6713d`](https://github.com/npm/cli/commit/cb6713dc8ef7161c8162cc418a023d25b17e5bcf) [#6143](https://github.com/npm/cli/pull/6143) rebuild package-lock (#6143)
+* [`8200f4f`](https://github.com/npm/cli/commit/8200f4f16d9dad1d44094c8c2182e26bc1a8b732) [#6133](https://github.com/npm/cli/pull/6133) `ignore-walk@6.0.1`
+* [`d43f881`](https://github.com/npm/cli/commit/d43f8812af5900cce45364729871a745b379aea9) `map-workspaces@3.0.2`
+* [`99457f1`](https://github.com/npm/cli/commit/99457f1f48d57f913b398e25f4e5da066af71204) `minimatch@6.1.6`
+* [`f4c8c62`](https://github.com/npm/cli/commit/f4c8c62baf532b7599e3760f959788bbda97ba0b) `init-package-json@5.0.0`
+* [`3c6615f`](https://github.com/npm/cli/commit/3c6615fff53a3368679f28b8812eba86dbc195a9) `npm-user-validate@2.0.0`
+* [`10445ca`](https://github.com/npm/cli/commit/10445ca4a09df590777a9289ab1ed0f41449c85d) remove mkdirp
+* [`ab82492`](https://github.com/npm/cli/commit/ab824922ea7678585926adb67a90cdcebc53b4ae) `node-gyp@9.3.1`
+* [`74c5cbb`](https://github.com/npm/cli/commit/74c5cbbd774f7ff7c1f037b382aec36cbc8ca2f1) `minipass@4.0.2`
+* [`1138038`](https://github.com/npm/cli/commit/11380386cef7ad8b12226431ca3d5e166455d626) `make-fetch-happen@11.0.3`
+* [`c1ccfa1`](https://github.com/npm/cli/commit/c1ccfa146523d734bdfe2a7bef1b0abc64e716d8) `glob@8.1.0`
+* [`3dc17ce`](https://github.com/npm/cli/commit/3dc17ce3fa570f9ef2c55e2a565af6fe89b3e73d) `fs-minipass@3.0.1`
+* [`5c84a99`](https://github.com/npm/cli/commit/5c84a99f5a141a632bd644ca97505010c2842eb2) `ci-info@3.7.1`
+* [`fc5332f`](https://github.com/npm/cli/commit/fc5332f4027f3019a855f12a66e29bca1b143364) `read@2.0.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.2.2): `@npmcli/arborist@6.2.2`
+* [Workspace](https://github.com/npm/cli/releases/tag/config-v6.1.3): `@npmcli/config@6.1.3`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v5.0.10): `libnpmdiff@5.0.10`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v5.0.10): `libnpmexec@5.0.10`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v4.0.10): `libnpmfund@4.0.10`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmhook-v9.0.3): `libnpmhook@9.0.3`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmorg-v5.0.3): `libnpmorg@5.0.3`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v5.0.10): `libnpmpack@5.0.10`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v7.0.8): `libnpmpublish@7.0.8`
+
 ## [9.4.1](https://github.com/npm/cli/compare/v9.4.0...v9.4.1) (2023-02-01)
 
 ### Bug Fixes
