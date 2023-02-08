@@ -282,16 +282,14 @@ jobs:
               'uuid', // tests that crypto.getRandomValues throws but it doesn't
               'weak', // doesn't seem to build in node >12
               'mkdirp', // failing actions in own repo
+              'undici', // test failure in node >=18, unable to root cause
             ]
 
-            if (NODE_VERSION.startsWith('18.')) {
+            if (NODE_VERSION === '18') {
               knownFailures.push('multer')
-            } else if (NODE_VERSION.startsWith('19.')) {
-              // test failure in node >=19, unable to root cause
-              knownFailures.push('undici')
+            } else if (NODE_VERSION === '19') {
+              // empty block
             } else if (NODE_VERSION === 'nightly') {
-              // test failure in node >=19, unable to root cause
-              knownFailures.push('undici')
               // fails in node 20, looks like a streams issue
               knownFailures.push('fastify')
               // esbuild barfs on node 20.0.0-pre
