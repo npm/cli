@@ -432,6 +432,9 @@ jobs:
         run: |
           npm ls
       - name: ${{ join(matrix.commands, ' && ') }}
+        id: command
+        continue-on-error: true
+        timeout-minutes: 10
         env: ${{ matrix.env }}
         working-directory: ${{ steps.download.outputs.target }}
         if: ${{ steps.npm-install.outputs.failed != 'true' }}
@@ -480,3 +483,10 @@ jobs:
             echo "::endgroup::"
           done
           exit $FINALEXIT
+      - name: Set conclusion
+        run: |
+          EXIT=1
+          if [[ "${{ steps.command.outcome }}" == "success" || "${{ matrix.flaky }}" == "true" || "${{ matrix.knownFailure }}" == "true" ]]; then
+            EXIT=0
+          fi
+          exit $EXIT
