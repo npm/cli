@@ -8,6 +8,7 @@ const ssri = require('ssri')
 const t = require('tap')
 
 const MockRegistry = require('@npmcli/mock-registry')
+const mockGlobals = require('../../../test/fixtures/mock-globals.js')
 
 // TODO use registry.manifest (requires json date wrangling for nock)
 
@@ -594,5 +595,214 @@ t.test('other error code', async t => {
     publish(manifest, tarData, opts),
     /go away/,
     'no retry on non-409'
+  )
+})
+
+t.test('publish existing package with provenance in gha', async t => {
+  const oidcURL = 'https://mock.oidc'
+  const requestToken = 'decafbad'
+  // Set-up GHA environment variables
+  mockGlobals(t, {
+    'process.env': {
+      CI: true,
+      GITHUB_ACTIONS: true,
+      ACTIONS_ID_TOKEN_REQUEST_URL: oidcURL,
+      ACTIONS_ID_TOKEN_REQUEST_TOKEN: requestToken,
+    },
+  })
+  const { publish } = t.mock('..', { 'ci-info': t.mock('ci-info') })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+  })
+  const manifest = {
+    name: '@npmcli/libnpmpublish-test',
+    version: '1.0.0',
+    description: 'test libnpmpublish package',
+  }
+  const spec = npa(manifest.name)
+
+  // Data for mocking the OIDC token request
+  const oidcClaims = {
+    iss: 'https://oauth2.sigstore.dev/auth',
+    email: 'foo@bar.com',
+  }
+  const idToken = `.${Buffer.from(JSON.stringify(oidcClaims)).toString('base64')}.`
+
+  // Data for mocking Fulcio certifcate request
+  const fulcioURL = 'https://mock.fulcio'
+  const leafCertificate = `-----BEGIN CERTIFICATE-----\nabc\n-----END CERTIFICATE-----\n`
+  const rootCertificate = `-----BEGIN CERTIFICATE-----\nxyz\n-----END CERTIFICATE-----\n`
+  const certificate = [leafCertificate, rootCertificate].join()
+
+  // Data for mocking Rekor upload
+  const rekorURL = 'https://mock.rekor'
+  const signature = 'ABC123'
+  const b64Cert = Buffer.from(leafCertificate).toString('base64')
+  const uuid =
+    '69e5a0c1663ee4452674a5c9d5050d866c2ee31e2faaf79913aea7cc27293cf6'
+
+  const signatureBundle = {
+    kind: 'hashedrekord',
+    apiVersion: '0.0.1',
+    spec: {
+      signature: {
+        content: signature,
+        publicKey: { content: b64Cert },
+      },
+    },
+  }
+
+  const rekorEntry = {
+    [uuid]: {
+      body: Buffer.from(JSON.stringify(signatureBundle)).toString(
+        'base64'
+      ),
+      integratedTime: 1654015743,
+      logID:
+        'c0d23d6ad406973f9559f3ba2d1ca01f84147d8ffc5b8445c224f98b9591801d',
+      logIndex: 2513258,
+      verification: {
+        /* eslint-disable-next-line max-len */
+        signedEntryTimestamp: 'MEUCIQD6CD7ZNLUipFoxzmSL/L8Ewic4SRkXN77UjfJZ7d/wAAIgatokSuX9Rg0iWxAgSfHMtcsagtDCQalU5IvXdQ+yLEA=',
+      },
+    },
+  }
+
+  const packument = {
+    _id: manifest.name,
+    name: manifest.name,
+    description: manifest.description,
+    'dist-tags': {
+      latest: '1.0.0',
+    },
+    versions: {
+      '1.0.0': {
+        _id: `${manifest.name}@${manifest.version}`,
+        _nodeVersion: process.versions.node,
+        ...manifest,
+        dist: {
+          shasum,
+          integrity: integrity.sha512[0].toString(),
+          /* eslint-disable-next-line max-len */
+          tarball: 'http://mock.reg/@npmcli/libnpmpublish-test/-/@npmcli/libnpmpublish-test-1.0.0.tgz',
+        },
+      },
+    },
+    access: 'public',
+    _attachments: {
+      '@npmcli/libnpmpublish-test-1.0.0.tgz': {
+        content_type: 'application/octet-stream',
+        data: tarData.toString('base64'),
+        length: tarData.length,
+      },
+      '@npmcli/libnpmpublish-test-1.0.0.sigstore': {
+        // Can't match data against static value as signature is always
+        // different.
+        // Can't match length because in github actions certain environment
+        // variables are present that are not present when running locally,
+        // changing the payload size.
+        content_type: 'application/vnd.dev.sigstore.bundle+json;version=0.1',
+      },
+    },
+  }
+
+  const oidcSrv = MockRegistry.tnock(t, oidcURL)
+  oidcSrv.get('/?audience=sigstore', undefined, {
+    authorization: `Bearer ${requestToken}`,
+  }).reply(200, { value: idToken })
+
+  const fulcioSrv = MockRegistry.tnock(t, fulcioURL)
+  fulcioSrv.matchHeader('Accept', 'application/pem-certificate-chain')
+    .matchHeader('Content-Type', 'application/json')
+    .matchHeader('Authorization', `Bearer ${idToken}`)
+    .post('/api/v1/signingCert', {
+      publicKey: { content: /.+/i },
+      signedEmailAddress: /.+/i,
+    })
+    .reply(200, certificate)
+
+  const rekorSrv = MockRegistry.tnock(t, rekorURL)
+  rekorSrv
+    .matchHeader('Accept', 'application/json')
+    .matchHeader('Content-Type', 'application/json')
+    .post('/api/v1/log/entries')
+    .reply(201, rekorEntry)
+
+  registry.getVisibility({ spec, visibility: { public: true } })
+  registry.nock.put(`/${spec.escapedName}`, body => {
+    return t.match(body, packument, 'posted packument matches expectations')
+  }).reply(201, {})
+
+  const ret = await publish(manifest, tarData, {
+    ...opts,
+    provenance: true,
+    fulcioURL: fulcioURL,
+    rekorURL: rekorURL,
+  })
+  t.ok(ret, 'publish succeeded')
+})
+
+t.test('publish new/private package with provenance in gha - no access', async t => {
+  const oidcURL = 'https://mock.oidc'
+  const requestToken = 'decafbad'
+  mockGlobals(t, {
+    'process.env': {
+      CI: true,
+      GITHUB_ACTIONS: true,
+      ACTIONS_ID_TOKEN_REQUEST_URL: oidcURL,
+      ACTIONS_ID_TOKEN_REQUEST_TOKEN: requestToken,
+    },
+  })
+  const { publish } = t.mock('..', { 'ci-info': t.mock('ci-info') })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+    strict: true,
+  })
+  const manifest = {
+    name: '@npmcli/libnpmpublish-test',
+    version: '1.0.0',
+    description: 'test libnpmpublish package',
+  }
+  const spec = npa(manifest.name)
+  registry.getVisibility({ spec, visibility: { public: false } })
+
+  await t.rejects(
+    publish(manifest, Buffer.from(''), {
+      ...opts,
+      access: null,
+      provenance: true,
+    }),
+    { code: 'EUSAGE' }
+  )
+})
+
+t.test('automatic provenance in unsupported environment', async t => {
+  mockGlobals(t, {
+    'process.env': {
+      CI: false,
+      GITHUB_ACTIONS: false,
+    },
+  })
+  const { publish } = t.mock('..', { 'ci-info': t.mock('ci-info') })
+  const manifest = {
+    name: '@npmcli/libnpmpublish-test',
+    version: '1.0.0',
+    description: 'test libnpmpublish package',
+  }
+
+  await t.rejects(
+    publish(manifest, Buffer.from(''), {
+      ...opts,
+      access: null,
+      provenance: true,
+    }),
+    {
+      message: /not supported/,
+      code: 'EUSAGE',
+    }
   )
 })
