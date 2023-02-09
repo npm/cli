@@ -758,7 +758,7 @@ t.test('audit signatures', async t => {
 
     await npm.exec('audit', ['signatures'])
 
-    t.equal(process.exitCode, 0, 'should exit successfully')
+    t.notOk(process.exitCode, 'should exit successfully')
     t.match(joinedOutput(), /audited 1 package/)
     t.matchSnapshot(joinedOutput())
   })
@@ -791,7 +791,7 @@ t.test('audit signatures', async t => {
 
     await npm.exec('audit', ['signatures'])
 
-    t.equal(process.exitCode, 0, 'should exit successfully')
+    t.notOk(process.exitCode, 'should exit successfully')
     t.match(joinedOutput(), /audited 1 package/)
     t.matchSnapshot(joinedOutput())
   })
@@ -914,7 +914,7 @@ t.test('audit signatures', async t => {
 
     await npm.exec('audit', ['signatures'])
 
-    t.equal(process.exitCode, 0, 'should exit successfully')
+    t.notOk(process.exitCode, 'should exit successfully')
     t.match(joinedOutput(), /audited 1 package/)
     t.matchSnapshot(joinedOutput())
   })
@@ -1095,7 +1095,7 @@ t.test('audit signatures', async t => {
 
     await npm.exec('audit', ['signatures'])
 
-    t.equal(process.exitCode, 0, 'should exit successfully')
+    t.notOk(process.exitCode, 'should exit successfully')
     t.match(joinedOutput(), JSON.stringify({ invalid: [], missing: [] }, null, 2))
     t.matchSnapshot(joinedOutput())
   })
@@ -1148,7 +1148,7 @@ t.test('audit signatures', async t => {
 
     await npm.exec('audit', ['signatures'])
 
-    t.equal(process.exitCode, 0, 'should exit successfully')
+    t.notOk(process.exitCode, 'should exit successfully')
     t.match(joinedOutput(), /audited 1 package/)
     t.matchSnapshot(joinedOutput())
   })
@@ -1257,7 +1257,7 @@ t.test('audit signatures', async t => {
 
     await npm.exec('audit', ['signatures'])
 
-    t.equal(process.exitCode, 0, 'should exit successfully')
+    t.notOk(process.exitCode, 'should exit successfully')
     t.match(joinedOutput(), /audited 1 package/)
     t.matchSnapshot(joinedOutput())
   })
@@ -1401,7 +1401,7 @@ t.test('audit signatures', async t => {
 
     await npm.exec('audit', ['signatures'])
 
-    t.equal(process.exitCode, 0, 'should exit successfully')
+    t.notOk(process.exitCode, 'should exit successfully')
     t.match(joinedOutput(), /audited 2 packages/)
     t.matchSnapshot(joinedOutput())
   })
@@ -1447,7 +1447,7 @@ t.test('audit signatures', async t => {
 
     await npm.exec('audit', ['signatures'])
 
-    t.equal(process.exitCode, 0, 'should exit successfully')
+    t.notOk(process.exitCode, 'should exit successfully')
     t.match(joinedOutput(), /audited 1 package/)
     t.matchSnapshot(joinedOutput())
   })
@@ -1625,7 +1625,7 @@ t.test('audit signatures', async t => {
 
       await npm.exec('audit', ['signatures'])
 
-      t.equal(process.exitCode, 0, 'should exit successfully')
+      t.notOk(process.exitCode, 'should exit successfully')
       t.match(joinedOutput(), /audited 3 packages/)
       t.matchSnapshot(joinedOutput())
     })
@@ -1678,7 +1678,7 @@ t.test('audit signatures', async t => {
 
       await npm.exec('audit', ['signatures'])
 
-      t.equal(process.exitCode, 0, 'should exit successfully')
+      t.notOk(process.exitCode, 'should exit successfully')
       t.match(joinedOutput(), /audited 2 packages/)
       t.matchSnapshot(joinedOutput())
     })

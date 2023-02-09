@@ -52,21 +52,25 @@ exports[`test/lib/commands/audit.js TAP audit signatures json output with invali
 {
   "invalid": [
     {
-      "name": "kms-demo",
-      "version": "1.0.0",
-      "location": "node_modules/kms-demo",
-      "resolved": "https://registry.npmjs.org/kms-demo/-/kms-demo-1.0.0.tgz",
+      "code": "EINTEGRITYSIGNATURE",
       "integrity": "sha512-QqZ7VJ/8xPkS9s2IWB7Shj3qTJdcRyeXKbPQnsZjsPEwvutGv0EGeVchPcauoiDFJlGbZMFq5GDCurAGNSghJQ==",
+      "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+      "location": "node_modules/kms-demo",
+      "name": "kms-demo",
+      "registry": "https://registry.npmjs.org/",
+      "resolved": "https://registry.npmjs.org/kms-demo/-/kms-demo-1.0.0.tgz",
       "signature": "bogus",
-      "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+      "type": "dependencies",
+      "version": "1.0.0"
     }
   ],
   "missing": [
     {
-      "name": "async",
-      "version": "1.1.1",
       "location": "node_modules/async",
-      "resolved": "https://registry.npmjs.org/async/-/async-1.1.1.tgz"
+      "name": "async",
+      "registry": "https://registry.npmjs.org/",
+      "resolved": "https://registry.npmjs.org/async/-/async-1.1.1.tgz",
+      "version": "1.1.1"
     }
   ]
 }
@@ -76,13 +80,16 @@ exports[`test/lib/commands/audit.js TAP audit signatures json output with invali
 {
   "invalid": [
     {
-      "name": "kms-demo",
-      "version": "1.0.0",
-      "location": "node_modules/kms-demo",
-      "resolved": "https://registry.npmjs.org/kms-demo/-/kms-demo-1.0.0.tgz",
+      "code": "EINTEGRITYSIGNATURE",
       "integrity": "sha512-QqZ7VJ/8xPkS9s2IWB7Shj3qTJdcRyeXKbPQnsZjsPEwvutGv0EGeVchPcauoiDFJlGbZMFq5GDCurAGNSghJQ==",
+      "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+      "location": "node_modules/kms-demo",
+      "name": "kms-demo",
+      "registry": "https://registry.npmjs.org/",
+      "resolved": "https://registry.npmjs.org/kms-demo/-/kms-demo-1.0.0.tgz",
       "signature": "bogus",
-      "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+      "type": "dependencies",
+      "version": "1.0.0"
     }
   ],
   "missing": []
@@ -204,7 +211,7 @@ audited 2 packages in xxx
 async@1.1.1 (https://registry.npmjs.org/)
 kms-demo@1.0.0 (https://registry.npmjs.org/)
 
-Someone might have tampered with these packages since they where published on the registry!
+Someone might have tampered with these packages since they were published on the registry!
 
 `
 
