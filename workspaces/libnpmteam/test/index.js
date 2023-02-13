@@ -52,9 +52,9 @@ test('create w/ description', async t => {
 test('destroy', async t => {
   tnock(t, REG).delete(
     '/-/team/foo/cli'
-  ).reply(204, '')
+  ).reply(204, {})
   const ret = await team.destroy('@foo:cli', OPTS)
-  t.same(ret, '', 'request succeeded')
+  t.same(ret, {}, 'request succeeded')
 })
 
 test('destroy - no options', async t => {
@@ -62,10 +62,10 @@ test('destroy - no options', async t => {
   // will be defauled to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .delete('/-/team/foo/cli')
-    .reply(204, '')
+    .reply(204, {})
 
   const ret = await team.destroy('@foo:cli')
-  t.same(ret, '', 'request succeeded')
+  t.same(ret, {}, 'request succeeded')
 })
 
 test('add', async t => {
