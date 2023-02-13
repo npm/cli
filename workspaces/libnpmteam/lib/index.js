@@ -28,7 +28,9 @@ cmd.destroy = (entity, opts = {}) => {
     ...opts,
     method: 'DELETE',
     scope,
-  }).then(() => {})
+  }).then(() => {
+    return {}
+  })
 }
 
 cmd.add = (user, entity, opts = {}) => {
