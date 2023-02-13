@@ -24,7 +24,7 @@ cmd.destroy = (entity, opts = {}) => {
   const { scope, team } = splitEntity(entity)
   validate('SSO', [scope, team, opts])
   const uri = `/-/team/${eu(scope)}/${eu(team)}`
-  return npmFetch.json(uri, {
+  return npmFetch(uri, {
     ...opts,
     method: 'DELETE',
     scope,
