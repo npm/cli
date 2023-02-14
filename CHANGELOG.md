@@ -1,5 +1,15 @@
 # Changelog
 
+## [8.19.4](https://github.com/npm/cli/compare/v8.19.3...v8.19.4) (2023-02-14)
+
+### Documentation
+
+* [`dd51f34`](https://github.com/npm/cli/commit/dd51f345c823121cba84d2765942909eb0375018) [#6155](https://github.com/npm/cli/pull/6155) don't redirect "npm config' to itself (#6155) (@ivanosevitch)
+
+### Dependencies
+
+* [`cfab523`](https://github.com/npm/cli/commit/cfab5232183d8ffb025b20d8c3581588b3e75f02) [#6166](https://github.com/npm/cli/pull/6166) `http-cache-semantics@4.1.1` (#6166)
+
 ## [8.19.3](https://github.com/npm/cli/compare/v8.19.2...v8.19.3) (2022-11-03)
 
 ### Bug Fixes
