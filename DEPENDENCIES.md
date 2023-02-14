@@ -714,6 +714,7 @@ graph LR;
   pacote-->promise-retry;
   pacote-->read-package-json-fast;
   pacote-->read-package-json;
+  pacote-->sigstore;
   pacote-->ssri;
   pacote-->tar;
   parse-conflict-json-->json-parse-even-better-errors;
