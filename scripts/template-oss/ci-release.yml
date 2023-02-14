@@ -8,6 +8,8 @@
       windowsCI=false
     }}
       - name: Pack
+        env:
+          SMOKE_PUBLISH_NPM: 1
         run: |
           NPM_VERSION="$({{ rootNpmPath }} --version)-$GITHUB_SHA.0"
           {{ rootNpmPath }} version $NPM_VERSION --ignore-scripts
@@ -17,5 +19,5 @@
           node scripts/remove-files.js
           # call installed npm instead of local source since we are testing
           # the packed tarball that we just installed globally
-          SMOKE_PUBLISH_NPM=1 npm test -w smoke-tests --ignore-scripts
+          npm test -w smoke-tests --ignore-scripts
       {{> stepChecks jobCheck=true }}
