@@ -282,6 +282,8 @@ jobs:
       - name: Reset Deps
         run: node . run resetdeps
       - name: Pack
+        env:
+          SMOKE_PUBLISH_NPM: 1
         run: |
           NPM_VERSION="$(node . --version)-$GITHUB_SHA.0"
           node . version $NPM_VERSION --ignore-scripts
@@ -291,7 +293,7 @@ jobs:
           node scripts/remove-files.js
           # call installed npm instead of local source since we are testing
           # the packed tarball that we just installed globally
-          SMOKE_PUBLISH_NPM=1 npm test -w smoke-tests --ignore-scripts
+          npm test -w smoke-tests --ignore-scripts
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.3.1
         if: steps.check.outputs.check_id && always()

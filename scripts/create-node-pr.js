@@ -1,11 +1,11 @@
 const { join, basename } = require('path')
+const fsp = require('fs/promises')
 const hgi = require('hosted-git-info')
 const semver = require('semver')
 const pacote = require('pacote')
 const log = require('proc-log')
 const tar = require('tar')
-const fsp = require('fs/promises')
-const { cp, withTempDir, access, constants } = require('@npmcli/fs')
+const { cp, withTempDir } = require('@npmcli/fs')
 const { CWD, run, spawn, git, fs, gh } = require('./util.js')
 
 const NODE_FORK = 'npm/node'
@@ -133,7 +133,7 @@ const main = async (spec, branch = 'main', opts) => withTempDir(CWD, async (tmpD
     throw new Error(`process.env.GITHUB_TOKEN is required`)
   }
 
-  await access(NODE_DIR, constants.F_OK).catch(() => {
+  await fsp.access(NODE_DIR, fsp.constants.F_OK).catch(() => {
     throw new Error(`node repo must be checked out to \`${NODE_DIR}\` to continue`)
   })
 
