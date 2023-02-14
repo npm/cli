@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.1.0](https://github.com/npm/cli/compare/libnpmpublish-v7.0.8...libnpmpublish-v7.1.0) (2023-02-14)
+
+### Features
+
+* [`5fc6473`](https://github.com/npm/cli/commit/5fc647316cdc07d4337cdf1b75f73a0663822c7f) add provenance attestation (@bdehamer)
+
 ## [7.0.8](https://github.com/npm/cli/compare/libnpmpublish-v7.0.7...libnpmpublish-v7.0.8) (2023-02-07)
 
 ### Bug Fixes
