@@ -52,9 +52,11 @@ test('create w/ description', async t => {
 test('destroy', async t => {
   tnock(t, REG).delete(
     '/-/team/foo/cli'
-  ).reply(204, {})
-  const ret = await team.destroy('@foo:cli', OPTS)
-  t.same(ret, {}, 'request succeeded')
+  ).reply(204)
+  await t.resolves(
+    team.destroy('@foo:cli', OPTS),
+    'request succeeded'
+  )
 })
 
 test('destroy - no options', async t => {
@@ -62,10 +64,12 @@ test('destroy - no options', async t => {
   // will be defauled to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .delete('/-/team/foo/cli')
-    .reply(204, {})
+    .reply(204)
 
-  const ret = await team.destroy('@foo:cli')
-  t.same(ret, {}, 'request succeeded')
+  await t.resolves(
+    team.destroy('@foo:cli'),
+    'request succeeded'
+  )
 })
 
 test('add', async t => {
@@ -73,7 +77,7 @@ test('add', async t => {
     '/-/team/foo/cli/user', { user: 'zkat' }
   ).reply(201, {})
   const ret = await team.add('zkat', '@foo:cli', OPTS)
-  t.same(ret, {}, 'request succeeded')
+  t.ok(ret, 'request succeeded')
 })
 
 test('add - no options', async t => {
@@ -90,9 +94,11 @@ test('add - no options', async t => {
 test('rm', async t => {
   tnock(t, REG).delete(
     '/-/team/foo/cli/user', { user: 'zkat' }
-  ).reply(204, {})
-  const ret = await team.rm('zkat', '@foo:cli', OPTS)
-  t.same(ret, {}, 'request succeeded')
+  ).reply(204)
+  await t.resolves(
+    team.rm('zkat', '@foo:cli', OPTS),
+    'request succeeded'
+  )
 })
 
 test('rm - no options', async t => {
@@ -100,10 +106,12 @@ test('rm - no options', async t => {
   // will be defauled to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .delete('/-/team/foo/cli/user', { user: 'zkat' })
-    .reply(204, {})
+    .reply(204)
 
-  const ret = await team.rm('zkat', '@foo:cli')
-  t.same(ret, {}, 'request succeeded')
+  await t.resolves(
+    team.rm('zkat', '@foo:cli'),
+    'request succeeded'
+  )
 })
 
 test('lsTeams', async t => {
