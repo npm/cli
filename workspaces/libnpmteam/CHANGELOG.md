@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.0.3](https://github.com/npm/cli/compare/libnpmteam-v5.0.2...libnpmteam-v5.0.3) (2023-02-14)
+
+### Bug Fixes
+
+* [`11e6cc9`](https://github.com/npm/cli/commit/11e6cc94326da83caa24188c6ac668b463bb1364) [#6161](https://github.com/npm/cli/pull/6161) use npmFetch() instead of npmFetch.json() for team destroy command (#6161) (@heisantosh)
+
 ## [5.0.2](https://github.com/npm/cli/compare/libnpmteam-v5.0.1...libnpmteam-v5.0.2) (2023-02-01)
 
 ### Dependencies
