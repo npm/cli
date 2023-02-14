@@ -28,9 +28,7 @@ cmd.destroy = (entity, opts = {}) => {
     ...opts,
     method: 'DELETE',
     scope,
-  }).then(() => {
-    return {}
-  })
+  }).then((res) => res.text())
 }
 
 cmd.add = (user, entity, opts = {}) => {
@@ -49,12 +47,12 @@ cmd.rm = (user, entity, opts = {}) => {
   const { scope, team } = splitEntity(entity)
   validate('SSO', [scope, team, opts])
   const uri = `/-/team/${eu(scope)}/${eu(team)}/user`
-  return npmFetch.json(uri, {
+  return npmFetch(uri, {
     ...opts,
     method: 'DELETE',
     scope,
     body: { user },
-  })
+  }).then(res => res.text())
 }
 
 cmd.lsTeams = (...args) => cmd.lsTeams.stream(...args).collect()
