@@ -7,12 +7,10 @@ const resetdeps = () => npm('run', 'resetdeps')
 
 const op = () => spawn('op', 'item', 'get', 'npm', '--otp', { out: true, ok: true })
 
-const missingVersion = async ({ name, version }) => {
-  const mani = await pacote.manifest(`${name}@${version}`, { preferOnline: true })
-    .catch(() => null)
-  return !mani
+const getVersion = async (s) => {
+  const mani = await pacote.manifest(s, { preferOnline: true })
+  return mani.version
 }
-
 const getLatest = async (s) => {
   const pack = await pacote.packument(s, { preferOnline: true })
   return pack['dist-tags'].latest
@@ -37,8 +35,9 @@ const needsPublish = async ({ private, name, version }, { force, getTag }) => {
     return
   }
 
-  if (force || await missingVersion({ name, version })) {
-    return getTag({ name, version })
+  const tag = await getTag({ name, version })
+  if (force || version !== await getVersion(`${name}@${tag}`)) {
+    return tag
   }
 }
 

@@ -310,41 +310,17 @@ jobs:
     needs: release
     name: Release Integration
     if: needs.release.outputs.release
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-    steps:
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-      - name: View in Registry
-        run: |
-          EXIT_CODE=0
-
-          function is_published {
-            if npm view "$@" --loglevel=error > /dev/null; then
-              echo 0
-            else
-              echo 1
-            fi
-          }
-
-          for release in $(echo '${{ needs.release.outputs.releases }}' | jq -r '.[] | @base64'); do
-            name=$(echo "$release" | base64 --decode | jq -r .pkgName)
-            version=$(echo "$release" | base64 --decode | jq -r .version)
-            spec="$name@$version"
-            status=$(is_published "$spec")
-            if [[ "$status" -eq 1 ]]; then
-              echo "$spec ERROR"
-              EXIT_CODE=$status
-            else
-              echo "$spec OK"
-            fi
-          done
-
-          exit $EXIT_CODE
+    strategy:
+      fail-fast: false
+      matrix:
+        nodeVersion:
+          - 18
+          - 19
+          - nightly
+    uses: ./.github/workflows/node-integration.yml
+    with:
+      nodeVersion: ${{ matrix.nodeVersion }}
+      npmVersion: ${{ fromJSON(needs.release.outputs.release).version }}
 
   post-release-integration:
     needs: [ release, release-integration ]

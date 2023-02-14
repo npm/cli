@@ -1,4 +1,3 @@
-const marked = require('marked-man')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 const { join, basename, resolve } = require('path')
 const transformHTML = require('./transform-html.js')
@@ -41,11 +40,12 @@ const getCommandByDoc = (docFile, docExt) => {
   // `npx` is not technically a command in and of itself,
   // so it just needs the usage of npm exex
   const srcName = name === 'npx' ? 'exec' : name
-  const { params, usage = [''] } = require(`../../lib/commands/${srcName}`)
+  const { params, usage = [''], workspaces } = require(`../../lib/commands/${srcName}`)
   const usagePrefix = name === 'npx' ? 'npx' : `npm ${name}`
 
   return {
     name,
+    workspaces,
     params: name === 'npx' ? null : params,
     usage: usage.map(u => `${usagePrefix} ${u}`.trim()).join('\n'),
   }
@@ -67,11 +67,9 @@ const replaceUsage = (src, { path }) => {
   }, [])
 
   if (cmdAliases.length === 1) {
-    synopsis.push('')
-    synopsis.push(`alias: ${cmdAliases[0]}`)
+    synopsis.push('', `alias: ${cmdAliases[0]}`)
   } else if (cmdAliases.length > 1) {
-    synopsis.push('')
-    synopsis.push(`aliases: ${cmdAliases.join(', ')}`)
+    synopsis.push('', `aliases: ${cmdAliases.join(', ')}`)
   }
 
   synopsis.push('```')
@@ -142,8 +140,11 @@ const replaceHelpLinks = (src) => {
   )
 }
 
-const transformMan = (src, { data }) =>
-  marked(`# ${data.title}(${data.section}) - ${data.description}\n\n${src}`)
+const transformMan = (src, { data, unified, remarkParse, remarkMan }) => unified()
+  .use(remarkParse)
+  .use(remarkMan)
+  .processSync(`# ${data.title}(${data.section}) - ${data.description}\n\n${src}`)
+  .toString()
 
 const manPath = (name, { data }) => join(`man${data.section}`, `${name}.${data.section}`)
 

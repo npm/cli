@@ -1,5 +1,5 @@
 const { join, dirname, basename, extname, sep, posix } = require('path')
-const fs = require('@npmcli/fs')
+const fs = require('fs/promises')
 const ignoreWalk = require('ignore-walk')
 const yaml = require('yaml')
 const parseFrontMatter = require('front-matter')
@@ -19,12 +19,31 @@ const readHtml = (path) => fs.readFile(path, 'utf-8')
 const readYaml = (path) => fs.readFile(path, 'utf-8').then(yaml.parse)
 const makeTransforms = (...args) => (src, trs) => trs.reduce((acc, tr) => tr(acc, ...args), src)
 
+const pAll = async (obj) => {
+  const entries = Object.entries(obj)
+  const results = await Promise.all(entries.map(e => e[1]))
+  return results.reduce((acc, res, index) => {
+    acc[entries[index][0]] = res
+    return acc
+  }, {})
+}
+
 const run = async ({ content, template, nav, man, html, md }) => {
-  const [contentPaths, templateFile, navFile] = await Promise.all([
+  await rmAll(man, html, md)
+  const [contentPaths, navFile, options] = await Promise.all([
     readDocs(content),
-    readHtml(template),
     readYaml(nav),
-    rmAll(man, html, md),
+    pAll({
+      template: readHtml(template),
+      // these deps are esm only so we have to import them once we
+      // are inside our main async function
+      unified: import('unified').then(r => r.unified),
+      remarkParse: import('remark-parse').then(r => r.default),
+      remarkGfm: import('remark-gfm').then(r => r.default),
+      remarkRehype: import('remark-rehype').then(r => r.default),
+      rehypeStringify: import('rehype-stringify').then(r => r.default),
+      remarkMan: import('remark-man').then(r => r.default),
+    }),
   ])
 
   const sources = await Promise.all(contentPaths.map(async (childPath) => {
@@ -61,7 +80,7 @@ const run = async ({ content, template, nav, man, html, md }) => {
         github_path: 'docs/content',
       },
       frontmatter,
-      template: templateFile,
+      ...options,
     })
 
     const transformedSrc = applyTransforms(body, [
