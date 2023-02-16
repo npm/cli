@@ -89,7 +89,6 @@ module.exports = cls => class Builder extends cls {
     const {
       depNodes,
       linkNodes,
-      storeNodes,
     } = this[_retrieveNodesByType](nodes)
 
     // build regular deps
@@ -99,10 +98,6 @@ module.exports = cls => class Builder extends cls {
     if (linkNodes.size) {
       this[_resetQueues]()
       await this[_build](linkNodes, { type: 'links' })
-    }
-    if (storeNodes.size) {
-      this[_resetQueues]()
-      await this[_build](storeNodes, { type: 'storelinks' })
     }
 
     process.emit('timeEnd', 'build')
@@ -146,6 +141,9 @@ module.exports = cls => class Builder extends cls {
         depNodes.add(node)
       }
     }
+    for (const node of storeNodes) {
+      depNodes.add(node)
+    }
 
     // deduplicates link nodes and their targets, avoids
     // calling lifecycle scripts twice when running `npm rebuild`
@@ -162,7 +160,6 @@ module.exports = cls => class Builder extends cls {
     return {
       depNodes,
       linkNodes,
-      storeNodes,
     }
   }
 
@@ -330,10 +327,12 @@ module.exports = cls => class Builder extends cls {
         devOptional,
         package: pkg,
         location,
+        isStoreLink,
       } = node.target
 
       // skip any that we know we'll be deleting
-      if (this[_trashList].has(path)) {
+      // or storeLinks
+      if (this[_trashList].has(path) || isStoreLink) {
         return
       }
 
