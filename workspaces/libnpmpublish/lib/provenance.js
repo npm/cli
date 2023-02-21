@@ -50,7 +50,7 @@ const generateProvenance = async (subject, opts) => {
       },
       materials: [
         {
-          uri: `git+${env.GITHUB_SERVER_URL}/${env.GITHUB_REPOSITORY}`,
+          uri: `git+${env.GITHUB_SERVER_URL}/${env.GITHUB_REPOSITORY}@${env.GITHUB_REF}`,
           digest: {
             sha1: env.GITHUB_SHA,
           },
