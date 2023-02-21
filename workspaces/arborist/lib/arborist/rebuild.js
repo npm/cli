@@ -141,6 +141,9 @@ module.exports = cls => class Builder extends cls {
         depNodes.add(node)
       }
     }
+    // Make sure that store linked nodes are processed last.
+    // We can't process store links separately or else lifecycle scripts on
+    // standard nodes might not have bin links yet.
     for (const node of storeNodes) {
       depNodes.add(node)
     }
