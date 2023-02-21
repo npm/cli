@@ -86,7 +86,7 @@ const main = async function () {
   const tree = await arborist.loadVirtual({ path: CWD, name: 'npm' })
   tree.name = 'npm'
 
-  const [annotationsOurs, heirarchyOurs] = walk(tree, true)
+  const [annotationsOurs, hierarchyOurs] = walk(tree, true)
   const [annotationsAll] = walk(tree, false)
 
   const out = [
@@ -104,13 +104,13 @@ const main = async function () {
     ...annotationsAll.sort(),
     '```',
     '',
-    '## npm dependency heirarchy',
+    '## npm dependency hierarchy',
     '',
     'These are the groups of dependencies in npm that depend on each other.',
     'Each group depends on packages lower down the chain, nothing depends on',
     'packages higher up the chain.',
     '',
-    ` - ${heirarchyOurs.reverse().join('\n - ')}`,
+    ` - ${hierarchyOurs.reverse().join('\n - ')}`,
   ]
 
   return fs.writeFile(join(CWD, 'DEPENDENCIES.md'), out.join('\n'))
@@ -124,7 +124,7 @@ const walk = function (tree, onlyOurs) {
 
   const allDeps = new Set(Object.keys(dependedBy))
   const foundDeps = new Set()
-  const heirarchy = []
+  const hierarchy = []
 
   if (onlyOurs) {
     while (allDeps.size) {
@@ -158,13 +158,13 @@ const walk = function (tree, onlyOurs) {
         throw new Error(`Would do an infinite loop here, need to debug. ${remaining}`)
       }
 
-      heirarchy.push(level.join(', '))
-      log.silly('HIEARARCHY', heirarchy.length)
+      hierarchy.push(level.join(', '))
+      log.silly('HIERARCHY', hierarchy.length)
       log.silly('='.repeat(80))
     }
   }
 
-  return [annotations, heirarchy]
+  return [annotations, hierarchy]
 }
 
 const iterate = function (node, dependedBy, annotations, onlyOurs) {

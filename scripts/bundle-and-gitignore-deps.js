@@ -109,7 +109,7 @@ const getAllowedPaths = (files) => {
       if (use) {
         this.use()
       }
-      // Allow a previously ignored directy
+      // Allow a previously ignored directory
       // Important: this should NOT have a trailing
       // slash if we are not sure it is a directory.
       // Since a dep can be a directory or a symlink and
