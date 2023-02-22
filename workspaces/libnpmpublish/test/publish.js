@@ -784,7 +784,7 @@ t.test('automatic provenance in unsupported environment', async t => {
   mockGlobals(t, {
     'process.env': {
       CI: false,
-      GITHUB_ACTIONS: false,
+      GITHUB_ACTIONS: undefined,
     },
   })
   const { publish } = t.mock('..', { 'ci-info': t.mock('ci-info') })
@@ -802,6 +802,34 @@ t.test('automatic provenance in unsupported environment', async t => {
     }),
     {
       message: /not supported/,
+      code: 'EUSAGE',
+    }
+  )
+})
+
+t.test('automatic provenance with incorrect permissions', async t => {
+  mockGlobals(t, {
+    'process.env': {
+      CI: false,
+      GITHUB_ACTIONS: true,
+      ACTIONS_ID_TOKEN_REQUEST_URL: undefined,
+    },
+  })
+  const { publish } = t.mock('..', { 'ci-info': t.mock('ci-info') })
+  const manifest = {
+    name: '@npmcli/libnpmpublish-test',
+    version: '1.0.0',
+    description: 'test libnpmpublish package',
+  }
+
+  await t.rejects(
+    publish(manifest, Buffer.from(''), {
+      ...opts,
+      access: null,
+      provenance: true,
+    }),
+    {
+      message: /requires "write" access/,
       code: 'EUSAGE',
     }
   )
