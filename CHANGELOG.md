@@ -1,5 +1,22 @@
 # Changelog
 
+## [9.5.1](https://github.com/npm/cli/compare/v9.5.0...v9.5.1) (2023-02-22)
+
+### Documentation
+
+* [`9bc455b`](https://github.com/npm/cli/commit/9bc455bc2c0f247ff4ca2e1fd299063008b4e260) [#6188](https://github.com/npm/cli/pull/6188) fixing typos (#6188) (@deining)
+* [`ec8c95c`](https://github.com/npm/cli/commit/ec8c95c2ab2de71a18e291b4f65ebb87c6ace1e8) [#6186](https://github.com/npm/cli/pull/6186) update OSI link (#6186) (@roerohan)
+
+### Dependencies
+
+* [`7ba3e17`](https://github.com/npm/cli/commit/7ba3e17087e13d737103260f10e671befc6ce256) [#6189](https://github.com/npm/cli/pull/6189) npm update
+* [`f7a5200`](https://github.com/npm/cli/commit/f7a520072f3dcafd9391e5e27f3ceef8e59e95dc) `pacote@15.1.1`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.2.3): `@npmcli/arborist@6.2.3`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v5.0.11): `libnpmdiff@5.0.11`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v5.0.11): `libnpmexec@5.0.11`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v4.0.11): `libnpmfund@4.0.11`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v5.0.11): `libnpmpack@5.0.11`
+
 ## [9.5.0](https://github.com/npm/cli/compare/v9.4.2...v9.5.0) (2023-02-14)
 
 ### Features

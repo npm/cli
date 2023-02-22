@@ -1,5 +1,15 @@
 # Changelog
 
+## [6.2.3](https://github.com/npm/cli/compare/arborist-v6.2.2...arborist-v6.2.3) (2023-02-22)
+
+### Bug Fixes
+
+* [`6ed3535`](https://github.com/npm/cli/commit/6ed353597733e906bacf6a9546983464134e4817) [#6175](https://github.com/npm/cli/pull/6175) linked-strategy lifecycle missing bins (#6175) (@fritzy)
+
+### Documentation
+
+* [`9bc455b`](https://github.com/npm/cli/commit/9bc455bc2c0f247ff4ca2e1fd299063008b4e260) [#6188](https://github.com/npm/cli/pull/6188) fixing typos (#6188) (@deining)
+
 ## [6.2.2](https://github.com/npm/cli/compare/arborist-v6.2.1...arborist-v6.2.2) (2023-02-07)
 
 ### Bug Fixes
