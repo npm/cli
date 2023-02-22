@@ -247,7 +247,7 @@ const main = async (spec, branch = 'main', opts) => withTempDir(CWD, async (tmpD
     }
   }
 
-  log.info('Found exisiting PR', existingPr)
+  log.info('Found existing PR', existingPr)
   log.info('Found PRs to close', closePrs)
 
   const prBody = await getPrBody({ releases: npmReleases, closePrs })

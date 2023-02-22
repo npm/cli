@@ -52,13 +52,13 @@ root `Node`
 - be aware it's a **Top-level workspace**
 - 4 Edges in edgesOut with type=workspace, referencing workspace children
   - that means we create a link node in root.children.get('app')
-    targetting `./app` Node, etc.
+    targeting `./app` Node, etc.
 - during buildIdeal:
   - need to know that app is in root's workspace
     - app.wsParent = root
     - root.wsChildren.add(app)
   - if any dep CAN be satisfied by a named dep in the workspace, then
-    create a Link targetting that workspace child node
+    create a Link targeting that workspace child node
       - resolving: _first_ check this.wsParent.get('dep-name'), and if
         that's ok, then resolve with a link to that target.
   - no hoisting by default: when doing `_canPlaceDep`, if target is

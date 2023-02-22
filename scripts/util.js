@@ -30,7 +30,7 @@ const fs = {
 }
 
 // for spawn, allow a flat array of arguments where the
-// the last arg can optionall be an options object
+// the last arg can optionally be an options object
 const getArgs = (allArgs) => {
   let args = allArgs.flat().filter(Boolean)
   let opts = {}

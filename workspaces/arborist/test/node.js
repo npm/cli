@@ -533,7 +533,7 @@ t.test('load with a virtual filesystem parent', t => {
 
   t.equal(normalizePath(packages.path), normalizePath(root.realpath + '/link-target/packages'))
   t.equal(normalizePath(target3.path), normalizePath(root.realpath + '/link-target/packages/link3'))
-  t.equal(link3.target, target3, 'still targetting the right node 4')
+  t.equal(link3.target, target3, 'still targeting the right node 4')
   t.equal(target3.fsParent, packages, 'link3 target under packages')
   t.equal(normalizePath(link3.realpath), normalizePath(target3.path), 'link realpath updated')
 
