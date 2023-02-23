@@ -897,7 +897,7 @@ t.test('workspaces', t => {
           name: 'workspace-a',
           version: '1.0.0',
           dependencies: {
-            'foo': '>=1.0.0',
+            foo: '>=1.0.0',
           },
         }),
       },
