@@ -174,7 +174,7 @@ jobs:
         run: |
           git commit --all --amend --no-edit || true
           git push --force-with-lease
-          echo "::set-output  name=sha::$(git rev-parse HEAD)"
+          echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
       - name: Get Workflow Job
         uses: actions/github-script@v6
         if: steps.commit.outputs.sha
@@ -255,7 +255,7 @@ jobs:
           else
             result="success"
           fi
-          echo "::set-output name=result::$result"
+          echo "result=$result" >> $GITHUB_OUTPUT
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.3.1
         if: needs.update.outputs.check-id && always()
@@ -342,7 +342,7 @@ jobs:
           else
             result="white_check_mark"
           fi
-          echo "::set-output name=result::$result"
+          echo "result=$result" >> $GITHUB_OUTPUT
       - name: Update Release PR Comment
         uses: actions/github-script@v6
         env:
