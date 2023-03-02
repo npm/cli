@@ -1,5 +1,15 @@
 # Changelog
 
+## [6.2.4](https://github.com/npm/cli/compare/arborist-v6.2.3...arborist-v6.2.4) (2023-03-02)
+
+### Bug Fixes
+
+* [`962a12e`](https://github.com/npm/cli/commit/962a12e5017dc8e576fd819d785e45d4c8d9244d) [#6193](https://github.com/npm/cli/pull/6193) arborist: dependencies from registries with a peerDependency on a workspace (#6193) (@ixalon)
+
+### Dependencies
+
+* [`71ae406`](https://github.com/npm/cli/commit/71ae4067bccef53aa99ccf8abbe9115daaae8e8c) [#6218](https://github.com/npm/cli/pull/6218) `@npmcli/installed-package-contents@2.0.2`
+
 ## [6.2.3](https://github.com/npm/cli/compare/arborist-v6.2.2...arborist-v6.2.3) (2023-02-22)
 
 ### Bug Fixes
