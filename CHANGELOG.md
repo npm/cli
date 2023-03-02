@@ -1,5 +1,30 @@
 # Changelog
 
+## [9.6.0](https://github.com/npm/cli/compare/v9.5.1...v9.6.0) (2023-03-02)
+
+### Features
+
+* [`84fbaf2`](https://github.com/npm/cli/commit/84fbaf2bd809e56f396496dd5f4691a46dd548aa) [#6216](https://github.com/npm/cli/pull/6216) add preliminary fish shell completion (@wraithgar)
+
+### Bug Fixes
+
+* [`c4c8754`](https://github.com/npm/cli/commit/c4c8754f12e73007ef0f0f516c8e51e08858b2c6) audit: add signatures to completion (@wraithgar)
+* [`fc46489`](https://github.com/npm/cli/commit/fc4648984c9fc4904d2b51597590015f8ca702fc) access: only complete once (@wraithgar)
+* [`b43961a`](https://github.com/npm/cli/commit/b43961a9a3c0e5ea0314a241ba8ae9b7ea57cae7) cmd-list: alias only to real commands (@wraithgar)
+
+### Documentation
+
+* [`2695e1f`](https://github.com/npm/cli/commit/2695e1fb1384ad41fe6b99fdc570088978626dd8) [#6187](https://github.com/npm/cli/pull/6187) npm v9 creates package-lock.json v3 (#6187) (@tuukka)
+
+### Dependencies
+
+* [`71ae406`](https://github.com/npm/cli/commit/71ae4067bccef53aa99ccf8abbe9115daaae8e8c) [#6218](https://github.com/npm/cli/pull/6218) `@npmcli/installed-package-contents@2.0.2`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.2.4): `@npmcli/arborist@6.2.4`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v5.0.12): `libnpmdiff@5.0.12`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v5.0.12): `libnpmexec@5.0.12`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v4.0.12): `libnpmfund@4.0.12`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v5.0.12): `libnpmpack@5.0.12`
+
 ## [9.5.1](https://github.com/npm/cli/compare/v9.5.0...v9.5.1) (2023-02-22)
 
 ### Documentation
