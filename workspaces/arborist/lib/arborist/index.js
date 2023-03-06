@@ -71,6 +71,7 @@ class Arborist extends Base {
     this.options = {
       nodeVersion: process.version,
       ...options,
+      Arborist: this.constructor,
       path: options.path || '.',
       cache: options.cache || `${homedir()}/.npm/_cacache`,
       packumentCache: options.packumentCache || new Map(),

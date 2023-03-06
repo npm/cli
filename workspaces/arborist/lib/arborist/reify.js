@@ -702,7 +702,6 @@ module.exports = cls => class Reifier extends cls {
       })
       await pacote.extract(res, node.path, {
         ...this.options,
-        Arborist: this.constructor,
         resolved: node.resolved,
         integrity: node.integrity,
       })
