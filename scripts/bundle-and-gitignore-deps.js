@@ -50,7 +50,7 @@ const lsAndRmIgnored = async (dir) => {
   )
 
   for (const file of files) {
-    await git('rm', file)
+    await git('rm', file, '--force')
   }
 
   // check if there are still ignored files left
