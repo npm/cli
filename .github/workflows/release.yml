@@ -174,7 +174,7 @@ jobs:
         run: |
           git commit --all --amend --no-edit || true
           git push --force-with-lease
-          echo "::set-output  name=sha::$(git rev-parse HEAD)"
+          echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
       - name: Get Workflow Job
         uses: actions/github-script@v6
         if: steps.commit.outputs.sha
@@ -255,7 +255,7 @@ jobs:
           else
             result="success"
           fi
-          echo "::set-output name=result::$result"
+          echo "result=$result" >> $GITHUB_OUTPUT
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.3.1
         if: needs.update.outputs.check-id && always()
@@ -334,7 +334,6 @@ jobs:
       - name: Get Needs Result
         id: needs-result
         run: |
-          result=""
           if [[ "${{ contains(needs.*.result, 'failure') }}" == "true" ]]; then
             result="x"
           elif [[ "${{ contains(needs.*.result, 'cancelled') }}" == "true" ]]; then
@@ -342,7 +341,7 @@ jobs:
           else
             result="white_check_mark"
           fi
-          echo "::set-output name=result::$result"
+          echo "result=$result" >> $GITHUB_OUTPUT
       - name: Update Release PR Comment
         uses: actions/github-script@v6
         env:
@@ -363,7 +362,8 @@ jobs:
             if (updateComment) {
               console.log('Found comment to update:', JSON.stringify(updateComment, null, 2))
               let body = updateComment.body.replace(/Workflow run: :[a-z_]+:/, `Workflow run: :${RESULT}:`)
-              if (RESULT === 'x') {
+              const tagCodeowner = RESULT !== 'white_check_mark'
+              if (tagCodeowner) {
                 body += `\n\n:rotating_light:`
                 body += ` @npm/cli-team: The post-release workflow failed for this release.`
                 body += ` Manual steps may need to be taken after examining the workflow output`
