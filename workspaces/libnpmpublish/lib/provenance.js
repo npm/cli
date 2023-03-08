@@ -4,9 +4,9 @@ const INTOTO_PAYLOAD_TYPE = 'application/vnd.in-toto+json'
 const INTOTO_STATEMENT_TYPE = 'https://in-toto.io/Statement/v0.1'
 const SLSA_PREDICATE_TYPE = 'https://slsa.dev/provenance/v0.2'
 
-const BUILDER_ID_PREFIX = 'https://github.com/npm/cli'
+const BUILDER_ID = 'https://github.com/actions/runner'
 const BUILD_TYPE_PREFIX = 'https://github.com/npm/cli/gha'
-const BUILD_TYPE_VERSION = 'v1'
+const BUILD_TYPE_VERSION = 'v2'
 
 const generateProvenance = async (subject, opts) => {
   const { env } = process
@@ -18,8 +18,8 @@ const generateProvenance = async (subject, opts) => {
     subject,
     predicateType: SLSA_PREDICATE_TYPE,
     predicate: {
-      buildType: `${BUILD_TYPE_PREFIX}@${BUILD_TYPE_VERSION}`,
-      builder: { id: `${BUILDER_ID_PREFIX}@${opts.npmVersion}` },
+      buildType: `${BUILD_TYPE_PREFIX}/${BUILD_TYPE_VERSION}`,
+      builder: { id: BUILDER_ID },
       invocation: {
         configSource: {
           uri: `git+${env.GITHUB_SERVER_URL}/${env.GITHUB_REPOSITORY}@${env.GITHUB_REF}`,
