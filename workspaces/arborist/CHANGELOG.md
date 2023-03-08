@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.2.5](https://github.com/npm/cli/compare/arborist-v6.2.4...arborist-v6.2.5) (2023-03-08)
+
+### Bug Fixes
+
+* [`8a78c6f`](https://github.com/npm/cli/commit/8a78c6fc400e9b9ca4068c61c8374a86dec7f2d1) [#6222](https://github.com/npm/cli/pull/6222) only add directories we made to _sparseTreeRoots (#6222) (@nlf)
+
 ## [6.2.4](https://github.com/npm/cli/compare/arborist-v6.2.3...arborist-v6.2.4) (2023-03-02)
 
 ### Bug Fixes
