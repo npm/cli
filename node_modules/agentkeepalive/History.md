@@ -1,4 +1,12 @@
 
+4.3.0 / 2023-03-06
+==================
+
+**others**
+  * [[`6f9852b`](http://github.com/node-modules/agentkeepalive/commit/6f9852bf6f674846103e403fd9c84e92fc24f820)] - deps: depd@2.0.0 (#109) (Brian DeHamer <<bdehamer@github.com>>)
+  * [[`fd4bd9b`](http://github.com/node-modules/agentkeepalive/commit/fd4bd9b0e0f051de3cb49559d1b0d534a0ded18c)] - test: use npm install (#110) (fengmk2 <<fengmk2@gmail.com>>)
+  * [[`d52822c`](http://github.com/node-modules/agentkeepalive/commit/d52822c1243c689df1c8232a3bb14139cf87fae5)] - chore: update contributors (fengmk2 <<fengmk2@gmail.com>>)
+
 4.2.1 / 2022-02-21
 ==================
 
