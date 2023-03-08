@@ -1,5 +1,23 @@
 # Changelog
 
+## [9.6.1](https://github.com/npm/cli/compare/v9.6.0...v9.6.1) (2023-03-08)
+
+### Bug Fixes
+
+* [`e455e3f`](https://github.com/npm/cli/commit/e455e3f6a5d0aa2c53cc24064557ec592706ca2c) [#6211](https://github.com/npm/cli/pull/6211) send options with grant/revoke requests (#6211) (@DavidTanner)
+* [`e4de224`](https://github.com/npm/cli/commit/e4de22480a21591f0c9ba755c8464a9e1f0413c9) [#6220](https://github.com/npm/cli/pull/6220) clean uri from audit error (#6220) (@wraithgar)
+
+### Dependencies
+
+* [`cb45b21`](https://github.com/npm/cli/commit/cb45b216c831a2b0c08f97d57ad4d34b318f3d69) [#6231](https://github.com/npm/cli/pull/6231) npm update
+* [`1f60a7e`](https://github.com/npm/cli/commit/1f60a7ee02953632bf5fb4e64e66755d7bb1bdd1) [#6231](https://github.com/npm/cli/pull/6231) `minipass@4.2.4`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.2.5): `@npmcli/arborist@6.2.5`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v5.0.13): `libnpmdiff@5.0.13`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v5.0.13): `libnpmexec@5.0.13`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v4.0.13): `libnpmfund@4.0.13`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v5.0.13): `libnpmpack@5.0.13`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v7.1.1): `libnpmpublish@7.1.1`
+
 ## [9.6.0](https://github.com/npm/cli/compare/v9.5.1...v9.6.0) (2023-03-02)
 
 ### Features

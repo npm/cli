@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.1.1](https://github.com/npm/cli/compare/libnpmpublish-v7.1.0...libnpmpublish-v7.1.1) (2023-03-08)
+
+### Bug Fixes
+
+* [`26cbe99`](https://github.com/npm/cli/commit/26cbe9912a1b5f6c16bbc5121435037ef691b6c3) [#6226](https://github.com/npm/cli/pull/6226) improve permission error for provenance (#6226) (@bdehamer)
+
 ## [7.1.0](https://github.com/npm/cli/compare/libnpmpublish-v7.0.8...libnpmpublish-v7.1.0) (2023-02-14)
 
 ### Features
