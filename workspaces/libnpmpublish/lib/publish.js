@@ -5,6 +5,7 @@ const semver = require('semver')
 const { URL } = require('url')
 const ssri = require('ssri')
 const ciInfo = require('ci-info')
+const fs = require(`fs`)
 
 const { generateProvenance } = require('./provenance')
 
@@ -170,6 +171,18 @@ const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
     const provenanceBundle = await generateProvenance([subject], opts)
 
     const serializedBundle = JSON.stringify(provenanceBundle)
+    root._attachments[provenanceBundleName] = {
+      content_type: provenanceBundle.mediaType,
+      data: serializedBundle,
+      length: serializedBundle.length,
+    }
+  }
+
+  if (typeof provenance === 'string') {
+    // TODO: Validate the bundle. Is there a method to do this in sigstore-js?
+    const serializedBundle = fs.readFileSync(provenance, 'utf-8');
+    const provenanceBundle = JSON.parse(serializedBundle);
+
     root._attachments[provenanceBundleName] = {
       content_type: provenanceBundle.mediaType,
       data: serializedBundle,
