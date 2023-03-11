@@ -10,6 +10,9 @@ const BUILD_TYPE_VERSION = 'v1'
 
 const generateProvenance = async (subject, opts) => {
   const { env } = process
+  const [workflowPath] = (env.GITHUB_WORKFLOW_REF || '')
+    .replace(env.GITHUB_REPOSITORY + '/', '')
+    .split('@')
   const payload = {
     _type: INTOTO_STATEMENT_TYPE,
     subject,
@@ -23,7 +26,7 @@ const generateProvenance = async (subject, opts) => {
           digest: {
             sha1: env.GITHUB_SHA,
           },
-          entryPoint: env.GITHUB_WORKFLOW_REF,
+          entryPoint: workflowPath,
         },
         parameters: {},
         environment: {
