@@ -599,8 +599,17 @@ t.test('other error code', async t => {
 })
 
 t.test('publish existing package with provenance in gha', async t => {
+  // Environment variables
   const oidcURL = 'https://mock.oidc'
   const requestToken = 'decafbad'
+  const workflowPath = '.github/workflows/publish.yml'
+  const repository = 'github/foo'
+  const serverUrl = 'https://github.com'
+  const ref = 'refs/heads/main'
+  const sha = 'deadbeef'
+  const runID = '123456'
+  const runAttempt = '1'
+
   // Set-up GHA environment variables
   mockGlobals(t, {
     'process.env': {
@@ -608,8 +617,29 @@ t.test('publish existing package with provenance in gha', async t => {
       GITHUB_ACTIONS: true,
       ACTIONS_ID_TOKEN_REQUEST_URL: oidcURL,
       ACTIONS_ID_TOKEN_REQUEST_TOKEN: requestToken,
+      GITHUB_WORKFLOW_REF: `${repository}/${workflowPath}@${ref}`,
+      GITHUB_REPOSITORY: repository,
+      GITHUB_SERVER_URL: serverUrl,
+      GITHUB_REF: ref,
+      GITHUB_SHA: sha,
+      GITHUB_RUN_ID: runID,
+      GITHUB_RUN_ATTEMPT: runAttempt,
     },
   })
+
+  const expectedSubject = {
+    name: 'pkg:npm/%40npmcli/libnpmpublish-test@1.0.0',
+    digest: {
+      sha512: integrity.sha512[0].hexDigest(),
+    },
+  }
+
+  const expectedConfigSource = {
+    uri: `git+${serverUrl}/${repository}@${ref}`,
+    digest: { sha1: sha },
+    entryPoint: workflowPath,
+  }
+
   const { publish } = t.mock('..', { 'ci-info': t.mock('ci-info') })
   const registry = new MockRegistry({
     tap: t,
@@ -732,7 +762,24 @@ t.test('publish existing package with provenance in gha', async t => {
 
   registry.getVisibility({ spec, visibility: { public: true } })
   registry.nock.put(`/${spec.escapedName}`, body => {
-    return t.match(body, packument, 'posted packument matches expectations')
+    const bundleAttachment = body._attachments['@npmcli/libnpmpublish-test-1.0.0.sigstore']
+    const bundle = JSON.parse(bundleAttachment.data)
+    const provenance = JSON.parse(Buffer.from(bundle.dsseEnvelope.payload, 'base64').toString())
+
+    t.hasStrict(body, packument, 'posted packument matches expectations')
+    t.hasStrict(provenance.subject[0],
+      expectedSubject,
+      'provenance subject matches expectations')
+    t.hasStrict(provenance.predicate.buildType,
+      'https://github.com/npm/cli/gha/v2',
+      'provenance subject matches expectations')
+    t.hasStrict(provenance.predicate.builder.id,
+      'https://github.com/actions/runner',
+      'provenance subject matches expectations')
+    t.hasStrict(provenance.predicate.invocation.configSource,
+      expectedConfigSource,
+      'configSource matches expectations')
+    return true
   }).reply(201, {})
 
   const ret = await publish(manifest, tarData, {

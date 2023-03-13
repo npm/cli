@@ -10,6 +10,7 @@ const BUILD_TYPE_VERSION = 'v2'
 
 const generateProvenance = async (subject, opts) => {
   const { env } = process
+  /* istanbul ignore next - not covering missing env var case */
   const [workflowPath] = (env.GITHUB_WORKFLOW_REF || '')
     .replace(env.GITHUB_REPOSITORY + '/', '')
     .split('@')
