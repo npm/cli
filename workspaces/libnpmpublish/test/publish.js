@@ -772,10 +772,10 @@ t.test('publish existing package with provenance in gha', async t => {
       'provenance subject matches expectations')
     t.hasStrict(provenance.predicate.buildType,
       'https://github.com/npm/cli/gha/v2',
-      'provenance subject matches expectations')
+      'buildType matches expectations')
     t.hasStrict(provenance.predicate.builder.id,
       'https://github.com/actions/runner',
-      'provenance subject matches expectations')
+      'builder id matches expectations')
     t.hasStrict(provenance.predicate.invocation.configSource,
       expectedConfigSource,
       'configSource matches expectations')
