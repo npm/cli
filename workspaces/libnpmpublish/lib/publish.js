@@ -1,12 +1,15 @@
 const { fixer } = require('normalize-package-data')
 const npmFetch = require('npm-registry-fetch')
 const npa = require('npm-package-arg')
+const log = require('proc-log')
 const semver = require('semver')
 const { URL } = require('url')
 const ssri = require('ssri')
 const ciInfo = require('ci-info')
 
 const { generateProvenance } = require('./provenance')
+
+const TLOG_BASE_URL = 'https://rekor.sigstore.dev/api/v1/log/entries'
 
 const publish = async (manifest, tarballData, opts) => {
   if (manifest.private) {
@@ -168,6 +171,16 @@ const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
       )
     }
     const provenanceBundle = await generateProvenance([subject], opts)
+
+    /* eslint-disable-next-line max-len */
+    log.notice('publish', 'Signed provenance statement with source and build information from GitHub Actions')
+
+    const tlogEntry = provenanceBundle?.verificationMaterial?.tlogEntries[0]
+    /* istanbul ignore else */
+    if (tlogEntry) {
+      const logUrl = `${TLOG_BASE_URL}?logIndex=${tlogEntry.logIndex}`
+      log.notice('publish', `Provenance statement published to transparency log: ${logUrl}`)
+    }
 
     const serializedBundle = JSON.stringify(provenanceBundle)
     root._attachments[provenanceBundleName] = {
