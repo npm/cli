@@ -742,6 +742,7 @@ graph LR;
   rimraf-->glob;
   semver-->lru-cache;
   sigstore-->make-fetch-happen;
+  sigstore-->sigstore-protobuf-specs["@sigstore/protobuf-specs"];
   sigstore-->tuf-js;
   socks-->ip;
   socks-->smart-buffer;
