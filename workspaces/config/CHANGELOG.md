@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.1.4](https://github.com/npm/cli/compare/config-v6.1.3...config-v6.1.4) (2023-03-14)
+
+### Bug Fixes
+
+* [`968f63a`](https://github.com/npm/cli/commit/968f63ada828ee8ccfdba3d6d437c9e7c6917026) [#6236](https://github.com/npm/cli/pull/6236) parse date objects from config files (#6236) (@wraithgar)
+
 ## [6.1.3](https://github.com/npm/cli/compare/config-v6.1.2...config-v6.1.3) (2023-02-07)
 
 ### Dependencies
