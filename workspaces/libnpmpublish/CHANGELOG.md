@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.1.2](https://github.com/npm/cli/compare/libnpmpublish-v7.1.1...libnpmpublish-v7.1.2) (2023-03-14)
+
+### Bug Fixes
+
+* [`4622b42`](https://github.com/npm/cli/commit/4622b425751bc6e3eebb9abfa5fc3fbf94890e34) [#6247](https://github.com/npm/cli/pull/6247) add provenance publish notice (#6247) (@bdehamer)
+* [`17adfb7`](https://github.com/npm/cli/commit/17adfb7b6c125cf033ac259936fb15bb85339aac) [#6228](https://github.com/npm/cli/pull/6228) provenance build type v2 (#6228) (@bdehamer, @feelepxyz)
+
 ## [7.1.1](https://github.com/npm/cli/compare/libnpmpublish-v7.1.0...libnpmpublish-v7.1.1) (2023-03-08)
 
 ### Bug Fixes
