@@ -34,3 +34,5 @@ t.equal(parseField('1234', 'maxsockets', opts), 1234, 'number is parsed')
 t.equal(parseField('0888', 'umask', opts), '0888',
   'invalid umask is not parsed (will warn later)')
 t.equal(parseField('0777', 'umask', opts), 0o777, 'valid umask is parsed')
+
+t.same(parseField('2020', 'before', opts), new Date('2020'), 'date is parsed')
