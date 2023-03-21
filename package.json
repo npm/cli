@@ -191,7 +191,7 @@
     "@npmcli/docs": "^1.0.0",
     "@npmcli/eslint-config": "^4.0.0",
     "@npmcli/fs": "^3.1.0",
-    "@npmcli/git": "^4.0.1",
+    "@npmcli/git": "^4.0.4",
     "@npmcli/mock-registry": "^1.0.0",
     "@npmcli/promise-spawn": "^6.0.2",
     "@npmcli/template-oss": "4.12.0",
