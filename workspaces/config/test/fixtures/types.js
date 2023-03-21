@@ -148,4 +148,5 @@ module.exports = {
   versions: Boolean,
   viewer: String,
   _exit: Boolean,
+  _single: { exotic: 'not part of normal typedefs' },
 }
