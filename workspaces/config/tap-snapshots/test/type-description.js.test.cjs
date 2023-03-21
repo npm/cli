@@ -10,6 +10,11 @@ Object {
   "_exit": Array [
     "boolean value (true or false)",
   ],
+  "_single": Array [
+    Object {
+      "exotic": "not part of normal typedefs",
+    },
+  ],
   "access": Array [
     null,
     "restricted",
