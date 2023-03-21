@@ -653,7 +653,6 @@ graph LR;
   npmcli-docs-->yaml;
   npmcli-fs-->semver;
   npmcli-git-->lru-cache;
-  npmcli-git-->mkdirp;
   npmcli-git-->npm-pick-manifest;
   npmcli-git-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-git-->proc-log;
