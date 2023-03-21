@@ -37,6 +37,8 @@ __pycache__
 .babelrc*
 .nyc_output
 .gitkeep
+*.map
+*.ts
 `
 
 const lsAndRmIgnored = async (dir) => {
