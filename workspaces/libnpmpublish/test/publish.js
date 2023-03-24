@@ -640,7 +640,11 @@ t.test('publish existing package with provenance in gha', async t => {
     entryPoint: workflowPath,
   }
 
-  const { publish } = t.mock('..', { 'ci-info': t.mock('ci-info') })
+  const log = []
+  const { publish } = t.mock('..', {
+    'ci-info': t.mock('ci-info'),
+    'proc-log': { notice: (...msg) => log.push(['notice', ...msg]) },
+  })
   const registry = new MockRegistry({
     tap: t,
     registry: opts.registry,
@@ -670,6 +674,7 @@ t.test('publish existing package with provenance in gha', async t => {
   const rekorURL = 'https://mock.rekor'
   const signature = 'ABC123'
   const b64Cert = Buffer.from(leafCertificate).toString('base64')
+  const logIndex = 2513258
   const uuid =
     '69e5a0c1663ee4452674a5c9d5050d866c2ee31e2faaf79913aea7cc27293cf6'
 
@@ -692,7 +697,7 @@ t.test('publish existing package with provenance in gha', async t => {
       integratedTime: 1654015743,
       logID:
         'c0d23d6ad406973f9559f3ba2d1ca01f84147d8ffc5b8445c224f98b9591801d',
-      logIndex: 2513258,
+      logIndex,
       verification: {
         /* eslint-disable-next-line max-len */
         signedEntryTimestamp: 'MEUCIQD6CD7ZNLUipFoxzmSL/L8Ewic4SRkXN77UjfJZ7d/wAAIgatokSuX9Rg0iWxAgSfHMtcsagtDCQalU5IvXdQ+yLEA=',
@@ -789,6 +794,13 @@ t.test('publish existing package with provenance in gha', async t => {
     rekorURL: rekorURL,
   })
   t.ok(ret, 'publish succeeded')
+  t.match(log, [
+    ['notice', 'publish',
+      'Signed provenance statement with source and build information from GitHub Actions'],
+    ['notice', 'publish',
+      /* eslint-disable-next-line max-len */
+      `Provenance statement published to transparency log: https://search.sigstore.dev/?logIndex=${logIndex}`],
+  ])
 })
 
 t.test('publish new/private package with provenance in gha - no access', async t => {
