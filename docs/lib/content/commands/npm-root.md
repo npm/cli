@@ -28,7 +28,6 @@ echo "Global packages installed in: ${global_node_modules}"
 ### See Also
 
 * [npm prefix](/commands/npm-prefix)
-* [npm bin](/commands/npm-bin)
 * [npm folders](/configuring-npm/folders)
 * [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
