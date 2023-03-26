@@ -122,11 +122,12 @@ after packing it up into a tarball (b).
 
     Examples:
 
-          npm install my-react@npm:react
-          npm install jquery2@npm:jquery@2
-          npm install jquery3@npm:jquery@3
-          npm install npa@npm:npm-package-arg
-
+    ```bash
+    npm install my-react@npm:react
+    npm install jquery2@npm:jquery@2
+    npm install jquery3@npm:jquery@3
+    npm install npa@npm:npm-package-arg
+    ```
 
     `npm install` saves any specified packages into `dependencies` by default.
     Additionally, you can control where and how they get saved with some
