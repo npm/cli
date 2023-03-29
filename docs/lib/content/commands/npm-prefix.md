@@ -36,7 +36,6 @@ npm prefix -g
 ### See Also
 
 * [npm root](/commands/npm-root)
-* [npm bin](/commands/npm-bin)
 * [npm folders](/configuring-npm/folders)
 * [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
