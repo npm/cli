@@ -711,7 +711,9 @@ t.test('usage', async t => {
       config: { viewer: 'man' },
     })
     t.cleanSnapshot = str =>
-      str.replace(npm.config.get('userconfig'), '{USERCONFIG}').replace(npm.npmRoot, '{NPMROOT}')
+      str.replace(npm.config.get('userconfig'), '{USERCONFIG}')
+        .replace(npm.npmRoot, '{NPMROOT}')
+        .replace(`npm@${npm.version}`, 'npm@{VERSION}')
 
     const widths = [0, 1, 10, 24, 40, 41, 75, 76, 90, 100]
     for (const width of widths) {
