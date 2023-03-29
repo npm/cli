@@ -39,7 +39,7 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@9.6.2 {NPMROOT}
+npm@{VERSION} {NPMROOT}
 `
 
 exports[`test/lib/npm.js TAP usage set process.stdout.columns column width 1 > must match snapshot 1`] = `
@@ -91,7 +91,7 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@9.6.2 {NPMROOT}
+npm@{VERSION} {NPMROOT}
 `
 
 exports[`test/lib/npm.js TAP usage set process.stdout.columns column width 10 > must match snapshot 1`] = `
@@ -143,7 +143,7 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@9.6.2 {NPMROOT}
+npm@{VERSION} {NPMROOT}
 `
 
 exports[`test/lib/npm.js TAP usage set process.stdout.columns column width 100 > must match snapshot 1`] = `
@@ -180,7 +180,7 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@9.6.2 {NPMROOT}
+npm@{VERSION} {NPMROOT}
 `
 
 exports[`test/lib/npm.js TAP usage set process.stdout.columns column width 24 > must match snapshot 1`] = `
@@ -232,7 +232,7 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@9.6.2 {NPMROOT}
+npm@{VERSION} {NPMROOT}
 `
 
 exports[`test/lib/npm.js TAP usage set process.stdout.columns column width 40 > must match snapshot 1`] = `
@@ -284,7 +284,7 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@9.6.2 {NPMROOT}
+npm@{VERSION} {NPMROOT}
 `
 
 exports[`test/lib/npm.js TAP usage set process.stdout.columns column width 41 > must match snapshot 1`] = `
@@ -335,7 +335,7 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@9.6.2 {NPMROOT}
+npm@{VERSION} {NPMROOT}
 `
 
 exports[`test/lib/npm.js TAP usage set process.stdout.columns column width 75 > must match snapshot 1`] = `
@@ -372,7 +372,7 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@9.6.2 {NPMROOT}
+npm@{VERSION} {NPMROOT}
 `
 
 exports[`test/lib/npm.js TAP usage set process.stdout.columns column width 76 > must match snapshot 1`] = `
@@ -409,7 +409,7 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@9.6.2 {NPMROOT}
+npm@{VERSION} {NPMROOT}
 `
 
 exports[`test/lib/npm.js TAP usage set process.stdout.columns column width 90 > must match snapshot 1`] = `
@@ -446,5 +446,5 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@9.6.2 {NPMROOT}
+npm@{VERSION} {NPMROOT}
 `
