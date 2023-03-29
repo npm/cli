@@ -1,5 +1,17 @@
 # Changelog
 
+## [9.6.2](https://github.com/npm/cli/compare/v9.6.1...v9.6.2) (2023-03-14)
+
+### Bug Fixes
+
+* [`4622b42`](https://github.com/npm/cli/commit/4622b425751bc6e3eebb9abfa5fc3fbf94890e34) [#6247](https://github.com/npm/cli/pull/6247) add provenance publish notice (#6247) (@bdehamer)
+
+### Dependencies
+
+* [`434b461`](https://github.com/npm/cli/commit/434b461e4c15513817eaec6acfe82c7814789c85) [#6255](https://github.com/npm/cli/pull/6255) `sigstore@1.1.1` (#6255)
+* [Workspace](https://github.com/npm/cli/releases/tag/config-v6.1.4): `@npmcli/config@6.1.4`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v7.1.2): `libnpmpublish@7.1.2`
+
 ## [9.6.1](https://github.com/npm/cli/compare/v9.6.0...v9.6.1) (2023-03-08)
 
 ### Bug Fixes
