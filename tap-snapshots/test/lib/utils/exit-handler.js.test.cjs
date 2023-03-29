@@ -32,8 +32,7 @@ XX error ERR DETAIL Unknown error
 XX verbose exit 1
 XX timing npm Completed in {TIME}ms
 XX verbose code 1
-XX error A complete log of this run can be found in:
-XX error     {CWD}/cache/_logs/{DATE}-debug-0.log
+XX error A complete log of this run can be found in: {CWD}/cache/_logs/{DATE}-debug-0.log
 `
 
 exports[`test/lib/utils/exit-handler.js TAP handles unknown error with logs and debug file > logs 1`] = `
@@ -63,6 +62,5 @@ error ERR DETAIL Unknown error
 verbose exit 1
 timing npm Completed in {TIME}ms
 verbose code 1
-error  A complete log of this run can be found in:
-    {CWD}/cache/_logs/{DATE}-debug-0.log
+error  A complete log of this run can be found in: {CWD}/cache/_logs/{DATE}-debug-0.log
 `
