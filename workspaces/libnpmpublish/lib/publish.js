@@ -97,7 +97,7 @@ const patchManifest = (_manifest, opts) => {
 }
 
 const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
-  const { access, defaultTag, algorithms, provenance } = opts
+  const { access, defaultTag, algorithms, provenance, provenanceBundle } = opts
   const root = {
     _id: manifest.name,
     name: manifest.name,
@@ -138,6 +138,13 @@ const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
     length: tarballData.length,
   }
 
+  if (provenance === true && provenanceBundle) {
+    throw Object.assign(
+      new Error('--provenance and --provenance-bundle cannot be specified at the same time.'),
+      { code: 'EUSAGE' }
+    )
+  }
+
   // Handle case where --provenance flag was set to true
   if (provenance === true) {
     const subject = {
@@ -171,19 +178,19 @@ const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
         { code: 'EUSAGE' }
       )
     }
-    const provenanceBundle = await generateProvenance([subject], opts)
+    const bundle = await generateProvenance([subject], opts)
 
     /* eslint-disable-next-line max-len */
     log.notice('publish', 'Signed provenance statement with source and build information from GitHub Actions')
 
-    const tlogEntry = provenanceBundle?.verificationMaterial?.tlogEntries[0]
+    const tlogEntry = bundle?.verificationMaterial?.tlogEntries[0]
     /* istanbul ignore else */
     if (tlogEntry) {
       const logUrl = `${TLOG_BASE_URL}?logIndex=${tlogEntry.logIndex}`
       log.notice('publish', `Provenance statement published to transparency log: ${logUrl}`)
     }
 
-    const serializedBundle = JSON.stringify(provenanceBundle)
+    const serializedBundle = JSON.stringify(bundle)
     root._attachments[provenanceBundleName] = {
       content_type: provenanceBundle.mediaType,
       data: serializedBundle,
@@ -191,13 +198,13 @@ const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
     }
   }
 
-  if (typeof provenance === 'string') {
+  if (provenanceBundle) {
     // TODO: Validate the bundle. Is there a method to do this in sigstore-js?
-    const serializedBundle = fs.readFileSync(provenance, 'utf-8');
-    const provenanceBundle = JSON.parse(serializedBundle);
+    const serializedBundle = fs.readFileSync(provenanceBundle, 'utf-8');
+    const bundle = JSON.parse(serializedBundle);
 
     root._attachments[provenanceBundleName] = {
-      content_type: provenanceBundle.mediaType,
+      content_type: bundle.mediaType,
       data: serializedBundle,
       length: serializedBundle.length,
     }
