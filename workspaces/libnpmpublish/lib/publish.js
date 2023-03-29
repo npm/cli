@@ -4,6 +4,7 @@ const npa = require('npm-package-arg')
 const log = require('proc-log')
 const semver = require('semver')
 const { URL } = require('url')
+const { sigstore } = require('sigstore')
 const ssri = require('ssri')
 const ciInfo = require('ci-info')
 const fs = require(`fs`)
@@ -199,12 +200,14 @@ const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
   }
 
   if (provenanceBundle) {
-    // TODO: Validate the bundle. Is there a method to do this in sigstore-js?
-    const serializedBundle = fs.readFileSync(provenanceBundle, 'utf-8');
-    const bundle = JSON.parse(serializedBundle);
+    const serializedBundle = fs.readFileSync(provenanceBundle, 'utf-8')
+
+    // Parse and validate the bundle.
+    const bundle = JSON.parse(serializedBundle)
+    const verifiedBundle = sigstore.verify(bundle)
 
     root._attachments[provenanceBundleName] = {
-      content_type: bundle.mediaType,
+      content_type: verifiedBundle.mediaType,
       data: serializedBundle,
       length: serializedBundle.length,
     }
