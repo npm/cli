@@ -124,7 +124,7 @@ module.exports = async (t, { testdir = {}, debug } = {}) => {
       .replace(/\r\n/g, '\n')
       .replace(/ \(in a browser\)/g, '')
       .replace(/^npm@.* /gm, 'npm ')
-      .replace(/^.*debug-[0-9]+.log$/gm, '')
+      .replace(/[0-9TZ_-]*debug-[0-9]+.log$/gm, '{LOG}')
       .replace(/in \d+[ms]+$/gm, 'in {TIME}')
   }
   const log = (...a) => debugLog(cleanOutput(a.join(' ')))
