@@ -87,7 +87,7 @@
     "libnpmteam": "^5.0.3",
     "libnpmversion": "^4.0.2",
     "make-fetch-happen": "^11.0.3",
-    "minimatch": "^7.4.2",
+    "minimatch": "^7.4.3",
     "minipass": "^4.2.5",
     "minipass-pipeline": "^1.2.4",
     "ms": "^2.1.2",
