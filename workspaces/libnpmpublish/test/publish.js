@@ -668,7 +668,13 @@ t.test('publish existing package with provenance in gha', async t => {
   const fulcioURL = 'https://mock.fulcio'
   const leafCertificate = `-----BEGIN CERTIFICATE-----\nabc\n-----END CERTIFICATE-----\n`
   const rootCertificate = `-----BEGIN CERTIFICATE-----\nxyz\n-----END CERTIFICATE-----\n`
-  const certificate = [leafCertificate, rootCertificate].join()
+  const certificateResponse = {
+    signedCertificateEmbeddedSct: {
+      chain: {
+        certificates: [leafCertificate, rootCertificate],
+      },
+    },
+  }
 
   // Data for mocking Rekor upload
   const rekorURL = 'https://mock.rekor'
@@ -749,14 +755,18 @@ t.test('publish existing package with provenance in gha', async t => {
   }).reply(200, { value: idToken })
 
   const fulcioSrv = MockRegistry.tnock(t, fulcioURL)
-  fulcioSrv.matchHeader('Accept', 'application/pem-certificate-chain')
-    .matchHeader('Content-Type', 'application/json')
-    .matchHeader('Authorization', `Bearer ${idToken}`)
-    .post('/api/v1/signingCert', {
-      publicKey: { content: /.+/i },
-      signedEmailAddress: /.+/i,
+  fulcioSrv.matchHeader('Content-Type', 'application/json')
+    .post('/api/v2/signingCert', {
+      credentials: { oidcIdentityToken: idToken },
+      publicKeyRequest: {
+        publicKey: {
+          algorithm: 'ECDSA',
+          content: /.+/i,
+        },
+        proofOfPossession: /.+/i,
+      },
     })
-    .reply(200, certificate)
+    .reply(200, certificateResponse)
 
   const rekorSrv = MockRegistry.tnock(t, rekorURL)
   rekorSrv
