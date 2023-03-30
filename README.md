@@ -38,6 +38,7 @@ If you're looking to manage multiple versions of **`node`** &/or **`npm`**, cons
 * [**`asdf-nodejs`**](https://github.com/asdf-vm/asdf-nodejs)
 * [**`nvm-windows`**](https://github.com/coreybutler/nvm-windows)
 * [**`fnm`**](https://github.com/Schniz/fnm)
+* [**`rtx`**](https://github.com/jdxcode/rtx)
 
 ### Usage
 
