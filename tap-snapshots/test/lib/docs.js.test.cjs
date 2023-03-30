@@ -88,7 +88,7 @@ Object {
   "upgrade": "update",
   "urn": "run-script",
   "v": "view",
-  "verison": "version",
+  "version": "version",
   "why": "explain",
   "x": "exec",
 }
@@ -3863,14 +3863,14 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--no-workspaces-update] [--include-workspace-root]
 
-alias: verison
+alias: version
 
 Run "npm help version" for more info
 
 \`\`\`bash
 npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]
 
-alias: verison
+alias: version
 \`\`\`
 
 #### \`allow-same-version\`

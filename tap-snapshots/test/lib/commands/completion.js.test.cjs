@@ -143,7 +143,7 @@ Array [
       x
       why
       la
-      verison
+      version
       ic
       innit
       in
