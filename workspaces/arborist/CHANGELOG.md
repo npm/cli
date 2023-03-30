@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.2.6](https://github.com/npm/cli/compare/arborist-v6.2.5...arborist-v6.2.6) (2023-03-30)
+
+### Dependencies
+
+* [`ea12627`](https://github.com/npm/cli/commit/ea12627ec8f3455ada2b011bc6ff84980b2a5b30) [#6275](https://github.com/npm/cli/pull/6275) `minimatch@7.4.2`
+
 ## [6.2.5](https://github.com/npm/cli/compare/arborist-v6.2.4...arborist-v6.2.5) (2023-03-08)
 
 ### Bug Fixes
