@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.1.5](https://github.com/npm/cli/compare/config-v6.1.4...config-v6.1.5) (2023-03-30)
+
+### Bug Fixes
+
+* [`6a4bcba`](https://github.com/npm/cli/commit/6a4bcbaaf12c15041c73914fb3a24389a62f7436) [#6275](https://github.com/npm/cli/pull/6275) clean up man sorting (@wraithgar)
+
 ## [6.1.4](https://github.com/npm/cli/compare/config-v6.1.3...config-v6.1.4) (2023-03-14)
 
 ### Bug Fixes

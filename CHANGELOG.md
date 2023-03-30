@@ -1,5 +1,48 @@
 # Changelog
 
+## [9.6.3](https://github.com/npm/cli/compare/v9.6.2...v9.6.3) (2023-03-30)
+
+### Bug Fixes
+
+* [`829503b`](https://github.com/npm/cli/commit/829503b804f31b63a405ece48ea265b641b43392) [#6304](https://github.com/npm/cli/pull/6304) don't break up log message across lines (@wraithgar)
+* [`1435fcf`](https://github.com/npm/cli/commit/1435fcf1e351a888b006993c2f6ce73fc533638c) [#6304](https://github.com/npm/cli/pull/6304) do less work loading ./lib/npm.js (@wraithgar)
+* [`09b58e4`](https://github.com/npm/cli/commit/09b58e4cabc2202aab878c89fc6930e4a085fd3a) [#6284](https://github.com/npm/cli/pull/6284) make all color output use an npm instance of chalk (#6284) (@lukekarrys)
+* [`e252532`](https://github.com/npm/cli/commit/e25253250717601be59e76a5dcf965441fc99caa) [#6283](https://github.com/npm/cli/pull/6283) do less work looking up commands (#6283) (@wraithgar)
+* [`6a4bcba`](https://github.com/npm/cli/commit/6a4bcbaaf12c15041c73914fb3a24389a62f7436) [#6275](https://github.com/npm/cli/pull/6275) clean up man sorting (@wraithgar)
+* [`8a96b65`](https://github.com/npm/cli/commit/8a96b650ac3e3a1da9f4f50b975dda7847d35916) [#6275](https://github.com/npm/cli/pull/6275) ignore ts and map files (@wraithgar)
+* [`94d2b39`](https://github.com/npm/cli/commit/94d2b39dfdf423e4a391baa2910e8537b1ba46c4) [#6271](https://github.com/npm/cli/pull/6271) Do not log warnings about log cleanup when logs_max=0 (#6271) (@jmealo)
+* [`2def359`](https://github.com/npm/cli/commit/2def359c93bc6b2f79443107dcb13b0d7c1b9865) [#6277](https://github.com/npm/cli/pull/6277) updated ebadplatform messaging to be generated based on the error (#6277) (@nlf)
+
+### Documentation
+
+* [`1e2eb81`](https://github.com/npm/cli/commit/1e2eb8150bf31488b6f591b74144bc0c4709be2c) [#6311](https://github.com/npm/cli/pull/6311) replace version manager list with a github search (#6311) (@wraithgar)
+* [`9d2be4e`](https://github.com/npm/cli/commit/9d2be4e1f84e2bd4b79ce2cdc42e338d946867a8) [#6289](https://github.com/npm/cli/pull/6289) remove npm bin link (#6289) (@KevinRouchut)
+
+### Dependencies
+
+* [`e652dbd`](https://github.com/npm/cli/commit/e652dbddd1625ea7b774729b0f1f349bb3e7af89) [#6308](https://github.com/npm/cli/pull/6308) `minimatch@7.4.3` (#6308)
+* [`01986d1`](https://github.com/npm/cli/commit/01986d13d640e4f532e5c0b66cb2dee01a1462f9) [#6307](https://github.com/npm/cli/pull/6307) `sigstore@1.2.0` (#6307)
+* [`ea12627`](https://github.com/npm/cli/commit/ea12627ec8f3455ada2b011bc6ff84980b2a5b30) [#6275](https://github.com/npm/cli/pull/6275) `minimatch@7.4.2`
+* [`ec3e020`](https://github.com/npm/cli/commit/ec3e020871419b37f13a92a42d0b90bda549e09c) [#6275](https://github.com/npm/cli/pull/6275) `glob@9.3.1`
+* [`952fbed`](https://github.com/npm/cli/commit/952fbed699713cb720d24ca2d9762de4d9ddb83f) [#6275](https://github.com/npm/cli/pull/6275) `read-package-json@6.0.1`
+* [`dd43d30`](https://github.com/npm/cli/commit/dd43d305cd108e39fbcbad9400d7db8c8b02fb3c) [#6275](https://github.com/npm/cli/pull/6275) `parse-conflict-json@3.0.1`
+* [`d5ce7ca`](https://github.com/npm/cli/commit/d5ce7ca40fec1a3aac47d1edca6f4030ff6134a4) [#6275](https://github.com/npm/cli/pull/6275) `npm-install-checks@6.1.0`
+* [`704cd1e`](https://github.com/npm/cli/commit/704cd1ebaaa94d14a1ce5bcb5b45dc6f359edd13) [#6275](https://github.com/npm/cli/pull/6275) `nopt@7.1.0`
+* [`a6da22a`](https://github.com/npm/cli/commit/a6da22ad3262c5deb0bdd623c2160ab20efaef28) [#6275](https://github.com/npm/cli/pull/6275) `ignore-walk@6.0.2`
+* [`55955fd`](https://github.com/npm/cli/commit/55955fd090938b86b1872dfa986d3d30bfda87de) [#6275](https://github.com/npm/cli/pull/6275) `cacache@17.0.5`
+* [`839b670`](https://github.com/npm/cli/commit/839b670c93b19aae9b95b5fd7fe687a5f532628b) [#6275](https://github.com/npm/cli/pull/6275) `@npmcli/map-workspaces@3.0.3`
+* [`9a7b8e8`](https://github.com/npm/cli/commit/9a7b8e8105460ca76ce825707961060243987653) [#6275](https://github.com/npm/cli/pull/6275) `@npmcli/git@4.0.4`
+* [`57c0a55`](https://github.com/npm/cli/commit/57c0a55d509c4cd725e5b4a0e049aa114969cb2b) [#6275](https://github.com/npm/cli/pull/6275) npm update
+* [`74c80f5`](https://github.com/npm/cli/commit/74c80f54a7e6345f6751732dc4cb2c2923947343) [#6275](https://github.com/npm/cli/pull/6275) `minipass@4.2.5`
+* [`b174c90`](https://github.com/npm/cli/commit/b174c908f03ade15a8b57ff59a0736c9ff79a313) [#6275](https://github.com/npm/cli/pull/6275) `graceful-fs@4.2.11`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.2.6): `@npmcli/arborist@6.2.6`
+* [Workspace](https://github.com/npm/cli/releases/tag/config-v6.1.5): `@npmcli/config@6.1.5`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v5.0.14): `libnpmdiff@5.0.14`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v5.0.14): `libnpmexec@5.0.14`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v4.0.14): `libnpmfund@4.0.14`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v5.0.14): `libnpmpack@5.0.14`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v7.1.3): `libnpmpublish@7.1.3`
+
 ## [9.6.2](https://github.com/npm/cli/compare/v9.6.1...v9.6.2) (2023-03-14)
 
 ### Bug Fixes

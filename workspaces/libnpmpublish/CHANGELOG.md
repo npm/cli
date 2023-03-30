@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.1.3](https://github.com/npm/cli/compare/libnpmpublish-v7.1.2...libnpmpublish-v7.1.3) (2023-03-30)
+
+### Bug Fixes
+
+* [`3cf6f0d`](https://github.com/npm/cli/commit/3cf6f0d6fcb9a9fd069b7178a223ddd1cfaf5f2b) [#6287](https://github.com/npm/cli/pull/6287) update provenance transparency log link (#6287) (@bdehamer)
+
 ## [7.1.2](https://github.com/npm/cli/compare/libnpmpublish-v7.1.1...libnpmpublish-v7.1.2) (2023-03-14)
 
 ### Bug Fixes
