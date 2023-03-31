@@ -19,6 +19,18 @@ const validatePath = (data, k, val) => {
   return noptValidatePath(data, k, val)
 }
 
+class BooleanOrString {}
+
+const validateBooleanOrString = (data, k, val) => {
+  if (typeof val === 'boolean' || val === 'true' || val === 'false') {
+    return nopt.typeDefs.Boolean.validate(data, k, val)
+  }
+  if (typeof val === 'string') {
+    return nopt.typeDefs.String.validate(data, k, val)
+  }
+  return false
+}
+
 // add descriptions so we can validate more usefully
 module.exports = {
   ...nopt.typeDefs,
@@ -52,6 +64,11 @@ module.exports = {
   Date: {
     ...nopt.typeDefs.Date,
     description: 'valid Date string',
+  },
+  BooleanOrString: {
+    type: BooleanOrString,
+    validate: validateBooleanOrString,
+    description: 'boolean value (true or false) or a string',
   },
 }
 
