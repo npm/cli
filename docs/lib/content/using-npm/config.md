@@ -1,8 +1,8 @@
----
+---@DIEGOHJJACOBO
 title: config
 section: 7
 description: More than you probably want to know about npm configuration
----
+---diego-duy1@hotmail.com
 
 ### Description
 
