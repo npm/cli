@@ -2210,8 +2210,6 @@ Usage:
 npm ci
 
 Options:
-[-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer|--save-bundle]
-[-E|--save-exact] [-g|--global]
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
@@ -2229,9 +2227,6 @@ npm ci
 aliases: clean-install, ic, install-clean, isntall-clean
 \`\`\`
 
-#### \`save\`
-#### \`save-exact\`
-#### \`global\`
 #### \`install-strategy\`
 #### \`legacy-bundling\`
 #### \`global-style\`
@@ -2811,8 +2806,6 @@ Usage:
 npm install-ci-test
 
 Options:
-[-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer|--save-bundle]
-[-E|--save-exact] [-g|--global]
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
@@ -2830,9 +2823,6 @@ npm install-ci-test
 aliases: cit, clean-install-test, sit
 \`\`\`
 
-#### \`save\`
-#### \`save-exact\`
-#### \`global\`
 #### \`install-strategy\`
 #### \`legacy-bundling\`
 #### \`global-style\`
