@@ -169,11 +169,7 @@ class Config {
     if (!this.loaded) {
       throw new Error('call config.load() before reading values')
     }
-    // TODO single use?
-    return this.#find(key)
-  }
 
-  #find (key) {
     // have to look in reverse order
     const entries = [...this.data.entries()]
     for (let i = entries.length - 1; i > -1; i--) {
@@ -210,8 +206,11 @@ class Config {
       throw new Error('invalid config location param: ' + where)
     }
     this.#checkDeprecated(key)
-    const { data } = this.data.get(where)
+    const { data, raw } = this.data.get(where)
     data[key] = val
+    if (['global', 'user', 'project'].includes(where)) {
+      raw[key] = val
+    }
 
     // this is now dirty, the next call to this.valid will have to check it
     this.data.get(where)[_valid] = null
@@ -244,7 +243,11 @@ class Config {
     if (!confTypes.has(where)) {
       throw new Error('invalid config location param: ' + where)
     }
-    delete this.data.get(where).data[key]
+    const { data, raw } = this.data.get(where)
+    delete data[key]
+    if (['global', 'user', 'project'].includes(where)) {
+      delete raw[key]
+    }
   }
 
   async load () {
@@ -537,6 +540,7 @@ class Config {
   }
 
   #loadObject (obj, where, source, er = null) {
+    // obj is the raw data read from the file
     const conf = this.data.get(where)
     if (conf.source) {
       const m = `double-loading "${where}" configs from ${source}, ` +
@@ -724,7 +728,9 @@ class Config {
       }
     }
 
-    const iniData = ini.stringify(conf.data).trim() + '\n'
+    // We need the actual raw data before we called parseField so that we are
+    // saving the same content back to the file
+    const iniData = ini.stringify(conf.raw).trim() + '\n'
     if (!iniData.trim()) {
       // ignore the unlink error (eg, if file doesn't exist)
       await unlink(conf.source).catch(er => {})
@@ -873,7 +879,7 @@ class ConfigData {
   #raw = null
   constructor (parent) {
     this.#data = Object.create(parent && parent.data)
-    this.#raw = null
+    this.#raw = {}
     this[_valid] = true
   }
 
@@ -897,7 +903,7 @@ class ConfigData {
   }
 
   set loadError (e) {
-    if (this[_loadError] || this.#raw) {
+    if (this[_loadError] || (Object.keys(this.#raw).length)) {
       throw new Error('cannot set ConfigData loadError after load')
     }
     this[_loadError] = e
@@ -908,7 +914,7 @@ class ConfigData {
   }
 
   set raw (r) {
-    if (this.#raw || this[_loadError]) {
+    if (Object.keys(this.#raw).length || this[_loadError]) {
       throw new Error('cannot set ConfigData raw after load')
     }
     this.#raw = r

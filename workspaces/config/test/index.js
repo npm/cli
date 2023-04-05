@@ -1317,3 +1317,26 @@ t.test('workspaces', async (t) => {
     t.match(logs[0], ['info', /^found workspace root at/], 'logged info about workspace root')
   })
 })
+
+t.test('env-replaced config from files is not clobbered when saving', async (t) => {
+  const path = t.testdir()
+  const opts = {
+    shorthands: {},
+    argv: ['node', __filename, `--userconfig=${path}/.npmrc`],
+    env: { TEST: 'test value' },
+    definitions: {
+      registry: { default: 'https://registry.npmjs.org/' },
+    },
+    npmPath: process.cwd(),
+  }
+  const c = new Config(opts)
+  await c.load()
+  c.set('test', '${TEST}', 'user')
+  await c.save('user')
+  const d = new Config(opts)
+  await d.load()
+  d.set('other', '${SOMETHING}', 'user')
+  await d.save('user')
+  const rc = readFileSync(`${path}/.npmrc`, 'utf8')
+  t.match(rc, 'test=${TEST}', '${TEST} is present, not parsed')
+})
