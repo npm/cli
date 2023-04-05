@@ -1,5 +1,24 @@
 # Changelog
 
+## [9.6.4](https://github.com/npm/cli/compare/v9.6.3...v9.6.4) (2023-04-05)
+
+### Documentation
+
+* [`54795a3`](https://github.com/npm/cli/commit/54795a3554691e97b369baac714cb43f4342af8a) [#6312](https://github.com/npm/cli/pull/6312) filter archives out of version manager search (#6312) (@ljharb)
+* [`530c285`](https://github.com/npm/cli/commit/530c285cfd381006996e15e12d68c6c30fb3a4b2) [#6306](https://github.com/npm/cli/pull/6306) remove reference to npm-packlist (#6306) (@staff0rd)
+
+### Dependencies
+
+* [`85935ac`](https://github.com/npm/cli/commit/85935ac24d3cb0df867d4f9f901c4b152d92bc49) [#6325](https://github.com/npm/cli/pull/6325) `ssri@10.0.2` (#6325)
+* [`f1388b4`](https://github.com/npm/cli/commit/f1388b4c5aac0617893b546ff9c764f05d20bc07) [#6317](https://github.com/npm/cli/pull/6317) npm update
+* [`7dd0129`](https://github.com/npm/cli/commit/7dd012958f392d66974d59a9fb0a200a16822906) [#6317](https://github.com/npm/cli/pull/6317) `glob@9.3.2`
+* [`deca335`](https://github.com/npm/cli/commit/deca335ed47697e6e9cb4d67c84cfff8ae95ca5c) [#6317](https://github.com/npm/cli/pull/6317) `promise-call-limit@1.0.2`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.2.7): `@npmcli/arborist@6.2.7`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v5.0.15): `libnpmdiff@5.0.15`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v5.0.15): `libnpmexec@5.0.15`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v4.0.15): `libnpmfund@4.0.15`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v5.0.15): `libnpmpack@5.0.15`
+
 ## [9.6.3](https://github.com/npm/cli/compare/v9.6.2...v9.6.3) (2023-03-30)
 
 ### Bug Fixes

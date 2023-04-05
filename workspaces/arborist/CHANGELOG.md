@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.2.7](https://github.com/npm/cli/compare/arborist-v6.2.6...arborist-v6.2.7) (2023-04-05)
+
+### Dependencies
+
+* [`f1388b4`](https://github.com/npm/cli/commit/f1388b4c5aac0617893b546ff9c764f05d20bc07) [#6317](https://github.com/npm/cli/pull/6317) npm update
+* [`deca335`](https://github.com/npm/cli/commit/deca335ed47697e6e9cb4d67c84cfff8ae95ca5c) [#6317](https://github.com/npm/cli/pull/6317) `promise-call-limit@1.0.2`
+
 ## [6.2.6](https://github.com/npm/cli/compare/arborist-v6.2.5...arborist-v6.2.6) (2023-03-30)
 
 ### Dependencies
