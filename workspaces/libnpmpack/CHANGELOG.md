@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.0.15](https://github.com/npm/cli/compare/libnpmpack-v5.0.14...libnpmpack-v5.0.15) (2023-04-05)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.2.7): `@npmcli/arborist@6.2.7`
+
 ## [5.0.14](https://github.com/npm/cli/compare/libnpmpack-v5.0.13...libnpmpack-v5.0.14) (2023-03-30)
 
 ### Dependencies
