@@ -294,8 +294,6 @@ jobs:
               knownFailures.push('fastify')
               // esbuild barfs on node 20.0.0-pre
               knownFailures.push('serialport')
-              // is-core-module fails on test/reporters
-              knownFailures.push('is-core-module')
             }
 
             // this is a manually updated list of packages that are flaky
@@ -335,7 +333,7 @@ jobs:
                 }
               }
 
-              const env = { ...meta.envVar }
+              const env = { ...meta.envVar, NODE_VERSION }
               matrix.push({
                 package,
                 version: context.version,
@@ -455,28 +453,28 @@ jobs:
             rm -f .taprc.bak
           fi
 
-          commandCount=$(echo '$\{{ toJSON(matrix.commands) }}' | jq -r 'length')
-          if [[ $commandCount -eq 1 ]]; then
-            COMMAND=$(echo '$\{{ toJSON(matrix.commands) }}' | jq -r '.[0]')
-            $COMMAND
-            STEPEXIT=$?
-            if [[ $STEPEXIT -ne 0 ]]; then
-              if [[ "$\{{ matrix.flaky }}" == "true" || "$\{{ matrix.knownFailure }}" == "true" ]]; then
-                echo "::warning ::$COMMAND failed, exit $STEPEXIT"
-                exit 0
-              fi
-            fi
-            exit $STEPEXIT
-          fi
-
           for row in $(echo '$\{{ toJSON(matrix.commands) }}' | jq -r '.[] | @base64'); do
+            FAILCOUNT=0
             COMMAND=$(echo "$row" | base64 --decode)
             echo "::group::$COMMAND"
             $COMMAND
             STEPEXIT=$?
             if [[ $STEPEXIT -ne 0 ]]; then
-              if [[ "$\{{ matrix.flaky }}" == "true" || "$\{{ matrix.knownFailure }}" == "true" ]]; then
+              FAILCOUNT=1
+              if [[ "$\{{ matrix.knownFailure }}" == "true" || "$NODE_VERSION" == "nightly" ]]; then
                 echo "::warning ::$COMMAND failed, exit: $STEPEXIT"
+              elif [[ "$\{{ matrix.flaky }}" ]]; then
+                while [[ $STEPEXIT -ne 0 && $FAILCOUNT -lt 3 ]]; do
+                  $COMMAND
+                  STEPEXIT=$?
+                  if [[ $STEPEXIT -ne 0 ]]; then
+                    ((FAILCOUNT=FAILCOUNT+1))
+                  fi
+                done
+
+                if [[ $STEPEXIT -ne 0 ]]; then
+                  echo "::warning ::$COMMAND still failing after $FAILCOUNT attempts, exit: $STEPEXIT"
+                fi
               else
                 FINALEXIT=$STEPEXIT
                 echo "::error ::$COMMAND failed, exit: $STEPEXIT"
@@ -486,9 +484,10 @@ jobs:
           done
           exit $FINALEXIT
       - name: Set conclusion
+        env: $\{{ matrix.env }}
         run: |
           EXIT=1
-          if [[ "$\{{ steps.command.outcome }}" == "success" || "$\{{ matrix.flaky }}" == "true" || "$\{{ matrix.knownFailure }}" == "true" ]]; then
+          if [[ "$\{{ steps.command.outcome }}" == "success" || "$\{{ matrix.flaky }}" == "true" || "$\{{ matrix.knownFailure }}" == "true" || $NODE_VERSION == "nightly"]]; then
             EXIT=0
           fi
           exit $EXIT
