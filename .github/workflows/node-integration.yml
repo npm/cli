@@ -296,6 +296,8 @@ jobs:
               knownFailures.push('fastify')
               // esbuild barfs on node 20.0.0-pre
               knownFailures.push('serialport')
+              // is-core-module fails on test/reporters
+              knownFailures.push('is-core-module')
             }
 
             // this is a manually updated list of packages that are flaky
