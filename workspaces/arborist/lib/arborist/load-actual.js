@@ -4,7 +4,7 @@ const { relative, dirname, resolve, join, normalize } = require('path')
 
 const rpj = require('read-package-json-fast')
 const { readdirScoped } = require('@npmcli/fs')
-const walkUp = require('walk-up-path')
+const { walkUp } = require('walk-up-path')
 const ancestorPath = require('common-ancestor-path')
 const treeCheck = require('../tree-check.js')
 

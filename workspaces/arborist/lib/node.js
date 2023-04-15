@@ -39,7 +39,7 @@ const npa = require('npm-package-arg')
 const debug = require('./debug.js')
 const gatherDepSet = require('./gather-dep-set.js')
 const treeCheck = require('./tree-check.js')
-const walkUp = require('walk-up-path')
+const { walkUp } = require('walk-up-path')
 
 const { resolve, relative, dirname, basename } = require('path')
 const util = require('util')
