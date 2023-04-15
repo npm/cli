@@ -143,8 +143,20 @@ const fetch = async (url, opts) => {
         const location = headers.get('Location')
 
         // HTTP fetch step 5.3
-        const locationURL = location === null ? null
-          : (new URL(location, request.url)).toString()
+        let locationURL = null
+        try {
+          locationURL = location === null ? null : new URL(location, request.url).toString()
+        } catch {
+          // error here can only be invalid URL in Location: header
+          // do not throw when options.redirect == manual
+          // let the user extract the errorneous redirect URL
+          if (request.redirect !== 'manual') {
+            /* eslint-disable-next-line max-len */
+            reject(new FetchError(`uri requested responds with an invalid redirect URL: ${location}`, 'invalid-redirect'))
+            finalize()
+            return
+          }
+        }
 
         // HTTP fetch step 5.5
         if (request.redirect === 'error') {

@@ -265,6 +265,7 @@ class Request extends Body {
       secureProtocol,
       servername,
       sessionIdContext,
+      timeout: request.timeout,
     }
   }
 }
