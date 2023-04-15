@@ -1,6 +1,9 @@
 {
   "name": "minipass",
-  "version": "4.2.5",
+  "version": "4.2.8",
+  "publishConfig": {
+    "tag": "legacy-v4"
+  },
   "description": "minimal implementation of a PassThrough stream",
   "main": "./index.js",
   "module": "./index.mjs",
