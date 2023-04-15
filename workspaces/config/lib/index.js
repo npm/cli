@@ -1,5 +1,5 @@
 // TODO: set the scope config from package.json or explicit cli config
-const walkUp = require('walk-up-path')
+const { walkUp } = require('walk-up-path')
 const ini = require('ini')
 const nopt = require('nopt')
 const mapWorkspaces = require('@npmcli/map-workspaces')

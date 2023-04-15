@@ -43,7 +43,7 @@
     "proc-log": "^3.0.0",
     "read-package-json-fast": "^3.0.2",
     "semver": "^7.3.5",
-    "walk-up-path": "^1.0.0"
+    "walk-up-path": "^3.0.1"
   },
   "engines": {
     "node": "^14.17.0 || ^16.13.0 || >=18.0.0"
