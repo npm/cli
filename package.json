@@ -109,7 +109,7 @@
     "read": "^2.1.0",
     "read-package-json": "^6.0.1",
     "read-package-json-fast": "^3.0.2",
-    "semver": "^7.3.8",
+    "semver": "^7.5.0",
     "ssri": "^10.0.3",
     "tar": "^6.1.13",
     "text-table": "~0.2.0",
