@@ -3,7 +3,7 @@ strategy:
   matrix:
     nodeVersion:
       - 18
-      - 19
+      - 20
       - nightly
 uses: ./.github/workflows/node-integration.yml
 with:
