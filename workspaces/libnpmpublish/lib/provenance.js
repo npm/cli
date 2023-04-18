@@ -1,15 +1,34 @@
 const { sigstore } = require('sigstore')
+const ci = require('ci-info')
+const { env } = process
 
 const INTOTO_PAYLOAD_TYPE = 'application/vnd.in-toto+json'
 const INTOTO_STATEMENT_TYPE = 'https://in-toto.io/Statement/v0.1'
 const SLSA_PREDICATE_TYPE = 'https://slsa.dev/provenance/v0.2'
 
-const BUILDER_ID = 'https://github.com/actions/runner'
-const BUILD_TYPE_PREFIX = 'https://github.com/npm/cli/gha'
-const BUILD_TYPE_VERSION = 'v2'
+const GITHUB_BUILDER_ID = 'https://github.com/actions/runner'
+const GITHUB_BUILD_TYPE_PREFIX = 'https://github.com/npm/cli/gha'
+const GITHUB_BUILD_TYPE_VERSION = 'v2'
 
 const generateProvenance = async (subject, opts) => {
-  const { env } = process
+  var provenance
+  switch (true) {
+    case ci.GITHUB_ACTIONS:
+      provenance = githubProvenance(subject)
+      break
+    case ci.GITLAB:
+      provenance = gitlabProvenance(subject)
+      break
+    default:
+      throw Object.assign(
+        new Error('Unsupported provenance type ' + ci.name),
+        { code: 'EUSAGE' }
+      )
+  }
+  return sigstore.attest(provenance, INTOTO_PAYLOAD_TYPE, opts)
+}
+
+const githubProvenance = (subject) => {
   /* istanbul ignore next - not covering missing env var case */
   const [workflowPath] = (env.GITHUB_WORKFLOW_REF || '')
     .replace(env.GITHUB_REPOSITORY + '/', '')
@@ -19,8 +38,8 @@ const generateProvenance = async (subject, opts) => {
     subject,
     predicateType: SLSA_PREDICATE_TYPE,
     predicate: {
-      buildType: `${BUILD_TYPE_PREFIX}/${BUILD_TYPE_VERSION}`,
-      builder: { id: BUILDER_ID },
+      buildType: `${GITHUB_BUILD_TYPE_PREFIX}/${GITHUB_BUILD_TYPE_VERSION}`,
+      builder: { id: GITHUB_BUILDER_ID },
       invocation: {
         configSource: {
           uri: `git+${env.GITHUB_SERVER_URL}/${env.GITHUB_REPOSITORY}@${env.GITHUB_REF}`,
@@ -63,7 +82,142 @@ const generateProvenance = async (subject, opts) => {
     },
   }
 
-  return sigstore.attest(Buffer.from(JSON.stringify(payload)), INTOTO_PAYLOAD_TYPE, opts)
+  return Buffer.from(JSON.stringify(payload))
+}
+
+const GITLAB_BUILD_TYPE_PREFIX = 'https://github.com/npm/cli/gitlab'
+const GITLAB_BUILD_TYPE_VERSION = 'v1alpha1'
+
+const gitlabProvenance = (subject, opts) => {
+  // TODO: pull values from authenticated JWT rather than environment variables.
+  const payload = {
+    _type: INTOTO_STATEMENT_TYPE,
+    subject,
+    predicateType: SLSA_PREDICATE_TYPE,
+    predicate: {
+      buildType: `${GITLAB_BUILD_TYPE_PREFIX}/${GITLAB_BUILD_TYPE_VERSION}`,
+      builder: { id: `${env.CI_PROJECT_URL}/-/runners/${env.CI_RUNNER_ID}` },
+      invocation: {
+        configSource: {
+          uri: `git+${env.CI_PROJECT_URL}@${env.CI_BUILD_REF}`,
+          digest: {
+            sha1: env.CI_COMMIT_SHA,
+          },
+          entryPoint: env.CI_JOB_NAME,
+        },
+        parameters: {
+          CI: env.CI,
+          CI_API_GRAPHQL_URL: env.CI_API_GRAPHQL_URL,
+          CI_API_V4_URL: env.CI_API_V4_URL,
+          CI_BUILD_BEFORE_SHA: env.CI_BUILD_BEFORE_SHA,
+          CI_BUILD_ID: env.CI_BUILD_ID,
+          CI_BUILD_NAME: env.CI_BUILD_NAME,
+          CI_BUILD_REF: env.CI_BUILD_REF,
+          CI_BUILD_REF_NAME: env.CI_BUILD_REF_NAME,
+          CI_BUILD_REF_SLUG: env.CI_BUILD_REF_SLUG,
+          CI_BUILD_STAGE: env.CI_BUILD_STAGE,
+          CI_COMMIT_AUTHOR: env.CI_COMMIT_AUTHOR,
+          CI_COMMIT_BEFORE_SHA: env.CI_COMMIT_BEFORE_SHA,
+          CI_COMMIT_BRANCH: env.CI_COMMIT_BRANCH,
+          CI_COMMIT_DESCRIPTION: env.CI_COMMIT_DESCRIPTION,
+          CI_COMMIT_MESSAGE: env.CI_COMMIT_MESSAGE,
+          CI_COMMIT_REF_NAME: env.CI_COMMIT_REF_NAME,
+          CI_COMMIT_REF_PROTECTED: env.CI_COMMIT_REF_PROTECTED,
+          CI_COMMIT_REF_SLUG: env.CI_COMMIT_REF_SLUG,
+          CI_COMMIT_SHA: env.CI_COMMIT_SHA,
+          CI_COMMIT_SHORT_SHA: env.CI_COMMIT_SHORT_SHA,
+          CI_COMMIT_TIMESTAMP: env.CI_COMMIT_TIMESTAMP,
+          CI_COMMIT_TITLE: env.CI_COMMIT_TITLE,
+          CI_CONFIG_PATH: env.CI_CONFIG_PATH,
+          CI_DEFAULT_BRANCH: env.CI_DEFAULT_BRANCH,
+          CI_DEPENDENCY_PROXY_DIRECT_GROUP_IMAGE_PREFIX:
+            env.CI_DEPENDENCY_PROXY_DIRECT_GROUP_IMAGE_PREFIX,
+          CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX: env.CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX,
+          CI_DEPENDENCY_PROXY_SERVER: env.CI_DEPENDENCY_PROXY_SERVER,
+          CI_DEPENDENCY_PROXY_USER: env.CI_DEPENDENCY_PROXY_USER,
+          CI_JOB_ID: env.CI_JOB_ID,
+          CI_JOB_NAME: env.CI_JOB_NAME,
+          CI_JOB_NAME_SLUG: env.CI_JOB_NAME_SLUG,
+          CI_JOB_STAGE: env.CI_JOB_STAGE,
+          CI_JOB_STARTED_AT: env.CI_JOB_STARTED_AT,
+          CI_JOB_URL: env.CI_JOB_URL,
+          CI_NODE_TOTAL: env.CI_NODE_TOTAL,
+          CI_PAGES_DOMAIN: env.CI_PAGES_DOMAIN,
+          CI_PAGES_URL: env.CI_PAGES_URL,
+          CI_PIPELINE_CREATED_AT: env.CI_PIPELINE_CREATED_AT,
+          CI_PIPELINE_ID: env.CI_PIPELINE_ID,
+          CI_PIPELINE_IID: env.CI_PIPELINE_IID,
+          CI_PIPELINE_SOURCE: env.CI_PIPELINE_SOURCE,
+          CI_PIPELINE_URL: env.CI_PIPELINE_URL,
+          CI_PROJECT_CLASSIFICATION_LABEL: env.CI_PROJECT_CLASSIFICATION_LABEL,
+          CI_PROJECT_DESCRIPTION: env.CI_PROJECT_DESCRIPTION,
+          CI_PROJECT_ID: env.CI_PROJECT_ID,
+          CI_PROJECT_NAME: env.CI_PROJECT_NAME,
+          CI_PROJECT_NAMESPACE: env.CI_PROJECT_NAMESPACE,
+          CI_PROJECT_NAMESPACE_ID: env.CI_PROJECT_NAMESPACE_ID,
+          CI_PROJECT_PATH: env.CI_PROJECT_PATH,
+          CI_PROJECT_PATH_SLUG: env.CI_PROJECT_PATH_SLUG,
+          CI_PROJECT_REPOSITORY_LANGUAGES: env.CI_PROJECT_REPOSITORY_LANGUAGES,
+          CI_PROJECT_ROOT_NAMESPACE: env.CI_PROJECT_ROOT_NAMESPACE,
+          CI_PROJECT_TITLE: env.CI_PROJECT_TITLE,
+          CI_PROJECT_URL: env.CI_PROJECT_URL,
+          CI_PROJECT_VISIBILITY: env.CI_PROJECT_VISIBILITY,
+          CI_REGISTRY: env.CI_REGISTRY,
+          CI_REGISTRY_IMAGE: env.CI_REGISTRY_IMAGE,
+          CI_REGISTRY_USER: env.CI_REGISTRY_USER,
+          CI_REPOSITORY_URL: env.CI_REPOSITORY_URL,
+          CI_RUNNER_DESCRIPTION: env.CI_RUNNER_DESCRIPTION,
+          CI_RUNNER_ID: env.CI_RUNNER_ID,
+          CI_RUNNER_TAGS: env.CI_RUNNER_TAGS,
+          CI_SERVER_HOST: env.CI_SERVER_HOST,
+          CI_SERVER_NAME: env.CI_SERVER_NAME,
+          CI_SERVER_PORT: env.CI_SERVER_PORT,
+          CI_SERVER_PROTOCOL: env.CI_SERVER_PROTOCOL,
+          CI_SERVER_REVISION: env.CI_SERVER_REVISION,
+          CI_SERVER_SHELL_SSH_HOST: env.CI_SERVER_SHELL_SSH_HOST,
+          CI_SERVER_SHELL_SSH_PORT: env.CI_SERVER_SHELL_SSH_PORT,
+          CI_SERVER_URL: env.CI_SERVER_URL,
+          CI_SERVER_VERSION: env.CI_SERVER_VERSION,
+          CI_SERVER_VERSION_MAJOR: env.CI_SERVER_VERSION_MAJOR,
+          CI_SERVER_VERSION_MINOR: env.CI_SERVER_VERSION_MINOR,
+          CI_SERVER_VERSION_PATCH: env.CI_SERVER_VERSION_PATCH,
+          CI_TEMPLATE_REGISTRY_HOST: env.CI_TEMPLATE_REGISTRY_HOST,
+          GITLAB_CI: env.GITLAB_CI,
+          GITLAB_FEATURES: env.GITLAB_FEATURES,
+          GITLAB_USER_EMAIL: env.GITLAB_USER_EMAIL,
+          GITLAB_USER_ID: env.GITLAB_USER_ID,
+          GITLAB_USER_LOGIN: env.GITLAB_USER_LOGIN,
+          GITLAB_USER_NAME: env.GITLAB_USER_NAME,
+          RUNNER_GENERATE_ARTIFACTS_METADATA: env.RUNNER_GENERATE_ARTIFACTS_METADATA,
+        },
+        environment: {
+          name: env.CI_RUNNER_DESCRIPTION,
+          architecture: env.CI_RUNNER_EXECUTABLE_ARCH,
+          job: {
+            id: env.CI_JOB_ID,
+          },
+        },
+      },
+      metadata: {
+        buildInvocationId: `${env.CI_JOB_URL}`,
+        completeness: {
+          parameters: true,
+          environment: true,
+          materials: false,
+        },
+        reproducible: false,
+      },
+      materials: [
+        {
+          uri: `git+${env.CI_PROJECT_URL}@${env.CI_BUILD_REF}`,
+          digest: {
+            sha1: env.CI_COMMIT_SHA,
+          },
+        },
+      ],
+    },
+  }
+  return Buffer.from(JSON.stringify(payload))
 }
 
 module.exports = {
