@@ -55,8 +55,6 @@ npm ERR! Usage:
 npm ERR! npm ci
 npm ERR! 
 npm ERR! Options:
-npm ERR! [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer|--save-bundle]
-npm ERR! [-E|--save-exact] [-g|--global]
 npm ERR! [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 npm ERR! [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 npm ERR! [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
