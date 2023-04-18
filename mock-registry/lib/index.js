@@ -36,7 +36,7 @@ class MockRegistry {
         // mocked with a 404, 500, etc.
         // XXX: this is opt-in currently because it breaks some existing CLI
         // tests. We should work towards making this the default for all tests.
-        t.fail(`Unmatched request: ${JSON.stringify(req.options, null, 2)}`)
+        t.fail(`Unmatched request: ${JSON.stringify(req, null, 2)}`)
       }
       if (debug) {
         console.error('NO MATCH', t.name, req.options ? req.options : req.path)
