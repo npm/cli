@@ -772,6 +772,7 @@ graph LR;
   tuf-js-->make-fetch-happen;
   tuf-js-->tufjs-models["@tufjs/models"];
   tufjs-models-->minimatch;
+  tufjs-models-->tufjs-canonical-json["@tufjs/canonical-json"];
   unique-filename-->unique-slug;
   unique-slug-->imurmurhash;
   validate-npm-package-license-->spdx-correct;
