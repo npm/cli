@@ -1,6 +1,7 @@
 
 const { join } = require('path')
 const { CWD, run, pkg, fs, git, npm } = require('./util.js')
+const ciInfo = require('ci-info')
 
 const checkout = () => git('checkout', 'node_modules/')
 
@@ -13,7 +14,9 @@ const main = async ({ packageLock }) => {
   await checkout()
   await npm('i', '--ignore-scripts', '--no-audit', '--no-fund', packageLock && '--package-lock')
   await npm('rebuild', '--ignore-scripts')
-  await npm('run', 'dependencies', '--ignore-scripts')
+  if (!ciInfo.isCI) {
+    await npm('run', 'dependencies', '--ignore-scripts')
+  }
 }
 
 run(main).catch(checkout)

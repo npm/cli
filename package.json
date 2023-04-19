@@ -205,7 +205,7 @@
     "tap": "^16.3.4"
   },
   "scripts": {
-    "dependencies": "node scripts/bundle-and-gitignore-deps.js && node scripts/dependency-graph.js",
+    "dependencies": "node scripts/bundle-and-gitignore-deps.js && node scripts/update-cli-repos.js && node scripts/dependency-graph.js",
     "dumpconf": "env | grep npm | sort | uniq",
     "licenses": "licensee --production --errors-only",
     "test": "tap",
