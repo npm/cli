@@ -6,13 +6,10 @@ bin-links
 cacache
 cli
 cmd-shim
-config
 create-oss
 disparity-colors
-doctornpm
 documentation
 eslint-config
-exec
 fs
 fs-minipass
 gauge
@@ -29,13 +26,11 @@ map-workspaces
 metavuln-calculator
 minify-registry-metadata
 minipass-fetch
-move-file
 mute-stream
 name-from-folder
-nock-registry
+node
 node-gyp
 node-semver
-node-tar
 node-which
 nopt
 normalize-package-data
@@ -50,7 +45,6 @@ npm-packlist
 npm-pick-manifest
 npm-profile
 npm-registry-fetch
-npm-registry-mock
 npm-user-validate
 npmlog
 package-json
@@ -65,7 +59,7 @@ read
 read-cmd-shim
 read-package-json
 read-package-json-fast
-readdir-scoped-modules
+release-please
 rfcs
 run-script
 ssri
