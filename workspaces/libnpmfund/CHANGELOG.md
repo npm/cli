@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.0.16](https://github.com/npm/cli/compare/libnpmfund-v4.0.15...libnpmfund-v4.0.16) (2023-04-19)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.2.8): `@npmcli/arborist@6.2.8`
+
 ## [4.0.15](https://github.com/npm/cli/compare/libnpmfund-v4.0.14...libnpmfund-v4.0.15) (2023-04-05)
 
 ### Dependencies

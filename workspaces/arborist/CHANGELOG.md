@@ -1,5 +1,16 @@
 # Changelog
 
+## [6.2.8](https://github.com/npm/cli/compare/arborist-v6.2.7...arborist-v6.2.8) (2023-04-19)
+
+### Bug Fixes
+
+* [`82879f6`](https://github.com/npm/cli/commit/82879f69c72681f636be73d13c4464e35f258954) [#6225](https://github.com/npm/cli/pull/6225) lazy loading of arborist and pacote (#6225) (@wraithgar)
+
+### Dependencies
+
+* [`3fa9542`](https://github.com/npm/cli/commit/3fa9542d7f3c0123cb3c49a40f6d5b7bc8d857a5) [#6363](https://github.com/npm/cli/pull/6363) `semver@7.5.0`
+* [`357cc29`](https://github.com/npm/cli/commit/357cc29a335e684391c7b840019223e555919406) [#6363](https://github.com/npm/cli/pull/6363) `walk-up-path@3.0.1`
+
 ## [6.2.7](https://github.com/npm/cli/compare/arborist-v6.2.6...arborist-v6.2.7) (2023-04-05)
 
 ### Dependencies
