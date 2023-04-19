@@ -8,7 +8,6 @@ cli
 cmd-shim
 config
 create-oss
-dezalgo
 disparity-colors
 doctornpm
 documentation
@@ -21,8 +20,6 @@ git
 graphec
 hosted-git-info
 ignore-walk
-infer-owner
-inflight
 ini
 init-package-json
 installed-package-contents
@@ -76,9 +73,7 @@ stafftools
 statusboard
 tap-nock
 template-oss
-treeverse
 unique-filename
 unique-slug
 validate-npm-package-name
-wrappy
 write-file-atomic
