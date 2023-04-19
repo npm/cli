@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.0.16](https://github.com/npm/cli/compare/libnpmexec-v5.0.15...libnpmexec-v5.0.16) (2023-04-19)
+
+### Bug Fixes
+
+* [`33dc428`](https://github.com/npm/cli/commit/33dc4285fd8c698c539faae10fe1bf76ceedb6b1) [#6374](https://github.com/npm/cli/pull/6374) account for npx package-name with no spec (@wraithgar)
+
+### Dependencies
+
+* [`3fa9542`](https://github.com/npm/cli/commit/3fa9542d7f3c0123cb3c49a40f6d5b7bc8d857a5) [#6363](https://github.com/npm/cli/pull/6363) `semver@7.5.0`
+* [`357cc29`](https://github.com/npm/cli/commit/357cc29a335e684391c7b840019223e555919406) [#6363](https://github.com/npm/cli/pull/6363) `walk-up-path@3.0.1`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.2.8): `@npmcli/arborist@6.2.8`
+
 ## [5.0.15](https://github.com/npm/cli/compare/libnpmexec-v5.0.14...libnpmexec-v5.0.15) (2023-04-05)
 
 ### Dependencies
