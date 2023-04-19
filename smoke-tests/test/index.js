@@ -18,6 +18,16 @@ t.test('basic', async t => {
           'package.json': { name: 'promise-all-reject-late', version: '5.0.0' },
           'index.js': 'module.exports = null',
         },
+        'exec-test-1.0.0': {
+          'package.json': { name: 'exec-test', version: '1.0.0', bin: { 'exec-test': 'run.sh' } },
+          'index.js': 'module.exports = "1.0.0"',
+          'run.sh': 'echo 1.0.0',
+        },
+        'exec-test-1.0.1': {
+          'package.json': { name: 'exec-test', version: '1.0.1', bin: { 'exec-test': 'run.sh' } },
+          'index.js': 'module.exports = "1.0.1"',
+          'run.sh': 'echo 1.0.1',
+        },
       },
     },
   })
@@ -331,5 +341,45 @@ t.test('basic', async t => {
     const err = await npm('ci', '--loglevel=error').catch(e => e)
     t.equal(err.code, 1)
     t.matchSnapshot(err.stderr, 'should throw mismatch deps in lock file error')
+  })
+
+  await t.test('npm exec', async t => {
+    if (process.platform === 'win32') {
+      t.skip()
+      return
+    }
+    // First run finds package
+    {
+      const packument = registry.packument({
+        name: 'exec-test', version: '1.0.0', bin: { 'exec-test': 'run.sh' },
+      })
+      const manifest = registry.manifest({ name: 'exec-test', packuments: [packument] })
+      await registry.package({
+        times: 2,
+        manifest,
+        tarballs: {
+          '1.0.0': join(paths.root, 'packages', 'exec-test-1.0.0'),
+        },
+      })
+
+      const o = await npm('exec', 'exec-test')
+      t.match(o.trim(), '1.0.0')
+    }
+    // Second run finds newer version
+    {
+      const packument = registry.packument({
+        name: 'exec-test', version: '1.0.1', bin: { 'exec-test': 'run.sh' },
+      })
+      const manifest = registry.manifest({ name: 'exec-test', packuments: [packument] })
+      await registry.package({
+        times: 2,
+        manifest,
+        tarballs: {
+          '1.0.1': join(paths.root, 'packages', 'exec-test-1.0.1'),
+        },
+      })
+      const o = await npm('exec', 'exec-test')
+      t.match(o.trim(), '1.0.1')
+    }
   })
 })
