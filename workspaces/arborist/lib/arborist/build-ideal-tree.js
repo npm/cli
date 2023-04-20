@@ -1147,58 +1147,63 @@ This is a one-time fix-up, please be patient...
       : node.package.bundleDependencies
     const bundled = new Set(bd || [])
 
-    return [...node.edgesOut.values()]
-      .filter(edge => {
-        // If it's included in a bundle, we take whatever is specified.
-        if (bundled.has(edge.name)) {
-          return false
-        }
+    const problems = []
+    for (const edge of node.edgesOut.values()) {
+      // If it's included in a bundle, we take whatever is specified.
+      if (bundled.has(edge.name)) {
+        continue
+      }
 
-        // If it's already been logged as a load failure, skip it.
-        if (edge.to && this[_loadFailures].has(edge.to)) {
-          return false
-        }
+      // If it's already been logged as a load failure, skip it.
+      if (edge.to && this[_loadFailures].has(edge.to)) {
+        continue
+      }
 
-        // If it's shrinkwrapped, we use what the shrinkwap wants.
-        if (edge.to && edge.to.inShrinkwrap) {
-          return false
-        }
+      // If it's shrinkwrapped, we use what the shrinkwap wants.
+      if (edge.to && edge.to.inShrinkwrap) {
+        continue
+      }
 
-        // If the edge has no destination, that's a problem, unless
-        // if it's peerOptional and not explicitly requested.
-        if (!edge.to) {
-          return edge.type !== 'peerOptional' ||
-            this[_explicitRequests].has(edge)
+      // If the edge has no destination, that's a problem, unless
+      // if it's peerOptional and not explicitly requested.
+      if (!edge.to) {
+        if (edge.type !== 'peerOptional' ||
+          this[_explicitRequests].has(edge)) {
+          problems.push(edge)
         }
+        continue
+      }
 
-        // If the edge has an error, there's a problem.
-        if (!edge.valid) {
-          return true
-        }
+      // If the edge has an error, there's a problem.
+      if (!edge.valid) {
+        problems.push(edge)
+        continue
+      }
 
-        // If the edge is a workspace, and it's valid, leave it alone
-        if (edge.to.isWorkspace) {
-          return false
-        }
+      // If the edge is a workspace, and it's valid, leave it alone
+      if (edge.to.isWorkspace) {
+        continue
+      }
 
-        // user explicitly asked to update this package by name, problem
-        if (this[_updateNames].includes(edge.name)) {
-          return true
-        }
+      // user explicitly asked to update this package by name, problem
+      if (this[_updateNames].includes(edge.name)) {
+        problems.push(edge)
+        continue
+      }
 
-        // fixing a security vulnerability with this package, problem
-        if (this.auditReport && this.auditReport.isVulnerable(edge.to)) {
-          return true
-        }
+      // fixing a security vulnerability with this package, problem
+      if (this.auditReport && this.auditReport.isVulnerable(edge.to)) {
+        problems.push(edge)
+        continue
+      }
 
-        // user has explicitly asked to install this package, problem
-        if (this[_explicitRequests].has(edge)) {
-          return true
-        }
-
-        // No problems!
-        return false
-      })
+      // user has explicitly asked to install this package, problem
+      if (this[_explicitRequests].has(edge)) {
+        problems.push(edge)
+        continue
+      }
+    }
+    return problems
   }
 
   async [_fetchManifest] (spec) {
