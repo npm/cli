@@ -1120,6 +1120,32 @@ t.test('publish existing package with provenance in gitlab', async t => {
   ])
 })
 
+t.test('gitlab provenance, no token available', async t => {
+  mockGlobals(t, {
+    'process.env': {
+      CI: true,
+      GITLAB_CI: true,
+    },
+  })
+  const manifest = {
+    name: '@npmcli/libnpmpublish-test',
+    version: '1.0.0',
+    description: 'test libnpmpublish package',
+  }
+  const { publish } = t.mock('..', { 'ci-info': t.mock('ci-info') })
+  await t.rejects(
+    publish(manifest, Buffer.from(''), {
+      ...opts,
+      access: null,
+      provenance: true,
+    }),
+    {
+      message: /requires "SIGSTORE_ID_TOKEN"/,
+      code: 'EUSAGE',
+    }
+  )
+})
+
 t.test('unsupported provenance type', async t => {
   await t.rejects(generateProvenance(null, null), { code: 'EUSAGE' })
 })

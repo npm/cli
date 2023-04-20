@@ -144,24 +144,29 @@ const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
       digest: { sha512: integrity.sha512[0].hexDigest() },
     }
 
-    switch (true) {
-      case ciInfo.GITHUB_ACTIONS:
-        // Ensure that the GHA OIDC token is available
-        if (!process.env.ACTIONS_ID_TOKEN_REQUEST_URL) {
-          throw Object.assign(
-            /* eslint-disable-next-line max-len */
-            new Error('Provenance generation in GitHub Actions requires "write" access to the "id-token" permission'),
-            { code: 'EUSAGE' }
-          )
-        }
-        break
-      case ciInfo.GITLAB:
-        break
-      default:
+    if (ciInfo.GITHUB_ACTIONS) {
+      // Ensure that the GHA OIDC token is available
+      if (!process.env.ACTIONS_ID_TOKEN_REQUEST_URL) {
         throw Object.assign(
-          new Error('Automatic provenance generation not supported for provider: ' + ciInfo.name),
+          /* eslint-disable-next-line max-len */
+          new Error('Provenance generation in GitHub Actions requires "write" access to the "id-token" permission'),
           { code: 'EUSAGE' }
         )
+      }
+    } else if (ciInfo.GITLAB) {
+      // Ensure that the Sigstore OIDC token is available
+      if (!process.env.SIGSTORE_ID_TOKEN) {
+        throw Object.assign(
+          /* eslint-disable-next-line max-len */
+          new Error('Provenance generation in GitLab CI requires "SIGSTORE_ID_TOKEN" with "sigstore" audience to be present in "id_tokens"'),
+          { code: 'EUSAGE' }
+        )
+      }
+    } else {
+      throw Object.assign(
+        new Error('Automatic provenance generation not supported for provider: ' + ciInfo.name),
+        { code: 'EUSAGE' }
+      )
     }
 
     const visibility =
