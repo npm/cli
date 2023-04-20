@@ -663,9 +663,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     for (const node of this.idealTree.inventory.values()) {
       // XXX add any invalid edgesOut to the queue
       if (this[_updateNames].includes(node.name) &&
-      !node.isTop &&
-      !node.inDepBundle &&
-      !node.inShrinkwrap) {
+        !node.isTop && !node.inDepBundle && !node.inShrinkwrap) {
         for (const edge of node.edgesIn) {
           this.addTracker('idealTree', edge.from.name, edge.from.location)
           this[_depsQueue].push(edge.from)
@@ -1478,14 +1476,21 @@ This is a one-time fix-up, please be patient...
     const needPrune = metaFromDisk && (mutateTree || flagsSuspect)
     if (this[_prune] && needPrune) {
       this[_idealTreePrune]()
+      for (const node of this.idealTree.inventory.values()) {
+        if (node.extraneous) {
+          node.parent = null
+        }
+      }
     }
 
     process.emit('timeEnd', 'idealTree:fixDepFlags')
   }
 
   [_idealTreePrune] () {
-    for (const node of this.idealTree.inventory.filter(n => n.extraneous)) {
-      node.parent = null
+    for (const node of this.idealTree.inventory.values()) {
+      if (node.extraneous) {
+        node.parent = null
+      }
     }
   }
 
