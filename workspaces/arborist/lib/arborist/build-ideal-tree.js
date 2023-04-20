@@ -70,7 +70,6 @@ const _resolvedAdd = Symbol.for('resolvedAdd')
 const _queueNamedUpdates = Symbol('queueNamedUpdates')
 const _queueVulnDependents = Symbol('queueVulnDependents')
 const _avoidRange = Symbol('avoidRange')
-const _shouldUpdateNode = Symbol('shouldUpdateNode')
 const resetDepFlags = require('../reset-dep-flags.js')
 const _loadFailures = Symbol('loadFailures')
 const _pruneFailedOptional = Symbol('pruneFailedOptional')
@@ -663,20 +662,16 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     // calls rather than walking over everything in the tree.
     for (const node of this.idealTree.inventory.values()) {
       // XXX add any invalid edgesOut to the queue
-      if (this[_shouldUpdateNode](node)) {
+      if (this[_updateNames].includes(node.name) &&
+      !node.isTop &&
+      !node.inDepBundle &&
+      !node.inShrinkwrap) {
         for (const edge of node.edgesIn) {
           this.addTracker('idealTree', edge.from.name, edge.from.location)
           this[_depsQueue].push(edge.from)
         }
       }
     }
-  }
-
-  [_shouldUpdateNode] (node) {
-    return this[_updateNames].includes(node.name) &&
-      !node.isTop &&
-      !node.inDepBundle &&
-      !node.inShrinkwrap
   }
 
   async [_inflateAncientLockfile] () {
