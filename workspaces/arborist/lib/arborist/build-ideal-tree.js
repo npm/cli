@@ -335,7 +335,13 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         // the depsQueue so that we'll fix it later
         depth({
           tree,
-          getChildren: (node) => [...node.edgesOut.values()].map(edge => edge.to),
+          getChildren: (node) => {
+            const children = []
+            for (const edge of node.edgesOut.values()) {
+              children.push(edge.to)
+            }
+            return children
+          },
           filter: node => node,
           visit: node => {
             for (const edge of node.edgesOut.values()) {
