@@ -453,7 +453,8 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     if (this[_global] && (this[_updateAll] || this[_updateNames].length)) {
       const nm = resolve(this.path, 'node_modules')
       const paths = await readdirScoped(nm).catch(() => [])
-      for (const name of paths.map((p) => p.replace(/\\/g, '/'))) {
+      for (const p of paths) {
+        const name = p.replace(/\\/g, '/')
         tree.package.dependencies = tree.package.dependencies || {}
         const updateName = this[_updateNames].includes(name)
         if (this[_updateAll] || updateName) {
