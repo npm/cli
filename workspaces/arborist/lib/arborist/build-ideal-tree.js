@@ -98,6 +98,34 @@ const _explicitRequests = Symbol('explicitRequests')
 const _global = Symbol.for('global')
 const _idealTreePrune = Symbol.for('idealTreePrune')
 
+// Push items in, pop them sorted by depth and then path
+class DepsQueue {
+  #deps = []
+  #sorted = true
+
+  get length () {
+    return this.#deps.length
+  }
+
+  push (item) {
+    if (!this.#deps.includes(item)) {
+      this.#sorted = false
+      this.#deps.push(item)
+    }
+  }
+
+  pop () {
+    if (!this.#sorted) {
+      // sort physically shallower deps up to the front of the queue, because
+      // they'll affect things deeper in, then alphabetical
+      this.#deps.sort((a, b) =>
+        (a.depth - b.depth) || localeCompare(a.path, b.path))
+      this.#sorted = true
+    }
+    return this.#deps.shift()
+  }
+}
+
 module.exports = cls => class IdealTreeBuilder extends cls {
   constructor (options) {
     super(options)
@@ -140,7 +168,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     this[_explicitRequests] = new Set()
     this[_preferDedupe] = false
     this[_depsSeen] = new Set()
-    this[_depsQueue] = []
+    this[_depsQueue] = new DepsQueue()
     this[_currentDep] = null
     this[_updateNames] = []
     this[_updateAll] = false
@@ -790,12 +818,7 @@ This is a one-time fix-up, please be patient...
       return this[_resolveLinks]()
     }
 
-    // sort physically shallower deps up to the front of the queue,
-    // because they'll affect things deeper in, then alphabetical
-    this[_depsQueue].sort((a, b) =>
-      (a.depth - b.depth) || localeCompare(a.path, b.path))
-
-    const node = this[_depsQueue].shift()
+    const node = this[_depsQueue].pop()
     const bd = node.package.bundleDependencies
     const hasBundle = bd && Array.isArray(bd) && bd.length
     const { hasShrinkwrap } = node
