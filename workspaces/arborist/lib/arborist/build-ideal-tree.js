@@ -661,13 +661,13 @@ module.exports = cls => class IdealTreeBuilder extends cls {
 
     // XXX this could be faster by doing a series of inventory.query('name')
     // calls rather than walking over everything in the tree.
-    const set = this.idealTree.inventory
-      .filter(n => this[_shouldUpdateNode](n))
-    // XXX add any invalid edgesOut to the queue
-    for (const node of set) {
-      for (const edge of node.edgesIn) {
-        this.addTracker('idealTree', edge.from.name, edge.from.location)
-        this[_depsQueue].push(edge.from)
+    for (const node of this.idealTree.inventory.values()) {
+      // XXX add any invalid edgesOut to the queue
+      if (this[_shouldUpdateNode](node)) {
+        for (const edge of node.edgesIn) {
+          this.addTracker('idealTree', edge.from.name, edge.from.location)
+          this[_depsQueue].push(edge.from)
+        }
       }
     }
   }
