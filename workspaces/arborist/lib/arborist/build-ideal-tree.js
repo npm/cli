@@ -1027,9 +1027,12 @@ This is a one-time fix-up, please be patient...
           // if it fails at this point, though, dont' worry because it
           // may well be an optional dep that has gone missing.  it'll
           // fail later anyway.
-          promises.push(...this[_problemEdges](placed).map(e =>
-            this[_fetchManifest](npa.resolve(e.name, e.spec, fromPath(placed, e)))
-              .catch(er => null)))
+          for (const e of this[_problemEdges](placed)) {
+            promises.push(
+              this[_fetchManifest](npa.resolve(e.name, e.spec, fromPath(placed, e)))
+                .catch(er => null)
+            )
+          }
         },
       })
     }
