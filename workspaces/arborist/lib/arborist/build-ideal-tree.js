@@ -938,9 +938,11 @@ This is a one-time fix-up, please be patient...
       tasks.push({ edge, dep })
     }
 
-    const placeDeps = tasks
-      .sort((a, b) => localeCompare(a.edge.name, b.edge.name))
-      .map(({ edge, dep }) => new PlaceDep({
+    const placeDeps = tasks.sort((a, b) => localeCompare(a.edge.name, b.edge.name))
+
+    const promises = []
+    for (const { edge, dep } of placeDeps) {
+      const pd = new PlaceDep({
         edge,
         dep,
 
@@ -953,10 +955,7 @@ This is a one-time fix-up, please be patient...
         preferDedupe: this[_preferDedupe],
         strictPeerDeps: this[_strictPeerDeps],
         updateNames: this[_updateNames],
-      }))
-
-    const promises = []
-    for (const pd of placeDeps) {
+      })
       // placing a dep is actually a tree of placing the dep itself
       // and all of its peer group that aren't already met by the tree
       depth({
