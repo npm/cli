@@ -17,7 +17,7 @@ const realpath = require('../realpath.js')
 // public symbols
 const _changePath = Symbol.for('_changePath')
 const _global = Symbol.for('global')
-const _loadWorkspaces = Symbol.for('loadWorkspaces')
+const _setWorkspaces = Symbol.for('setWorkspaces')
 const _rpcache = Symbol.for('realpathCache')
 const _stcache = Symbol.for('statCache')
 
@@ -167,7 +167,7 @@ module.exports = cls => class ActualLoader extends cls {
           await new this.constructor({ ...this.options }).loadVirtual({
             root: this[_actualTree],
           })
-          await this[_loadWorkspaces](this[_actualTree])
+          await this[_setWorkspaces](this[_actualTree])
 
           this[_transplant](root)
           return this[_actualTree]
@@ -183,7 +183,7 @@ module.exports = cls => class ActualLoader extends cls {
     }
 
     await this[_loadFSTree](this[_actualTree])
-    await this[_loadWorkspaces](this[_actualTree])
+    await this[_setWorkspaces](this[_actualTree])
 
     // if there are workspace targets without Link nodes created, load
     // the targets, so that we know what they are.

@@ -37,7 +37,7 @@ const mixins = [
   require('./deduper.js'),
   require('./audit.js'),
   require('./build-ideal-tree.js'),
-  require('./load-workspaces.js'),
+  require('./set-workspaces.js'),
   require('./load-actual.js'),
   require('./load-virtual.js'),
   require('./rebuild.js'),

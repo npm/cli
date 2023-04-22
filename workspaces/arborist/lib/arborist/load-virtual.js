@@ -21,11 +21,11 @@ const assignBundles = Symbol('assignBundles')
 const loadRoot = Symbol('loadRoot')
 const loadNode = Symbol('loadVirtualNode')
 const loadLink = Symbol('loadVirtualLink')
-const loadWorkspaces = Symbol.for('loadWorkspaces')
 const flagsSuspect = Symbol.for('flagsSuspect')
 const reCalcDepFlags = Symbol('reCalcDepFlags')
 const checkRootEdges = Symbol('checkRootEdges')
 const rootOptionProvided = Symbol('rootOptionProvided')
+const setWorkspaces = Symbol.for('setWorkspaces')
 
 const depsToEdges = (type, deps) =>
   Object.entries(deps).map(d => [type, ...d])
@@ -80,7 +80,7 @@ module.exports = cls => class VirtualLoader extends cls {
   async [loadRoot] (s) {
     const pj = this.path + '/package.json'
     const pkg = await rpj(pj).catch(() => s.data.packages['']) || {}
-    return this[loadWorkspaces](this[loadNode]('', pkg, true))
+    return this[setWorkspaces](this[loadNode]('', pkg, true))
   }
 
   async [loadFromShrinkwrap] (s, root) {

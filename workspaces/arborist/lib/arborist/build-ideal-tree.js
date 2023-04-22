@@ -39,7 +39,7 @@ const resetDepFlags = require('../reset-dep-flags.js')
 const _updateAll = Symbol.for('updateAll')
 const _flagsSuspect = Symbol.for('flagsSuspect')
 const _workspaces = Symbol.for('workspaces')
-const _loadWorkspaces = Symbol.for('loadWorkspaces')
+const _setWorkspaces = Symbol.for('setWorkspaces')
 const _updateNames = Symbol.for('updateNames')
 const _resolvedAdd = Symbol.for('resolvedAdd')
 const _usePackageLock = Symbol.for('usePackageLock')
@@ -286,7 +286,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         root = await this.#rootNodeFromPackage({})
       }
     }
-    return this[_loadWorkspaces](root)
+    return this[_setWorkspaces](root)
       // ok to not have a virtual tree.  probably initial install.
       // When updating all, we load the shrinkwrap, but don't bother
       // to build out the full virtual tree from it, since we'll be
