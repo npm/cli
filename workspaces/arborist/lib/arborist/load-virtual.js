@@ -14,23 +14,16 @@ const calcDepFlags = require('../calc-dep-flags.js')
 const rpj = require('read-package-json-fast')
 const treeCheck = require('../tree-check.js')
 
-const loadFromShrinkwrap = Symbol('loadFromShrinkwrap')
-const resolveNodes = Symbol('resolveNodes')
-const resolveLinks = Symbol('resolveLinks')
-const assignBundles = Symbol('assignBundles')
-const loadRoot = Symbol('loadRoot')
-const loadNode = Symbol('loadVirtualNode')
-const loadLink = Symbol('loadVirtualLink')
 const flagsSuspect = Symbol.for('flagsSuspect')
-const reCalcDepFlags = Symbol('reCalcDepFlags')
-const checkRootEdges = Symbol('checkRootEdges')
-const rootOptionProvided = Symbol('rootOptionProvided')
 const setWorkspaces = Symbol.for('setWorkspaces')
 
 const depsToEdges = (type, deps) =>
   Object.entries(deps).map(d => [type, ...d])
 
 module.exports = cls => class VirtualLoader extends cls {
+
+  #rootOptionProvided
+
   constructor (options) {
     super(options)
 
@@ -50,7 +43,7 @@ module.exports = cls => class VirtualLoader extends cls {
     options = { ...this.options, ...options }
 
     if (options.root && options.root.meta) {
-      await this[loadFromShrinkwrap](options.root.meta, options.root)
+      await this.#loadFromShrinkwrap(options.root.meta, options.root)
       return treeCheck(this.virtualTree)
     }
 
@@ -67,24 +60,24 @@ module.exports = cls => class VirtualLoader extends cls {
     // when building the ideal tree, we pass in a root node to this function
     // otherwise, load it from the root package json or the lockfile
     const {
-      root = await this[loadRoot](s),
+      root = await this.#loadRoot(s),
     } = options
 
-    this[rootOptionProvided] = options.root
+    this.#rootOptionProvided = options.root
 
-    await this[loadFromShrinkwrap](s, root)
+    await this.#loadFromShrinkwrap(s, root)
     root.assertRootOverrides()
     return treeCheck(this.virtualTree)
   }
 
-  async [loadRoot] (s) {
+  async #loadRoot (s) {
     const pj = this.path + '/package.json'
     const pkg = await rpj(pj).catch(() => s.data.packages['']) || {}
-    return this[setWorkspaces](this[loadNode]('', pkg, true))
+    return this[setWorkspaces](this.#loadNode('', pkg, true))
   }
 
-  async [loadFromShrinkwrap] (s, root) {
-    if (!this[rootOptionProvided]) {
+  async #loadFromShrinkwrap (s, root) {
+    if (!this.#rootOptionProvided) {
       // root is never any of these things, but might be a brand new
       // baby Node object that never had its dep flags calculated.
       root.extraneous = false
@@ -96,41 +89,37 @@ module.exports = cls => class VirtualLoader extends cls {
       this[flagsSuspect] = true
     }
 
-    this[checkRootEdges](s, root)
+    this.#checkRootEdges(s, root)
     root.meta = s
     this.virtualTree = root
-    const { links, nodes } = this[resolveNodes](s, root)
-    await this[resolveLinks](links, nodes)
+    const { links, nodes } = this.#resolveNodes(s, root)
+    await this.#resolveLinks(links, nodes)
     if (!(s.originalLockfileVersion >= 2)) {
-      this[assignBundles](nodes)
+      this.#assignBundles(nodes)
     }
     if (this[flagsSuspect]) {
-      this[reCalcDepFlags](nodes.values())
+      // reset all dep flags
+      // can't use inventory here, because virtualTree might not be root
+      for (const node of nodes.values()) {
+        if (node.isRoot || node === this.#rootOptionProvided) {
+          continue
+        }
+        node.extraneous = true
+        node.dev = true
+        node.optional = true
+        node.devOptional = true
+        node.peer = true
+      }
+      calcDepFlags(this.virtualTree, !this.#rootOptionProvided)
     }
     return root
-  }
-
-  [reCalcDepFlags] (nodes) {
-    // reset all dep flags
-    // can't use inventory here, because virtualTree might not be root
-    for (const node of nodes) {
-      if (node.isRoot || node === this[rootOptionProvided]) {
-        continue
-      }
-      node.extraneous = true
-      node.dev = true
-      node.optional = true
-      node.devOptional = true
-      node.peer = true
-    }
-    calcDepFlags(this.virtualTree, !this[rootOptionProvided])
   }
 
   // check the lockfile deps, and see if they match.  if they do not
   // then we have to reset dep flags at the end.  for example, if the
   // user manually edits their package.json file, then we need to know
   // that the idealTree is no longer entirely trustworthy.
-  [checkRootEdges] (s, root) {
+  #checkRootEdges (s, root) {
     // loaded virtually from tree, no chance of being out of sync
     // ancient lockfiles are critically damaged by this process,
     // so we need to just hope for the best in those cases.
@@ -195,7 +184,7 @@ module.exports = cls => class VirtualLoader extends cls {
   }
 
   // separate out link metadatas, and create Node objects for nodes
-  [resolveNodes] (s, root) {
+  #resolveNodes (s, root) {
     const links = new Map()
     const nodes = new Map([['', root]])
     for (const [location, meta] of Object.entries(s.data.packages)) {
@@ -207,7 +196,7 @@ module.exports = cls => class VirtualLoader extends cls {
       if (meta.link) {
         links.set(location, meta)
       } else {
-        nodes.set(location, this[loadNode](location, meta))
+        nodes.set(location, this.#loadNode(location, meta))
       }
     }
     return { links, nodes }
@@ -215,12 +204,12 @@ module.exports = cls => class VirtualLoader extends cls {
 
   // links is the set of metadata, and nodes is the map of non-Link nodes
   // Set the targets to nodes in the set, if we have them (we might not)
-  async [resolveLinks] (links, nodes) {
+  async #resolveLinks (links, nodes) {
     for (const [location, meta] of links.entries()) {
       const targetPath = resolve(this.path, meta.resolved)
       const targetLoc = relpath(this.path, targetPath)
       const target = nodes.get(targetLoc)
-      const link = this[loadLink](location, targetLoc, target, meta)
+      const link = this.#loadLink(location, targetLoc, target, meta)
       nodes.set(location, link)
       nodes.set(targetLoc, link.target)
 
@@ -236,7 +225,7 @@ module.exports = cls => class VirtualLoader extends cls {
     }
   }
 
-  [assignBundles] (nodes) {
+  #assignBundles (nodes) {
     for (const [location, node] of nodes) {
       // Skip assignment of parentage for the root package
       if (!location || node.isLink && !node.target.location) {
@@ -265,7 +254,7 @@ module.exports = cls => class VirtualLoader extends cls {
     }
   }
 
-  [loadNode] (location, sw, loadOverrides) {
+  #loadNode (location, sw, loadOverrides) {
     const p = this.virtualTree ? this.virtualTree.realpath : this.path
     const path = resolve(p, location)
     // shrinkwrap doesn't include package name unless necessary
@@ -303,7 +292,7 @@ module.exports = cls => class VirtualLoader extends cls {
     return node
   }
 
-  [loadLink] (location, targetLoc, target, meta) {
+  #loadLink (location, targetLoc, target, meta) {
     const path = resolve(this.path, location)
     const link = new Link({
       installLinks: this.installLinks,
