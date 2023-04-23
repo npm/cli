@@ -1,5 +1,4 @@
 // mixin providing the loadVirtual method
-const localeCompare = require('@isaacs/string-locale-compare')('en')
 const mapWorkspaces = require('@npmcli/map-workspaces')
 
 const { resolve } = require('path')
@@ -17,11 +16,7 @@ const treeCheck = require('../tree-check.js')
 const flagsSuspect = Symbol.for('flagsSuspect')
 const setWorkspaces = Symbol.for('setWorkspaces')
 
-const depsToEdges = (type, deps) =>
-  Object.entries(deps).map(d => [type, ...d])
-
 module.exports = cls => class VirtualLoader extends cls {
-
   #rootOptionProvided
 
   constructor (options) {
@@ -133,6 +128,7 @@ module.exports = cls => class VirtualLoader extends cls {
     const optional = lock.optionalDependencies || {}
     const peer = lock.peerDependencies || {}
     const peerOptional = {}
+
     if (lock.peerDependenciesMeta) {
       for (const [name, meta] of Object.entries(lock.peerDependenciesMeta)) {
         if (meta.optional && peer[name] !== undefined) {
@@ -141,45 +137,40 @@ module.exports = cls => class VirtualLoader extends cls {
         }
       }
     }
+
     for (const name of Object.keys(optional)) {
       delete prod[name]
     }
 
-    const lockWS = []
+    const lockWS = {}
     const workspaces = mapWorkspaces.virtual({
       cwd: this.path,
       lockfile: s.data,
     })
+
     for (const [name, path] of workspaces.entries()) {
-      lockWS.push(['workspace', name, `file:${path.replace(/#/g, '%23')}`])
+      lockWS[name] = `file:${path.replace(/#/g, '%23')}`
     }
 
-    const lockEdges = [
-      ...depsToEdges('prod', prod),
-      ...depsToEdges('dev', dev),
-      ...depsToEdges('optional', optional),
-      ...depsToEdges('peer', peer),
-      ...depsToEdges('peerOptional', peerOptional),
-      ...lockWS,
-    ].sort(([atype, aname], [btype, bname]) =>
-      localeCompare(atype, btype) || localeCompare(aname, bname))
+    // Should rootNames exclude optional?
+    const rootNames = new Set(root.edgesOut.keys())
 
-    const rootEdges = [...root.edgesOut.values()]
-      .map(e => [e.type, e.name, e.spec])
-      .sort(([atype, aname], [btype, bname]) =>
-        localeCompare(atype, btype) || localeCompare(aname, bname))
+    const lockByType = ({ dev, optional, peer, peerOptional, prod, workspace: lockWS })
 
-    if (rootEdges.length !== lockEdges.length) {
-      // something added or removed
-      return this[flagsSuspect] = true
-    }
-
-    for (let i = 0; i < lockEdges.length; i++) {
-      if (rootEdges[i][0] !== lockEdges[i][0] ||
-          rootEdges[i][1] !== lockEdges[i][1] ||
-          rootEdges[i][2] !== lockEdges[i][2]) {
-        return this[flagsSuspect] = true
+    // Find anything in shrinkwrap deps that doesn't match root's type or spec
+    for (const type in lockByType) {
+      const deps = lockByType[type]
+      for (const name in deps) {
+        const edge = root.edgesOut.get(name)
+        if (!edge || edge.type !== type || edge.spec !== deps[name]) {
+          return this[flagsSuspect] = true
+        }
+        rootNames.delete(name)
       }
+    }
+    // Something was in root that's not accounted for in shrinkwrap
+    if (rootNames.size) {
+      return this[flagsSuspect] = true
     }
   }
 
