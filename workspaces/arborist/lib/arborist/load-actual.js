@@ -55,8 +55,6 @@ module.exports = cls => class ActualLoader extends cls {
     // assume that the cwd is real enough for our purposes
     this[_rpcache] = new Map([[cwd, cwd]])
     this[_stcache] = new Map()
-
-
   }
 
   // public method
@@ -93,6 +91,7 @@ module.exports = cls => class ActualLoader extends cls {
     }
     return this.#actualTreePromise
   }
+
   // return the promise so that we don't ever have more than one going at the
   // same time.  This is so that buildIdealTree can default to the actualTree
   // if no shrinkwrap present, but reify() can still call buildIdealTree and
@@ -399,17 +398,26 @@ module.exports = cls => class ActualLoader extends cls {
             break
           }
 
-          const entries = nmContents.get(p) || await readdirScoped(p + '/node_modules')
-            .catch(() => []).then(paths => paths.map(p => p.replace(/\\/g, '/')))
-          nmContents.set(p, entries)
+          let entries
+          if (!nmContents.has(p)) {
+            entries = await readdirScoped(p + '/node_modules')
+              .catch(() => []).then(paths => paths.map(p => p.replace(/\\/g, '/')))
+            nmContents.set(p, entries)
+          } else {
+            entries = nmContents.get(p)
+          }
+
           if (!entries.includes(name)) {
             continue
           }
 
-          const d = this.#cache.has(p) ? await this.#cache.get(p)
-            : new Node({ path: p, root: node.root, dummy: true })
-          // not a promise
-          this.#cache.set(p, d)
+          let d
+          if (!this.#cache.has(p)) {
+            d = new Node({ path: p, root: node.root, dummy: true })
+            this.#cache.set(p, d)
+          } else {
+            d = this.#cache.get(p)
+          }
           if (d.dummy) {
             // it's a placeholder, so likely would not have loaded this dep,
             // unless another dep in the tree also needs it.
