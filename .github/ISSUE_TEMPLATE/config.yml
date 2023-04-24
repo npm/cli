@@ -16,7 +16,7 @@ contact_links:
     url: https://docs.npmjs.com
     about: Preview our new docs
   - name: 📫 Support
-    url: https://github.community/
+    url: https://github.com/npm/feedback
     about: For general support questions please open a topic over at github.community
    - name: 🚑 Support Policy
     url: https://github.com/npm/cli/wiki/Support-Policy
