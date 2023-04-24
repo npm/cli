@@ -149,7 +149,7 @@ const run = async (main, { redact } = {}) => {
   process.on('log', (l, ...args) => {
     if (argv.debug || process.env.CI || defaultLevels.includes(l)) {
       for (const line of formatWithOptions({ colors: true }, ...args).split('\n')) {
-        const redacted = redact ? line.replace(redact, '***') : line
+        const redacted = redact ? line.replaceAll(redact, '***') : line
         // eslint-disable-next-line no-console
         console.error(l.slice(0, 4).toUpperCase(), redacted)
       }
