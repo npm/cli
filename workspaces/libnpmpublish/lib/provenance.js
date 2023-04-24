@@ -68,7 +68,8 @@ const generateProvenance = async (subject, opts) => {
         ],
       },
     }
-  } else if (ci.GITLAB) {
+  }
+  if (ci.GITLAB) {
     // TODO: pull values from authenticated JWT rather than environment variables.
     payload = {
       _type: INTOTO_STATEMENT_TYPE,
@@ -197,11 +198,6 @@ const generateProvenance = async (subject, opts) => {
         ],
       },
     }
-  } else {
-    throw Object.assign(
-      new Error('Unsupported provenance type ' + ci.name),
-      { code: 'EUSAGE' }
-    )
   }
   return sigstore.attest(Buffer.from(JSON.stringify(payload)), INTOTO_PAYLOAD_TYPE, opts)
 }

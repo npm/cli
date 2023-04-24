@@ -9,7 +9,6 @@ const t = require('tap')
 
 const MockRegistry = require('@npmcli/mock-registry')
 const mockGlobals = require('../../../test/fixtures/mock-globals.js')
-const { generateProvenance } = require('../lib/provenance.js')
 
 // TODO use registry.manifest (requires json date wrangling for nock)
 
@@ -1144,8 +1143,4 @@ t.test('gitlab provenance, no token available', async t => {
       code: 'EUSAGE',
     }
   )
-})
-
-t.test('unsupported provenance type', async t => {
-  await t.rejects(generateProvenance(null, null), { code: 'EUSAGE' })
 })
