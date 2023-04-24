@@ -228,6 +228,16 @@ t.ok(new Edge({
 }).satisfiedBy(c), 'c@2 satisfies spec:1.x, accept:2.x')
 reset(a)
 
+t.equal(
+  (new Edge({
+    from: a,
+    type: 'prod',
+    name: 'c',
+    spec: '1.x',
+    accept: '2.x',
+  })).accept, '2.x', '.accept getter works')
+reset(a)
+
 t.ok(new Edge({
   from: a,
   type: 'prod',
