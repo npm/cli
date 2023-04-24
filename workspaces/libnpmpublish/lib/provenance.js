@@ -11,7 +11,7 @@ const GITHUB_BUILD_TYPE_PREFIX = 'https://github.com/npm/cli/gha'
 const GITHUB_BUILD_TYPE_VERSION = 'v2'
 
 const GITLAB_BUILD_TYPE_PREFIX = 'https://github.com/npm/cli/gitlab'
-const GITLAB_BUILD_TYPE_VERSION = 'v1alpha1'
+const GITLAB_BUILD_TYPE_VERSION = 'v0alpha1'
 
 const generateProvenance = async (subject, opts) => {
   var payload

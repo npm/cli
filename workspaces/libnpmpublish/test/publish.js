@@ -1093,7 +1093,7 @@ t.test('publish existing package with provenance in gitlab', async t => {
       expectedSubject,
       'provenance subject matches expectations')
     t.hasStrict(provenance.predicate.buildType,
-      'https://github.com/npm/cli/gitlab/v1alpha1',
+      'https://github.com/npm/cli/gitlab/v0alpha1',
       'buildType matches expectations')
     t.hasStrict(provenance.predicate.builder.id,
       `${serverUrl}/${repository}/-/runners/${runnerID}`,

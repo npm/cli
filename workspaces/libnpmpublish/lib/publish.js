@@ -158,7 +158,7 @@ const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
       if (!process.env.SIGSTORE_ID_TOKEN) {
         throw Object.assign(
           /* eslint-disable-next-line max-len */
-          new Error('Provenance generation in GitLab CI requires "SIGSTORE_ID_TOKEN" with "sigstore" audience to be present in "id_tokens"'),
+          new Error('Provenance generation in GitLab CI requires "SIGSTORE_ID_TOKEN" with "sigstore" audience to be present in "id_tokens". See https://docs.gitlab.com/ee/ci/secrets/id_token_authentication.html for more info.'),
           { code: 'EUSAGE' }
         )
       }
