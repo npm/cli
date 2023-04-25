@@ -280,5 +280,5 @@ const main = async (spec, branch = 'main', opts) => withTempDir(CWD, async (tmpD
 })
 
 run(({ argv, ...opts }) => main(argv.remain[0], argv.remain[1], opts), {
-  redact: new RegExp(process.env.GITHUB_TOKEN, 'g'),
+  redact: process.env.GITHUB_TOKEN,
 })
