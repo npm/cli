@@ -67,7 +67,7 @@
     "cli-table3": "^0.6.3",
     "columnify": "^1.6.0",
     "fastest-levenshtein": "^1.0.16",
-    "fs-minipass": "^3.0.1",
+    "fs-minipass": "^3.0.2",
     "glob": "^9.3.2",
     "graceful-fs": "^4.2.11",
     "hosted-git-info": "^6.1.1",
