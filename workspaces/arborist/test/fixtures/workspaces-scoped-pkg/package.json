@@ -1,6 +1,0 @@
-{
-  "name": "workspace-simple",
-  "workspaces": [
-    "packages/*"
-  ]
-}

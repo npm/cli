@@ -1,9 +1,0 @@
-{
-  "name": "workspace3",
-  "workspace": {
-    "packages": [
-      "packages/*",
-      "app"
-    ]
-  }
-}
