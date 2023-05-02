@@ -1,5 +1,5 @@
 const { Request, Response } = require('minipass-fetch')
-const Minipass = require('minipass')
+const { Minipass } = require('minipass')
 const MinipassFlush = require('minipass-flush')
 const cacache = require('cacache')
 const url = require('url')
