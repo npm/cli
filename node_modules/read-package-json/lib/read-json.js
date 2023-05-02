@@ -2,7 +2,7 @@ var fs = require('fs')
 
 var path = require('path')
 
-var glob = require('glob')
+var { glob } = require('glob')
 var normalizeData = require('normalize-package-data')
 var safeJSON = require('json-parse-even-better-errors')
 var util = require('util')
