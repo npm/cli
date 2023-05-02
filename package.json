@@ -57,7 +57,7 @@
     "@npmcli/config": "^6.1.6",
     "@npmcli/map-workspaces": "^3.0.4",
     "@npmcli/package-json": "^3.0.0",
-    "@npmcli/run-script": "^6.0.0",
+    "@npmcli/run-script": "^6.0.1",
     "abbrev": "^2.0.0",
     "archy": "~1.0.0",
     "cacache": "^17.0.5",
