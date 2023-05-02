@@ -1,7 +1,7 @@
 'use strict'
 
 const crypto = require('crypto')
-const MiniPass = require('minipass')
+const { Minipass } = require('minipass')
 
 const SPEC_ALGORITHMS = ['sha512', 'sha384', 'sha256']
 const DEFAULT_ALGORITHMS = ['sha512']
@@ -15,7 +15,7 @@ const VCHAR_REGEX = /^[\x21-\x7E]+$/
 
 const getOptString = options => options?.length ? `?${options.join('?')}` : ''
 
-class IntegrityStream extends MiniPass {
+class IntegrityStream extends Minipass {
   #emittedIntegrity
   #emittedSize
   #emittedVerified
