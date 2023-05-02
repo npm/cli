@@ -165,7 +165,7 @@ jobs:
           RELEASE_COMMENT_ID: ${{ needs.release.outputs.comment-id }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          node . exec --offline -- template-oss-release-manager --lockfile=true
+          node . exec --offline -- template-oss-release-manager --lockfile=true --publish=false
           node . run rp-pull-request --ignore-scripts -ws -iwr --if-present
       - name: Commit
         id: commit
