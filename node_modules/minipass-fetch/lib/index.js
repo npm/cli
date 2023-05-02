@@ -3,7 +3,7 @@ const { URL } = require('url')
 const http = require('http')
 const https = require('https')
 const zlib = require('minizlib')
-const Minipass = require('minipass')
+const { Minipass } = require('minipass')
 
 const Body = require('./body.js')
 const { writeToStream, getTotalBytes } = Body
