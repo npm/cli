@@ -70,7 +70,6 @@ const generateProvenance = async (subject, opts) => {
     }
   }
   if (ci.GITLAB) {
-    // TODO: pull values from authenticated JWT rather than environment variables.
     payload = {
       _type: INTOTO_STATEMENT_TYPE,
       subject,
@@ -174,8 +173,14 @@ const generateProvenance = async (subject, opts) => {
           environment: {
             name: env.CI_RUNNER_DESCRIPTION,
             architecture: env.CI_RUNNER_EXECUTABLE_ARCH,
+            server: env.CI_SERVER_URL,
+            project: env.CI_PROJECT_PATH,
             job: {
               id: env.CI_JOB_ID,
+            },
+            pipeline: {
+              id: env.CI_PIPELINE_ID,
+              ref: env.CI_CONFIG_PATH,
             },
           },
         },
