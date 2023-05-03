@@ -88,7 +88,7 @@
     "libnpmversion": "^4.0.2",
     "make-fetch-happen": "^11.1.1",
     "minimatch": "^7.4.6",
-    "minipass": "^4.2.8",
+    "minipass": "^5.0.0",
     "minipass-pipeline": "^1.2.4",
     "ms": "^2.1.2",
     "node-gyp": "^9.3.1",

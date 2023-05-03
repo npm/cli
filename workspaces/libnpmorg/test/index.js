@@ -1,6 +1,6 @@
 'use strict'
 
-const Minipass = require('minipass')
+const { Minipass } = require('minipass')
 const test = require('tap').test
 const tnock = require('./fixtures/tnock.js')
 
