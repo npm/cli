@@ -929,6 +929,7 @@ t.test('publish existing package with provenance in gitlab', async t => {
     'process.env': {
       CI: true,
       GITLAB_CI: true,
+      GITHUB_ACTIONS: undefined,
       SIGSTORE_ID_TOKEN: idToken,
       CI_RUNNER_ID: runnerID,
       CI_PROJECT_URL: `${serverUrl}/${repository}`,
@@ -1124,6 +1125,7 @@ t.test('gitlab provenance, no token available', async t => {
     'process.env': {
       CI: true,
       GITLAB_CI: true,
+      GITHUB_ACTIONS: undefined,
     },
   })
   const manifest = {
