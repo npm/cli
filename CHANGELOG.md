@@ -1,5 +1,37 @@
 # Changelog
 
+## [9.6.6](https://github.com/npm/cli/compare/v9.6.5...v9.6.6) (2023-05-03)
+
+### Dependencies
+
+* [`70e65b1`](https://github.com/npm/cli/commit/70e65b12ea2c834acec509645d4ba8252dcf88ff) [#6423](https://github.com/npm/cli/pull/6423) `tuf-js@1.1.5` (#6423)
+* [`72291f7`](https://github.com/npm/cli/commit/72291f756ad9b63e6dcaef384521f65d58793ee6) [#6416](https://github.com/npm/cli/pull/6416) `read-package-json@6.0.3`
+* [`e498f82`](https://github.com/npm/cli/commit/e498f82852e49f638dc661d89785df7d6112fb76) [#6416](https://github.com/npm/cli/pull/6416) `minimatch@9.0.0`
+* [`13aa7b7`](https://github.com/npm/cli/commit/13aa7b7a75b8fb18db3f4d86dfe780c8057c4213) [#6416](https://github.com/npm/cli/pull/6416) `minipass@5.0.0`
+* [`f2a5678`](https://github.com/npm/cli/commit/f2a5678e73b8e0794f41cc259ab9bd3741d4ec56) [#6416](https://github.com/npm/cli/pull/6416) `tar@6.1.14`
+* [`69d4dd2`](https://github.com/npm/cli/commit/69d4dd280b515cb6ba03a1cdb914ef5b106ae945) [#6416](https://github.com/npm/cli/pull/6416) npm update
+* [`abdca39`](https://github.com/npm/cli/commit/abdca39a78af416f82771bde69360c0b664ac63d) [#6416](https://github.com/npm/cli/pull/6416) `sigstore@1.4.0`
+* [`16f68fb`](https://github.com/npm/cli/commit/16f68fbfa5f250fdf8e5ed4742cc492f56c06219) [#6416](https://github.com/npm/cli/pull/6416) `glob@10.2.2`
+* [`67fcfb1`](https://github.com/npm/cli/commit/67fcfb165a1cde7885c1a0f13f8de98e27a1d961) [#6416](https://github.com/npm/cli/pull/6416) `ignore-walk@6.0.3`
+* [`bfa2ff3`](https://github.com/npm/cli/commit/bfa2ff325786ad731df82b3436d02f649a403375) [#6416](https://github.com/npm/cli/pull/6416) `make-fetch-happen@11.1.1`
+* [`877591a`](https://github.com/npm/cli/commit/877591af5c8430bc2a2873774b81a8fdd7c9d105) [#6416](https://github.com/npm/cli/pull/6416) `npm-registry-fetch@14.0.5`
+* [`7630517`](https://github.com/npm/cli/commit/7630517ae613c8d671d533c7ed027428568020ce) [#6416](https://github.com/npm/cli/pull/6416) `pacote@15.1.3`
+* [`c2d6e0a`](https://github.com/npm/cli/commit/c2d6e0aae02148cbc7934a5ee9a05e4e7bc45c9b) [#6416](https://github.com/npm/cli/pull/6416) `write-file-atomic@5.0.1`
+* [`acdf97e`](https://github.com/npm/cli/commit/acdf97e7955bdfa1a4dd2bfaec39a73e1a3c0ce9) [#6416](https://github.com/npm/cli/pull/6416) `which@3.0.1`
+* [`00c541a`](https://github.com/npm/cli/commit/00c541ae4080b210eaffee49a6e5e7fe9da2237d) [#6416](https://github.com/npm/cli/pull/6416) `ssri@10.0.4`
+* [`1b95e73`](https://github.com/npm/cli/commit/1b95e73a64d3031d28f754ca43b603318d7d1920) [#6416](https://github.com/npm/cli/pull/6416) `read-package-json@6.0.2`
+* [`6927fd3`](https://github.com/npm/cli/commit/6927fd36a65f7c4917abd3826590a972678a7c7b) [#6416](https://github.com/npm/cli/pull/6416) `fs-minipass@3.0.2`
+* [`3eec56e`](https://github.com/npm/cli/commit/3eec56e2135c5278d71b546fea68f9300f343dd6) [#6416](https://github.com/npm/cli/pull/6416) `cacache@17.1.0`
+* [`7a2ce3f`](https://github.com/npm/cli/commit/7a2ce3f9fa2c4430500bed2a76822c6aa603570b) [#6416](https://github.com/npm/cli/pull/6416) `@npmcli/run-script@6.0.1`
+* [`3881770`](https://github.com/npm/cli/commit/38817700290806ce1b1b6231bdbb0730fa7a9504) [#6416](https://github.com/npm/cli/pull/6416) `@npmcli/map-workspaces@3.0.4`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.2.9): `@npmcli/arborist@6.2.9`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v5.0.17): `libnpmdiff@5.0.17`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v5.0.17): `libnpmexec@5.0.17`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v4.0.17): `libnpmfund@4.0.17`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmorg-v5.0.4): `libnpmorg@5.0.4`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v5.0.17): `libnpmpack@5.0.17`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v7.1.4): `libnpmpublish@7.1.4`
+
 ## [9.6.5](https://github.com/npm/cli/compare/v9.6.4...v9.6.5) (2023-04-19)
 
 ### Bug Fixes

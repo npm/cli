@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.0.4](https://github.com/npm/cli/compare/libnpmorg-v5.0.3...libnpmorg-v5.0.4) (2023-05-03)
+
+### Dependencies
+
+* [`13aa7b7`](https://github.com/npm/cli/commit/13aa7b7a75b8fb18db3f4d86dfe780c8057c4213) [#6416](https://github.com/npm/cli/pull/6416) `minipass@5.0.0`
+
 ## [5.0.3](https://github.com/npm/cli/compare/libnpmorg-v5.0.2...libnpmorg-v5.0.3) (2023-02-07)
 
 ### Dependencies

@@ -1,5 +1,15 @@
 # Changelog
 
+## [6.2.9](https://github.com/npm/cli/compare/arborist-v6.2.8...arborist-v6.2.9) (2023-05-03)
+
+### Bug Fixes
+
+* [`a558bbd`](https://github.com/npm/cli/commit/a558bbd3760e8da272d7afdd11e7b0f1238f92dc) [#6393](https://github.com/npm/cli/pull/6393) code cleanup (#6393) (@wraithgar)
+
+### Dependencies
+
+* [`e498f82`](https://github.com/npm/cli/commit/e498f82852e49f638dc661d89785df7d6112fb76) [#6416](https://github.com/npm/cli/pull/6416) `minimatch@9.0.0`
+
 ## [6.2.8](https://github.com/npm/cli/compare/arborist-v6.2.7...arborist-v6.2.8) (2023-04-19)
 
 ### Bug Fixes
