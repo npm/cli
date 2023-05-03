@@ -19,7 +19,7 @@ jobs:
         if: |
           github.event_name == 'pull_request' || (
             github.event_name == 'issue_comment' &&
-            github.event.issue.pull_request &&
+            github.event.issunpme.pull_request &&
             github.event.issue.state == 'open' &&
             startsWith(github.event.comment.body, '@npm-cli-bot benchmark this')
           )
