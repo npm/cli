@@ -111,7 +111,7 @@
     "read-package-json-fast": "^3.0.2",
     "semver": "^7.5.0",
     "ssri": "^10.0.4",
-    "tar": "^6.1.13",
+    "tar": "^6.1.14",
     "text-table": "~0.2.0",
     "tiny-relative-date": "^1.3.0",
     "treeverse": "^3.0.0",
