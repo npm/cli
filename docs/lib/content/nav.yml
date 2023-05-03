@@ -1,14 +1,9 @@
-# This is the navigation for the documentation pages; it is not used
-# directly within the CLI documentation.  Instead, it will be used
-# for the https://docs.npmjs.com/ site.
 
-- title: CLI Commands
-  shortName: Commands
+  Nombre corto : Comandos
   url: /commands
   children:
-  - title: npm
-    url: /commands/npm
-    description: JavaScript package manager
+  - título : npm
+    descripción : administrador de paquetes de JavaScript
   - title: npm access
     url: /commands/npm-access
     description: Set access level on published packages
