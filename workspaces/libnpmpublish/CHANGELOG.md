@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.1.4](https://github.com/npm/cli/compare/libnpmpublish-v7.1.3...libnpmpublish-v7.1.4) (2023-05-03)
+
+### Dependencies
+
+* [`abdca39`](https://github.com/npm/cli/commit/abdca39a78af416f82771bde69360c0b664ac63d) [#6416](https://github.com/npm/cli/pull/6416) `sigstore@1.4.0`
+
 ## [7.1.3](https://github.com/npm/cli/compare/libnpmpublish-v7.1.2...libnpmpublish-v7.1.3) (2023-03-30)
 
 ### Bug Fixes
