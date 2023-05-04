@@ -14,7 +14,7 @@ const GITLAB_BUILD_TYPE_PREFIX = 'https://github.com/npm/cli/gitlab'
 const GITLAB_BUILD_TYPE_VERSION = 'v0alpha1'
 
 const generateProvenance = async (subject, opts) => {
-  var payload
+  let payload
   if (ci.GITHUB_ACTIONS) {
     /* istanbul ignore next - not covering missing env var case */
     const [workflowPath] = (env.GITHUB_WORKFLOW_REF || '')
