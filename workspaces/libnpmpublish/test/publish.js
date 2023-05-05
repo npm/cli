@@ -511,6 +511,7 @@ t.test('publish includes access', async t => {
   })
 
   t.ok(ret, 'publish succeeded')
+  t.notOk(ret.transparencyLogUrl, 'no transparencyLogUrl for non-provenance publish')
 })
 
 t.test('refuse if package is unscoped plus `restricted` access', async t => {
@@ -804,6 +805,11 @@ t.test('publish existing package with provenance in gha', async t => {
     rekorURL: rekorURL,
   })
   t.ok(ret, 'publish succeeded')
+  t.equal(
+    ret.transparencyLogUrl,
+    'https://search.sigstore.dev/?logIndex=2513258',
+    'has appropriate transparencyLogUrl property'
+  )
   t.match(log, [
     ['notice', 'publish',
       'Signed provenance statement with source and build information from GitHub Actions'],
