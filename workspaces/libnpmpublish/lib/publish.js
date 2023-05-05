@@ -74,12 +74,16 @@ Remove the 'private' field from the package.json to publish it.`),
       query: { write: true },
     })
     const newMetadata = patchMetadata(current, metadata)
-    return npmFetch(spec.escapedName, {
+    const res = await npmFetch(spec.escapedName, {
       ...opts,
       method: 'PUT',
       body: newMetadata,
       ignoreBody: true,
     })
+    if (transparencyLogUrl) {
+      res.transparencyLogUrl = transparencyLogUrl
+    }
+    return res
   }
 }
 
