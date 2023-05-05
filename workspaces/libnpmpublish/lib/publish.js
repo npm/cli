@@ -42,15 +42,25 @@ Remove the 'private' field from the package.json to publish it.`),
     )
   }
 
-  const metadata = await buildMetadata(reg, pubManifest, tarballData, spec, opts)
+  const { metadata, transparencyLogUrl } = await buildMetadata(
+    reg,
+    pubManifest,
+    tarballData,
+    spec,
+    opts
+  )
 
   try {
-    return await npmFetch(spec.escapedName, {
+    const res = await npmFetch(spec.escapedName, {
       ...opts,
       method: 'PUT',
       body: metadata,
       ignoreBody: true,
     })
+    if (transparencyLogUrl) {
+      res.transparencyLogUrl = transparencyLogUrl
+    }
+    return res
   } catch (err) {
     if (err.code !== 'E409') {
       throw err
@@ -138,6 +148,7 @@ const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
   }
 
   // Handle case where --provenance flag was set to true
+  let transparencyLogUrl
   if (provenance === true) {
     const subject = {
       name: npa.toPurl(spec),
@@ -178,8 +189,11 @@ const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
     const tlogEntry = provenanceBundle?.verificationMaterial?.tlogEntries[0]
     /* istanbul ignore else */
     if (tlogEntry) {
-      const logUrl = `${TLOG_BASE_URL}?logIndex=${tlogEntry.logIndex}`
-      log.notice('publish', `Provenance statement published to transparency log: ${logUrl}`)
+      transparencyLogUrl = `${TLOG_BASE_URL}?logIndex=${tlogEntry.logIndex}`
+      log.notice(
+        'publish',
+        `Provenance statement published to transparency log: ${transparencyLogUrl}`
+      )
     }
 
     const serializedBundle = JSON.stringify(provenanceBundle)
@@ -190,7 +204,10 @@ const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
     }
   }
 
-  return root
+  return {
+    metadata: root,
+    transparencyLogUrl,
+  }
 }
 
 const patchMetadata = (current, newData) => {
