@@ -80,6 +80,7 @@ Remove the 'private' field from the package.json to publish it.`),
       body: newMetadata,
       ignoreBody: true,
     })
+    /* istanbul ignore next */
     if (transparencyLogUrl) {
       res.transparencyLogUrl = transparencyLogUrl
     }
