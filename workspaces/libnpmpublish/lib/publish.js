@@ -177,8 +177,23 @@ const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
       )
     }
 
-    const visibility =
-      await npmFetch.json(`${registry}/-/package/${spec.escapedName}/visibility`, opts)
+    // Some registries (e.g. GH packages) require auth to check visibility,
+    // and always return 404 when no auth is supplied. In this case we assume
+    // the package is always private and require `--access public` to publish
+    // with provenance.
+    let visibility = { public: false }
+    if (opts.provenance === true && opts.access !== 'public') {
+      try {
+        const res = await npmFetch
+          .json(`${registry}/-/package/${spec.escapedName}/visibility`, opts)
+        visibility = res
+      } catch (err) {
+        if (err.code !== 'E404') {
+          throw err
+        }
+      }
+    }
+
     if (!visibility.public && opts.provenance === true && opts.access !== 'public') {
       throw Object.assign(
         /* eslint-disable-next-line max-len */

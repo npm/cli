@@ -855,6 +855,44 @@ t.test('publish new/private package with provenance in gha - no access', async t
   )
 })
 
+t.test('publish new package with provenance in gha to gh packages - no access', async t => {
+  const oidcURL = 'https://mock.oidc'
+  const requestToken = 'decafbad'
+  mockGlobals(t, {
+    'process.env': {
+      CI: true,
+      GITHUB_ACTIONS: true,
+      ACTIONS_ID_TOKEN_REQUEST_URL: oidcURL,
+      ACTIONS_ID_TOKEN_REQUEST_TOKEN: requestToken,
+    },
+  })
+  const { publish } = t.mock('..', { 'ci-info': t.mock('ci-info') })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+    strict: true,
+  })
+  const manifest = {
+    name: '@npmcli/libnpmpublish-test',
+    version: '1.0.0',
+    description: 'test libnpmpublish package',
+  }
+  const spec = npa(manifest.name)
+  registry.nock.get(
+    this.fullPath(`/-/package/${npa(spec).escapedName}/visibility`))
+    .reply(404)
+
+  await t.rejects(
+    publish(manifest, Buffer.from(''), {
+      ...opts,
+      access: null,
+      provenance: true,
+    }),
+    { code: 'EUSAGE' }
+  )
+})
+
 t.test('automatic provenance in unsupported environment', async t => {
   mockGlobals(t, {
     'process.env': {
