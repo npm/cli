@@ -878,8 +878,7 @@ t.test('publish new package with provenance in gha when visibility 404s - no acc
     description: 'test libnpmpublish package',
   }
   const spec = npa(manifest.name)
-  registry.nock.get(`/-/package/${npa(spec).escapedName}/visibility`)
-    .reply(404)
+  registry.getVisibility({ spec, responseCode: 404 })
 
   await t.rejects(
     publish(manifest, Buffer.from(''), {
@@ -915,8 +914,7 @@ t.test('publish new package with provenance in gha when visibility 500s - no acc
     description: 'test libnpmpublish package',
   }
   const spec = npa(manifest.name)
-  registry.nock.get(`/-/package/${npa(spec).escapedName}/visibility`)
-    .reply(500)
+  registry.getVisibility({ spec, responseCode: 500 })
 
   await t.rejects(
     publish(manifest, Buffer.from(''), {

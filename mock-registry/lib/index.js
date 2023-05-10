@@ -143,10 +143,10 @@ class MockRegistry {
     ).reply(200)
   }
 
-  getVisibility ({ spec, visibility }) {
+  getVisibility ({ spec, visibility, responseCode = 200 }) {
     this.nock = this.nock.get(
       this.fullPath(`/-/package/${npa(spec).escapedName}/visibility`))
-      .reply(200, visibility)
+      .reply(responseCode, visibility)
   }
 
   setPermissions ({ spec, team, permissions }) {
