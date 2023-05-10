@@ -776,7 +776,6 @@ t.test('publish existing package with provenance in gha', async t => {
     .post('/api/v1/log/entries')
     .reply(201, rekorEntry)
 
-  registry.getVisibility({ spec, visibility: { public: true } })
   registry.nock.put(`/${spec.escapedName}`, body => {
     const bundleAttachment = body._attachments['@npmcli/libnpmpublish-test-1.0.0.sigstore']
     const bundle = JSON.parse(bundleAttachment.data)
@@ -852,6 +851,80 @@ t.test('publish new/private package with provenance in gha - no access', async t
       provenance: true,
     }),
     { code: 'EUSAGE' }
+  )
+})
+
+t.test('publish new package with provenance in gha when visibility 404s - no access', async t => {
+  const oidcURL = 'https://mock.oidc'
+  const requestToken = 'decafbad'
+  mockGlobals(t, {
+    'process.env': {
+      CI: true,
+      GITHUB_ACTIONS: true,
+      ACTIONS_ID_TOKEN_REQUEST_URL: oidcURL,
+      ACTIONS_ID_TOKEN_REQUEST_TOKEN: requestToken,
+    },
+  })
+  const { publish } = t.mock('..', { 'ci-info': t.mock('ci-info') })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+    strict: true,
+  })
+  const manifest = {
+    name: '@npmcli/libnpmpublish-test',
+    version: '1.0.0',
+    description: 'test libnpmpublish package',
+  }
+  const spec = npa(manifest.name)
+  registry.nock.get(`/-/package/${npa(spec).escapedName}/visibility`)
+    .reply(404)
+
+  await t.rejects(
+    publish(manifest, Buffer.from(''), {
+      ...opts,
+      access: null,
+      provenance: true,
+    }),
+    { code: 'EUSAGE' }
+  )
+})
+
+t.test('publish new package with provenance in gha when visibility 500s - no access', async t => {
+  const oidcURL = 'https://mock.oidc'
+  const requestToken = 'decafbad'
+  mockGlobals(t, {
+    'process.env': {
+      CI: true,
+      GITHUB_ACTIONS: true,
+      ACTIONS_ID_TOKEN_REQUEST_URL: oidcURL,
+      ACTIONS_ID_TOKEN_REQUEST_TOKEN: requestToken,
+    },
+  })
+  const { publish } = t.mock('..', { 'ci-info': t.mock('ci-info') })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+    strict: true,
+  })
+  const manifest = {
+    name: '@npmcli/libnpmpublish-test',
+    version: '1.0.0',
+    description: 'test libnpmpublish package',
+  }
+  const spec = npa(manifest.name)
+  registry.nock.get(`/-/package/${npa(spec).escapedName}/visibility`)
+    .reply(500)
+
+  await t.rejects(
+    publish(manifest, Buffer.from(''), {
+      ...opts,
+      access: null,
+      provenance: true,
+    }),
+    { code: 'E500' }
   )
 })
 
