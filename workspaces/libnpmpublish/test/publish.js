@@ -776,7 +776,6 @@ t.test('publish existing package with provenance in gha', async t => {
     .post('/api/v1/log/entries')
     .reply(201, rekorEntry)
 
-  registry.getVisibility({ spec, visibility: { public: true } })
   registry.nock.put(`/${spec.escapedName}`, body => {
     const bundleAttachment = body._attachments['@npmcli/libnpmpublish-test-1.0.0.sigstore']
     const bundle = JSON.parse(bundleAttachment.data)
@@ -925,7 +924,7 @@ t.test('publish new package with provenance in gha when visibility 500s - no acc
       access: null,
       provenance: true,
     }),
-    { code: 'EUSAGE' }
+    { code: 'E500' }
   )
 })
 
