@@ -163,10 +163,8 @@ const generateProvenance = async (subject, opts) => {
             CI_TEMPLATE_REGISTRY_HOST: env.CI_TEMPLATE_REGISTRY_HOST,
             GITLAB_CI: env.GITLAB_CI,
             GITLAB_FEATURES: env.GITLAB_FEATURES,
-            GITLAB_USER_EMAIL: env.GITLAB_USER_EMAIL,
             GITLAB_USER_ID: env.GITLAB_USER_ID,
             GITLAB_USER_LOGIN: env.GITLAB_USER_LOGIN,
-            GITLAB_USER_NAME: env.GITLAB_USER_NAME,
             RUNNER_GENERATE_ARTIFACTS_METADATA: env.RUNNER_GENERATE_ARTIFACTS_METADATA,
           },
           environment: {
