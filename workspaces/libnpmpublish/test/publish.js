@@ -913,7 +913,6 @@ t.test('publish existing package with provenance in gitlab', async t => {
   const jobName = 'job'
   const repository = 'gitlab/foo'
   const serverUrl = 'https://gitlab.com'
-  const ref = 'refs/heads/main'
   const sha = 'deadbeef'
   const runnerID = 1
 
@@ -933,7 +932,6 @@ t.test('publish existing package with provenance in gitlab', async t => {
       SIGSTORE_ID_TOKEN: idToken,
       CI_RUNNER_ID: runnerID,
       CI_PROJECT_URL: `${serverUrl}/${repository}`,
-      CI_BUILD_REF: ref,
       CI_COMMIT_SHA: sha,
       CI_JOB_NAME: jobName,
     },
@@ -947,7 +945,7 @@ t.test('publish existing package with provenance in gitlab', async t => {
   }
 
   const expectedConfigSource = {
-    uri: `git+${serverUrl}/${repository}@${ref}`,
+    uri: `git+${serverUrl}/${repository}`,
     digest: { sha1: sha },
     entryPoint: jobName,
   }

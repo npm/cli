@@ -79,7 +79,7 @@ const generateProvenance = async (subject, opts) => {
         builder: { id: `${env.CI_PROJECT_URL}/-/runners/${env.CI_RUNNER_ID}` },
         invocation: {
           configSource: {
-            uri: `git+${env.CI_PROJECT_URL}@${env.CI_BUILD_REF}`,
+            uri: `git+${env.CI_PROJECT_URL}`,
             digest: {
               sha1: env.CI_COMMIT_SHA,
             },
@@ -145,7 +145,6 @@ const generateProvenance = async (subject, opts) => {
             CI_REGISTRY: env.CI_REGISTRY,
             CI_REGISTRY_IMAGE: env.CI_REGISTRY_IMAGE,
             CI_REGISTRY_USER: env.CI_REGISTRY_USER,
-            CI_REPOSITORY_URL: env.CI_REPOSITORY_URL,
             CI_RUNNER_DESCRIPTION: env.CI_RUNNER_DESCRIPTION,
             CI_RUNNER_ID: env.CI_RUNNER_ID,
             CI_RUNNER_TAGS: env.CI_RUNNER_TAGS,
@@ -195,7 +194,7 @@ const generateProvenance = async (subject, opts) => {
         },
         materials: [
           {
-            uri: `git+${env.CI_PROJECT_URL}@${env.CI_BUILD_REF}`,
+            uri: `git+${env.CI_PROJECT_URL}`,
             digest: {
               sha1: env.CI_COMMIT_SHA,
             },
