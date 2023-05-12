@@ -1100,7 +1100,7 @@ t.test('publish existing package with provenance in gitlab', async t => {
   t.ok(ret, 'publish succeeded')
   t.match(log, [
     ['notice', 'publish',
-      'Signed provenance statement with source and build information from GitHub Actions'],
+      'Signed provenance statement with source and build information from GitLab CI'],
     ['notice', 'publish',
       // eslint-disable-next-line max-len
       `Provenance statement published to transparency log: https://search.sigstore.dev/?logIndex=${logIndex}`],

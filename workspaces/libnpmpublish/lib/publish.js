@@ -181,7 +181,7 @@ const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
     const provenanceBundle = await generateProvenance([subject], opts)
 
     /* eslint-disable-next-line max-len */
-    log.notice('publish', 'Signed provenance statement with source and build information from GitHub Actions')
+    log.notice('publish', `Signed provenance statement with source and build information from ${ciInfo.name}`)
 
     const tlogEntry = provenanceBundle?.verificationMaterial?.tlogEntries[0]
     /* istanbul ignore else */
