@@ -906,10 +906,6 @@ t.test('automatic provenance with incorrect permissions', async t => {
 
 t.test('publish existing package with provenance in gitlab', async t => {
   // Environment variables
-  /*
-  const oidcURL = 'https://mock.oidc'
-  const requestToken = 'decafbad'
-  */
   const jobName = 'job'
   const repository = 'gitlab/foo'
   const serverUrl = 'https://gitlab.com'
@@ -1051,13 +1047,6 @@ t.test('publish existing package with provenance in gitlab', async t => {
       },
     },
   }
-
-  /*
-  const oidcSrv = MockRegistry.tnock(t, oidcURL)
-  oidcSrv.get('/?audience=sigstore', undefined, {
-    authorization: `Bearer ${requestToken}`,
-  }).reply(200, { value: idToken })
-  */
 
   const fulcioSrv = MockRegistry.tnock(t, fulcioURL)
   fulcioSrv.matchHeader('Content-Type', 'application/json')
