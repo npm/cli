@@ -526,8 +526,7 @@ class Config {
     const typeDesc = typeDescription(type);
     const mustBe = typeDesc
       .filter(m => m !== undefined && m !== Array);
-    const oneOf = getOneOfKeywords(mustBe,typeDesc);
-    const msg = 'Must be' + oneOf;
+    const msg = 'Must be' + this.getOneOfKeywords(mustBe,typeDesc);
     const desc = mustBe.length === 1 ? mustBe[0]
       : [...new Set(mustBe.map(n => typeof n === 'string' ? n : JSON.stringify(n)))].join(', ');
     log.warn('invalid config', msg, desc)
