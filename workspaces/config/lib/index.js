@@ -523,20 +523,32 @@ class Config {
       }
     }
 
-    const typeDesc = typeDescription(type)
-    const oneOrMore = typeDesc.indexOf(Array) !== -1
+    const typeDesc = typeDescription(type);
     const mustBe = typeDesc
-      .filter(m => m !== undefined && m !== Array)
-    const oneOf = mustBe.length === 1 && oneOrMore ? ' one or more'
-      : mustBe.length > 1 && oneOrMore ? ' one or more of:'
-      : mustBe.length > 1 ? ' one of:'
-      : ''
-    const msg = 'Must be' + oneOf
+      .filter(m => m !== undefined && m !== Array);
+    const oneOf = getOneOfKeywords(mustBe,typeDesc);
+    const msg = 'Must be' + oneOf;
     const desc = mustBe.length === 1 ? mustBe[0]
-      : mustBe.filter(m => m !== Array)
-        .map(n => typeof n === 'string' ? n : JSON.stringify(n))
-        .join(', ')
+      : [...new Set(mustBe.map(n => typeof n === 'string' ? n : JSON.stringify(n)))].join(', ');
     log.warn('invalid config', msg, desc)
+  }
+
+  getOneOfKeywords (mustBe, typeDesc) {
+    let keyword;
+    switch (true) {
+      case mustBe.length === 1 && typeDesc.indexOf(Array) !== -1:
+        keyword = " one or more";
+        break;
+      case mustBe.length > 1 && typeDesc.indexOf(Array) !== -1:
+        keyword = " one or more of:";
+        break;
+      case mustBe.length > 1:
+        keyword = " one of:";
+        break;
+      default:
+        keyword = "";
+    }
+    return keyword;
   }
 
   #loadObject (obj, where, source, er = null) {
