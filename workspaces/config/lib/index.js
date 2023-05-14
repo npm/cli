@@ -534,9 +534,9 @@ class Config {
 
   #getOneOfKeywords (mustBe, typeDesc) {
     let keyword
-    if (mustBe.length === 1 && typeDesc.indexOf(Array) !== -1) {
+    if (mustBe.length === 1 && typeDesc.includes(Array)) {
       keyword = ' one or more'
-    } else if (mustBe.length > 1 && typeDesc.indexOf(Array) !== -1) {
+    } else if (mustBe.length > 1 && typeDesc.includes(Array)) {
       keyword = ' one or more of:'
     } else if (mustBe.length > 1) {
       keyword = ' one of:'
