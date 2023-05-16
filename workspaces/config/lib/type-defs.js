@@ -68,7 +68,7 @@ module.exports = {
   BooleanOrString: {
     type: BooleanOrString,
     validate: validateBooleanOrString,
-    description: 'boolean value (true or false) or a string',
+    description: 'boolean value (true or false or "true" or "false") or a string',
   },
 }
 
