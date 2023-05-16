@@ -789,6 +789,7 @@ graph LR;
   tar-->minizlib;
   tar-->mkdirp;
   tar-->yallist;
+  tuf-js-->debug;
   tuf-js-->make-fetch-happen;
   tuf-js-->tufjs-models["@tufjs/models"];
   tufjs-models-->minimatch;
