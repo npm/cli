@@ -68,7 +68,7 @@
     "columnify": "^1.6.0",
     "fastest-levenshtein": "^1.0.16",
     "fs-minipass": "^3.0.2",
-    "glob": "^10.2.2",
+    "glob": "^10.2.4",
     "graceful-fs": "^4.2.11",
     "hosted-git-info": "^6.1.1",
     "ini": "^4.1.0",
