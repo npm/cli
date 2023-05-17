@@ -58,7 +58,7 @@ t.test('no args --force error reading package.json', async t => {
 
   await t.rejects(
     npm.exec('unpublish', []),
-    /Failed to parse json/,
+    /Invalid package.json/,
     'should throw error from reading package.json'
   )
 })
