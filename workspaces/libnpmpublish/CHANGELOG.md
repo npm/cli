@@ -1,5 +1,15 @@
 # Changelog
 
+## [7.2.0](https://github.com/npm/cli/compare/libnpmpublish-v7.1.4...libnpmpublish-v7.2.0) (2023-05-17)
+
+### Features
+
+* [`bdab631`](https://github.com/npm/cli/commit/bdab631b9847013dc4e8d4083669acf6c7bfb457) [#6428](https://github.com/npm/cli/pull/6428) expose provenance transparency url (#6428) (@JamesHenry, @wraithgar)
+
+### Bug Fixes
+
+* [`f064696`](https://github.com/npm/cli/commit/f06469607b80faf72eb897ec3e33deebc6dc10fc) [#6437](https://github.com/npm/cli/pull/6437) Update publish /w provenance to ignore pkg vis 404 (#6437) (@feelepxyz)
+
 ## [7.1.4](https://github.com/npm/cli/compare/libnpmpublish-v7.1.3...libnpmpublish-v7.1.4) (2023-05-03)
 
 ### Dependencies
