@@ -1,5 +1,33 @@
 # Changelog
 
+## [9.6.7](https://github.com/npm/cli/compare/v9.6.6...v9.6.7) (2023-05-17)
+
+### Bug Fixes
+
+* [`9202c7d`](https://github.com/npm/cli/commit/9202c7d7c4058deb618e1a74fdc97b11f2845af7) [#6464](https://github.com/npm/cli/pull/6464) npm cache completion (#6464) (@m4rch3n1ng)
+* [`6ce99a8`](https://github.com/npm/cli/commit/6ce99a809c815934df73e002381b2b74b25ab0f8) [#6461](https://github.com/npm/cli/pull/6461) exit codes in node v20 (#6461) (@MichaelBitard)
+* [`23c865f`](https://github.com/npm/cli/commit/23c865fcd4bd4ee6957006c7b8f9e8cfde1db321) [#6434](https://github.com/npm/cli/pull/6434) deprecate ci-name config (#6434) (@wraithgar)
+
+### Documentation
+
+* [`7751dd4`](https://github.com/npm/cli/commit/7751dd431ca6ee4a3503fa71bda88a5cd89eb83c) [#6413](https://github.com/npm/cli/pull/6413) add a comma (#6413) (@darryltec)
+
+### Dependencies
+
+* [`afc38a5`](https://github.com/npm/cli/commit/afc38a564c55e8e7b676a3036d1438784ee6c8f0) [#6458](https://github.com/npm/cli/pull/6458) `cacache@17.1.2`
+* [`afb936c`](https://github.com/npm/cli/commit/afb936cc5e22d96115472cdfc16908299db5e9dd) [#6458](https://github.com/npm/cli/pull/6458) `tuf-js@1.1.6`
+* [`f6a0884`](https://github.com/npm/cli/commit/f6a0884e0867cf0948ddbbdc1b98e0756bf96cef) [#6458](https://github.com/npm/cli/pull/6458) `readable-stream@4.4.0`
+* [`858f0ca`](https://github.com/npm/cli/commit/858f0caa3add38c0a171825421693eddf59ccf40) [#6458](https://github.com/npm/cli/pull/6458) `postcss-selector-parser@6.0.13`
+* [`53ecb84`](https://github.com/npm/cli/commit/53ecb84bb625a16e2d0a86b1d9380384c0e7545c) [#6458](https://github.com/npm/cli/pull/6458) `path-scurry@1.9.1`
+* [`d93f70c`](https://github.com/npm/cli/commit/d93f70c9cd108e6dc3ce9533339dec77c359c320) [#6458](https://github.com/npm/cli/pull/6458) `signal-exit@4.0.2`
+* [`19214b5`](https://github.com/npm/cli/commit/19214b54828a9b4e923ea329fa5841edf0753162) [#6458](https://github.com/npm/cli/pull/6458) `@npmcli/package-json@3.1.0`
+* [`f53e6ff`](https://github.com/npm/cli/commit/f53e6ff22bc374a03ea6663dbad584c493f1d5b8) [#6458](https://github.com/npm/cli/pull/6458) `sigstore@1.5.2`
+* [`94d6ee7`](https://github.com/npm/cli/commit/94d6ee7f353265b64e51ced879915882be83aa89) [#6458](https://github.com/npm/cli/pull/6458) `glob@10.2.4`
+* [`902cb80`](https://github.com/npm/cli/commit/902cb80771cc440ef10e7ce7b2afa8934277e0f6) [#6458](https://github.com/npm/cli/pull/6458) `semver@7.5.1`
+* [`35e2e9a`](https://github.com/npm/cli/commit/35e2e9a4ce91325462d75b1774298485127762fc) [#6458](https://github.com/npm/cli/pull/6458) `@npmcli/run-script@6.0.2`
+* [Workspace](https://github.com/npm/cli/releases/tag/config-v6.1.7): `@npmcli/config@6.1.7`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v7.2.0): `libnpmpublish@7.2.0`
+
 ## [9.6.6](https://github.com/npm/cli/compare/v9.6.5...v9.6.6) (2023-05-03)
 
 ### Dependencies

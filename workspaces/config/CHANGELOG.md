@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.1.7](https://github.com/npm/cli/compare/config-v6.1.6...config-v6.1.7) (2023-05-17)
+
+### Bug Fixes
+
+* [`7ade93d`](https://github.com/npm/cli/commit/7ade93d299bfc908e5428f572bc7b502d5fe9eea) [#6443](https://github.com/npm/cli/pull/6443) Remove duplicates in config warnings (#6443) (@kashyapkaki)
+
 ## [6.1.6](https://github.com/npm/cli/compare/config-v6.1.5...config-v6.1.6) (2023-04-19)
 
 ### Bug Fixes
