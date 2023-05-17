@@ -312,7 +312,7 @@ t.test('workspaces', async t => {
   await t.test('fail parsing top-level package.json to set workspace', async t => {
     const { npm } = await mockNpm(t, {
       prefixDir: {
-        'package.json': 'not json['
+        'package.json': 'not json[',
       },
       config: { workspace: 'a', yes: true },
       noLog: true,
