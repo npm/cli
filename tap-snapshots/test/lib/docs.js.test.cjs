@@ -969,8 +969,6 @@ The package or packages to install for [\`npm exec\`](/commands/npm-exec)
 If set to false, then ignore \`package-lock.json\` files when installing. This
 will also prevent _writing_ \`package-lock.json\` if \`save\` is true.
 
-This configuration does not affect \`npm ci\`.
-
 #### \`package-lock-only\`
 
 * Default: false
