@@ -2215,8 +2215,8 @@ npm ci
 Options:
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
-[--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
-[--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
+[--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+[--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
 
@@ -2235,7 +2235,6 @@ aliases: clean-install, ic, install-clean, isntall-clean
 #### \`global-style\`
 #### \`omit\`
 #### \`strict-peer-deps\`
-#### \`package-lock\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
 #### \`audit\`
@@ -2811,8 +2810,8 @@ npm install-ci-test
 Options:
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
-[--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
-[--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
+[--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+[--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
 
@@ -2831,7 +2830,6 @@ aliases: cit, clean-install-test, sit
 #### \`global-style\`
 #### \`omit\`
 #### \`strict-peer-deps\`
-#### \`package-lock\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
 #### \`audit\`
