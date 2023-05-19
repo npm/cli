@@ -45,7 +45,7 @@ t.test('basic usage', async t => {
     .replace(npm.config.get('userconfig'), '{USERCONFIG}')
     .split(pkg.version).join('{VERSION}')
 
-  t.matchSnapshot(await npm.usage)
+  t.matchSnapshot(npm.usage)
 })
 
 t.test('usage', async t => {
@@ -80,9 +80,8 @@ t.test('usage', async t => {
     t.test(cmd, async t => {
       let output = null
       if (!bareCommands.includes(cmd)) {
-        const { npm } = await loadMockNpm(t)
-        const impl = await npm.cmd(cmd)
-        output = impl.usage
+        const mock = await loadMockNpm(t, { command: cmd })
+        output = mock[cmd].usage
       }
 
       const usage = docs.usage(docs.TAGS.USAGE, { path: cmd })

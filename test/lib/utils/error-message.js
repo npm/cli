@@ -46,7 +46,9 @@ const loadMockNpm = async (t, { errorMocks, ...opts } = {}) => {
 
 t.test('just simple messages', async t => {
   const { errorMessage } = await loadMockNpm(t, {
+    prefixDir: { 'package-lock.json': '{}' },
     command: 'audit',
+    exec: true,
   })
   const codes = [
     'ENOAUDIT',

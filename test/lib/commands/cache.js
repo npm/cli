@@ -302,8 +302,7 @@ t.test('cache verify w/ extra output', async t => {
 })
 
 t.test('cache completion', async t => {
-  const { npm } = await loadMockNpm(t)
-  const cache = await npm.cmd('cache')
+  const { cache } = await loadMockNpm(t, { command: 'cache' })
   const { completion } = cache
 
   const testComp = (argv, expect) => {

@@ -211,8 +211,7 @@ t.test('audit fix - bulk endpoint', async t => {
 })
 
 t.test('completion', async t => {
-  const { npm } = await loadMockNpm(t)
-  const audit = await npm.cmd('audit')
+  const { audit } = await loadMockNpm(t, { command: 'audit' })
   t.test('fix', async t => {
     await t.resolveMatch(
       audit.completion({ conf: { argv: { remain: ['npm', 'audit'] } } }),

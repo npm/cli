@@ -37,8 +37,7 @@ const mockLogin = async (t, { stdin: stdinLines, registry: registryUrl, ...optio
 }
 
 t.test('usage', async t => {
-  const { npm } = await loadMockNpm(t)
-  const login = await npm.cmd('login')
+  const { login } = await loadMockNpm(t, { command: 'login' })
   t.match(login.usage, 'login', 'usage has command name in it')
 })
 
