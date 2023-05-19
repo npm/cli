@@ -5,7 +5,7 @@ const localeCompare = require('@isaacs/string-locale-compare')('en')
 const docs = require('@npmcli/docs')
 
 const { load: loadMockNpm } = require('../fixtures/mock-npm.js')
-const mockGlobals = require('../fixtures/mock-globals.js')
+const mockGlobals = require('@npmcli/mock-globals')
 const { definitions } = require('../../lib/utils/config/index.js')
 const cmdList = require('../../lib/utils/cmd-list.js')
 const pkg = require('../../package.json')

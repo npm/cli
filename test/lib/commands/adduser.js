@@ -4,7 +4,7 @@ const path = require('path')
 const ini = require('ini')
 
 const { load: loadMockNpm } = require('../../fixtures/mock-npm.js')
-const mockGlobals = require('../../fixtures/mock-globals.js')
+const mockGlobals = require('@npmcli/mock-globals')
 const MockRegistry = require('@npmcli/mock-registry')
 const stream = require('stream')
 

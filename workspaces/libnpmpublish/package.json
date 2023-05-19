@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/mock-globals": "^1.0.0",
     "@npmcli/mock-registry": "^1.0.0",
     "@npmcli/template-oss": "4.14.1",
     "lodash.clonedeep": "^4.5.0",

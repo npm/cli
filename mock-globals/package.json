@@ -1,0 +1,54 @@
+{
+  "name": "@npmcli/mock-globals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "private": true,
+  "scripts": {
+    "test": "tap",
+    "lint": "eslint \"**/*.js\"",
+    "postlint": "template-oss-check",
+    "template-oss-apply": "template-oss-apply --force",
+    "lintfix": "node .. run lint -- --fix",
+    "snap": "tap",
+    "posttest": "node .. run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/cli.git",
+    "directory": "mock-globals"
+  },
+  "keywords": [],
+  "author": "GitHub Inc.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/npm/cli/issues"
+  },
+  "homepage": "https://github.com/npm/cli#readme",
+  "files": [
+    "bin/",
+    "lib/"
+  ],
+  "engines": {
+    "node": "^14.17.0 || ^16.13.0 || >=18.0.0"
+  },
+  "templateOSS": {
+    "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
+    "version": "4.14.1"
+  },
+  "tap": {
+    "branches": 89,
+    "functions": 97,
+    "lines": 97,
+    "statements": 97,
+    "nyc-arg": [
+      "--exclude",
+      "tap-snapshots/**"
+    ]
+  },
+  "devDependencies": {
+    "@npmcli/eslint-config": "^4.0.1",
+    "@npmcli/template-oss": "4.14.1",
+    "tap": "^16.3.2"
+  }
+}

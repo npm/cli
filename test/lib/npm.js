@@ -2,7 +2,7 @@ const t = require('tap')
 const { resolve, dirname, join } = require('path')
 const fs = require('fs')
 const { load: loadMockNpm } = require('../fixtures/mock-npm.js')
-const mockGlobals = require('../fixtures/mock-globals')
+const mockGlobals = require('@npmcli/mock-globals')
 const { commands } = require('../../lib/utils/cmd-list.js')
 
 t.test('not yet loaded', async t => {

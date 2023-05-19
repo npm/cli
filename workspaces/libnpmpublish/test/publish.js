@@ -8,7 +8,7 @@ const ssri = require('ssri')
 const t = require('tap')
 
 const MockRegistry = require('@npmcli/mock-registry')
-const mockGlobals = require('../../../test/fixtures/mock-globals.js')
+const mockGlobals = require('@npmcli/mock-globals')
 
 // TODO use registry.manifest (requires json date wrangling for nock)
 
