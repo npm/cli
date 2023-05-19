@@ -1,5 +1,5 @@
 const t = require('tap')
-const mockGlobals = require('../../fixtures/mock-globals.js')
+const mockGlobals = require('@npmcli/mock-globals')
 const EventEmitter = require('events')
 const tmock = require('../../fixtures/tmock')
 

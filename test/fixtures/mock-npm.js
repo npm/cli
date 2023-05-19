@@ -4,7 +4,7 @@ const path = require('path')
 const tap = require('tap')
 const errorMessage = require('../../lib/utils/error-message')
 const mockLogs = require('./mock-logs')
-const mockGlobals = require('./mock-globals')
+const mockGlobals = require('@npmcli/mock-globals')
 const tmock = require('./tmock')
 const defExitCode = process.exitCode
 

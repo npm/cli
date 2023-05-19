@@ -62,6 +62,7 @@ graph LR;
   libnpmpublish-->npm-package-arg;
   libnpmpublish-->npm-registry-fetch;
   libnpmpublish-->npmcli-eslint-config["@npmcli/eslint-config"];
+  libnpmpublish-->npmcli-mock-globals["@npmcli/mock-globals"];
   libnpmpublish-->npmcli-mock-registry["@npmcli/mock-registry"];
   libnpmpublish-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmpublish-->proc-log;
@@ -121,6 +122,7 @@ graph LR;
   npm-->npmcli-fs["@npmcli/fs"];
   npm-->npmcli-git["@npmcli/git"];
   npm-->npmcli-map-workspaces["@npmcli/map-workspaces"];
+  npm-->npmcli-mock-globals["@npmcli/mock-globals"];
   npm-->npmcli-mock-registry["@npmcli/mock-registry"];
   npm-->npmcli-package-json["@npmcli/package-json"];
   npm-->npmcli-promise-spawn["@npmcli/promise-spawn"];
@@ -208,6 +210,8 @@ graph LR;
   npmcli-metavuln-calculator-->json-parse-even-better-errors;
   npmcli-metavuln-calculator-->pacote;
   npmcli-metavuln-calculator-->semver;
+  npmcli-mock-globals-->npmcli-eslint-config["@npmcli/eslint-config"];
+  npmcli-mock-globals-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-mock-registry-->npm-package-arg;
   npmcli-mock-registry-->npmcli-arborist["@npmcli/arborist"];
   npmcli-mock-registry-->npmcli-eslint-config["@npmcli/eslint-config"];
@@ -424,6 +428,7 @@ graph LR;
   libnpmpublish-->npm-package-arg;
   libnpmpublish-->npm-registry-fetch;
   libnpmpublish-->npmcli-eslint-config["@npmcli/eslint-config"];
+  libnpmpublish-->npmcli-mock-globals["@npmcli/mock-globals"];
   libnpmpublish-->npmcli-mock-registry["@npmcli/mock-registry"];
   libnpmpublish-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmpublish-->proc-log;
@@ -550,6 +555,7 @@ graph LR;
   npm-->npmcli-fs["@npmcli/fs"];
   npm-->npmcli-git["@npmcli/git"];
   npm-->npmcli-map-workspaces["@npmcli/map-workspaces"];
+  npm-->npmcli-mock-globals["@npmcli/mock-globals"];
   npm-->npmcli-mock-registry["@npmcli/mock-registry"];
   npm-->npmcli-package-json["@npmcli/package-json"];
   npm-->npmcli-promise-spawn["@npmcli/promise-spawn"];
@@ -689,6 +695,9 @@ graph LR;
   npmcli-metavuln-calculator-->json-parse-even-better-errors;
   npmcli-metavuln-calculator-->pacote;
   npmcli-metavuln-calculator-->semver;
+  npmcli-mock-globals-->npmcli-eslint-config["@npmcli/eslint-config"];
+  npmcli-mock-globals-->npmcli-template-oss["@npmcli/template-oss"];
+  npmcli-mock-globals-->tap;
   npmcli-mock-registry-->nock;
   npmcli-mock-registry-->npm-package-arg;
   npmcli-mock-registry-->npmcli-arborist["@npmcli/arborist"];
@@ -826,5 +835,5 @@ packages higher up the chain.
  - npm-registry-fetch, libnpmversion
  - @npmcli/git, make-fetch-happen, @npmcli/config, init-package-json
  - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, @npmcli/run-script, read-package-json, @npmcli/package-json, promzard
- - @npmcli/docs, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, bin-links, nopt, npmlog, parse-conflict-json, read
+ - @npmcli/docs, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, bin-links, nopt, npmlog, parse-conflict-json, @npmcli/mock-globals, read
  - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, minify-registry-metadata, ini, @npmcli/disparity-colors, mute-stream, npm-audit-report, npm-user-validate

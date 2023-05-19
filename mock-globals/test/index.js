@@ -1,5 +1,5 @@
 const t = require('tap')
-const mockGlobals = require('../../fixtures/mock-globals')
+const mockGlobals = require('..')
 
 /* eslint-disable no-console */
 const originals = {
