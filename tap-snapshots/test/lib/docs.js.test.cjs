@@ -3729,6 +3729,7 @@ npm uninstall [<@scope>/]<pkg>...
 
 Options:
 [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer|--save-bundle]
+[-g|--global]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
 
@@ -3743,6 +3744,7 @@ aliases: unlink, remove, rm, r, un
 \`\`\`
 
 #### \`save\`
+#### \`global\`
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`
