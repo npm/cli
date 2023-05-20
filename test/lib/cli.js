@@ -1,6 +1,7 @@
 const t = require('tap')
 const { load: loadMockNpm } = require('../fixtures/mock-npm.js')
 const tmock = require('../fixtures/tmock')
+const validateEngines = require('../../lib/es6/validate-engines.js')
 
 const cliMock = async (t, opts) => {
   let exitHandlerArgs = null
@@ -20,7 +21,7 @@ const cliMock = async (t, opts) => {
 
   return {
     Npm,
-    cli,
+    cli: (p) => validateEngines(p, () => cli),
     outputs,
     exitHandlerCalled: () => exitHandlerArgs,
     exitHandlerNpm: () => npm,
