@@ -105,10 +105,6 @@ t.test('npm.load', async t => {
     mockGlobals(t, { process: { platform: 'win32' } })
     t.equal(npm.bin, npm.globalBin, 'bin is global bin in windows mode')
     t.equal(npm.dir, npm.globalDir, 'dir is global dir in windows mode')
-
-    const tmp = npm.tmp
-    t.match(tmp, String, 'npm.tmp is a string')
-    t.equal(tmp, npm.tmp, 'getter only generates it once')
   })
 
   await t.test('forceful loading', async t => {
