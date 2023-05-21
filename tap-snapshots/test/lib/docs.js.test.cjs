@@ -996,7 +996,7 @@ Output parseable results from commands that write to standard output. For
 * Default: false
 * Type: Boolean
 
-Prefer to deduplicate packages if possible., rather than choosing a newer
+Prefer to deduplicate packages if possible, rather than choosing a newer
 version of a dependency.
 
 #### \`prefer-offline\`
