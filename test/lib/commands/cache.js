@@ -1,7 +1,6 @@
 const t = require('tap')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm.js')
 const MockRegistry = require('@npmcli/mock-registry')
-const mockGlobals = require('@npmcli/mock-globals')
 
 const cacache = require('cacache')
 const fs = require('fs')
@@ -267,8 +266,9 @@ t.test('cache verify', async t => {
 })
 
 t.test('cache verify as part of home', async t => {
-  const { npm, joinedOutput, prefix } = await loadMockNpm(t)
-  mockGlobals(t, { 'process.env.HOME': path.dirname(prefix) })
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    globals: ({ prefix }) => ({ 'process.env.HOME': path.dirname(prefix) }),
+  })
   await npm.exec('cache', ['verify'])
   t.match(joinedOutput(), 'Cache verified and compressed (~', 'contains ~ shorthand')
 })

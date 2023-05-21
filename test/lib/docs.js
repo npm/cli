@@ -1,11 +1,10 @@
 const t = require('tap')
-const { join, resolve, basename, extname, dirname } = require('path')
+const { join, resolve, basename, extname } = require('path')
 const fs = require('fs/promises')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 const docs = require('@npmcli/docs')
 
 const { load: loadMockNpm } = require('../fixtures/mock-npm.js')
-const mockGlobals = require('@npmcli/mock-globals')
 const { definitions } = require('../../lib/utils/config/index.js')
 const cmdList = require('../../lib/utils/cmd-list.js')
 const pkg = require('../../package.json')
@@ -31,21 +30,21 @@ t.test('config', async t => {
 })
 
 t.test('basic usage', async t => {
-  mockGlobals(t, { process: { platform: 'posix' } })
-
-  t.cleanSnapshot = str => str
-    .split(dirname(dirname(__dirname))).join('{BASEDIR}')
-    .split(pkg.version).join('{VERSION}')
-
   // snapshot basic usage without commands since all the command snapshots
   // are generated in the following test
   const { npm } = await loadMockNpm(t, {
     mocks: {
       '{LIB}/utils/cmd-list.js': { commands: [] },
     },
+    config: { userconfig: '/some/config/file/.npmrc' },
+    globals: { process: { platform: 'posix' } },
   })
 
-  npm.config.set('userconfig', '/some/config/file/.npmrc')
+  t.cleanSnapshot = str => str
+    .replace(npm.npmRoot, '{BASEDIR}')
+    .replace(npm.config.get('userconfig'), '{USERCONFIG}')
+    .split(pkg.version).join('{VERSION}')
+
   t.matchSnapshot(await npm.usage)
 })
 

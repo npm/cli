@@ -663,8 +663,7 @@ t.test('implicit workspace accept', async t => {
 
 t.test('usage', async t => {
   t.test('with browser', async t => {
-    mockGlobals(t, { process: { platform: 'posix' } })
-    const { npm } = await loadMockNpm(t)
+    const { npm } = await loadMockNpm(t, { globals: { process: { platform: 'posix' } } })
     const usage = await npm.usage
     npm.config.set('viewer', 'browser')
     const browserUsage = await npm.usage
@@ -673,8 +672,7 @@ t.test('usage', async t => {
   })
 
   t.test('windows always uses browser', async t => {
-    mockGlobals(t, { process: { platform: 'win32' } })
-    const { npm } = await loadMockNpm(t)
+    const { npm } = await loadMockNpm(t, { globals: { process: { platform: 'win32' } } })
     const usage = await npm.usage
     npm.config.set('viewer', 'browser')
     const browserUsage = await npm.usage

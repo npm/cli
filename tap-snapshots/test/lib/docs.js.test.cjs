@@ -24,7 +24,7 @@ All commands:
     
 
 Specify configs in the ini-formatted file:
-    /some/config/file/.npmrc
+    {USERCONFIG}
 or on the command line via: npm <command> --key=value
 
 More configuration info: npm help config

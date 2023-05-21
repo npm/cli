@@ -1,29 +1,26 @@
 const t = require('tap')
 const fs = require('fs')
 const path = require('path')
+const { load: loadMockNpm } = require('../../fixtures/mock-npm')
 
 const completionScript = fs
   .readFileSync(path.resolve(__dirname, '../../../lib/utils/completion.sh'), { encoding: 'utf8' })
   .replace(/^#!.*?\n/, '')
 
-const { load: loadMockNpm } = require('../../fixtures/mock-npm')
-const mockGlobals = require('@npmcli/mock-globals')
-
 const loadMockCompletion = async (t, o = {}) => {
   const { globals = {}, windows, ...options } = o
-  let resetGlobals = {}
-  resetGlobals = mockGlobals(t, {
-    'process.platform': windows ? 'win32' : 'posix',
-    'process.env.term': 'notcygwin',
-    'process.env.msystem': 'nogmingw',
-    ...globals,
-  }).reset
   const res = await loadMockNpm(t, {
     ...options,
+    globals: (dirs) => ({
+      'process.platform': windows ? 'win32' : 'posix',
+      'process.env.term': 'notcygwin',
+      'process.env.msystem': 'nogmingw',
+      ...(typeof globals === 'function' ? globals(dirs) : globals),
+    }),
   })
   const completion = await res.npm.cmd('completion')
   return {
-    resetGlobals,
+    resetGlobals: res.mockedGlobals.reset,
     completion,
     ...res,
   }
@@ -40,21 +37,26 @@ const loadMockCompletionComp = async (t, word, line) =>
 
 t.test('completion', async t => {
   t.test('completion completion', async t => {
-    const { outputs, completion, prefix } = await loadMockCompletion(t, {
+    const { outputs, completion } = await loadMockCompletion(t, {
       prefixDir: {
         '.bashrc': 'aaa',
         '.zshrc': 'aaa',
       },
+      globals: ({ prefix }) => ({
+        'process.env.HOME': prefix,
+      }),
     })
-    mockGlobals(t, { 'process.env.HOME': prefix })
 
     await completion.completion({ w: 2 })
     t.matchSnapshot(outputs, 'both shells')
   })
 
   t.test('completion completion no known shells', async t => {
-    const { outputs, completion, prefix } = await loadMockCompletion(t)
-    mockGlobals(t, { 'process.env.HOME': prefix })
+    const { outputs, completion } = await loadMockCompletion(t, {
+      globals: ({ prefix }) => ({
+        'process.env.HOME': prefix,
+      }),
+    })
 
     await completion.completion({ w: 2 })
     t.matchSnapshot(outputs, 'no responses')
