@@ -2638,6 +2638,9 @@ Get a value from the npm configuration
 Usage:
 npm get [<key> ...] (See \`npm config\`)
 
+Options:
+[-l|--long]
+
 Run "npm help get" for more info
 
 \`\`\`bash
@@ -2646,7 +2649,7 @@ npm get [<key> ...] (See \`npm config\`)
 
 Note: This command is unaware of workspaces.
 
-NO PARAMS
+#### \`long\`
 `
 
 exports[`test/lib/docs.js TAP usage help > must match snapshot 1`] = `
@@ -3531,6 +3534,9 @@ Set a value in the npm configuration
 Usage:
 npm set <key>=<value> [<key>=<value> ...] (See \`npm config\`)
 
+Options:
+[-g|--global] [-L|--location <global|user|project>]
+
 Run "npm help set" for more info
 
 \`\`\`bash
@@ -3539,7 +3545,8 @@ npm set <key>=<value> [<key>=<value> ...] (See \`npm config\`)
 
 Note: This command is unaware of workspaces.
 
-NO PARAMS
+#### \`global\`
+#### \`location\`
 `
 
 exports[`test/lib/docs.js TAP usage shrinkwrap > must match snapshot 1`] = `
