@@ -2638,6 +2638,9 @@ Get a value from the npm configuration
 Usage:
 npm get [<key> ...] (See \`npm config\`)
 
+Options:
+[-l|--long]
+
 Run "npm help get" for more info
 
 \`\`\`bash
@@ -2646,7 +2649,7 @@ npm get [<key> ...] (See \`npm config\`)
 
 Note: This command is unaware of workspaces.
 
-NO PARAMS
+#### \`long\`
 `
 
 exports[`test/lib/docs.js TAP usage help > must match snapshot 1`] = `
