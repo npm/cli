@@ -212,7 +212,7 @@ const setupMockNpm = async (t, {
       return acc
     }, { argv: [...rawArgv], env: {}, config: {} })
 
-  mockGlobals(t, {
+  const mockedGlobals = mockGlobals(t, {
     'process.env.HOME': dirs.home,
     // global prefix cannot be (easily) set via argv so this is the easiest way
     // to set it that also closely mimics the behavior a user would see since it
@@ -269,6 +269,7 @@ const setupMockNpm = async (t, {
 
   return {
     npm,
+    mockedGlobals,
     ...mockNpm,
     ...dirs,
     ...mockCommand,
