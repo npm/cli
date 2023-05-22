@@ -30,6 +30,9 @@ class MockRegistry {
 
   static tnock (t, host, opts, { debug = false, strict = false } = {}) {
     const noMatch = (req) => {
+      if (debug) {
+        console.error('NO MATCH', t.name, req.options ? req.options : req.path)
+      }
       if (strict) {
         // There are network requests that get caught regardless of error code.
         // Turning on strict mode requires that those requests get explicitly
@@ -37,9 +40,6 @@ class MockRegistry {
         // XXX: this is opt-in currently because it breaks some existing CLI
         // tests. We should work towards making this the default for all tests.
         t.fail(`Unmatched request: ${JSON.stringify(req, null, 2)}`)
-      }
-      if (debug) {
-        console.error('NO MATCH', t.name, req.options ? req.options : req.path)
       }
     }
 

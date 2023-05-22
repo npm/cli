@@ -165,6 +165,10 @@ Array [
 ]
 `
 
+exports[`test/lib/docs.js TAP command list > deref 1`] = `
+Function deref(c)
+`
+
 exports[`test/lib/docs.js TAP config > all definitions 1`] = `
 #### \`_auth\`
 

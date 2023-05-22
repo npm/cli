@@ -10,6 +10,7 @@ const completionScript = fs
 const loadMockCompletion = async (t, o = {}) => {
   const { globals = {}, windows, ...options } = o
   const res = await loadMockNpm(t, {
+    command: 'completion',
     ...options,
     globals: (dirs) => ({
       'process.platform': windows ? 'win32' : 'posix',
@@ -18,10 +19,8 @@ const loadMockCompletion = async (t, o = {}) => {
       ...(typeof globals === 'function' ? globals(dirs) : globals),
     }),
   })
-  const completion = await res.npm.cmd('completion')
   return {
     resetGlobals: res.mockedGlobals.reset,
-    completion,
     ...res,
   }
 }
@@ -88,7 +87,7 @@ t.test('completion', async t => {
       },
     })
 
-    await completion.exec({})
+    await completion.exec()
     t.equal(data, completionScript, 'wrote the completion script')
   })
 
@@ -113,7 +112,7 @@ t.test('completion', async t => {
       },
     })
 
-    await completion.exec({})
+    await completion.exec()
     t.equal(data, completionScript, 'wrote the completion script')
   })
 
@@ -192,7 +191,7 @@ t.test('completion', async t => {
 t.test('windows without bash', async t => {
   const { outputs, completion } = await loadMockCompletion(t, { windows: true })
   await t.rejects(
-    completion.exec({}),
+    completion.exec(),
     { code: 'ENOTSUP', message: /completion supported only in MINGW/ },
     'returns the correct error'
   )

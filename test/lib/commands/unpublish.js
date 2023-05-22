@@ -427,13 +427,13 @@ t.test('scoped registry config', async t => {
 })
 
 t.test('completion', async t => {
-  const { npm } = await loadMockNpm(t, {
+  const { npm, unpublish } = await loadMockNpm(t, {
+    command: 'unpublish',
     config: {
       ...auth,
     },
   })
 
-  const unpublish = await npm.cmd('unpublish')
   const testComp =
     async (t, { argv, partialWord, expect, title }) => {
       const res = await unpublish.completion(
