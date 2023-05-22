@@ -991,6 +991,14 @@ For \`list\` this means the output will be based on the tree described by the
 Output parseable results from commands that write to standard output. For
 \`npm search\`, this will be tab-separated table format.
 
+#### \`prefer-dedupe\`
+
+* Default: false
+* Type: Boolean
+
+Prefer to deduplicate packages if possible, rather than choosing a newer
+version of a dependency.
+
 #### \`prefer-offline\`
 
 * Default: false
@@ -1802,6 +1810,7 @@ Array [
   "package-lock-only",
   "pack-destination",
   "parseable",
+  "prefer-dedupe",
   "prefer-offline",
   "prefer-online",
   "prefix",
@@ -1938,6 +1947,7 @@ Array [
   "package-lock-only",
   "pack-destination",
   "parseable",
+  "prefer-dedupe",
   "prefer-offline",
   "prefer-online",
   "preid",
@@ -2766,7 +2776,7 @@ Options:
 [-E|--save-exact] [-g|--global]
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
-[--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
+[--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--foreground-scripts]
 [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
@@ -2789,6 +2799,7 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 #### \`global-style\`
 #### \`omit\`
 #### \`strict-peer-deps\`
+#### \`prefer-dedupe\`
 #### \`package-lock\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
@@ -2854,7 +2865,7 @@ Options:
 [-E|--save-exact] [-g|--global]
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
-[--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
+[--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--foreground-scripts]
 [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
@@ -2877,6 +2888,7 @@ alias: it
 #### \`global-style\`
 #### \`omit\`
 #### \`strict-peer-deps\`
+#### \`prefer-dedupe\`
 #### \`package-lock\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
