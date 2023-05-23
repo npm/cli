@@ -2606,4 +2606,18 @@ const definitions = module.exports = {
     defaultDescription: 'false',
     typeDescription: 'Boolean',
   },
+  truth: {
+    key: 'truth',
+    default: false,
+    type: Boolean,
+    description: 'The Truth',
+    exclusive: ['lie'],
+  },
+  lie: {
+    key: 'lie',
+    default: false,
+    type: Boolean,
+    description: 'A Lie',
+    exclusive: ['truth'],
+  },
 }

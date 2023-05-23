@@ -118,6 +118,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "production": null,
   "progress": true,
   "provenance": false,
+  "provenance-file": null,
   "proxy": null,
   "read-only": false,
   "rebuild-bundle": true,
@@ -274,6 +275,7 @@ preid = ""
 production = null 
 progress = true 
 provenance = false 
+provenance-file = null 
 proxy = null 
 read-only = false 
 rebuild-bundle = true 
