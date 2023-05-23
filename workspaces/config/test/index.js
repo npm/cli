@@ -239,7 +239,6 @@ loglevel = yolo
       env,
       argv,
       cwd: join(`${path}/project`),
-
       shorthands,
       definitions,
     })
@@ -1318,6 +1317,27 @@ t.test('workspaces', async (t) => {
   })
 })
 
+t.test('exclusive options conflict', async t => {
+  const path = t.testdir()
+  const config = new Config({
+    env: {},
+    npmPath: __dirname,
+    argv: [
+      process.execPath,
+      __filename,
+      '--truth=true',
+      '--lie=true',
+    ],
+    cwd: join(`${path}/project`),
+    shorthands,
+    definitions,
+    flatten,
+  })
+  await t.rejects(config.load(), {
+    name: 'TypeError',
+    message: '--lie can not be provided when using --truth',
+  })
+})
 t.test('env-replaced config from files is not clobbered when saving', async (t) => {
   const path = t.testdir()
   const opts = {
