@@ -33,7 +33,7 @@ All commands:
     whoami
 
 Specify configs in the ini-formatted file:
-    {NPM}/{TESTDIR}/project/.npmrc
+    {NPM}/{TESTDIR}/home/.npmrc
 or on the command line via: npm <command> --key=value
 
 More configuration info: npm help config

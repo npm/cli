@@ -3,7 +3,7 @@ const t = require('tap')
 const setup = require('./fixtures/setup.js')
 
 t.test('basic', async t => {
-  const { registry, npm, isSmokePublish, readFile, paths } = await setup(t, {
+  const { registry, npm, npmPath, npmLocal, readFile, paths } = await setup(t, {
     testdir: {
       packages: {
         'abbrev-1.0.4': {
@@ -43,10 +43,32 @@ t.test('basic', async t => {
     t.equal(pkg.version, '1.0.0', 'should have expected generated version')
   })
 
+  await t.test('npm root', async t => {
+    const npmRoot = await npm('help').then(setup.getNpmRoot)
+
+    if (setup.SMOKE_PUBLISH) {
+      const globalNpmRoot = await npmPath('help').then(setup.getNpmRoot)
+      t.rejects(npmLocal('help'), 'npm local rejects during smoke publish')
+      t.not(npmRoot, setup.CLI_ROOT, 'npm root is not the local source dir')
+      t.equal(
+        npmRoot,
+        globalNpmRoot,
+        'during smoke publish, npm root and global root are equal'
+      )
+    } else {
+      t.equal(
+        await npmLocal('help').then(setup.getNpmRoot),
+        setup.CLI_ROOT,
+        'npm local root is the local source dir'
+      )
+      t.equal(npmRoot, setup.CLI_ROOT, 'npm root is the local source dir')
+    }
+  })
+
   await t.test('npm --version', async t => {
     const v = await npm('--version')
 
-    if (isSmokePublish) {
+    if (setup.SMOKE_PUBLISH) {
       t.match(v.trim(), /-[0-9a-f]{40}\.\d$/, 'must have a git version')
     } else {
       t.match(v.trim(), /^\d+\.\d+\.\d+/, 'has a version')
