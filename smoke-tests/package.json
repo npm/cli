@@ -23,8 +23,6 @@
     "@npmcli/promise-spawn": "^6.0.2",
     "@npmcli/template-oss": "4.14.1",
     "http-proxy": "^1.18.1",
-    "just-extend": "^6.2.0",
-    "just-safe-set": "^4.2.1",
     "tap": "^16.3.4",
     "which": "^3.0.0"
   },

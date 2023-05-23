@@ -715,8 +715,6 @@ graph LR;
   npmcli-run-script-->read-package-json-fast;
   npmcli-run-script-->which;
   npmcli-smoke-tests-->http-proxy;
-  npmcli-smoke-tests-->just-extend;
-  npmcli-smoke-tests-->just-safe-set;
   npmcli-smoke-tests-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-smoke-tests-->npmcli-mock-registry["@npmcli/mock-registry"];
   npmcli-smoke-tests-->npmcli-promise-spawn["@npmcli/promise-spawn"];
