@@ -3,7 +3,7 @@ const fs = require('fs/promises')
 const { resolve } = require('path')
 
 const { commands, aliases } = require('../lib/utils/cmd-list.js')
-const { definitions } = require('../lib/utils/config/index.js')
+const { definitions } = require('@npmcli/config/lib/definitions')
 
 async function main () {
   const file = resolve(__dirname, '..', 'lib', 'utils', 'completion.fish')

@@ -5,7 +5,7 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/lib/utils/config/definition.js TAP basic definition > description of deprecated thing 1`] = `
+exports[`test/definitions/definition.js TAP basic definition > description of deprecated thing 1`] = `
 #### \`deprecated\`
 
 * Default: A number bigger than 1
@@ -19,7 +19,18 @@ not even once.
 
 `
 
-exports[`test/lib/utils/config/definition.js TAP basic definition > human-readable description 1`] = `
+exports[`test/definitions/definition.js TAP basic definition > description of deprecated thing 2`] = `
+#### \`exclusive\`
+
+* Default: 1234
+* Type: Number
+
+a number
+
+This config can not be used with: \`x\`
+`
+
+exports[`test/definitions/definition.js TAP basic definition > human-readable description 1`] = `
 #### \`key\`
 
 * Default: "some default value"
@@ -30,7 +41,7 @@ just a test thingie
 
 `
 
-exports[`test/lib/utils/config/definition.js TAP long description > cols=-1 1`] = `
+exports[`test/definitions/definition.js TAP long description > cols=-1 1`] = `
 #### \`walden\`
 
 * Default: true
@@ -100,7 +111,7 @@ with (multiple) {
 
 `
 
-exports[`test/lib/utils/config/definition.js TAP long description > cols=0 1`] = `
+exports[`test/definitions/definition.js TAP long description > cols=0 1`] = `
 #### \`walden\`
 
 * Default: true
@@ -170,7 +181,7 @@ with (multiple) {
 
 `
 
-exports[`test/lib/utils/config/definition.js TAP long description > cols=40 1`] = `
+exports[`test/definitions/definition.js TAP long description > cols=40 1`] = `
 #### \`walden\`
 
 * Default: true
@@ -210,7 +221,7 @@ with (multiple) {
 
 `
 
-exports[`test/lib/utils/config/definition.js TAP long description > cols=9000 1`] = `
+exports[`test/definitions/definition.js TAP long description > cols=9000 1`] = `
 #### \`walden\`
 
 * Default: true
@@ -241,7 +252,7 @@ with (multiple) {
 
 `
 
-exports[`test/lib/utils/config/definition.js TAP long description > cols=NaN 1`] = `
+exports[`test/definitions/definition.js TAP long description > cols=NaN 1`] = `
 #### \`walden\`
 
 * Default: true

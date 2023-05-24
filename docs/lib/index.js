@@ -3,7 +3,7 @@ const { join, basename, resolve } = require('path')
 const transformHTML = require('./transform-html.js')
 const { version } = require('../../lib/npm.js')
 const { aliases } = require('../../lib/utils/cmd-list')
-const { shorthands, definitions } = require('../../lib/utils/config/index.js')
+const { shorthands, definitions } = require('@npmcli/config/lib/definitions')
 
 const DOC_EXT = '.md'
 

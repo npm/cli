@@ -31,6 +31,16 @@ const flatten = (obj, flat = {}) => {
   return flat
 }
 
+const definitionProps = Object.entries(definitions)
+  .reduce((acc, [key, { short = [], default: d }]) => {
+  // can be either an array or string
+    for (const s of [].concat(short)) {
+      acc.shorthands[s] = [`--${key}`]
+    }
+    acc.defaults[key] = d
+    return acc
+  }, { shorthands: {}, defaults: {} })
+
 // aliases where they get expanded into a completely different thing
 // these are NOT supported in the environment or npmrc files, only
 // expanded on the CLI.
@@ -55,23 +65,11 @@ const shorthands = {
   readonly: ['--read-only'],
   reg: ['--registry'],
   iwr: ['--include-workspace-root'],
-  ...Object.entries(definitions).reduce((acc, [key, { short = [] }]) => {
-    // can be either an array or string
-    for (const s of [].concat(short)) {
-      acc[s] = [`--${key}`]
-    }
-    return acc
-  }, {}),
+  ...definitionProps.shorthands,
 }
 
 module.exports = {
-  get defaults () {
-    // NB: 'default' is a reserved word
-    return Object.entries(definitions).reduce((acc, [key, { default: d }]) => {
-      acc[key] = d
-      return acc
-    }, {})
-  },
+  defaults: definitionProps.defaults,
   definitions,
   flatten,
   shorthands,
