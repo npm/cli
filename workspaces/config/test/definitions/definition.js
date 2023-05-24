@@ -1,13 +1,11 @@
 const t = require('tap')
-const Definition = require('../../../../lib/utils/config/definition.js')
+const Definition = require('../../lib/definitions/definition.js')
 const {
-  typeDefs: {
-    semver: { type: semver },
-    Umask: { type: Umask },
-    url: { type: url },
-    path: { type: path },
-  },
-} = require('@npmcli/config')
+  semver: { type: semver },
+  Umask: { type: Umask },
+  url: { type: url },
+  path: { type: path },
+} = require('../../lib/type-defs.js')
 
 t.test('basic definition', async t => {
   const def = new Definition('key', {
@@ -38,6 +36,14 @@ t.test('basic definition', async t => {
     typeDescription: 'An expression of a numeric quantity using numerals',
   })
   t.matchSnapshot(deprecated.describe(), 'description of deprecated thing')
+
+  const exclusive = new Definition('exclusive', {
+    default: 1234,
+    type: Number,
+    description: 'a number',
+    exclusive: ['x'],
+  })
+  t.matchSnapshot(exclusive.describe(), 'description of deprecated thing')
 
   const nullOrUmask = new Definition('key', {
     default: null,

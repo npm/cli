@@ -25,13 +25,11 @@ const allowed = [
 ]
 
 const {
-  typeDefs: {
-    semver: { type: semver },
-    Umask: { type: Umask },
-    url: { type: url },
-    path: { type: path },
-  },
-} = require('@npmcli/config')
+  semver: { type: semver },
+  Umask: { type: Umask },
+  url: { type: url },
+  path: { type: path },
+} = require('../type-defs.js')
 
 class Definition {
   constructor (key, def) {

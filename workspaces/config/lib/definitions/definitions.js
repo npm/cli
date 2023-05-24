@@ -3,11 +3,11 @@ module.exports = definitions
 
 const Definition = require('./definition.js')
 
-const { version: npmVersion } = require('../../../package.json')
 const ciInfo = require('ci-info')
 const querystring = require('querystring')
-const { isWindows } = require('../is-windows.js')
 const { join } = require('path')
+
+const isWindows = process.platform === 'win32'
 
 // used by cafile flattening to flatOptions.ca
 const fs = require('fs')
@@ -87,19 +87,15 @@ const cacheRoot = (isWindows && process.env.LOCALAPPDATA) || '~'
 const cacheExtra = isWindows ? 'npm-cache' : '.npm'
 const cache = `${cacheRoot}/${cacheExtra}`
 
-const Config = require('@npmcli/config')
-
 // TODO: refactor these type definitions so that they are less
 // weird to pull out of the config module.
 // TODO: use better type definition/validation API, nopt's is so weird.
 const {
-  typeDefs: {
-    semver: { type: semver },
-    Umask: { type: Umask },
-    url: { type: url },
-    path: { type: path },
-  },
-} = Config
+  semver: { type: semver },
+  Umask: { type: Umask },
+  url: { type: url },
+  path: { type: path },
+} = require('../type-defs.js')
 
 const define = (key, def) => {
   /* istanbul ignore if - this should never happen, prevents mistakes below */
@@ -2233,7 +2229,7 @@ define('user-agent', {
     }
     flatOptions.userAgent =
       value.replace(/\{node-version\}/gi, process.version)
-        .replace(/\{npm-version\}/gi, npmVersion)
+        .replace(/\{npm-version\}/gi, obj['npm-version'])
         .replace(/\{platform\}/gi, process.platform)
         .replace(/\{arch\}/gi, process.arch)
         .replace(/\{workspaces\}/gi, inWorkspaces)

@@ -1,6 +1,6 @@
 const t = require('tap')
-const config = require('../../../../lib/utils/config/index.js')
-const definitions = require('../../../../lib/utils/config/definitions.js')
+const config = require('../../lib/definitions/index.js')
+const definitions = require('../../lib/definitions/definitions.js')
 const mockGlobals = require('@npmcli/mock-globals')
 
 t.test('defaults', t => {
@@ -9,10 +9,6 @@ t.test('defaults', t => {
     registry: definitions.registry.default,
     'init-module': definitions['init-module'].default,
   })
-
-  // is a getter, so changes are reflected
-  definitions.registry.default = 'https://example.com'
-  t.strictSame(config.defaults.registry, 'https://example.com')
 
   t.end()
 })

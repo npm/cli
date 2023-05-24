@@ -1,15 +1,15 @@
 const t = require('tap')
 const { resolve } = require('path')
 const mockGlobals = require('@npmcli/mock-globals')
-const tmock = require('../../../fixtures/tmock')
-const pkg = require('../../../../package.json')
 
 // have to fake the node version, or else it'll only pass on this one
 mockGlobals(t, { 'process.version': 'v14.8.0', 'process.env.NODE_ENV': undefined })
 
-const mockDefs = (mocks = {}) => tmock(t, '{LIB}/utils/config/definitions.js', mocks)
+const mockDefs = (mocks = {}) => t.mock('../../lib/definitions/definitions.js', mocks)
 
-const isWin = (isWindows) => ({ '{LIB}/utils/is-windows.js': { isWindows } })
+const isWin = (t, isWindows) => {
+  mockGlobals(t, { 'process.platform': isWindows ? 'win32' : 'not-windows' })
+}
 
 t.test('basic flattening function camelCases from css-case', t => {
   const flat = {}
@@ -41,9 +41,9 @@ t.test('editor', t => {
         SYSTEMROOT: 'C:\\Windows',
       },
     })
-    const defsWin = mockDefs(isWin(true))
+    const defsWin = mockDefs(isWin(t, true))
     t.equal(defsWin.editor.default, 'C:\\Windows\\notepad.exe')
-    const defsNix = mockDefs(isWin(false))
+    const defsNix = mockDefs(isWin(t, false))
     t.equal(defsNix.editor.default, 'vi')
     t.end()
   })
@@ -53,20 +53,20 @@ t.test('editor', t => {
 t.test('shell', t => {
   t.test('windows, env.ComSpec then cmd.exe', t => {
     mockGlobals(t, { 'process.env.ComSpec': 'command.com' })
-    const defsComSpec = mockDefs(isWin(true))
+    const defsComSpec = mockDefs(isWin(t, true))
     t.equal(defsComSpec.shell.default, 'command.com')
     mockGlobals(t, { 'process.env.ComSpec': undefined })
-    const defsNoComSpec = mockDefs(isWin(true))
+    const defsNoComSpec = mockDefs(isWin(t, true))
     t.equal(defsNoComSpec.shell.default, 'cmd')
     t.end()
   })
 
   t.test('nix, SHELL then sh', t => {
     mockGlobals(t, { 'process.env.SHELL': '/usr/local/bin/bash' })
-    const defsShell = mockDefs(isWin(false))
+    const defsShell = mockDefs(isWin(t, false))
     t.equal(defsShell.shell.default, '/usr/local/bin/bash')
     mockGlobals(t, { 'process.env.SHELL': undefined })
-    const defsNoShell = mockDefs(isWin(false))
+    const defsNoShell = mockDefs(isWin(t, false))
     t.equal(defsNoShell.shell.default, 'sh')
     t.end()
   })
@@ -134,14 +134,14 @@ t.test('unicode allowed?', t => {
 
 t.test('cache', t => {
   mockGlobals(t, { 'process.env.LOCALAPPDATA': 'app/data/local' })
-  const defsWinLocalAppData = mockDefs(isWin(true))
+  const defsWinLocalAppData = mockDefs(isWin(t, true))
   t.equal(defsWinLocalAppData.cache.default, 'app/data/local/npm-cache')
 
   mockGlobals(t, { 'process.env.LOCALAPPDATA': undefined })
-  const defsWinNoLocalAppData = mockDefs(isWin(true))
+  const defsWinNoLocalAppData = mockDefs(isWin(t, true))
   t.equal(defsWinNoLocalAppData.cache.default, '~/npm-cache')
 
-  const defsNix = mockDefs(isWin(false))
+  const defsNix = mockDefs(isWin(t, false))
   t.equal(defsNix.cache.default, '~/.npm')
 
   const flat = {}
@@ -743,11 +743,13 @@ t.test('detect CI', t => {
 })
 
 t.test('user-agent', t => {
+  const npmVersion = '1.2.3'
   const obj = {
+    'npm-version': npmVersion,
     'user-agent': mockDefs()['user-agent'].default,
   }
   const flat = {}
-  const expectNoCI = `npm/${pkg.version} node/${process.version} ` +
+  const expectNoCI = `npm/${npmVersion} node/${process.version} ` +
     `${process.platform} ${process.arch} workspaces/false`
   mockDefs()['user-agent'].flatten('user-agent', obj, flat)
   t.equal(flat.userAgent, expectNoCI)
@@ -835,6 +837,19 @@ t.test('location', t => {
   // global = false leaves location unaltered
   t.strictSame(flat, { global: false, location: 'user' })
   t.strictSame(obj, { global: false, location: 'user' })
+
+  obj.global = false
+  obj.location = 'global'
+  delete flat.global
+  delete flat.location
+
+  mockDefs().global.flatten('global', obj, flat)
+  mockDefs().location.flatten('location', obj, flat)
+  // location = global sets global to true
+  t.strictSame(flat, { global: true, location: 'global' })
+  // global here is still false because flattening doesn't modify the object
+  t.strictSame(obj, { global: false, location: 'global' })
+
   t.end()
 })
 

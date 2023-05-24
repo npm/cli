@@ -1,16 +1,22 @@
 const setEnvs = require('../lib/set-envs.js')
+const mockGlobals = require('@npmcli/mock-globals')
 
 const { join } = require('path')
 const t = require('tap')
-const defaults = require('./fixtures/defaults.js')
-const definitions = require('./fixtures/definitions.js')
 const { execPath } = process
 const cwd = process.cwd()
 const globalPrefix = join(cwd, 'global')
 const localPrefix = join(cwd, 'local')
 const NODE = execPath
 
+const mockDefinitions = (t) => {
+  mockGlobals(t, { 'process.env': { EDITOR: 'vim' } })
+  const { definitions, defaults } = t.mock('../lib/definitions/index.js')
+  return { definitions, defaults }
+}
+
 t.test('set envs that are not defaults and not already in env', t => {
+  const { definitions, defaults } = mockDefinitions(t)
   const envConf = Object.create(defaults)
   const cliConf = Object.create(envConf)
   const extras = {
@@ -61,6 +67,7 @@ t.test('set envs that are not defaults and not already in env', t => {
 })
 
 t.test('set envs that are not defaults and not already in env, array style', t => {
+  const { definitions, defaults } = mockDefinitions(t)
   const envConf = Object.create(defaults)
   const cliConf = Object.create(envConf)
   const extras = {
@@ -108,6 +115,7 @@ t.test('set envs that are not defaults and not already in env, array style', t =
 })
 
 t.test('set envs that are not defaults and not already in env, boolean edition', t => {
+  const { definitions, defaults } = mockDefinitions(t)
   const envConf = Object.create(defaults)
   const cliConf = Object.create(envConf)
   const extras = {
@@ -157,6 +165,7 @@ t.test('set envs that are not defaults and not already in env, boolean edition',
 })
 
 t.test('dont set npm_execpath if require.main.filename is not set', t => {
+  const { definitions, defaults } = mockDefinitions(t)
   const { filename } = require.main
   t.teardown(() => require.main.filename = filename)
   require.main.filename = null
@@ -180,6 +189,7 @@ t.test('dont set npm_execpath if require.main.filename is not set', t => {
 })
 
 t.test('dont set configs marked as envExport:false', t => {
+  const { definitions, defaults } = mockDefinitions(t)
   const envConf = Object.create(defaults)
   const cliConf = Object.create(envConf)
   const extras = {
@@ -205,7 +215,7 @@ t.test('dont set configs marked as envExport:false', t => {
   }
   setEnvs(config)
   t.strictSame(env, { ...extras }, 'no new environment vars to create')
-  cliConf.methane = 'CO2'
+  cliConf['include-workspace-root'] = true
   setEnvs(config)
   t.strictSame(env, { ...extras }, 'not exported, because envExport=false')
   t.end()

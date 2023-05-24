@@ -2390,7 +2390,7 @@ Object {
   "noProxy": "",
   "npmBin": "{CWD}/{TESTDIR}/docs.js",
   "npmCommand": "version",
-  "npmVersion": "1.1.1",
+  "npmVersion": "3.3.3",
   "npxCache": "{CWD}/cache/_npx",
   "offline": false,
   "omit": Array [],
