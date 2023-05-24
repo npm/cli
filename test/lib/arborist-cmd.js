@@ -113,11 +113,11 @@ t.test('arborist-cmd', async t => {
   })
 
   await t.test('prefix inside cwd', async t => {
-    const { npm, cmd, prefix } = await mockArboristCmd(t, null, ['a', 'c'], {
+    const { cmd } = await mockArboristCmd(t, null, ['a', 'c'], {
       chdir: (dirs) => dirs.testdir,
+      config: ({ prefix }) => ({ prefix }),
     })
 
-    npm.localPrefix = prefix
     await cmd.execWorkspaces([])
 
     t.same(cmd.workspaceNames, ['a', 'c'], 'should set array with single ws name')

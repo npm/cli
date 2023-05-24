@@ -290,7 +290,7 @@ systems.
 #### \`browser\`
 
 * Default: OS X: \`"open"\`, Windows: \`"start"\`, Others: \`"xdg-open"\`
-* Type: null, Boolean, or String
+* Type: class BooleanOrString {} or Boolean
 
 The browser that is called by npm commands to open websites.
 
@@ -2390,7 +2390,7 @@ Object {
   "noProxy": "",
   "npmBin": "{CWD}/{TESTDIR}/docs.js",
   "npmCommand": "version",
-  "npmVersion": "1.1.1",
+  "npmVersion": "3.3.3",
   "npxCache": "{CWD}/cache/_npx",
   "offline": false,
   "omit": Array [],

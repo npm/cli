@@ -24,8 +24,6 @@
     "template-oss-apply": "template-oss-apply --force"
   },
   "tap": {
-    "check-coverage": true,
-    "coverage-map": "map.js",
     "nyc-arg": [
       "--exclude",
       "tap-snapshots/**"
@@ -33,17 +31,24 @@
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/mock-globals": "^1.0.0",
     "@npmcli/template-oss": "4.14.1",
+    "acorn": "^8.8.2",
     "tap": "^16.3.4"
   },
   "dependencies": {
+    "@isaacs/string-locale-compare": "^1.1.0",
     "@npmcli/map-workspaces": "^3.0.2",
+    "@npmcli/promise-spawn": "^6.0.2",
+    "ci-info": "^3.8.0",
     "ini": "^4.1.0",
     "nopt": "^7.0.0",
+    "npm-registry-fetch": "^14.0.5",
     "proc-log": "^3.0.0",
     "read-package-json-fast": "^3.0.2",
     "semver": "^7.3.5",
-    "walk-up-path": "^3.0.1"
+    "walk-up-path": "^3.0.1",
+    "which": "^3.0.1"
   },
   "engines": {
     "node": "^14.17.0 || ^16.13.0 || >=18.0.0"

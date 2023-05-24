@@ -11,14 +11,14 @@ Object.keys(process.env)
 delete process.env.PREFIX
 delete process.env.DESTDIR
 
-const definitions = require('./fixtures/definitions.js')
-const shorthands = require('./fixtures/shorthands.js')
-const flatten = require('./fixtures/flatten.js')
+const Definition = require('../lib/definitions/definition.js')
+const createDef = (key, value) => ({ [key]: new Definition(key, { key, ...value }) })
+
 const typeDefs = require('../lib/type-defs.js')
 
 const { resolve, join, dirname } = require('path')
 
-const Config = t.mock('../', {
+const fsMocks = {
   'fs/promises': {
     ...fs.promises,
     readFile: async (path, ...args) => {
@@ -29,11 +29,25 @@ const Config = t.mock('../', {
       return fs.promises.readFile(path, ...args)
     },
   },
-})
+  fs: {
+    ...fs,
+    readFileSync: (path, ...args) => {
+      if (path.includes('WEIRD-ERROR')) {
+        throw Object.assign(new Error('weird error'), { code: 'EWEIRD' })
+      }
+
+      return fs.readFileSync(path, ...args)
+    },
+  },
+}
+
+const { definitions, shorthands, flatten } = t.mock('../lib/definitions/index.js', fsMocks)
+const Config = t.mock('../', fsMocks)
 
 // because we used t.mock above, the require cache gets blown and we lose our direct equality
 // on the typeDefs. to get around that, we require an un-mocked Config and assert against that
 const RealConfig = require('../')
+
 t.equal(typeDefs, RealConfig.typeDefs, 'exposes type definitions')
 
 t.test('construct with no settings, get default values for stuff', t => {
@@ -152,6 +166,7 @@ loglevel = yolo
     'foo',
     '--also=dev',
     '--registry=hello',
+    '--proxy=hello',
     '--omit=cucumber',
     '--access=blueberry',
     '--multiple-numbers=what kind of fruit is not a number',
@@ -240,7 +255,23 @@ loglevel = yolo
       argv,
       cwd: join(`${path}/project`),
       shorthands,
-      definitions,
+      definitions: {
+        ...definitions,
+        ...createDef('multiple-numbers', {
+          default: [],
+          type: [Array, Number],
+          description: 'one or more numbers',
+        }),
+        ...createDef('methane', {
+          envExport: false,
+          type: String,
+          typeDescription: 'Greenhouse Gas',
+          default: 'CH4',
+          description: `
+            This is bad for the environment, for our children, do not put it there.
+          `,
+        }),
+      },
     })
 
     t.equal(config.globalPrefix, null, 'globalPrefix missing before load')
@@ -347,6 +378,8 @@ loglevel = yolo
     t.strictSame(logs, [
       ['warn', 'invalid config', 'registry="hello"', 'set in command line options'],
       ['warn', 'invalid config', 'Must be', 'full url with "http://"'],
+      ['warn', 'invalid config', 'proxy="hello"', 'set in command line options'],
+      ['warn', 'invalid config', 'Must be', 'full url with "http://"'],
       ['warn', 'invalid config', 'omit="cucumber"', 'set in command line options'],
       ['warn', 'invalid config', 'Must be one or more of:', 'dev, optional, peer'],
       ['warn', 'invalid config', 'access="blueberry"', 'set in command line options'],
@@ -362,8 +395,7 @@ loglevel = yolo
       ['warn', 'invalid config', 'loglevel="yolo"',
         `set in ${resolve(path, 'project/.npmrc')}`],
       ['warn', 'invalid config', 'Must be one of:',
-        ['silent', 'error', 'warn', 'notice', 'http', 'timing', 'info',
-          'verbose', 'silly'].join(', '),
+        ['silent', 'error', 'warn', 'notice', 'http', 'info', 'verbose', 'silly'].join(', '),
       ],
     ])
     t.equal(config.valid, false)
@@ -494,7 +526,14 @@ loglevel = yolo
       platform: 'posix',
 
       shorthands,
-      definitions,
+      definitions: {
+        ...definitions,
+        ...createDef('multiple-numbers', {
+          default: [],
+          type: [Array, Number],
+          description: 'one or more numbers',
+        }),
+      },
     })
     await config.load()
 
@@ -534,6 +573,8 @@ loglevel = yolo
     t.strictSame(logs, [
       ['warn', 'invalid config', 'registry="hello"', 'set in command line options'],
       ['warn', 'invalid config', 'Must be', 'full url with "http://"'],
+      ['warn', 'invalid config', 'proxy="hello"', 'set in command line options'],
+      ['warn', 'invalid config', 'Must be', 'full url with "http://"'],
       ['warn', 'invalid config', 'omit="cucumber"', 'set in command line options'],
       ['warn', 'invalid config', 'Must be one or more of:', 'dev, optional, peer'],
       ['warn', 'invalid config', 'access="blueberry"', 'set in command line options'],
@@ -547,6 +588,7 @@ loglevel = yolo
       ['warn', 'invalid config', 'Must be', 'valid filesystem path'],
       ['warn', 'config', 'also', 'Please use --include=dev instead.'],
     ])
+    logs.length = 0
   })
 
   t.end()
@@ -636,9 +678,9 @@ t.test('ignore cafile if it does not load', async t => {
 })
 
 t.test('raise error if reading ca file error other than ENOENT', async t => {
-  const cafile = resolve(__dirname, 'fixtures', 'WEIRD-ERROR')
   const dir = t.testdir({
-    '.npmrc': `cafile = ${cafile}`,
+    '.npmrc': `cafile = ~/WEIRD-ERROR`,
+    'WEIRD-ERROR': '',
   })
   const config = new Config({
     shorthands,
@@ -1330,7 +1372,21 @@ t.test('exclusive options conflict', async t => {
     ],
     cwd: join(`${path}/project`),
     shorthands,
-    definitions,
+    definitions: {
+      ...definitions,
+      ...createDef('truth', {
+        default: false,
+        type: Boolean,
+        description: 'The Truth',
+        exclusive: ['lie'],
+      }),
+      ...createDef('lie', {
+        default: false,
+        type: Boolean,
+        description: 'A Lie',
+        exclusive: ['truth'],
+      }),
+    },
     flatten,
   })
   await t.rejects(config.load(), {
@@ -1338,6 +1394,7 @@ t.test('exclusive options conflict', async t => {
     message: '--lie can not be provided when using --truth',
   })
 })
+
 t.test('env-replaced config from files is not clobbered when saving', async (t) => {
   const path = t.testdir()
   const opts = {
@@ -1359,4 +1416,34 @@ t.test('env-replaced config from files is not clobbered when saving', async (t) 
   await d.save('user')
   const rc = readFileSync(`${path}/.npmrc`, 'utf8')
   t.match(rc, 'test=${TEST}', '${TEST} is present, not parsed')
+})
+
+t.test('umask', async t => {
+  const mockUmask = async (t, umask) => {
+    const path = t.testdir()
+    const config = new Config({
+      env: {},
+      npmPath: __dirname,
+      argv: [
+        process.execPath,
+        __filename,
+        `--umask=${umask}`,
+      ],
+      cwd: join(`${path}/project`),
+      shorthands,
+      definitions,
+      flatten,
+    })
+    await config.load()
+    return config.get('umask')
+  }
+
+  t.test('valid', async t => {
+    const umask = await mockUmask(t, '777')
+    t.equal(umask, 777)
+  })
+  t.test('invalid', async t => {
+    const umask = await mockUmask(t, true)
+    t.equal(umask, 0)
+  })
 })

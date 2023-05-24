@@ -1,31 +1,16 @@
+/* global Boolean:off, Array:off, String:off, Number:off, Date:off */
+// Dont allow globals that are used by nopt. If these are needed in this
+// file they will need to explicitly disabled per line
+
 const t = require('tap')
-const Definition = require('../../../../lib/utils/config/definition.js')
-const {
-  typeDefs: {
-    semver: { type: semver },
-    Umask: { type: Umask },
-    url: { type: url },
-    path: { type: path },
-  },
-} = require('@npmcli/config')
+const Definition = require('../../lib/definitions/definition.js')
+const { Types } = require('../../lib/type-defs.js')
 
 t.test('basic definition', async t => {
   const def = new Definition('key', {
     default: 'some default value',
-    type: [Number, String],
+    type: [Types.Number, Types.String],
     description: 'just a test thingie',
-  })
-  t.same(def, {
-    constructor: Definition,
-    key: 'key',
-    default: 'some default value',
-    defaultDescription: '"some default value"',
-    type: [Number, String],
-    hint: '<key>',
-    usage: '--key <key>',
-    typeDescription: 'Number or String',
-    description: 'just a test thingie',
-    envExport: true,
   })
   t.matchSnapshot(def.describe(), 'human-readable description')
 
@@ -33,104 +18,124 @@ t.test('basic definition', async t => {
     deprecated: 'do not use this',
     default: 1234,
     description: '  it should not be used\n  ever\n\n  not even once.\n\n',
-    type: Number,
+    type: Types.Number,
     defaultDescription: 'A number bigger than 1',
-    typeDescription: 'An expression of a numeric quantity using numerals',
   })
   t.matchSnapshot(deprecated.describe(), 'description of deprecated thing')
 
+  const exclusive = new Definition('exclusive', {
+    default: 1234,
+    type: Types.Number,
+    description: 'a number',
+    exclusive: ['x'],
+  })
+  t.matchSnapshot(exclusive.describe(), 'description of deprecated thing')
+
   const nullOrUmask = new Definition('key', {
     default: null,
-    type: [null, Umask],
+    type: [null, Types.Umask],
     description: 'asdf',
   })
-  t.equal(nullOrUmask.typeDescription, 'null or Octal numeric string in range 0000..0777 (0..511)')
+  t.match(nullOrUmask.describe(), 'null or Octal numeric string in range 0000..0777 (0..511)')
+
   const nullDateOrBool = new Definition('key', {
     default: 7,
-    type: [null, Date, Boolean],
+    type: [null, Types.Date, Types.Boolean],
     description: 'asdf',
   })
-  t.equal(nullDateOrBool.typeDescription, 'null, Date, or Boolean')
+  t.match(nullDateOrBool.describe(), 'null, Date, or Boolean')
+
   const manyPaths = new Definition('key', {
     default: ['asdf'],
-    type: [path, Array],
+    type: [Types.Path, Types.Array],
     description: 'asdf',
   })
-  t.equal(manyPaths.typeDescription, 'Path (can be set multiple times)')
+  t.match(manyPaths.describe(), 'Path (can be set multiple times)')
+
   const pathOrUrl = new Definition('key', {
     default: ['https://example.com'],
-    type: [path, url],
+    type: [Types.Path, Types.URL],
     description: 'asdf',
   })
-  t.equal(pathOrUrl.typeDescription, 'Path or URL')
+  t.match(pathOrUrl.describe(), 'Path or URL')
+
   const multi12 = new Definition('key', {
     default: [],
-    type: [1, 2, Array],
+    type: [1, 2, Types.Array],
     description: 'asdf',
   })
-  t.equal(multi12.typeDescription, '1 or 2 (can be set multiple times)')
+  t.match(multi12.describe(), '1 or 2 (can be set multiple times)')
+
   const multi123 = new Definition('key', {
     default: [],
-    type: [1, 2, 3, Array],
+    type: [1, 2, 3, Types.Array],
     description: 'asdf',
   })
-  t.equal(multi123.typeDescription, '1, 2, or 3 (can be set multiple times)')
+  t.match(multi123.describe(), '1, 2, or 3 (can be set multiple times)')
+
   const multi123Semver = new Definition('key', {
     default: [],
-    type: [1, 2, 3, Array, semver],
+    type: [1, 2, 3, Types.Array, Types.SemVer],
     description: 'asdf',
   })
-  t.equal(multi123Semver.typeDescription, '1, 2, 3, or SemVer string (can be set multiple times)')
+  t.match(multi123Semver.describe(), '1, 2, 3, or SemVer string (can be set multiple times)')
+
   const hasUsage = new Definition('key', {
     default: 'test default',
-    type: String,
+    type: Types.String,
     description: 'test description',
     usage: 'test usage',
   })
-  t.equal(hasUsage.usage, 'test usage')
+  t.equal(hasUsage.describeUsage(), 'test usage')
+
   const hasShort = new Definition('key', {
     default: 'test default',
     short: 't',
-    type: String,
+    type: Types.String,
     description: 'test description',
   })
-  t.equal(hasShort.usage, '-t|--key <key>')
+  t.equal(hasShort.describeUsage(), '-t|--key <key>')
+
   const multiHasShort = new Definition('key', {
     default: 'test default',
     short: 't',
-    type: [null, String],
+    type: [null, Types.String],
     description: 'test description',
   })
-  t.equal(multiHasShort.usage, '-t|--key <key>')
+  t.equal(multiHasShort.describeUsage(), '-t|--key <key>')
+
   const hardCodedTypes = new Definition('key', {
     default: 'test default',
     type: ['string1', 'string2'],
     description: 'test description',
   })
-  t.equal(hardCodedTypes.usage, '--key <string1|string2>')
+  t.equal(hardCodedTypes.describeUsage(), '--key <string1|string2>')
+
   const hardCodedOptionalTypes = new Definition('key', {
     default: 'test default',
     type: [null, 'string1', 'string2'],
     description: 'test description',
   })
-  t.equal(hardCodedOptionalTypes.usage, '--key <string1|string2>')
+  t.equal(hardCodedOptionalTypes.describeUsage(), '--key <string1|string2>')
+
   const hasHint = new Definition('key', {
     default: 'test default',
-    type: String,
+    type: Types.String,
     description: 'test description',
-    hint: '<testparam>',
+    hint: 'testparam',
   })
-  t.equal(hasHint.usage, '--key <testparam>')
+  t.equal(hasHint.describeUsage(), '--key <testparam>')
+
   const optionalBool = new Definition('key', {
     default: null,
-    type: [null, Boolean],
+    type: [null, Types.Boolean],
     description: 'asdf',
   })
-  t.equal(optionalBool.usage, '--key')
+  t.equal(optionalBool.describeUsage(), '--key')
 
   const noExported = new Definition('methane', {
     envExport: false,
-    type: String,
+    type: Types.String,
     typeDescription: 'Greenhouse Gas',
     default: 'CH4',
     description: `
@@ -149,21 +154,17 @@ This value is not exported to the environment for child processes.`)
 })
 
 t.test('missing fields', async t => {
-  t.throws(() => new Definition('lacks-default', {
-    description: 'no default',
-    type: String,
-  }), { message: 'config lacks default: lacks-default' })
   t.throws(() => new Definition('lacks-type', {
     description: 'no type',
     default: 1234,
-  }), { message: 'config lacks type: lacks-type' })
+  }), { message: 'config `lacks-type` lacks required key: `type`' })
   t.throws(() => new Definition(null, {
     description: 'falsey key',
     default: 1234,
-    type: Number,
+    type: Types.Number,
   }), { message: 'config lacks key: null' })
   t.throws(() => new Definition('extra-field', {
-    type: String,
+    type: Types.String,
     default: 'extra',
     extra: 'more than is wanted',
     description: 'this is not ok',
@@ -199,7 +200,7 @@ t.test('long description', async t => {
       \`\`\`
     `,
     default: true,
-    type: Boolean,
+    type: Types.Boolean,
   })
   process.stdout.columns = 40
   t.matchSnapshot(long.describe(), 'cols=40')

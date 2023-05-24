@@ -52,6 +52,7 @@ t.test('npm.load', async t => {
       otherDirs: {
         newCache: {},
       },
+      globals: { platform: 'posix' },
     })
 
     t.equal(npm.loaded, true)
@@ -66,26 +67,25 @@ t.test('npm.load', async t => {
       ['npm:load', /Completed in [0-9.]+ms/],
     ])
 
-    mockGlobals(t, { process: { platform: 'posix' } })
-    t.equal(resolve(npm.cache), resolve(cache), 'cache is cache')
-    npm.cache = other.newCache
-    t.equal(npm.config.get('cache'), other.newCache, 'cache setter sets config')
-    t.equal(npm.cache, other.newCache, 'cache getter gets new config')
     t.equal(npm.lockfileVersion, 2, 'lockfileVersion getter')
+
+    t.equal(resolve(npm.cache), resolve(cache), 'cache is cache')
+    t.ok(npm.prefix, 'has prefix')
+    t.ok(npm.localPrefix, 'has local prefix')
+    t.ok(npm.globalPrefix, 'has global prefix')
     t.equal(npm.prefix, npm.localPrefix, 'prefix is local prefix')
     t.not(npm.prefix, npm.globalPrefix, 'prefix is not global prefix')
-    npm.globalPrefix = npm.prefix
-    t.equal(npm.prefix, npm.globalPrefix, 'globalPrefix setter')
-    npm.localPrefix = dir + '/extra/prefix'
-    t.equal(npm.prefix, npm.localPrefix, 'prefix is local prefix after localPrefix setter')
-    t.not(npm.prefix, npm.globalPrefix, 'prefix is not global prefix after localPrefix setter')
 
-    npm.prefix = dir + '/some/prefix'
+    npm.config.set('cache', join(other, 'newCache'))
+    t.equal(resolve(npm.cache), join(other, 'newCache'), 'cache setter sets config')
+
+    npm.config.set('prefix', resolve(dir, 'some/prefix'))
+    t.equal(resolve(npm.prefix), resolve(dir, 'some/prefix'))
     t.equal(npm.prefix, npm.localPrefix, 'prefix is local prefix after prefix setter')
-    t.not(npm.prefix, npm.globalPrefix, 'prefix is not global prefix after prefix setter')
     t.equal(npm.bin, npm.localBin, 'bin is local bin after prefix setter')
-    t.not(npm.bin, npm.globalBin, 'bin is not global bin after prefix setter')
     t.equal(npm.dir, npm.localDir, 'dir is local dir after prefix setter')
+    t.not(npm.prefix, npm.globalPrefix, 'prefix is not global prefix after prefix setter')
+    t.not(npm.bin, npm.globalBin, 'bin is not global bin after prefix setter')
     t.not(npm.dir, npm.globalDir, 'dir is not global dir after prefix setter')
 
     npm.config.set('global', true)
@@ -96,13 +96,19 @@ t.test('npm.load', async t => {
     t.equal(npm.dir, npm.globalDir, 'dir is global dir after setting global')
     t.not(npm.dir, npm.localDir, 'dir is not local dir after setting global')
 
-    npm.prefix = dir + '/new/global/prefix'
+    npm.config.set('prefix', dir + '/new/global/prefix')
     t.equal(npm.prefix, npm.globalPrefix, 'prefix is global prefix after prefix setter')
     t.not(npm.prefix, npm.localPrefix, 'prefix is not local prefix after prefix setter')
     t.equal(npm.bin, npm.globalBin, 'bin is global bin after prefix setter')
     t.not(npm.bin, npm.localBin, 'bin is not local bin after prefix setter')
+  })
 
-    mockGlobals(t, { process: { platform: 'win32' } })
+  await t.test('basic loading windows', async t => {
+    const { npm } = await loadMockNpm(t, {
+      prefixDir: { node_modules: {} },
+      globals: { platform: 'win32' },
+    })
+
     t.equal(npm.bin, npm.globalBin, 'bin is global bin in windows mode')
     t.equal(npm.dir, npm.globalDir, 'dir is global dir in windows mode')
   })
