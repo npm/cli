@@ -47,7 +47,7 @@ deployment -- or any situation where you want to make sure you're doing a clean
 install of your dependencies. It can be significantly faster than a regular npm
 install by skipping certain user-oriented features. It is also more strict than
 a regular install, which can help catch errors or inconsistencies caused by the
-incrementally-installed local environments of most npm users.
+incrementally-installed local environments of most npm users. The `ci` in `npm ci` stands for "**C**lean **I**nstall".
 
 In short, the main differences between using `npm install` and `npm ci` are:
 
