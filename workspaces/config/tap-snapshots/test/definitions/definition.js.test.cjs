@@ -9,14 +9,12 @@ exports[`test/definitions/definition.js TAP basic definition > description of de
 #### \`deprecated\`
 
 * Default: A number bigger than 1
-* Type: An expression of a numeric quantity using numerals
+* Type: Number
 * DEPRECATED: do not use this
 
 it should not be used ever
 
 not even once.
-
-
 `
 
 exports[`test/definitions/definition.js TAP basic definition > description of deprecated thing 2`] = `
@@ -25,9 +23,7 @@ exports[`test/definitions/definition.js TAP basic definition > description of de
 * Default: 1234
 * Type: Number
 
-a number
-
-This config can not be used with: \`x\`
+a number This config can not be used with: \`x\`
 `
 
 exports[`test/definitions/definition.js TAP basic definition > human-readable description 1`] = `
@@ -37,8 +33,6 @@ exports[`test/definitions/definition.js TAP basic definition > human-readable de
 * Type: Number or String
 
 just a test thingie
-
-
 `
 
 exports[`test/definitions/definition.js TAP long description > cols=-1 1`] = `
@@ -107,7 +101,6 @@ with (multiple) {
   blocks()
 }
 \`\`\`
-
 
 `
 
@@ -178,7 +171,6 @@ with (multiple) {
 }
 \`\`\`
 
-
 `
 
 exports[`test/definitions/definition.js TAP long description > cols=40 1`] = `
@@ -218,7 +210,6 @@ with (multiple) {
 }
 \`\`\`
 
-
 `
 
 exports[`test/definitions/definition.js TAP long description > cols=9000 1`] = `
@@ -249,7 +240,6 @@ with (multiple) {
 }
 \`\`\`
 
-
 `
 
 exports[`test/definitions/definition.js TAP long description > cols=NaN 1`] = `
@@ -279,6 +269,5 @@ with (multiple) {
   blocks()
 }
 \`\`\`
-
 
 `

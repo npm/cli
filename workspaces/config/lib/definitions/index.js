@@ -1,76 +1,102 @@
-const definitions = require('./definitions.js')
+const { Types } = require('../type-defs')
+const { LocationNames } = require('./locations')
+const Graph = require('./graph')
+const {
+  displayKeys,
+  changeKeys,
+  definitions,
+  definitionKeys,
+  internals,
+  internalKeys,
+  derived,
+  derivedKeys,
+} = require('./definitions')
 
-// use the defined flattening function, and copy over any scoped
-// registries and registry-specific "nerfdart" configs verbatim
-//
-// TODO: make these getters so that we only have to make dirty
-// the thing that changed, and then flatten the fields that
-// could have changed when a config.set is called.
-//
-// TODO: move nerfdart auth stuff into a nested object that
-// is only passed along to paths that end up calling npm-registry-fetch.
-const flatten = (obj, flat = {}) => {
-  for (const [key, val] of Object.entries(obj)) {
-    const def = definitions[key]
-    if (def && def.flatten) {
-      def.flatten(key, obj, flat)
-    } else if (/@.*:registry$/i.test(key) || /^\/\//.test(key)) {
-      flat[key] = val
-    }
+const graph = new Graph()
+const shorthands = {}
+const shorthandKeys = []
+const aliases = {}
+const aliasKeys = []
+const defaults = {}
+const internalDefaults = {}
+const types = LocationNames.reduce((acc, location) => {
+  acc[location] = {}
+  return acc
+}, { })
+
+const setTypes = (def, defaultsObj) => {
+  const { displayKey: key } = def
+
+  defaultsObj[key] = def.default
+
+  for (const location of LocationNames) {
+    // a type is allowed for each location if the definition didnt specify any
+    // locations, or if the location is default or if this is one of the definitions
+    // valid locations. anything else gets set to a special type that will not allow
+    // any value
+    types[location][key] = def.isAllowed(location) ? def.type : Types.NotAllowed
   }
-
-  // XXX make this the bin/npm-cli.js file explicitly instead
-  // otherwise using npm programmatically is a bit of a pain.
-  flat.npmBin = require.main ? require.main.filename
-    : /* istanbul ignore next - not configurable property */ undefined
-  flat.nodeBin = process.env.NODE || process.execPath
-
-  // XXX should this be sha512?  is it even relevant?
-  flat.hashAlgorithm = 'sha1'
-
-  return flat
 }
 
-const definitionProps = Object.entries(definitions)
-  .reduce((acc, [key, { short = [], default: d }]) => {
-  // can be either an array or string
-    for (const s of [].concat(short)) {
-      acc.shorthands[s] = [`--${key}`]
-    }
-    acc.defaults[key] = d
-    return acc
-  }, { shorthands: {}, defaults: {} })
+for (const key of definitionKeys) {
+  const def = definitions[key]
+  setTypes(def, defaults)
+  for (const [k, v] of def.shorthands) {
+    shorthands[k] = v
+    shorthandKeys.push(k)
+  }
+  for (const [k, v] of def.aliases) {
+    aliases[k] = v
+  }
+  graph.addDefinition(def)
+}
 
-// aliases where they get expanded into a completely different thing
-// these are NOT supported in the environment or npmrc files, only
-// expanded on the CLI.
-// TODO: when we switch off of nopt, use an arg parser that supports
-// more reasonable aliasing and short opts right in the definitions set.
-const shorthands = {
-  'enjoy-by': ['--before'],
-  d: ['--loglevel', 'info'],
-  dd: ['--loglevel', 'verbose'],
-  ddd: ['--loglevel', 'silly'],
-  quiet: ['--loglevel', 'warn'],
-  q: ['--loglevel', 'warn'],
-  s: ['--loglevel', 'silent'],
-  silent: ['--loglevel', 'silent'],
-  verbose: ['--loglevel', 'verbose'],
-  desc: ['--description'],
-  help: ['--usage'],
-  local: ['--no-global'],
-  n: ['--no-yes'],
-  no: ['--no-yes'],
-  porcelain: ['--parseable'],
-  readonly: ['--read-only'],
-  reg: ['--registry'],
-  iwr: ['--include-workspace-root'],
-  ...definitionProps.shorthands,
+for (const key of internalKeys) {
+  const def = internals[key]
+  setTypes(def, internalDefaults)
+  graph.addDefinition(def)
+}
+
+for (const key of derivedKeys) {
+  graph.addDefinition(derived[key])
+}
+
+graph.build()
+
+for (const key of graph.vertices) {
+  graph.definition(key).setDependencies(graph.walkFrom(key))
 }
 
 module.exports = {
-  defaults: definitionProps.defaults,
   definitions,
-  flatten,
+  definitionKeys,
+  internals,
+  internalKeys,
+  derived,
+  derivedKeys,
+  sortedKeys: [...graph.sorted],
+  changeKeys,
+  displayKeys,
+  // These are the configs that we can nerf-dart. Not all of them currently even
+  // *have* config definitions so we have to explicitly validate them here
+  nerfDarts: [
+    '_auth',
+    '_authToken',
+    'username',
+    '_password',
+    'email',
+    'certfile',
+    'keyfile',
+  ],
+  // shorthands
   shorthands,
+  shorthandKeys,
+  // aliases,
+  aliases,
+  aliasKeys,
+  // type data and default values collected from definitions since we need this
+  // info often in object form
+  defaults,
+  internalDefaults,
+  types,
 }

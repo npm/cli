@@ -6,162 +6,455 @@
 // say "these are for registry access", "these are for
 // version resolution" etc.
 
-const required = ['type', 'description', 'default', 'key']
+const { Types, getType } = require('../type-defs')
+const { Locations, LocationNames } = require('./locations')
 
-const allowed = [
+const REQUIRED = [
   'default',
+  'description',
+  'type',
+]
+
+const ALLOWED = [
+  ...REQUIRED,
+  'alias',
   'defaultDescription',
   'deprecated',
-  'description',
+  'deprecatedBy',
+  'deprecatedKey',
+  'depends',
+  'derived',
+  'envExport',
   'exclusive',
   'flatten',
   'hint',
+  'internal',
   'key',
+  'location',
+  'setEnv',
+  'setProcess',
   'short',
-  'type',
   'typeDescription',
   'usage',
-  'envExport',
+  'value',
 ]
 
-const {
-  semver: { type: semver },
-  Umask: { type: Umask },
-  url: { type: url },
-  path: { type: path },
-} = require('../type-defs.js')
-
 class Definition {
-  constructor (key, def) {
-    this.key = key
-    // if it's set falsey, don't export it, otherwise we do by default
-    this.envExport = true
-    Object.assign(this, def)
-    this.validate()
-    if (!this.defaultDescription) {
-      this.defaultDescription = describeValue(this.default)
+  // special affordance for ssl -> SSL and tty -> TTY
+  static getFlatKey = (k) => k.replace(/-(ssl|tty|[a-z])/g, (...a) => a[1].toUpperCase())
+
+  #key = null
+  #def = null
+  #displayKey = null
+
+  #shortKeys = []
+  #aliasKeys = []
+  #aliases = []
+  #shorthands = []
+
+  #getValue = []
+  #flatten = []
+  #dependencies = null
+  #depends = null
+  #location = []
+
+  #envKeys = []
+  #envEntries = []
+  #processKeys = []
+  #processEntries = []
+
+  constructor (k, def) {
+    this.#def = def
+    this.#displayKey = k
+    this.#key = this.#def.key ?? this.#displayKey
+
+    // needs a key
+    if (!this.#key) {
+      throw new Error(`config lacks key: ${this.#key}`)
     }
-    if (!this.typeDescription) {
-      this.typeDescription = describeType(this.type)
-    }
-    // hint is only used for non-boolean values
-    if (!this.hint) {
-      if (this.type === Number) {
-        this.hint = '<number>'
+
+    if (this.#def.derived) {
+      this.#location = [null]
+      this.#flatten = [this.#key]
+      this.#def.description = null
+    } else if (this.#def.internal) {
+      this.#location = [Locations.internal]
+      this.#def.description = null
+    } else {
+      for (const v of toArray(this.#def.flatten)) {
+        this.#flatten.push(v === true ? this.#key : v)
+      }
+      for (const v of toArray(this.#def.location)) {
+        this.#location.push(v)
+      }
+      if (this.#location.length) {
+        this.#location.push(Locations.builtin, Locations.default)
       } else {
-        this.hint = `<${this.key}>`
+        this.#location = [...LocationNames]
       }
     }
-    if (!this.usage) {
-      this.usage = describeUsage(this)
+
+    if (typeof this.#def.value === 'function') {
+      this.#getValue.push(this.#def.value)
+    } else {
+      if (this.#def.derived) {
+        throw new Error('derived defintions must have a value function')
+      }
+    }
+
+    if (hasOwn(this.#def, 'type') && !Array.isArray(this.#def.type)) {
+      this.#def.type = [this.#def.type]
+    }
+
+    // if default is not set, then it is null
+    if (!hasOwn(this.#def, 'default')) {
+      this.#def.default = this.#typeMultiple ? [] : null
+    }
+
+    // always add null to types if its the default
+    if (this.#def.default === null && !this.#def.type.includes(null)) {
+      this.#def.type.unshift(null)
+    }
+
+    // needs required keys
+    for (const req of REQUIRED) {
+      if (!hasOwn(this.#def, req)) {
+        throw new Error(`config \`${this.#key}\` lacks required key: \`${req}\``)
+      }
+    }
+
+    // only allowed fields
+    for (const field of Object.keys(this.#def)) {
+      if (!ALLOWED.includes(field)) {
+        throw new Error(`config defines unknown field ${field}: ${this.#key}`)
+      }
+    }
+
+    const depends = new Set()
+    for (const typeDef of this.typeDefs) {
+      if (typeDef === undefined) {
+        throw new Error(`type cannot contain \`undefined\`. `
+        + `This is probably a mistake from using an incorrect key from Types.*`)
+      }
+      if (typeDef?.depends) {
+        for (const d of typeDef.depends) {
+          depends.add(d)
+        }
+      }
+      if (typeDef?.value) {
+        this.#getValue.unshift(...toArray(typeDef.value))
+      }
+    }
+
+    for (const v of toArray(this.#def.depends)) {
+      depends.add(v)
+    }
+    if (hasOwn(this.#def, 'deprecatedKey')) {
+      depends.add(this.#def.deprecatedKey)
+    }
+
+    this.#depends = [...depends]
+
+    if (this.#def.setEnv) {
+      for (const [envKey, envValue] of Object.entries(this.#def.setEnv)) {
+        this.#envKeys.push(envKey)
+        this.#envEntries.push([envKey, envValue === true ? identity : envValue])
+      }
+    }
+
+    if (this.#def.setProcess) {
+      for (const [procKey, procValue] of Object.entries(this.#def.setProcess)) {
+        this.#processKeys.push(procKey)
+        this.#processEntries.push([procKey, procValue === true ? identity : procValue])
+      }
+    }
+
+    // There is currently no difference between aliases and shorts but
+    // they are separated to make a future upgrade path from nopt easier
+    const { short = [], alias = [] } = this.#def
+
+    if (typeof short === 'string') {
+      this.#addShort(short)
+    } else if (short && typeof short === 'object') {
+      const isArr = Array.isArray(short)
+      for (const s of isArr ? short : Object.entries(short)) {
+        this.#addShort(...isArr ? [s] : s)
+      }
+    }
+
+    if (typeof alias === 'string') {
+      this.#addAlias(alias)
+    } else if (alias && typeof alias === 'object') {
+      const isArr = Array.isArray(alias)
+      for (const s of isArr ? alias : Object.entries(alias)) {
+        this.#addAlias(...isArr ? [s] : s)
+      }
     }
   }
 
-  validate () {
-    for (const req of required) {
-      if (!Object.prototype.hasOwnProperty.call(this, req)) {
-        throw new Error(`config lacks ${req}: ${this.key}`)
-      }
+  get key () {
+    return this.#key
+  }
+
+  get displayKey () {
+    return this.#displayKey
+  }
+
+  get deprecatedKey () {
+    return this.#def.deprecatedKey
+  }
+
+  get deprecatedBy () {
+    return this.#def.deprecatedBy
+  }
+
+  get default () {
+    return this.#def.default
+  }
+
+  get deprecated () {
+    return this.#def.deprecated?.trim()?.replace(/\n +/, '\n')
+  }
+
+  get envExport () {
+    // if it's set falsey, don't export it, otherwise we do by default
+    return this.#def.envExport ?? true
+  }
+
+  get short () {
+    return this.#shortKeys
+  }
+
+  get aliasKeys () {
+    return this.#aliasKeys
+  }
+
+  get aliases () {
+    return this.#aliases
+  }
+
+  get shorthands () {
+    return this.#shorthands
+  }
+
+  get isBoolean () {
+    return this.typeDefs.some(t => t?.isBoolean || typeof t === 'boolean')
+  }
+
+  get hasNonBoolean () {
+    return this.typeDefs.some(t => !(t?.isBoolean || typeof t === 'boolean' || t === null))
+  }
+
+  get isOptional () {
+    return this.type.includes(null)
+  }
+
+  get type () {
+    return this.#def.type
+  }
+
+  get typeDefs () {
+    return this.type.map((t) => getType(t) ?? t)
+  }
+
+  get typeValues () {
+    return this.typeDefs.flatMap((t) => t?.values ?? t)
+  }
+
+  get flatten () {
+    return this.#flatten
+  }
+
+  get depends () {
+    return this.#depends
+  }
+
+  get dependencies () {
+    return this.#dependencies
+  }
+
+  get isDerived () {
+    return !!this.#def.derived
+  }
+
+  get isInternal () {
+    return !!this.#def.internal
+  }
+
+  get envKeys () {
+    return this.#envKeys
+  }
+
+  get setEnv () {
+    return this.#envEntries
+  }
+
+  get processKeys () {
+    return this.#processKeys
+  }
+
+  get setProcess () {
+    return this.#processEntries
+  }
+
+  get exclusive () {
+    return !this.#def.exclusive
+      ? ''
+      : `\nThis config can not be used with: \`${this.#def.exclusive.join('`, `')}\``
+  }
+
+  get #typeMultiple () {
+    return this.type.includes(Types.Array)
+  }
+
+  // alias and short definitions can include values so we only add them to the
+  // keys if they map to the same value as using the full key would since these
+  // are shown in usage
+  #addShort (...args) {
+    if (args.length === 1 || args[1] === true) {
+      this.#shortKeys.push(args[0])
     }
-    if (!this.key) {
-      throw new Error(`config lacks key: ${this.key}`)
+    this.#addShorthand(...args)
+  }
+
+  #addAlias (...args) {
+    if (args.length === 1 || args[1] === true) {
+      this.#aliasKeys.push(args[0])
     }
-    for (const field of Object.keys(this)) {
-      if (!allowed.includes(field)) {
-        throw new Error(`config defines unknown field ${field}: ${this.key}`)
-      }
+    this.#aliases.push(this.#addShorthand(...args))
+  }
+
+  #addShorthand (key, value) {
+    // TODO: when we switch off of nopt, use an arg parser that supports
+    // more reasonable aliasing and short opts right in the definitions set.
+    // aliases where they get expanded into a completely different thing
+    // these are NOT supported in the environment or npmrc files, only
+    // expanded on the CLI.
+    let shorthand = [`--${this.#key}`]
+    if (typeof value === 'string') {
+      shorthand.push(value)
+    } else if (value === false) {
+      shorthand = [`--no-${this.#key}`]
     }
+    const s = [key, shorthand]
+    this.#shorthands.push(s)
+    return s
+  }
+
+  _getValueSource () {
+    return this.#getValue
+  }
+
+  getValue (value, obj) {
+    if (!this.#getValue.length) {
+      return value
+    }
+    if (this.isDerived) {
+      return this.#getValue[0](value)
+    }
+    return this.#getValue.reduce((a, fn) => fn(a, obj), value)
+  }
+
+  setDependencies (deps) {
+    this.#dependencies = deps
+  }
+
+  isAllowed (where) {
+    // if a location is specified, then it is only allowed there
+    // otherwise it is allowed anywhere
+    return this.#location.includes(where)
   }
 
   // a textual description of this config, suitable for help output
   describe () {
-    const description = unindent(this.description)
-    const noEnvExport = this.envExport
-      ? ''
-      : `
-This value is not exported to the environment for child processes.
-`
-    const deprecated = !this.deprecated ? '' : `* DEPRECATED: ${unindent(this.deprecated)}\n`
-    /* eslint-disable-next-line max-len */
-    const exclusive = !this.exclusive ? '' : `\nThis config can not be used with: \`${this.exclusive.join('`, `')}\``
-    return wrapAll(`#### \`${this.key}\`
+    const sections = [
+      ['Default', this.#def.defaultDescription ?? describeValue(this.default)],
+      ['Type', this.#describeTypes()],
+      this.deprecated ? ['DEPRECATED', this.deprecated] : null,
+      '',
+      this.#def.description,
+      this.exclusive,
+      ...(this.envExport ? [] : ['',
+        'This value is not exported to the environment for child processes.',
+      ]),
+    ].map((s) => {
+      if (Array.isArray(s)) {
+        return `* ${s[0]}: ${unindent(s[1])}`
+      }
+      return typeof s === 'string' ? unindent(s) : null
+    })
 
-* Default: ${unindent(this.defaultDescription)}
-* Type: ${unindent(this.typeDescription)}
-${deprecated}
-${description}
-${exclusive}
-${noEnvExport}`)
+    return wrapAll(`#### \`${this.#key}\`\n\n${sections.filter(v => v != null).join('\n')}`)
   }
-}
 
-const describeUsage = def => {
-  let key = ''
+  invalidUsage () {
+    const allowMultiple = this.#typeMultiple
+    const types = this.type.includes(Types.URL) ? [Types.URL]
+      : this.type.includes(Types.Path) ? [Types.Path]
+      : this.type
 
-  // Single type
-  if (!Array.isArray(def.type)) {
-    if (def.short) {
-      key = `-${def.short}|`
-    }
+    const mustBe = types.filter(t => t !== Types.Array && t !== null).flatMap((t) => {
+      const type = getType(t)
+      return type
+        ? type.values ?? type.description ?? type.typeDescription
+        : describeValue(t)
+    }).reduce((set, desc) => set.add(desc), new Set())
 
-    if (def.type === Boolean && def.default !== false) {
-      key = `${key}--no-${def.key}`
+    const singleValue = mustBe.size === 1
+    const oneOf = singleValue && allowMultiple ? 'one or more'
+      : !singleValue && allowMultiple ? 'one or more of:'
+      : !singleValue ? 'one of:'
+      : ''
+
+    return `Must be ${oneOf} ${[...mustBe].join(', ')}`.replace(/\s+/g, ' ')
+  }
+
+  describeUsage () {
+    const usage = [
+      ...this.short.map(s => `-${s}`),
+      ...this.alias.map(s => `--${s}`),
+    ]
+
+    if (this.isBoolean) {
+      if (this.default === true) {
+        usage.push(`--no-${this.#key}`)
+      } else if (this.default === false || this.isOptional) {
+        usage.push(`--${this.#key}`)
+      } else {
+        usage.push(`--no-${this.#key}`, `--${this.#key}`)
+      }
+    } else if (this.#def.usage) {
+      usage.push(this.#def.usage)
     } else {
-      key = `${key}--${def.key}`
+      usage.push(`--${this.#key}`)
     }
 
-    if (def.type !== Boolean) {
-      key = `${key} ${def.hint}`
+    let descriptions = []
+    if (this.hasNonBoolean) {
+      // only non booleans get hints
+      if (this.#def.hint) {
+        // if the definition itself has a hint, always use that
+        descriptions = [].concat(this.#def.hint)
+      } else if (!this.#def.usage) {
+        // otherwise use the types specific values, or the hint, or the value itself
+        descriptions = this.typeDefs
+          // null type means optional and doesn't currently affect usage output since
+          // all non-optional params have defaults so we render everything as optional
+          .filter(t => t !== null && t.type !== Types.Array)
+          .flatMap(t => t?.hint ?? (t.type ? this.#key : t))
+      }
     }
 
-    return key
+    const desc = descriptions.filter(Boolean).join('|')
+    const usageDesc = `${usage.join('|')} ${desc ? `<${desc}>` : ''}`.trim()
+
+    return this.#typeMultiple ? `${usageDesc} [${usageDesc} ...]` : usageDesc
   }
 
-  key = `--${def.key}`
-  if (def.short) {
-    key = `-${def.short}|--${def.key}`
-  }
-
-  // Multiple types
-  let types = def.type
-  const multiple = types.includes(Array)
-  const bool = types.includes(Boolean)
-
-  // null type means optional and doesn't currently affect usage output since
-  // all non-optional params have defaults so we render everything as optional
-  types = types.filter(t => t !== null && t !== Array && t !== Boolean)
-
-  if (!types.length) {
-    return key
-  }
-
-  let description
-  if (!types.some(t => typeof t !== 'string')) {
-    // Specific values, use specifics given
-    description = `<${types.filter(d => d).join('|')}>`
-  } else {
-    // Generic values, use hint
-    description = def.hint
-  }
-
-  if (bool) {
-    // Currently none of our multi-type configs with boolean values default to
-    // false so all their hints should show `--no-`, if we ever add ones that
-    // default to false we can branch the logic here
-    key = `--no-${def.key}|${key}`
-  }
-
-  const usage = `${key} ${description}`
-  if (multiple) {
-    return `${usage} [${usage} ...]`
-  } else {
-    return usage
-  }
-}
-
-const describeType = type => {
-  if (Array.isArray(type)) {
-    const descriptions = type.filter(t => t !== Array).map(t => describeType(t))
+  #describeTypes () {
+    const descriptions = this.#def.typeDescription ? [this.#def.typeDescription] : this.typeDefs
+      .filter(t => t?.type !== Types.Array)
+      .flatMap(t => t?.typeDescription ?? t?.values ?? JSON.stringify(t))
 
     // [a] => "a"
     // [a, b] => "a or b"
@@ -171,37 +464,21 @@ const describeType = type => {
     const last = descriptions.length > 1 ? [descriptions.pop()] : []
     const oxford = descriptions.length > 1 ? ', or ' : ' or '
     const words = [descriptions.join(', ')].concat(last).join(oxford)
-    const multiple = type.includes(Array) ? ' (can be set multiple times)' : ''
+    const multiple = this.#typeMultiple ? ' (can be set multiple times)' : ''
     return `${words}${multiple}`
-  }
-
-  // Note: these are not quite the same as the description printed
-  // when validation fails.  In that case, we want to give the user
-  // a bit more information to help them figure out what's wrong.
-  switch (type) {
-    case String:
-      return 'String'
-    case Number:
-      return 'Number'
-    case Umask:
-      return 'Octal numeric string in range 0000..0777 (0..511)'
-    case Boolean:
-      return 'Boolean'
-    case Date:
-      return 'Date'
-    case path:
-      return 'Path'
-    case semver:
-      return 'SemVer string'
-    case url:
-      return 'URL'
-    default:
-      return describeValue(type)
   }
 }
 
+const hasOwn = (o, k) => Object.prototype.hasOwnProperty.call(o, k)
+
+const toArray = (v) => [].concat(v ?? [])
+
+const identity = v => v
+
 // if it's a string, quote it.  otherwise, just cast to string.
-const describeValue = val => (typeof val === 'string' ? JSON.stringify(val) : String(val))
+const describeValue = val => Array.isArray(val)
+  ? JSON.stringify(val.map(describeValue))
+  : typeof val === 'string' ? JSON.stringify(val) : String(val)
 
 const unindent = s => {
   // get the first \n followed by a bunch of spaces, and pluck off
@@ -210,9 +487,9 @@ const unindent = s => {
   return !match ? s.trim() : s.split(match[0]).join('\n').trim()
 }
 
-const wrap = s => {
-  const cols = Math.min(Math.max(20, process.stdout.columns) || 80, 80) - 5
-  return unindent(s)
+const wrap = (str, { min = 20, max = 80, padding = 5, columns = process.stdout.columns } = {}) => {
+  const cols = Math.min(Math.max(min, columns) || max, max) - padding
+  return unindent(str)
     .split(/[ \n]+/)
     .reduce((left, right) => {
       const last = left.split('\n').pop()
@@ -223,31 +500,23 @@ const wrap = s => {
 
 const wrapAll = s => {
   let inCodeBlock = false
-  return s
-    .split('\n\n')
-    .map(block => {
-      if (inCodeBlock || block.startsWith('```')) {
-        inCodeBlock = !block.endsWith('```')
-        return block
-      }
+  return s.split('\n\n').map(block => {
+    if (inCodeBlock || block.startsWith('```')) {
+      inCodeBlock = !block.endsWith('```')
+      return block
+    }
 
-      if (block.charAt(0) === '*') {
-        return (
-          '* ' +
-          block
-            .slice(1)
-            .trim()
-            .split('\n* ')
-            .map(li => {
-              return wrap(li).replace(/\n/g, '\n  ')
-            })
-            .join('\n* ')
-        )
-      } else {
-        return wrap(block)
-      }
-    })
-    .join('\n\n')
+    if (block.startsWith('*')) {
+      return '* ' + block
+        .slice(1)
+        .trim()
+        .split('\n* ')
+        .map(li => wrap(li).replace(/\n/g, '\n  '))
+        .join('\n* ')
+    }
+
+    return wrap(block)
+  }).join('\n\n')
 }
 
 module.exports = Definition

@@ -25,14 +25,14 @@ async function main () {
     // like we do w/ run-script these wouldn't be needed.
     /* eslint-disable-next-line max-len */
     console.log(`complete -x -c npm -n __fish_npm_needs_command -a '${cmdAliases.join(' ')}' -d '${description}'`)
-    const shorts = params.map(p => {
+    const shorts = params.flatMap(p => definitions[p].short.map((s) => {
       // Our multi-character short params (e.g. -ws) are not very standard and
       // don't work with things that assume short params are only ever single
       // characters.
-      if (definitions[p].short?.length === 1) {
-        return `-s ${definitions[p].short}`
+      if (s.length === 1) {
+        return `-s ${s}`
       }
-    }).filter(p => p).join(' ')
+    })).filter(p => p).join(' ')
     // The config descriptions are not appropriate for -d here. We may want to
     // consider having a more terse description for these.
     // We can also have a mechanism to auto-generate the long form of options

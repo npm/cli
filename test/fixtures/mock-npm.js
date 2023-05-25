@@ -142,7 +142,6 @@ const setupMockNpm = async (t, {
   globals = {},
   npm: npmOpts = {},
   argv: rawArgv = [],
-  ...r
 } = {}) => {
   // easy to accidentally forget to pass in tap
   if (!(t instanceof tap.Test)) {

@@ -290,7 +290,7 @@ systems.
 #### \`browser\`
 
 * Default: OS X: \`"open"\`, Windows: \`"start"\`, Others: \`"xdg-open"\`
-* Type: null, Boolean, or String
+* Type: class BooleanOrString {} or Boolean
 
 The browser that is called by npm commands to open websites.
 
