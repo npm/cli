@@ -104,11 +104,6 @@ The `Config` class is the sole export.
 const Config = require('@npmcli/config')
 ```
 
-### static `Config.typeDefs`
-
-The type definitions passed to `nopt` for CLI option parsing and known
-configuration validation.
-
 ### constructor `new Config(options)`
 
 Options:

@@ -1,4 +1,4 @@
-const setEnvs = require('../lib/set-envs.js')
+const { setEnv: setEnvs } = require('../lib/set-envs.js')
 const mockGlobals = require('@npmcli/mock-globals')
 
 const { join } = require('path')
