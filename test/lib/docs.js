@@ -8,6 +8,7 @@ const { load: loadMockNpm } = require('../fixtures/mock-npm.js')
 const { definitions } = require('../../lib/utils/config/index.js')
 const cmdList = require('../../lib/utils/cmd-list.js')
 const pkg = require('../../package.json')
+const { cleanCwd } = require('../fixtures/clean-snapshot.js')
 
 t.test('command list', async t => {
   for (const [key, value] of Object.entries(cmdList)) {
@@ -27,6 +28,31 @@ t.test('config', async t => {
   t.matchSnapshot(flat, 'keys that are flattened')
   t.matchSnapshot(notFlat, 'keys that are not flattened')
   t.matchSnapshot(docs.config(docs.TAGS.CONFIG, {}), 'all definitions')
+})
+
+t.test('flat options', async t => {
+  t.cleanSnapshot = (s) => cleanCwd(s)
+    .split(cleanCwd(process.execPath)).join('{NODE}')
+
+  const { npm } = await loadMockNpm(t, {
+    command: 'version',
+    exec: true,
+    globals: {
+      'process.env': {
+        EDITOR: '{EDITOR}',
+        SHELL: '{SHELL}',
+      },
+      'process.version': '2.2.2',
+      'process.platform': '{PLATFORM}',
+      'process.arch': '{ARCH}',
+    },
+    mocks: {
+      'ci-info': { name: '{CI}' },
+      '{ROOT}/package.json': { version: '1.1.1' },
+    },
+  })
+
+  t.matchSnapshot(npm.flatOptions, 'full flat options object')
 })
 
 t.test('basic usage', async t => {
