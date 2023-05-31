@@ -1,5 +1,15 @@
 # Changelog
 
+## [6.0.0](https://github.com/npm/cli/compare/libnpmexec-v5.0.17...libnpmexec-v6.0.0) (2023-05-31)
+
+### ⚠️ BREAKING CHANGES
+
+* require passing in chalk instance
+
+### Features
+
+* [`9e7f5ac`](https://github.com/npm/cli/commit/9e7f5ac5caa8a8ad710cc726744dcaadd8efb040) require passing in chalk instance (@lukekarrys)
+
 ## [5.0.17](https://github.com/npm/cli/compare/libnpmexec-v5.0.16...libnpmexec-v5.0.17) (2023-05-03)
 
 ### Dependencies
