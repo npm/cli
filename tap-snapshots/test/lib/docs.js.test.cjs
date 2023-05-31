@@ -2408,6 +2408,7 @@ Object {
   "progress": false,
   "projectScope": "",
   "provenance": false,
+  "provenanceFile": null,
   "proxy": null,
   "readOnly": false,
   "rebuildBundle": true,
