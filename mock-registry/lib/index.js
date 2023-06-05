@@ -2,6 +2,7 @@ const pacote = require('pacote')
 const Arborist = require('@npmcli/arborist')
 const npa = require('npm-package-arg')
 const Nock = require('nock')
+const stringify = require('json-stringify-safe')
 
 class MockRegistry {
   #tap
@@ -39,7 +40,7 @@ class MockRegistry {
         // mocked with a 404, 500, etc.
         // XXX: this is opt-in currently because it breaks some existing CLI
         // tests. We should work towards making this the default for all tests.
-        t.fail(`Unmatched request: ${JSON.stringify(req, null, 2)}`)
+        t.fail(`Unmatched request: ${stringify(req, null, 2)}`)
       }
     }
 
@@ -337,9 +338,9 @@ class MockRegistry {
     }
     nock = nock.reply(200, manifest)
     if (tarballs) {
-      for (const version in tarballs) {
+      for (const [version, tarball] of Object.entries(tarballs)) {
         const m = manifest.versions[version]
-        nock = await this.tarball({ manifest: m, tarball: tarballs[version] })
+        nock = await this.tarball({ manifest: m, tarball })
       }
     }
     this.nock = nock

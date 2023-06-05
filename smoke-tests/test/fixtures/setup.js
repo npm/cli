@@ -9,7 +9,7 @@ const httpProxy = require('http-proxy')
 
 const { SMOKE_PUBLISH_NPM, SMOKE_PUBLISH_TARBALL, CI, PATH, Path, TAP_CHILD_ID = '0' } = process.env
 const PROXY_PORT = 12345 + (+TAP_CHILD_ID)
-const HTTP_PROXY = `http://localhost:${PROXY_PORT}`
+const HTTP_PROXY = `http://localhost:${PROXY_PORT}/`
 
 const NODE_PATH = process.execPath
 const CLI_ROOT = resolve(process.cwd(), '..')
@@ -64,12 +64,13 @@ const getCleanPaths = async () => {
   })
 }
 
-const createRegistry = async (t, { debug } = {}) => {
+const createRegistry = async (t, { debug, ...opts } = {}) => {
   const registry = new MockRegistry({
     tap: t,
     registry: 'http://smoke-test-registry.club/',
     debug,
     strict: true,
+    ...opts,
   })
 
   const proxy = httpProxy.createProxyServer({})
@@ -81,7 +82,7 @@ const createRegistry = async (t, { debug } = {}) => {
   return registry
 }
 
-module.exports = async (t, { testdir = {}, debug } = {}) => {
+module.exports = async (t, { testdir = {}, debug, registry: _registry = {} } = {}) => {
   const debugLog = debug || CI ? (...a) => console.error(...a) : () => {}
   const cleanPaths = await getCleanPaths()
 
@@ -105,7 +106,7 @@ module.exports = async (t, { testdir = {}, debug } = {}) => {
     globalNodeModules: join(root, 'global', GLOBAL_NODE_MODULES),
   }
 
-  const registry = await createRegistry(t, { debug })
+  const registry = await createRegistry(t, { ..._registry, debug })
 
   // update notifier should never be written
   t.afterEach((t) => {
@@ -168,7 +169,13 @@ module.exports = async (t, { testdir = {}, debug } = {}) => {
     return stdout
   }
 
-  const baseNpm = async ({ cwd, cmd, argv = [], proxy = true, ...opts } = {}, ...args) => {
+  const baseNpm = async (baseOpts, ...args) => {
+    const hasMoreOpts = args[args.length - 1] && typeof args[args.length - 1] === 'object'
+    const { cwd, cmd, argv = [], proxy = true, ...opts } = {
+      ...baseOpts,
+      ...hasMoreOpts ? args.pop() : {},
+    }
+
     const isGlobal = args.some(a => ['-g', '--global', '--global=true'].includes(a))
 
     const defaultFlags = [
@@ -218,6 +225,10 @@ module.exports = async (t, { testdir = {}, debug } = {}) => {
     argv: [NPM_PATH],
   }, ...args)
 
+  const npmLocalError = async () => {
+    throw new Error('npmLocal cannot be called during smoke-publish')
+  }
+
   // helpers for reading/writing files and their source
   const readFile = async (f) => {
     const file = await fs.readFile(join(paths.project, f), 'utf-8')
@@ -226,15 +237,22 @@ module.exports = async (t, { testdir = {}, debug } = {}) => {
 
   return {
     npmPath,
-    npmLocal: SMOKE_PUBLISH_NPM ? async () => {
-      throw new Error('npmLocal cannot be called during smoke-publish')
-    } : npmLocal,
+    npmLocal: SMOKE_PUBLISH_NPM ? npmLocalError : npmLocal,
     npm: SMOKE_PUBLISH_NPM ? npmPath : npm,
     spawn: baseSpawn,
     readFile,
     getPath,
     paths,
     registry,
+    npmLocalTarball: async () => {
+      if (SMOKE_PUBLISH_TARBALL) {
+        return SMOKE_PUBLISH_TARBALL
+      }
+      if (SMOKE_PUBLISH_NPM) {
+        return await npmLocalError()
+      }
+      return await npmLocal('pack', `--pack-destination=${root}`).then(r => join(root, r))
+    },
   }
 }
 
@@ -244,3 +262,4 @@ module.exports.CLI_ROOT = CLI_ROOT
 module.exports.WINDOWS = WINDOWS
 module.exports.SMOKE_PUBLISH = !!SMOKE_PUBLISH_NPM
 module.exports.SMOKE_PUBLISH_TARBALL = SMOKE_PUBLISH_TARBALL
+module.exports.HTTP_PROXY = HTTP_PROXY

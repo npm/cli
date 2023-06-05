@@ -10,14 +10,40 @@ const which = async (cmd, opts) => {
   return path ? join(dirname(path), basename(path, extname(path))) : null
 }
 
-t.test('npm replace global', async t => {
+const setupNpmGlobal = async (t, opts) => {
+  const mock = await setup(t, opts)
+
+  return {
+    ...mock,
+    getPaths: async () => {
+      const binContents = await fs.readdir(mock.paths.globalBin)
+        .then(r => r.filter(p => p !== '.npmrc' && p !== 'node_modules'))
+        .catch(() => null)
+
+      const nodeModulesContents = await fs.readdir(join(mock.paths.globalNodeModules, 'npm'))
+        .catch(() => null)
+
+      return {
+        npmRoot: await mock.npmPath('help').then(setup.getNpmRoot),
+        pathNpm: await which('npm', { path: mock.getPath(), nothrow: true }),
+        globalNpm: await which('npm', { nothrow: true }),
+        pathNpx: await which('npx', { path: mock.getPath(), nothrow: true }),
+        globalNpx: await which('npx', { nothrow: true }),
+        binContents,
+        nodeModulesContents,
+      }
+    },
+  }
+}
+
+t.test('pack and replace global self', async t => {
   const {
     npm,
-    npmLocal,
+    npmLocalTarball,
     npmPath,
-    getPath,
-    paths: { root, globalBin, globalNodeModules },
-  } = await setup(t, {
+    getPaths,
+    paths: { globalBin, globalNodeModules },
+  } = await setupNpmGlobal(t, {
     testdir: {
       project: {
         'package.json': { name: 'npm', version: '999.999.999' },
@@ -25,25 +51,7 @@ t.test('npm replace global', async t => {
     },
   })
 
-  const getPaths = async () => {
-    const binContents = await fs.readdir(globalBin).then(results => results
-      .filter(p => p !== '.npmrc' && p !== 'node_modules')
-      .map(p => basename(p, extname(p)))
-      .reduce((set, p) => set.add(p), new Set()))
-
-    return {
-      npmRoot: await npmPath('help').then(setup.getNpmRoot),
-      pathNpm: await which('npm', { path: getPath(), nothrow: true }),
-      globalNpm: await which('npm', { nothrow: true }),
-      pathNpx: await which('npx', { path: getPath(), nothrow: true }),
-      globalNpx: await which('npx', { nothrow: true }),
-      binContents: [...binContents],
-      nodeModulesContents: await fs.readdir(join(globalNodeModules, 'npm')),
-    }
-  }
-
-  const tarball = setup.SMOKE_PUBLISH_TARBALL ??
-    await npmLocal('pack', `--pack-destination=${root}`).then(r => join(root, r))
+  const tarball = await npmLocalTarball()
 
   await npm('install', tarball, '--global')
 
@@ -64,9 +72,14 @@ t.test('npm replace global', async t => {
   t.equal(prePaths.pathNpx, join(globalBin, 'npx'), 'npx bin is in the testdir')
   t.not(prePaths.pathNpm, prePaths.globalNpm, 'npm bin is not the same as the global one')
   t.not(prePaths.pathNpx, prePaths.globalNpx, 'npm bin is not the same as the global one')
-  t.match(prePaths.binContents, ['npm', 'npx'], 'bin has npm and npx')
   t.ok(prePaths.nodeModulesContents.length > 1, 'node modules has npm contents')
   t.ok(prePaths.nodeModulesContents.includes('node_modules'), 'npm has its node_modules')
+
+  t.strictSame(
+    prePaths.binContents,
+    ['npm', 'npx'].flatMap(p => setup.WINDOWS ? [p, `${p}.cmd`, `${p}.ps1`] : p),
+    'bin has npm and npx'
+  )
 
   await npmPath('pack')
   await npmPath('install', 'npm-999.999.999.tgz', '--global')
@@ -79,4 +92,68 @@ t.test('npm replace global', async t => {
   t.equal(postPaths.pathNpx, prePaths.globalNpx, 'after install npx bin is same as previous global')
   t.strictSame(postPaths.binContents, [], 'bin is empty')
   t.strictSame(postPaths.nodeModulesContents, ['package.json'], 'contents is only package.json')
+})
+
+t.test('publish and replace global self', async t => {
+  const {
+    npm,
+    npmPath,
+    registry,
+    npmLocal,
+    npmLocalTarball,
+    getPaths,
+    paths: { globalBin, globalNodeModules },
+  } = await setupNpmGlobal(t, {
+    testdir: {
+      home: {
+        '.npmrc': `${setup.HTTP_PROXY.slice(5)}:_authToken = test-token`,
+      },
+    },
+  })
+
+  const tarball = await npmLocalTarball()
+
+  let publishedPackument = null
+  const pkg = require('../../package.json')
+  const { name, version } = pkg
+
+  registry.nock.put('/npm', body => {
+    if (body._id === 'npm' && body.versions[version]) {
+      publishedPackument = body.versions[version]
+      return true
+    }
+    return false
+  }).reply(201, {})
+  await npmLocal('publish', { proxy: true })
+
+  await registry.package({
+    manifest: registry.manifest({ name, packuments: [publishedPackument] }),
+    tarballs: { [version]: tarball },
+    times: 2,
+  })
+
+  await npm('install', 'npm', '--global', '--prefer-online')
+
+  const paths = await getPaths()
+  t.equal(paths.npmRoot, join(globalNodeModules, 'npm'), 'npm root is in the testdir')
+  t.equal(paths.pathNpm, join(globalBin, 'npm'), 'npm bin is in the testdir')
+  t.equal(paths.pathNpx, join(globalBin, 'npx'), 'npx bin is in the testdir')
+  t.ok(paths.nodeModulesContents.length > 1, 'node modules has npm contents')
+  t.ok(paths.nodeModulesContents.includes('node_modules'), 'npm has its node_modules')
+
+  t.strictSame(
+    paths.binContents,
+    ['npm', 'npx'].flatMap(p => setup.WINDOWS ? [p, `${p}.cmd`, `${p}.ps1`] : p),
+    'bin has npm and npx'
+  )
+
+  await registry.package({
+    manifest: registry.manifest({ name, packuments: [publishedPackument] }),
+    tarballs: { [version]: tarball },
+    times: 2,
+  })
+
+  await npmPath('install', 'npm', '--global', '--prefer-online')
+
+  t.strictSame(await getPaths(), paths)
 })
