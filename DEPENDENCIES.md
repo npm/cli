@@ -218,6 +218,8 @@ graph LR;
   npmcli-package-json-->json-parse-even-better-errors;
   npmcli-package-json-->normalize-package-data;
   npmcli-package-json-->npm-normalize-package-bin;
+  npmcli-package-json-->npmcli-git["@npmcli/git"];
+  npmcli-package-json-->proc-log;
   npmcli-run-script-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-run-script-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-run-script-->read-package-json-fast;
@@ -704,6 +706,8 @@ graph LR;
   npmcli-package-json-->json-parse-even-better-errors;
   npmcli-package-json-->normalize-package-data;
   npmcli-package-json-->npm-normalize-package-bin;
+  npmcli-package-json-->npmcli-git["@npmcli/git"];
+  npmcli-package-json-->proc-log;
   npmcli-promise-spawn-->which;
   npmcli-query-->postcss-selector-parser;
   npmcli-run-script-->node-gyp;
@@ -822,8 +826,8 @@ packages higher up the chain.
  - @npmcli/arborist
  - @npmcli/metavuln-calculator
  - pacote, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, npm-profile
- - npm-registry-fetch, libnpmversion
+ - npm-registry-fetch, @npmcli/package-json, libnpmversion
  - @npmcli/git, make-fetch-happen, @npmcli/config, init-package-json
- - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, @npmcli/run-script, read-package-json, @npmcli/package-json, promzard
+ - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, @npmcli/run-script, read-package-json, promzard
  - @npmcli/docs, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, bin-links, nopt, npmlog, parse-conflict-json, @npmcli/mock-globals, read
  - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, minify-registry-metadata, ini, @npmcli/disparity-colors, mute-stream, npm-audit-report, npm-user-validate
