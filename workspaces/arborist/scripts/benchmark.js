@@ -6,10 +6,12 @@ const { execSync } = require('child_process')
 const shaCmd = 'git show --no-patch --pretty=%H HEAD'
 const dirty = !!String(execSync('git status -s -uno')).trim()
 const currentSha = String(execSync(shaCmd)).trim() + (dirty ? '-dirty' : '')
-const { green, red } = require('chalk')
 const lastBenchmark = resolve(__dirname, 'benchmark/saved/last-benchmark.json')
 const { linkSync, writeFileSync, readdirSync } = require('fs')
 const registryServer = require('../test/fixtures/server.js')
+
+const red = m => `\x1B[31m${m}\x1B[39m`
+const green = m => `\x1B[32m${m}\x1B[39m`
 
 const options = {
   previous: null,

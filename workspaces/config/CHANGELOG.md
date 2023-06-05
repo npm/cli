@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.2.0](https://github.com/npm/cli/compare/config-v6.1.7...config-v6.2.0) (2023-05-31)
+
+### Features
+
+* [`a63a6d8`](https://github.com/npm/cli/commit/a63a6d8d6fd339d504ab94c0364ce7ee3d4e3775) [#6490](https://github.com/npm/cli/pull/6490) add provenanceFile option for libnpmpublish (@bdehamer)
+* [`2a8f4f2`](https://github.com/npm/cli/commit/2a8f4f203a47f60cc96312934927419a7d83c2f1) [#6490](https://github.com/npm/cli/pull/6490) add new exclusive config item publish-file (@wraithgar)
+
 ## [6.1.7](https://github.com/npm/cli/compare/config-v6.1.6...config-v6.1.7) (2023-05-17)
 
 ### Bug Fixes

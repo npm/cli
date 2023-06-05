@@ -33,7 +33,7 @@ All commands:
     whoami
 
 Specify configs in the ini-formatted file:
-    {NPM}/{TESTDIR}/project/.npmrc
+    {NPM}/{TESTDIR}/home/.npmrc
 or on the command line via: npm <command> --key=value
 
 More configuration info: npm help config
@@ -57,8 +57,8 @@ npm ERR!
 npm ERR! Options:
 npm ERR! [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 npm ERR! [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
-npm ERR! [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
-npm ERR! [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
+npm ERR! [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+npm ERR! [--no-bin-links] [--no-fund] [--dry-run]
 npm ERR! [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 npm ERR! [-ws|--workspaces] [--include-workspace-root] [--install-links]
 npm ERR! 

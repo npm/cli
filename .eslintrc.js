@@ -13,6 +13,7 @@ module.exports = {
   ignorePatterns: [
     'docs/**',
     'smoke-tests/**',
+    'mock-globals/**',
     'mock-registry/**',
     'workspaces/**',
   ],

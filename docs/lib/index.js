@@ -42,6 +42,17 @@ const getCommandByDoc = (docFile, docExt) => {
   const srcName = name === 'npx' ? 'exec' : name
   const { params, usage = [''], workspaces } = require(`../../lib/commands/${srcName}`)
   const usagePrefix = name === 'npx' ? 'npx' : `npm ${name}`
+  if (params) {
+    for (const param of params) {
+      if (definitions[param].exclusive) {
+        for (const e of definitions[param].exclusive) {
+          if (!params.includes(e)) {
+            params.splice(params.indexOf(param) + 1, 0, e)
+          }
+        }
+      }
+    }
+  }
 
   return {
     name,

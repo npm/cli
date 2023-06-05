@@ -1,5 +1,38 @@
 # Changelog
 
+## [9.7.0](https://github.com/npm/cli/compare/v9.6.7...v9.7.0) (2023-05-31)
+
+### Features
+
+* [`a63a6d8`](https://github.com/npm/cli/commit/a63a6d8d6fd339d504ab94c0364ce7ee3d4e3775) [#6490](https://github.com/npm/cli/pull/6490) add provenanceFile option for libnpmpublish (@bdehamer)
+* [`2a8f4f2`](https://github.com/npm/cli/commit/2a8f4f203a47f60cc96312934927419a7d83c2f1) [#6490](https://github.com/npm/cli/pull/6490) add new exclusive config item publish-file (@wraithgar)
+* [`361e194`](https://github.com/npm/cli/commit/361e1945b5a34230690ccf37a14687d021e1dbce) [#6483](https://github.com/npm/cli/pull/6483) implement flag --prefer-dedupe for `npm install` (#6483) (@m4rch3n1ng)
+
+### Bug Fixes
+
+* [`38eb39b`](https://github.com/npm/cli/commit/38eb39b8068ab4e3b0a544234ac5df804469e3d8) [#6514](https://github.com/npm/cli/pull/6514) strip ansi characters from search results (#6514) (@wraithgar)
+* [`4b5ccfc`](https://github.com/npm/cli/commit/4b5ccfce376378521cb743bfbd32a724340e75b8) [#6477](https://github.com/npm/cli/pull/6477) make usage and completion static functions (#6477) (@lukekarrys)
+* [`4f39e8c`](https://github.com/npm/cli/commit/4f39e8c983e652b66f9c342b93694a29dc5a0b92) [#6479](https://github.com/npm/cli/pull/6479) refactor engines validation to lint syntax (#6479) (@lukekarrys)
+* [`f3cfe12`](https://github.com/npm/cli/commit/f3cfe129b2602e8f454acac572a51d8adc6c1111) [#6482](https://github.com/npm/cli/pull/6482) remove unused lib/npm relics (#6482) (@lukekarrys)
+* [`87de0c7`](https://github.com/npm/cli/commit/87de0c79cca0788d728095cfb537447745bada13) [#6472](https://github.com/npm/cli/pull/6472) move explore command to @npmcli/package-json (@wraithgar)
+* [`636e29e`](https://github.com/npm/cli/commit/636e29e2c887e7f197977e3215642b6778eb59de) [#6472](https://github.com/npm/cli/pull/6472) move to @npmcli/package-json where possible (@wraithgar)
+* [`37cc797`](https://github.com/npm/cli/commit/37cc797341100cd0a8371e80b25b938f166c9d71) [#6418](https://github.com/npm/cli/pull/6418) retrieve registry keys via TUF (#6418) (@bdehamer)
+
+### Documentation
+
+* [`83cd5bd`](https://github.com/npm/cli/commit/83cd5bd68aa6255c598b8dd3a544f16129885aee) [#6480](https://github.com/npm/cli/pull/6480) add global option for uninstall (#6480) (@m4rch3n1ng)
+* [`0400ce3`](https://github.com/npm/cli/commit/0400ce3c9d7af792c9931f1ba365e25b899833b6) [#6481](https://github.com/npm/cli/pull/6481) add cli params to `npm set`, `npm get` (#6481) (@m4rch3n1ng)
+* [`c3638ce`](https://github.com/npm/cli/commit/c3638ce613364aff50fedb493a97f1ee60211158) [#6468](https://github.com/npm/cli/pull/6468) remove `package-lock` option for `npm ci` (#6468) (@m4rch3n1ng)
+
+### Dependencies
+
+* [`060d587`](https://github.com/npm/cli/commit/060d587f6f5a60db0c02c319c1df1a11c146442f) `chalk@5.2.0`, `npm-audit-report@5.0.0`
+* [`fc52ca8`](https://github.com/npm/cli/commit/fc52ca8c0bd2aeb4e3885e5395ec647628bdd87c) [#6472](https://github.com/npm/cli/pull/6472) remove read-package-json-fast
+* [`3238aa7`](https://github.com/npm/cli/commit/3238aa78905bc90b404dc3075ec810884f8fd1c8) [#6472](https://github.com/npm/cli/pull/6472) remove read-package-json
+* [Workspace](https://github.com/npm/cli/releases/tag/config-v6.2.0): `@npmcli/config@6.2.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v6.0.0): `libnpmexec@6.0.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v7.3.0): `libnpmpublish@7.3.0`
+
 ## [9.6.7](https://github.com/npm/cli/compare/v9.6.6...v9.6.7) (2023-05-17)
 
 ### Bug Fixes
