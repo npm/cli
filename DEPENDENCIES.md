@@ -690,6 +690,7 @@ graph LR;
   npmcli-mock-globals-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-mock-globals-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-mock-globals-->tap;
+  npmcli-mock-registry-->json-stringify-safe;
   npmcli-mock-registry-->nock;
   npmcli-mock-registry-->npm-package-arg;
   npmcli-mock-registry-->npmcli-arborist["@npmcli/arborist"];
