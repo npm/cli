@@ -95,6 +95,10 @@ t.test('pack and replace global self', async t => {
 })
 
 t.test('publish and replace global self', async t => {
+  let publishedPackument = null
+  const pkg = require('../../package.json')
+  const { name, version } = pkg
+
   const {
     npm,
     npmPath,
@@ -102,7 +106,7 @@ t.test('publish and replace global self', async t => {
     npmLocal,
     npmLocalTarball,
     getPaths,
-    paths: { globalBin, globalNodeModules },
+    paths: { globalBin, globalNodeModules, cache },
   } = await setupNpmGlobal(t, {
     testdir: {
       home: {
@@ -111,12 +115,29 @@ t.test('publish and replace global self', async t => {
     },
   })
 
+  const npmPackage = async ({ manifest, ...opts } = {}) => {
+    await registry.package({
+      manifest: registry.manifest({ name, ...manifest }),
+      ...opts,
+    })
+  }
+
+  const npmInstall = async (useNpm) => {
+    await npmPackage({
+      manifest: { packuments: [publishedPackument] },
+      tarballs: { [version]: tarball },
+      times: 2,
+    })
+    await fs.rm(cache, { recursive: true, force: true })
+    await useNpm('install', 'npm@latest', '--global')
+    return getPaths()
+  }
+
   const tarball = await npmLocalTarball()
 
-  let publishedPackument = null
-  const pkg = require('../../package.json')
-  const { name, version } = pkg
-
+  if (setup.SMOKE_PUBLISH) {
+    await npmPackage()
+  }
   registry.nock.put('/npm', body => {
     if (body._id === 'npm' && body.versions[version]) {
       publishedPackument = body.versions[version]
@@ -124,17 +145,9 @@ t.test('publish and replace global self', async t => {
     }
     return false
   }).reply(201, {})
-  await npmLocal('publish', { proxy: true })
+  await npmLocal('publish', { proxy: true, force: true })
 
-  await registry.package({
-    manifest: registry.manifest({ name, packuments: [publishedPackument] }),
-    tarballs: { [version]: tarball },
-    times: 2,
-  })
-
-  await npm('install', 'npm', '--global', '--prefer-online')
-
-  const paths = await getPaths()
+  const paths = await npmInstall(npm)
   t.equal(paths.npmRoot, join(globalNodeModules, 'npm'), 'npm root is in the testdir')
   t.equal(paths.pathNpm, join(globalBin, 'npm'), 'npm bin is in the testdir')
   t.equal(paths.pathNpx, join(globalBin, 'npx'), 'npx bin is in the testdir')
@@ -147,13 +160,5 @@ t.test('publish and replace global self', async t => {
     'bin has npm and npx'
   )
 
-  await registry.package({
-    manifest: registry.manifest({ name, packuments: [publishedPackument] }),
-    tarballs: { [version]: tarball },
-    times: 2,
-  })
-
-  await npmPath('install', 'npm', '--global', '--prefer-online')
-
-  t.strictSame(await getPaths(), paths)
+  t.strictSame(await npmInstall(npmPath), paths)
 })

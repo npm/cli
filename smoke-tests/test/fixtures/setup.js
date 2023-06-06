@@ -20,6 +20,14 @@ const WINDOWS = process.platform === 'win32'
 const GLOBAL_BIN = WINDOWS ? '' : 'bin'
 const GLOBAL_NODE_MODULES = join(WINDOWS ? '' : 'lib', 'node_modules')
 
+const getOpts = (...a) => {
+  const [opts, args] = a.reduce((acc, arg) => {
+    acc[typeof arg === 'object' ? 0 : 1].push(arg)
+    return acc
+  }, [[], []])
+  return [Object.assign({}, ...opts), args]
+}
+
 const normalizePath = path => path.replace(/[A-Z]:/, '').replace(/\\/g, '/')
 
 const testdirHelper = (obj) => {
@@ -169,14 +177,10 @@ module.exports = async (t, { testdir = {}, debug, registry: _registry = {} } = {
     return stdout
   }
 
-  const baseNpm = async (baseOpts, ...args) => {
-    const hasMoreOpts = args[args.length - 1] && typeof args[args.length - 1] === 'object'
-    const { cwd, cmd, argv = [], proxy = true, ...opts } = {
-      ...baseOpts,
-      ...hasMoreOpts ? args.pop() : {},
-    }
+  const baseNpm = async (...a) => {
+    const [{ cwd, cmd, argv = [], proxy = true, ...opts }, args] = getOpts(...a)
 
-    const isGlobal = args.some(a => ['-g', '--global', '--global=true'].includes(a))
+    const isGlobal = args.some(arg => ['-g', '--global', '--global=true'].includes(arg))
 
     const defaultFlags = [
       proxy ? `--registry=${HTTP_PROXY}` : null,
@@ -206,28 +210,30 @@ module.exports = async (t, { testdir = {}, debug, registry: _registry = {} } = {
     })
   }
 
-  const npmLocal = (...args) => baseNpm({
-    cwd: CLI_ROOT,
-    cmd: process.execPath,
-    argv: ['.'],
-    proxy: false,
-  }, ...args)
+  const npmLocal = async (...args) => {
+    const [{ force = false }] = getOpts(...args)
+    if (SMOKE_PUBLISH_NPM && !force) {
+      throw new Error('npmLocal cannot be called during smoke-publish')
+    }
+    return baseNpm({
+      cwd: CLI_ROOT,
+      cmd: process.execPath,
+      argv: ['.'],
+      proxy: false,
+    }, ...args)
+  }
 
-  const npmPath = (...args) => baseNpm({
+  const npmPath = async (...args) => baseNpm({
     cwd: paths.project,
     cmd: 'npm',
     shell: true,
   }, ...args)
 
-  const npm = (...args) => baseNpm({
+  const npm = async (...args) => baseNpm({
     cwd: paths.project,
     cmd: process.execPath,
     argv: [NPM_PATH],
   }, ...args)
-
-  const npmLocalError = async () => {
-    throw new Error('npmLocal cannot be called during smoke-publish')
-  }
 
   // helpers for reading/writing files and their source
   const readFile = async (f) => {
@@ -237,22 +243,15 @@ module.exports = async (t, { testdir = {}, debug, registry: _registry = {} } = {
 
   return {
     npmPath,
-    npmLocal: SMOKE_PUBLISH_NPM ? npmLocalError : npmLocal,
+    npmLocal,
     npm: SMOKE_PUBLISH_NPM ? npmPath : npm,
     spawn: baseSpawn,
     readFile,
     getPath,
     paths,
     registry,
-    npmLocalTarball: async () => {
-      if (SMOKE_PUBLISH_TARBALL) {
-        return SMOKE_PUBLISH_TARBALL
-      }
-      if (SMOKE_PUBLISH_NPM) {
-        return await npmLocalError()
-      }
-      return await npmLocal('pack', `--pack-destination=${root}`).then(r => join(root, r))
-    },
+    npmLocalTarball: async () => SMOKE_PUBLISH_TARBALL ??
+      npmLocal('pack', `--pack-destination=${root}`).then(r => join(root, r)),
   }
 }
 
