@@ -1,5 +1,11 @@
 # Changelog
 
+## [9.7.1](https://github.com/npm/cli/compare/v9.7.0...v9.7.1) (2023-06-06)
+
+### Dependencies
+
+* [`7467ff6`](https://github.com/npm/cli/commit/7467ff680a3fffbf6b974c5779229c2e54e8515f) [#6518](https://github.com/npm/cli/pull/6518) `@npmcli/package-json@3.1.1`, `@npmcli/git@4.1.0`
+
 ## [9.7.0](https://github.com/npm/cli/compare/v9.6.7...v9.7.0) (2023-05-31)
 
 ### Features
