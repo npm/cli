@@ -484,7 +484,7 @@ module.exports = cls => class Reifier extends cls {
     process.emit('time', 'reify:trashOmits')
 
     const filter = node =>
-      node.top.isProjectRoot &&
+      (node.top.isProjectRoot || node.top.isWorkspace) &&
         (
           node.peer && this[_omitPeer] ||
           node.dev && this[_omitDev] ||
