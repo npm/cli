@@ -1187,6 +1187,17 @@ t.test('workspaces', t => {
   t.test('reify simple-workspaces', t =>
     t.resolveMatchSnapshot(printReified(fixture(t, 'workspaces-simple')), 'should reify simple workspaces'))
 
+  t.test('reify workspaces dev dependencies', async t => {
+    const path = fixture(t, 'workspaces-conflicting-dev-deps')
+    const rootAjv = resolve(path, 'node_modules/ajv/package.json')
+    const ajvOfPkgA = resolve(path, 'a/node_modules/ajv/package.json')
+    t.equal(fs.existsSync(rootAjv), true, 'root ajv exists')
+    t.equal(fs.existsSync(ajvOfPkgA), true, 'ajv under package a node_modules exists')
+    await reify(path, { omit: ['dev'] })
+    t.equal(fs.existsSync(rootAjv), false, 'root ajv no longer exists')
+    t.equal(fs.existsSync(ajvOfPkgA), false, 'ajv under package a node_modules no longer exists')
+  })
+
   t.test('reify workspaces lockfile', async t => {
     const path = fixture(t, 'workspaces-simple')
     await reify(path)
