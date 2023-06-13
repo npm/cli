@@ -272,7 +272,7 @@ const ensureProvenanceGeneration = async (registry, spec, opts) => {
   // the package is always private and require `--access public` to publish
   // with provenance.
   let visibility = { public: false }
-  if (true && opts.access !== 'public') {
+  if (opts.access !== 'public') {
     try {
       const res = await npmFetch
         .json(`${registry}/-/package/${spec.escapedName}/visibility`, opts)
