@@ -1154,3 +1154,232 @@ t.test('user-supplied provenance - provenance w/ mismatched package digest', asy
     { message: /Provenance subject digest does not match/ }
   )
 })
+
+t.test('publish existing package with provenance in gitlab', async t => {
+  // Environment variables
+  const jobName = 'job'
+  const repository = 'gitlab/foo'
+  const serverUrl = 'https://gitlab.com'
+  const sha = 'deadbeef'
+  const runnerID = 1
+
+  // Data for mocking the OIDC token request
+  const oidcClaims = {
+    iss: 'https://oauth2.sigstore.dev/auth',
+    email: 'foo@bar.com',
+  }
+  const idToken = `.${Buffer.from(JSON.stringify(oidcClaims)).toString('base64')}.`
+
+  // Set-up GitLab environment variables
+  mockGlobals(t, {
+    'process.env': {
+      CI: true,
+      GITLAB_CI: true,
+      GITHUB_ACTIONS: undefined,
+      SIGSTORE_ID_TOKEN: idToken,
+      CI_RUNNER_ID: runnerID,
+      CI_PROJECT_URL: `${serverUrl}/${repository}`,
+      CI_COMMIT_SHA: sha,
+      CI_JOB_NAME: jobName,
+    },
+  })
+
+  const expectedSubject = {
+    name: 'pkg:npm/%40npmcli/libnpmpublish-test@1.0.0',
+    digest: {
+      sha512: integrity.sha512[0].hexDigest(),
+    },
+  }
+
+  const expectedConfigSource = {
+    uri: `git+${serverUrl}/${repository}`,
+    digest: { sha1: sha },
+    entryPoint: jobName,
+  }
+
+  const log = []
+  const { publish } = t.mock('..', {
+    'ci-info': t.mock('ci-info'),
+    'proc-log': { notice: (...msg) => log.push(['notice', ...msg]) },
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+  })
+  const manifest = {
+    name: '@npmcli/libnpmpublish-test',
+    version: '1.0.0',
+    description: 'test libnpmpublish package',
+  }
+  const spec = npa(manifest.name)
+
+  // Data for mocking Fulcio certifcate request
+  const fulcioURL = 'https://mock.fulcio'
+  const leafCertificate = `-----BEGIN CERTIFICATE-----\nabc\n-----END CERTIFICATE-----\n`
+  const rootCertificate = `-----BEGIN CERTIFICATE-----\nxyz\n-----END CERTIFICATE-----\n`
+  const certificateResponse = {
+    signedCertificateEmbeddedSct: {
+      chain: {
+        certificates: [leafCertificate, rootCertificate],
+      },
+    },
+  }
+
+  // Data for mocking Rekor upload
+  const rekorURL = 'https://mock.rekor'
+  const signature = 'ABC123'
+  const b64Cert = Buffer.from(leafCertificate).toString('base64')
+  const logIndex = 2513258
+  const uuid =
+    '69e5a0c1663ee4452674a5c9d5050d866c2ee31e2faaf79913aea7cc27293cf6'
+
+  const signatureBundle = {
+    kind: 'hashedrekord',
+    apiVersion: '0.0.1',
+    spec: {
+      signature: {
+        content: signature,
+        publicKey: { content: b64Cert },
+      },
+    },
+  }
+
+  const rekorEntry = {
+    [uuid]: {
+      body: Buffer.from(JSON.stringify(signatureBundle)).toString(
+        'base64'
+      ),
+      integratedTime: 1654015743,
+      logID:
+        'c0d23d6ad406973f9559f3ba2d1ca01f84147d8ffc5b8445c224f98b9591801d',
+      logIndex,
+      verification: {
+        // eslint-disable-next-line max-len
+        signedEntryTimestamp: 'MEUCIQD6CD7ZNLUipFoxzmSL/L8Ewic4SRkXN77UjfJZ7d/wAAIgatokSuX9Rg0iWxAgSfHMtcsagtDCQalU5IvXdQ+yLEA=',
+      },
+    },
+  }
+
+  const packument = {
+    _id: manifest.name,
+    name: manifest.name,
+    description: manifest.description,
+    'dist-tags': {
+      latest: '1.0.0',
+    },
+    versions: {
+      '1.0.0': {
+        _id: `${manifest.name}@${manifest.version}`,
+        _nodeVersion: process.versions.node,
+        ...manifest,
+        dist: {
+          shasum,
+          integrity: integrity.sha512[0].toString(),
+          // eslint-disable-next-line max-len
+          tarball: 'http://mock.reg/@npmcli/libnpmpublish-test/-/@npmcli/libnpmpublish-test-1.0.0.tgz',
+        },
+      },
+    },
+    access: 'public',
+    _attachments: {
+      '@npmcli/libnpmpublish-test-1.0.0.tgz': {
+        content_type: 'application/octet-stream',
+        data: tarData.toString('base64'),
+        length: tarData.length,
+      },
+      '@npmcli/libnpmpublish-test-1.0.0.sigstore': {
+        // Can't match data against static value as signature is always
+        // different.
+        // Can't match length because in github actions certain environment
+        // variables are present that are not present when running locally,
+        // changing the payload size.
+        content_type: 'application/vnd.dev.sigstore.bundle+json;version=0.1',
+      },
+    },
+  }
+
+  const fulcioSrv = MockRegistry.tnock(t, fulcioURL)
+  fulcioSrv.matchHeader('Content-Type', 'application/json')
+    .post('/api/v2/signingCert', {
+      credentials: { oidcIdentityToken: idToken },
+      publicKeyRequest: {
+        publicKey: {
+          algorithm: 'ECDSA',
+          content: /.+/i,
+        },
+        proofOfPossession: /.+/i,
+      },
+    })
+    .reply(200, certificateResponse)
+
+  const rekorSrv = MockRegistry.tnock(t, rekorURL)
+  rekorSrv
+    .matchHeader('Accept', 'application/json')
+    .matchHeader('Content-Type', 'application/json')
+    .post('/api/v1/log/entries')
+    .reply(201, rekorEntry)
+
+  registry.nock.put(`/${spec.escapedName}`, body => {
+    const bundleAttachment = body._attachments['@npmcli/libnpmpublish-test-1.0.0.sigstore']
+    const bundle = JSON.parse(bundleAttachment.data)
+    const provenance = JSON.parse(Buffer.from(bundle.dsseEnvelope.payload, 'base64').toString())
+
+    t.hasStrict(body, packument, 'posted packument matches expectations')
+    t.hasStrict(provenance.subject[0],
+      expectedSubject,
+      'provenance subject matches expectations')
+    t.hasStrict(provenance.predicate.buildType,
+      'https://github.com/npm/cli/gitlab/v0alpha1',
+      'buildType matches expectations')
+    t.hasStrict(provenance.predicate.builder.id,
+      `${serverUrl}/${repository}/-/runners/${runnerID}`,
+      'builder id matches expectations')
+    t.hasStrict(provenance.predicate.invocation.configSource,
+      expectedConfigSource,
+      'configSource matches expectations')
+    return true
+  }).reply(201, {})
+
+  const ret = await publish(manifest, tarData, {
+    ...opts,
+    provenance: true,
+    fulcioURL: fulcioURL,
+    rekorURL: rekorURL,
+  })
+  t.ok(ret, 'publish succeeded')
+  t.match(log, [
+    ['notice', 'publish',
+      'Signed provenance statement with source and build information from GitLab CI'],
+    ['notice', 'publish',
+      // eslint-disable-next-line max-len
+      `Provenance statement published to transparency log: https://search.sigstore.dev/?logIndex=${logIndex}`],
+  ])
+})
+
+t.test('gitlab provenance, no token available', async t => {
+  mockGlobals(t, {
+    'process.env': {
+      CI: true,
+      GITLAB_CI: true,
+      GITHUB_ACTIONS: undefined,
+    },
+  })
+  const manifest = {
+    name: '@npmcli/libnpmpublish-test',
+    version: '1.0.0',
+    description: 'test libnpmpublish package',
+  }
+  const { publish } = t.mock('..', { 'ci-info': t.mock('ci-info') })
+  await t.rejects(
+    publish(manifest, Buffer.from(''), {
+      ...opts,
+      access: null,
+      provenance: true,
+    }),
+    {
+      message: /requires "SIGSTORE_ID_TOKEN"/,
+      code: 'EUSAGE',
+    }
+  )
+})
