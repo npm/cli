@@ -33,7 +33,6 @@
     "url": "https://github.com/npm/cli/issues"
   },
   "directories": {
-    "bin": "./bin",
     "doc": "./doc",
     "lib": "./lib",
     "man": "./man"
@@ -196,6 +195,7 @@
     "@npmcli/promise-spawn": "^6.0.2",
     "@npmcli/template-oss": "4.14.1",
     "@tufjs/repo-mock": "^1.3.1",
+    "diff": "^5.1.0",
     "licensee": "^10.0.0",
     "nock": "^13.3.0",
     "npm-packlist": "^7.0.4",

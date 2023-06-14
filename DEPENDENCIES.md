@@ -510,6 +510,7 @@ graph LR;
   npm-->cli-columns;
   npm-->cli-table3;
   npm-->columnify;
+  npm-->diff;
   npm-->fastest-levenshtein;
   npm-->fs-minipass;
   npm-->glob;
