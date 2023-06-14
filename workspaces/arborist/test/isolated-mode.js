@@ -902,7 +902,7 @@ tap.test('bundled dependencies of internal packages', async t => {
   rule7.apply(t, dir, resolved, asserted)
 
   const isexePath = path.join(dir, 'node_modules', 'isexe')
-  t.equals(isexePath, fs.realpathSync(isexePath))
+  t.equal(isexePath, fs.realpathSync(isexePath))
 })
 
 tap.test('nested bundled dependencies of internal packages', async t => {
@@ -954,7 +954,7 @@ tap.test('nested bundled dependencies of internal packages', async t => {
   rule7.apply(t, dir, resolved, asserted)
 
   const isexePath = path.join(dir, 'node_modules', 'isexe')
-  t.equals(isexePath, fs.realpathSync(isexePath))
+  t.equal(isexePath, fs.realpathSync(isexePath))
 })
 
 tap.test('nested bundled dependencies of workspaces', async t => {
@@ -998,9 +998,9 @@ tap.test('nested bundled dependencies of workspaces', async t => {
   rule7.apply(t, dir, resolved, asserted)
 
   const isexePath = path.join(dir, 'node_modules', 'isexe')
-  t.equals(isexePath, fs.realpathSync(isexePath))
+  t.equal(isexePath, fs.realpathSync(isexePath))
   const whichPath = path.join(dir, 'node_modules', 'which')
-  t.equals(whichPath, fs.realpathSync(whichPath))
+  t.equal(whichPath, fs.realpathSync(whichPath))
 })
 
 tap.test('nested bundled dependencies of workspaces with conflicting isolated dep', async t => {
@@ -1054,9 +1054,9 @@ tap.test('nested bundled dependencies of workspaces with conflicting isolated de
   rule7.apply(t, dir, resolved, asserted)
 
   const isexePath = path.join(dir, 'packages', 'bar', 'node_modules', 'isexe')
-  t.equals(isexePath, fs.realpathSync(isexePath))
+  t.equal(isexePath, fs.realpathSync(isexePath))
   const whichPath = path.join(dir, 'packages', 'bar', 'node_modules', 'which')
-  t.equals(whichPath, fs.realpathSync(whichPath))
+  t.equal(whichPath, fs.realpathSync(whichPath))
 })
 
 tap.test('adding a dependency', async t => {
