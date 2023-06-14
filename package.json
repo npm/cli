@@ -34,7 +34,6 @@
   },
   "directories": {
     "doc": "./doc",
-    "lib": "./lib",
     "man": "./man"
   },
   "main": "./index.js",
@@ -213,14 +212,10 @@
     "test-all": "node . run test -ws -iwr --if-present",
     "snap": "tap",
     "prepack": "node . run build -w docs",
-    "test:nocleanup": "NO_TEST_CLEANUP=1 node . run test --",
-    "sudotest": "sudo node . run run test --",
-    "sudotest:nocleanup": "sudo NO_TEST_CLEANUP=1 node . run test --",
     "posttest": "node . run lint",
     "lint": "eslint \"**/*.js\"",
     "lintfix": "node . run lint -- --fix",
     "lint-all": "node . run lint -ws -iwr --if-present",
-    "prelint": "rimraf test/npm_cache*",
     "resetdeps": "node scripts/resetdeps.js",
     "rp-pull-request": "node scripts/update-authors.js",
     "postlint": "template-oss-check",
@@ -231,7 +226,6 @@
       "LC_ALL=sk"
     ],
     "color": 1,
-    "files": "test/{lib,bin,index.js}",
     "timeout": 600,
     "nyc-arg": [
       "--exclude",
