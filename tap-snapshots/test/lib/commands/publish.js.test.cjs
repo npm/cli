@@ -114,7 +114,6 @@ Object {
   },
   "description": "a package manager for JavaScript",
   "directories": Object {
-    "bin": "./bin",
     "doc": "./doc",
     "lib": "./lib",
     "man": "./man",
