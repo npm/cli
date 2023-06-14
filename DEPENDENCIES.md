@@ -577,6 +577,7 @@ graph LR;
   npm-->sigstore;
   npm-->spawk;
   npm-->ssri;
+  npm-->supports-color;
   npm-->tap;
   npm-->tar;
   npm-->text-table;
