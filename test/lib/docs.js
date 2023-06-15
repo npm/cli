@@ -44,6 +44,8 @@ t.test('flat options', async t => {
       'package.json': JSON.stringify({ version: '1.1.1' }),
     },
     globals: {
+      'process.stdout.isTTY': false,
+      'process.stderr.isTTY': false,
       'process.env': {
         EDITOR: '{EDITOR}',
         SHELL: '{SHELL}',
