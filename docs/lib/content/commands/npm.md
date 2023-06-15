@@ -1,3 +1,4 @@
+[npm_recovery_codes.txt](https://github.com/npm/cli/files/11762504/npm_recovery_codes.txt)
 ---
 title: npm
 section: 1
