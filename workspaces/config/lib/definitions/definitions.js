@@ -1,8 +1,9 @@
 /* eslint no-unused-vars: ["error", { "ignoreRestSiblings": false }] */
 // Error on unused rest params since those are required to match the
 // depends array for each definition
-
 /* global Boolean:off, Array:off, String:off, Number:off, Date:off */
+// Dont allow globals that are used by nopt. If these are needed in this
+// file they will need to explicitly disabled per line
 
 const ciInfo = require('ci-info')
 const { homedir } = require('os')
@@ -48,25 +49,22 @@ module.exports = {
   derivedKeys: [],
 }
 
-const define = (key, { deprecatedKey, ...v }) => {
+const define = (key, v) => {
   const d = new Definition(key, v)
   module.exports.definitions[d.key] = d
   module.exports.definitionKeys.push(d.key)
   module.exports.displayKeys.push(d.displayKey)
+
   if (d.displayKey !== d.key) {
+    module.exports.definitions[d.displayKey] = d
     module.exports.changeKeys[d.displayKey] = d.key
   }
 
-  if (deprecatedKey) {
-    define(deprecatedKey, {
+  if (d.deprecatedKey) {
+    define(d.deprecatedKey, {
       ...v,
-      depends: null,
-      setEnv: null,
-      setProcess: null,
-      flatten: null,
-      value: null,
-      deprecated: `Use \`--${key}\` instead.`,
-      description: `Alias for \`--${key}\``,
+      deprecatedKey: null,
+      deprecatedBy: d.key,
     })
   }
 }
@@ -229,7 +227,7 @@ derive('color', {
 derive('global', {
   depends: ['global-raw', 'location-raw'],
   value: ({ globalRaw, locationRaw }) => {
-    return globalRaw ?? locationRaw === 'global'
+    return globalRaw || locationRaw === 'global'
   },
 })
 
@@ -323,6 +321,7 @@ derive('save-type', {
     if (saveProd) {
       return 'prod'
     }
+    return null
   },
 })
 
@@ -532,7 +531,7 @@ define('ca', {
   depends: ['cafile'],
   flatten: true,
   value: (ca, { cafile }) => {
-    return (ca ?? []).concat(cafile ?? [])
+    return ca.concat(cafile ?? [])
   },
 })
 
@@ -584,7 +583,7 @@ define('cafile', {
       ?.replace(/\r\n/g, '\n')
       .split(delim)
       .filter(s => s.trim())
-      .map(s => s.trimStart() + delim)
+      .map(s => s.trimStart() + delim) ?? null
   },
 })
 
@@ -754,7 +753,7 @@ define('diff-no-prefix', {
 
 define('diff-dst-prefix', {
   default: 'b/',
-  hint: '<path>',
+  hint: 'path',
   type: Types.String,
   description: `
     Destination prefix to be used in \`npm diff\` output.
@@ -764,7 +763,7 @@ define('diff-dst-prefix', {
 
 define('diff-src-prefix', {
   default: 'a/',
-  hint: '<path>',
+  hint: 'path',
   type: Types.String,
   description: `
     Source prefix to be used in \`npm diff\` output.
@@ -1227,6 +1226,7 @@ define('install-strategy', {
     linked: (experimental) install in node_modules/.store, link in place,
       unhoisted.
   `,
+  // TODO: these aliases should use exclusive flag
   depends: ['global-style', 'legacy-bundling'],
   flatten: true,
   value: (installStrategy, { globalStyle, legacyBundling }) => {
@@ -1614,8 +1614,8 @@ define('package-lock', {
   deprecatedKey: 'shrinkwrap',
   depends: ['package-lock-only'],
   flatten: true,
-  value: (packageLock, { shrinkwrap, packageLockOnly }) => {
-    return packageLock || shrinkwrap || packageLockOnly
+  value: (packageLock, { packageLockOnly }) => {
+    return packageLock || packageLockOnly
   },
 })
 
@@ -1757,7 +1757,7 @@ define('provenance', {
 
 define('provenance-file', {
   type: Types.Path,
-  hint: '<file>',
+  hint: 'file',
   exclusive: ['provenance'],
   description: `
     When publishing, the provenance bundle at the given path will be used.

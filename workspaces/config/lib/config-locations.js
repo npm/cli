@@ -38,27 +38,46 @@ class ConfigLocations {
     }
 
     for (const key of sortedKeys) {
-      const def = derived[key] ?? internals[key] ?? definitions[key]
+      const def = this.#getDef(key)
+      
+
       this.#definitions.set(key, def)
+
       const getValue = () => {
         if (this.#cache.has(def)) {
           return this.#cache.get(def)
         }
-        const result = def.isDerived
-          ? def.getValue(this.#cacheData)
-          : def.getValue(this.#getRaw(def.key), this.#cacheData)
+        let result
+        if (def.isDerived) {
+          result = def.getValue(this.#cacheData)
+        } else if (dep.deprecatedBy) {
+
+        } else if (def.deprecatedKey) {
+          const deprecatedKeyValue = this.#getRaw(def.deprecatedKey)
+
+          result = def.getValue(this.#getRaw(def.key), this.#cacheData)
+        } else {
+          result = def.getValue(this.#getRaw(def.key), this.#cacheData)
+        }
         this.#cache.set(def, result)
         return result
       }
-      this.#defineData(key, getValue, this.#cacheData)
-      for (const flatKey of def.flatten) {
-        this.#defineData(flatKey.split('.'), getValue, this.#flatData)
-      }
+
+      this.#getValue.unshift((val, obj) => {
+        const depValue = obj[Definition.getFlatKey(depKey)]
+        return depValue !== this.#def.default ? depValue : val
+      })
+
+      this.#defineKeys(def, key, getValue)
     }
   }
 
   get data () {
     return this.#flatData
+  }
+
+  #getDef (key) {
+    return derived[key] ?? internals[key] ?? definitions[key]
   }
 
   load (where, ...args) {
@@ -114,6 +133,13 @@ class ConfigLocations {
     }
     const next = getFlatKey(keys.shift())
     return this.#getData(keys, obj[next])
+  }
+
+  #defineKeys (def, key, getValue) {
+    this.#defineData(key, getValue, this.#cacheData)
+    for (const flatKey of def.flatten) {
+      this.#defineData(flatKey.split('.'), getValue, this.#flatData)
+    }
   }
 
   #defineData (keys, getValue, obj) {

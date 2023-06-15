@@ -9,37 +9,39 @@
 const { Types, getType } = require('../type-defs')
 const { Locations, LocationNames } = require('./locations')
 
+const REQUIRED = [
+  'default',
+  'description',
+  'type',
+]
+
+const ALLOWED = [
+  ...REQUIRED,
+  'alias',
+  'defaultDescription',
+  'deprecated',
+  'deprecatedBy',
+  'deprecatedKey',
+  'depends',
+  'derived',
+  'envExport',
+  'exclusive',
+  'flatten',
+  'hint',
+  'internal',
+  'key',
+  'location',
+  'setEnv',
+  'setProcess',
+  'short',
+  'typeDescription',
+  'usage',
+  'value',
+]
+
 class Definition {
   // special affordance for ssl -> SSL and tty -> TTY
   static getFlatKey = (k) => k.replace(/-(ssl|tty|[a-z])/g, (...a) => a[1].toUpperCase())
-
-  static required = [
-    'default',
-    'description',
-    'type',
-  ]
-
-  static allowed = [
-    ...Definition.required,
-    'alias',
-    'defaultDescription',
-    'deprecated',
-    'deprecatedKey',
-    'depends',
-    'derived',
-    'envExport',
-    'exclusive',
-    'flatten',
-    'hint',
-    'internal',
-    'key',
-    'location',
-    'setEnv',
-    'setProcess',
-    'short',
-    'usage',
-    'value',
-  ]
 
   #key = null
   #def = null
@@ -47,12 +49,13 @@ class Definition {
 
   #shortKeys = []
   #aliasKeys = []
+  #aliases = []
   #shorthands = []
 
   #getValue = []
   #flatten = []
   #dependencies = null
-  #depends = []
+  #depends = null
   #location = []
 
   #envKeys = []
@@ -64,6 +67,11 @@ class Definition {
     this.#def = def
     this.#displayKey = k
     this.#key = this.#def.key ?? this.#displayKey
+
+    // needs a key
+    if (!this.#key) {
+      throw new Error(`config lacks key: ${this.#key}`)
+    }
 
     if (this.#def.derived) {
       this.#location = [null]
@@ -94,13 +102,13 @@ class Definition {
       }
     }
 
-    if (!Array.isArray(this.#def.type)) {
+    if (hasOwn(this.#def, 'type') && !Array.isArray(this.#def.type)) {
       this.#def.type = [this.#def.type]
     }
 
     // if default is not set, then it is null
     if (!hasOwn(this.#def, 'default')) {
-      this.#def.default = null
+      this.#def.default = this.#typeMultiple ? [] : null
     }
 
     // always add null to types if its the default
@@ -108,13 +116,30 @@ class Definition {
       this.#def.type.unshift(null)
     }
 
-    for (const typeDef of this.#typeDefs) {
+    // needs required keys
+    for (const req of REQUIRED) {
+      if (!hasOwn(this.#def, req)) {
+        throw new Error(`config \`${this.#key}\` lacks required key: \`${req}\``)
+      }
+    }
+
+    // only allowed fields
+    for (const field of Object.keys(this.#def)) {
+      if (!ALLOWED.includes(field)) {
+        throw new Error(`config defines unknown field ${field}: ${this.#key}`)
+      }
+    }
+
+    const depends = new Set()
+    for (const typeDef of this.typeDefs) {
       if (typeDef === undefined) {
         throw new Error(`type cannot contain \`undefined\`. `
         + `This is probably a mistake from using an incorrect key from Types.*`)
       }
-      if (typeDef?.depend) {
-        this.#depends = this.#depends.concat(typeDef.depend)
+      if (typeDef?.depends) {
+        for (const d of typeDef.depends) {
+          depends.add(d)
+        }
       }
       if (typeDef?.value) {
         this.#getValue.unshift(...toArray(typeDef.value))
@@ -122,16 +147,13 @@ class Definition {
     }
 
     for (const v of toArray(this.#def.depends)) {
-      this.#depends.push(v)
+      depends.add(v)
     }
     if (hasOwn(this.#def, 'deprecatedKey')) {
-      const depKey = this.#def.deprecatedKey
-      this.#depends.push(depKey)
-      this.#getValue.unshift((val, obj) => {
-        const depValue = obj[Definition.getFlatKey(depKey)]
-        return depValue !== this.#def.default ? depValue : val
-      })
+      depends.add(this.#def.deprecatedKey)
     }
+
+    this.#depends = [...depends]
 
     if (this.#def.setEnv) {
       for (const [envKey, envValue] of Object.entries(this.#def.setEnv)) {
@@ -168,25 +190,6 @@ class Definition {
         this.#addAlias(...isArr ? [s] : s)
       }
     }
-
-    // needs a key
-    if (!this.#key) {
-      throw new Error(`config lacks key: ${this.#key}`)
-    }
-
-    // needs required keys
-    for (const req of Definition.required) {
-      if (!hasOwn(this.#def, req)) {
-        throw new Error(`config \`${this.#key}\` lacks required key: \`${req}\``)
-      }
-    }
-
-    // only allowed fields
-    for (const field of Object.keys(this.#def)) {
-      if (!Definition.allowed.includes(field)) {
-        throw new Error(`config defines unknown field ${field}: ${this.#key}`)
-      }
-    }
   }
 
   get key () {
@@ -195,6 +198,14 @@ class Definition {
 
   get displayKey () {
     return this.#displayKey
+  }
+
+  get deprecatedKey () {
+    return this.#def.deprecatedKey
+  }
+
+  get deprecatedBy () {
+    return this.#def.deprecatedBy
   }
 
   get default () {
@@ -214,8 +225,12 @@ class Definition {
     return this.#shortKeys
   }
 
-  get alias () {
+  get aliasKeys () {
     return this.#aliasKeys
+  }
+
+  get aliases () {
+    return this.#aliases
   }
 
   get shorthands () {
@@ -223,15 +238,27 @@ class Definition {
   }
 
   get isBoolean () {
-    return this.#typeDefs.some(t => t?.isBoolean || typeof t === 'boolean')
+    return this.typeDefs.some(t => t?.isBoolean || typeof t === 'boolean')
   }
 
   get hasNonBoolean () {
-    return this.#typeDefs.some(t => !(t?.isBoolean || typeof t === 'boolean'))
+    return this.typeDefs.some(t => !(t?.isBoolean || typeof t === 'boolean' || t === null))
+  }
+
+  get isOptional () {
+    return this.type.includes(null)
   }
 
   get type () {
     return this.#def.type
+  }
+
+  get typeDefs () {
+    return this.type.map((t) => getType(t) ?? t)
+  }
+
+  get typeValues () {
+    return this.typeDefs.flatMap((t) => t?.values ?? t)
   }
 
   get flatten () {
@@ -239,7 +266,7 @@ class Definition {
   }
 
   get depends () {
-    return this.#def.depends ?? []
+    return this.#depends
   }
 
   get dependencies () {
@@ -280,10 +307,6 @@ class Definition {
     return this.type.includes(Types.Array)
   }
 
-  get #typeDefs () {
-    return this.type.map((t) => getType(t) ?? t)
-  }
-
   // alias and short definitions can include values so we only add them to the
   // keys if they map to the same value as using the full key would since these
   // are shown in usage
@@ -298,7 +321,7 @@ class Definition {
     if (args.length === 1 || args[1] === true) {
       this.#aliasKeys.push(args[0])
     }
-    this.#addShorthand(...args)
+    this.#aliases.push(this.#addShorthand(...args))
   }
 
   #addShorthand (key, value) {
@@ -313,7 +336,13 @@ class Definition {
     } else if (value === false) {
       shorthand = [`--no-${this.#key}`]
     }
-    this.#shorthands.push([key, shorthand])
+    const s = [key, shorthand]
+    this.#shorthands.push(s)
+    return s
+  }
+
+  _getValueSource () {
+    return this.#getValue
   }
 
   getValue (value, obj) {
@@ -389,11 +418,13 @@ class Definition {
     if (this.isBoolean) {
       if (this.default === true) {
         usage.push(`--no-${this.#key}`)
-      } else if (this.default === false) {
+      } else if (this.default === false || this.isOptional) {
         usage.push(`--${this.#key}`)
       } else {
         usage.push(`--no-${this.#key}`, `--${this.#key}`)
       }
+    } else if (this.#def.usage) {
+      usage.push(this.#def.usage)
     } else {
       usage.push(`--${this.#key}`)
     }
@@ -404,9 +435,9 @@ class Definition {
       if (this.#def.hint) {
         // if the definition itself has a hint, always use that
         descriptions = [].concat(this.#def.hint)
-      } else {
+      } else if (!this.#def.usage) {
         // otherwise use the types specific values, or the hint, or the value itself
-        descriptions = this.#typeDefs
+        descriptions = this.typeDefs
           // null type means optional and doesn't currently affect usage output since
           // all non-optional params have defaults so we render everything as optional
           .filter(t => t !== null && t.type !== Types.Array)
@@ -421,7 +452,7 @@ class Definition {
   }
 
   #describeTypes () {
-    const descriptions = this.#typeDefs
+    const descriptions = this.#def.typeDescription ? [this.#def.typeDescription] : this.typeDefs
       .filter(t => t?.type !== Types.Array)
       .flatMap(t => t?.typeDescription ?? t?.values ?? JSON.stringify(t))
 

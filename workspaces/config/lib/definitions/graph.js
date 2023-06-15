@@ -43,19 +43,18 @@ class Graph {
     throw new Error(`vertex ${v} does not exist`)
   }
 
-  walkFrom (root) {
-    const visited = new Map()
-
-    const walker = (v) => {
-      for (const edge of this.#edges(v)) {
-        if (!visited.has(edge)) {
-          visited.set(edge)
-          walker(edge)
-        }
+  #walker (v, visited = new Map()) {
+    for (const edge of this.#edges(v)) {
+      if (!visited.has(edge)) {
+        visited.set(edge)
+        this.#walker(edge, visited)
       }
     }
+    return visited
+  }
 
-    walker(root)
+  walkFrom (root) {
+    const visited = this.#walker(root)
 
     if (visited.has(root)) {
       throw new Error(`Config definitions cannot have cycles. `
@@ -77,29 +76,27 @@ class Graph {
     }
   }
 
+  #sorter (v, n, visited) {
+    visited.set(v)
+    for (const edge of this.#edges(v)) {
+      if (!visited.has(edge)) {
+        n = this.#sorter(edge, n, visited)
+      }
+    }
+    this.#sorted.set(v, n)
+    return n - 1
+  }
+
   #sort () {
     this.#sorted = new Map()
     const visited = new Map()
 
-    const sorter = (v, n) => {
-      visited.set(v)
-      for (const edge of this.#edges(v)) {
-        if (!visited.has(edge)) {
-          n = sorter(edge, n)
-        }
-      }
-      this.#sorted.set(v, n)
-      return n - 1
-    }
-
     let n = this.#vertices.size - 1
     for (const v of this.#vertices.keys()) {
       if (!visited.has(v)) {
-        n = sorter(v, n)
+        n = this.#sorter(v, n, visited)
       }
     }
-
-    return this
   }
 }
 

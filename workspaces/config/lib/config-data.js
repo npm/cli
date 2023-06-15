@@ -7,7 +7,7 @@ const { dirname } = require('path')
 const nerfDart = require('./nerf-dart')
 const { typeDefs, Types } = require('./type-defs')
 const { Locations, LocationOptions } = require('./definitions/locations')
-const { definitions, internals, shorthands, types, changeKeys } = require('./definitions')
+const { definitions, internals, shorthands, types, changeKeys, aliases } = require('./definitions')
 const tmpFile = require('./tmp-file')
 const { replaceEnv } = require('./set-envs')
 const { EOL } = require('os')
@@ -192,7 +192,11 @@ class ConfigData {
 
     // if its a string then it came from a file and we need to parse it with ini
     // first
-    return this.#loadObject(typeof data === 'string' ? ini.parse(data) : data)
+    if (typeof data === 'string') {
+      return this.#loadString(data)
+    }
+
+    return this.#loadObject(data)
   }
 
   #loadArray (data) {
@@ -202,18 +206,29 @@ class ConfigData {
     return { argv, ...parsedData }
   }
 
-  #loadObject (data) {
+  #loadString (str) {
     this.#assertLoaded()
+    const data = ini.parse(str)
 
     // then do any env specific replacements
     const parsed = Object.entries(data).reduce((acc, [k, v]) => {
       const key = replaceEnv(process.env, k)
-      acc[key] = typeof v === 'string' ? replaceEnv(process.env, v) : v
+      const value = typeof v === 'string' ? replaceEnv(process.env, v) : v
+      for (const alias of aliases[key]) {
+        acc[alias] = value
+      }
+      acc[key] = value
       return acc
     }, {})
 
+    return this.#loadObject(parsed)
+  }
+
+  #loadObject (data) {
+    this.#assertLoaded()
+
     // and finally only do a nopt clean since it is already parsed
-    this.#setAll(this.#clean(parsed))
+    this.#setAll(this.#clean(data))
   }
 
   #clean (d) {

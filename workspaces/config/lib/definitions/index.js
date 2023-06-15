@@ -15,10 +15,12 @@ const {
 const graph = new Graph()
 const shorthands = {}
 const shorthandKeys = []
-const defaults = { '@hello:registry': 'https://corp.npm.com', '//hello': 'itsme' }
+const aliases = {}
+const aliasKeys = []
+const defaults = {}
 const internalDefaults = {}
-const types = LocationNames.reduce((acc, n) => {
-  acc[n] = {}
+const types = LocationNames.reduce((acc, location) => {
+  acc[location] = {}
   return acc
 }, { })
 
@@ -27,12 +29,12 @@ const setTypes = (def, defaultsObj) => {
 
   defaultsObj[key] = def.default
 
-  for (const where of LocationNames) {
+  for (const location of LocationNames) {
     // a type is allowed for each location if the definition didnt specify any
     // locations, or if the location is default or if this is one of the definitions
     // valid locations. anything else gets set to a special type that will not allow
     // any value
-    types[where][key] = def.isAllowed(where) ? def.type : Types.NotAllowed
+    types[location][key] = def.isAllowed(location) ? def.type : Types.NotAllowed
   }
 }
 
@@ -42,6 +44,9 @@ for (const key of definitionKeys) {
   for (const [k, v] of def.shorthands) {
     shorthands[k] = v
     shorthandKeys.push(k)
+  }
+  for (const [k, v] of def.aliases) {
+    aliases[k] = v
   }
   graph.addDefinition(def)
 }
@@ -86,6 +91,9 @@ module.exports = {
   // shorthands
   shorthands,
   shorthandKeys,
+  // aliases,
+  aliases,
+  aliasKeys,
   // type data and default values collected from definitions since we need this
   // info often in object form
   defaults,

@@ -8,14 +8,26 @@ const flattenKeys = (obj) =>
 
 const getDepends = (def, flat = true) => def.depends.map(flat ? getFlatKey : (v) => v).sort()
 
-const getFlatParams = (def, paramIndex = 1) => (acorn.parse(def.getValue.toString(), {
-  ecmaVersion: '2020',
-})
-  .body[0]
-  .expression
-  .params[paramIndex]
-  ?.properties
-  ?.map(x => x.key.name) ?? []).sort()
+const getFlatParams = (def, paramIndex = 1) => {
+  const allParams = new Set()
+  for (const getValue of def._getValueSource()) {
+    try {
+      acorn.parse(getValue.toString(), { ecmaVersion: '2020' })
+        .body[0]
+        .expression
+        .params[paramIndex]
+        ?.properties
+        ?.forEach(x => allParams.add(x.key.name))
+    } catch (err) {
+      if (def.deprecatedKey) {
+        allParams.add(def.deprecatedKey)
+      } else {
+        throw err
+      }
+    }
+  }
+  return [...allParams].sort()
+}
 
 const mockDefs = (t, globals) => {
   if (globals) {
@@ -48,11 +60,11 @@ t.test('get values', t => {
     userconfig: '/path/to/.npmrc',
   }
 
-  const saveType = d.derived['save-type'].getValue
-  const savePrefix = d.definitions['save-prefix'].getValue
+  const saveType = d.derived['save-type']
+  const savePrefix = d.definitions['save-prefix']
 
-  t.equal(saveType(flattenKeys(obj)), 'dev')
-  t.equal(savePrefix(obj['save-prefix'], flattenKeys(obj)), '')
+  t.equal(saveType.getValue(flattenKeys(obj)), 'dev')
+  t.equal(savePrefix.getValue(obj['save-prefix'], flattenKeys(obj)), '')
 
   t.end()
 })
@@ -61,16 +73,16 @@ t.test('basic', t => {
   let d = mockDefs(t, { process: { execPath: '/path/to/node', 'env.NODE': 'NOOOOOODE' } })
 
   let execPath = d.internals['exec-path'].default
-  let nodeBin = d.derived['node-bin'].getValue
+  let nodeBin = d.derived['node-bin']
 
-  t.equal(nodeBin({ execPath }), 'NOOOOOODE')
+  t.equal(nodeBin.getValue({ execPath }), 'NOOOOOODE')
 
   d = mockDefs(t, { process: { execPath: '/path/to/node', 'env.NODE': undefined } })
 
   execPath = d.internals['exec-path'].default
-  nodeBin = d.derived['node-bin'].getValue
+  nodeBin = d.derived['node-bin']
 
-  t.equal(nodeBin({ execPath }), '/path/to/node')
+  t.equal(nodeBin.getValue({ execPath }), '/path/to/node')
 
   t.end()
 })
