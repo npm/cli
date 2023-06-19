@@ -106,7 +106,7 @@
     "proc-log": "^3.0.0",
     "qrcode-terminal": "^0.12.0",
     "read": "^2.1.0",
-    "semver": "^7.5.1",
+    "semver": "^7.5.2",
     "sigstore": "^1.5.0",
     "ssri": "^10.0.4",
     "supports-color": "^9.3.1",
