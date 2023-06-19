@@ -483,8 +483,21 @@ module.exports = cls => class Reifier extends cls {
 
     process.emit('time', 'reify:trashOmits')
 
+    const filterTop = node => {
+      // if the top is not the root or workspace filter it out
+      if (!node.isProjectRoot && !node.isWorkspace) {
+        return false
+      }
+      // if we have no filter set, then include it by default
+      if (!this.diff?.filterSet?.size) {
+        return true
+      }
+      // otherwise include based on if the top node is in our filter set
+      return this.diff.filterSet.has(node)
+    }
+
     const filter = node =>
-      (node.top.isProjectRoot || node.top.isWorkspace) &&
+      filterTop(node.top) &&
         (
           node.peer && this[_omitPeer] ||
           node.dev && this[_omitDev] ||
