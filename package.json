@@ -107,7 +107,7 @@
     "qrcode-terminal": "^0.12.0",
     "read": "^2.1.0",
     "semver": "^7.5.2",
-    "sigstore": "^1.5.0",
+    "sigstore": "^1.6.0",
     "ssri": "^10.0.4",
     "supports-color": "^9.3.1",
     "tar": "^6.1.14",
