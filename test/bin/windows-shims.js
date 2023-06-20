@@ -1,13 +1,14 @@
 const t = require('tap')
 const spawn = require('@npmcli/promise-spawn')
 const { spawnSync } = require('child_process')
-const { resolve } = require('path')
+const { resolve, join } = require('path')
 const { readFileSync, chmodSync } = require('fs')
 const Diff = require('diff')
 const { version } = require('../../package.json')
 
-const npmShim = resolve(__dirname, '../../bin/npm')
-const npxShim = resolve(__dirname, '../../bin/npx')
+const root = resolve(__dirname, '../..')
+const npmShim = join(root, 'bin/npm')
+const npxShim = join(root, 'bin/npx')
 
 t.test('npm vs npx', t => {
   // these scripts should be kept in sync so this tests the contents of each
@@ -39,41 +40,9 @@ t.test('npm vs npx', t => {
 
 t.test('basic', async t => {
   if (process.platform !== 'win32') {
-    t.plan(0, 'test only relevant on windows')
+    t.comment('test only relevant on windows')
     return
   }
-
-  const has = path => {
-    try {
-      // If WSL is installed, it *has* a bash.exe, but it fails if
-      // there is no distro installed, so we need to detect that.
-      const result = spawnSync(path, ['-l', '-c', 'exit 0'])
-      if (result.status === 0) {
-        return true
-      } else {
-        // print whatever error we got
-        throw result.error || Object.assign(new Error(String(result.stderr)), {
-          code: result.status,
-        })
-      }
-    } catch (er) {
-      t.comment(`not installed: ${path}`, er)
-      return false
-    }
-  }
-
-  const { ProgramFiles, SystemRoot } = process.env
-  const gitBash = resolve(ProgramFiles, 'Git', 'bin', 'bash.exe')
-  const gitUsrBinBash = resolve(ProgramFiles, 'Git', 'usr', 'bin', 'bash.exe')
-  const wslBash = resolve(SystemRoot, 'System32', 'bash.exe')
-  const cygwinBash = resolve(SystemRoot, '/', 'cygwin64', 'bin', 'bash.exe')
-
-  const bashes = Object.entries({
-    'wsl bash': wslBash,
-    'git bash': gitBash,
-    'git internal bash': gitUsrBinBash,
-    'cygwin bash': cygwinBash,
-  })
 
   const path = t.testdir({
     'node.exe': readFileSync(process.execPath),
@@ -83,7 +52,7 @@ t.test('basic', async t => {
     // with node, but we should load the globally installed one
     'global-prefix': {
       node_modules: {
-        npm: t.fixture('symlink', resolve(__dirname, '../..')),
+        npm: t.fixture('symlink', root),
       },
     },
     // put in a shim that ONLY prints the intended global prefix,
@@ -92,73 +61,85 @@ t.test('basic', async t => {
       npm: {
         bin: {
           'npx-cli.js': `
-          throw new Error('this should not be called')
-        `,
+            throw new Error('this should not be called')
+          `,
           'npm-cli.js': `
-          const assert = require('assert')
-          const args = process.argv.slice(2)
-          assert.equal(args[0], 'prefix')
-          assert.equal(args[1], '-g')
-          const { resolve } = require('path')
-          console.log(resolve(__dirname, '../../../global-prefix'))
-        `,
+            const assert = require('assert')
+            const args = process.argv.slice(2)
+            assert.equal(args[0], 'prefix')
+            assert.equal(args[1], '-g')
+            const { resolve } = require('path')
+            console.log(resolve(__dirname, '../../../global-prefix'))
+          `,
         },
       },
     },
   })
-  chmodSync(resolve(path, 'npm'), 0o755)
-  chmodSync(resolve(path, 'npx'), 0o755)
 
-  for (const [name, bash] of bashes) {
-    if (!has(bash)) {
-      t.skip(`${name} not installed`, { bin: bash, diagnostic: true })
-      continue
+  chmodSync(join(path, 'npm'), 0o755)
+  chmodSync(join(path, 'npx'), 0o755)
+
+  const { ProgramFiles, SystemRoot, NYC_CONFIG } = process.env
+  const gitBash = join(ProgramFiles, 'Git', 'bin', 'bash.exe')
+  const gitUsrBinBash = join(ProgramFiles, 'Git', 'usr', 'bin', 'bash.exe')
+  const wslBash = join(SystemRoot, 'System32', 'bash.exe')
+  const cygwinBash = join(SystemRoot, '/', 'cygwin64', 'bin', 'bash.exe')
+
+  const bashes = Object.entries({
+    'wsl bash': wslBash,
+    'git bash': gitBash,
+    'git internal bash': gitUsrBinBash,
+    'cygwin bash': cygwinBash,
+  }).map(([name, bash]) => {
+    let skip
+    if (bash === cygwinBash && NYC_CONFIG) {
+      skip = 'does not play nicely with NYC, run without coverage'
+    } else {
+      try {
+        // If WSL is installed, it *has* a bash.exe, but it fails if
+        // there is no distro installed, so we need to detect that.
+        if (spawnSync(bash, ['-l', '-c', 'exit 0']).status !== 0) {
+          throw new Error('not installed')
+        }
+      } catch {
+        skip = 'not installed'
+      }
     }
+    return { name, bash, skip }
+  })
 
-    if (bash === cygwinBash && process.env.NYC_CONFIG) {
-      t.skip('Cygwin does not play nicely with NYC, run without coverage')
+  for (const { name, bash, skip } of bashes) {
+    if (skip) {
+      t.skip(name, { diagnostic: true, bin: bash, reason: skip })
       continue
     }
 
     await t.test(name, async t => {
-      t.plan(2)
-      t.test('npm', async t => {
-      // only cygwin *requires* the -l, but the others are ok with it
-      // don't hit the registry for the update check
-        const args = ['-l', 'npm', 'help']
-
-        const result = await spawn(bash, args, {
-          env: { PATH: path, npm_config_update_notifier: 'false' },
-          cwd: path,
-        })
-        t.match(result, {
-          cmd: bash,
-          args: ['-l', 'npm', 'help'],
-          code: 0,
-          signal: null,
-          stderr: String,
-          // should have loaded this instance of npm we symlinked in
-          stdout: `npm@${version} ${resolve(__dirname, '../..')}`,
-        })
+      const bins = Object.entries({
+        // should have loaded this instance of npm we symlinked in
+        npm: [['help'], `npm@${version} ${root}`],
+        npx: [['--version'], version],
       })
 
-      t.test('npx', async t => {
-        const args = ['-l', 'npx', '--version']
-
-        const result = await spawn(bash, args, {
-          env: { PATH: path, npm_config_update_notifier: 'false' },
-          cwd: path,
+      for (const [binName, [cmdArgs, stdout]] of bins) {
+        await t.test(binName, async t => {
+          // only cygwin *requires* the -l, but the others are ok with it
+          const args = ['-l', binName, ...cmdArgs]
+          const result = await spawn(bash, args, {
+            // don't hit the registry for the update check
+            env: { PATH: path, npm_config_update_notifier: 'false' },
+            cwd: path,
+          })
+          t.match(result, {
+            cmd: bash,
+            args: args,
+            code: 0,
+            signal: null,
+            stderr: String,
+            stdout,
+          })
         })
-        t.match(result, {
-          cmd: bash,
-          args: ['-l', 'npx', '--version'],
-          code: 0,
-          signal: null,
-          stderr: String,
-          // should have loaded this instance of npm we symlinked in
-          stdout: version,
-        })
-      })
+      }
     })
   }
 })
