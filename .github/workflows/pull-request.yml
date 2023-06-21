@@ -32,8 +32,10 @@ jobs:
         with:
           node-version: 18.x
           cache: npm
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
       - name: Reset Deps
-        run: node . run resetdeps
+        run: node scripts/resetdeps.js
       - name: Run Commitlint on Commits
         id: commit
         continue-on-error: true

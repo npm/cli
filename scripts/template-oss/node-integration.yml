@@ -104,7 +104,7 @@ jobs:
 
           echo "::group::packing npm release $npmVersion"
           pushd "$npmDir" >/dev/null
-          node . run resetdeps
+          node scripts/resetdeps.js
           npmtarball="$(node . pack --loglevel=silent --json | jq -r .[0].filename)"
           tar czf "$npmFile" -C "$npmDir" .
           popd >/dev/null
@@ -202,7 +202,7 @@ jobs:
           echo "::endgroup::"
 
           echo "::group::npm run resetdeps"
-          node . run resetdeps
+          node scripts/resetdeps.js
           echo "::endgroup::"
 
           echo "::group::npm link"

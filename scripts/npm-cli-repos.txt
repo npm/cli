@@ -14,7 +14,6 @@ fs
 fs-minipass
 gauge
 git
-graphec
 hosted-git-info
 ignore-walk
 ini
@@ -28,7 +27,6 @@ minify-registry-metadata
 minipass-fetch
 mute-stream
 name-from-folder
-node
 node-gyp
 node-semver
 node-which
@@ -36,7 +34,6 @@ nopt
 normalize-package-data
 npm-audit-report
 npm-bundled
-npm-cli-release-please
 npm-install-checks
 npm-install-script
 npm-normalize-package-bin
@@ -59,7 +56,6 @@ read
 read-cmd-shim
 read-package-json
 read-package-json-fast
-release-please
 rfcs
 run-script
 ssri

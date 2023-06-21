@@ -1,2 +1,4 @@
+- name: Check Git Status
+  run: node scripts/git-dirty.js
 - name: Reset Deps
-  run: {{rootNpmPath}} run resetdeps {{~#if jobDepFlags}} -- {{ jobDepFlags }}{{/if}}
+  run: node scripts/resetdeps.js {{~#if jobDepFlags}} {{ jobDepFlags }}{{/if}}

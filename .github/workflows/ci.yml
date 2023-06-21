@@ -45,8 +45,10 @@ jobs:
         with:
           node-version: 18.x
           cache: npm
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
       - name: Reset Deps
-        run: node . run resetdeps
+        run: node scripts/resetdeps.js
       - name: Lint
         run: node . run lint --ignore-scripts
       - name: Post Lint
@@ -91,14 +93,15 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
       - name: Reset Deps
-        run: node . run resetdeps
+        run: node scripts/resetdeps.js
       - name: Add Problem Matcher
         run: echo "::add-matcher::.github/matchers/tap.json"
       - name: Test
         run: node . test --ignore-scripts
       - name: Check Git Status
-        if: matrix && matrix.platform.os != 'windows-latest'
         run: node scripts/git-dirty.js
 
   licenses:
@@ -120,8 +123,10 @@ jobs:
         with:
           node-version: 18.x
           cache: npm
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
       - name: Reset Deps
-        run: node . run resetdeps
+        run: node scripts/resetdeps.js
       - name: Check Licenses
         run: node . run licenses
 
@@ -144,8 +149,10 @@ jobs:
         with:
           node-version: 18.x
           cache: npm
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
       - name: Reset Deps
-        run: node . run resetdeps
+        run: node scripts/resetdeps.js
       - name: Run Smoke Tests
         run: node . test -w smoke-tests --ignore-scripts
       - name: Check Git Status
