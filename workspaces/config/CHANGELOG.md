@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.2.1](https://github.com/npm/cli/compare/config-v6.2.0...config-v6.2.1) (2023-06-21)
+
+### Bug Fixes
+
+* [`e722439`](https://github.com/npm/cli/commit/e722439b05bb4da691975359db58eac794f1f5d9) [#6497](https://github.com/npm/cli/pull/6497) move all definitions to @npmcli/config package (@lukekarrys)
+
 ## [6.2.0](https://github.com/npm/cli/compare/config-v6.1.7...config-v6.2.0) (2023-05-31)
 
 ### Features
