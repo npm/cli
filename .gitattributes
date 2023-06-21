@@ -1,2 +1,27 @@
-/node_modules/**    linguist-generated=false
-/package-lock.json  linguist-generated=false
+# normalize all line endings by default
+* text=auto
+
+# our shell/bin scripts always need to be LF
+/bin/* text eol=lf
+/workspaces/arborist/bin/index.js text eol=lf
+/configure text eol=lf
+
+# our cmd scripts always need to be CRLF
+/bin/*.cmd text eol=crlf
+
+# ignore all line endings in node_modules since we dont control that
+/node_modules/** -text
+
+# the files we write should be LF so they can be generated cross platform
+/node_modules/.gitignore text eol=lf
+/workspaces/arborist/test/fixtures/.gitignore text eol=lf
+/DEPENDENCIES.md text eol=lf
+/AUTHORS text eol=lf
+
+# fixture tarballs should be treated as binary
+/workspaces/*/test/fixtures/**/*.tgz binary
+
+# these hint to GitHub to show these files as not generated so they default to
+# showing the full diff in pull requests
+/node_modules/** linguist-generated=false
+/package-lock.json linguist-generated=false

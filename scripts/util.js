@@ -7,6 +7,9 @@ const npmGit = require('@npmcli/git')
 const promiseSpawn = require('@npmcli/promise-spawn')
 const mapWorkspaces = require('@npmcli/map-workspaces')
 
+// always use LF newlines for generated files. these files
+// are also set to use LF line endings in .gitattributes
+const EOL = '\n'
 const CWD = resolve(__dirname, '..')
 
 const pkg = require(join(CWD, 'package.json'))
@@ -24,7 +27,7 @@ const fs = {
   clean: (p) => fs.rimraf(p).then(() => fs.mkdirp(p)),
   rmAll: (p) => Promise.all(p.map(fs.rimraf)),
   writeFile: async (p, d) => {
-    await fsp.writeFile(p, d.trim() + '\n', 'utf-8')
+    await fsp.writeFile(p, d.trim() + EOL, 'utf-8')
     return `Wrote to ${relative(CWD, p)}`
   },
 }
@@ -123,6 +126,7 @@ git.dirty = () => npmGit.isClean({ cwd: CWD }).then(async r => {
     return 'git clean'
   }
   await git('status', '--porcelain=v1', '-uno')
+  await git('diff')
   throw new Error('git dirty')
 })
 
@@ -201,4 +205,5 @@ module.exports = {
   gh,
   npm,
   git,
+  EOL,
 }

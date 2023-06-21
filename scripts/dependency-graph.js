@@ -1,14 +1,15 @@
 const Arborist = require('@npmcli/arborist')
+const os = require('os')
 const { readFileSync } = require('fs')
 const { join } = require('path')
 const log = require('proc-log')
-const { run, CWD, pkg, fs } = require('./util.js')
+const { run, CWD, pkg, fs, EOL } = require('./util.js')
 
 // Generates our dependency graph documents in DEPENDENCIES.md.
 
 // To re-create npm-cli-repos.txt run:
 // npx -p @npmcli/stafftools gh repos --json | json -a name | sort > scripts/npm-cli-repos.txt
-const repos = readFileSync(join(CWD, 'scripts', 'npm-cli-repos.txt'), 'utf-8').trim().split('\n')
+const repos = readFileSync(join(CWD, 'scripts', 'npm-cli-repos.txt'), 'utf-8').trim().split(os.EOL)
 
 // these have a different package name than the repo name, and are ours.
 const aliases = {
@@ -110,10 +111,10 @@ const main = async function () {
     'Each group depends on packages lower down the chain, nothing depends on',
     'packages higher up the chain.',
     '',
-    ` - ${hierarchyOurs.reverse().join('\n - ')}`,
+    ` - ${hierarchyOurs.reverse().join(`${EOL} - `)}`,
   ]
 
-  return fs.writeFile(join(CWD, 'DEPENDENCIES.md'), out.join('\n'))
+  return fs.writeFile(join(CWD, 'DEPENDENCIES.md'), out.join(EOL))
 }
 
 const walk = function (tree, onlyOurs) {

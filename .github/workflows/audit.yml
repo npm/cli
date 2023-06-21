@@ -28,8 +28,10 @@ jobs:
         with:
           node-version: 18.x
           cache: npm
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
       - name: Reset Deps
-        run: node . run resetdeps -- --package-lock
+        run: node scripts/resetdeps.js --package-lock
       - name: Run Production Audit
         run: node . audit --omit=dev
       - name: Run Full Audit

@@ -12,7 +12,7 @@
         run: |
           git clean -fd
           git checkout $\{{ github.event.pull_request.base.ref }}
-          node . run resetdeps
+          node scripts/resetdeps.js
           node . run build -w docs
       - name: Diff Man
         run: diff -r --color=always man/ man-update/ || true
