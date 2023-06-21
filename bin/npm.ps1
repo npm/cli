@@ -9,18 +9,27 @@ if ($PSVersionTable.PSVersion -lt "6.0" -or $IsWindows) {
 }
 $ret=0
 
-$nodebin = $(Get-Command "node$exe" -ErrorAction SilentlyContinue -ErrorVariable F).Source
+$nodeexe = "node$exe"
+$nodebin = $(Get-Command $nodeexe -ErrorAction SilentlyContinue -ErrorVariable F).Source
 if ($nodebin -eq $null) {
-  Write-Host "node$exe not found."
+  Write-Host "$nodeexe not found."
   exit 1
 }
 $nodedir = $(New-Object -ComObject Scripting.FileSystemObject).GetFile("$nodebin").ParentFolder.Path
 
+$npmclijs="$nodedir/node_modules/npm/bin/npm-cli.js"
+$npmprefix=(& $nodeexe $npmclijs prefix -g)
+if ($LASTEXITCODE -ne 0) {
+  Write-Host "Could not determine Node.js install directory"
+  exit 1
+}
+$npmprefixclijs="$npmprefix/node_modules/npm/bin/npm-cli.js"
+
 # Support pipeline input
 if ($MyInvocation.ExpectingInput) {
-  $input | & "node$exe" "$nodedir/node_modules/npm/bin/npm-cli.js" $args
+  $input | & $nodeexe $npmprefixclijs $args
 } else {
-  & "node$exe" "$nodedir/node_modules/npm/bin/npm-cli.js" $args
+  & $nodeexe $npmprefixclijs $args
 }
 $ret=$LASTEXITCODE
 exit $ret
