@@ -1,6 +1,6 @@
 const t = require('tap')
 const { spawnSync } = require('child_process')
-const { resolve, join, extname, basename } = require('path')
+const { resolve, join, extname, basename, sep } = require('path')
 const { readFileSync, chmodSync, readdirSync } = require('fs')
 const Diff = require('diff')
 const { sync: which } = require('which')
@@ -17,6 +17,12 @@ const SHIMS = readdirSync(BIN).reduce((acc, shim) => {
 }, {})
 
 const SHIM_EXTS = [...new Set(Object.keys(SHIMS).map(p => extname(p)))]
+
+// windows requires each segment of a command path to be quoted when using shell: true
+const quotePath = (cmd) => cmd
+  .split(sep)
+  .map(p => p.includes(' ') ? `"${p}"` : p)
+  .join(sep)
 
 t.test('shim contents', t => {
   // these scripts should be kept in sync so this tests the contents of each
@@ -46,6 +52,13 @@ t.test('shim contents', t => {
     const { diff, letters } = diffFiles(SHIMS['npm.cmd'], SHIMS['npx.cmd'])
     t.match(diff[0], /^SET "NPX_CLI_JS=/, 'has NPX_CLI')
     t.equal(diff.length, 1)
+    t.strictSame([...letters], ['M', 'X'], 'all other changes are m->x')
+    t.end()
+  })
+
+  t.test('pwsh', t => {
+    const { diff, letters } = diffFiles(SHIMS['npm.ps1'], SHIMS['npx.ps1'])
+    t.equal(diff.length, 0)
     t.strictSame([...letters], ['M', 'X'], 'all other changes are m->x')
     t.end()
   })
@@ -133,6 +146,7 @@ t.test('run shims', t => {
 
   const shells = Object.entries({
     cmd: 'cmd',
+    pwsh: 'pwsh',
     git: join(ProgramFiles, 'Git', 'bin', 'bash.exe'),
     'user git': join(ProgramFiles, 'Git', 'usr', 'bin', 'bash.exe'),
     wsl: join(SystemRoot, 'System32', 'bash.exe'),
@@ -196,6 +210,11 @@ t.test('run shims', t => {
         break
       case 'bash.exe':
         args.push(bin)
+        break
+      case 'pwsh.exe':
+        cmd = quotePath(cmd)
+        args.push(`${bin}.ps1`)
+        opts.shell = true
         break
       default:
         throw new Error('unknown shell')
