@@ -610,6 +610,7 @@ t.test('publish existing package with provenance in gha', async t => {
   const sha = 'deadbeef'
   const runID = '123456'
   const runAttempt = '1'
+  const runnerEnv = 'github-hosted'
 
   // Set-up GHA environment variables
   mockGlobals(t, {
@@ -625,6 +626,7 @@ t.test('publish existing package with provenance in gha', async t => {
       GITHUB_SHA: sha,
       GITHUB_RUN_ID: runID,
       GITHUB_RUN_ATTEMPT: runAttempt,
+      RUNNER_ENVIRONMENT: runnerEnv,
     },
   })
 
@@ -635,10 +637,10 @@ t.test('publish existing package with provenance in gha', async t => {
     },
   }
 
-  const expectedConfigSource = {
-    uri: `git+${serverUrl}/${repository}@${ref}`,
-    digest: { sha1: sha },
-    entryPoint: workflowPath,
+  const expectedWorkflow = {
+    ref: ref,
+    repository: `${serverUrl}/${repository}`,
+    path: workflowPath,
   }
 
   const log = []
@@ -785,14 +787,14 @@ t.test('publish existing package with provenance in gha', async t => {
     t.hasStrict(provenance.subject[0],
       expectedSubject,
       'provenance subject matches expectations')
-    t.hasStrict(provenance.predicate.buildType,
-      'https://github.com/npm/cli/gha/v2',
+    t.hasStrict(provenance.predicate.buildDefinition.buildType,
+      'https://slsa-framework.github.io/github-actions-buildtypes/workflow/v1',
       'buildType matches expectations')
-    t.hasStrict(provenance.predicate.builder.id,
-      'https://github.com/actions/runner',
+    t.hasStrict(provenance.predicate.runDetails.builder.id,
+      `https://github.com/actions/runner/${runnerEnv}`,
       'builder id matches expectations')
-    t.hasStrict(provenance.predicate.invocation.configSource,
-      expectedConfigSource,
+    t.hasStrict(provenance.predicate.buildDefinition.externalParameters.workflow,
+      expectedWorkflow,
       'configSource matches expectations')
     return true
   }).reply(201, {})
