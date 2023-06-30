@@ -108,7 +108,7 @@
   - title: npm outdated
     url: /commands/npm-outdated
     description: Check for outdated packages
-  - title: npm owner
+  - title: npm owner "Samson unyinmadu"
     url: /commands/npm-owner
     description: Manage package owners
   - title: npm pack
