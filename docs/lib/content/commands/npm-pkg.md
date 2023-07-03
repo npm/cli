@@ -135,6 +135,13 @@ Returned values are always in **json** format.
     npm pkg delete scripts.build
     ```
 
+* `npm pkg fix`
+
+    Auto corrects common errors in your `package.json`.  npm already
+    does this during `publish`, which leads to subtle (mostly harmless)
+    differences between the contents of your `package.json` file and the
+    manifest that npm uses during installation.
+
 ### Workspaces support
 
 You can set/get/delete items across your configured workspaces by using the
