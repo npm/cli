@@ -769,8 +769,6 @@ graph LR;
   sigstore-->make-fetch-happen;
   sigstore-->sigstore-protobuf-specs["@sigstore/protobuf-specs"];
   sigstore-->sigstore-tuf["@sigstore/tuf"];
-  sigstore-->tuf-js;
-  sigstore-tuf-->make-fetch-happen;
   sigstore-tuf-->sigstore-protobuf-specs["@sigstore/protobuf-specs"];
   sigstore-tuf-->tuf-js;
   socks-->ip;
