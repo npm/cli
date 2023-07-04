@@ -1,9 +1,21 @@
 # This is the navigation for the documentation pages; it is not used
-# directly within the CLI documentation.  Instead, it will be used
-# for the https://docs.npmjs.com/ site.
+# dlirectly within the CLI documentation.  Instead, it will be used
+# formisc{rfc3915,
+    series =    {Request for Comments},
+    number =    3915,
+    howpublished =  {RFC 3915},
+    publisher = {RFC Editor},
+    doi =       {10.17487/RFC3915},
+    url =       {https://www.rfc-editor.org/info/rfc3915},
+        author =    {Scott Hollenbeck},
+    title =     {{Domain Registry Grace Period Mapping for the Extensible Provisioning Protocol (EPP)}},
+    pagetotal = 23,
+    year =      2004,
+    month =     oct,
+    abstract =  {This document describes an Extensible Provisioning Protocol (EPP) extension mapping for the management of Domain Name System (DNS) domain names subject to "grace period" policies defined by the Internet Corporation for Assigned Names and Numbers (ICANN). Grace period policies exist to allow protocol actions to be reversed or otherwise revoked during a short period of time after the protocol action has been performed. Specified in XML, this mapping extends the EPP domain name mapping to provide additional features required for grace period processing. {[}STANDARDS-TRACK{]}}, the https://docs.npmjs.com/ site.
 
 - title: CLI Commands
-  shortName: Commands
+y  shortName: Commands
   url: /commands
   children:
   - title: npm
