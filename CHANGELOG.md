@@ -1,5 +1,23 @@
 # Changelog
 
+## [9.8.0](https://github.com/npm/cli/compare/v9.7.2...v9.8.0) (2023-07-05)
+
+### Features
+
+* [`67459e7`](https://github.com/npm/cli/commit/67459e7b56a5e8d2b4f8eb3a0487183013c63b99) [#6626](https://github.com/npm/cli/pull/6626) add `pkg fix` subcommand (@wraithgar)
+* [`89b2741`](https://github.com/npm/cli/commit/89b27413952ca454f715fee314d37e26f371444d) [#6548](https://github.com/npm/cli/pull/6548) add ps1 scripts (#6548) (@mribbons, @lukekarrys)
+
+### Dependencies
+
+* [`b252164`](https://github.com/npm/cli/commit/b252164dd5c866bf2d25c96836ad829d4d6909ee) [#6626](https://github.com/npm/cli/pull/6626) `@npmcli/package-json@4.0.0`
+* [`9238682`](https://github.com/npm/cli/commit/92386822ddf0a849fd2c269b1f5ee9ee47082da0) [#6623](https://github.com/npm/cli/pull/6623) `sigstore@1.7.0` (#6623)
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.3.0): `@npmcli/arborist@6.3.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v5.0.19): `libnpmdiff@5.0.19`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v6.0.2): `libnpmexec@6.0.2`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v4.0.19): `libnpmfund@4.0.19`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v5.0.19): `libnpmpack@5.0.19`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v7.5.0): `libnpmpublish@7.5.0`
+
 ## [9.7.2](https://github.com/npm/cli/compare/v9.7.1...v9.7.2) (2023-06-21)
 
 ### Bug Fixes

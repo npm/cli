@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.5.0](https://github.com/npm/cli/compare/libnpmpublish-v7.4.0...libnpmpublish-v7.5.0) (2023-07-05)
+
+### Features
+
+* [`5baf6a2`](https://github.com/npm/cli/commit/5baf6a2c6274d9838556617e9ff5b66fe87ede51) [#6613](https://github.com/npm/cli/pull/6613) SLSA 1.0 provenance statement (#6613) (@bdehamer)
+
 ## [7.4.0](https://github.com/npm/cli/compare/libnpmpublish-v7.3.0...libnpmpublish-v7.4.0) (2023-06-21)
 
 ### Features

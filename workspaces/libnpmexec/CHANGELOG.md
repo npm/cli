@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.0.2](https://github.com/npm/cli/compare/libnpmexec-v6.0.1...libnpmexec-v6.0.2) (2023-07-05)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.3.0): `@npmcli/arborist@6.3.0`
+
 ## [6.0.1](https://github.com/npm/cli/compare/libnpmexec-v6.0.0...libnpmexec-v6.0.1) (2023-06-21)
 
 ### Dependencies
