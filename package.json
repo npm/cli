@@ -55,7 +55,7 @@
     "@npmcli/arborist": "^6.2.10",
     "@npmcli/config": "^6.2.1",
     "@npmcli/map-workspaces": "^3.0.4",
-    "@npmcli/package-json": "^3.1.1",
+    "@npmcli/package-json": "^4.0.0",
     "@npmcli/run-script": "^6.0.2",
     "abbrev": "^2.0.0",
     "archy": "~1.0.0",
