@@ -63,7 +63,7 @@ Version must be parseable by
 [node-semver](https://github.com/npm/node-semver), which is bundled with
 npm as a dependency.  (`npm install semver` to use it yourself.)
 
-### description
+### description&nbsp;
 
 Put a description in it.  It's a string.  This helps people discover your
 package, as it's listed in `npm search`.
