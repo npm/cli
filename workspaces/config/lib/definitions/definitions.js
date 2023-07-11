@@ -429,24 +429,6 @@ define('cert', {
   flatten,
 })
 
-define('ci-name', {
-  default: ciInfo.name ? ciInfo.name.toLowerCase().split(' ').join('-') : null,
-  defaultDescription: `
-    The name of the current CI system, or \`null\` when not on a known CI
-    platform.
-  `,
-  type: [null, String],
-  deprecated: `
-    This config is deprecated and will not be changeable in future version of npm.
-  `,
-  description: `
-    The name of a continuous integration system.  If not set explicitly, npm
-    will detect the current CI environment using the
-    [\`ci-info\`](http://npm.im/ci-info) module.
-  `,
-  flatten,
-})
-
 define('cidr', {
   default: null,
   type: [null, String, Array],
@@ -2204,7 +2186,7 @@ define('user-agent', {
   `,
   flatten (key, obj, flatOptions) {
     const value = obj[key]
-    const ciName = obj['ci-name']
+    const ciName = ciInfo.name?.toLowerCase().split(' ').join('-') || null
     let inWorkspaces = false
     if (obj.workspaces || obj.workspace && obj.workspace.length) {
       inWorkspaces = true
