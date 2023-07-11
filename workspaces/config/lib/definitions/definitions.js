@@ -64,7 +64,7 @@ const editor = process.env.EDITOR ||
 const shell = isWindows ? process.env.ComSpec || 'cmd'
   : process.env.SHELL || 'sh'
 
-const { tmpdir, networkInterfaces } = require('os')
+const { networkInterfaces } = require('os')
 const getLocalAddresses = () => {
   try {
     return Object.values(networkInterfaces()).map(
@@ -2124,24 +2124,6 @@ define('timing', {
 
     Timing information will also be reported in the terminal. To suppress this
     while still writing the timing file, use \`--silent\`.
-  `,
-})
-
-define('tmp', {
-  default: tmpdir(),
-  defaultDescription: `
-    The value returned by the Node.js \`os.tmpdir()\` method
-    <https://nodejs.org/api/os.html#os_os_tmpdir>
-  `,
-  type: path,
-  deprecated: `
-    This setting is no longer used.  npm stores temporary files in a special
-    location in the cache, and they are managed by
-    [\`cacache\`](http://npm.im/cacache).
-  `,
-  description: `
-    Historically, the location where temporary files were stored.  No longer
-    relevant.
   `,
 })
 
