@@ -415,7 +415,6 @@ graph LR;
   libnpmpack-->spawk;
   libnpmpack-->tap;
   libnpmpublish-->ci-info;
-  libnpmpublish-->lodash.clonedeep;
   libnpmpublish-->nock;
   libnpmpublish-->normalize-package-data;
   libnpmpublish-->npm-package-arg;
