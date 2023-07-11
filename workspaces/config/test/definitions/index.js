@@ -36,7 +36,6 @@ t.test('flatten', t => {
     '//foo.bar.com:_authToken': 'foobarbazquuxasdf',
     npmBin: '/path/to/npm',
     nodeBin: '/path/to/node',
-    hashAlgorithm: 'sha1',
   })
 
   mockGlobals(t, {
@@ -52,7 +51,6 @@ t.test('flatten', t => {
     '//foo.bar.com:_authToken': 'foobarbazquuxasdf',
     npmBin: '/path/to/npm',
     nodeBin: '/usr/local/bin/node.exe',
-    hashAlgorithm: 'sha1',
   })
 
   t.end()
