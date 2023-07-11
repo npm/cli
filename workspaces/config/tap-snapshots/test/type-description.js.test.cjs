@@ -477,9 +477,6 @@ Object {
   "timing": Array [
     "boolean value (true or false)",
   ],
-  "tmp": Array [
-    "valid filesystem path",
-  ],
   "umask": Array [
     "octal number in range 0o000..0o777 (0..511)",
   ],
