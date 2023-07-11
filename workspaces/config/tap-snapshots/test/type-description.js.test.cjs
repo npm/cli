@@ -79,10 +79,6 @@ Object {
     null,
     Function String(),
   ],
-  "ci-name": Array [
-    null,
-    Function String(),
-  ],
   "cidr": Array [
     null,
     Function String(),
