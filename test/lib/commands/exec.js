@@ -3,8 +3,6 @@ const fs = require('fs/promises')
 const path = require('path')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm.js')
 const MockRegistry = require('@npmcli/mock-registry')
-const { packument } = require('pacote')
-const { version } = require('os')
 
 t.test('call with args', async t => {
   const { npm } = await loadMockNpm(t, {
