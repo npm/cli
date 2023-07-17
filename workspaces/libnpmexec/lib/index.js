@@ -249,6 +249,7 @@ const exec = async (opts) => {
         // set -n to always say no
         if (yes === false) {
           // Error message lists missing package(s) when process is canceled
+          /* eslint-disable-next-line max-len */
           throw new Error(`npx canceled due to missing packages and no YES option: ${JSON.stringify(missingPackages)}`)
         }
 
