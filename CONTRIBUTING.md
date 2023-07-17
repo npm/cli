@@ -66,11 +66,11 @@ node . exec
 
 For example instead of:
 ```bash 
-npm exec --yes false -- esbuild
+npm exec -- <package>
 ```  
 Use:
 ```bash
-node . exec --yes false -- esbuild
+node . exec -- <package>
 ```
 
 
