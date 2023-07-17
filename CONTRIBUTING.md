@@ -66,11 +66,11 @@ node . exec
 
 For example instead of:
 ```bash 
-npm install esbuild
+npm exec --yes false -- esbuild
 ```  
 Use:
 ```bash
-node . install esbuild
+node . exec --yes false -- esbuild
 ```
 
 
