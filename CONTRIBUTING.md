@@ -48,6 +48,28 @@ We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).  
 
 We use [`tap`](https://node-tap.org/) for testing & expect that every new feature or bug fix comes with corresponding tests that validate the solutions. Tap also reports on code coverage and it will fail if that drops below 100%.
 
+To run your repository's version of the npm cli on your local machine use the following commands:
+
+**npm commands:**
+```bash
+node . <command>
+```
+
+**npx commands:**
+```bash
+node . exec
+```
+
+For example instead of:
+```bash 
+npm exec -- <package>
+```  
+Use:
+```bash
+node . exec -- <package>
+```
+
+
 ## Performance & Benchmarks
 
 We've set up an automated [benchmark](https://github.com/npm/benchmarks) integration that will run against all Pull Requests; Posting back a comment with the results of the run.
