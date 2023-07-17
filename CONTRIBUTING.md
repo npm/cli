@@ -56,23 +56,21 @@ To run your repository's version of the npm cli on your local machine use the fo
 
 **npm commands:**
 ```bash
-alias localnpm="node /filepath/npm"
+node . <command>
 ```
 
 **npx commands:**
 ```bash
-alias localnpx="node /filepath/npm/bin/npx-cli.js"
+node . exec
 ```
-
-After running the above commands, use localnpx and localnpm instead of npx and npm respectively.
 
 For example instead of:
 ```bash 
-npx --no-install esbuild
+npm install esbuild
 ```  
 Use:
 ```bash
-localnpx --no-install esbuild
+node . install esbuild
 ```
 
 
