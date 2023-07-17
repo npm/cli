@@ -27,9 +27,10 @@
   - title: npm ci
     url: /commands/npm-ci
     description: Install a project with a clean slate
-  - title: npm completion
+  - title: npm 
+	
     url: /commands/npm-completion
-    description: Tab completion for npm
+    description: yTab completion for npm
   - title: npm config
     url: /commands/npm-config
     description: Manage the npm configuration files
