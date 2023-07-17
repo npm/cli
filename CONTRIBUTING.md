@@ -48,10 +48,6 @@ We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).  
 
 We use [`tap`](https://node-tap.org/) for testing & expect that every new feature or bug fix comes with corresponding tests that validate the solutions. Tap also reports on code coverage and it will fail if that drops below 100%.
 
-## Run npm/npx Locally
-
-If a specific command is not covered by tap, try the following:
-
 To run your repository's version of the npm cli on your local machine use the following commands:
 
 **npm commands:**
