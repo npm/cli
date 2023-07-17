@@ -1,5 +1,11 @@
 # Changelog
 
+## [8.19.5](https://github.com/npm/cli/compare/v8.19.4...v8.19.5) (2023-07-17)
+
+### Documentation
+
+* [`aa8fff1`](https://github.com/npm/cli/commit/aa8fff11cdab94fff1a2160ee5241f5f4632e96b) [#6645](https://github.com/npm/cli/pull/6645) fix typo (#6645) (@Zearin)
+
 ## [8.19.4](https://github.com/npm/cli/compare/v8.19.3...v8.19.4) (2023-02-14)
 
 ### Documentation
