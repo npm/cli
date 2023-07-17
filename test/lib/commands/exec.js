@@ -136,7 +136,7 @@ t.test('npx --no-install @npmcli/npx-test', async t => {
     registry: 'https://registry.npmjs.org/',
   })
 
-  const manifest = registry.manifest({ name: '@npmcli/npx-test'})
+  const manifest = registry.manifest({ name: '@npmcli/npx-test' })
   manifest.versions['1.0.0'].bin = { 'npx-test': 'index.js' }
 
   const { npm } = await loadMockNpm(t, {
@@ -159,7 +159,7 @@ t.test('npx --no-install @npmcli/npx-test', async t => {
   } catch (error) {
     t.match(
       error.message,
-      'npx canceled due to missing packages and no YES option: ', 
+      'npx canceled due to missing packages and no YES option: ',
       'Expected error message thrown'
     )
   }
