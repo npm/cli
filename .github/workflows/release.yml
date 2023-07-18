@@ -10,7 +10,6 @@ on:
         type: string
   push:
     branches:
-      - main
       - latest
       - release/v*
 
@@ -77,7 +76,7 @@ jobs:
             let commentId = comments.find(c => c.user.login === 'github-actions[bot]' && c.body.startsWith(body))?.id
 
             body += `Release workflow run: ${workflow.html_url}\n\n#### Force CI to Update This Release\n\n`
-            body += `This PR will be updated and CI will run for every non-\`chore:\` commit that is pushed to \`latest\`. `
+            body += `This PR will be updated and CI will run for every non-\`chore:\` commit that is pushed to \`${REF_NAME}\`. `
             body += `To force CI to update this PR, run this command:\n\n`
             body += `\`\`\`\ngh workflow run release.yml -r ${REF_NAME} -R ${owner}/${repo} -f release-pr=${issue_number}\n\`\`\``
 
@@ -123,7 +122,7 @@ jobs:
 
             return { summary }
       - name: Create Check
-        uses: LouisBrunner/checks-action@v1.3.1
+        uses: LouisBrunner/checks-action@v1.6.0
         id: check
         if: steps.release.outputs.pr-sha
         with:
@@ -213,7 +212,7 @@ jobs:
 
             return { summary }
       - name: Create Check
-        uses: LouisBrunner/checks-action@v1.3.1
+        uses: LouisBrunner/checks-action@v1.6.0
         id: check
         if: steps.commit.outputs.sha
         with:
@@ -223,7 +222,7 @@ jobs:
           sha: ${{ steps.commit.outputs.sha }}
           output: ${{ steps.check-output.outputs.result }}
       - name: Conclude Check
-        uses: LouisBrunner/checks-action@v1.3.1
+        uses: LouisBrunner/checks-action@v1.6.0
         if: needs.release.outputs.check-id && always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -261,7 +260,7 @@ jobs:
           fi
           echo "result=$result" >> $GITHUB_OUTPUT
       - name: Conclude Check
-        uses: LouisBrunner/checks-action@v1.3.1
+        uses: LouisBrunner/checks-action@v1.6.0
         if: needs.update.outputs.check-id && always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}

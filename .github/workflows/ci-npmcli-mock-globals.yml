@@ -9,8 +9,8 @@ on:
       - mock-globals/**
   push:
     branches:
-      - main
       - latest
+      - release/v*
     paths:
       - mock-globals/**
   schedule:

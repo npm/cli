@@ -9,8 +9,8 @@ on:
       - workspaces/libnpmversion/**
   push:
     branches:
-      - main
       - latest
+      - release/v*
     paths:
       - workspaces/libnpmversion/**
   schedule:

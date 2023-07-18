@@ -9,8 +9,8 @@ on:
       - workspaces/libnpmsearch/**
   push:
     branches:
-      - main
       - latest
+      - release/v*
     paths:
       - workspaces/libnpmsearch/**
   schedule:

@@ -13,8 +13,8 @@ on:
       - workspaces/**
   push:
     branches:
-      - main
       - latest
+      - release/v*
     paths-ignore:
       - docs/**
       - smoke-tests/**

@@ -9,8 +9,8 @@ on:
       - workspaces/libnpmhook/**
   push:
     branches:
-      - main
       - latest
+      - release/v*
     paths:
       - workspaces/libnpmhook/**
   schedule:

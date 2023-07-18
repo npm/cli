@@ -9,8 +9,8 @@ on:
       - workspaces/config/**
   push:
     branches:
-      - main
       - latest
+      - release/v*
     paths:
       - workspaces/config/**
   schedule:

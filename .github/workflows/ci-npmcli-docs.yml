@@ -9,8 +9,8 @@ on:
       - docs/**
   push:
     branches:
-      - main
       - latest
+      - release/v*
     paths:
       - docs/**
   schedule:

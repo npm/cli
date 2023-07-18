@@ -9,8 +9,8 @@ on:
       - workspaces/libnpmdiff/**
   push:
     branches:
-      - main
       - latest
+      - release/v*
     paths:
       - workspaces/libnpmdiff/**
   schedule:
