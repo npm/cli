@@ -1,5 +1,27 @@
 # Changelog
 
+## [9.8.1](https://github.com/npm/cli/compare/v9.8.0...v9.8.1) (2023-07-18)
+
+### Bug Fixes
+
+* [`38351c9`](https://github.com/npm/cli/commit/38351c954040ddea56dc5db453f7f7d10964e5cd) [#6651](https://github.com/npm/cli/pull/6651) warn on autocorrected package.json entries during publish (@wraithgar)
+* [`02c7ddb`](https://github.com/npm/cli/commit/02c7ddb4501682c9e84b8c1325638b7db1ca7deb) [#6642](https://github.com/npm/cli/pull/6642) much clearer npx 'canceled' error (#6642) (@rahulio96, @AaronHamilton965)
+
+### Documentation
+
+* [`36bf5fe`](https://github.com/npm/cli/commit/36bf5fe2a0a2ef7f7ffc0b302eea15e227556010) [#6643](https://github.com/npm/cli/pull/6643) Added steps for using npm/npx locally to CONTRIBUTING.md (#6643) (@AaronHamilton965, @rahulio96)
+
+### Dependencies
+
+* [`a0763d3`](https://github.com/npm/cli/commit/a0763d38d8934a6769e5aac08539291c5051f36e) [#6651](https://github.com/npm/cli/pull/6651) `@npmcli/package-json@4.0.1`
+* [`24f5a8b`](https://github.com/npm/cli/commit/24f5a8b07909710e06f5aa3844d99c03cce0b9ca) [#6653](https://github.com/npm/cli/pull/6653) `supports-color@9.4.0`
+* [`f45498b`](https://github.com/npm/cli/commit/f45498b33550d3874b9602ef027f215ea2590124) [#6653](https://github.com/npm/cli/pull/6653) `chalk@5.3.0`
+* [`44d60eb`](https://github.com/npm/cli/commit/44d60eb0c4ee0456ee4c9f855f06348cfb4c0f9c) [#6653](https://github.com/npm/cli/pull/6653) `minimatch@9.0.3`
+* [`fc9a843`](https://github.com/npm/cli/commit/fc9a843f59ec4c1733d427566b9df9a4b440bb7f) [#6653](https://github.com/npm/cli/pull/6653) `bin-links@3.0.2`
+* [`daad9ad`](https://github.com/npm/cli/commit/daad9addc1e2587d162e06016498252cf0b6514a) [#6653](https://github.com/npm/cli/pull/6653) `semver@7.5.4`
+* [`c1ffd6a`](https://github.com/npm/cli/commit/c1ffd6a2f91cdb5c8d3cd7524a3136346181f67f) [#6653](https://github.com/npm/cli/pull/6653) move @npmcli/fs, @npmcli/promise-spawn into dependencies
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v6.0.3): `libnpmexec@6.0.3`
+
 ## [9.8.0](https://github.com/npm/cli/compare/v9.7.2...v9.8.0) (2023-07-05)
 
 ### Features
