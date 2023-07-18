@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.0.3](https://github.com/npm/cli/compare/libnpmexec-v6.0.2...libnpmexec-v6.0.3) (2023-07-18)
+
+### Bug Fixes
+
+* [`02c7ddb`](https://github.com/npm/cli/commit/02c7ddb4501682c9e84b8c1325638b7db1ca7deb) [#6642](https://github.com/npm/cli/pull/6642) much clearer npx 'canceled' error (#6642) (@rahulio96, @AaronHamilton965)
+
 ## [6.0.2](https://github.com/npm/cli/compare/libnpmexec-v6.0.1...libnpmexec-v6.0.2) (2023-07-05)
 
 ### Dependencies
