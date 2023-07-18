@@ -9,8 +9,8 @@ on:
       - workspaces/libnpmorg/**
   push:
     branches:
-      - main
       - latest
+      - release/v*
     paths:
       - workspaces/libnpmorg/**
   schedule:

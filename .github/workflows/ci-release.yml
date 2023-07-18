@@ -61,7 +61,7 @@ jobs:
 
             return { summary }
       - name: Create Check
-        uses: LouisBrunner/checks-action@v1.3.1
+        uses: LouisBrunner/checks-action@v1.6.0
         id: check
         if: inputs.check-sha
         with:
@@ -92,7 +92,7 @@ jobs:
       - name: Post Lint
         run: node . run postlint --ignore-scripts -ws -iwr --if-present
       - name: Conclude Check
-        uses: LouisBrunner/checks-action@v1.3.1
+        uses: LouisBrunner/checks-action@v1.6.0
         if: steps.check.outputs.check_id && always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -161,7 +161,7 @@ jobs:
 
             return { summary }
       - name: Create Check
-        uses: LouisBrunner/checks-action@v1.3.1
+        uses: LouisBrunner/checks-action@v1.6.0
         id: check
         if: inputs.check-sha
         with:
@@ -194,7 +194,7 @@ jobs:
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Conclude Check
-        uses: LouisBrunner/checks-action@v1.3.1
+        uses: LouisBrunner/checks-action@v1.6.0
         if: steps.check.outputs.check_id && always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -264,7 +264,7 @@ jobs:
 
             return { summary }
       - name: Create Check
-        uses: LouisBrunner/checks-action@v1.3.1
+        uses: LouisBrunner/checks-action@v1.6.0
         id: check
         if: inputs.check-sha
         with:
@@ -312,7 +312,7 @@ jobs:
             exit 1
           fi
       - name: Conclude Check
-        uses: LouisBrunner/checks-action@v1.3.1
+        uses: LouisBrunner/checks-action@v1.6.0
         if: steps.check.outputs.check_id && always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}

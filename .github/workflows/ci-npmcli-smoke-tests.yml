@@ -9,8 +9,8 @@ on:
       - smoke-tests/**
   push:
     branches:
-      - main
       - latest
+      - release/v*
     paths:
       - smoke-tests/**
   schedule:

@@ -9,8 +9,8 @@ on:
       - workspaces/arborist/**
   push:
     branches:
-      - main
       - latest
+      - release/v*
     paths:
       - workspaces/arborist/**
   schedule:
