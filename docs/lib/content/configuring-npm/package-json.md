@@ -516,11 +516,9 @@ same shortcut syntax you use for `npm install`:
 }
 ```
 
-If the `package.json` for your package is not in the root directory (for
-example if it is part of a monorepo), you can specify the directory in
-which it lives:
-
-```json
+If your `package.json` isn't in the root directory, common with monorepos like Facebook's React, you can specify its location. i.e. `react-dom`:
+```jsonc
+/* @/packages/react-dom/package.json */
 {
   "repository": {
     "type": "git",
@@ -528,6 +526,12 @@ which it lives:
     "directory": "packages/react-dom"
   }
 }
+```
+```txt
+react.git/
+└── packages/
+    └── react-dom/
+        └── package.json
 ```
 
 ### scripts
