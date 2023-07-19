@@ -144,7 +144,7 @@ Then include a file named `<filename>` at the top level of the package.
 Some old packages used license objects or a "licenses" property containing
 an array of license objects:
 
-```json
+```jsonc
 // Not valid metadata
 {
   "license" : {
@@ -985,7 +985,7 @@ this limitation easier to deal with, overrides may also be defined as a
 reference to a spec for a direct dependency by prefixing the name of the
 package you wish the version to match with a `$`.
 
-```json
+```jsonc
 {
   "dependencies": {
     "foo": "^1.0.0"
