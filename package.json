@@ -1,5 +1,5 @@
 {
-  "version": "9.8.0",
+  "version": "9.8.1",
   "name": "npm",
   "description": "a package manager for JavaScript",
   "workspaces": [
@@ -78,7 +78,7 @@
     "json-parse-even-better-errors": "^3.0.0",
     "libnpmaccess": "^7.0.2",
     "libnpmdiff": "^5.0.19",
-    "libnpmexec": "^6.0.2",
+    "libnpmexec": "^6.0.3",
     "libnpmfund": "^4.0.19",
     "libnpmhook": "^9.0.3",
     "libnpmorg": "^5.0.4",
