@@ -1,0 +1,8 @@
+- name: Setup Node
+  uses: actions/setup-node@v3
+  with:
+    node-version: {{#if jobIsMatrix}}$\{{ matrix.node-version }}{{else}}{{ last ciVersions }}{{/if}}
+    cache: npm
+    {{! Temporarily bust cache so our engines work with the latest Node.
+        This entire file can be deleted once this is no longer needed. }}
+    check-latest: true
