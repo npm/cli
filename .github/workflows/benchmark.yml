@@ -1,52 +1,79 @@
----
-name: Benchmark Suite
+name: Benchmark - CLI
 
 on:
   pull_request:
     branches:
-      - "**"
+      - '*'
+    paths:
+      - lib/**
+  issue_comment:
+    types:
+      - created
+      - edited
 
 jobs:
-  build:
-    name: Trigger Benchmarks
-
+  trigger-benchmark:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Handle Incoming Pull-Request
+      - name: Incoming Pull Request
+        if: |
+          github.event_name == 'pull_request' || (
+            github.event_name == 'issue_comment' &&
+            github.event.issue.pull_request &&
+            github.event.issue.state == 'open' &&
+            startsWith(github.event.comment.body, '@npm-cli-bot benchmark this')
+          )
         env:
-          DISPATCH_REPO: "benchmarks"
-          DISPATCH_OWNER: "npm"
-          EVENT_NAME: ${{ github.event_name }}
-          REPO: ${{ github.event.repository.name }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          PR_OWNER: ${{ github.event.pull_request.head.repo.owner.login }}
-          AUTH_TOKEN: ${{ secrets.NPM_BENCHMARKS_TOKEN }}
+          # gh cli uses these env vars for owner/repo/token
+          GH_REPO: "npm/benchmarks"
+          GITHUB_TOKEN: ${{ secrets.BENCHMARK_DISPATCH_TOKEN }}
         run: |
-          # Dispatch Handler
+          EVENT_NAME="${{ github.event_name }}"
+          OWNER="${{ github.event.repository.owner.login }}"
+          REPO="${{ github.event.repository.name }}"
+          PR=""
 
-          dispatch_request () {
-            echo "Dispatching request..."
-            curl \
-              -s \
-              -X POST https://api.github.com/repos/${DISPATCH_OWNER}/${DISPATCH_REPO}/dispatches \
-              -H "Accept: application/vnd.github.v3+json" \
-              -H "Authorization: token ${AUTH_TOKEN}" \
-              -d \
-              '
-              {
-                "event_type": "'"${EVENT_NAME} ${PR_OWNER}/${REPO}#${PR_NUMBER}"'",
-                "client_payload": {
-                  "pr_id": "'"${PR_NUMBER}"'",
-                  "repo": "'"${REPO}"'",
-                  "owner": "'"${PR_OWNER}"'"
-                }
-              }'
-          }
-
-          if [ "${AUTH_TOKEN}" != "" ]; then
-            # Dispatch request for benchmarks
-            dispatch_request
+          if [[ "$EVENT_NAME" == "pull_request" ]]; then
+            if [[ "$GITHUB_TOKEN" == "" ]]; then
+              echo "No auth - from fork pull request, exiting"
+              exit 0
+            fi
+            PR="${{ github.event.pull_request.number }}"
           else
-            echo "NO AUTH - FORK PULL REQUEST"
+            PR="${{ github.event.issue.number }}"
+            SENDER="${{ github.event.comment.user.login }}"
+            ROLE=$(gh api repos/${OWNER}/${REPO}/collaborators/${SENDER}/permission -q '.permission')
+
+            if [[ "$ROLE" != "admin" ]]; then
+              echo "${SENDER} is ${ROLE}, not an admin, exiting"
+              exit 0
+            fi
+
+            # add emoji to comment if user is an admin to signal
+            # benchmark is running
+            COMMENT_NODE_ID="${{ github.event.comment.node_id }}"
+            QUERY='mutation ($inputData:AddReactionInput!) {
+              addReaction (input:$inputData) {
+                reaction { content }
+              }
+            }'
+            echo '{
+              "query": "'${QUERY}'",
+              "variables": {
+                "inputData": {
+                  "subjectId": "'"${COMMENT_NODE_ID}"'",
+                  "content": "ROCKET"
+                }
+              }
+            }' | gh api graphql --input -
           fi
+
+          EVENT="${EVENT_NAME} ${OWNER}/${REPO}#${PR}"
+          echo '{
+            "event_type": "'"$EVENT"'",
+            "client_payload": {
+              "pr_id": "'"$PR"'",
+              "repo": "'"$REPO"'",
+              "owner": "'"$OWNER"'"
+            }
+          }' | gh api repos/{owner}/{repo}/dispatches --input -

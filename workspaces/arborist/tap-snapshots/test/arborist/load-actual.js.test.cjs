@@ -1084,6 +1084,39 @@ ArboristNode {
 }
 `
 
+exports[`test/arborist/load-actual.js TAP do not load from a hidden lockfile when forceActual is set > must match snapshot 1`] = `
+ArboristNode {
+  "children": Map {
+    "abbrev" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "abbrev",
+          "spec": "^1.1.1",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/abbrev",
+      "name": "abbrev",
+      "path": "hidden-lockfile/node_modules/abbrev",
+      "version": "1.1.1",
+    },
+  },
+  "edgesOut": Map {
+    "abbrev" => EdgeOut {
+      "name": "abbrev",
+      "spec": "^1.1.1",
+      "to": "node_modules/abbrev",
+      "type": "prod",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "hidden-lockfile",
+  "path": "hidden-lockfile",
+}
+`
+
 exports[`test/arborist/load-actual.js TAP external-dep/root > loaded tree 1`] = `
 ArboristNode {
   "edgesOut": Map {
@@ -3760,7 +3793,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP load from a hidden lockfile > expect resolving Promise 1`] = `
+exports[`test/arborist/load-actual.js TAP load from a hidden lockfile > must match snapshot 1`] = `
 ArboristNode {
   "children": Map {
     "abbrev" => ArboristNode {

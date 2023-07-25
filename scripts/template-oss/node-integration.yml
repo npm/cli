@@ -1,0 +1,493 @@
+name: nodejs integration
+
+on:
+  workflow_call:
+    inputs:
+      nodeVersion:
+        description: 'nodejs version'
+        required: true
+        type: string
+        default: nightly
+      npmVersion:
+        description: 'npm version'
+        required: true
+        type: string
+        default: git
+      installFlags:
+        description: 'extra flags to pass to npm install'
+        required: false
+        type: string
+        default: ''
+
+  workflow_dispatch:
+    inputs:
+      nodeVersion:
+        description: 'nodejs version'
+        required: true
+        type: string
+        default: nightly
+      npmVersion:
+        description: 'npm version'
+        required: true
+        type: string
+        default: git
+      installFlags:
+        description: 'extra flags to pass to npm install'
+        required: false
+        type: string
+        default: ''
+
+jobs:
+  build-nodejs:
+    name: build nodejs@$\{{ inputs.nodeVersion }} npm@$\{{ inputs.npmVersion }}
+    runs-on: ubuntu-latest
+    outputs:
+      nodeVersion: $\{{ steps.build-nodejs.outputs.nodeVersion }}
+    steps:
+      - name: setup ccache
+        uses: Chocobo1/setup-ccache-action@v1
+        with:
+          override_cache_key: nodejs-$\{{ inputs.nodeVersion }}
+      - name: build nodejs
+        id: build-nodejs
+        run: |
+          echo "::group::setup"
+          set -eo pipefail
+          npmDir="${RUNNER_TEMP}/npm"
+          sourceDir="${RUNNER_TEMP}/src"
+          targetDir="${RUNNER_TEMP}/build"
+          npmFile="${RUNNER_TEMP}/npm.tgz"
+          sourceFile="${RUNNER_TEMP}/source.tgz"
+          targetFile="${RUNNER_TEMP}/build.tgz"
+          echo "::endgroup::"
+
+          echo "::group::finding nodejs version matching $\{{ inputs.nodeVersion }}"
+          if [[ "$\{{ inputs.nodeVersion }}" == "nightly" ]]; then
+            nodeVersion=$(curl -sSL https://nodejs.org/download/nightly/index.json | jq -r .[0].version)
+            nodeUrl="https://nodejs.org/download/nightly/${nodeVersion}/node-${nodeVersion}.tar.gz"
+          else
+            nodeVersion=$(curl -sSL https://nodejs.org/download/release/index.json | jq -r 'map(select(.version | test("^v$\{{ inputs.nodeVersion }}"))) | .[0].version')
+            if [[ -z "$nodeVersion" ]]; then
+              echo "::error ::unable to find released nodejs version matching: $\{{ inputs.nodeVersion }}"
+              exit 1
+            fi
+            nodeUrl="https://nodejs.org/download/release/${nodeVersion}/node-${nodeVersion}.tar.gz"
+          fi
+          echo "nodeVersion=${nodeVersion}" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+
+          echo "::group::extracting source from $nodeUrl"
+          mkdir -p "$sourceDir"
+          curl -sSL "$nodeUrl" | tar xz -C "$sourceDir" --strip=1 
+          echo "::endgroup::"
+
+          echo "::group::cloning npm"
+          mkdir -p "$npmDir"
+          git clone https://github.com/npm/cli.git "$npmDir"
+          npmVersion=$(cat "${npmDir}/package.json" | jq -r '"\(.version)-git"')
+          echo "::endgroup::"
+
+          if [[ "$\{{ inputs.npmVersion }}" != "git" ]]; then
+            npmVersion="$\{{ inputs.npmVersion }}"
+            npmVersion="${npmVersion#v}"
+            echo "::group::checking out npm@${npmVersion}"
+            pushd "$npmDir" >/dev/null
+            taggedSha=$(git show-ref --tags "v${npmVersion}" | cut -d' ' -f1)
+            git reset --hard "$taggedSha"
+            publishedSha=$(curl -sSL https://registry.npmjs.org/npm | jq -r --arg ver "$npmVersion" '.versions[$ver].gitHead')
+            if [[ "$taggedSha" != "$publishedSha" ]]; then
+              echo "::warning ::git tag ($taggedSha) differs from published tag ($publishedSha)"
+            fi
+            popd >/dev/null
+            echo "::endgroup::"
+          fi
+
+          echo "::group::packing npm release $npmVersion"
+          pushd "$npmDir" >/dev/null
+          node scripts/resetdeps.js
+          npmtarball="$(node . pack --loglevel=silent --json | jq -r .[0].filename)"
+          tar czf "$npmFile" -C "$npmDir" .
+          popd >/dev/null
+          echo "npm=$npmFile" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+
+          echo "::group::updating nodejs bundled npm"
+          rm -rf "${sourceDir}/deps/npm"
+          mkdir -p "${sourceDir}/deps/npm"
+          tar xfz "${npmDir}/${npmtarball}" -C "${sourceDir}/deps/npm" --strip=1
+          echo "::endgroup::"
+
+          echo "::group::packing nodejs source"
+          tar cfz "$sourceFile" -C "$sourceDir" .
+          echo "source=$sourceFile" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+
+          echo "::group::building nodejs"
+          mkdir -p "$targetDir"
+          pushd "$sourceDir" >/dev/null
+          ./configure --prefix="$targetDir"
+          make -j4 install
+          popd >/dev/null
+          echo "::endgroup::"
+
+          echo "::group::packing nodejs build"
+          tar cfz "$targetFile" -C "$targetDir" .
+          echo "build=$targetFile" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      - name: upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: nodejs-$\{{ steps.build-nodejs.outputs.nodeVersion }}
+          path: |
+            $\{{ steps.build-nodejs.outputs.source }}
+            $\{{ steps.build-nodejs.outputs.build }}
+            $\{{ steps.build-nodejs.outputs.npm }}
+
+  test-nodejs:
+    name: test nodejs
+    runs-on: ubuntu-latest
+    needs:
+      - build-nodejs
+    steps:
+      - name: setup ccache
+        uses: Chocobo1/setup-ccache-action@v1
+        with:
+          override_cache_key: nodejs-$\{{ inputs.nodeVersion }}
+      - name: download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: nodejs-$\{{ needs.build-nodejs.outputs.nodeVersion }}
+      - name: test nodejs
+        run: |
+          set -e
+          tar xf source.tgz
+          ./configure
+          make -j4 test-only
+
+  test-npm:
+    name: test npm
+    runs-on: ubuntu-latest
+    needs:
+      - build-nodejs
+    steps:
+      - name: download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: nodejs-$\{{ needs.build-nodejs.outputs.nodeVersion }}
+          path: $\{{ runner.temp }}
+      - name: install nodejs $\{{ needs.build-nodejs.outputs.nodeVersion }}
+        id: install
+        run: |
+          set -e
+          mkdir -p "${RUNNER_TEMP}/node"
+          tar xf "${RUNNER_TEMP}/build.tgz" -C "${RUNNER_TEMP}/node"
+
+          mkdir -p "${RUNNER_TEMP}/npm"
+          tar xf "${RUNNER_TEMP}/npm.tgz" -C "${RUNNER_TEMP}/npm"
+
+          echo "${RUNNER_TEMP}/node/bin" >> $GITHUB_PATH
+          echo "cache=$(npm config get cache)" >> $GITHUB_OUTPUT
+      - name: setup npm cache
+        uses: actions/cache@v3
+        with:
+          path: $\{{ steps.install.outputs.cache }}
+          key: npm-tests
+      - run: node --version
+      - run: npm --version
+      - name: test npm
+        run: |
+          echo "::group::setup"
+          set -e
+          cd "${RUNNER_TEMP}/npm"
+          echo "::endgroup::"
+
+          echo "::group::npm run resetdeps"
+          node scripts/resetdeps.js
+          echo "::endgroup::"
+
+          echo "::group::npm link"
+          node . link
+          echo "::endgroup::"
+
+          STEPEXIT=0
+          FINALEXIT=0
+
+          set +e
+          echo "::group::npm test"
+          node . test --ignore-scripts
+          STEPEXIT=$?
+          if [[ $STEPEXIT -ne 0 ]]; then
+            echo "::warning ::npm test failed, exit: $STEPEXIT"
+            FINALEXIT=STEPEXIT
+          fi
+          echo "::endgroup::"
+
+          for workspace in $(npm query .workspace | jq -r .[].name); do
+            echo "::group::npm test -w $workspace"
+            node . test -w $workspace --if-present --ignore-scripts
+            STEPEXIT=$?
+            if [[ $STEPEXIT -ne 0 ]]; then
+              echo "::warning ::npm test -w $workspace failed, exit: $STEPEXIT"
+              FINALEXIT=STEPEXIT
+            fi
+            echo "::endgroup::"
+          done
+
+          exit $FINALEXIT
+
+  generate-matrix:
+    name: generate matrix
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: $\{{ steps.generate-matrix.outputs.matrix }}
+    steps:
+      - name: install dependencies
+        run: |
+          npm install --no-save --no-audit --no-fund citgm npm-package-arg
+      - name: generate matrix
+        id: generate-matrix
+        uses: actions/github-script@v6
+        env:
+          NODE_VERSION: "$\{{ inputs.nodeVersion }}"
+          INSTALL_FLAGS: "$\{{ inputs.installFlags }}"
+        with:
+          script: |
+            const { NODE_VERSION, INSTALL_FLAGS } = process.env
+
+            const { execSync } = require('child_process')
+            const npa = require('npm-package-arg')
+
+            const lookup = require('./node_modules/citgm/lib/lookup.json')
+
+            const matchesKeyword = (value) => {
+              const keywords = ['ubuntu', 'debian', 'linux', 'x86', '>=11', '>=12', '>=16', '>=17']
+              if (value === true ||
+                  (typeof value === 'string' && keywords.includes(value)) ||
+                  (Array.isArray(value) && keywords.some((keyword) => value.includes(keyword) || value.includes(true)))) {
+                return true
+              }
+
+              return false
+            }
+
+            // this is a manually updated list of packages that we know currently fail
+            const knownFailures = [
+              'body-parser', // json parsing error difference
+              'clinic', // unknown, lots of failures
+              'ember-cli', // timeout in nodejs ci, one failing test for us that timed out
+              'express', // body-parser is what actually fails, it's used in a test
+              'https-proxy-agent', // looks ssl related
+              'node-gyp', // one test consistently times out
+              'resolve', // compares results to require.resolve and fails, also missing inspector/promises
+              'uuid', // tests that crypto.getRandomValues throws but it doesn't
+              'weak', // doesn't seem to build in node >12
+              'mkdirp', // failing actions in own repo
+              'undici', // test failure in node >=18, unable to root cause
+            ]
+
+            if (NODE_VERSION === '18') {
+              knownFailures.push('multer')
+            } else if (NODE_VERSION === '19') {
+              // empty block
+            } else if (NODE_VERSION === 'nightly') {
+              // fails in node 20, looks like a streams issue
+              knownFailures.push('fastify')
+              // esbuild barfs on node 20.0.0-pre
+              knownFailures.push('serialport')
+            }
+
+            // this is a manually updated list of packages that are flaky
+            const supplementalFlaky = [
+              'pino', // flaky test test/transport/core.test.js:401
+              'tough-cookie', // race condition test/node_util_fallback_test.js:87
+            ]
+
+            const matrix = []
+            for (const package in lookup) {
+              const meta = lookup[package]
+
+              // we omit npm from the matrix because its tests are run as their own job
+              if (matchesKeyword(meta.skip) || meta.yarn === true || package === 'npm') {
+                continue
+              }
+
+              const install_flags = ['--no-audit', '--no-fund']
+              if (meta.install) {
+                install_flags.push(meta.install.slice(1))
+              }
+              if (INSTALL_FLAGS) {
+                install_flags.push(INSTALL_FLAGS)
+              }
+              const context = JSON.parse(execSync(`npm show ${package} --json`))
+              const test = meta.scripts ? meta.scripts.map((script) => `npm run ${script}`) : ['npm test']
+
+              const repo = npa(meta.repo || context.repository.url).hosted
+              const details = {}
+              if (meta.useGitClone) {
+                details.repo = repo.https()
+              } else {
+                if (meta.ignoreGitHead) {
+                  details.url = repo.tarball()
+                } else {
+                  details.url = repo.tarball({ committish: context.gitHead })
+                }
+              }
+
+              const env = { ...meta.envVar, NODE_VERSION }
+              matrix.push({
+                package,
+                version: context.version,
+                env,
+                install_flags: install_flags.join(' '),
+                commands: [...test],
+                flaky: matchesKeyword(meta.flaky) || supplementalFlaky.includes(package),
+                knownFailure: knownFailures.includes(package),
+                ...details,
+              })
+            }
+            core.setOutput('matrix', matrix)
+
+  citgm:
+    name: citgm - $\{{ matrix.package }}@$\{{ matrix.version }} $\{{ matrix.flaky && '(flaky)' || '' }} $\{{ matrix.knownFailure && '(known failure)' || '' }}
+    runs-on: ubuntu-latest
+    needs:
+      - build-nodejs
+      - generate-matrix
+    strategy:
+      fail-fast: false
+      matrix:
+        include: $\{{ fromJson(needs.generate-matrix.outputs.matrix) }}
+    steps:
+      - name: download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: nodejs-$\{{ needs.build-nodejs.outputs.nodeVersion }}
+          path: $\{{ runner.temp }}
+      - name: install nodejs $\{{ needs.build-nodejs.outputs.nodeVersion }}
+        id: install
+        run: |
+          set -e
+          mkdir -p "${RUNNER_TEMP}/node"
+          tar xf "${RUNNER_TEMP}/build.tgz" -C "${RUNNER_TEMP}/node"
+          echo "nodedir=${RUNNER_TEMP}/node" >> $GITHUB_OUTPUT
+
+          echo "${RUNNER_TEMP}/node/bin" >> $GITHUB_PATH
+          echo "cache=$(npm config get cache)" >> $GITHUB_OUTPUT
+      - name: setup npm cache
+        uses: actions/cache@v3
+        with:
+          path: $\{{ steps.install.outputs.cache }}
+          key: npm-$\{{ matrix.package }}
+      - run: node --version
+      - run: npm --version
+      - name: download source
+        id: download
+        run: |
+          set -eo pipefail
+          TARGET_DIR="${RUNNER_TEMP}/$\{{ matrix.package }}"
+          mkdir -p "$TARGET_DIR"
+          echo "target=$TARGET_DIR" >> $GITHUB_OUTPUT
+
+          if [[ -n "$\{{ matrix.repo }}" ]]; then
+            export GIT_TERMINAL_PROMPT=0
+            export GIT_SSH_COMMAND="ssh -oBatchMode=yes"
+            git clone --recurse-submodules "$\{{ matrix.repo }}" "$TARGET_DIR"
+          elif [[ -n "$\{{ matrix.url }}" ]]; then
+            curl -sSL "$\{{ matrix.url }}" | tar xz -C "$TARGET_DIR" --strip=1
+          fi
+
+          if [[ -f "${TARGET_DIR}/package-lock.json" ]]; then
+            lockfileVersion=$(cat "${TARGET_DIR}/package-lock.json" | jq .lockfileVersion)
+            echo "lockfileVersion=$lockfileVersion" >> $GITHUB_OUTPUT
+          fi
+      - name: npm install $\{{ matrix.install_flags }}
+        id: npm-install
+        working-directory: $\{{ steps.download.outputs.target }}
+        run: |
+          set +e
+          npm install --nodedir="$\{{steps.install.outputs.nodedir }}" $\{{ matrix.install_flags }}
+          exitcode=$?
+          if [[ $exitcode -ne 0 && "$\{{ matrix.knownFailure }}" == "true" ]]; then
+            echo "::warning ::npm install failed, exit $exitcode"
+            echo "failed=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          exit $exitcode
+      - name: verify lockfileVersion unchanged
+        working-directory: $\{{ steps.download.outputs.target }}
+        if: $\{{ steps.download.outputs.lockfileVersion && steps.npm-install.outputs.failed != 'true' }}
+        run: |
+          if [[ -f "package-lock.json" ]]; then
+            newLockfileVersion=$(cat "package-lock.json" | jq .lockfileVersion)
+            if [[ "$newLockfileVersion" -ne "$\{{ steps.download.outputs.lockfileVersion }}" ]]; then
+              if [[ "$\{{ steps.download.outputs.lockfileVersion }}" -ne 1 ]]; then
+                echo "::error ::lockfileVersion changed from $\{{ steps.download.outputs.lockfileVersion }} to $newLockfileVersion"
+                exit 1
+              fi
+            fi
+          fi
+      - name: npm ls
+        working-directory: $\{{ steps.download.outputs.target }}
+        if: $\{{ steps.npm-install.outputs.failed != 'true' }}
+        run: |
+          npm ls
+      - name: $\{{ join(matrix.commands, ' && ') }}
+        id: command
+        continue-on-error: true
+        timeout-minutes: 10
+        env: $\{{ matrix.env }}
+        working-directory: $\{{ steps.download.outputs.target }}
+        if: $\{{ steps.npm-install.outputs.failed != 'true' }}
+        run: |
+          set +e
+          FINALEXIT=0
+          STEPEXIT=0
+
+          export npm_config_nodedir="$\{{ steps.install.outputs.nodedir }}"
+
+          # inlining some patches to make tests run
+          if [[ "$\{{ matrix.package }}" == "undici" ]]; then
+            sed -i.bak 's/--experimental-wasm-simd //' package.json
+            rm -f package.json.bak
+            sed -i.bak 's/--experimental-wasm-simd//' .taprc
+            rm -f .taprc.bak
+          fi
+
+          for row in $(echo '$\{{ toJSON(matrix.commands) }}' | jq -r '.[] | @base64'); do
+            FAILCOUNT=0
+            COMMAND=$(echo "$row" | base64 --decode)
+            echo "::group::$COMMAND"
+            $COMMAND
+            STEPEXIT=$?
+            if [[ $STEPEXIT -ne 0 ]]; then
+              FAILCOUNT=1
+              if [[ "$\{{ matrix.knownFailure }}" == "true" || "$NODE_VERSION" == "nightly" ]]; then
+                echo "::warning ::$COMMAND failed, exit: $STEPEXIT"
+              elif [[ "$\{{ matrix.flaky }}" ]]; then
+                while [[ $STEPEXIT -ne 0 && $FAILCOUNT -lt 3 ]]; do
+                  $COMMAND
+                  STEPEXIT=$?
+                  if [[ $STEPEXIT -ne 0 ]]; then
+                    ((FAILCOUNT=FAILCOUNT+1))
+                  fi
+                done
+
+                if [[ $STEPEXIT -ne 0 ]]; then
+                  echo "::warning ::$COMMAND still failing after $FAILCOUNT attempts, exit: $STEPEXIT"
+                fi
+              else
+                FINALEXIT=$STEPEXIT
+                echo "::error ::$COMMAND failed, exit: $STEPEXIT"
+              fi
+            fi
+            echo "::endgroup::"
+          done
+          exit $FINALEXIT
+      - name: Set conclusion
+        env: $\{{ matrix.env }}
+        run: |
+          EXIT=1
+          if [[ "$\{{ steps.command.outcome }}" == "success" || "$\{{ matrix.flaky }}" == "true" || "$\{{ matrix.knownFailure }}" == "true" || $NODE_VERSION == "nightly" ]]; then
+            EXIT=0
+          fi
+          exit $EXIT

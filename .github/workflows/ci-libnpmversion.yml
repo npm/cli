@@ -1,76 +1,97 @@
-name: Node Workspace CI libnpmversion
+# This file is automatically added by @npmcli/template-oss. Do not edit.
+
+name: CI - libnpmversion
 
 on:
+  workflow_dispatch:
   pull_request:
     paths:
       - workspaces/libnpmversion/**
-    branches:
-      - '*'
   push:
+    branches:
+      - latest
+      - release/v*
     paths:
       - workspaces/libnpmversion/**
-    branches:
-      - release-next
-      - latest
-  workflow_dispatch:
+  schedule:
+    # "At 09:00 UTC (02:00 PT) on Monday" https://crontab.guru/#0_9_*_*_1
+    - cron: "0 9 * * 1"
 
 jobs:
   lint:
+    name: Lint
+    if: github.repository_owner == 'npm'
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
     steps:
-      # Checkout the npm/cli repo
-      - uses: actions/checkout@v2
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
-          cache: npm
-      - name: Install dependencies
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
         run: |
-          node ./bin/npm-cli.js install --ignore-scripts --no-audit
-          node ./bin/npm-cli.js rebuild
-      - name: Run linting
-        run: node ./bin/npm-cli.js run posttest -w workspaces/libnpmversion
-        env:
-          DEPLOY_VERSION: testing
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: npm
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
+      - name: Reset Deps
+        run: node scripts/resetdeps.js
+      - name: Lint
+        run: node . run lint --ignore-scripts -w libnpmversion
+      - name: Post Lint
+        run: node . run postlint --ignore-scripts -w libnpmversion
 
   test:
+    name: Test - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
+    if: github.repository_owner == 'npm'
     strategy:
       fail-fast: false
       matrix:
-        node-version: ['12.13.0', 12.x, '14.15.0', 14.x, '16.0.0', 16.x]
         platform:
-          - os: ubuntu-latest
+          - name: Linux
+            os: ubuntu-latest
             shell: bash
-          - os: macos-latest
+          - name: macOS
+            os: macos-latest
             shell: bash
-          - os: windows-latest
-            shell: bash
-          - os: windows-latest
-            shell: powershell
-
+          - name: Windows
+            os: windows-latest
+            shell: cmd
+        node-version:
+          - 14.17.0
+          - 14.x
+          - 16.13.0
+          - 16.x
+          - 18.0.0
+          - 18.x
     runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
         shell: ${{ matrix.platform.shell }}
-
     steps:
-      # Checkout the npm/cli repo
-    - uses: actions/checkout@v2
-
-      # Installs the specific version of Node.js
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: npm
-
-      # Run the installer script
-    - name: Install dependencies
-      run: |
-        node ./bin/npm-cli.js install --ignore-scripts --no-audit
-        node ./bin/npm-cli.js rebuild
-
-      # Run the tests, but not if we're just gonna do coveralls later anyway
-    - name: Run Tap tests
-      run: node ./bin/npm-cli.js run -w workspaces/libnpmversion --ignore-scripts test -- -t600 -Rbase -c
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
+      - name: Reset Deps
+        run: node scripts/resetdeps.js
+      - name: Add Problem Matcher
+        run: echo "::add-matcher::.github/matchers/tap.json"
+      - name: Test
+        run: node . test --ignore-scripts -w libnpmversion
+      - name: Check Git Status
+        run: node scripts/git-dirty.js

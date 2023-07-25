@@ -1,9 +1,9 @@
 const Arborist = require('../..')
 const { resolve, basename } = require('path')
 const { writeFileSync } = require('fs')
-const mkdirp = require('mkdirp')
+const { mkdir } = require('fs/promises')
+const { rmSync } = require('fs')
 const dir = resolve(__dirname, basename(__filename, '.js'))
-const rimraf = require('rimraf')
 
 // these are not arbitrary, the empty/full and no-* bits matter
 const folders = [
@@ -19,7 +19,7 @@ const folders = [
 
 const suite = async (suite, { registry, cache }) => {
   // setup two folders, one with a hidden lockfile, one without
-  await Promise.all(folders.map(f => mkdirp(f)))
+  await Promise.all(folders.map(f => mkdir(f, { recursive: true })))
 
   const dependencies = {
     'flow-parser': '0.114.0',
@@ -49,10 +49,9 @@ const suite = async (suite, { registry, cache }) => {
       version: '1.0.0',
       dependencies,
     }))
-    await arb.reify().then(() => {
-      // grab this so we can make setup faster
-      packageLock = require(resolve(path, 'package-lock.json'))
-    })
+    await arb.reify()
+    // grab this so we can make setup faster
+    packageLock = require(resolve(path, 'package-lock.json'))
   }
 
   // just reify them all fast.  we'll remove the bits we don't want later.
@@ -87,23 +86,22 @@ const suite = async (suite, { registry, cache }) => {
       defer: true,
       setup () {
         if (/no-lockfile/.test(path)) {
-          rimraf.sync(resolve(path, 'package-lock.json'))
+          rmSync(resolve(path, 'package-lock.json'), { recursive: true, force: true })
         }
         if (/empty/.test(path)) {
-          rimraf.sync(resolve(path, 'node_modules'))
+          rmSync(resolve(path, 'node_modules'), { recursive: true, force: true })
         }
         if (/no-cache/.test(path)) {
-          rimraf.sync(resolve(path, 'cache'))
+          rmSync(resolve(path, 'cache'), { recursive: true, force: true })
         }
       },
-      fn (d) {
-        new Arborist({
+      async fn (d) {
+        await new Arborist({
           path,
           registry,
           cache: /no-cache/.test(path) ? resolve(path, 'cache') : cache,
-        }).reify().then(() => d.resolve(), er => {
-          throw er
-        })
+        }).reify()
+        d.resolve()
       },
     })
   }

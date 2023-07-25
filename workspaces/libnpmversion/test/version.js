@@ -11,8 +11,8 @@ const gitMock = {
 const version = requireInject('../lib/version.js', {
   '../lib/enforce-clean.js': async () => true,
   '../lib/write-json.js': async (file, data) => actionLog.push(['write-json', file, data]),
-  '../lib/commit.js': async (version, opts) => actionLog.push(['commit', version, opts]),
-  '../lib/tag.js': async (version, opts) => actionLog.push(['tag', version, opts]),
+  '../lib/commit.js': async (v, opts) => actionLog.push(['commit', v, opts]),
+  '../lib/tag.js': async (v, opts) => actionLog.push(['tag', v, opts]),
   '../lib/retrieve-tag.js': async (opts) => {
     if (/\bnot-git$/.test(opts.path)) {
       throw new Error('not a git dir')

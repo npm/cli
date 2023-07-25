@@ -1,0 +1,32 @@
+{
+  "//@npmcli/template-oss": "This file is automatically added by @npmcli/template-oss. Do not edit.",
+  "problemMatcher": [
+    {
+      "owner": "tap",
+      "pattern": [
+        {
+          "regexp": "^\\s*not ok \\d+ - (.*)",
+          "message": 1
+        },
+        {
+          "regexp": "^\\s*---"
+        },
+        {
+          "regexp": "^\\s*at:"
+        },
+        {
+          "regexp": "^\\s*line:\\s*(\\d+)",
+          "line": 1
+        },
+        {
+          "regexp": "^\\s*column:\\s*(\\d+)",
+          "column": 1
+        },
+        {
+          "regexp": "^\\s*file:\\s*(.*)",
+          "file": 1
+        }
+      ]
+    }
+  ]
+}

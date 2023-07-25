@@ -1,166 +1,194 @@
-name: Node CI
+# This file is automatically added by @npmcli/template-oss. Do not edit.
+
+name: CI
 
 on:
+  workflow_dispatch:
   pull_request:
-    branches:
-      - '*'
+    paths-ignore:
+      - docs/**
+      - smoke-tests/**
+      - mock-globals/**
+      - mock-registry/**
+      - workspaces/**
   push:
     branches:
-      - release-next
       - latest
-  workflow_dispatch:
+      - release/v*
+    paths-ignore:
+      - docs/**
+      - smoke-tests/**
+      - mock-globals/**
+      - mock-registry/**
+      - workspaces/**
+  schedule:
+    # "At 09:00 UTC (02:00 PT) on Monday" https://crontab.guru/#0_9_*_*_1
+    - cron: "0 9 * * 1"
 
 jobs:
   lint:
+    name: Lint
+    if: github.repository_owner == 'npm'
     runs-on: ubuntu-latest
-    steps:
-      # Checkout the npm/cli repo
-      - uses: actions/checkout@v2
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14.x
-          cache: npm
-      - name: Install dependencies
-        run: |
-          node ./bin/npm-cli.js install --ignore-scripts --no-audit
-          node ./bin/npm-cli.js rebuild
-      - name: Run linting
-        run: node ./bin/npm-cli.js run posttest
-        env:
-          DEPLOY_VERSION: testing
-
-  check_docs:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14.x
-          cache: npm
-      - name: Install dependencies
-        run: |
-          node ./bin/npm-cli.js install --ignore-scripts --no-audit
-      - name: Rebuild the docs
-        run: make freshdocs
-      - name: Git should not be dirty
-        run: node scripts/git-dirty.js
-
-
-  licenses:
-    runs-on: ubuntu-latest
-    steps:
-      # Checkout the npm/cli repo
-      - uses: actions/checkout@v2
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14.x
-          cache: npm
-      - name: Install dependencies
-        run: |
-          node ./bin/npm-cli.js install --ignore-scripts --no-audit
-          node ./bin/npm-cli.js rebuild
-      - name: Validate licenses
-        run: node ./bin/npm-cli.js run licenses
-
-  smoke-tests:
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-        platform:
-          - os: ubuntu-latest
-            shell: bash
-          - os: macos-latest
-            shell: bash
-          - os: windows-latest
-            shell: bash
-          - os: windows-latest
-            shell: powershell
-
-    runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
-        shell: ${{ matrix.platform.shell }}
-
+        shell: bash
     steps:
-      # Checkout the npm/cli repo
-    - uses: actions/checkout@v2
-
-      # Installs the specific version of Node.js
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: npm
-
-      # Run the installer script
-    - name: Install dependencies
-      run: |
-        node ./bin/npm-cli.js install --ignore-scripts --no-audit
-        node ./bin/npm-cli.js rebuild
-
-      # Run the smoke tests
-    - name: Run Smoke tests
-      run: node ./bin/npm-cli.js run --ignore-scripts smoke-tests -- --no-check-coverage -t600 -Rbase -c
-      env:
-        DEPLOY_VERSION: testing
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: npm
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
+      - name: Reset Deps
+        run: node scripts/resetdeps.js
+      - name: Lint
+        run: node . run lint --ignore-scripts
+      - name: Post Lint
+        run: node . run postlint --ignore-scripts
 
   test:
+    name: Test - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
+    if: github.repository_owner == 'npm'
     strategy:
       fail-fast: false
       matrix:
-        node-version: ['12.13.0', 12.x, '14.15.0', 14.x, '16.0.0', 16.x]
         platform:
-          - os: ubuntu-latest
+          - name: Linux
+            os: ubuntu-latest
             shell: bash
-          - os: macos-latest
+          - name: macOS
+            os: macos-latest
             shell: bash
-          - os: windows-latest
-            shell: bash
-          - os: windows-latest
-            shell: powershell
-
+          - name: Windows
+            os: windows-latest
+            shell: cmd
+        node-version:
+          - 14.17.0
+          - 14.x
+          - 16.13.0
+          - 16.x
+          - 18.0.0
+          - 18.x
     runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
         shell: ${{ matrix.platform.shell }}
-
     steps:
-      # Checkout the npm/cli repo
-    - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
+      - name: Reset Deps
+        run: node scripts/resetdeps.js
+      - name: Add Problem Matcher
+        run: echo "::add-matcher::.github/matchers/tap.json"
+      - name: Test
+        run: node . test --ignore-scripts
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
 
-      # Installs the specific version of Node.js
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: npm
+  licenses:
+    name: Check Licenses
+    if: github.repository_owner == 'npm'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: npm
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
+      - name: Reset Deps
+        run: node scripts/resetdeps.js
+      - name: Check Licenses
+        run: node . run licenses
 
-      # Run the installer script
-    - name: Install dependencies
-      run: |
-        node ./bin/npm-cli.js install --ignore-scripts --no-audit
-        node ./bin/npm-cli.js rebuild
+  smoke-tests:
+    name: Smoke Tests
+    if: github.repository_owner == 'npm'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: npm
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
+      - name: Reset Deps
+        run: node scripts/resetdeps.js
+      - name: Run Smoke Tests
+        run: node . test -w smoke-tests --ignore-scripts
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
 
-      # Run the tests, but not if we're just gonna do coveralls later anyway
-    - name: Run Tap tests
-      if: matrix.platform.os != 'ubuntu-latest' || matrix.node-version != '16.x'
-      run: node ./bin/npm-cli.js run --ignore-scripts test -- -t600 -Rbase -c
-      env:
-        DEPLOY_VERSION: testing
-
-      # Run coverage check
-    - name: Run coverage report
-      if: matrix.platform.os == 'ubuntu-latest' && matrix.node-version == '16.x'
-      # turn off --check-coverage until 100%, so CI failure is relevant
-      run: node ./bin/npm-cli.js run check-coverage -- -t600 --no-check-coverage -Rbase -c
-      env:
-        DEPLOY_VERSION: testing
-        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_OPTIONAL_TOKEN }}
-
-    # - name: Run sudo tests on Linux
-    #   if: matrix.os == 'ubuntu-latest'
-    #   run: sudo PATH=$PATH $(which node) . test -- --coverage  --timeout 600
+  windows-shims:
+    name: Windows Shims Tests
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: cmd
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: npm
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
+      - name: Reset Deps
+        run: node scripts/resetdeps.js
+      - name: Setup WSL
+        uses: Vampire/setup-wsl@v2.0.1
+      - name: Setup Cygwin
+        uses: egor-tensin/setup-cygwin@v4.0.1
+        with:
+          install-dir: C:\cygwin64
+      - name: Run Windows Shims Tests
+        run: node . test --ignore-scripts -- test/bin/windows-shims.js --no-coverage
+        env:
+          WINDOWS_SHIMS_TEST: true
+      - name: Check Git Status
+        run: node scripts/git-dirty.js

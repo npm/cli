@@ -124,26 +124,26 @@ t.test('constructor', async (t) => {
     const fooRule = ruleset.get('foo')
     // these are both empty because the foo rule does not actually override
     // anything directly, it only carries child rules through
-    t.equal(fooRule.keySpec, '', 'keySpec is empty')
-    t.equal(fooRule.value, '', 'value is empty')
+    t.equal(fooRule.keySpec, '*', 'keySpec is *')
+    t.equal(fooRule.value, '*', 'value is *')
     const barRule = ruleset.get('bar')
-    t.equal(barRule.keySpec, '', 'keySpec is empty')
+    t.equal(barRule.keySpec, '*', 'keySpec is *')
     t.equal(barRule.value, '2.0.0', 'got the correct override for bar')
     const bazRule = ruleset.get('baz')
-    t.equal(bazRule.keySpec, '', 'keySpec is empty')
+    t.equal(bazRule.keySpec, '*', 'keySpec is *')
     t.equal(bazRule.value, '2.0.0', 'got the correct override for baz')
 
     const childRule = edgeRule.getEdgeRule({ name: 'bar', spec: '^1.0.0' })
     const childRuleSet = childRule.ruleset
     const childBazRule = childRuleSet.get('baz')
-    t.equal(childBazRule.keySpec, '', 'keySpec is empty')
+    t.equal(childBazRule.keySpec, '*', 'keySpec is *')
     t.equal(childBazRule.value, '3.0.0', 'got the correct override for nested baz')
     const childBarRule = childRuleSet.get('bar')
-    t.equal(childBarRule.keySpec, '', 'keySpec is empty')
+    t.equal(childBarRule.keySpec, '*', 'keySpec is *')
     t.equal(childBarRule.value, '2.0.0', 'got the correct override for nested bar')
     const childFooRule = childRuleSet.get('foo')
-    t.equal(childFooRule.keySpec, '', 'keySpec is empty')
-    t.equal(childFooRule.value, '', 'value is empty')
+    t.equal(childFooRule.keySpec, '*', 'keySpec is *')
+    t.equal(childFooRule.value, '*', 'value is *')
   })
 
   t.test('coerces empty string to *', async (t) => {
@@ -161,6 +161,114 @@ t.test('constructor', async (t) => {
     t.equal(edgeRule.value, '*', 'empty string was replaced with *')
 
     const barEdgeRule = overrides.getEdgeRule({ name: 'bar', spec: '^1' })
-    t.equal(barEdgeRule.value, '', 'when rule is omitted entirely value is an empty string')
+    t.equal(barEdgeRule.value, '*', 'when rule is omitted entirely value is *')
+  })
+
+  t.test('version specs work', async (t) => {
+    const overrides = new OverrideSet({
+      overrides: {
+        foo: {
+          bar: '$bar',
+        },
+        'baz@^1.0.0': {
+          'buzz@^1.0.0': '$buzz',
+        },
+      },
+    })
+
+    const fooEdgeRule = overrides.getEdgeRule({ name: 'foo', spec: '^1.0.0' })
+    const barEdgeRule = fooEdgeRule.getEdgeRule({ name: 'bar', spec: '1.0.0' })
+    t.equal(barEdgeRule.value, '$bar', 'got a rule back')
+
+    const bazEdgeRule = overrides.getEdgeRule({ name: 'baz', spec: '^1.0.0' })
+    const buzzEdgeRule = bazEdgeRule.getEdgeRule({ name: 'buzz', spec: '1.0.0' })
+    t.equal(buzzEdgeRule.value, '$buzz', 'got a rule back')
+  })
+
+  t.test('directory specs work', async (t) => {
+    const overrides = new OverrideSet({
+      overrides: {
+        foo: {
+          bar: '$bar',
+        },
+        'baz@^1.0.0': {
+          'buzz@^1.0.0': '$buzz',
+        },
+      },
+    })
+
+    const fooEdgeRule = overrides.getEdgeRule({ name: 'foo', spec: '^1.0.0' })
+    const barEdgeRule = fooEdgeRule.getEdgeRule({ name: 'bar', spec: 'file:../bar' })
+    t.equal(barEdgeRule.value, '$bar', 'got a rule back')
+
+    const bazEdgeRule = overrides.getEdgeRule({ name: 'baz', spec: '^1.0.0' })
+    const buzzEdgeRule = bazEdgeRule.getEdgeRule({ name: 'buzz', spec: 'file:../buzz' })
+    t.equal(buzzEdgeRule.value, '$buzz', 'got a rule back')
+  })
+
+  t.test('file specs work', async (t) => {
+    const overrides = new OverrideSet({
+      overrides: {
+        foo: {
+          bar: '$bar',
+        },
+        'baz@^1.0.0': {
+          'buzz@^1.0.0': '$buzz',
+        },
+      },
+    })
+
+    const fooEdgeRule = overrides.getEdgeRule({ name: 'foo', spec: '^1.0.0' })
+    const barEdgeRule = fooEdgeRule.getEdgeRule({ name: 'bar', spec: 'file:../bar.tgz' })
+    t.equal(barEdgeRule.value, '$bar', 'got a rule back')
+
+    const bazEdgeRule = overrides.getEdgeRule({ name: 'baz', spec: '^1.0.0' })
+    const buzzEdgeRule = bazEdgeRule.getEdgeRule({ name: 'buzz', spec: 'file:../buzz.tgz' })
+    t.equal(buzzEdgeRule.value, '$buzz', 'got a rule back')
+  })
+
+  t.test('alias specs work', async (t) => {
+    const overrides = new OverrideSet({
+      overrides: {
+        foo: {
+          bar: '$bar',
+        },
+        'baz@^1.0.0': {
+          'buzz@^1.0.0': '$buzz',
+        },
+      },
+    })
+
+    const fooEdgeRule = overrides.getEdgeRule({ name: 'foo', spec: '^1.0.0' })
+    const barEdgeRule = fooEdgeRule.getEdgeRule({ name: 'bar', spec: 'npm:bar2@^1.0.0' })
+    t.equal(barEdgeRule.value, '$bar', 'got a rule back')
+
+    const bazEdgeRule = overrides.getEdgeRule({ name: 'baz', spec: '^1.0.0' })
+    const buzzEdgeRule = bazEdgeRule.getEdgeRule({ name: 'buzz', spec: 'npm:buzz2@^1.0.0' })
+    t.equal(buzzEdgeRule.value, '$buzz', 'got a rule back')
+  })
+
+  t.test('git specs work', async (t) => {
+    const overrides = new OverrideSet({
+      overrides: {
+        foo: {
+          bar: '$bar',
+        },
+        'baz@^1.0.0': {
+          'buzz@^1.0.0': '$buzz',
+        },
+      },
+    })
+
+    const fooEdgeRule = overrides.getEdgeRule({ name: 'foo', spec: '^1.0.0' })
+    const barEdgeRule = fooEdgeRule.getEdgeRule({ name: 'bar', spec: 'github:foo/bar' })
+    t.equal(barEdgeRule.value, '$bar', 'got a rule back')
+
+    const bazEdgeRule = overrides.getEdgeRule({ name: 'baz', spec: '^1.0.0' })
+    const buzzEdgeRule = bazEdgeRule.getEdgeRule({ name: 'buzz', spec: 'github:baz/buzz#semver:^1.0.0' })
+    t.equal(buzzEdgeRule.value, '$buzz', 'got a rule back')
+
+    const outOfRangeRule = bazEdgeRule.getEdgeRule({ name: 'buzz', spec: 'github:baz/buzz#semver:^2.0.0' })
+    t.equal(outOfRangeRule.name, 'baz', 'no match - returned parent')
   })
 })

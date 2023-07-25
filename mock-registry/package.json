@@ -1,0 +1,56 @@
+{
+  "name": "@npmcli/mock-registry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "private": true,
+  "scripts": {
+    "test": "tap",
+    "lint": "eslint \"**/*.js\"",
+    "postlint": "template-oss-check",
+    "template-oss-apply": "template-oss-apply --force",
+    "lintfix": "node .. run lint -- --fix",
+    "snap": "tap",
+    "posttest": "node .. run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/cli.git",
+    "directory": "mock-registry"
+  },
+  "keywords": [],
+  "author": "GitHub Inc.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/npm/cli/issues"
+  },
+  "homepage": "https://github.com/npm/cli#readme",
+  "files": [
+    "bin/",
+    "lib/"
+  ],
+  "engines": {
+    "node": "^14.17.0 || ^16.13.0 || >=18.0.0"
+  },
+  "templateOSS": {
+    "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
+    "version": "4.18.0"
+  },
+  "tap": {
+    "no-coverage": true,
+    "nyc-arg": [
+      "--exclude",
+      "tap-snapshots/**"
+    ]
+  },
+  "devDependencies": {
+    "@npmcli/arborist": "^6.1.1",
+    "@npmcli/eslint-config": "^4.0.1",
+    "@npmcli/template-oss": "4.18.0",
+    "json-stringify-safe": "^5.0.1",
+    "nock": "^13.3.0",
+    "npm-package-arg": "^10.1.0",
+    "pacote": "^15.0.8",
+    "tap": "^16.3.4"
+  }
+}

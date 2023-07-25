@@ -25,13 +25,16 @@ module.exports = t => {
       })
     },
     "b": {
-      "file.js": "",
+      "create-file.js": "require('fs').writeFileSync('file.js', '')\n",
       "package.json": JSON.stringify({
         "name": "b",
         "version": "1.0.0",
         "files": [
           "file.js"
         ],
+        "scripts": {
+          "preinstall": "node create-file.js"
+        },
         "bin": "file.js"
       })
     }

@@ -1,4 +1,0 @@
-[build]
-  base = "docs"
-  command = "npm run build"
-  publish = "output"

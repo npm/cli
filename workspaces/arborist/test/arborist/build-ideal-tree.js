@@ -11,7 +11,7 @@ const Arborist = require('../..')
 const fixtures = resolve(__dirname, '../fixtures')
 // load the symbolic links that we depend on
 require(fixtures)
-const { start, stop, registry, auditResponse } = require('../fixtures/registry-mocks/server.js')
+const { start, stop, registry, auditResponse } = require('../fixtures/server.js')
 const npa = require('npm-package-arg')
 const fs = require('fs')
 const nock = require('nock')
@@ -364,7 +364,7 @@ t.test('dedupe example - deduped because preferDedupe=true', t => {
 t.test('dedupe example - nested because legacyBundling=true', t => {
   const path = resolve(fixtures, 'dedupe-tests')
   return t.resolveMatchSnapshot(printIdeal(path, {
-    legacyBundling: true,
+    installStrategy: 'nested',
     preferDedupe: true,
   }))
 })
@@ -607,7 +607,7 @@ t.test('link dep within node_modules and outside root', t => {
 })
 
 t.test('global style', t => t.resolveMatchSnapshot(printIdeal(t.testdir(), {
-  globalStyle: true,
+  installStrategy: 'shallow',
   add: ['rimraf'],
 })))
 
@@ -673,7 +673,7 @@ t.test('empty update should not trigger old lockfile', async t => {
     'package-lock.json': JSON.stringify({
       name: 'empty-update',
       version: '1.0.0',
-      lockfileVersion: 2,
+      lockfileVersion: 3,
       requires: true,
       packages: {
         '': {
@@ -867,6 +867,52 @@ t.test('workspaces', t => {
       path,
       add: [
         'workspace-b',
+      ],
+    })
+
+    // just assert that the buildIdealTree call resolves, if there's a
+    // problem here it will reject because of nock disabling requests
+    await t.resolves(tree)
+
+    t.matchSnapshot(printTree(await tree))
+  })
+
+  t.test('should allow cyclic peer dependencies between workspaces and packages from a repository', async t => {
+    generateNocks(t, {
+      foo: {
+        versions: ['1.0.0'],
+        peerDependencies: ['workspace-a'],
+      },
+    })
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        dependencies: {
+          'workspace-a': '*',
+        },
+        workspaces: ['workspace-a'],
+      }),
+      'workspace-a': {
+        'package.json': JSON.stringify({
+          name: 'workspace-a',
+          version: '1.0.0',
+          dependencies: {
+            foo: '>=1.0.0',
+          },
+        }),
+      },
+    })
+
+    const arb = new Arborist({
+      ...OPT,
+      path,
+      workspaces: ['workspace-a'],
+    })
+
+    const tree = arb.buildIdealTree({
+      path,
+      add: [
+        'foo',
       ],
     })
 
@@ -1080,7 +1126,7 @@ t.test('pathologically nested dependency cycle', async t => {
     resolve(fixtures, 'pathological-dep-nesting-cycle')))
 })
 
-t.test('resolve file deps from cwd', t => {
+t.test('resolve file deps from cwd', async t => {
   const cwd = process.cwd()
   t.teardown(() => process.chdir(cwd))
   const path = t.testdir({
@@ -1094,17 +1140,16 @@ t.test('resolve file deps from cwd', t => {
     path: resolve(path, 'global'),
     ...OPT,
   })
-  return arb.buildIdealTree({
+  const tree = await arb.buildIdealTree({
     path: `${path}/local`,
     add: ['child-1.2.3.tgz'],
     global: true,
-  }).then(tree => {
-    const resolved = `file:${resolve(fixturedir, 'child-1.2.3.tgz')}`
-    t.equal(normalizePath(tree.children.get('child').resolved), normalizePath(resolved))
   })
+  const resolved = `file:${resolve(fixturedir, 'child-1.2.3.tgz')}`
+  t.equal(normalizePath(tree.children.get('child').resolved), normalizePath(resolved))
 })
 
-t.test('resolve links in global mode', t => {
+t.test('resolve links in global mode', async t => {
   const cwd = process.cwd()
   t.teardown(() => process.chdir(cwd))
   const path = t.testdir({
@@ -1127,18 +1172,17 @@ t.test('resolve links in global mode', t => {
     global: true,
     path: resolve(path, 'global'),
   })
-  return arb.buildIdealTree({
+  const tree = await arb.buildIdealTree({
     add: ['file:../../linked-dep'],
     global: true,
-  }).then(tree => {
-    const resolved = 'file:../../linked-dep'
-    t.equal(tree.children.get('linked-dep').resolved, resolved)
   })
+  const resolved = 'file:../../linked-dep'
+  t.equal(tree.children.get('linked-dep').resolved, resolved)
 })
 
 t.test('dont get confused if root matches duped metadep', async t => {
   const path = resolve(fixtures, 'test-root-matches-metadep')
-  const arb = new Arborist({ path, ...OPT })
+  const arb = new Arborist({ path, installStrategy: 'hoisted', ...OPT })
   const tree = await arb.buildIdealTree()
   t.matchSnapshot(printTree(tree))
 })
@@ -1153,6 +1197,26 @@ t.test('inflate an ancient lockfile by hitting the registry', async t => {
     [
       'warn',
       'ancient lockfile',
+      `
+The package-lock.json file was created with an old version of npm,
+so supplemental metadata must be fetched from the registry.
+
+This is a one-time fix-up, please be patient...
+`,
+    ],
+  ])
+})
+
+t.test('inflating a link node in an old lockfile skips registry', async t => {
+  const checkLogs = warningTracker()
+  const path = resolve(fixtures, 'old-lock-with-link')
+  const arb = new Arborist({ path, ...OPT, registry: 'http://invalid.host' })
+  const tree = await arb.buildIdealTree()
+  t.matchSnapshot(printTree(tree))
+  t.strictSame(checkLogs(), [
+    [
+      'warn',
+      'old lockfile',
       `
 The package-lock.json file was created with an old version of npm,
 so supplemental metadata must be fetched from the registry.
@@ -2193,10 +2257,10 @@ t.test('update global', async t => {
   })
 
   t.matchSnapshot(await printIdeal(path, { global: true, update: ['abbrev'] }),
-    'updating missing dep should have no effect')
+    'updating missing dep should have no effect, but fix the invalid node')
 
   t.matchSnapshot(await printIdeal(path, { global: true, update: ['wrappy'] }),
-    'updating sub-dep has no effect')
+    'updating sub-dep has no effect, but fixes the invalid node')
 
   const invalidArgs = [
     'once@1.4.0',
@@ -2214,7 +2278,7 @@ t.test('update global', async t => {
   }
 
   t.matchSnapshot(await printIdeal(path, { global: true, update: ['once'] }),
-    'update a single dep')
+    'update a single dep, also fixes the invalid node')
   t.matchSnapshot(await printIdeal(path, { global: true, update: true }),
     'update all the deps')
 })
@@ -2654,6 +2718,19 @@ t.test('add packages to workspaces, not root', async t => {
   t.equal(rmTree.children.get('b').target.edgesOut.get('abbrev'), undefined)
   t.match(rmTree.children.get('c').target.edgesOut.get('abbrev'), { spec: '' })
   t.matchSnapshot(printTree(rmTree), 'tree with abbrev removed from a and b')
+})
+
+t.test('add one workspace to another', async t => {
+  const path = resolve(__dirname, '../fixtures/workspaces-not-root')
+  const packageA = resolve(path, 'packages/a')
+
+  const addTree = await buildIdeal(path, {
+    add: [packageA],
+    workspaces: ['c'],
+  })
+  const c = addTree.children.get('c').target
+  t.match(c.edgesOut.get('a'), { spec: 'file:../a' })
+  t.matchSnapshot(printTree(addTree), 'tree with workspace a added to workspace c')
 })
 
 t.test('workspace error handling', async t => {

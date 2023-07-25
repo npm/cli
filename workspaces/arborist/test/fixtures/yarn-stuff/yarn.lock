@@ -3,6 +3,9 @@
 
 
 abbrev@^1.1.1, "pinned@npm:abbrev@1.1.1", "reg@npm:abbrev@^1.1.1":
+  meta: "this is not a priority entry"
+  alpha: "this is not a priority entry either"
+  beta: "this is not a priority entry either 2"
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
   integrity sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==

@@ -1,7 +1,7 @@
 const t = require('tap')
 const Arborist = require('../../lib/arborist/index.js')
 
-const { start, stop, registry } = require('../fixtures/registry-mocks/server.js')
+const { start, stop, registry } = require('../fixtures/server.js')
 t.before(start)
 t.teardown(stop)
 

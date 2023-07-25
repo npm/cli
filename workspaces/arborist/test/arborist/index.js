@@ -213,7 +213,7 @@ t.test('excludeSet includes nonworkspace metadeps', async t => {
     spec: 'file:pkgs/b',
   })
 
-  const arb = new Arborist()
+  const arb = new Arborist({})
   const filter = arb.excludeWorkspacesDependencySet(tree)
 
   t.equal(filter.size, 3)
@@ -235,4 +235,21 @@ t.test('lockfileVersion config validation', async t => {
   t.throws(() => new Arborist({ lockfileVersion: 'banana' }), {
     message: 'Invalid lockfileVersion config: banana',
   })
+})
+
+t.test('valid replaceRegistryHost values', t => {
+  t.equal(new Arborist({ replaceRegistryHost: 'registry.garbage.com' }).options.replaceRegistryHost, 'registry.garbage.com')
+  t.equal(new Arborist({ replaceRegistryHost: 'npmjs' }).options.replaceRegistryHost, 'registry.npmjs.org')
+  t.equal(new Arborist({ replaceRegistryHost: undefined }).options.replaceRegistryHost, 'registry.npmjs.org')
+  t.equal(new Arborist({ replaceRegistryHost: 'always' }).options.replaceRegistryHost, 'always')
+  t.equal(new Arborist({ replaceRegistryHost: 'never' }).options.replaceRegistryHost, 'never')
+  t.end()
+})
+
+t.test('valid global/installStrategy values', t => {
+  t.equal(new Arborist({ global: true }).options.installStrategy, 'shallow')
+  t.equal(new Arborist({ global: false }).options.installStrategy, 'hoisted')
+  t.equal(new Arborist({}).options.installStrategy, 'hoisted')
+  t.equal(new Arborist({ installStrategy: 'hoisted' }).options.installStrategy, 'hoisted')
+  t.end()
 })

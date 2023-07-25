@@ -1,20 +1,14 @@
 const t = require('tap')
-const spawk = require('spawk')
+const tspawk = require('../../fixtures/tspawk')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
 
-spawk.preventUnmatched()
-t.teardown(() => {
-  spawk.unload()
-})
+const spawk = tspawk(t)
 
-// TODO this ... smells.  npm "script-shell" config mentions defaults but those
-// are handled by run-script, not npm.  So for now we have to tie tests to some
-// pretty specific internals of runScript
-const makeSpawnArgs = require('@npmcli/run-script/lib/make-spawn-args.js')
+const isCmdRe = /(?:^|\\)cmd(?:\.exe)?$/i
 
 t.test('should run test script from package.json', async t => {
   const { npm } = await loadMockNpm(t, {
-    testdir: {
+    prefixDir: {
       'package.json': JSON.stringify({
         name: 'x',
         version: '1.2.3',
@@ -25,13 +19,15 @@ t.test('should run test script from package.json', async t => {
     },
     config: {
       loglevel: 'silent',
+      'script-shell': process.platform === 'win32' ? process.env.COMSPEC : 'sh',
     },
   })
-  const [scriptShell] = makeSpawnArgs({ path: npm.prefix })
-  const script = spawk.spawn(scriptShell, (args) => {
-    t.ok(args.includes('node ./test-test.js "foo"'), 'ran test script with extra args')
-    return true
-  })
+
+  const scriptShell = npm.config.get('script-shell')
+  const scriptArgs = isCmdRe.test(scriptShell)
+    ? ['/d', '/s', '/c', 'node ./test-test.js foo']
+    : ['-c', 'node ./test-test.js foo']
+  const script = spawk.spawn(scriptShell, scriptArgs)
   await npm.exec('test', ['foo'])
   t.ok(script.called, 'script ran')
 })

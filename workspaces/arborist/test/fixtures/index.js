@@ -1,7 +1,8 @@
-const mkdirp = require('mkdirp').sync
+const { mkdirSync } = require('fs')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 const { unlinkSync, symlinkSync, readFileSync, writeFileSync } = require('fs')
 const { relative, resolve, dirname } = require('path')
+const mkdirp = (p) => mkdirSync(p, { recursive: true })
 
 const fixtures = __dirname
 
@@ -43,9 +44,9 @@ const symlinks = {
     '../../..',
   'other/node_modules/glob':
     '../../root/node_modules/@scope/x/node_modules/glob',
-  'linkedroot': 'root',
+  linkedroot: 'root',
   'deep/root': '../root',
-  'deeproot': 'deep',
+  deeproot: 'deep',
   'badlink/node_modules/foo': 'foo',
   'badlink/node_modules/bar': 'baz',
   'testing-peer-deps-link': 'testing-peer-deps',
@@ -141,9 +142,10 @@ const symlinks = {
 const cleanup = () => Object.keys(symlinks).forEach(s => {
   try {
     unlinkSync(resolve(__dirname, s))
-  } catch (er) {}
+  } catch {
+    // ok if cleanup fails
+  }
 })
-
 
 const setup = () => {
   const links = []
@@ -154,22 +156,26 @@ const setup = () => {
     const rel = relative(resolve(__dirname), p)
     links.push('/' + rel.replace(/\\/g, '/'))
 
-    // it's fine for this to throw, since it typically means
-    // that the links already exist, and that's fine.
     try {
       symlinkSync(symlinks[s], p, 'junction')
       didSomething = true
-    } catch (_) {}
+    } catch {
+      // it's fine for this to throw, since it typically means
+      // that the links already exist, and that's fine.
+    }
   })
   if (didSomething) {
+    const start = '### BEGIN IGNORED SYMLINKS ###'
+    const end = '### END IGNORED SYMLINKS ###'
     const gifile = resolve(__dirname, './.gitignore')
     const gitignore = readFileSync(gifile, 'utf8')
-      .replace(/### BEGIN IGNORED SYMLINKS ###[\s\S]*### END IGNORED SYMLINKS ###/,
-      `### BEGIN IGNORED SYMLINKS ###
-### this list is generated automatically, do not edit directly
-### update it by running \`node test/fixtures/index.js\`
-${links.sort(localeCompare).join('\n')}
-### END IGNORED SYMLINKS ###`)
+      .replace(new RegExp(`${start}[\\s\\S]*${end}`), [
+        start,
+        '### this list is generated automatically, do not edit directly',
+        '### update it by running `node test/fixtures/index.js`',
+        ...links.sort(localeCompare),
+        end,
+      ].join('\n'))
     writeFileSync(gifile, gitignore)
   }
 }
@@ -177,10 +183,11 @@ ${links.sort(localeCompare).join('\n')}
 const doCleanup = process.argv[2] === 'cleanup' && require.main === module ||
   process.env.ARBORIST_FIXTURE_CLEANUP === '1'
 
-if (doCleanup)
+if (doCleanup) {
   cleanup()
-else
+} else {
   setup()
+}
 
 module.exports = {
   roots,

@@ -1,6 +1,10 @@
 'use strict'
 
 const t = require('tap')
+
+const tspawk = require('./fixtures/tspawk.js')
+const spawk = tspawk(t)
+
 const fs = require('fs')
 const path = require('path')
 const pack = require('../lib/index.js')
@@ -37,8 +41,8 @@ t.test('writes tarball to file when dryRun === false', async t => {
       name: 'my-cool-pkg',
       version: '1.0.0',
       scripts: {
-        prepack: 'touch prepack',
-        postpack: 'touch postpack',
+        prepack: 'touch prepack && sleep 1',
+        postpack: 'sleep 1 && touch postpack',
       },
     }, null, 2),
   })
@@ -127,4 +131,70 @@ t.test('packs from registry spec', async t => {
 
   const tarball = await pack(spec, { ...OPTS })
   t.ok(tarball)
+})
+
+t.test('runs scripts in foreground when foregroundScripts === true', async t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-cool-pkg',
+      version: '1.0.0',
+      scripts: {
+        prepack: 'touch prepack',
+      },
+    }, null, 2),
+  })
+
+  const cwd = process.cwd()
+  process.chdir(testDir)
+
+  const shell = process.platform === 'win32'
+    ? process.env.COMSPEC
+    : 'sh'
+
+  const args = process.platform === 'win32'
+    ? ['/d', '/s', '/c', 'touch prepack']
+    : ['-c', 'touch prepack']
+
+  const prepack = spawk.spawn(shell, args)
+
+  await pack('file:.', {
+    packDestination: testDir,
+    foregroundScripts: true,
+  })
+
+  t.ok(prepack.called)
+
+  t.teardown(async () => {
+    process.chdir(cwd)
+  })
+})
+
+t.test('doesn\'t run scripts when ignoreScripts === true', async t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-cool-pkg',
+      version: '1.0.0',
+      scripts: {
+        prepack: 'touch prepack',
+      },
+    }, null, 2),
+  })
+
+  const cwd = process.cwd()
+  process.chdir(testDir)
+
+  const prepack = spawk.spawn('sh', ['-c', 'touch prepack'])
+
+  await pack('file:.', {
+    packDestination: testDir,
+    foregroundScripts: true,
+    ignoreScripts: true,
+  })
+
+  t.ok(!prepack.called)
+
+  t.teardown(async () => {
+    process.chdir(cwd)
+    spawk.clean()
+  })
 })

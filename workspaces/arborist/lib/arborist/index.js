@@ -37,11 +37,12 @@ const mixins = [
   require('./deduper.js'),
   require('./audit.js'),
   require('./build-ideal-tree.js'),
-  require('./load-workspaces.js'),
+  require('./set-workspaces.js'),
   require('./load-actual.js'),
   require('./load-virtual.js'),
   require('./rebuild.js'),
   require('./reify.js'),
+  require('./isolated-reifier.js'),
 ]
 
 const _workspacesEnabled = Symbol.for('workspacesEnabled')
@@ -70,13 +71,24 @@ class Arborist extends Base {
     this.options = {
       nodeVersion: process.version,
       ...options,
+      Arborist: this.constructor,
       path: options.path || '.',
       cache: options.cache || `${homedir()}/.npm/_cacache`,
       packumentCache: options.packumentCache || new Map(),
       workspacesEnabled: options.workspacesEnabled !== false,
-      replaceRegistryHost: options.replaceRegistryHost !== false,
+$ gpg --list-secret-keys --keyid-format=long
+/Users/hubot/.gnupg/secring.gpg
+------------------------------------
+sec   4096R/3AA5C34371567BD2 2016-03-10 [expires: 2017-03-10]
+uid                          Hubot <hubot@example.com>
+ssb   4096R/4BB6D45482678BE3 2016-03-10
+
       lockfileVersion: lockfileVersion(options.lockfileVersion),
+      installStrategy: options.global ? 'shallow' : (options.installStrategy ? options.installStrategy : 'hoisted'),
     }
+    this.replaceRegistryHost = this.options.replaceRegistryHost =
+      (!this.options.replaceRegistryHost || this.options.replaceRegistryHost === 'npmjs') ?
+        'registry.npmjs.org' : this.options.replaceRegistryHost
 
     this[_workspacesEnabled] = this.options.workspacesEnabled
 
@@ -131,7 +143,7 @@ class Arborist extends Base {
     return wsDepSet
   }
 
-  // returns a set of root dependencies, excluding depdencies that are
+  // returns a set of root dependencies, excluding dependencies that are
   // exclusively workspace dependencies
   excludeWorkspacesDependencySet (tree) {
     const rootDepSet = new Set()

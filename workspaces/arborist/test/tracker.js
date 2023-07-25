@@ -1,14 +1,18 @@
 const Tracker = require('../lib/tracker.js')(class {})
 const t = require('tap')
 
-t.test('no npmlog', t => {
-  const tr = new Tracker()
+t.test('with progress', t => {
+  const tr = new Tracker({ progress: true })
   t.doesNotThrow(() => {
     tr.addTracker('testTracker')
   })
   t.doesNotThrow(() => {
     tr.finishTracker('testTracker')
   })
+
+  t.throws(() => {
+    tr.addTracker()
+  }, Error, `Tracker can't be null or undefined`)
 
   t.end()
 })

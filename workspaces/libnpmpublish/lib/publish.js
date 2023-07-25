@@ -1,9 +1,15 @@
 const { fixer } = require('normalize-package-data')
 const npmFetch = require('npm-registry-fetch')
 const npa = require('npm-package-arg')
+const log = require('proc-log')
 const semver = require('semver')
 const { URL } = require('url')
 const ssri = require('ssri')
+const ciInfo = require('ci-info')
+
+const { generateProvenance, verifyProvenance } = require('./provenance')
+
+const TLOG_BASE_URL = 'https://search.sigstore.dev/'
 
 const publish = async (manifest, tarballData, opts) => {
   if (manifest.private) {
@@ -17,10 +23,9 @@ Remove the 'private' field from the package.json to publish it.`),
   // spec is used to pick the appropriate registry/auth combo
   const spec = npa.resolve(manifest.name, manifest.version)
   opts = {
-    defaultTag: 'latest',
-    // if scoped, restricted by default
-    access: spec.scope ? 'restricted' : 'public',
+    access: 'public',
     algorithms: ['sha512'],
+    defaultTag: 'latest',
     ...opts,
     spec,
   }
@@ -37,15 +42,25 @@ Remove the 'private' field from the package.json to publish it.`),
     )
   }
 
-  const metadata = buildMetadata(reg, pubManifest, tarballData, opts)
+  const { metadata, transparencyLogUrl } = await buildMetadata(
+    reg,
+    pubManifest,
+    tarballData,
+    spec,
+    opts
+  )
 
   try {
-    return await npmFetch(spec.escapedName, {
+    const res = await npmFetch(spec.escapedName, {
       ...opts,
       method: 'PUT',
       body: metadata,
       ignoreBody: true,
     })
+    if (transparencyLogUrl) {
+      res.transparencyLogUrl = transparencyLogUrl
+    }
+    return res
   } catch (err) {
     if (err.code !== 'E409') {
       throw err
@@ -59,12 +74,17 @@ Remove the 'private' field from the package.json to publish it.`),
       query: { write: true },
     })
     const newMetadata = patchMetadata(current, metadata)
-    return npmFetch(spec.escapedName, {
+    const res = await npmFetch(spec.escapedName, {
       ...opts,
       method: 'PUT',
       body: newMetadata,
       ignoreBody: true,
     })
+    /* istanbul ignore next */
+    if (transparencyLogUrl) {
+      res.transparencyLogUrl = transparencyLogUrl
+    }
+    return res
   }
 }
 
@@ -90,8 +110,8 @@ const patchManifest = (_manifest, opts) => {
   return manifest
 }
 
-const buildMetadata = (registry, manifest, tarballData, opts) => {
-  const { access, defaultTag, algorithms } = opts
+const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
+  const { access, defaultTag, algorithms, provenance, provenanceFile } = opts
   const root = {
     _id: manifest.name,
     name: manifest.name,
@@ -106,6 +126,7 @@ const buildMetadata = (registry, manifest, tarballData, opts) => {
   root['dist-tags'][tag] = manifest.version
 
   const tarballName = `${manifest.name}-${manifest.version}.tgz`
+  const provenanceBundleName = `${manifest.name}-${manifest.version}.sigstore`
   const tarballURI = `${manifest.name}/-/${tarballName}`
   const integrity = ssri.fromData(tarballData, {
     algorithms: [...new Set(['sha1'].concat(algorithms))],
@@ -131,7 +152,47 @@ const buildMetadata = (registry, manifest, tarballData, opts) => {
     length: tarballData.length,
   }
 
-  return root
+  // Handle case where --provenance flag was set to true
+  let transparencyLogUrl
+  if (provenance === true || provenanceFile) {
+    let provenanceBundle
+    const subject = {
+      name: npa.toPurl(spec),
+      digest: { sha512: integrity.sha512[0].hexDigest() },
+    }
+
+    if (provenance === true) {
+      await ensureProvenanceGeneration(registry, spec, opts)
+      provenanceBundle = await generateProvenance([subject], opts)
+
+      /* eslint-disable-next-line max-len */
+      log.notice('publish', `Signed provenance statement with source and build information from ${ciInfo.name}`)
+
+      const tlogEntry = provenanceBundle?.verificationMaterial?.tlogEntries[0]
+      /* istanbul ignore else */
+      if (tlogEntry) {
+        transparencyLogUrl = `${TLOG_BASE_URL}?logIndex=${tlogEntry.logIndex}`
+        log.notice(
+          'publish',
+          `Provenance statement published to transparency log: ${transparencyLogUrl}`
+        )
+      }
+    } else {
+      provenanceBundle = await verifyProvenance(subject, provenanceFile)
+    }
+
+    const serializedBundle = JSON.stringify(provenanceBundle)
+    root._attachments[provenanceBundleName] = {
+      content_type: provenanceBundle.mediaType,
+      data: serializedBundle,
+      length: serializedBundle.length,
+    }
+  }
+
+  return {
+    metadata: root,
+    transparencyLogUrl,
+  }
 }
 
 const patchMetadata = (current, newData) => {
@@ -177,6 +238,59 @@ const patchMetadata = (current, newData) => {
   }
 
   return current
+}
+
+// Check that all the prereqs are met for provenance generation
+const ensureProvenanceGeneration = async (registry, spec, opts) => {
+  if (ciInfo.GITHUB_ACTIONS) {
+    // Ensure that the GHA OIDC token is available
+    if (!process.env.ACTIONS_ID_TOKEN_REQUEST_URL) {
+      throw Object.assign(
+        /* eslint-disable-next-line max-len */
+        new Error('Provenance generation in GitHub Actions requires "write" access to the "id-token" permission'),
+        { code: 'EUSAGE' }
+      )
+    }
+  } else if (ciInfo.GITLAB) {
+    // Ensure that the Sigstore OIDC token is available
+    if (!process.env.SIGSTORE_ID_TOKEN) {
+      throw Object.assign(
+        /* eslint-disable-next-line max-len */
+        new Error('Provenance generation in GitLab CI requires "SIGSTORE_ID_TOKEN" with "sigstore" audience to be present in "id_tokens". For more info see:\nhttps://docs.gitlab.com/ee/ci/secrets/id_token_authentication.html'),
+        { code: 'EUSAGE' }
+      )
+    }
+  } else {
+    throw Object.assign(
+      new Error('Automatic provenance generation not supported for provider: ' + ciInfo.name),
+      { code: 'EUSAGE' }
+    )
+  }
+
+  // Some registries (e.g. GH packages) require auth to check visibility,
+  // and always return 404 when no auth is supplied. In this case we assume
+  // the package is always private and require `--access public` to publish
+  // with provenance.
+  let visibility = { public: false }
+  if (opts.access !== 'public') {
+    try {
+      const res = await npmFetch
+        .json(`${registry}/-/package/${spec.escapedName}/visibility`, opts)
+      visibility = res
+    } catch (err) {
+      if (err.code !== 'E404') {
+        throw err
+      }
+    }
+  }
+
+  if (!visibility.public && opts.provenance === true && opts.access !== 'public') {
+    throw Object.assign(
+      /* eslint-disable-next-line max-len */
+      new Error("Can't generate provenance for new or private package, you must set `access` to public."),
+      { code: 'EUSAGE' }
+    )
+  }
 }
 
 module.exports = publish

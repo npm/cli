@@ -1,0 +1,52 @@
+{
+  "name": "@npmcli/smoke-tests",
+  "description": "The npm cli smoke tests",
+  "version": "1.0.1",
+  "private": true,
+  "scripts": {
+    "lint": "eslint \"**/*.js\"",
+    "postlint": "template-oss-check",
+    "template-oss-apply": "template-oss-apply --force",
+    "lintfix": "node .. run lint -- --fix",
+    "snap": "tap",
+    "test": "tap",
+    "posttest": "node .. run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/cli.git",
+    "directory": "smoke-tests"
+  },
+  "devDependencies": {
+    "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/mock-registry": "^1.0.0",
+    "@npmcli/promise-spawn": "^6.0.2",
+    "@npmcli/template-oss": "4.18.0",
+    "http-proxy": "^1.18.1",
+    "tap": "^16.3.4",
+    "which": "^3.0.0"
+  },
+  "author": "GitHub Inc.",
+  "license": "ISC",
+  "templateOSS": {
+    "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
+    "version": "4.18.0",
+    "content": "../scripts/template-oss/index.js"
+  },
+  "tap": {
+    "no-coverage": true,
+    "timeout": 600,
+    "test-ignore": "fixtures/*",
+    "nyc-arg": [
+      "--exclude",
+      "tap-snapshots/**"
+    ]
+  },
+  "files": [
+    "bin/",
+    "lib/"
+  ],
+  "engines": {
+    "node": "^14.17.0 || ^16.13.0 || >=18.0.0"
+  }
+}

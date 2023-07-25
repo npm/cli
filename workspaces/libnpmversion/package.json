@@ -1,50 +1,54 @@
 {
   "name": "libnpmversion",
-  "version": "3.0.0",
+  "version": "4.0.2",
   "main": "lib/index.js",
   "files": [
-    "bin",
-    "lib"
+    "bin/",
+    "lib/"
   ],
   "description": "library to do the things that 'npm version' does",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/npm/libnpmversion"
+    "url": "https://github.com/npm/cli.git",
+    "directory": "workspaces/libnpmversion"
   },
   "author": "GitHub Inc.",
   "license": "ISC",
   "scripts": {
-    "lint": "eslint '**/*.js'",
+    "lint": "eslint \"**/*.js\"",
     "test": "tap",
-    "posttest": "npm run lint",
+    "posttest": "node ../.. run lint",
     "snap": "tap",
-    "preversion": "npm test",
-    "postversion": "npm publish",
-    "prepublishOnly": "git push origin --follow-tags",
-    "postlint": "npm-template-check",
-    "lintfix": "npm run lint -- --fix"
+    "postlint": "template-oss-check",
+    "lintfix": "node ../.. run lint -- --fix",
+    "template-oss-apply": "template-oss-apply --force"
   },
   "tap": {
     "coverage-map": "map.js",
-    "check-coverage": true
+    "nyc-arg": [
+      "--exclude",
+      "tap-snapshots/**"
+    ]
   },
   "devDependencies": {
-    "@npmcli/template-oss": "^2.4.2",
+    "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/template-oss": "4.18.0",
     "require-inject": "^1.4.4",
-    "tap": "^15"
+    "tap": "^16.3.4"
   },
   "dependencies": {
-    "@npmcli/git": "^3.0.0",
-    "@npmcli/run-script": "^3.0.0",
-    "json-parse-even-better-errors": "^2.3.1",
-    "proc-log": "^2.0.0",
-    "semver": "^7.3.5",
-    "stringify-package": "^1.0.1"
+    "@npmcli/git": "^4.0.1",
+    "@npmcli/run-script": "^6.0.0",
+    "json-parse-even-better-errors": "^3.0.0",
+    "proc-log": "^3.0.0",
+    "semver": "^7.3.7"
   },
   "engines": {
-    "node": "^12.13.0 || ^14.15.0 || >=16"
+    "node": "^14.17.0 || ^16.13.0 || >=18.0.0"
   },
   "templateOSS": {
-    "version": "2.4.3"
+    "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
+    "version": "4.18.0",
+    "content": "../../scripts/template-oss/index.js"
   }
 }

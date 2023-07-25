@@ -20,7 +20,7 @@ const depValid = (child, requested, requestor) => {
       // file: deps that depend on other files/dirs, we must resolve the
       // location based on the *requestor* file/dir, not where it ends up.
       // '' is equivalent to '*'
-      requested = npa.resolve(child.name, requested || '*', fromPath(requestor))
+      requested = npa.resolve(child.name, requested || '*', fromPath(requestor, requestor.edgesOut.get(child.name)))
     } catch (er) {
       // Not invalid because the child doesn't match, but because
       // the spec itself is not supported.  Nothing would match,
@@ -53,9 +53,7 @@ const depValid = (child, requested, requestor) => {
       return semver.satisfies(child.version, requested.fetchSpec, true)
 
     case 'directory':
-      // directory must be a link to the specified folder
-      return !!child.isLink &&
-        relative(child.realpath, requested.fetchSpec) === ''
+      return linkValid(child, requested, requestor)
 
     case 'file':
       return tarballValid(child, requested, requestor)
@@ -86,15 +84,21 @@ const depValid = (child, requested, requestor) => {
       const reqHost = requested.hosted
       const reqCommit = /^[a-fA-F0-9]{40}$/.test(requested.gitCommittish || '')
       const nc = { noCommittish: !reqCommit }
-      const sameRepo =
-        resHost ? reqHost && reqHost.ssh(nc) === resHost.ssh(nc)
-        : resRepo.fetchSpec === requested.fetchSpec
-
-      return !sameRepo ? false
-        : !requested.gitRange ? true
-        : semver.satisfies(child.package.version, requested.gitRange, {
-          loose: true,
-        })
+      if (!resHost) {
+        if (resRepo.fetchSpec !== requested.fetchSpec) {
+          return false
+        }
+      } else {
+        if (reqHost?.ssh(nc) !== resHost.ssh(nc)) {
+          return false
+        }
+      }
+      if (!requested.gitRange) {
+        return true
+      }
+      return semver.satisfies(child.package.version, requested.gitRange, {
+        loose: true,
+      })
     }
 
     default: // unpossible, just being cautious
@@ -106,6 +110,18 @@ const depValid = (child, requested, requestor) => {
   er.requested = requested
   requestor.errors.push(er)
   return false
+}
+
+const linkValid = (child, requested, requestor) => {
+  const isLink = !!child.isLink
+  // if we're installing links and the node is a link, then it's invalid because we want
+  // a real node to be there.  Except for workspaces. They are always links.
+  if (requestor.installLinks && !child.isWorkspace) {
+    return !isLink
+  }
+
+  // directory must be a link to the specified folder
+  return isLink && relative(child.realpath, requested.fetchSpec) === ''
 }
 
 const tarballValid = (child, requested, requestor) => {

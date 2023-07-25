@@ -564,24 +564,24 @@ version:'1.0.0',
 location:'',
 path:'/some/path',
 isProjectRoot:true,
-overrides:Map{'foo@1' => '2.0.0', 'bar' => '2.0.0'},
-edgesOut:Map{
-'bar' =>{prod bar@^1.0.0 overridden:2.0.0 -> node_modules/bar},
-'foo' =>{prod foo@^1.0.0 overridden:2.0.0 -> node_modules/foo}},
+overrides:Map{'bar' => '2.0.0'},
+edgesOut:Map{'foo' =>{prod foo@^1.0.0 -> node_modules/foo}},
 children:Map{
 'bar' =>{
 name:'bar',
 version:'2.0.0',
 location:'node_modules/bar',
 path:'/some/path/node_modules/bar',
-overrides:Map{'bar' => '2.0.0', 'foo@1' => '2.0.0'},
-edgesIn:Set{{"" prod bar@^1.0.0}}},
+overrides:Map{'bar' => '2.0.0'},
+edgesIn:Set{{node_modules/foo prod bar@^1.0.0}}},
 'foo' =>{
 name:'foo',
-version:'2.0.0',
+version:'1.0.0',
 location:'node_modules/foo',
 path:'/some/path/node_modules/foo',
-overrides:Map{'foo@1' => '2.0.0', 'bar' => '2.0.0'},
+overrides:Map{'bar' => '2.0.0'},
+edgesOut:Map{
+'bar' =>{prod bar@^1.0.0 overridden:2.0.0 -> node_modules/bar}},
 edgesIn:Set{{"" prod foo@^1.0.0}}}}}
 `
 

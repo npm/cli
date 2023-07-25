@@ -14,7 +14,7 @@ const {
 
 // strip the fixtures path off of the trees in snapshots
 const pp = path => path &&
-  normalizePath(path).substr(normalizePath(fixtures).length + 1)
+  normalizePath(path).slice(normalizePath(fixtures).length + 1)
 const defixture = obj => {
   if (obj instanceof Set) {
     return new Set([...obj].map(defixture))
@@ -170,37 +170,46 @@ t.test('shake out Link target timing issue', t => {
     t.matchSnapshot(tree, 'loaded tree'))
 })
 
-t.test('broken json', t =>
-  loadActual(resolve(fixtures, 'bad')).then(d => {
-    t.ok(d.errors.length, 'Got an error object')
-    t.equal(d.errors[0] && d.errors[0].code, 'EJSONPARSE')
-    t.ok(d, 'Got a tree')
-  }))
+t.test('broken json', async t => {
+  const d = await loadActual(resolve(fixtures, 'bad'))
+  t.ok(d.errors.length, 'Got an error object')
+  t.equal(d.errors[0] && d.errors[0].code, 'EJSONPARSE')
+  t.ok(d, 'Got a tree')
+})
 
-t.test('missing json does not obscure deeper errors', t =>
-  loadActual(resolve(fixtures, 'empty')).then(d => {
-    t.match(d, { errors: [{ code: 'ENOENT' }] },
-      'Error reading json of top level')
-    t.match(d.children.get('foo'), { errors: [{ code: 'EJSONPARSE' }] },
-      'Error parsing JSON of child node')
-  }))
+t.test('missing json does not obscure deeper errors', async t => {
+  const d = await loadActual(resolve(fixtures, 'empty'))
+  t.match(d, { errors: [{ code: 'ENOENT' }] },
+    'Error reading json of top level')
+  t.match(d.children.get('foo'), { errors: [{ code: 'EJSONPARSE' }] },
+    'Error parsing JSON of child node')
+})
 
 t.test('missing folder', t =>
   t.rejects(loadActual(resolve(fixtures, 'does-not-exist')), {
     code: 'ENOENT',
   }))
 
-t.test('missing symlinks', t =>
-  loadActual(resolve(fixtures, 'badlink')).then(d => {
-    t.equal(d.children.size, 2, 'both broken children are included')
-    t.match(d.children.get('foo'), { errors: [{ code: 'ELOOP' }] },
-      'foo has error')
-    t.match(d.children.get('bar'), { errors: [{ code: 'ENOENT' }] },
-      'bar has error')
-  }))
+t.test('missing symlinks', async t => {
+  const d = await loadActual(resolve(fixtures, 'badlink'))
+  t.equal(d.children.size, 2, 'both broken children are included')
+  t.match(d.children.get('foo'), { errors: [{ code: 'ELOOP' }] },
+    'foo has error')
+  t.match(d.children.get('bar'), { errors: [{ code: 'ENOENT' }] },
+    'bar has error')
+})
 
-t.test('load from a hidden lockfile', t =>
-  t.resolveMatchSnapshot(loadActual(resolve(fixtures, 'hidden-lockfile'))))
+t.test('load from a hidden lockfile', async (t) => {
+  const tree = await loadActual(resolve(fixtures, 'hidden-lockfile'))
+  t.ok(tree.meta.loadedFromDisk, 'meta was loaded from disk')
+  t.matchSnapshot(tree)
+})
+
+t.test('do not load from a hidden lockfile when forceActual is set', async (t) => {
+  const tree = await loadActual(resolve(fixtures, 'hidden-lockfile'), { forceActual: true })
+  t.not(tree.meta.loadedFromDisk, 'meta was NOT loaded from disk')
+  t.matchSnapshot(tree)
+})
 
 t.test('load a global space', t =>
   t.resolveMatchSnapshot(loadActual(resolve(fixtures, 'global-style/lib'), {
@@ -421,6 +430,51 @@ t.test('load global space with link deps', async t => {
       bar: '*',
     },
   })
+})
+
+t.test('no edge errors for nested deps', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'a',
+      version: '1.0.0',
+      dependencies: {
+        b: '1.0.0',
+      },
+    }),
+    node_modules: {
+      b: {
+        'package.json': JSON.stringify({
+          name: 'b',
+          version: '1.0.0',
+          dependencies: {
+            c: '1.0.0',
+          },
+        }),
+      },
+      c: {
+        'package.json': JSON.stringify({
+          name: 'c',
+          version: '1.0.0',
+        }),
+      },
+    },
+  })
+
+  // disable treeCheck since it prevents the original issue from occuring
+  const ArboristNoTreeCheck = t.mock('../../lib/arborist', {
+    '../../lib/tree-check.js': tree => tree,
+  })
+  const loadActualNoTreeCheck = (path, opts) =>
+    new ArboristNoTreeCheck({ path, ...opts }).loadActual(opts)
+
+  const tree = await loadActualNoTreeCheck(path)
+
+  // assert that no outgoing edges have errors
+  for (const node of tree.inventory.values()) {
+    for (const [name, edge] of node.edgesOut.entries()) {
+      t.equal(edge.error, null, `node ${node.name} has outgoing edge to ${name} with error ${edge.error}`)
+    }
+  }
 })
 
 t.test('loading a workspace maintains overrides', async t => {

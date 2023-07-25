@@ -5,11 +5,12 @@ const t = require('tap')
 const diff = require('../lib/index.js')
 
 const normalizePath = p => p
-  .replace(/\\+/g, '/')
+  .replace(/\\+(?!")/g, '/')
   .replace(/\r\n/g, '\n')
 
 t.cleanSnapshot = (str) => normalizePath(str)
   .replace(normalizePath(process.execPath), 'node')
+  .replace(/\\"node\\"/g, 'node')
 
 const json = (obj) => `${JSON.stringify(obj, null, 2)}\n`
 
@@ -62,7 +63,7 @@ t.test('folder in node_modules', async t => {
           name: 'a',
           version: '1.0.0',
           scripts: {
-            prepare: `${process.execPath} prepare.js`,
+            prepare: `"${process.execPath}" prepare.js`,
           },
         }),
         'prepare.js': 'throw new Error("ERR")',
@@ -72,7 +73,7 @@ t.test('folder in node_modules', async t => {
               name: 'b',
               version: '2.0.0',
               scripts: {
-                prepare: `${process.execPath} prepare.js`,
+                prepare: `"${process.execPath}" prepare.js`,
               },
             }),
             'prepare.js': 'throw new Error("ERR")',
@@ -86,7 +87,7 @@ t.test('folder in node_modules', async t => {
           name: 'a',
           version: '1.0.1',
           scripts: {
-            prepare: `${process.execPath} prepare.js`,
+            prepare: `"${process.execPath}" prepare.js`,
           },
         }),
         'prepare.js': '',
@@ -96,7 +97,7 @@ t.test('folder in node_modules', async t => {
           name: 'b',
           version: '2.0.1',
           scripts: {
-            prepare: `${process.execPath} prepare.js`,
+            prepare: `"${process.execPath}" prepare.js`,
           },
         }),
         'prepare.js': '',

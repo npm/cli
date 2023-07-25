@@ -8,6 +8,8 @@ var extractDescription = require('./extract_description')
 var url = require('url')
 var typos = require('./typos.json')
 
+var isEmail = str => str.includes('@') && (str.indexOf('@') < str.lastIndexOf('.'))
+
 module.exports = {
   // default warning function
   warn: function () {},
@@ -119,17 +121,17 @@ module.exports = {
       this.warn('nonArrayBundleDependencies')
       delete data[bd]
     } else if (data[bd]) {
-      data[bd] = data[bd].filter(function (bd) {
-        if (!bd || typeof bd !== 'string') {
-          this.warn('nonStringBundleDependency', bd)
+      data[bd] = data[bd].filter(function (filtered) {
+        if (!filtered || typeof filtered !== 'string') {
+          this.warn('nonStringBundleDependency', filtered)
           return false
         } else {
           if (!data.dependencies) {
             data.dependencies = {}
           }
-          if (Object.prototype.hasOwnProperty.call(data.dependencies, bd)) {
-            this.warn('nonDependencyBundleDependency', bd)
-            data.dependencies[bd] = '*'
+          if (!Object.prototype.hasOwnProperty.call(data.dependencies, filtered)) {
+            this.warn('nonDependencyBundleDependency', filtered)
+            data.dependencies[filtered] = '*'
           }
           return true
         }
@@ -213,7 +215,7 @@ module.exports = {
 
   fixNameField: function (data, options) {
     if (typeof options === 'boolean') {
-      options = {strict: options}
+      options = { strict: options }
     } else if (typeof options === 'undefined') {
       options = {}
     }
@@ -261,16 +263,15 @@ module.exports = {
     if (!data.bugs && data.repository && data.repository.url) {
       var hosted = hostedGitInfo.fromUrl(data.repository.url)
       if (hosted && hosted.bugs()) {
-        data.bugs = {url: hosted.bugs()}
+        data.bugs = { url: hosted.bugs() }
       }
     } else if (data.bugs) {
-      var emailRe = /^.+@.*\..+$/
       if (typeof data.bugs === 'string') {
-        if (emailRe.test(data.bugs)) {
-          data.bugs = {email: data.bugs}
+        if (isEmail(data.bugs)) {
+          data.bugs = { email: data.bugs }
         /* eslint-disable-next-line node/no-deprecated-api */
         } else if (url.parse(data.bugs).protocol) {
-          data.bugs = {url: data.bugs}
+          data.bugs = { url: data.bugs }
         } else {
           this.warn('nonEmailUrlBugsString')
         }
@@ -287,7 +288,7 @@ module.exports = {
           }
         }
         if (oldBugs.email) {
-          if (typeof (oldBugs.email) === 'string' && emailRe.test(oldBugs.email)) {
+          if (typeof (oldBugs.email) === 'string' && isEmail(oldBugs.email)) {
             data.bugs.email = oldBugs.email
           } else {
             this.warn('nonEmailBugsEmailField')
@@ -388,28 +389,28 @@ function unParsePerson (person) {
   }
   var name = person.name || ''
   var u = person.url || person.web
-  var url = u ? (' (' + u + ')') : ''
+  var wrappedUrl = u ? (' (' + u + ')') : ''
   var e = person.email || person.mail
-  var email = e ? (' <' + e + '>') : ''
-  return name + email + url
+  var wrappedEmail = e ? (' <' + e + '>') : ''
+  return name + wrappedEmail + wrappedUrl
 }
 
 function parsePerson (person) {
   if (typeof person !== 'string') {
     return person
   }
-  var name = person.match(/^([^(<]+)/)
-  var url = person.match(/\(([^)]+)\)/)
-  var email = person.match(/<([^>]+)>/)
+  var matchedName = person.match(/^([^(<]+)/)
+  var matchedUrl = person.match(/\(([^()]+)\)/)
+  var matchedEmail = person.match(/<([^<>]+)>/)
   var obj = {}
-  if (name && name[0].trim()) {
-    obj.name = name[0].trim()
+  if (matchedName && matchedName[0].trim()) {
+    obj.name = matchedName[0].trim()
   }
-  if (email) {
-    obj.email = email[1]
+  if (matchedEmail) {
+    obj.email = matchedEmail[1]
   }
-  if (url) {
-    obj.url = url[1]
+  if (matchedUrl) {
+    obj.url = matchedUrl[1]
   }
   return obj
 }

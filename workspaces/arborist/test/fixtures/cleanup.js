@@ -1,8 +1,10 @@
+const { resolve } = require('path')
+const { readdirSync, lstatSync } = require('fs')
+
 process.env.ARBORIST_FIXTURE_CLEANUP = '1'
 require('./index.js')
 
 // now make sure it actually did clean up everything
-const { readdirSync, lstatSync } = require('fs')
 const readdir = (path, opt) => {
   const ents = readdirSync(path, opt)
   if (typeof ents[0] === 'string') {
@@ -13,15 +15,16 @@ const readdir = (path, opt) => {
   return ents
 }
 
-const { resolve } = require('path')
 const walk = dir => {
   for (const entry of readdir(dir, { withFileTypes: true })) {
-    if (entry.isDirectory())
+    if (entry.isDirectory()) {
       walk(resolve(dir, entry.name))
-    else if (entry.isSymbolicLink())
+    } else if (entry.isSymbolicLink()) {
       throw Object.assign(new Error('symlink left in fixtures dir'), {
         path: resolve(dir, entry.name),
       })
+    }
   }
 }
+
 walk(__dirname)

@@ -1,0 +1,34 @@
+{{> ci }}
+
+  licenses:
+    {{> job jobName="Check Licenses" }}
+      - name: Check Licenses
+        run: {{rootNpmPath}} run licenses
+
+  smoke-tests:
+    {{> job jobName="Smoke Tests" }}
+      - name: Run Smoke Tests
+        run: {{rootNpmPath}} test -w smoke-tests --ignore-scripts
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
+
+  windows-shims:
+    name: Windows Shims Tests
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: cmd
+    steps:
+      {{> stepsSetup }}
+      - name: Setup WSL
+        uses: Vampire/setup-wsl@v2.0.1
+      - name: Setup Cygwin
+        uses: egor-tensin/setup-cygwin@v4.0.1
+        with:
+          install-dir: C:\cygwin64
+      - name: Run Windows Shims Tests
+        run: {{rootNpmPath}} test --ignore-scripts -- test/bin/windows-shims.js --no-coverage
+        env:
+          WINDOWS_SHIMS_TEST: true
+      - name: Check Git Status
+        run: node scripts/git-dirty.js

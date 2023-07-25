@@ -6,7 +6,8 @@ module.exports = t => {
       "name": "a",
       "version": "1.0.0",
       "scripts": {
-        "prepare": "node -e \"require('fs').writeFileSync(require('path').resolve('a-prepare'), '')\""
+        "prepare": "node -e \"require('fs').writeFileSync('a-prepare', '')\"",
+        "postinstall": "node -e \"require('fs').writeFileSync('a-post-install', '')\""
       }
     })
   },

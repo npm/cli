@@ -62,8 +62,8 @@ t.test('basic instantiation', t => {
   t.end()
 })
 
-t.test('testing with dep tree', t => {
-  const runTest = rootMetadata => t => {
+t.test('testing with dep tree', async t => {
+  const runTest = rootMetadata => async t => {
     const root = new Node({
       pkg: {
         name: 'root',
@@ -114,6 +114,10 @@ t.test('testing with dep tree', t => {
     })
     t.equal(meta.isDescendantOf(root), true, 'meta descends from root')
     t.equal(meta.root, root, 'meta rooted in same tree via parent')
+
+    // retrieve a node using querySelectorAll
+    const queryResult = await root.querySelectorAll('* #meta')
+    t.same(queryResult, [meta], 'should retrieve node using querySelectorAll')
 
     const bundled = new Node({
       pkg: {
@@ -328,20 +332,30 @@ t.test('testing with dep tree', t => {
       t.equal(prodLink.children.size, 0, 'links do not have child nodes')
       t.equal(prodLink.target.children.size, kidCount, 'link target has children')
 
+      t.equal(newProd.canReplace(prodLink), true, 'node can replace link')
+      const { target } = prodLink
+      newProd.replace(prodLink)
+      t.equal(prodLink.parent, null, 'prodLink removed from tree')
+      t.equal(prodLink.target, null, 'prodLink lost its target')
+      t.equal(prodLink.root, prodLink, 'prodLink removed from tree')
+      t.equal(target.root, target, 'prodLinks old target removed from tree')
+      t.equal(normalizePath(newProd.path), normalizePath(prodLink.path), 'replaced node')
+      t.equal(prodLink.children.size, 0, 'prodLink has no child nodes')
+
       t.end()
     })
 
     t.end()
   }
 
-  t.test('without meta', runTest())
+  t.test('without meta', await runTest())
   const meta = new Shrinkwrap({ path: '/home/user/projects/root' })
   meta.data = {
     lockfileVersion: 2,
     packages: {},
     dependencies: {},
   }
-  t.test('with meta', runTest(meta))
+  t.test('with meta', await runTest(meta))
 
   t.end()
 })
@@ -519,7 +533,7 @@ t.test('load with a virtual filesystem parent', t => {
 
   t.equal(normalizePath(packages.path), normalizePath(root.realpath + '/link-target/packages'))
   t.equal(normalizePath(target3.path), normalizePath(root.realpath + '/link-target/packages/link3'))
-  t.equal(link3.target, target3, 'still targetting the right node 4')
+  t.equal(link3.target, target3, 'still targeting the right node 4')
   t.equal(target3.fsParent, packages, 'link3 target under packages')
   t.equal(normalizePath(link3.realpath), normalizePath(target3.path), 'link realpath updated')
 
@@ -2714,6 +2728,52 @@ t.test('overrides', (t) => {
     t.end()
   })
 
+  t.test('node.overridden is true when an override applies to a specific node', async (t) => {
+    const tree = new Node({
+      loadOverrides: true,
+      path: '/some/path',
+      pkg: {
+        name: 'foo',
+        dependencies: {
+          bar: '^1',
+        },
+        overrides: {
+          baz: '1.0.0',
+        },
+      },
+      children: [{
+        name: 'bar',
+        version: '1.0.0',
+        pkg: {
+          dependencies: {
+            baz: '2.0.0',
+          },
+        },
+        children: [{
+          name: 'baz',
+          version: '1.0.0',
+          pkg: {
+            dependencies: {
+              buzz: '1.0.0',
+            },
+          },
+          children: [{
+            name: 'buzz',
+            version: '1.0.0',
+            pkg: {},
+          }],
+        }],
+      }],
+    })
+
+    const bar = tree.edgesOut.get('bar').to
+    t.not(bar.overridden, 'bar was not overridden')
+    const baz = bar.edgesOut.get('baz').to
+    t.ok(baz.overridden, 'baz was overridden')
+    const buzz = baz.edgesOut.get('buzz').to
+    t.not(buzz.overridden, 'buzz was not overridden')
+  })
+
   t.test('assertRootOverrides throws when a dependency and override conflict', async (t) => {
     const conflictingTree = new Node({
       loadOverrides: true,
@@ -2781,6 +2841,62 @@ t.test('overrides', (t) => {
     t.end()
   })
 
+  t.test('setting root replaces overrides', async (t) => {
+    const root = new Node({
+      path: '/some/path',
+      loadOverrides: true,
+      pkg: {
+        name: 'root',
+        version: '1.0.0',
+        dependencies: {
+          foo: '^1.0.0',
+        },
+        overrides: {
+          bar: '^2.0.0',
+        },
+      },
+    })
+
+    const foo = new Node({
+      path: '/some/path/node_modules/foo',
+      pkg: {
+        name: 'foo',
+        version: '1.0.0',
+        dependencies: {
+          bar: '^1.0.0',
+        },
+      },
+    })
+
+    const bar = new Node({
+      path: '/some/path/node_modules/bar',
+      pkg: {
+        name: 'bar',
+        version: '2.0.0',
+      },
+    })
+
+    t.ok(root.overrides, 'root has overrides')
+    t.notOk(foo.overrides, 'foo does not have overrides')
+    t.notOk(bar.overrides, 'bar does not have overrides')
+    t.notOk(root.edgesOut.get('foo').valid, 'foo edge is not valid')
+    t.notOk(foo.edgesOut.get('bar').valid, 'bar edge is not valid')
+
+    // we add bar to the root first, this is deliberate so that we don't have a simple
+    // linear inheritance. we'll add foo later and make sure that both edges and nodes
+    // become valid after that
+
+    bar.root = root
+    t.ok(bar.overrides, 'bar now has overrides')
+    t.notOk(foo.edgesOut.get('bar').valid, 'bar edge is not valid yet')
+
+    foo.root = root
+    t.ok(foo.overrides, 'foo now has overrides')
+    t.ok(root.edgesOut.get('foo').valid, 'foo edge is now valid')
+    t.ok(bar.overrides, 'bar still has overrides')
+    t.ok(foo.edgesOut.get('bar').valid, 'bar edge is now valid')
+  })
+
   t.test('canReplaceWith requires the same overrides', async (t) => {
     const original = new Node({
       loadOverrides: true,
@@ -2841,4 +2957,27 @@ t.test('overrides', (t) => {
   })
 
   t.end()
+})
+
+t.test('node with no edges in is not a registry dep', async t => {
+  const node = new Node({ path: '/foo' })
+  t.equal(node.isRegistryDependency, false)
+})
+
+t.test('node with non registry edge in is not a registry dep', async t => {
+  const root = new Node({ path: '/some/path', pkg: { dependencies: { registry: '', tar: '' } } })
+  const node = new Node({ pkg: { name: 'node', version: '1.0.0' }, parent: root })
+
+  new Node({ pkg: { name: 'registry', dependencies: { node: '^1.0.0' } }, parent: root })
+  new Node({ pkg: { name: 'tar', dependencies: { node: 'file:node' } }, parent: root })
+
+  t.equal(node.isRegistryDependency, false)
+})
+
+t.test('node with only registry edges in a registry dep', async t => {
+  const root = new Node({ path: '/some/path', pkg: { dependencies: { registry: '', tar: '' } } })
+  const node = new Node({ pkg: { name: 'node', version: '1.0.0' }, parent: root })
+  new Node({ pkg: { name: 'registry', dependencies: { node: '^1.0.0' } }, parent: root })
+
+  t.equal(node.isRegistryDependency, true)
 })

@@ -1,12 +1,12 @@
 {
   "name": "libnpmsearch",
-  "version": "5.0.0",
+  "version": "6.0.2",
   "description": "Programmatic API for searching in npm and compatible registries.",
   "author": "GitHub Inc.",
   "main": "lib/index.js",
   "files": [
-    "bin",
-    "lib"
+    "bin/",
+    "lib/"
   ],
   "keywords": [
     "npm",
@@ -16,37 +16,42 @@
   ],
   "license": "ISC",
   "scripts": {
-    "preversion": "npm test",
-    "postversion": "npm publish",
-    "prepublishOnly": "git push origin --follow-tags",
-    "posttest": "npm run lint",
+    "posttest": "node ../.. run lint",
     "test": "tap",
-    "lint": "eslint '**/*.js'",
-    "postlint": "npm-template-check",
-    "lintfix": "npm run lint -- --fix",
-    "snap": "tap"
-  },
-  "tap": {
-    "check-coverage": true
+    "lint": "eslint \"**/*.js\"",
+    "postlint": "template-oss-check",
+    "lintfix": "node ../.. run lint -- --fix",
+    "snap": "tap",
+    "template-oss-apply": "template-oss-apply --force"
   },
   "devDependencies": {
-    "@npmcli/template-oss": "^2.4.2",
-    "nock": "^9.6.1",
-    "tap": "^15"
+    "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/template-oss": "4.18.0",
+    "nock": "^13.3.0",
+    "tap": "^16.3.4"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/libnpmsearch.git"
+    "url": "https://github.com/npm/cli.git",
+    "directory": "workspaces/libnpmsearch"
   },
   "bugs": "https://github.com/npm/libnpmsearch/issues",
   "homepage": "https://npmjs.com/package/libnpmsearch",
   "dependencies": {
-    "npm-registry-fetch": "^13.0.0"
+    "npm-registry-fetch": "^14.0.3"
   },
   "engines": {
-    "node": "^12.13.0 || ^14.15.0 || >=16"
+    "node": "^14.17.0 || ^16.13.0 || >=18.0.0"
   },
   "templateOSS": {
-    "version": "2.4.3"
+    "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
+    "version": "4.18.0",
+    "content": "../../scripts/template-oss/index.js"
+  },
+  "tap": {
+    "nyc-arg": [
+      "--exclude",
+      "tap-snapshots/**"
+    ]
   }
 }

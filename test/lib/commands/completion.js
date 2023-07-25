@@ -1,31 +1,26 @@
 const t = require('tap')
 const fs = require('fs')
 const path = require('path')
+const { load: loadMockNpm } = require('../../fixtures/mock-npm')
 
 const completionScript = fs
   .readFileSync(path.resolve(__dirname, '../../../lib/utils/completion.sh'), { encoding: 'utf8' })
   .replace(/^#!.*?\n/, '')
 
-const { load: _loadMockNpm } = require('../../fixtures/mock-npm')
-const mockGlobals = require('../../fixtures/mock-globals')
-
 const loadMockCompletion = async (t, o = {}) => {
-  const { globals, windows, ...options } = o
-  let resetGlobals = {}
-  if (globals) {
-    resetGlobals = mockGlobals(t, globals).reset
-  }
-  const res = await _loadMockNpm(t, {
-    mocks: {
-      '../../lib/utils/is-windows-shell.js': !!windows,
-      ...options.mocks,
-    },
+  const { globals = {}, windows, ...options } = o
+  const res = await loadMockNpm(t, {
+    command: 'completion',
     ...options,
+    globals: (dirs) => ({
+      'process.platform': windows ? 'win32' : 'posix',
+      'process.env.term': 'notcygwin',
+      'process.env.msystem': 'nogmingw',
+      ...(typeof globals === 'function' ? globals(dirs) : globals),
+    }),
   })
-  const completion = await res.npm.cmd('completion')
   return {
-    resetGlobals,
-    completion,
+    resetGlobals: res.mockedGlobals.reset,
     ...res,
   }
 }
@@ -41,21 +36,26 @@ const loadMockCompletionComp = async (t, word, line) =>
 
 t.test('completion', async t => {
   t.test('completion completion', async t => {
-    const { outputs, completion, prefix } = await loadMockCompletion(t, {
-      testdir: {
+    const { outputs, completion } = await loadMockCompletion(t, {
+      prefixDir: {
         '.bashrc': 'aaa',
         '.zshrc': 'aaa',
       },
+      globals: ({ prefix }) => ({
+        'process.env.HOME': prefix,
+      }),
     })
-    mockGlobals(t, { 'process.env.HOME': prefix })
 
     await completion.completion({ w: 2 })
     t.matchSnapshot(outputs, 'both shells')
   })
 
   t.test('completion completion no known shells', async t => {
-    const { outputs, completion, prefix } = await loadMockCompletion(t)
-    mockGlobals(t, { 'process.env.HOME': prefix })
+    const { outputs, completion } = await loadMockCompletion(t, {
+      globals: ({ prefix }) => ({
+        'process.env.HOME': prefix,
+      }),
+    })
 
     await completion.completion({ w: 2 })
     t.matchSnapshot(outputs, 'no responses')
@@ -87,7 +87,7 @@ t.test('completion', async t => {
       },
     })
 
-    await completion.exec({})
+    await completion.exec()
     t.equal(data, completionScript, 'wrote the completion script')
   })
 
@@ -112,7 +112,7 @@ t.test('completion', async t => {
       },
     })
 
-    await completion.exec({})
+    await completion.exec()
     t.equal(data, completionScript, 'wrote the completion script')
   })
 
@@ -191,7 +191,7 @@ t.test('completion', async t => {
 t.test('windows without bash', async t => {
   const { outputs, completion } = await loadMockCompletion(t, { windows: true })
   await t.rejects(
-    completion.exec({}),
+    completion.exec(),
     { code: 'ENOTSUP', message: /completion supported only in MINGW/ },
     'returns the correct error'
   )

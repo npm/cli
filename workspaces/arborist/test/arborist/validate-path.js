@@ -1,4 +1,4 @@
-// Arborist should be mkdirping the path, but not
+// Arborist should be mkdir-ing the path, but not
 // changing its ownership in that case.
 // https://github.com/npm/arborist/issues/252
 // This test has to club a lot of stuff, and provides no coverage,
