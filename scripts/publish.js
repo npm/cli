@@ -8,12 +8,12 @@ const resetdeps = () => npm('run', 'resetdeps')
 const op = () => spawn('op', 'item', 'get', 'npm', '--otp', { out: true, ok: true })
 
 const getVersion = async (s) => {
-  const mani = await pacote.manifest(s, { preferOnline: true })
-  return mani.version
+  const mani = await pacote.manifest(s, { preferOnline: true }).catch(() => null)
+  return mani?.version
 }
-const getLatest = async (s) => {
-  const pack = await pacote.packument(s, { preferOnline: true })
-  return pack['dist-tags'].latest
+const getLatestMajor = async (s) => {
+  const pack = await pacote.packument(s, { preferOnline: true }).catch(() => null)
+  return pack?.['dist-tags']?.latest ? semver.major(pack['dist-tags'].latest) : 0
 }
 
 const TAG = {
@@ -23,7 +23,7 @@ const TAG = {
     if (prerelease.length) {
       return 'prerelease'
     }
-    if (major === await getLatest(name).then(v => semver.major(v))) {
+    if (major >= await getLatestMajor(name)) {
       return 'latest'
     }
     return 'backport'
