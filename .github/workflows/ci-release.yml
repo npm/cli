@@ -8,7 +8,7 @@ on:
       ref:
         required: true
         type: string
-        default: latest
+        default: release/v9
   workflow_call:
     inputs:
       ref:
