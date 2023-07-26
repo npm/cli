@@ -1,5 +1,21 @@
 # Changelog
 
+## [7.0.0](https://github.com/npm/cli/compare/config-v6.2.1...config-v7.0.0) (2023-07-26)
+
+### ⚠️ BREAKING CHANGES
+
+* the "ci-name" config has been removed
+* the hard-coded "hashAlgorithm" value is no longer being passed through flatOptions
+* the unused "tmp" config has been removed
+* the hard-coded "metrics-registry" config has been removed.
+
+### Bug Fixes
+
+* [`e0d3edd`](https://github.com/npm/cli/commit/e0d3edd9908f8303abb9941bdd2f6e9aa31bc9d7) [#6641](https://github.com/npm/cli/pull/6641) remove "ci-name" config (@wraithgar)
+* [`db91a77`](https://github.com/npm/cli/commit/db91a77032f4024878d56bde099b2b3765ff08d2) [#6641](https://github.com/npm/cli/pull/6641) remove "hashAlgorithm" from flatOptions (@wraithgar)
+* [`ece52a3`](https://github.com/npm/cli/commit/ece52a3dda09b1df960ae042d53560f18d446d5f) [#6641](https://github.com/npm/cli/pull/6641) remove "tmp" config (@wraithgar)
+* [`1f767aa`](https://github.com/npm/cli/commit/1f767aa306e3a550e2c0aefb16a0370e59b44ce3) [#6641](https://github.com/npm/cli/pull/6641) remove metric-registry config (@wraithgar)
+
 ## [6.2.1](https://github.com/npm/cli/compare/config-v6.2.0...config-v6.2.1) (2023-06-21)
 
 ### Bug Fixes
