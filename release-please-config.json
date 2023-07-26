@@ -32,7 +32,7 @@
   "packages": {
     ".": {
       "package-name": "",
-      "prerelease": false
+      "prerelease": true
     },
     "workspaces/arborist": {
       "prerelease": false
