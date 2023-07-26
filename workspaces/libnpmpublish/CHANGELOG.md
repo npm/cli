@@ -1,5 +1,17 @@
 # Changelog
 
+## [8.0.0](https://github.com/npm/cli/compare/libnpmpublish-v7.5.0...libnpmpublish-v8.0.0) (2023-07-26)
+
+### ⚠️ BREAKING CHANGES
+
+* the "ci-name" config has been removed
+* libnpmpublish will no longer attempt a single automatic retry on 409 responses during publish.
+
+### Bug Fixes
+
+* [`e0d3edd`](https://github.com/npm/cli/commit/e0d3edd9908f8303abb9941bdd2f6e9aa31bc9d7) [#6641](https://github.com/npm/cli/pull/6641) remove "ci-name" config (@wraithgar)
+* [`0a71ebb`](https://github.com/npm/cli/commit/0a71ebb3d1e7fca07d39ea64e5f1acd22ecd255c) [#6641](https://github.com/npm/cli/pull/6641) stop retrying on 409 conflict (@wraithgar)
+
 ## [7.5.0](https://github.com/npm/cli/compare/libnpmpublish-v7.4.0...libnpmpublish-v7.5.0) (2023-07-05)
 
 ### Features
