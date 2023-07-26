@@ -192,7 +192,6 @@ graph LR;
   npmcli-config-->read-package-json-fast;
   npmcli-config-->semver;
   npmcli-docs-->ignore-walk;
-  npmcli-docs-->npmcli-config["@npmcli/config"];
   npmcli-docs-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-docs-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-docs-->semver;
@@ -657,7 +656,6 @@ graph LR;
   npmcli-docs-->ignore-walk;
   npmcli-docs-->isaacs-string-locale-compare["@isaacs/string-locale-compare"];
   npmcli-docs-->jsdom;
-  npmcli-docs-->npmcli-config["@npmcli/config"];
   npmcli-docs-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-docs-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-docs-->rehype-stringify;
@@ -826,8 +824,8 @@ packages higher up the chain.
  - @npmcli/arborist
  - @npmcli/metavuln-calculator
  - pacote, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, npm-profile
- - @npmcli/docs, npm-registry-fetch, @npmcli/package-json, libnpmversion
- - @npmcli/config, @npmcli/git, make-fetch-happen, init-package-json
- - @npmcli/map-workspaces, @npmcli/installed-package-contents, cacache, npm-pick-manifest, @npmcli/run-script, read-package-json, promzard
- - read-package-json-fast, nopt, @npmcli/mock-globals, @npmcli/fs, npm-bundled, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, bin-links, npmlog, parse-conflict-json, read
- - @npmcli/name-from-folder, json-parse-even-better-errors, npm-normalize-package-bin, ini, abbrev, proc-log, semver, @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, are-we-there-yet, gauge, minify-registry-metadata, @npmcli/disparity-colors, mute-stream, npm-audit-report, npm-user-validate
+ - npm-registry-fetch, @npmcli/package-json, libnpmversion
+ - @npmcli/git, make-fetch-happen, @npmcli/config, init-package-json
+ - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, @npmcli/run-script, read-package-json, promzard
+ - @npmcli/docs, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, bin-links, nopt, npmlog, parse-conflict-json, @npmcli/mock-globals, read
+ - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, minify-registry-metadata, ini, @npmcli/disparity-colors, mute-stream, npm-audit-report, npm-user-validate
