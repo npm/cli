@@ -285,7 +285,7 @@ Certain files are always included, regardless of settings:
 * `README`
 * `LICENSE` / `LICENCE`
 * The file in the "main" field
-* The file in the "bin" field
+* The file(s) in the "bin" field
 
 `README` & `LICENSE` can have any case and extension.
 
