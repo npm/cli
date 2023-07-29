@@ -1448,7 +1448,7 @@ t.test('umask', async t => {
   })
 })
 
-t.test('catch project config prefix error', async t=> {
+t.test('catch project config prefix error', async t => {
   const path = t.testdir()
   t.testdir({
     project: {
@@ -1470,12 +1470,11 @@ t.test('catch project config prefix error', async t=> {
   const logs = []
   const logHandler = (...args) => logs.push(args)
   process.on('log', logHandler)
-  t.teardown(() => process.off('log', logHandler));
+  t.teardown(() => process.off('log', logHandler))
   logs.length = 0
-  
   // config.load() triggers the error to be logged
   await config.load()
   t.match(logs, [[
-    'error', `prefix=./lib cannot be changed from project config: ${path}/project/.npmrc`
+    'error', `prefix=./lib cannot be changed from project config: ${path}/project/.npmrc`,
   ]], 'Expected error logged')
 })

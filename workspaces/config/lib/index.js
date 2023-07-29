@@ -619,7 +619,7 @@ class Config {
             log.error(`prefix=${parsedConfigPrefix} cannot be changed from project config: ${file}`)
           }
         }
-        this.#loadObject(parsedConfig, type, file)
+        return this.#loadObject(parsedConfig, type, file)
       },
       er => this.#loadObject(null, type, file, er)
     )
