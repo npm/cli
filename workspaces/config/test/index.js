@@ -1475,6 +1475,6 @@ t.test('catch project config prefix error', async t => {
   // config.load() triggers the error to be logged
   await config.load()
   t.match(logs, [[
-    'error', `prefix=./lib cannot be changed from project config: ${path}`,
+    'error', 'config', `prefix cannot be changed from project config: ${path}`,
   ]], 'Expected error logged')
 })
