@@ -1447,3 +1447,34 @@ t.test('umask', async t => {
     t.equal(umask, 0)
   })
 })
+
+t.test('catch project config prefix error', async t => {
+  const path = t.testdir()
+  t.testdir({
+    project: {
+      node_modules: {},
+      '.npmrc': `
+      project-config = true
+      foo = from-project-config
+      prefix=./lib
+      `,
+    },
+  })
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    argv: [process.execPath, __filename, '--projectconfig', `${path}/project/.npmrc`],
+    cwd: join(`${path}/project`),
+    shorthands,
+    definitions,
+  })
+  const logs = []
+  const logHandler = (...args) => logs.push(args)
+  process.on('log', logHandler)
+  t.teardown(() => process.off('log', logHandler))
+  logs.length = 0
+  // config.load() triggers the error to be logged
+  await config.load()
+  t.match(logs, [[
+    'error', 'config', `prefix cannot be changed from project config: ${path}`,
+  ]], 'Expected error logged')
+})

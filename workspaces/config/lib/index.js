@@ -610,7 +610,15 @@ class Config {
     process.emit('time', 'config:load:file:' + file)
     // only catch the error from readFile, not from the loadObject call
     await readFile(file, 'utf8').then(
-      data => this.#loadObject(ini.parse(data), type, file),
+      data => {
+        const parsedConfig = ini.parse(data)
+        if (type === 'project' && parsedConfig.prefix) {
+          // Log error if prefix is mentioned in project .npmrc
+          /* eslint-disable-next-line max-len */
+          log.error('config', `prefix cannot be changed from project config: ${file}.`)
+        }
+        return this.#loadObject(parsedConfig, type, file)
+      },
       er => this.#loadObject(null, type, file, er)
     )
     process.emit('timeEnd', 'config:load:file:' + file)
