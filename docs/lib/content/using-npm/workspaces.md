@@ -102,7 +102,7 @@ the npm installer that package should be added as a dependency of the provided
 workspace:
 
 ```
-npm install abbrev -w a
+npm install abbrev -w packages/a
 ```
 
 Note: other installing commands such as `uninstall`, `ci`, etc will also
