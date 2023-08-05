@@ -87,16 +87,16 @@ const main = async (opts) => {
   await npm('install', '-w', 'docs', '--ignore-scripts', '--no-audit', '--no-fund')
   await git.dirty()
 
-  for (const p of publishes) {
+  await Promise.all(publishes.map(async(p) => {
     const workspace = p.workspace && `--workspace=${p.workspace}`
     if (packOnly) {
-      await npm(
+      return npm(
         'pack',
         workspace,
         opts.packDestination && `--pack-destination=${opts.packDestination}`
       )
     } else {
-      await npm(
+      return npm(
         'publish',
         workspace,
         `--tag=${p.tag}`,
@@ -104,7 +104,7 @@ const main = async (opts) => {
         opts.otp && `--otp=${opts.otp === 'op' ? await op() : opts.otp}`
       )
     }
-  }
+  }))
 }
 
 run(main).catch(resetdeps)

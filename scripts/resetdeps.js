@@ -15,9 +15,9 @@ const cleanup = async () => {
 
 const main = async ({ packageLock }) => {
   await fs.rimraf(join(CWD, 'node_modules'))
-  for (const { path } of await pkg.mapWorkspaces()) {
-    await fs.rimraf(join(path, 'node_modules'))
-  }
+  await Promise.all((await pkg.mapWorkspaces()).map(({ path }) => {
+    return fs.rimraf(join(path, 'node_modules'))
+  }))
 
   await cleanup()
   await npm('i', '--ignore-scripts', '--no-audit', '--no-fund', packageLock && '--package-lock')
