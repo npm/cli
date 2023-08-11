@@ -30,7 +30,7 @@
   "homepage": "https://npmjs.com/package/libnpmaccess",
   "dependencies": {
     "npm-package-arg": "^10.1.0",
-    "npm-registry-fetch": "^14.0.3"
+    "npm-registry-fetch": "^15.0.0"
   },
   "engines": {
     "node": "^14.17.0 || ^16.13.0 || >=18.0.0"

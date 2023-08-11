@@ -24,7 +24,7 @@
     "npm-install-checks": "^6.0.0",
     "npm-package-arg": "^10.1.0",
     "npm-pick-manifest": "^8.0.1",
-    "npm-registry-fetch": "^14.0.3",
+    "npm-registry-fetch": "^15.0.0",
     "npmlog": "^7.0.1",
     "pacote": "^15.0.8",
     "parse-conflict-json": "^3.0.0",
