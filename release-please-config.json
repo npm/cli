@@ -44,10 +44,10 @@
       "prerelease": true
     },
     "workspaces/libnpmdiff": {
-      "prerelease": false
+      "prerelease": true
     },
     "workspaces/libnpmexec": {
-      "prerelease": false
+      "prerelease": true
     },
     "workspaces/libnpmfund": {
       "prerelease": false
@@ -59,7 +59,7 @@
       "prerelease": true
     },
     "workspaces/libnpmpack": {
-      "prerelease": false
+      "prerelease": true
     },
     "workspaces/libnpmpublish": {
       "prerelease": true
