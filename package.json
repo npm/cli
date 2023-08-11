@@ -103,7 +103,7 @@
     "npm-user-validate": "^2.0.0",
     "npmlog": "^7.0.1",
     "p-map": "^4.0.0",
-    "pacote": "^15.2.0",
+    "pacote": "^16.0.0",
     "parse-conflict-json": "^3.0.1",
     "proc-log": "^3.0.0",
     "qrcode-terminal": "^0.12.0",
