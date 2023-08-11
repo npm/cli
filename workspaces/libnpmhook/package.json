@@ -31,7 +31,7 @@
   "license": "ISC",
   "dependencies": {
     "aproba": "^2.0.0",
-    "npm-registry-fetch": "^14.0.3"
+    "npm-registry-fetch": "^15.0.0"
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^4.0.0",
