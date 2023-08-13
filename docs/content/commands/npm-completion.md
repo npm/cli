@@ -23,7 +23,6 @@ everywhere:
 
 ```bash
 npm completion >> ~/.bashrc
-
 ```
 
 OR
