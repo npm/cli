@@ -23,6 +23,12 @@ everywhere:
 
 ```bash
 npm completion >> ~/.bashrc
+
+```
+
+OR
+
+```bash
 npm completion >> ~/.zshrc
 ```
 
