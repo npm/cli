@@ -82,6 +82,7 @@ graph LR;
   libnpmversion-->semver;
   make-fetch-happen-->cacache;
   make-fetch-happen-->minipass-fetch;
+  make-fetch-happen-->npmcli-agent["@npmcli/agent"];
   make-fetch-happen-->ssri;
   nopt-->abbrev;
   normalize-package-data-->hosted-git-info;
@@ -259,8 +260,6 @@ graph LR;
 ```mermaid
 graph LR;
   agent-base-->debug;
-  agentkeepalive-->debug;
-  agentkeepalive-->depd;
   agentkeepalive-->humanize-ms;
   aggregate-error-->clean-stack;
   aggregate-error-->indent-string;
@@ -460,6 +459,7 @@ graph LR;
   make-fetch-happen-->minipass-pipeline;
   make-fetch-happen-->minipass;
   make-fetch-happen-->negotiator;
+  make-fetch-happen-->npmcli-agent["@npmcli/agent"];
   make-fetch-happen-->promise-retry;
   make-fetch-happen-->socks-proxy-agent;
   make-fetch-happen-->ssri;
@@ -598,6 +598,8 @@ graph LR;
   npm-registry-fetch-->minizlib;
   npm-registry-fetch-->npm-package-arg;
   npm-registry-fetch-->proc-log;
+  npmcli-agent-->lru-cache;
+  npmcli-agent-->socks;
   npmcli-arborist-->benchmark;
   npmcli-arborist-->bin-links;
   npmcli-arborist-->cacache;
@@ -828,4 +830,4 @@ packages higher up the chain.
  - @npmcli/git, make-fetch-happen, @npmcli/config, init-package-json
  - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, @npmcli/run-script, read-package-json, promzard
  - @npmcli/docs, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, npm-packlist, normalize-package-data, bin-links, nopt, npmlog, parse-conflict-json, @npmcli/mock-globals, read
- - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, minify-registry-metadata, ini, @npmcli/disparity-colors, mute-stream, npm-audit-report, npm-user-validate
+ - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, minify-registry-metadata, ini, @npmcli/disparity-colors, mute-stream, @npmcli/agent, npm-audit-report, npm-user-validate
