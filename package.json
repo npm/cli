@@ -98,7 +98,7 @@
     "npm-install-checks": "^6.1.1",
     "npm-package-arg": "^10.1.0",
     "npm-pick-manifest": "^8.0.1",
-    "npm-profile": "^7.0.1",
+    "npm-profile": "^8.0.0",
     "npm-registry-fetch": "^15.0.0",
     "npm-user-validate": "^2.0.0",
     "npmlog": "^7.0.1",
