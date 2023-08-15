@@ -524,6 +524,7 @@ graph LR;
   npm-->libnpmteam;
   npm-->libnpmversion;
   npm-->licensee;
+  npm-->lru-cache;
   npm-->make-fetch-happen;
   npm-->minimatch;
   npm-->minipass-pipeline;
