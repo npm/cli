@@ -528,6 +528,8 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         if (isTag) {
           // translate tag to a version
           spec = npa(`${mani.name}@${mani.version}`)
+          // let reify know it was originally a tag to inform how to save it in package.json
+          spec.fromTag = true
         }
         spec.name = mani.name
       }

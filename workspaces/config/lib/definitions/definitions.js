@@ -1709,8 +1709,6 @@ define('replace-registry-host', {
 
 define('save', {
   default: true,
-  defaultDescription: `\`true\` unless when using \`npm update\` where it
-  defaults to \`false\``,
   usage: '-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer|--save-bundle',
   type: Boolean,
   short: 'S',
@@ -1719,6 +1717,8 @@ define('save', {
 
     When used with the \`npm rm\` command, removes the dependency from
     \`package.json\`.
+
+    Does not affect \`npm update\`.
 
     Will also prevent writing to \`package-lock.json\` if set to \`false\`.
   `,

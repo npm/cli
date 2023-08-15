@@ -1228,52 +1228,46 @@ module.exports = cls => class Reifier extends cls {
     process.emit('time', 'reify:save')
 
     const updatedTrees = new Set()
-    const updateNodes = nodes => {
-      for (const { name, tree: addTree } of nodes) {
+    const updateNodes = specs => {
+      for (const { raw: rawSpec, fromTag, name, tree: addTree } of specs) {
         // addTree either the root, or a workspace
         const edge = addTree.edgesOut.get(name)
-        const pkg = addTree.package
-        const req = npa.resolve(name, edge.spec, addTree.realpath)
-        const { rawSpec, subSpec } = req
-
-        const spec = subSpec ? subSpec.rawSpec : rawSpec
-        const child = edge.to
 
         // if we tried to install an optional dep, but it was a version
         // that we couldn't resolve, this MAY be missing.  if we haven't
         // blown up by now, it's because it was not a problem, though, so
         // just move on.
-        if (!child || !addTree.isTop) {
+        if (!edge.to || !addTree.isTop) {
           continue
         }
 
-        let newSpec
+        const pkg = addTree.package
+        const req = npa.resolve(name, edge.spec, addTree.realpath)
+
+        const spec = req.subSpec || req
+
+        let newSpec = req.saveSpec
+
         // True if the dependency is getting installed from a local file path
         // In this case it is not possible to do the normal version comparisons
         // as the new version will be a file path
         const isLocalDep = req.type === 'directory' || req.type === 'file'
         if (req.registry) {
-          const version = child.version
-          const prefixRange = version ? this[_savePrefix] + version : '*'
-          // if we installed a range, then we save the range specified
-          // if it is not a subset of the ^x.y.z.  eg, installing a range
-          // of `1.x <1.2.3` will not be saved as `^1.2.0`, because that
-          // would allow versions outside the requested range.  Tags and
-          // specific versions save with the save-prefix.
-          const isRange = (subSpec || req).type === 'range'
-
-          let range = spec
-          if (
-            !isRange ||
-            spec === '*' ||
-            subset(prefixRange, spec, { loose: true })
-          ) {
-            range = prefixRange
+          // Tags and versions save with the save-prefix.
+          // Ranges save exactly as requested
+          // NOTE: In the past ranges were saved with the widest range between
+          // either exactly what they asked or {_savePrefix}{version}
+          newSpec = '*' // XXX is this '*' possible?
+          if (edge.to.version) {
+            newSpec = `${this[_savePrefix]}${edge.to.version}`
           }
-
-          const pname = child.packageName
-          const alias = name !== pname
-          newSpec = alias ? `npm:${pname}@${range}` : range
+          // Not from a tag, not currently a tag, and not a bare name
+          if (!fromTag && !spec.type !== 'tag' && rawSpec !== spec.name) {
+            newSpec = spec.rawSpec
+          }
+          if (req.type === 'alias') {
+            newSpec = `npm:${spec.name}@${newSpec}`
+          }
         } else if (req.hosted) {
           // save the git+https url if it has auth, otherwise shortcut
           const h = req.hosted
@@ -1301,8 +1295,6 @@ module.exports = cls => class Reifier extends cls {
             const rel = relpath(addTree.realpath, p).replace(/#/g, '%23')
             newSpec = `file:${rel}`
           }
-        } else {
-          newSpec = req.saveSpec
         }
 
         if (options.saveType) {
@@ -1350,7 +1342,7 @@ module.exports = cls => class Reifier extends cls {
     const exactVersion = node => {
       for (const edge of node.edgesIn) {
         try {
-          if (semver.subset(edge.spec, node.version)) {
+          if (subset(edge.spec, node.version)) {
             return false
           }
         } catch {

@@ -518,7 +518,7 @@ Object {
     },
     "packages/b": Object {
       "dependencies": Object {
-        "mkdirp": "^0.5.0",
+        "mkdirp": "0.5.0",
       },
       "version": "1.2.3",
     },
@@ -547,7 +547,7 @@ Object {
 exports[`test/arborist/reify.js TAP add deps to workspaces add mkdirp 0.5.0 to b > package.json b 1`] = `
 Object {
   "dependencies": Object {
-    "mkdirp": "^0.5.0",
+    "mkdirp": "0.5.0",
   },
   "name": "b",
   "version": "1.2.3",
@@ -711,7 +711,7 @@ ArboristNode {
             EdgeIn {
               "from": "packages/b",
               "name": "mkdirp",
-              "spec": "^0.5.0",
+              "spec": "0.5.0",
               "type": "prod",
             },
           },
@@ -733,7 +733,7 @@ ArboristNode {
       "edgesOut": Map {
         "mkdirp" => EdgeOut {
           "name": "mkdirp",
-          "spec": "^0.5.0",
+          "spec": "0.5.0",
           "to": "packages/b/node_modules/mkdirp",
           "type": "prod",
         },
@@ -812,7 +812,7 @@ Object {
     },
     "packages/b": Object {
       "dependencies": Object {
-        "mkdirp": "^0.5.0",
+        "mkdirp": "0.5.0",
       },
       "version": "1.2.3",
     },
@@ -841,7 +841,7 @@ Object {
 exports[`test/arborist/reify.js TAP add deps to workspaces add mkdirp 0.5.0 to b, empty start > package.json b 1`] = `
 Object {
   "dependencies": Object {
-    "mkdirp": "^0.5.0",
+    "mkdirp": "0.5.0",
   },
   "name": "b",
   "version": "1.2.3",
@@ -917,7 +917,7 @@ ArboristNode {
             EdgeIn {
               "from": "packages/b",
               "name": "mkdirp",
-              "spec": "^0.5.0",
+              "spec": "0.5.0",
               "type": "prod",
             },
           },
@@ -939,7 +939,7 @@ ArboristNode {
       "edgesOut": Map {
         "mkdirp" => EdgeOut {
           "name": "mkdirp",
-          "spec": "^0.5.0",
+          "spec": "0.5.0",
           "to": "packages/b/node_modules/mkdirp",
           "type": "prod",
         },
@@ -1484,7 +1484,7 @@ Object {
     },
     "packages/a": Object {
       "dependencies": Object {
-        "mkdirp": "^1.0.4",
+        "mkdirp": "1",
       },
       "version": "1.2.3",
     },
@@ -1499,7 +1499,7 @@ Object {
 exports[`test/arborist/reify.js TAP add deps to workspaces upgrade mkdirp in a, dedupe on root > package.json a 1`] = `
 Object {
   "dependencies": Object {
-    "mkdirp": "^1.0.4",
+    "mkdirp": "1",
   },
   "name": "a",
   "version": "1.2.3",
@@ -1560,7 +1560,7 @@ ArboristNode {
         EdgeIn {
           "from": "packages/a",
           "name": "mkdirp",
-          "spec": "^1.0.4",
+          "spec": "1",
           "type": "prod",
         },
       },
@@ -1596,7 +1596,7 @@ ArboristNode {
       "edgesOut": Map {
         "mkdirp" => EdgeOut {
           "name": "mkdirp",
-          "spec": "^1.0.4",
+          "spec": "1",
           "to": "node_modules/mkdirp",
           "type": "prod",
         },
@@ -1660,7 +1660,7 @@ Object {
     },
     "packages/a": Object {
       "dependencies": Object {
-        "mkdirp": "^1.0.4",
+        "mkdirp": "1",
       },
       "version": "1.2.3",
     },
@@ -1675,7 +1675,7 @@ Object {
 exports[`test/arborist/reify.js TAP add deps to workspaces upgrade mkdirp in a, dedupe on root, empty start > package.json a 1`] = `
 Object {
   "dependencies": Object {
-    "mkdirp": "^1.0.4",
+    "mkdirp": "1",
   },
   "name": "a",
   "version": "1.2.3",
@@ -1716,7 +1716,7 @@ ArboristNode {
         EdgeIn {
           "from": "packages/a",
           "name": "mkdirp",
-          "spec": "^1.0.4",
+          "spec": "1",
           "type": "prod",
         },
       },
@@ -1753,7 +1753,7 @@ ArboristNode {
       "edgesOut": Map {
         "mkdirp" => EdgeOut {
           "name": "mkdirp",
-          "spec": "^1.0.4",
+          "spec": "1",
           "to": "node_modules/mkdirp",
           "type": "prod",
         },
@@ -4539,7 +4539,7 @@ ArboristNode {
         EdgeIn {
           "from": "",
           "name": "@isaacs/testing-link-dep",
-          "spec": "^2.0.0",
+          "spec": "2",
           "type": "prod",
         },
       },
@@ -4571,7 +4571,7 @@ ArboristNode {
         EdgeIn {
           "from": "",
           "name": "@isaacs/testing-link-dev-dep",
-          "spec": "^2.0.1",
+          "spec": "2",
           "type": "prod",
         },
       },
@@ -4585,13 +4585,13 @@ ArboristNode {
   "edgesOut": Map {
     "@isaacs/testing-link-dep" => EdgeOut {
       "name": "@isaacs/testing-link-dep",
-      "spec": "^2.0.0",
+      "spec": "2",
       "to": "node_modules/@isaacs/testing-link-dep",
       "type": "prod",
     },
     "@isaacs/testing-link-dev-dep" => EdgeOut {
       "name": "@isaacs/testing-link-dev-dep",
-      "spec": "^2.0.1",
+      "spec": "2",
       "to": "node_modules/@isaacs/testing-link-dev-dep",
       "type": "prod",
     },
@@ -17276,7 +17276,7 @@ ArboristNode {
   "edgesOut": Map {
     "@isaacs/testing-missing-tgz" => EdgeOut {
       "name": "@isaacs/testing-missing-tgz",
-      "spec": "^1.0.1",
+      "spec": "*",
       "to": null,
       "type": "optional",
     },
@@ -17314,7 +17314,7 @@ ArboristNode {
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-allinstall-fail" => EdgeOut {
       "name": "@isaacs/testing-prod-dep-allinstall-fail",
-      "spec": "^1.0.1",
+      "spec": "*",
       "to": null,
       "type": "optional",
     },
@@ -17352,7 +17352,7 @@ ArboristNode {
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-install-fail" => EdgeOut {
       "name": "@isaacs/testing-prod-dep-install-fail",
-      "spec": "^1.0.1",
+      "spec": "*",
       "to": null,
       "type": "optional",
     },
@@ -17390,7 +17390,7 @@ ArboristNode {
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-postinstall-fail" => EdgeOut {
       "name": "@isaacs/testing-prod-dep-postinstall-fail",
-      "spec": "^1.0.1",
+      "spec": "*",
       "to": null,
       "type": "optional",
     },
@@ -17428,7 +17428,7 @@ ArboristNode {
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-preinstall-fail" => EdgeOut {
       "name": "@isaacs/testing-prod-dep-preinstall-fail",
-      "spec": "^1.0.1",
+      "spec": "*",
       "to": null,
       "type": "optional",
     },
@@ -17466,7 +17466,7 @@ ArboristNode {
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-tgz-missing" => EdgeOut {
       "name": "@isaacs/testing-prod-dep-tgz-missing",
-      "spec": "^1.0.1",
+      "spec": "*",
       "to": null,
       "type": "optional",
     },
@@ -32411,7 +32411,7 @@ exports[`test/arborist/reify.js TAP save complete lockfile on update-all > shoul
       "name": "save-package-lock-after-update-test",
       "version": "1.0.0",
       "dependencies": {
-        "abbrev": "^1.0.4"
+        "abbrev": "1.0.4"
       }
     },
     "node_modules/abbrev": {
@@ -32561,9 +32561,9 @@ exports[`test/arborist/reify.js TAP save package.json on update should not save 
 
 `
 
-exports[`test/arborist/reify.js TAP save package.json on update should save many deps in multiple package.json when using save=true > should update lockfile with many deps updated package.json save=true 1`] = `
+exports[`test/arborist/reify.js TAP save package.json on update should not save many deps in multiple package.json when using save=true > should update lockfile with many deps updated package.json save=true 1`] = `
 {
-  "name": "tap-testdir-reify-save-package.json-on-update-should-save-many-deps-in-multiple-package.json-when-using-save-true",
+  "name": "tap-testdir-reify-save-package.json-on-update-should-not-save-many-deps-in-multiple-package.json-when-using-save-true",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
@@ -32573,18 +32573,18 @@ exports[`test/arborist/reify.js TAP save package.json on update should save many
         "b"
       ],
       "dependencies": {
-        "abbrev": "^1.1.1"
+        "abbrev": "^1.0.4"
       }
     },
     "a": {
       "dependencies": {
-        "abbrev": "^1.1.1",
-        "once": "^1.4.0"
+        "abbrev": "^1.0.4",
+        "once": "^1.3.2"
       }
     },
     "b": {
       "dependencies": {
-        "abbrev": "^1.1.1"
+        "abbrev": "^1.0.4"
       }
     },
     "node_modules/a": {
@@ -32630,18 +32630,18 @@ exports[`test/arborist/reify.js TAP save package.json on update should update na
         "b"
       ],
       "dependencies": {
-        "abbrev": "^1.1.1"
+        "abbrev": "^1.0.4"
       }
     },
     "a": {
       "dependencies": {
-        "abbrev": "^1.1.1",
+        "abbrev": "^1.0.4",
         "once": "^1.3.2"
       }
     },
     "b": {
       "dependencies": {
-        "abbrev": "^1.1.1"
+        "abbrev": "^1.0.4"
       }
     },
     "node_modules/a": {
@@ -32675,7 +32675,7 @@ exports[`test/arborist/reify.js TAP save package.json on update should update na
     "a": {
       "version": "file:a",
       "requires": {
-        "abbrev": "^1.1.1",
+        "abbrev": "^1.0.4",
         "once": "^1.3.2"
       }
     },
@@ -32687,7 +32687,7 @@ exports[`test/arborist/reify.js TAP save package.json on update should update na
     "b": {
       "version": "file:b",
       "requires": {
-        "abbrev": "^1.1.1"
+        "abbrev": "^1.0.4"
       }
     },
     "once": {
@@ -32726,7 +32726,7 @@ exports[`test/arborist/reify.js TAP save package.json on update should update si
     "a": {
       "dependencies": {
         "abbrev": "^1.0.4",
-        "once": "^1.4.0"
+        "once": "^1.3.2"
       }
     },
     "b": {
@@ -32766,7 +32766,7 @@ exports[`test/arborist/reify.js TAP save package.json on update should update si
       "version": "file:a",
       "requires": {
         "abbrev": "^1.0.4",
-        "once": "^1.4.0"
+        "once": "^1.3.2"
       }
     },
     "abbrev": {
@@ -33627,7 +33627,7 @@ ArboristNode {
         EdgeIn {
           "from": "",
           "name": "@nlf/shrinkwrapped-dep-updates-a",
-          "spec": "^1.0.0",
+          "spec": "1.0.0",
           "type": "prod",
         },
       },
@@ -33662,7 +33662,7 @@ ArboristNode {
   "edgesOut": Map {
     "@nlf/shrinkwrapped-dep-updates-a" => EdgeOut {
       "name": "@nlf/shrinkwrapped-dep-updates-a",
-      "spec": "^1.0.0",
+      "spec": "1.0.0",
       "to": "node_modules/@nlf/shrinkwrapped-dep-updates-a",
       "type": "prod",
     },
@@ -33732,7 +33732,7 @@ ArboristNode {
         EdgeIn {
           "from": "",
           "name": "@nlf/shrinkwrapped-dep-updates-a",
-          "spec": "^2.0.0",
+          "spec": "2.0.0",
           "type": "prod",
         },
       },
@@ -33767,7 +33767,7 @@ ArboristNode {
   "edgesOut": Map {
     "@nlf/shrinkwrapped-dep-updates-a" => EdgeOut {
       "name": "@nlf/shrinkwrapped-dep-updates-a",
-      "spec": "^2.0.0",
+      "spec": "2.0.0",
       "to": "node_modules/@nlf/shrinkwrapped-dep-updates-a",
       "type": "prod",
     },
@@ -44486,7 +44486,7 @@ ArboristNode {
         EdgeIn {
           "from": "",
           "name": "tap",
-          "spec": "^14.10.5",
+          "spec": "14.10.5",
           "type": "dev",
         },
       },
@@ -46058,7 +46058,7 @@ ArboristNode {
     },
     "tap" => EdgeOut {
       "name": "tap",
-      "spec": "^14.10.5",
+      "spec": "14.10.5",
       "to": "node_modules/tap",
       "type": "dev",
     },
