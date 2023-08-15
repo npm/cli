@@ -37,7 +37,7 @@
     "tap": "^16.3.4"
   },
   "dependencies": {
-    "@npmcli/git": "^5.0.0",
+    "@npmcli/git": "^5.0.1",
     "@npmcli/run-script": "^6.0.0",
     "json-parse-even-better-errors": "^3.0.0",
     "proc-log": "^3.0.0",
