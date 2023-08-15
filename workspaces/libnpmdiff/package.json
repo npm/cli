@@ -52,7 +52,7 @@
     "binary-extensions": "^2.2.0",
     "diff": "^5.1.0",
     "minimatch": "^9.0.0",
-    "npm-package-arg": "^10.1.0",
+    "npm-package-arg": "^11.0.0",
     "pacote": "^16.0.0",
     "tar": "^6.1.13"
   },
