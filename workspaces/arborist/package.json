@@ -10,7 +10,7 @@
     "@npmcli/metavuln-calculator": "^6.0.1",
     "@npmcli/name-from-folder": "^2.0.0",
     "@npmcli/node-gyp": "^3.0.0",
-    "@npmcli/package-json": "^4.0.0",
+    "@npmcli/package-json": "^5.0.0",
     "@npmcli/query": "^3.0.0",
     "@npmcli/run-script": "^6.0.0",
     "bin-links": "^4.0.1",
