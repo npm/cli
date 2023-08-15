@@ -39,7 +39,7 @@
   "homepage": "https://npmjs.com/package/libnpmpublish",
   "dependencies": {
     "ci-info": "^3.6.1",
-    "normalize-package-data": "^5.0.0",
+    "normalize-package-data": "^6.0.0",
     "npm-package-arg": "^10.1.0",
     "npm-registry-fetch": "^15.0.0",
     "proc-log": "^3.0.0",
