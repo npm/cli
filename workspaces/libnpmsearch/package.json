@@ -38,7 +38,7 @@
   "bugs": "https://github.com/npm/libnpmsearch/issues",
   "homepage": "https://npmjs.com/package/libnpmsearch",
   "dependencies": {
-    "npm-registry-fetch": "^15.0.0"
+    "npm-registry-fetch": "^16.0.0"
   },
   "engines": {
     "node": "^16.14.0 || >=18.0.0"
