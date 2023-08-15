@@ -71,7 +71,7 @@
       "prerelease": true
     },
     "workspaces/libnpmversion": {
-      "prerelease": false
+      "prerelease": true
     }
   },
   "exclude-packages-from-root": true,
