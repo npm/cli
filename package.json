@@ -97,7 +97,7 @@
     "npm-audit-report": "^5.0.0",
     "npm-install-checks": "^6.2.0",
     "npm-package-arg": "^11.0.0",
-    "npm-pick-manifest": "^8.0.2",
+    "npm-pick-manifest": "^9.0.0",
     "npm-profile": "^8.0.0",
     "npm-registry-fetch": "^15.0.0",
     "npm-user-validate": "^2.0.0",
