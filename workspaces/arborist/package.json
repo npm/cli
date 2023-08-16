@@ -79,7 +79,6 @@
     "test-env": [
       "LC_ALL=sk"
     ],
-    "color": 1,
     "timeout": "360",
     "nyc-arg": [
       "--exclude",
