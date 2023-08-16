@@ -50,6 +50,8 @@ jobs:
         run: node scripts/git-dirty.js
       - name: Reset Deps
         run: node scripts/resetdeps.js
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
       - name: Lint
         run: node . run lint --ignore-scripts
       - name: Post Lint
@@ -97,6 +99,8 @@ jobs:
         run: node scripts/git-dirty.js
       - name: Reset Deps
         run: node scripts/resetdeps.js
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
       - name: Add Problem Matcher
         run: echo "::add-matcher::.github/matchers/tap.json"
       - name: Test
@@ -128,6 +132,8 @@ jobs:
         run: node scripts/git-dirty.js
       - name: Reset Deps
         run: node scripts/resetdeps.js
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
       - name: Check Licenses
         run: node . run licenses
 
@@ -155,6 +161,8 @@ jobs:
         run: node scripts/git-dirty.js
       - name: Reset Deps
         run: node scripts/resetdeps.js
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
       - name: Run Smoke Tests
         run: node . test -w smoke-tests --ignore-scripts
       - name: Check Git Status
@@ -183,6 +191,8 @@ jobs:
         run: node scripts/git-dirty.js
       - name: Reset Deps
         run: node scripts/resetdeps.js
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
       - name: Setup WSL
         uses: Vampire/setup-wsl@v2.0.1
       - name: Setup Cygwin

@@ -88,6 +88,8 @@ jobs:
         run: node scripts/git-dirty.js
       - name: Reset Deps
         run: node scripts/resetdeps.js
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
       - name: Lint
         run: node . run lint --ignore-scripts -ws -iwr --if-present
       - name: Post Lint
@@ -187,6 +189,8 @@ jobs:
         run: node scripts/git-dirty.js
       - name: Reset Deps
         run: node scripts/resetdeps.js
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
       - name: Add Problem Matcher
         run: echo "::add-matcher::.github/matchers/tap.json"
       - name: Test
@@ -289,6 +293,8 @@ jobs:
         run: node scripts/git-dirty.js
       - name: Reset Deps
         run: node scripts/resetdeps.js
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
       - name: Pack
         env:
           SMOKE_PUBLISH_NPM: 1
