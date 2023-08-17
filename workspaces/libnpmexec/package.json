@@ -56,7 +56,7 @@
     "chalk": "^5.2.0",
     "just-extend": "^6.2.0",
     "just-safe-set": "^4.2.1",
-    "tap": "^16.3.4"
+    "tap": "^16.3.8"
   },
   "dependencies": {
     "@npmcli/arborist": "^6.3.0",
