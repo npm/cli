@@ -42,7 +42,7 @@
     "@npmcli/template-oss": "4.18.0",
     "benchmark": "^2.1.4",
     "minify-registry-metadata": "^3.0.0",
-    "nock": "^13.3.0",
+    "nock": "^13.3.3",
     "tap": "^16.3.8",
     "tar-stream": "^3.0.0",
     "tcompare": "^5.0.6"
