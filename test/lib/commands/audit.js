@@ -1873,9 +1873,7 @@ t.test('audit signatures', async t => {
       prefixDir: installWithValidAttestations,
       mocks: {
         pacote: t.mock('pacote', {
-          sigstore: {
-            sigstore: { verify: async () => true },
-          },
+          sigstore: { verify: async () => true },
         }),
       },
     })
@@ -1900,9 +1898,7 @@ t.test('audit signatures', async t => {
       prefixDir: installWithMultipleValidAttestations,
       mocks: {
         pacote: t.mock('pacote', {
-          sigstore: {
-            sigstore: { verify: async () => true },
-          },
+          sigstore: { verify: async () => true },
         }),
       },
     })
@@ -1933,10 +1929,8 @@ t.test('audit signatures', async t => {
       mocks: {
         pacote: t.mock('pacote', {
           sigstore: {
-            sigstore: {
-              verify: async () => {
-                throw new Error(`artifact signature verification failed`)
-              },
+            verify: async () => {
+              throw new Error(`artifact signature verification failed`)
             },
           },
         }),
@@ -1970,10 +1964,8 @@ t.test('audit signatures', async t => {
       mocks: {
         pacote: t.mock('pacote', {
           sigstore: {
-            sigstore: {
-              verify: async () => {
-                throw new Error(`artifact signature verification failed`)
-              },
+            verify: async () => {
+              throw new Error(`artifact signature verification failed`)
             },
           },
         }),
@@ -2001,10 +1993,8 @@ t.test('audit signatures', async t => {
       mocks: {
         pacote: t.mock('pacote', {
           sigstore: {
-            sigstore: {
-              verify: async () => {
-                throw new Error(`artifact signature verification failed`)
-              },
+            verify: async () => {
+              throw new Error(`artifact signature verification failed`)
             },
           },
         }),
