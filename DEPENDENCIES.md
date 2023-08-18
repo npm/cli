@@ -767,7 +767,6 @@ graph LR;
   rimraf-->glob;
   semver-->lru-cache;
   shebang-command-->shebang-regex;
-  sigstore-->make-fetch-happen;
   sigstore-->sigstore-bundle["@sigstore/bundle"];
   sigstore-->sigstore-protobuf-specs["@sigstore/protobuf-specs"];
   sigstore-->sigstore-sign["@sigstore/sign"];
