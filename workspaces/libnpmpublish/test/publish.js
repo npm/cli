@@ -725,7 +725,7 @@ t.test('automatic provenance with incorrect permissions', async t => {
 t.test('user-supplied provenance - success', async t => {
   const { publish } = t.mock('..', {
     '../lib/provenance': t.mock('../lib/provenance', {
-      sigstore: { sigstore: { verify: () => {} } },
+      sigstore: { verify: () => {} },
     }),
   })
 
