@@ -1699,16 +1699,12 @@ t.test('audit signatures', async t => {
     const { npm } = await loadMockNpm(t, {
       prefixDir: installWithMultipleDeps,
       mocks: {
-        sigstore: {
-          sigstore: {
-            tuf: {
-              client: async () => ({
-                getTarget: async () => {
-                  throw new Error('error refreshing TUF metadata')
-                },
-              }),
+        '@sigstore/tuf': {
+          initTUF: async () => ({
+            getTarget: async () => {
+              throw new Error('error refreshing TUF metadata')
             },
-          },
+          }),
         },
       },
     })
