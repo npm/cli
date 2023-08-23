@@ -3831,7 +3831,7 @@ npm query <selector>
 Options:
 [-g|--global]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root]
+[-ws|--workspaces] [--include-workspace-root] [--package-lock-only]
 
 Run "npm help query" for more info
 
@@ -3843,6 +3843,7 @@ npm query <selector>
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`
+#### \`package-lock-only\`
 `
 
 exports[`test/lib/docs.js TAP usage rebuild > must match snapshot 1`] = `
