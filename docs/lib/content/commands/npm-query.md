@@ -133,6 +133,12 @@ npm query ":type(git)" | jq 'map(.name)' | xargs -I {} npm why {}
   },
   ...
 ```
+### Package lock only mode
+
+If package-lock-only is enabled, only the information in the package
+lock (or shrinkwrap) is loaded.  This means that information from the
+package.json files of your dependencies will not be included in the
+result set (e.g. description, homepage, engines).
 
 ### Package lock only mode
 
