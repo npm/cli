@@ -30,6 +30,13 @@ vulnerability is found. It may be useful in CI environments to include the
 will cause the command to fail. This option does not filter the report
 output, it simply changes the command's failure threshold.
 
+### Package lock
+
+By default npm requires a package-lock or shrinkwrap in order to run the
+audit.  You can bypass the package lock with `--no-package-lock` but be
+aware the results may be different with every run, since npm will
+re-build the dependency tree each time.
+
 ### Audit Signatures
 
 To ensure the integrity of packages you download from the public npm registry, or any registry that supports signatures, you can verify the registry signatures of downloaded packages using the npm CLI.

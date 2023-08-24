@@ -27,6 +27,15 @@ t.test('audit finds the bad deps', async t => {
   t.equal(report.size, 2)
 })
 
+t.test('no package lock finds no bad deps', async t => {
+  const path = resolve(fixtures, 'deprecated-dep')
+  t.teardown(auditResponse(resolve(fixtures, 'audit-nyc-mkdirp/audit.json')))
+  const arb = newArb(path, { packageLock: false })
+  const report = await arb.audit()
+  t.equal(report.topVulns.size, 0)
+  t.equal(report.size, 0)
+})
+
 t.test('audit fix reifies out the bad deps', async t => {
   const path = fixture(t, 'deprecated-dep')
   t.teardown(auditResponse(resolve(fixtures, 'audit-nyc-mkdirp/audit.json')))
