@@ -2586,7 +2586,7 @@ npm audit [fix|signatures]
 
 Options:
 [--audit-level <info|low|moderate|high|critical|none>] [--dry-run] [-f|--force]
-[--json] [--package-lock-only]
+[--json] [--package-lock-only] [--no-package-lock]
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--foreground-scripts] [--ignore-scripts]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
@@ -2603,6 +2603,7 @@ npm audit [fix|signatures]
 #### \`force\`
 #### \`json\`
 #### \`package-lock-only\`
+#### \`package-lock\`
 #### \`omit\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
