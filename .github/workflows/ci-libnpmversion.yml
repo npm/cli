@@ -37,7 +37,6 @@ jobs:
         with:
           node-version: 18.x
           cache: npm
-          check-latest: true
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
@@ -86,7 +85,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
-          check-latest: true
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps

@@ -43,9 +43,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 20.x
+          node-version: 18.x
           cache: npm
-          check-latest: true
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
@@ -72,10 +71,12 @@ jobs:
             os: windows-latest
             shell: cmd
         node-version:
-          - 18.17.0
+          - 14.17.0
+          - 14.x
+          - 16.13.0
+          - 16.x
+          - 18.0.0
           - 18.x
-          - 20.5.0
-          - 20.x
     runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
@@ -92,7 +93,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
-          check-latest: true
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
@@ -121,9 +121,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 20.x
+          node-version: 18.x
           cache: npm
-          check-latest: true
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
@@ -148,9 +147,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 20.x
+          node-version: 18.x
           cache: npm
-          check-latest: true
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
@@ -176,9 +174,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 20.x
+          node-version: 18.x
           cache: npm
-          check-latest: true
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
