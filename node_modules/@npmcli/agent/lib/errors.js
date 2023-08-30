@@ -1,5 +1,7 @@
 'use strict'
 
+const { appendPort } = require('./util')
+
 class InvalidProxyProtocolError extends Error {
   constructor (url) {
     super(`Invalid protocol \`${url.protocol}\` connecting to proxy \`${url.host}\``)
@@ -8,17 +10,9 @@ class InvalidProxyProtocolError extends Error {
   }
 }
 
-class InvalidProxyResponseError extends Error {
-  constructor (url, status) {
-    super(`Invalid status code \`${status}\` connecting to proxy \`${url.host}\``)
-    this.code = 'EINVALIDRESPONSE'
-    this.proxy = url
-    this.status = status
-  }
-}
-
 class ConnectionTimeoutError extends Error {
-  constructor (host) {
+  constructor ({ host, port }) {
+    host = appendPort(host, port)
     super(`Timeout connecting to host \`${host}\``)
     this.code = 'ECONNECTIONTIMEOUT'
     this.host = host
@@ -26,7 +20,8 @@ class ConnectionTimeoutError extends Error {
 }
 
 class IdleTimeoutError extends Error {
-  constructor (host) {
+  constructor ({ host, port }) {
+    host = appendPort(host, port)
     super(`Idle timeout reached for host \`${host}\``)
     this.code = 'EIDLETIMEOUT'
     this.host = host
@@ -34,36 +29,35 @@ class IdleTimeoutError extends Error {
 }
 
 class ResponseTimeoutError extends Error {
-  constructor (proxy, request) {
+  constructor (request, proxy) {
     let msg = 'Response timeout '
-    if (proxy.url) {
-      msg += `from proxy \`${proxy.url.host}\` `
+    if (proxy) {
+      msg += `from proxy \`${proxy.host}\` `
     }
     msg += `connecting to host \`${request.host}\``
     super(msg)
     this.code = 'ERESPONSETIMEOUT'
-    this.proxy = proxy.url
+    this.proxy = proxy
     this.request = request
   }
 }
 
 class TransferTimeoutError extends Error {
-  constructor (proxy, request) {
+  constructor (request, proxy) {
     let msg = 'Transfer timeout '
-    if (proxy.url) {
-      msg += `from proxy \`${proxy.url.host}\` `
+    if (proxy) {
+      msg += `from proxy \`${proxy.host}\` `
     }
     msg += `for \`${request.host}\``
     super(msg)
     this.code = 'ETRANSFERTIMEOUT'
-    this.proxy = proxy.url
+    this.proxy = proxy
     this.request = request
   }
 }
 
 module.exports = {
   InvalidProxyProtocolError,
-  InvalidProxyResponseError,
   ConnectionTimeoutError,
   IdleTimeoutError,
   ResponseTimeoutError,

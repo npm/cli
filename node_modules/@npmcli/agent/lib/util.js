@@ -1,33 +1,84 @@
 'use strict'
 
-const dns = require('dns')
+const timers = require('timers/promises')
 
-const normalizeOptions = (_options) => {
-  const options = { ..._options }
+const createKey = (obj) => {
+  let key = ''
+  const sorted = Object.entries(obj).sort((a, b) => a[0] - b[0])
+  for (let [k, v] of sorted) {
+    if (v == null) {
+      v = 'null'
+    } else if (v instanceof URL) {
+      v = v.toString()
+    } else if (typeof v === 'object') {
+      v = createKey(v)
+    }
+    key += `${k}:${v}:`
+  }
+  return key
+}
 
-  if (typeof options.keepAlive === 'undefined') {
-    options.keepAlive = true
+const createTimeout = (delay, signal) => {
+  if (!delay) {
+    return signal ? new Promise(() => {}) : null
   }
 
-  if (!options.timeouts) {
-    options.timeouts = {}
+  if (!signal) {
+    let timeout
+    return {
+      start: (cb) => (timeout = setTimeout(cb, delay)),
+      clear: () => clearTimeout(timeout),
+    }
   }
 
-  if (options.timeout) {
-    options.timeouts.idle = options.timeout
-    delete options.timeout
-  }
+  return timers.setTimeout(delay, null, signal)
+    .then(() => {
+      throw new Error()
+    }).catch((err) => {
+      if (err.name === 'AbortError') {
+        return
+      }
+      throw err
+    })
+}
 
-  options.family = !isNaN(+options.family) ? +options.family : 0
-  options.dns = {
-    ttl: 5 * 60 * 1000,
-    lookup: dns.lookup,
-    ...options.dns,
+const abortRace = async (promises, ac = new AbortController()) => {
+  let res
+  try {
+    res = await Promise.race(promises.map((p) => p(ac)))
+    ac.abort()
+  } catch (err) {
+    ac.abort()
+    throw err
   }
+  return res
+}
 
-  return options
+const urlify = (url) => typeof url === 'string' ? new URL(url) : url
+
+const appendPort = (host, port) => {
+  // istanbul ignore next
+  if (port) {
+    host += `:${port}`
+  }
+  return host
+}
+
+const cacheAgent = ({ key, cache, secure, proxies }, ...args) => {
+  if (cache.has(key)) {
+    return cache.get(key)
+  }
+  const Ctor = (secure ? proxies[1] : proxies[0]) ?? proxies[0]
+  const agent = new Ctor(...args)
+  cache.set(key, agent)
+  return agent
 }
 
 module.exports = {
-  normalizeOptions,
+  createKey,
+  createTimeout,
+  abortRace,
+  urlify,
+  cacheAgent,
+  appendPort,
 }
