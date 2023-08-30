@@ -3,49 +3,51 @@
 const { LRUCache } = require('lru-cache')
 const dns = require('dns')
 
-const defaultOptions = exports.defaultOptions = {
-  family: undefined,
-  hints: dns.ADDRCONFIG,
-  all: false,
-  verbatim: undefined,
-}
-
-const lookupCache = exports.lookupCache = new LRUCache({ max: 50 })
-
 // this is a factory so that each request can have its own opts (i.e. ttl)
 // while still sharing the cache across all requests
-exports.getLookup = (dnsOptions) => {
-  return (hostname, options, callback) => {
-    if (typeof options === 'function') {
-      callback = options
-      options = null
-    } else if (typeof options === 'number') {
-      options = { family: options }
+const cache = new LRUCache({ max: 50 })
+
+const getOptions = ({
+  family = 0,
+  hints = dns.ADDRCONFIG,
+  all = false,
+  verbatim = undefined,
+  ttl = 5 * 60 * 1000,
+  lookup = dns.lookup,
+}) => ({
+  // hints and lookup are returned since both are top level properties to (net|tls).connect
+  hints,
+  lookup: (hostname, ...args) => {
+    const callback = args.pop() // callback is always last arg
+    const lookupOptions = args[0] ?? {}
+
+    const options = {
+      family,
+      hints,
+      all,
+      verbatim,
+      ...(typeof lookupOptions === 'number' ? { family: lookupOptions } : lookupOptions),
     }
 
-    options = { ...defaultOptions, ...options }
+    const key = JSON.stringify({ hostname, ...options })
 
-    const key = JSON.stringify({
-      hostname,
-      family: options.family,
-      hints: options.hints,
-      all: options.all,
-      verbatim: options.verbatim,
-    })
-
-    if (lookupCache.has(key)) {
-      const [address, family] = lookupCache.get(key)
-      process.nextTick(callback, null, address, family)
-      return
+    if (cache.has(key)) {
+      const cached = cache.get(key)
+      return process.nextTick(callback, null, ...cached)
     }
 
-    dnsOptions.lookup(hostname, options, (err, address, family) => {
+    lookup(hostname, options, (err, ...result) => {
       if (err) {
         return callback(err)
       }
 
-      lookupCache.set(key, [address, family], { ttl: dnsOptions.ttl })
-      return callback(null, address, family)
+      cache.set(key, result, { ttl })
+      return callback(null, ...result)
     })
-  }
+  },
+})
+
+module.exports = {
+  cache,
+  getOptions,
 }
