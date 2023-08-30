@@ -64,7 +64,7 @@
     "ci-info": "^3.7.1",
     "npm-package-arg": "^11.0.0",
     "npmlog": "^7.0.1",
-    "pacote": "^17.0.3",
+    "pacote": "^17.0.4",
     "proc-log": "^3.0.0",
     "read": "^2.0.0",
     "read-package-json-fast": "^3.0.2",
