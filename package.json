@@ -59,7 +59,7 @@
     "@npmcli/package-json": "^5.0.0",
     "@npmcli/promise-spawn": "^6.0.2",
     "@npmcli/run-script": "^6.0.2",
-    "@sigstore/tuf": "^2.0.0",
+    "@sigstore/tuf": "^2.1.0",
     "abbrev": "^2.0.0",
     "archy": "~1.0.0",
     "cacache": "^18.0.0",
