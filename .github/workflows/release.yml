@@ -51,8 +51,6 @@ jobs:
         run: node scripts/git-dirty.js
       - name: Reset Deps
         run: node scripts/resetdeps.js
-      - name: Check Git Status
-        run: node scripts/git-dirty.js
       - name: Release Please
         id: release
         env:
@@ -166,8 +164,6 @@ jobs:
         run: node scripts/git-dirty.js
       - name: Reset Deps
         run: node scripts/resetdeps.js
-      - name: Check Git Status
-        run: node scripts/git-dirty.js
       - name: Run Post Pull Request Actions
         env:
           RELEASE_PR_NUMBER: ${{ needs.release.outputs.pr-number }}
