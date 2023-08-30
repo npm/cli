@@ -60,7 +60,7 @@
   },
   "dependencies": {
     "@npmcli/arborist": "^6.3.0",
-    "@npmcli/run-script": "^7.0.0",
+    "@npmcli/run-script": "^7.0.1",
     "ci-info": "^3.7.1",
     "npm-package-arg": "^11.0.0",
     "npmlog": "^7.0.1",
