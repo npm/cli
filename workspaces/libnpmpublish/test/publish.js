@@ -486,7 +486,7 @@ t.test('publish existing package with provenance in gha', async t => {
         // Can't match length because in github actions certain environment
         // variables are present that are not present when running locally,
         // changing the payload size.
-        content_type: 'application/vnd.dev.sigstore.bundle+json;version=0.1',
+        content_type: 'application/vnd.dev.sigstore.bundle+json;version=0.2',
       },
     },
   }
@@ -768,7 +768,7 @@ t.test('user-supplied provenance - success', async t => {
         length: tarData.length,
       },
       '@npmcli/libnpmpublish-test-1.0.0.sigstore': {
-        content_type: 'application/vnd.dev.sigstore.bundle+json;version=0.1',
+        content_type: 'application/vnd.dev.sigstore.bundle+json;version=0.2',
         data: /.*/, // Can't match against static value as signature is always different
         length: 7927,
       },
@@ -1035,7 +1035,7 @@ t.test('publish existing package with provenance in gitlab', async t => {
         // Can't match length because in github actions certain environment
         // variables are present that are not present when running locally,
         // changing the payload size.
-        content_type: 'application/vnd.dev.sigstore.bundle+json;version=0.1',
+        content_type: 'application/vnd.dev.sigstore.bundle+json;version=0.2',
       },
     },
   }

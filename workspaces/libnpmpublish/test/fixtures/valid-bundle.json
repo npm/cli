@@ -1,5 +1,5 @@
 {
-  "mediaType": "application/vnd.dev.sigstore.bundle+json;version=0.1",
+  "mediaType": "application/vnd.dev.sigstore.bundle+json;version=0.2",
   "verificationData": {
     "tlogEntries": [
       {
