@@ -1,6 +1,6 @@
 {
   "name": "libnpmsearch",
-  "version": "7.0.0-pre.0",
+  "version": "7.0.0",
   "description": "Programmatic API for searching in npm and compatible registries.",
   "author": "GitHub Inc.",
   "main": "lib/index.js",

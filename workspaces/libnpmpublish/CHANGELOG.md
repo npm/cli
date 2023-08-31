@@ -1,5 +1,11 @@
 # Changelog
 
+## [9.0.0](https://github.com/npm/cli/compare/libnpmpublish-v9.0.0-pre.0...libnpmpublish-v9.0.0) (2023-08-31)
+
+### Features
+
+* [`fb31c7e`](https://github.com/npm/cli/commit/fb31c7e5f00ae39e67f9a5d6b6860c1d839c704b) trigger release process (@lukekarrys)
+
 ## [9.0.0-pre.0](https://github.com/npm/cli/compare/libnpmpublish-v8.0.0...libnpmpublish-v9.0.0-pre.0) (2023-08-31)
 
 ### ⚠️ BREAKING CHANGES
