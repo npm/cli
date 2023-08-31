@@ -1,5 +1,11 @@
 # Changelog
 
+## [8.0.0](https://github.com/npm/cli/compare/libnpmaccess-v8.0.0-pre.0...libnpmaccess-v8.0.0) (2023-08-31)
+
+### Features
+
+* [`fb31c7e`](https://github.com/npm/cli/commit/fb31c7e5f00ae39e67f9a5d6b6860c1d839c704b) trigger release process (@lukekarrys)
+
 ## [8.0.0-pre.0](https://github.com/npm/cli/compare/libnpmaccess-v7.0.2...libnpmaccess-v8.0.0-pre.0) (2023-08-31)
 
 ### ⚠️ BREAKING CHANGES

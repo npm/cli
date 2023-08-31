@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.1.0](https://github.com/npm/cli/compare/config-v7.0.1...config-v7.1.0) (2023-08-31)
+
+### Features
+
+* [`fb31c7e`](https://github.com/npm/cli/commit/fb31c7e5f00ae39e67f9a5d6b6860c1d839c704b) trigger release process (@lukekarrys)
+
 ## [7.0.1](https://github.com/npm/cli/compare/config-v7.0.0...config-v7.0.1) (2023-08-31)
 
 ### Bug Fixes

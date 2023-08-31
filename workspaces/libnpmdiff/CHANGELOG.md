@@ -1,5 +1,15 @@
 # Changelog
 
+## [6.0.0](https://github.com/npm/cli/compare/libnpmdiff-v6.0.0-pre.0...libnpmdiff-v6.0.0) (2023-08-31)
+
+### Features
+
+* [`fb31c7e`](https://github.com/npm/cli/commit/fb31c7e5f00ae39e67f9a5d6b6860c1d839c704b) trigger release process (@lukekarrys)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v7.0.0): `@npmcli/arborist@7.0.0`
+
 ## [6.0.0-pre.0](https://github.com/npm/cli/compare/libnpmdiff-v5.0.19...libnpmdiff-v6.0.0-pre.0) (2023-08-31)
 
 ### ⚠️ BREAKING CHANGES
