@@ -32,46 +32,46 @@
   "packages": {
     ".": {
       "package-name": "",
-      "prerelease": true
+      "prerelease": false
     },
     "workspaces/arborist": {
-      "prerelease": true
+      "prerelease": false
     },
     "workspaces/config": {
       "prerelease": false
     },
     "workspaces/libnpmaccess": {
-      "prerelease": true
+      "prerelease": false
     },
     "workspaces/libnpmdiff": {
-      "prerelease": true
+      "prerelease": false
     },
     "workspaces/libnpmexec": {
-      "prerelease": true
+      "prerelease": false
     },
     "workspaces/libnpmfund": {
       "prerelease": false
     },
     "workspaces/libnpmhook": {
-      "prerelease": true
+      "prerelease": false
     },
     "workspaces/libnpmorg": {
-      "prerelease": true
+      "prerelease": false
     },
     "workspaces/libnpmpack": {
-      "prerelease": true
+      "prerelease": false
     },
     "workspaces/libnpmpublish": {
-      "prerelease": true
+      "prerelease": false
     },
     "workspaces/libnpmsearch": {
-      "prerelease": true
+      "prerelease": false
     },
     "workspaces/libnpmteam": {
-      "prerelease": true
+      "prerelease": false
     },
     "workspaces/libnpmversion": {
-      "prerelease": true
+      "prerelease": false
     }
   },
   "exclude-packages-from-root": true,
