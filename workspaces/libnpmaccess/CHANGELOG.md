@@ -1,5 +1,23 @@
 # Changelog
 
+## [8.0.0-pre.0](https://github.com/npm/cli/compare/libnpmaccess-v7.0.2...libnpmaccess-v8.0.0-pre.0) (2023-08-31)
+
+### ⚠️ BREAKING CHANGES
+
+* support for node <=16.13 has been removed
+* support for node 14 has been removed
+
+### Bug Fixes
+
+* [`6b251b1`](https://github.com/npm/cli/commit/6b251b1009648b36d49b83a2cc407c348fa225e0) [#6706](https://github.com/npm/cli/pull/6706) drop node 16.13.x support (@lukekarrys)
+* [`355bac8`](https://github.com/npm/cli/commit/355bac87eb66b105c9f0c2338ae37fed5f973b66) [#6706](https://github.com/npm/cli/pull/6706) drop node14 support (@lukekarrys)
+
+### Dependencies
+
+* [`2ee0fb3`](https://github.com/npm/cli/commit/2ee0fb3ac0c5e49f9eba545d6b05e20be1352414) [#6706](https://github.com/npm/cli/pull/6706) `npm-registry-fetch@16.0.0`
+* [`c784b57`](https://github.com/npm/cli/commit/c784b57b654d25e8d932e6fe415b87e75dcf9026) [#6706](https://github.com/npm/cli/pull/6706) `npm-package-arg@11.0.0`
+* [`5d0d859`](https://github.com/npm/cli/commit/5d0d8592cbf3b816d9fe44c36d390200ec15e87a) [#6706](https://github.com/npm/cli/pull/6706) `npm-registry-fetch@15.0.0`
+
 ## [7.0.2](https://github.com/npm/cli/compare/libnpmaccess-v7.0.1...libnpmaccess-v7.0.2) (2023-02-01)
 
 ### Dependencies

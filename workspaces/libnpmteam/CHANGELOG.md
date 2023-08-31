@@ -1,5 +1,22 @@
 # Changelog
 
+## [6.0.0-pre.0](https://github.com/npm/cli/compare/libnpmteam-v5.0.3...libnpmteam-v6.0.0-pre.0) (2023-08-31)
+
+### ⚠️ BREAKING CHANGES
+
+* support for node <=16.13 has been removed
+* support for node 14 has been removed
+
+### Bug Fixes
+
+* [`6b251b1`](https://github.com/npm/cli/commit/6b251b1009648b36d49b83a2cc407c348fa225e0) [#6706](https://github.com/npm/cli/pull/6706) drop node 16.13.x support (@lukekarrys)
+* [`8b0e755`](https://github.com/npm/cli/commit/8b0e755b78098d9c0800e69f0cc2f6a457ce28a6) [#6706](https://github.com/npm/cli/pull/6706) drop node14 support (@lukekarrys)
+
+### Dependencies
+
+* [`2ee0fb3`](https://github.com/npm/cli/commit/2ee0fb3ac0c5e49f9eba545d6b05e20be1352414) [#6706](https://github.com/npm/cli/pull/6706) `npm-registry-fetch@16.0.0`
+* [`5d0d859`](https://github.com/npm/cli/commit/5d0d8592cbf3b816d9fe44c36d390200ec15e87a) [#6706](https://github.com/npm/cli/pull/6706) `npm-registry-fetch@15.0.0`
+
 ## [5.0.3](https://github.com/npm/cli/compare/libnpmteam-v5.0.2...libnpmteam-v5.0.3) (2023-02-14)
 
 ### Bug Fixes
