@@ -483,6 +483,17 @@ define('cpu', {
   flatten,
 })
 
+define('os', {
+  default: null,
+  type: [null, String],
+  description: `
+    Override OS of native modules to install.
+    Acceptable values are same as \`os\` field of package.json,
+    which comes from \`process.platform\`.
+  `,
+  flatten,
+})
+
 define('depth', {
   default: null,
   defaultDescription: `
