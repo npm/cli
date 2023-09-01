@@ -472,6 +472,17 @@ define('commit-hooks', {
   flatten,
 })
 
+define('cpu', {
+  default: null,
+  type: [null, String],
+  description: `
+    Override CPU architecture of native modules to install.
+    Acceptable values are same as \`cpu\` field of package.json,
+    which comes from \`process.arch\`.
+  `,
+  flatten,
+})
+
 define('depth', {
   default: null,
   defaultDescription: `
