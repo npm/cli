@@ -343,6 +343,10 @@ Object {
     null,
     "boolean value (true or false)",
   ],
+  "os": Array [
+    null,
+    Function String(),
+  ],
   "otp": Array [
     null,
     Function String(),

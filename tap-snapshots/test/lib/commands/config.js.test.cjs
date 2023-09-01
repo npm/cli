@@ -35,6 +35,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "color": true,
   "commit-hooks": true,
   "cpu": null,
+  "os": null,
   "depth": null,
   "description": true,
   "dev": false,
@@ -265,6 +266,7 @@ omit = []
 omit-lockfile-registry-resolved = false 
 only = null 
 optional = null 
+os = null 
 otp = null 
 pack-destination = "." 
 package = [] 
