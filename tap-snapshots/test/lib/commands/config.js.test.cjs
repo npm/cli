@@ -34,6 +34,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "cidr": null,
   "color": true,
   "commit-hooks": true,
+  "cpu": null,
   "depth": null,
   "description": true,
   "dev": false,
@@ -191,6 +192,7 @@ ci-name = null
 cidr = null 
 color = true 
 commit-hooks = true 
+cpu = null 
 depth = null 
 description = true 
 dev = false 

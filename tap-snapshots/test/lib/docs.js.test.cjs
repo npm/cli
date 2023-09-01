@@ -392,6 +392,16 @@ Run git commit hooks when using the \`npm version\` command.
 
 
 
+#### \`cpu\`
+
+* Default: null
+* Type: null or String
+
+Override CPU architecture of native modules to install. Acceptable values
+are same as \`cpu\` field of package.json, which comes from \`process.arch\`.
+
+
+
 #### \`depth\`
 
 * Default: \`Infinity\` if \`--all\` is set, otherwise \`1\`
@@ -2035,6 +2045,7 @@ Array [
   "cidr",
   "color",
   "commit-hooks",
+  "cpu",
   "depth",
   "description",
   "dev",
@@ -2190,6 +2201,7 @@ Array [
   "cidr",
   "color",
   "commit-hooks",
+  "cpu",
   "depth",
   "description",
   "dev",
@@ -2346,6 +2358,7 @@ Object {
   "ciName": "{ci}",
   "color": false,
   "commitHooks": true,
+  "cpu": null,
   "defaultTag": "latest",
   "depth": null,
   "diff": Array [],
@@ -3204,7 +3217,7 @@ Options:
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
 [--foreground-scripts] [--ignore-scripts] [--no-audit] [--no-bin-links]
-[--no-fund] [--dry-run]
+[--no-fund] [--dry-run] [--cpu <cpu>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
 
@@ -3235,6 +3248,7 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
+#### \`cpu\`
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`
@@ -3295,7 +3309,7 @@ Options:
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
 [--foreground-scripts] [--ignore-scripts] [--no-audit] [--no-bin-links]
-[--no-fund] [--dry-run]
+[--no-fund] [--dry-run] [--cpu <cpu>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
 
@@ -3326,6 +3340,7 @@ alias: it
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
+#### \`cpu\`
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`
