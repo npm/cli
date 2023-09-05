@@ -2354,6 +2354,7 @@ Object {
   "nodeBin": "{NODE}",
   "nodeVersion": "2.2.2",
   "noProxy": "",
+  "npmBin": "{CWD}/other/bin/npm-cli.js",
   "npmCommand": "version",
   "npmVersion": "3.3.3",
   "npxCache": "{CWD}/cache/_npx",
