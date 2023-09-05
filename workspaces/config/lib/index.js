@@ -232,6 +232,8 @@ class Config {
     for (const { data } of this.data.values()) {
       this.#flatten(data, this.#flatOptions)
     }
+    this.#flatOptions.nodeBin = process.env.NODE || this.execPath
+    this.#flatOptions.npmBin = this.npmBin
     process.emit('timeEnd', 'config:load:flatten')
 
     return this.#flatOptions

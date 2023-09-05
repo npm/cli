@@ -18,9 +18,6 @@ const flatten = (obj, flat = {}) => {
       flat[key] = val
     }
   }
-
-  flat.nodeBin = process.env.NODE || process.execPath
-
   return flat
 }
 
