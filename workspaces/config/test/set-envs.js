@@ -9,6 +9,9 @@ const globalPrefix = join(cwd, 'global')
 const localPrefix = join(cwd, 'local')
 const NODE = execPath
 
+const npmPath = '{path}'
+const npmBin = join(npmPath, 'bin/npm-cli.js')
+
 const mockDefinitions = (t) => {
   mockGlobals(t, { 'process.env': { EDITOR: 'vim' } })
   const { definitions, defaults } = t.mock('../lib/definitions/index.js')
@@ -24,7 +27,7 @@ t.test('set envs that are not defaults and not already in env', t => {
     INIT_CWD: cwd,
     EDITOR: 'vim',
     HOME: undefined,
-    npm_execpath: require.main.filename,
+    npm_execpath: npmBin,
     npm_node_execpath: execPath,
     npm_config_global_prefix: globalPrefix,
     npm_config_local_prefix: localPrefix,
@@ -39,6 +42,8 @@ t.test('set envs that are not defaults and not already in env', t => {
     execPath,
     globalPrefix,
     localPrefix,
+    npmPath,
+    npmBin,
   }
 
   setEnvs(config)
@@ -75,7 +80,7 @@ t.test('set envs that are not defaults and not already in env, array style', t =
     INIT_CWD: cwd,
     EDITOR: 'vim',
     HOME: undefined,
-    npm_execpath: require.main.filename,
+    npm_execpath: npmBin,
     npm_node_execpath: execPath,
     npm_config_global_prefix: globalPrefix,
     npm_config_local_prefix: localPrefix,
@@ -90,6 +95,8 @@ t.test('set envs that are not defaults and not already in env, array style', t =
     execPath,
     globalPrefix,
     localPrefix,
+    npmPath,
+    npmBin,
   }
   setEnvs(config)
   t.strictSame(env, { ...extras }, 'no new environment vars to create')
@@ -123,7 +130,7 @@ t.test('set envs that are not defaults and not already in env, boolean edition',
     INIT_CWD: cwd,
     EDITOR: 'vim',
     HOME: undefined,
-    npm_execpath: require.main.filename,
+    npm_execpath: npmBin,
     npm_node_execpath: execPath,
     npm_config_global_prefix: globalPrefix,
     npm_config_local_prefix: localPrefix,
@@ -138,6 +145,8 @@ t.test('set envs that are not defaults and not already in env, boolean edition',
     execPath,
     globalPrefix,
     localPrefix,
+    npmPath,
+    npmBin,
   }
   setEnvs(config)
   t.strictSame(env, { ...extras }, 'no new environment vars to create')
@@ -164,7 +173,7 @@ t.test('set envs that are not defaults and not already in env, boolean edition',
   t.end()
 })
 
-t.test('dont set npm_execpath if require.main.filename is not set', t => {
+t.test('set npm_execpath even if require.main.filename is not set', t => {
   const { definitions, defaults } = mockDefinitions(t)
   const { filename } = require.main
   t.teardown(() => require.main.filename = filename)
@@ -182,9 +191,10 @@ t.test('dont set npm_execpath if require.main.filename is not set', t => {
     execPath,
     globalPrefix,
     localPrefix,
+    npmBin,
   }
   setEnvs(config)
-  t.equal(env.npm_execpath, undefined, 'did not set npm_execpath')
+  t.equal(env.npm_execpath, npmBin, 'did not set npm_execpath')
   t.end()
 })
 
@@ -197,7 +207,7 @@ t.test('dont set configs marked as envExport:false', t => {
     INIT_CWD: cwd,
     EDITOR: 'vim',
     HOME: undefined,
-    npm_execpath: require.main.filename,
+    npm_execpath: npmBin,
     npm_node_execpath: execPath,
     npm_config_global_prefix: globalPrefix,
     npm_config_local_prefix: localPrefix,
@@ -212,6 +222,8 @@ t.test('dont set configs marked as envExport:false', t => {
     execPath,
     globalPrefix,
     localPrefix,
+    npmPath,
+    npmBin,
   }
   setEnvs(config)
   t.strictSame(env, { ...extras }, 'no new environment vars to create')

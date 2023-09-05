@@ -34,8 +34,6 @@ t.test('flatten', t => {
     savePrefix: '',
     '@foobar:registry': 'https://foo.bar.com/',
     '//foo.bar.com:_authToken': 'foobarbazquuxasdf',
-    npmBin: '/path/to/npm',
-    nodeBin: '/path/to/node',
   })
 
   mockGlobals(t, {
@@ -49,8 +47,6 @@ t.test('flatten', t => {
     savePrefix: '',
     '@foobar:registry': 'https://foo.bar.com/',
     '//foo.bar.com:_authToken': 'foobarbazquuxasdf',
-    npmBin: '/path/to/npm',
-    nodeBin: '/usr/local/bin/node.exe',
   })
 
   t.end()
