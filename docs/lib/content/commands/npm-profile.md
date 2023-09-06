@@ -1,4 +1,4 @@
----
+tember
 title: npm-profile
 section: 1
 description: Change settings on your registry profile
