@@ -26,16 +26,8 @@
 
 ### ⚠️ BREAKING CHANGES
 
-* support for node <=16.13 has been removed
-* support for node 14 has been removed
-* support for node 14 has been removed
-* support for node 14 has been removed
-* support for node 14 has been removed
-* support for node 14 has been removed
-* support for node 14 has been removed
-* support for node 14 has been removed
-* support for node 14 has been removed
-* support for node 14 has been removed
+* support for node <=18.17.0 has been removed
+* support for node 16 has been removed
 * support for node 14 has been removed
 
 ### Bug Fixes
