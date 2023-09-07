@@ -720,6 +720,7 @@ graph LR;
   npmcli-smoke-tests-->npmcli-mock-registry["@npmcli/mock-registry"];
   npmcli-smoke-tests-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-smoke-tests-->npmcli-template-oss["@npmcli/template-oss"];
+  npmcli-smoke-tests-->proxy;
   npmcli-smoke-tests-->tap;
   npmcli-smoke-tests-->which;
   npmlog-->are-we-there-yet;
