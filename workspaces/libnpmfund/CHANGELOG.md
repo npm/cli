@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.1.1](https://github.com/npm/cli/compare/libnpmfund-v4.1.0...libnpmfund-v4.1.1) (2023-09-08)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v7.1.0): `@npmcli/arborist@7.1.0`
+
 ## [4.1.0](https://github.com/npm/cli/compare/libnpmfund-v4.0.20...libnpmfund-v4.1.0) (2023-08-31)
 
 ### Features
