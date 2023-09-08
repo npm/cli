@@ -158,7 +158,12 @@ module.exports = async (t, { testdir = {}, debug, registry: _registry = {} } = {
   const getPath = () => `${paths.globalBin}${delimiter}${Path || PATH}`
   const getEnvPath = () => ({ [Path ? 'Path' : 'PATH']: getPath() })
 
-  const baseSpawn = async (spawnCmd, spawnArgs, { cwd = paths.project, env, ...opts } = {}) => {
+  const baseSpawn = async (spawnCmd, spawnArgs, {
+    cwd = paths.project,
+    env,
+    stderr: _stderr,
+    ...opts } = {}
+  ) => {
     log(`CWD: ${cwd}`)
     log(`${spawnCmd} ${spawnArgs.join(' ')}`)
     log('-'.repeat(40))
@@ -179,7 +184,7 @@ module.exports = async (t, { testdir = {}, debug, registry: _registry = {} } = {
     log(stdout)
     log('='.repeat(40))
 
-    return stdout
+    return _stderr ? { stderr, stdout } : stdout
   }
 
   const baseNpm = async (...a) => {
@@ -210,7 +215,10 @@ module.exports = async (t, { testdir = {}, debug, registry: _registry = {} } = {
 
     return baseSpawn(cmd, [...argv, ...cliArgv], {
       cwd,
-      env: proxy ? { HTTP_PROXY } : {},
+      env: {
+        ...opts.env,
+        ...proxy ? { HTTP_PROXY } : {},
+      },
       ...opts,
     })
   }
