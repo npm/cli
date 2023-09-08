@@ -392,6 +392,16 @@ Run git commit hooks when using the \`npm version\` command.
 
 
 
+#### \`cpu\`
+
+* Default: null
+* Type: null or String
+
+Override CPU architecture of native modules to install. Acceptable values
+are same as \`cpu\` field of package.json, which comes from \`process.arch\`.
+
+
+
 #### \`depth\`
 
 * Default: \`Infinity\` if \`--all\` is set, otherwise \`1\`
@@ -1082,6 +1092,16 @@ This option causes npm to create lock files without a \`resolved\` key for
 registry dependencies. Subsequent installs will need to resolve tarball
 endpoints with the configured registry, likely resulting in a longer install
 time.
+
+
+
+#### \`os\`
+
+* Default: null
+* Type: null or String
+
+Override OS of native modules to install. Acceptable values are same as \`os\`
+field of package.json, which comes from \`process.platform\`.
 
 
 
@@ -2035,6 +2055,8 @@ Array [
   "cidr",
   "color",
   "commit-hooks",
+  "cpu",
+  "os",
   "depth",
   "description",
   "dev",
@@ -2190,6 +2212,8 @@ Array [
   "cidr",
   "color",
   "commit-hooks",
+  "cpu",
+  "os",
   "depth",
   "description",
   "dev",
@@ -2346,6 +2370,7 @@ Object {
   "ciName": "{ci}",
   "color": false,
   "commitHooks": true,
+  "cpu": null,
   "defaultTag": "latest",
   "depth": null,
   "diff": Array [],
@@ -2395,6 +2420,7 @@ Object {
   "offline": false,
   "omit": Array [],
   "omitLockfileRegistryResolved": false,
+  "os": null,
   "otp": null,
   "package": Array [],
   "packageLock": true,
@@ -3204,7 +3230,7 @@ Options:
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
 [--foreground-scripts] [--ignore-scripts] [--no-audit] [--no-bin-links]
-[--no-fund] [--dry-run]
+[--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
 
@@ -3235,6 +3261,8 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
+#### \`cpu\`
+#### \`os\`
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`
@@ -3295,7 +3323,7 @@ Options:
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
 [--foreground-scripts] [--ignore-scripts] [--no-audit] [--no-bin-links]
-[--no-fund] [--dry-run]
+[--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
 
@@ -3326,6 +3354,8 @@ alias: it
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
+#### \`cpu\`
+#### \`os\`
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`

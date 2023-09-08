@@ -95,6 +95,10 @@ Object {
   "commit-hooks": Array [
     "boolean value (true or false)",
   ],
+  "cpu": Array [
+    null,
+    Function String(),
+  ],
   "depth": Array [
     null,
     "numeric value",
@@ -338,6 +342,10 @@ Object {
   "optional": Array [
     null,
     "boolean value (true or false)",
+  ],
+  "os": Array [
+    null,
+    Function String(),
   ],
   "otp": Array [
     null,
