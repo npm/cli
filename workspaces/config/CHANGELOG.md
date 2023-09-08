@@ -1,5 +1,15 @@
 # Changelog
 
+## [7.2.0](https://github.com/npm/cli/compare/config-v7.1.0...config-v7.2.0) (2023-09-08)
+
+### Features
+
+* [`1c93c44`](https://github.com/npm/cli/commit/1c93c4430300e3b3bd2cb5bab327c1732f470bca) [#6755](https://github.com/npm/cli/pull/6755) Add `--cpu` and `--os` option to override platform specific install  (#6755) (@yukukotani)
+
+### Bug Fixes
+
+* [`7bf2374`](https://github.com/npm/cli/commit/7bf2374a1dde0e9b4a4345eeaafb23316a9a5a0b) [#6762](https://github.com/npm/cli/pull/6762) make `$npm_execpath` always point to npm (@rotu)
+
 ## [7.1.0](https://github.com/npm/cli/compare/config-v7.0.1...config-v7.1.0) (2023-08-31)
 
 ### Features

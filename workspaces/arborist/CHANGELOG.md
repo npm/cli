@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.1.0](https://github.com/npm/cli/compare/arborist-v7.0.0...arborist-v7.1.0) (2023-09-08)
+
+### Features
+
+* [`1c93c44`](https://github.com/npm/cli/commit/1c93c4430300e3b3bd2cb5bab327c1732f470bca) [#6755](https://github.com/npm/cli/pull/6755) Add `--cpu` and `--os` option to override platform specific install  (#6755) (@yukukotani)
+
 ## [7.0.0](https://github.com/npm/cli/compare/arborist-v7.0.0-pre.0...arborist-v7.0.0) (2023-08-31)
 
 ### Features
