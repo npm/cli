@@ -155,7 +155,9 @@ const main = async (spec, branch = 'main', opts) => withTempDir(CWD, async (tmpD
   const npmVersion = semver.parse(mani.version)
   const npmHost = hgi.fromUrl(NODE_FORK)
   const npmTag = `v${npmVersion}`
-  const npmBranch = `npm-${npmTag}`
+  // use the target branch as part of the name so we can create multiple PRs for
+  // the same npm version targeting different Node branches at the same time
+  const npmBranch = `npm-${npmTag}-${branch}`
   const npmRemoteUrl = tokenRemoteUrl({ host: npmHost, token: GITHUB_TOKEN })
   const npmMessage = (v = npmVersion) => `deps: upgrade npm to ${v}`
 
