@@ -27,53 +27,58 @@ jobs:
           # gh cli uses these env vars for owner/repo/token
           GH_REPO: "npm/benchmarks"
           GITHUB_TOKEN: ${{ secrets.BENCHMARK_DISPATCH_TOKEN }}
-        run: |
-          EVENT_NAME="${{ github.event_name }}"
-          OWNER="${{ github.event.repository.owner.login }}"
-          REPO="${{ github.event.repository.name }}"
-          PR=""
-
-          if [[ "$EVENT_NAME" == "pull_request" ]]; then
-            if [[ "$GITHUB_TOKEN" == "" ]]; then
-              echo "No auth - from fork pull request, exiting"
-              exit 0
-            fi
-            PR="${{ github.event.pull_request.number }}"
-          else
-            PR="${{ github.event.issue.number }}"
-            SENDER="${{ github.event.comment.user.login }}"
-            ROLE=$(gh api repos/${OWNER}/${REPO}/collaborators/${SENDER}/permission -q '.permission')
-
-            if [[ "$ROLE" != "admin" ]]; then
-              echo "${SENDER} is ${ROLE}, not an admin, exiting"
-              exit 0
-            fi
-
-            # add emoji to comment if user is an admin to signal
-            # benchmark is running
-            COMMENT_NODE_ID="${{ github.event.comment.node_id }}"
-            QUERY='mutation ($inputData:AddReactionInput!) {
-              addReaction (input:$inputData) {
-                reaction { content }
-              }
-            }'
-            echo '{
-              "query": "'${QUERY}'",
-              "variables": {
-                "inputData": {
-                  "subjectId": "'"${COMMENT_NODE_ID}"'",
-                  "content": "ROCKET"
-                }
-              }
-            }' | gh api graphql --input -
-          fi
-
-          EVENT="${EVENT_NAME} ${OWNER}/${REPO}#${PR}"
-          echo '{
-            "event_type": "'"$EVENT"'",
-            "client_payload": {
-              "pr_id": "'"$PR"'",
-              "repo": "'"$REPO"'",
-              "owner": "'"$OWNER"'"
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const {
+              payload,
+              eventName,
+              repo: { owner, repo },
+              issue: { number },
+            } = context
+          
+            if (eventName === 'pull_request' && !process.env.GITHUB_TOKEN) {
+              console.log('No GITHUB_TOKEN - from fork pull request, exiting')
+              return
             }
-          }' | gh api repos/{owner}/{repo}/dispatches --input -
+          
+            if (eventName === 'issue_comment') {
+              const res = await github.rest.repos.getCollaboratorPermissionLevel({
+                owner,
+                repo,
+                username: payload.comment.user.login,
+              })
+              if (res.data.permission !== 'admin') {
+                console.log(`Commenter is not an admin, exiting`)
+                return
+              }
+          
+              // add emoji to comment if user is an admin to signal benchmark is running
+              await github.rest.reactions.createForIssueComment({
+                owner,
+                repo,
+                comment_id: payload.comment.node_id,
+                content: 'rocket',
+              })
+            }
+          
+            const pullRequest = payload.pull_request || await github.rest.pulls.get({
+              owner,
+              repo,
+              pull_number: number,
+            }).then(r => r.data)
+          
+            const matchesRelease = pullRequest.base.ref.match(/^release\/v(\d+)$/)
+            const targetSpec = matchesRelease ? matchesRelease[1] : 'latest'
+          
+            await github.rest.repos.createDispatchEvent({
+              owner,
+              repo,
+              event_type: `"${eventName} ${owner}/${repo}#${number}"`,
+              client_payload: {
+                owner,
+                repo,
+                pr_id: number,
+                target_spec: targetSpec,
+              },
+            })
