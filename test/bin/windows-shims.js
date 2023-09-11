@@ -1,7 +1,7 @@
 const t = require('tap')
 const { spawnSync } = require('child_process')
 const { resolve, join, extname, basename, sep } = require('path')
-const { readFileSync, chmodSync, readdirSync } = require('fs')
+const { readFileSync, chmodSync, readdirSync, rmSync } = require('fs')
 const Diff = require('diff')
 const { sync: which } = require('which')
 const { version } = require('../../package.json')
@@ -91,6 +91,10 @@ t.test('run shims', t => {
       },
     },
   })
+
+  // hacky fix to decrease flakes of this test from `NOTEMPTY: directory not empty, rmdir`
+  // this should get better in tap@18 and we can try removing it then
+  t.teardown(() => rmSync(path, { recursive: true, force: true }))
 
   const spawnPath = (cmd, args, { log, stdioString = true, ...opts } = {}) => {
     if (cmd.endsWith('bash.exe')) {
