@@ -435,6 +435,15 @@ Object {
   "save-prod": Array [
     "boolean value (true or false)",
   ],
+  "sbom-format": Array [
+    "cyclonedx",
+    "spdx",
+  ],
+  "sbom-type": Array [
+    "library",
+    "application",
+    "framework",
+  ],
   "scope": Array [
     Function String(),
   ],
