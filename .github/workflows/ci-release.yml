@@ -80,10 +80,12 @@ jobs:
           git config --global user.name "npm CLI robot"
       - name: Setup Node
         uses: actions/setup-node@v3
+        id: node
         with:
           node-version: 20.x
+          check-latest: contains('20.x', '.x')
           cache: npm
-          check-latest: true
+
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
@@ -179,10 +181,12 @@ jobs:
           git config --global user.name "npm CLI robot"
       - name: Setup Node
         uses: actions/setup-node@v3
+        id: node
         with:
           node-version: ${{ matrix.node-version }}
+          check-latest: contains(matrix.node-version, '.x')
           cache: npm
-          check-latest: true
+
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
@@ -281,10 +285,12 @@ jobs:
           git config --global user.name "npm CLI robot"
       - name: Setup Node
         uses: actions/setup-node@v3
+        id: node
         with:
           node-version: ${{ matrix.node-version }}
+          check-latest: contains(matrix.node-version, '.x')
           cache: npm
-          check-latest: true
+
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
