@@ -6,6 +6,7 @@ on:
       - '*'
     paths:
       - lib/**
+      - workspaces/**/lib/**
   issue_comment:
     types:
       - created
@@ -36,7 +37,7 @@ jobs:
             } = context
           
             if (eventName === 'pull_request' && !process.env.GITHUB_TOKEN) {
-              console.log('No GITHUB_TOKEN - from fork pull request, exiting')
+              core.info('No GITHUB_TOKEN - from fork pull request, exiting')
               return
             }
           
@@ -47,7 +48,7 @@ jobs:
                 username: payload.comment.user.login,
               })
               if (res.data.permission !== 'admin') {
-                console.log(`Commenter is not an admin, exiting`)
+                core.info(`Commenter is not an admin, exiting`)
                 return
               }
           
@@ -65,14 +66,21 @@ jobs:
               repo,
               pull_number: number,
             }).then(r => r.data)
+
+            core.info(`Pull request: ${pullRequest.number}`)
+            core.info(`Base ref: ${pullRequest.base.ref}`)
           
             const matchesRelease = pullRequest.base.ref.match(/^release\/v(\d+)$/)
             const targetSpec = matchesRelease ? matchesRelease[1] : 'latest'
+            core.info(`Target spec: ${targetSpec}`)
+
+            const eventType = `"${eventName} ${owner}/${repo}#${pullRequest.number}"`
+            core.info(`Event type: ${eventType}`)
           
             await github.rest.repos.createDispatchEvent({
-              owner,
-              repo,
-              event_type: `"${eventName} ${owner}/${repo}#${number}"`,
+              owner: 'npm',
+              repo: 'benchmarks',
+              event_type: eventType,
               client_payload: {
                 owner,
                 repo,
