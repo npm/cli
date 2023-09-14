@@ -24,6 +24,7 @@ t.test('query-selector-all', async t => {
     │   └── lorem@1.0.0 (production dep of baz)
     ├── abbrev@1.1.1 (production dep of query-selector-all-tests)
     ├─┬ b@1.0.0 -> ./b (workspace)
+    │ ├── a@2.0.0 (dev dep of b, deduped)
     │ └── bar@2.0.0 (production dep of b, deduped)
     ├─┬ bar@2.0.0 (production dep of query-selector-all-tests)
     │ └── moo@3.0.0 (production dep of bar)
@@ -513,7 +514,7 @@ t.test('query-selector-all', async t => {
     ['*:has(* > #bar:semver(1.4.0))', ['foo@2.2.2']],
     ['*:has(> #bar:semver(1.4.0))', ['foo@2.2.2']],
     ['.workspace:has(> * > #lorem)', ['a@1.0.0']],
-    ['.workspace:has(* #lorem, ~ #b)', ['a@1.0.0']],
+    ['.workspace:has(* #lorem, ~ #b)', ['a@1.0.0', 'b@1.0.0']],
 
     // is pseudo
     [':is(#a, #b) > *', ['a@1.0.0', 'bar@2.0.0', 'baz@1.0.0']],
@@ -960,5 +961,6 @@ t.test('query-selector-all', async t => {
     [':root #bar:semver(1) ~ *', ['dash-separated-pkg@1.0.0']],
     ['#bar:semver(2), #foo', ['bar@2.0.0', 'foo@2.2.2']],
     ['#a, #bar:semver(2), #foo:semver(2.2.2)', ['a@1.0.0', 'bar@2.0.0', 'foo@2.2.2']],
+    ['#b *', ['a@1.0.0', 'bar@2.0.0', 'baz@1.0.0', 'lorem@1.0.0', 'moo@3.0.0']],
   ])
 })
