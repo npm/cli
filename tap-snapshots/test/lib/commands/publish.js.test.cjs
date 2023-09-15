@@ -310,14 +310,6 @@ exports[`test/lib/commands/publish.js TAP public access > new package version 1`
 + @npm/test-package@1.0.0
 `
 
-exports[`test/lib/commands/publish.js TAP re-loads publishConfig.registry if added during script process > new package version 1`] = `
-+ test-package@1.0.0
-`
-
-exports[`test/lib/commands/publish.js TAP respects publishConfig.registry, runs appropriate scripts > new package version 1`] = `
-
-`
-
 exports[`test/lib/commands/publish.js TAP restricted access > must match snapshot 1`] = `
 Array [
   Array [
