@@ -5,12 +5,12 @@ const which = require('which')
 const spawn = require('@npmcli/promise-spawn')
 const MockRegistry = require('@npmcli/mock-registry')
 const http = require('http')
-const httpProxy = require('http-proxy')
+const { createProxy } = require('proxy')
 
-const { SMOKE_PUBLISH_NPM, SMOKE_PUBLISH_TARBALL, CI, PATH, Path, TAP_CHILD_ID = '0' } = process.env
-const PROXY_PORT = 12345 + (+TAP_CHILD_ID)
-const HTTP_PROXY = `http://localhost:${PROXY_PORT}/`
+const { SMOKE_PUBLISH_NPM, SMOKE_PUBLISH_TARBALL, CI, PATH, Path } = process.env
+
 const DEFAULT_REGISTRY = new URL('https://registry.npmjs.org/')
+const MOCK_REGISTRY = new URL('http://smoke-test-registry.club/')
 
 const NODE_PATH = process.execPath
 const CLI_ROOT = resolve(process.cwd(), '..')
@@ -73,25 +73,7 @@ const getCleanPaths = async () => {
   })
 }
 
-const createRegistry = async (t, { debug, ...opts } = {}) => {
-  const registry = new MockRegistry({
-    tap: t,
-    registry: 'http://smoke-test-registry.club/',
-    debug,
-    strict: true,
-    ...opts,
-  })
-
-  const proxy = httpProxy.createProxyServer({})
-  const server = http.createServer((req, res) => proxy.web(req, res, { target: registry.origin }))
-  await new Promise(res => server.listen(PROXY_PORT, res))
-
-  t.teardown(() => server.close())
-
-  return registry
-}
-
-module.exports = async (t, { testdir = {}, debug, registry: _registry = {} } = {}) => {
+module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy = false } = {}) => {
   const debugLog = debug || CI ? (...a) => console.error(...a) : () => {}
   const cleanPaths = await getCleanPaths()
 
@@ -115,11 +97,21 @@ module.exports = async (t, { testdir = {}, debug, registry: _registry = {} } = {
     globalNodeModules: join(root, 'global', GLOBAL_NODE_MODULES),
   }
 
-  const liveRegistry = _registry === false
-  const USE_PROXY = !liveRegistry
-  const registry = liveRegistry
-    ? DEFAULT_REGISTRY
-    : await createRegistry(t, { ..._registry, debug })
+  const registry = !mockRegistry ? DEFAULT_REGISTRY : new MockRegistry({
+    tap: t,
+    registry: MOCK_REGISTRY,
+    debug,
+    strict: true,
+  })
+
+  const proxyEnv = {}
+  if (useProxy || mockRegistry) {
+    useProxy = true
+    const proxyServer = createProxy(http.createServer())
+    await new Promise(res => proxyServer.listen(0, res))
+    t.teardown(() => proxyServer.close())
+    proxyEnv.HTTP_PROXY = new URL(`http://localhost:${proxyServer.address().port}`)
+  }
 
   // update notifier should never be written
   t.afterEach((t) => {
@@ -143,7 +135,6 @@ module.exports = async (t, { testdir = {}, debug, registry: _registry = {} } = {
     }
     return s
       .split(relative(CLI_ROOT, t.testdirName)).join('{TESTDIR}')
-      .split(HTTP_PROXY).join('{PROXY_REGISTRY}')
       .split(registry.origin).join('{REGISTRY}')
       .replace(/\\+/g, '/')
       .replace(/\r\n/g, '\n')
@@ -188,12 +179,12 @@ module.exports = async (t, { testdir = {}, debug, registry: _registry = {} } = {
   }
 
   const baseNpm = async (...a) => {
-    const [{ cwd, cmd, argv = [], proxy = USE_PROXY, ...opts }, args] = getOpts(...a)
+    const [{ cwd, cmd, argv = [], proxy = useProxy, ...opts }, args] = getOpts(...a)
 
     const isGlobal = args.some(arg => ['-g', '--global', '--global=true'].includes(arg))
 
     const defaultFlags = [
-      proxy ? `--registry=${HTTP_PROXY}` : null,
+      `--registry=${registry.origin}`,
       `--cache=${paths.cache}`,
       `--prefix=${isGlobal ? paths.global : cwd}`,
       `--userconfig=${paths.userConfig}`,
@@ -217,7 +208,7 @@ module.exports = async (t, { testdir = {}, debug, registry: _registry = {} } = {
       cwd,
       env: {
         ...opts.env,
-        ...proxy ? { HTTP_PROXY } : {},
+        ...proxy ? proxyEnv : {},
       },
       ...opts,
     })
@@ -274,5 +265,4 @@ module.exports.CLI_ROOT = CLI_ROOT
 module.exports.WINDOWS = WINDOWS
 module.exports.SMOKE_PUBLISH = !!SMOKE_PUBLISH_NPM
 module.exports.SMOKE_PUBLISH_TARBALL = SMOKE_PUBLISH_TARBALL
-module.exports.HTTP_PROXY = HTTP_PROXY
-module.exports.PROXY_PORT = PROXY_PORT
+module.exports.MOCK_REGISTRY = MOCK_REGISTRY
