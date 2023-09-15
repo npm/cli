@@ -719,7 +719,10 @@ const hasAscendant = (node, compareNodes, seen = new Set()) => {
   }
 
   if (node.isTop && node.resolveParent) {
-    return hasAscendant(node.resolveParent, compareNodes)
+    /* istanbul ignore if - investigate if linksIn check obviates need for this */
+    if (hasAscendant(node.resolveParent, compareNodes)) {
+      return true
+    }
   }
   for (const edge of node.edgesIn) {
     // TODO Need a test with an infinite loop
@@ -728,6 +731,11 @@ const hasAscendant = (node, compareNodes, seen = new Set()) => {
     }
     seen.add(edge)
     if (edge && edge.from && hasAscendant(edge.from, compareNodes, seen)) {
+      return true
+    }
+  }
+  for (const linkNode of node.linksIn) {
+    if (hasAscendant(linkNode, compareNodes, seen)) {
       return true
     }
   }
