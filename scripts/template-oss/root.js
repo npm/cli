@@ -2,6 +2,7 @@ module.exports = {
   rootModule: {
     add: {
       'CONTRIBUTING.md': false,
+      'package.json': { file: 'pkg.json', overwrite: false },
     },
   },
   rootRepo: {
@@ -27,7 +28,11 @@ module.exports = {
       '.github/workflows/pull-request.yml': false,
     },
   },
-  ciVersions: ['18.17.0', '18.x', '20.5.0', '20.x'],
+  workspaceModule: {
+    add: {
+      'package.json': { file: 'pkg.json', overwrite: false },
+    },
+  },
   lockfile: true,
   npm: '.',
   defaultBranch: 'latest',
