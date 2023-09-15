@@ -2885,7 +2885,7 @@ alias: home
 `
 
 exports[`test/lib/docs.js TAP usage doctor > must match snapshot 1`] = `
-Check your npm environment
+Check the health of your npm environment
 
 Usage:
 npm doctor [ping] [registry] [versions] [environment] [permissions] [cache]
