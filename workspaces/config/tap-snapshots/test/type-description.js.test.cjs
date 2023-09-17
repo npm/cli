@@ -267,6 +267,10 @@ Object {
   "legacy-peer-deps": Array [
     "boolean value (true or false)",
   ],
+  "libc": Array [
+    null,
+    Function String(),
+  ],
   "link": Array [
     "boolean value (true or false)",
   ],
