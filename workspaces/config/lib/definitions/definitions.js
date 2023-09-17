@@ -494,6 +494,16 @@ define('os', {
   flatten,
 })
 
+define('libc', {
+  default: null,
+  type: [null, String],
+  description: `
+    Override libc of native modules to install.
+    Acceptable values are same as \`libc\` field of package.json
+  `,
+  flatten,
+})
+
 define('depth', {
   default: null,
   defaultDescription: `
