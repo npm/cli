@@ -963,6 +963,7 @@ define('include-workspace-root', {
 
 define('init-author-email', {
   default: '',
+  hint: '<email>',
   type: String,
   description: `
     The value \`npm init\` should use by default for the package author's
@@ -972,6 +973,7 @@ define('init-author-email', {
 
 define('init-author-name', {
   default: '',
+  hint: '<name>',
   type: String,
   description: `
     The value \`npm init\` should use by default for the package author's name.
@@ -981,6 +983,7 @@ define('init-author-name', {
 define('init-author-url', {
   default: '',
   type: ['', url],
+  hint: '<url>',
   description: `
     The value \`npm init\` should use by default for the package author's homepage.
   `,
@@ -988,6 +991,7 @@ define('init-author-url', {
 
 define('init-license', {
   default: 'ISC',
+  hint: '<license>',
   type: String,
   description: `
     The value \`npm init\` should use by default for the package license.
@@ -997,6 +1001,7 @@ define('init-license', {
 define('init-module', {
   default: '~/.npm-init.js',
   type: path,
+  hint: '<module>',
   description: `
     A module that will be loaded by the \`npm init\` command.  See the
     documentation for the
@@ -1008,6 +1013,7 @@ define('init-module', {
 define('init-version', {
   default: '1.0.0',
   type: semver,
+  hint: '<version>',
   description: `
     The value that \`npm init\` should use by default for the package
     version number, if not already set in package.json.
