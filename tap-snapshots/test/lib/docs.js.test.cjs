@@ -3160,7 +3160,9 @@ npm init <package-spec> (same as \`npx <package-spec>\`)
 npm init <@scope> (same as \`npx <@scope>/create\`)
 
 Options:
-[-y|--yes] [-f|--force] [--scope <@scope>]
+[--init-author-name <name>] [--init-author-url <url>] [--init-license <license>]
+[--init-module <module>] [--init-version <version>] [-y|--yes] [-f|--force]
+[--scope <@scope>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--no-workspaces-update] [--include-workspace-root]
 
@@ -3175,6 +3177,11 @@ npm init <@scope> (same as \`npx <@scope>/create\`)
 aliases: create, innit
 \`\`\`
 
+#### \`init-author-name\`
+#### \`init-author-url\`
+#### \`init-license\`
+#### \`init-module\`
+#### \`init-version\`
 #### \`yes\`
 #### \`force\`
 #### \`scope\`

@@ -315,6 +315,7 @@ exports[`test/lib/commands/publish.js TAP re-loads publishConfig.registry if add
 `
 
 exports[`test/lib/commands/publish.js TAP respects publishConfig.registry, runs appropriate scripts > new package version 1`] = `
+
 `
 
 exports[`test/lib/commands/publish.js TAP restricted access > must match snapshot 1`] = `
