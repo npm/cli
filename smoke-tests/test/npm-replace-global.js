@@ -110,7 +110,7 @@ t.test('publish and replace global self', async t => {
   } = await setupNpmGlobal(t, {
     testdir: {
       home: {
-        '.npmrc': `${setup.HTTP_PROXY.slice(5)}:_authToken = test-token`,
+        '.npmrc': `//${setup.MOCK_REGISTRY.host}/:_authToken = test-token`,
       },
     },
   })

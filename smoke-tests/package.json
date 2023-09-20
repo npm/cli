@@ -22,7 +22,7 @@
     "@npmcli/mock-registry": "^1.0.0",
     "@npmcli/promise-spawn": "^6.0.2",
     "@npmcli/template-oss": "4.19.0",
-    "http-proxy": "^1.18.1",
+    "proxy": "^2.1.1",
     "tap": "^16.3.4",
     "which": "^3.0.0"
   },
@@ -36,6 +36,7 @@
   "tap": {
     "no-coverage": true,
     "timeout": 600,
+    "jobs": 1,
     "test-ignore": "fixtures/*",
     "nyc-arg": [
       "--exclude",
