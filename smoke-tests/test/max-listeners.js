@@ -10,7 +10,7 @@ const getFixture = (p) => require(
 
 const runTest = async (t, { env } = {}) => {
   const { npm } = await setup(t, {
-    registry: false,
+    mockRegistry: false,
     testdir: {
       project: {
         'package.json': getFixture('package.json'),
