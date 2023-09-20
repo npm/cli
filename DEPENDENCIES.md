@@ -569,6 +569,7 @@ graph LR;
   npm-->sigstore-tuf["@sigstore/tuf"];
   npm-->spawk;
   npm-->ssri;
+  npm-->strip-ansi;
   npm-->supports-color;
   npm-->tap;
   npm-->tar;
