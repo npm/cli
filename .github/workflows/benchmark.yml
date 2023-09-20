@@ -18,18 +18,18 @@ jobs:
     steps:
       - name: Incoming Pull Request
         if: |
-          github.event_name == 'pull_request' || (
+          (
+            github.event_name == 'pull_request' &&
+            github.event.pull_request.head.repo.full_name == 'npm/cli' 
+          ) || (
             github.event_name == 'issue_comment' &&
             github.event.issue.pull_request &&
             github.event.issue.state == 'open' &&
             startsWith(github.event.comment.body, '@npm-cli-bot benchmark this')
           )
-        env:
-          # gh cli uses these env vars for owner/repo/token
-          GH_REPO: "npm/benchmarks"
-          GITHUB_TOKEN: ${{ secrets.BENCHMARK_DISPATCH_TOKEN }}
         uses: actions/github-script@v6
         with:
+          github-token: ${{ secrets.BENCHMARK_DISPATCH_TOKEN }}
           script: |
             const {
               payload,
@@ -37,11 +37,6 @@ jobs:
               repo: { owner, repo },
               issue: { number },
             } = context
-          
-            if (eventName === 'pull_request' && !process.env.GITHUB_TOKEN) {
-              core.info('No GITHUB_TOKEN - from fork pull request, exiting')
-              return
-            }
           
             if (eventName === 'issue_comment') {
               const res = await github.rest.repos.getCollaboratorPermissionLevel({
