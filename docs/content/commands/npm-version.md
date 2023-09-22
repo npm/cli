@@ -9,9 +9,9 @@ description: Bump a package version
 ```bash
 npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease [--preid=<prerelease-id>] | from-git]
 
-'npm [-v | --version]' to print npm version
-'npm view <pkg> version' to view a package's published version
-'npm ls' to inspect current package/dependency versions
+npm [-v | --version] # to print npm version
+npm view <pkg> version # to view a package's published version
+npm ls # to inspect current package/dependency versions
 ```
 
 ### Configuration
