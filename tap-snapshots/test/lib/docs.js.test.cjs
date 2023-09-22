@@ -2642,6 +2642,7 @@ npm ci
 Options:
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
 [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
@@ -2661,6 +2662,7 @@ aliases: clean-install, ic, install-clean, isntall-clean
 #### \`legacy-bundling\`
 #### \`global-style\`
 #### \`omit\`
+#### \`include\`
 #### \`strict-peer-deps\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
@@ -3195,6 +3197,7 @@ Options:
 [-E|--save-exact] [-g|--global]
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
 [--foreground-scripts] [--ignore-scripts] [--no-audit] [--no-bin-links]
 [--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>]
@@ -3218,6 +3221,7 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 #### \`legacy-bundling\`
 #### \`global-style\`
 #### \`omit\`
+#### \`include\`
 #### \`strict-peer-deps\`
 #### \`prefer-dedupe\`
 #### \`package-lock\`
@@ -3245,6 +3249,7 @@ npm install-ci-test
 Options:
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
 [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
@@ -3264,6 +3269,7 @@ aliases: cit, clean-install-test, sit
 #### \`legacy-bundling\`
 #### \`global-style\`
 #### \`omit\`
+#### \`include\`
 #### \`strict-peer-deps\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
@@ -3288,6 +3294,7 @@ Options:
 [-E|--save-exact] [-g|--global]
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
 [--foreground-scripts] [--ignore-scripts] [--no-audit] [--no-bin-links]
 [--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>]
@@ -3311,6 +3318,7 @@ alias: it
 #### \`legacy-bundling\`
 #### \`global-style\`
 #### \`omit\`
+#### \`include\`
 #### \`strict-peer-deps\`
 #### \`prefer-dedupe\`
 #### \`package-lock\`
