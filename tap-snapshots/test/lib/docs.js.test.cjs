@@ -2554,6 +2554,7 @@ Options:
 [--audit-level <info|low|moderate|high|critical|none>] [--dry-run] [-f|--force]
 [--json] [--package-lock-only] [--no-package-lock]
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--foreground-scripts] [--ignore-scripts]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
@@ -2571,6 +2572,7 @@ npm audit [fix|signatures]
 #### \`package-lock-only\`
 #### \`package-lock\`
 #### \`omit\`
+#### \`include\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
 #### \`workspace\`
@@ -2741,8 +2743,9 @@ npm dedupe
 Options:
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--strict-peer-deps] [--no-package-lock]
-[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
-[--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
+[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+[--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
 
@@ -2762,6 +2765,7 @@ alias: ddp
 #### \`strict-peer-deps\`
 #### \`package-lock\`
 #### \`omit\`
+#### \`include\`
 #### \`ignore-scripts\`
 #### \`audit\`
 #### \`bin-links\`
@@ -3012,8 +3016,9 @@ npm find-dupes
 Options:
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--strict-peer-deps] [--no-package-lock]
-[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
-[--no-audit] [--no-bin-links] [--no-fund]
+[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+[--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
 
@@ -3029,6 +3034,7 @@ npm find-dupes
 #### \`strict-peer-deps\`
 #### \`package-lock\`
 #### \`omit\`
+#### \`include\`
 #### \`ignore-scripts\`
 #### \`audit\`
 #### \`bin-links\`
@@ -3348,8 +3354,9 @@ Options:
 [-E|--save-exact] [-g|--global]
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--strict-peer-deps] [--no-package-lock]
-[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
-[--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
+[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+[--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
 
@@ -3372,6 +3379,7 @@ alias: ln
 #### \`strict-peer-deps\`
 #### \`package-lock\`
 #### \`omit\`
+#### \`include\`
 #### \`ignore-scripts\`
 #### \`audit\`
 #### \`bin-links\`
@@ -3391,8 +3399,9 @@ npm ll [[<@scope>/]<pkg> ...]
 
 Options:
 [-a|--all] [--json] [-l|--long] [-p|--parseable] [-g|--global] [--depth <depth>]
-[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--link]
-[--package-lock-only] [--unicode]
+[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+[--link] [--package-lock-only] [--unicode]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
 
@@ -3413,6 +3422,7 @@ alias: la
 #### \`global\`
 #### \`depth\`
 #### \`omit\`
+#### \`include\`
 #### \`link\`
 #### \`package-lock-only\`
 #### \`unicode\`
@@ -3473,8 +3483,9 @@ npm ls <package-spec>
 
 Options:
 [-a|--all] [--json] [-l|--long] [-p|--parseable] [-g|--global] [--depth <depth>]
-[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--link]
-[--package-lock-only] [--unicode]
+[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+[--link] [--package-lock-only] [--unicode]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
 
@@ -3495,6 +3506,7 @@ alias: list
 #### \`global\`
 #### \`depth\`
 #### \`omit\`
+#### \`include\`
 #### \`link\`
 #### \`package-lock-only\`
 #### \`unicode\`
@@ -3745,8 +3757,9 @@ Usage:
 npm prune [[<@scope>/]<pkg>...]
 
 Options:
-[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--dry-run]
-[--json] [--foreground-scripts] [--ignore-scripts]
+[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+[--dry-run] [--json] [--foreground-scripts] [--ignore-scripts]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
 
@@ -3757,6 +3770,7 @@ npm prune [[<@scope>/]<pkg>...]
 \`\`\`
 
 #### \`omit\`
+#### \`include\`
 #### \`dry-run\`
 #### \`json\`
 #### \`foreground-scripts\`
@@ -4266,6 +4280,7 @@ Options:
 [-g|--global] [--install-strategy <hoisted|nested|shallow|linked>]
 [--legacy-bundling] [--global-style]
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
 [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
@@ -4287,6 +4302,7 @@ aliases: up, upgrade, udpate
 #### \`legacy-bundling\`
 #### \`global-style\`
 #### \`omit\`
+#### \`include\`
 #### \`strict-peer-deps\`
 #### \`package-lock\`
 #### \`foreground-scripts\`
