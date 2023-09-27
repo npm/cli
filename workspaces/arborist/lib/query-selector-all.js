@@ -695,7 +695,11 @@ const depTypes = {
 // the compare nodes array
 const hasParent = (node, compareNodes) => {
   // All it takes is one so we loop and return on the first hit
-  for (const compareNode of compareNodes) {
+  for (let compareNode of compareNodes) {
+    if (compareNode.isLink) {
+      compareNode = compareNode.target
+    }
+
     // follows logical parent for link anscestors
     if (node.isTop && (node.resolveParent === compareNode)) {
       return true
