@@ -145,6 +145,7 @@ Array [
   "restart",
   "root",
   "run-script",
+  "sbom",
   "search",
   "set",
   "shrinkwrap",
@@ -1405,6 +1406,26 @@ or \`--save-optional\` are true.
 
 
 
+#### \`sbom-format\`
+
+* Default: null
+* Type: "cyclonedx" or "spdx"
+
+SBOM format to use when generating SBOMs.
+
+
+
+#### \`sbom-type\`
+
+* Default: "library"
+* Type: "library", "application", or "framework"
+
+The type of package described by the generated SBOM. For SPDX, this is the
+value for the \`primaryPackagePurpose\` fieled. For CycloneDX, this is the
+value for the \`type\` field.
+
+
+
 #### \`scope\`
 
 * Default: the scope of the current project, if any, or ""
@@ -2083,6 +2104,8 @@ Array [
   "legacy-peer-deps",
   "link",
   "local-address",
+  "sbom-format",
+  "sbom-type",
   "location",
   "lockfile-version",
   "loglevel",
@@ -2225,6 +2248,8 @@ Array [
   "legacy-bundling",
   "legacy-peer-deps",
   "local-address",
+  "sbom-format",
+  "sbom-type",
   "location",
   "lockfile-version",
   "loglevel",
@@ -2415,6 +2440,8 @@ Object {
   "save": true,
   "saveBundle": false,
   "savePrefix": "^",
+  "sbomFormat": null,
+  "sbomType": "library",
   "scope": "",
   "scriptShell": undefined,
   "search": Object {
@@ -3963,6 +3990,33 @@ aliases: run, rum, urn
 #### \`ignore-scripts\`
 #### \`foreground-scripts\`
 #### \`script-shell\`
+`
+
+exports[`test/lib/docs.js TAP usage sbom > must match snapshot 1`] = `
+Generate a Software Bill of Materials (SBOM)
+
+Usage:
+npm sbom
+
+Options:
+[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--package-lock-only] [--sbom-format <cyclonedx|spdx>]
+[--sbom-type <library|application|framework>]
+[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+[-ws|--workspaces]
+
+Run "npm help sbom" for more info
+
+\`\`\`bash
+npm sbom
+\`\`\`
+
+#### \`omit\`
+#### \`package-lock-only\`
+#### \`sbom-format\`
+#### \`sbom-type\`
+#### \`workspace\`
+#### \`workspaces\`
 `
 
 exports[`test/lib/docs.js TAP usage search > must match snapshot 1`] = `
