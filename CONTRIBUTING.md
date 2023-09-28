@@ -19,7 +19,7 @@ $ git clone git@github.com:npm/cli.git npm
 **2. Navigate into project & install development-specific dependencies...**
 
 ```bash
-$ cd ./npm && node . install
+$ cd ./npm && node ./scripts/resetdeps.js
 ```
 
 **3. Write some code &/or add some tests...**
