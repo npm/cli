@@ -26,7 +26,11 @@ Array [
       "version": "1.0.0",
     },
     "signal": null,
-    "stderr": "stderr",
+    "stderr": String(
+      Debugger attached.
+      stderr
+      Waiting for the debugger to disconnect...
+    ),
     "stdout": "npm_package_dev",
   },
   Object {
@@ -42,7 +46,11 @@ Array [
       "version": "1.0.0",
     },
     "signal": null,
-    "stderr": "stderr",
+    "stderr": String(
+      Debugger attached.
+      stderr
+      Waiting for the debugger to disconnect...
+    ),
     "stdout": "npm_package_dev_optional",
   },
   Object {
@@ -58,7 +66,11 @@ Array [
       "version": "1.0.0",
     },
     "signal": null,
-    "stderr": "stderr",
+    "stderr": String(
+      Debugger attached.
+      stderr
+      Waiting for the debugger to disconnect...
+    ),
     "stdout": String(
       npm_package_dev
       npm_package_optional
@@ -80,7 +92,11 @@ Array [
       "version": "1.0.0",
     },
     "signal": null,
-    "stderr": "stderr",
+    "stderr": String(
+      Debugger attached.
+      stderr
+      Waiting for the debugger to disconnect...
+    ),
     "stdout": "npm_package_optional",
   },
 ]
