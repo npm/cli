@@ -7,6 +7,7 @@ description: Bump a package version
 ### Synopsis
 
 ```bash
+# npm version
 npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease [--preid=<prerelease-id>] | from-git]
 
 'npm [-v | --version]' to print npm version
