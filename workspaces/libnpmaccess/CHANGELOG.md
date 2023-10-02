@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.0.1](https://github.com/npm/cli/compare/libnpmaccess-v8.0.0...libnpmaccess-v8.0.1) (2023-10-02)
+
+### Dependencies
+
+* [`aa6728b`](https://github.com/npm/cli/commit/aa6728b1d003f0fc620b074ba0396a3e07f2db6a) [#6859](https://github.com/npm/cli/pull/6859) `tar@6.2.0`
+* [`ce9089f`](https://github.com/npm/cli/commit/ce9089f604a01297d3d2dd544283696a6297dce5) [#6859](https://github.com/npm/cli/pull/6859) `npm-package-arg@11.0.1`
+
 ## [8.0.0](https://github.com/npm/cli/compare/libnpmaccess-v8.0.0-pre.0...libnpmaccess-v8.0.0) (2023-08-31)
 
 ### Features

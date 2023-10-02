@@ -1,5 +1,19 @@
 # Changelog
 
+## [5.0.0](https://github.com/npm/cli/compare/libnpmfund-v4.1.1...libnpmfund-v5.0.0) (2023-10-02)
+
+### ⚠️ BREAKING CHANGES
+
+* libnpmfund now supports node ^16.14.0 || >=18.0.0
+
+### Bug Fixes
+
+* [`43241f6`](https://github.com/npm/cli/commit/43241f6fc44f50ceca2572032eb37972a9a921d5) [#6807](https://github.com/npm/cli/pull/6807) set engines to ^16.14.0 || >=18.0.0 (@lukekarrys)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v7.2.0): `@npmcli/arborist@7.2.0`
+
 ## [4.1.1](https://github.com/npm/cli/compare/libnpmfund-v4.1.0...libnpmfund-v4.1.1) (2023-09-08)
 
 ### Dependencies

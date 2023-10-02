@@ -1,5 +1,45 @@
 # Changelog
 
+## [10.2.0](https://github.com/npm/cli/compare/v10.1.0...v10.2.0) (2023-10-02)
+
+### Features
+
+* [`7c459d2`](https://github.com/npm/cli/commit/7c459d28ca987264028d4d2ca21b0825493c1537) [#6801](https://github.com/npm/cli/pull/6801) add npm sbom command (#6801) (@bdehamer)
+* [`81a460f`](https://github.com/npm/cli/commit/81a460f6e6317aca2288d16cda591aa6541540c6) [#6732](https://github.com/npm/cli/pull/6732) add package-lock-only mode to npm query (@wraithgar)
+* [`0d29855`](https://github.com/npm/cli/commit/0d2985535c9cc3dfc3e1f355580570c9cce37d61) [#6732](https://github.com/npm/cli/pull/6732) add no-package-lock mode to npm audit (@wraithgar)
+
+### Bug Fixes
+
+* [`2207628`](https://github.com/npm/cli/commit/22076286a46499e3d0b3f8564b7ba07008317be4) [#6823](https://github.com/npm/cli/pull/6823) use strip-ansi module instead of internal regex (#6823) (@wraithgar)
+* [`d46d052`](https://github.com/npm/cli/commit/d46d0526be12eae2cd458fd08dd5c0a0320cc8bd) [#6798](https://github.com/npm/cli/pull/6798) tolerate null bugs URLs (#6798) (@vladh)
+* [`fb1b674`](https://github.com/npm/cli/commit/fb1b6741bd52d865b8f8a93ad3fd6c8afa758b6a) [#6758](https://github.com/npm/cli/pull/6758) deprecate: ignore implicit workspace mode (#6758) (@wraithgar)
+
+### Documentation
+
+* [`68031f2`](https://github.com/npm/cli/commit/68031f2ae1cd5d49b0fb263da1a7eae62712ff97) [#6844](https://github.com/npm/cli/pull/6844) update `CONTRIBUTING.md` to prevent errors (#6844) (@darcyclarke)
+* [`3ac703c`](https://github.com/npm/cli/commit/3ac703c95e7bb851d0f6145f1d612749ed479fef) [#6831](https://github.com/npm/cli/pull/6831) add `include `param to commands that have `omit` param (#6831) (@siemhesda)
+* [`03912db`](https://github.com/npm/cli/commit/03912dbaeb92559270ab3f7df75b507b2f35a119) [#6819](https://github.com/npm/cli/pull/6819) add init-specific params to init docs/help (#6819) (@wraithgar)
+* [`8088325`](https://github.com/npm/cli/commit/8088325281bc976e8a8aea4d7527b54f4e25fb5f) [#6800](https://github.com/npm/cli/pull/6800) Update npm-doctor.md (#6800) (@siemhesda)
+
+### Dependencies
+
+* [`aa6728b`](https://github.com/npm/cli/commit/aa6728b1d003f0fc620b074ba0396a3e07f2db6a) [#6859](https://github.com/npm/cli/pull/6859) `tar@6.2.0`
+* [`ce9089f`](https://github.com/npm/cli/commit/ce9089f604a01297d3d2dd544283696a6297dce5) [#6859](https://github.com/npm/cli/pull/6859) `npm-package-arg@11.0.1`
+* [`39d7f04`](https://github.com/npm/cli/commit/39d7f046f1c39017b398cb242ad07e874484e86c) [#6859](https://github.com/npm/cli/pull/6859) `minipass@7.0.4`
+* [`0a47af5`](https://github.com/npm/cli/commit/0a47af509d66071908c7e0bf065dcf2f4c877669) [#6859](https://github.com/npm/cli/pull/6859) `hosted-git-info@7.0.1`
+* [`af93130`](https://github.com/npm/cli/commit/af93130fe949f07df23891286c634c77ecf38c53) [#6859](https://github.com/npm/cli/pull/6859) `glob@10.3.10`
+* [`3ebc474`](https://github.com/npm/cli/commit/3ebc4744433d906e5c491d183fc077ffe79958cf) [#6859](https://github.com/npm/cli/pull/6859) `@npmcli/query@3.0.1`
+* [`284cbfd`](https://github.com/npm/cli/commit/284cbfd168879b9277c9999e8a28dad8f72ecc02) [#6858](https://github.com/npm/cli/pull/6858) `@npmcli/agent@2.2.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v7.2.0): `@npmcli/arborist@7.2.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/config-v8.0.0): `@npmcli/config@8.0.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmaccess-v8.0.1): `libnpmaccess@8.0.1`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v6.0.2): `libnpmdiff@6.0.2`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v7.0.2): `libnpmexec@7.0.2`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v5.0.0): `libnpmfund@5.0.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmorg-v6.0.1): `libnpmorg@6.0.1`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v6.0.2): `libnpmpack@6.0.2`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v9.0.1): `libnpmpublish@9.0.1`
+
 ## [10.1.0](https://github.com/npm/cli/compare/v10.0.0...v10.1.0) (2023-09-08)
 
 ### Features

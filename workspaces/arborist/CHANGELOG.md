@@ -1,5 +1,24 @@
 # Changelog
 
+## [7.2.0](https://github.com/npm/cli/compare/arborist-v7.1.0...arborist-v7.2.0) (2023-10-02)
+
+### Features
+
+* [`81a460f`](https://github.com/npm/cli/commit/81a460f6e6317aca2288d16cda591aa6541540c6) [#6732](https://github.com/npm/cli/pull/6732) add package-lock-only mode to npm query (@wraithgar)
+* [`0d29855`](https://github.com/npm/cli/commit/0d2985535c9cc3dfc3e1f355580570c9cce37d61) [#6732](https://github.com/npm/cli/pull/6732) add no-package-lock mode to npm audit (@wraithgar)
+
+### Bug Fixes
+
+* [`0860159`](https://github.com/npm/cli/commit/0860159e18aa0fa985ef53fcfe0a57fbda995efb) [#6829](https://github.com/npm/cli/pull/6829) ensure workspace links query parents correctly (#6829) (@Carl-Foster)
+* [`bef7481`](https://github.com/npm/cli/commit/bef7481282f18f5b8ad864dc76669801187029fe) [#6782](https://github.com/npm/cli/pull/6782) query with workspace descendents (#6782) (@bdehamer)
+
+### Dependencies
+
+* [`aa6728b`](https://github.com/npm/cli/commit/aa6728b1d003f0fc620b074ba0396a3e07f2db6a) [#6859](https://github.com/npm/cli/pull/6859) `tar@6.2.0`
+* [`ce9089f`](https://github.com/npm/cli/commit/ce9089f604a01297d3d2dd544283696a6297dce5) [#6859](https://github.com/npm/cli/pull/6859) `npm-package-arg@11.0.1`
+* [`0a47af5`](https://github.com/npm/cli/commit/0a47af509d66071908c7e0bf065dcf2f4c877669) [#6859](https://github.com/npm/cli/pull/6859) `hosted-git-info@7.0.1`
+* [`3ebc474`](https://github.com/npm/cli/commit/3ebc4744433d906e5c491d183fc077ffe79958cf) [#6859](https://github.com/npm/cli/pull/6859) `@npmcli/query@3.0.1`
+
 ## [7.1.0](https://github.com/npm/cli/compare/arborist-v7.0.0...arborist-v7.1.0) (2023-09-08)
 
 ### Features

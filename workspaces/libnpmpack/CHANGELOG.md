@@ -1,5 +1,13 @@
 # Changelog
 
+## [6.0.2](https://github.com/npm/cli/compare/libnpmpack-v6.0.1...libnpmpack-v6.0.2) (2023-10-02)
+
+### Dependencies
+
+* [`aa6728b`](https://github.com/npm/cli/commit/aa6728b1d003f0fc620b074ba0396a3e07f2db6a) [#6859](https://github.com/npm/cli/pull/6859) `tar@6.2.0`
+* [`ce9089f`](https://github.com/npm/cli/commit/ce9089f604a01297d3d2dd544283696a6297dce5) [#6859](https://github.com/npm/cli/pull/6859) `npm-package-arg@11.0.1`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v7.2.0): `@npmcli/arborist@7.2.0`
+
 ## [6.0.1](https://github.com/npm/cli/compare/libnpmpack-v6.0.0...libnpmpack-v6.0.1) (2023-09-08)
 
 ### Dependencies

@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.0.1](https://github.com/npm/cli/compare/libnpmorg-v6.0.0...libnpmorg-v6.0.1) (2023-10-02)
+
+### Dependencies
+
+* [`aa6728b`](https://github.com/npm/cli/commit/aa6728b1d003f0fc620b074ba0396a3e07f2db6a) [#6859](https://github.com/npm/cli/pull/6859) `tar@6.2.0`
+* [`39d7f04`](https://github.com/npm/cli/commit/39d7f046f1c39017b398cb242ad07e874484e86c) [#6859](https://github.com/npm/cli/pull/6859) `minipass@7.0.4`
+
 ## [6.0.0](https://github.com/npm/cli/compare/libnpmorg-v6.0.0-pre.0...libnpmorg-v6.0.0) (2023-08-31)
 
 ### Features
