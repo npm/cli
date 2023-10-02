@@ -50,7 +50,7 @@
     "@npmcli/template-oss": "4.19.0",
     "json-stringify-safe": "^5.0.1",
     "nock": "^13.3.3",
-    "npm-package-arg": "^11.0.0",
+    "npm-package-arg": "^11.0.1",
     "pacote": "^17.0.4",
     "tap": "^16.3.8"
   }

@@ -29,7 +29,7 @@
   "bugs": "https://github.com/npm/libnpmaccess/issues",
   "homepage": "https://npmjs.com/package/libnpmaccess",
   "dependencies": {
-    "npm-package-arg": "^11.0.0",
+    "npm-package-arg": "^11.0.1",
     "npm-registry-fetch": "^16.0.0"
   },
   "engines": {
