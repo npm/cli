@@ -1,5 +1,23 @@
 # Changelog
 
+## [8.0.0](https://github.com/npm/cli/compare/config-v7.2.0...config-v8.0.0) (2023-10-02)
+
+### ⚠️ BREAKING CHANGES
+
+* @npmcli/config now supports node ^16.14.0 || >=18.0.0
+
+### Features
+
+* [`7c459d2`](https://github.com/npm/cli/commit/7c459d28ca987264028d4d2ca21b0825493c1537) [#6801](https://github.com/npm/cli/pull/6801) add npm sbom command (#6801) (@bdehamer)
+
+### Bug Fixes
+
+* [`92e3f3f`](https://github.com/npm/cli/commit/92e3f3fccc4ed4ed0869731c3ef23f1fa7fa6b1d) [#6807](https://github.com/npm/cli/pull/6807) set engines to ^16.14.0 || >=18.0.0 (@lukekarrys)
+
+### Documentation
+
+* [`03912db`](https://github.com/npm/cli/commit/03912dbaeb92559270ab3f7df75b507b2f35a119) [#6819](https://github.com/npm/cli/pull/6819) add init-specific params to init docs/help (#6819) (@wraithgar)
+
 ## [7.2.0](https://github.com/npm/cli/compare/config-v7.1.0...config-v7.2.0) (2023-09-08)
 
 ### Features
