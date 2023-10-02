@@ -606,6 +606,7 @@ graph LR;
   npm-registry-fetch-->minizlib;
   npm-registry-fetch-->npm-package-arg;
   npm-registry-fetch-->proc-log;
+  npmcli-agent-->agent-base;
   npmcli-agent-->http-proxy-agent;
   npmcli-agent-->https-proxy-agent;
   npmcli-agent-->lru-cache;
