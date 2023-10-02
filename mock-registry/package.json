@@ -45,7 +45,7 @@
     ]
   },
   "devDependencies": {
-    "@npmcli/arborist": "^6.1.1",
+    "@npmcli/arborist": "^7.1.0",
     "@npmcli/eslint-config": "^4.0.1",
     "@npmcli/template-oss": "4.19.0",
     "json-stringify-safe": "^5.0.1",
