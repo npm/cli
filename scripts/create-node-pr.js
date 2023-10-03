@@ -228,6 +228,7 @@ const main = async (spec, branch = 'main', opts) => withTempDir(CWD, async (tmpD
   const npmPrs = await gh.json(
     ...nodePrArgs, 'list',
     '-S', `in:title "${npmMessage('')}"`,
+    '--base', nodeBranch,
     'number,title,url'
   )
 
