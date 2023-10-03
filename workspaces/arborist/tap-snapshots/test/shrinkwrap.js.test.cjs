@@ -2652,6 +2652,30 @@ Object {
     "node_modules/foo/node_modules/glob": Object {
       "version": "4.0.5",
     },
+    "node_modules/foo/node_modules/glob/node_modules/graceful-fs": Object {
+      "extraneous": true,
+      "version": "3.0.2",
+    },
+    "node_modules/foo/node_modules/glob/node_modules/inherits": Object {
+      "extraneous": true,
+      "version": "2.0.1",
+    },
+    "node_modules/foo/node_modules/glob/node_modules/minimatch": Object {
+      "extraneous": true,
+      "version": "1.0.0",
+    },
+    "node_modules/foo/node_modules/glob/node_modules/minimatch/node_modules/lru-cache": Object {
+      "extraneous": true,
+      "version": "2.5.0",
+    },
+    "node_modules/foo/node_modules/glob/node_modules/minimatch/node_modules/sigmund": Object {
+      "extraneous": true,
+      "version": "1.0.0",
+    },
+    "node_modules/foo/node_modules/glob/node_modules/once": Object {
+      "extraneous": true,
+      "version": "1.3.0",
+    },
     "node_modules/foo/node_modules/selflink": Object {
       "link": true,
       "resolved": "",
