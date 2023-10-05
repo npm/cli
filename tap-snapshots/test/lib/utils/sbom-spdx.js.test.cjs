@@ -154,13 +154,13 @@ exports[`test/lib/utils/sbom-spdx.js TAP node - with deps > must match snapshot 
       "relationshipType": "HAS_PREREQUISITE"
     },
     {
-      "spdxElementId": "SPDXRef-Package-root-1.0.0",
-      "relatedSpdxElement": "SPDXRef-Package-dep2-0.0.2",
+      "spdxElementId": "SPDXRef-Package-dep2-0.0.2",
+      "relatedSpdxElement": "SPDXRef-Package-root-1.0.0",
       "relationshipType": "OPTIONAL_DEPENDENCY_OF"
     },
     {
-      "spdxElementId": "SPDXRef-Package-root-1.0.0",
-      "relatedSpdxElement": "SPDXRef-Package-dep3-0.0.3",
+      "spdxElementId": "SPDXRef-Package-dep3-0.0.3",
+      "relatedSpdxElement": "SPDXRef-Package-root-1.0.0",
       "relationshipType": "DEV_DEPENDENCY_OF"
     },
     {
@@ -174,8 +174,8 @@ exports[`test/lib/utils/sbom-spdx.js TAP node - with deps > must match snapshot 
       "relationshipType": "DEPENDS_ON"
     },
     {
-      "spdxElementId": "SPDXRef-Package-root-1.0.0",
-      "relatedSpdxElement": "SPDXRef-Package-dep6-0.0.6",
+      "spdxElementId": "SPDXRef-Package-dep6-0.0.6",
+      "relatedSpdxElement": "SPDXRef-Package-root-1.0.0",
       "relationshipType": "OPTIONAL_DEPENDENCY_OF"
     }
   ]

@@ -557,8 +557,8 @@ exports[`test/lib/commands/sbom.js TAP sbom extraneous dep > must match snapshot
       "relationshipType": "DEPENDS_ON"
     },
     {
-      "spdxElementId": "SPDXRef-Package-test-npm-ls-1.0.0",
-      "relatedSpdxElement": "SPDXRef-Package-chai-1.0.0",
+      "spdxElementId": "SPDXRef-Package-chai-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-test-npm-ls-1.0.0",
       "relationshipType": "OPTIONAL_DEPENDENCY_OF"
     }
   ]
@@ -730,8 +730,8 @@ exports[`test/lib/commands/sbom.js TAP sbom loading a tree containing workspaces
       "relationshipType": "DEPENDS_ON"
     },
     {
-      "spdxElementId": "SPDXRef-Package-a-1.0.0",
-      "relatedSpdxElement": "SPDXRef-Package-baz-1.0.0",
+      "spdxElementId": "SPDXRef-Package-baz-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-a-1.0.0",
       "relationshipType": "DEV_DEPENDENCY_OF"
     },
     {
@@ -1091,8 +1091,8 @@ exports[`test/lib/commands/sbom.js TAP sbom loading a tree containing workspaces
       "relationshipType": "DEPENDS_ON"
     },
     {
-      "spdxElementId": "SPDXRef-Package-a-1.0.0",
-      "relatedSpdxElement": "SPDXRef-Package-baz-1.0.0",
+      "spdxElementId": "SPDXRef-Package-baz-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-a-1.0.0",
       "relationshipType": "DEV_DEPENDENCY_OF"
     },
     {
