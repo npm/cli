@@ -196,9 +196,9 @@ dependencies for the current project. SBOMs can be generated in either
       "relationshipType": "DESCRIBES"
     },
     {
-      "spdxElementId": "SPDXRef-Package-simple-1.0.0",
-      "relatedSpdxElement": "SPDXRef-Package-lodash-4.17.21",
-      "relationshipType": "DEPENDS_ON"
+      "spdxElementId": "SPDXRef-Package-lodash-4.17.21",
+      "relatedSpdxElement": "SPDXRef-Package-simple-1.0.0",
+      "relationshipType": "DEPENDENCY_OF"
     }
   ]
 }
