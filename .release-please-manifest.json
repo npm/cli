@@ -1,6 +1,6 @@
 {
   ".": "9.8.1",
-  "workspaces/arborist": "6.3.0",
+  "workspaces/arborist": "6.4.0",
   "workspaces/libnpmaccess": "7.0.2",
   "workspaces/libnpmdiff": "5.0.19",
   "workspaces/libnpmexec": "6.0.3",
@@ -12,5 +12,5 @@
   "workspaces/libnpmsearch": "6.0.2",
   "workspaces/libnpmteam": "5.0.3",
   "workspaces/libnpmversion": "4.0.2",
-  "workspaces/config": "6.2.1"
+  "workspaces/config": "6.3.0"
 }
