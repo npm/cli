@@ -4,7 +4,7 @@
   "workspaces/libnpmaccess": "7.0.2",
   "workspaces/libnpmdiff": "5.0.19",
   "workspaces/libnpmexec": "6.0.3",
-  "workspaces/libnpmfund": "4.1.1",
+  "workspaces/libnpmfund": "4.2.0",
   "workspaces/libnpmhook": "9.0.3",
   "workspaces/libnpmorg": "5.0.4",
   "workspaces/libnpmpack": "5.0.19",
