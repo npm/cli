@@ -1,5 +1,35 @@
 # Changelog
 
+## [9.9.0](https://github.com/npm/cli/compare/v9.8.1...v9.9.0) (2023-10-06)
+
+### Features
+
+* [`ecda95a`](https://github.com/npm/cli/commit/ecda95a1eb08c5579815a7c8b27fd885a20f25af) [#6841](https://github.com/npm/cli/pull/6841) add npm sbom command (#6841) (@bdehamer)
+* [`fdb8a86`](https://github.com/npm/cli/commit/fdb8a863813b88da178358d246dc6f4bb48f1d2d) [#6794](https://github.com/npm/cli/pull/6794) add package-lock-only mode to npm query (@wraithgar)
+* [`16c04b1`](https://github.com/npm/cli/commit/16c04b1340a6046c27a6369a2acb891b714652dd) [#6877](https://github.com/npm/cli/pull/6877) add no-package-lock mode to npm audit (@wraithgar)
+* [`66ef765`](https://github.com/npm/cli/commit/66ef76539c5ee2f015b130f53aa2f325f1bf3f84) [#6776](https://github.com/npm/cli/pull/6776) Add `--cpu` and `--os` option to override platform specific install (#6776) (@yukukotani)
+
+### Bug Fixes
+
+* [`c9406f7`](https://github.com/npm/cli/commit/c9406f79dce12953f639df6add0c4215831e99b8) [#6791](https://github.com/npm/cli/pull/6791) deprecate: ignore implicit workspace mode (#6758) (#6791) (@wraithgar)
+* [`0b1d7c3`](https://github.com/npm/cli/commit/0b1d7c3e54f6b2ef1333087632048df3cb69f22d) [#6779](https://github.com/npm/cli/pull/6779) allow searching packages with no description (#6779) (@wraithgar, @lukekarrys)
+
+### Documentation
+
+* [`9750720`](https://github.com/npm/cli/commit/975072058e0fcec25074d73514cd50ea180b54fe) [#6694](https://github.com/npm/cli/pull/6694) fix example path (#6694) (@fvilers)
+
+### Dependencies
+
+* [`588a245`](https://github.com/npm/cli/commit/588a245191c4bf37f43a919809c54c205547811b) [#6756](https://github.com/npm/cli/pull/6756) `npm-pick-manifest@8.0.2`
+* [`a76b1df`](https://github.com/npm/cli/commit/a76b1df3a78231cac910a68b2f188b17c9a6c623) [#6877](https://github.com/npm/cli/pull/6877) `sigstore@1.9.0`
+* [`95b5ab0`](https://github.com/npm/cli/commit/95b5ab06785bd047b08ac0a84b986115774ead0f) [#6877](https://github.com/npm/cli/pull/6877) `npm-install-checks@6.2.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v6.5.0): `@npmcli/arborist@6.5.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/config-v6.4.0): `@npmcli/config@6.4.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v5.0.20): `libnpmdiff@5.0.20`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v6.0.4): `libnpmexec@6.0.4`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v4.2.1): `libnpmfund@4.2.1`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v5.0.20): `libnpmpack@5.0.20`
+
 ## [9.8.1](https://github.com/npm/cli/compare/v9.8.0...v9.8.1) (2023-07-18)
 
 ### Bug Fixes

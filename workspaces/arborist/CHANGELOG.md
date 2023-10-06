@@ -1,5 +1,22 @@
 # Changelog
 
+## [6.5.0](https://github.com/npm/cli/compare/arborist-v6.4.0...arborist-v6.5.0) (2023-10-06)
+
+### Features
+
+* [`fdb8a86`](https://github.com/npm/cli/commit/fdb8a863813b88da178358d246dc6f4bb48f1d2d) [#6794](https://github.com/npm/cli/pull/6794) add package-lock-only mode to npm query (@wraithgar)
+* [`16c04b1`](https://github.com/npm/cli/commit/16c04b1340a6046c27a6369a2acb891b714652dd) [#6877](https://github.com/npm/cli/pull/6877) add no-package-lock mode to npm audit (@wraithgar)
+* [`66ef765`](https://github.com/npm/cli/commit/66ef76539c5ee2f015b130f53aa2f325f1bf3f84) [#6776](https://github.com/npm/cli/pull/6776) Add `--cpu` and `--os` option to override platform specific install (#6776) (@yukukotani)
+
+### Bug Fixes
+
+* [`da3c0d4`](https://github.com/npm/cli/commit/da3c0d4ee9a8e8b58635d75956eb1ff9792da879) [#6811](https://github.com/npm/cli/pull/6811) query with workspace descendents (#6811) (@bdehamer)
+
+### Dependencies
+
+* [`588a245`](https://github.com/npm/cli/commit/588a245191c4bf37f43a919809c54c205547811b) [#6756](https://github.com/npm/cli/pull/6756) `npm-pick-manifest@8.0.2`
+* [`95b5ab0`](https://github.com/npm/cli/commit/95b5ab06785bd047b08ac0a84b986115774ead0f) [#6877](https://github.com/npm/cli/pull/6877) `npm-install-checks@6.2.0`
+
 ## [6.3.0](https://github.com/npm/cli/compare/arborist-v6.2.10...arborist-v6.3.0) (2023-07-05)
 
 ### Features
