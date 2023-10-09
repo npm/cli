@@ -41,6 +41,9 @@ situations. These scripts happen in addition to the `pre<event>`, `post<event>`,
 
 * `prepare`, `prepublish`, `prepublishOnly`, `prepack`, `postpack`, `dependencies`
 
+**preinstallOnly**
+* Runs BEFORE installation, ONLY on `npm install`.
+
 **prepare** (since `npm@4.0.0`)
 * Runs BEFORE the package is packed, i.e. during `npm publish`
     and `npm pack`

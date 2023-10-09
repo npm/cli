@@ -79,6 +79,7 @@ t.test('exec commands', async t => {
     t.match(ARB_ARGS, { global: false, path: npm.prefix })
     t.equal(REIFY_CALLED, true, 'called reify')
     t.strictSame(SCRIPTS, [
+      'preinstallOnly',
       'preinstall',
       'install',
       'postinstall',
