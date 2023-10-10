@@ -296,7 +296,7 @@ class PlaceDep {
         continue
       }
 
-      const peer = virtualRoot?.children.get(peerEdge.name)
+      const peer = virtualRoot.children.get(peerEdge.name)
 
       // Note: if the virtualRoot *doesn't* have the peer, then that means
       // it's an optional peer dep.  If it's not being properly met (ie,
