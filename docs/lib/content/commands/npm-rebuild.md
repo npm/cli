@@ -10,7 +10,7 @@ description: Rebuild a package
 
 ### Description
 
-This command runs the `npm build` command on the matched folders.  This is
+This command is used to conditionally run the `node gyp` build tool. This is
 useful when you install a new version of node, and must recompile all your
 C++ addons with the new binary.  It is also useful when installing with
 `--ignore-scripts` and `--no-bin-links`, to explicitly choose which
