@@ -101,7 +101,7 @@
     "npm-package-arg": "^11.0.1",
     "npm-pick-manifest": "^9.0.0",
     "npm-profile": "^9.0.0",
-    "npm-registry-fetch": "^16.0.0",
+    "npm-registry-fetch": "^16.1.0",
     "npm-user-validate": "^2.0.0",
     "npmlog": "^7.0.1",
     "p-map": "^4.0.0",
