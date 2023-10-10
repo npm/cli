@@ -58,9 +58,9 @@ t.test('user/pass logout - user config', async t => {
   const { npm, home, logs } = await loadMockNpm(t, {
     homeDir: {
       '.npmrc': [
-      '//registry.npmjs.org/:username=foo',
-      '//registry.npmjs.org/:_password=bar',
-      'other-config=true',
+        '//registry.npmjs.org/:username=foo',
+        '//registry.npmjs.org/:_password=bar',
+        'other-config=true',
       ].join('\n'),
     },
   })
@@ -77,7 +77,7 @@ t.test('user/pass logout - user config', async t => {
 })
 
 t.test('missing credentials', async t => {
-  const { npm, logs } = await loadMockNpm(t)
+  const { npm } = await loadMockNpm(t)
 
   await t.rejects(
     npm.exec('logout', []),
@@ -94,8 +94,8 @@ t.test('ignore invalid scoped registry config', async t => {
     config: { scope: '@myscope' },
     homeDir: {
       '.npmrc': [
-      '//registry.npmjs.org/:_authToken=@foo/',
-      'other-config=true',
+        '//registry.npmjs.org/:_authToken=@foo/',
+        'other-config=true',
 
       ].join('\n'),
     },
@@ -112,4 +112,43 @@ t.test('ignore invalid scoped registry config', async t => {
   )
   const userRc = await fs.readFile(join(home, '.npmrc'), 'utf-8')
   t.equal(userRc.trim(), 'other-config=true')
+})
+
+t.test('token logout - project config', async t => {
+  const { npm, home, logs, prefix } = await loadMockNpm(t, {
+    homeDir: {
+      '.npmrc': [
+        '//registry.npmjs.org/:_authToken=@foo/',
+        'other-config=true',
+      ].join('\n'),
+    },
+    prefixDir: {
+      '.npmrc': [
+        '//registry.npmjs.org/:_authToken=@bar/',
+        'other-config=true',
+      ].join('\n'),
+    },
+  })
+
+  const mockRegistry = new MockRegistry({ tap: t, registry: 'https://registry.npmjs.org/' })
+  mockRegistry.logout('@bar/')
+  await npm.exec('logout', [])
+
+  t.equal(
+    logs.verbose.find(l => l[0] === 'logout')[1],
+    'clearing token for https://registry.npmjs.org/',
+    'should log message with correct registry'
+  )
+  const userRc = await fs.readFile(join(home, '.npmrc'), 'utf-8')
+  t.equal(userRc.trim(), [
+    '//registry.npmjs.org/:_authToken=@foo/',
+    'other-config=true',
+  ].join('\n'), 'leaves user config alone')
+  t.equal(
+    logs.verbose.find(l => l[0] === 'logout')[1],
+    'clearing token for https://registry.npmjs.org/',
+    'should log message with correct registry'
+  )
+  const projectRc = await fs.readFile(join(prefix, '.npmrc'), 'utf-8')
+  t.equal(projectRc.trim(), 'other-config=true', 'removes project config')
 })
