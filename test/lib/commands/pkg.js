@@ -119,8 +119,11 @@ t.test('get multiple arg with empty value', async t => {
 
   t.strictSame(
     JSON.parse(OUTPUT()),
-    'foo',
-    'should print retrieved package.json field'
+    {
+      name: 'foo',
+      author: '',
+    },
+    'should print retrieved package.json field regardless of empty value'
   )
 })
 
