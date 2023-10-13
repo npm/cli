@@ -101,6 +101,7 @@ const packument = (nv, opts) => {
         email: 'foo@yellow.com',
         twitter: 'foo',
       },
+      empty: '',
       readme: 'a very useful readme',
       versions: {
         '1.0.0': {
