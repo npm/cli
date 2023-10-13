@@ -425,6 +425,11 @@ t.test('specific field names', async t => {
     await view.exec(['yellow@1.x.x', 'maintainers.name'])
     t.matchSnapshot(outputs.join('\n'))
   })
+
+  t.test('fields with empty values', async t => {
+    await view.exec(['yellow@1.x.x', 'empty'])
+    t.matchSnapshot(outputs.join('\n'))
+  })
 })
 
 t.test('throw error if global mode', async t => {
