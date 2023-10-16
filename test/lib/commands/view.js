@@ -428,7 +428,7 @@ t.test('specific field names', async t => {
   })
 
   t.test('fields with empty values', async t => {
-    await view.exec(['yellow@1.x.x', 'empty'])
+    await view.exec(['yellow', 'empty'])
     t.matchSnapshot(outputs.join('\n'))
   })
 })
