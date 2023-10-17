@@ -55,19 +55,14 @@ The resulting hierarchy of configs:
 
 ```js
 const Config = require('@npmcli/config')
-// the types of all the configs we know about
-const types = require('./config/types.js')
-// default values for all the configs we know about
-const defaults = require('./config/defaults.js')
-// if you want -c to be short for --call and so on, define it here
-const shorthands = require('./config/shorthands.js')
+const { shorthands, definitions, flatten } = require('@npmcli/config/lib/definitions')
 
 const conf = new Config({
   // path to the npm module being run
   npmPath: resolve(__dirname, '..'),
-  types,
+  definitions,
   shorthands,
-  defaults,
+  flatten,
   // optional, defaults to process.argv
   argv: process.argv,
   // optional, defaults to process.env
