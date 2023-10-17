@@ -52,6 +52,7 @@ const envReplace = require('./env-replace.js')
 const parseField = require('./parse-field.js')
 const typeDescription = require('./type-description.js')
 const setEnvs = require('./set-envs.js')
+const { shorthands, definitions, flatten } = require('./definitions');
 
 const {
   ErrInvalidAuth,
@@ -80,6 +81,15 @@ class Config {
 
   static get typeDefs () {
     return typeDefs
+  }
+
+  static withDefaultOptions (opts = {})  {
+    return new Config({
+      definitions,
+      flatten,
+      shorthands,
+      ...opts
+    });
   }
 
   constructor ({
