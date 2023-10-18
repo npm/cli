@@ -1,5 +1,16 @@
 # Changelog
 
+## [8.0.1](https://github.com/npm/cli/compare/config-v8.0.0...config-v8.0.1) (2023-10-18)
+
+### Bug Fixes
+
+* [`8423d4f`](https://github.com/npm/cli/commit/8423d4f133a40c8ceb0e1a75d23aa95fbf4f5b65) [#6895](https://github.com/npm/cli/pull/6895) delete auth from proper location on logout (@wraithgar)
+
+### Documentation
+
+* [`92cd4ad`](https://github.com/npm/cli/commit/92cd4ad02bb2b802333a4d22ffd90a27e7fc4325) [#6913](https://github.com/npm/cli/pull/6913) added footnote about clearing argv (#6913) (@wesleytodd)
+* [`5508fe1`](https://github.com/npm/cli/commit/5508fe13531dced504054957a011419864ae8c0c) [#6911](https://github.com/npm/cli/pull/6911) update readme example (#6911) (@wesleytodd)
+
 ## [8.0.0](https://github.com/npm/cli/compare/config-v7.2.0...config-v8.0.0) (2023-10-02)
 
 ### ⚠️ BREAKING CHANGES
