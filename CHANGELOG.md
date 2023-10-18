@@ -1,5 +1,35 @@
 # Changelog
 
+## [10.2.1](https://github.com/npm/cli/compare/v10.2.0...v10.2.1) (2023-10-18)
+
+### Bug Fixes
+
+* [`35c92fe`](https://github.com/npm/cli/commit/35c92fec3d053d303cc8057faa0ff4fe6e7cdc8a) [#6902](https://github.com/npm/cli/pull/6902) Add check to pkg command to deal with empty values (#6902) (@NeonArray)
+* [`5b6172f`](https://github.com/npm/cli/commit/5b6172f01c88b73e83a75a508bbdcad92231ead5) [#6895](https://github.com/npm/cli/pull/6895) logout from custom registry (@wraithgar)
+* [`8423d4f`](https://github.com/npm/cli/commit/8423d4f133a40c8ceb0e1a75d23aa95fbf4f5b65) [#6895](https://github.com/npm/cli/pull/6895) delete auth from proper location on logout (@wraithgar)
+* [`0cfe9de`](https://github.com/npm/cli/commit/0cfe9de1c74b20d3e04ecc26ccf594196d101afe) [#6873](https://github.com/npm/cli/pull/6873) audit: spelling error in message (#6873) (@Fdawgs)
+
+### Documentation
+
+* [`5142735`](https://github.com/npm/cli/commit/5142735c462e285a7a7d9bcbd562885c6ef96c96) [#6894](https://github.com/npm/cli/pull/6894) update npm build description (#6894) (@siemhesda)
+* [`2e4b4ad`](https://github.com/npm/cli/commit/2e4b4ad8bef158def1b2302846ab294fe7a83de4) [#6861](https://github.com/npm/cli/pull/6861) npm publish content modification (#6861) (@jpg619)
+
+### Dependencies
+
+* [`96e1637`](https://github.com/npm/cli/commit/96e1637117b6614b5ad861d86d828746d5db356c) [#6915](https://github.com/npm/cli/pull/6915) `cmd-shim@6.0.2` (#6915)
+* [`b405da1`](https://github.com/npm/cli/commit/b405da1672e05d55bd22e476091891c443bcbeab) [#6899](https://github.com/npm/cli/pull/6899) `bin-links@4.0.3`
+* [`ef69d36`](https://github.com/npm/cli/commit/ef69d362fa81640ac3ca60a6e01921c17f7a76cb) [#6895](https://github.com/npm/cli/pull/6895) `npm-registry-fetch@16.1.0`
+* [`337c903`](https://github.com/npm/cli/commit/337c9038605b97431e06d2f470229f4370703b13) [#6882](https://github.com/npm/cli/pull/6882) `spdx-license-ids@3.0.16`
+* [`e6b0be7`](https://github.com/npm/cli/commit/e6b0be7d3b3cd7f66612f9adb6c4de829335b607) [#6882](https://github.com/npm/cli/pull/6882) `socks-proxy-agent@8.0.2`
+* [`ee6892e`](https://github.com/npm/cli/commit/ee6892e69079b07c0a8747d873018819a97e3877) [#6882](https://github.com/npm/cli/pull/6882) `readable-stream@4.4.2`
+* [`61c3ee9`](https://github.com/npm/cli/commit/61c3ee9a073528b30676ec66fdd29788ea7be09d) [#6882](https://github.com/npm/cli/pull/6882) `minipass@7.0.4`
+* [`14d31fd`](https://github.com/npm/cli/commit/14d31fdcc747f420158d254d0ac258a848bc888c) [#6882](https://github.com/npm/cli/pull/6882) `is-core-module@2.13.0`
+* [`03f3d2e`](https://github.com/npm/cli/commit/03f3d2e1d13cd12f23a946cfb9065b8e8fbe129b) [#6882](https://github.com/npm/cli/pull/6882) `https-proxy-agent@7.0.2`
+* [`e0163c6`](https://github.com/npm/cli/commit/e0163c6787f3877c3ad6c84d8af44378f7eed23b) [#6882](https://github.com/npm/cli/pull/6882) `are-we-there-yet@4.0.1`
+* [`fca804a`](https://github.com/npm/cli/commit/fca804adec57e176bb2a2e60bf84df44e661478f) [#6882](https://github.com/npm/cli/pull/6882) `ci-info@3.9.0`
+* [`6af582f`](https://github.com/npm/cli/commit/6af582f23bf046a224d5679e917977f0bb3f95e3) [#6882](https://github.com/npm/cli/pull/6882) `npm-install-checks@6.3.0`
+* [Workspace](https://github.com/npm/cli/releases/tag/config-v8.0.1): `@npmcli/config@8.0.1`
+
 ## [10.2.0](https://github.com/npm/cli/compare/v10.1.0...v10.2.0) (2023-10-02)
 
 ### Features
