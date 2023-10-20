@@ -1300,7 +1300,8 @@ This is a one-time fix-up, please be patient...
       }
 
       const parentEdge = node.parent?.edgesOut.get(edge.name)
-      const { isProjectRoot, isWorkspace } = node.parent?.sourceReference || {}
+      const isProjectRoot = node.parent?.sourceReference?.isProjectRoot
+      const isWorkspace = node.parent?.sourceReference?.isWorkspace
       const isMine = isProjectRoot || isWorkspace
       const conflictOK = this[_force] || !isMine && !this.#strictPeerDeps
 
