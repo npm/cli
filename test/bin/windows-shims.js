@@ -1,7 +1,7 @@
 const t = require('tap')
 const { spawnSync } = require('child_process')
 const { resolve, join, extname, basename, sep } = require('path')
-const { readFileSync, chmodSync, readdirSync } = require('fs')
+const { readFileSync, chmodSync, readdirSync, statSync } = require('fs')
 const Diff = require('diff')
 const { sync: which } = require('which')
 const { version } = require('../../package.json')
@@ -10,8 +10,9 @@ const ROOT = resolve(__dirname, '../..')
 const BIN = join(ROOT, 'bin')
 const NODE = readFileSync(process.execPath)
 const SHIMS = readdirSync(BIN).reduce((acc, shim) => {
-  if (extname(shim) !== '.js') {
-    acc[shim] = readFileSync(join(BIN, shim), 'utf-8')
+  const p = join(BIN, shim)
+  if (extname(p) !== '.js' && !statSync(p).isDirectory()) {
+    acc[shim] = readFileSync(p, 'utf-8')
   }
   return acc
 }, {})
