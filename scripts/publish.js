@@ -87,10 +87,19 @@ const main = async (opts) => {
     table.push([publish.name, publish.version, publish.tag])
   }
 
-  const prompt = `Ready to publish the following packages:\n${table.toString()}\nOk to proceed? `
-  const confirm = await read({ prompt, default: 'y' })
-  if (confirm.trim().toLowerCase().charAt(0) !== 'y') {
-    throw new Error('Aborted')
+  const confirmMessage = [
+    `Ready to ${packOnly ? 'pack' : 'publish'} the following packages:`,
+    table.toString(),
+    packOnly ? null : 'Ok to proceed? ',
+  ].filter(Boolean).join('\n')
+
+  if (packOnly) {
+    log.info(confirmMessage)
+  } else {
+    const confirm = await read({ prompt: confirmMessage, default: 'y' })
+    if (confirm.trim().toLowerCase().charAt(0) !== 'y') {
+      throw new Error('Aborted')
+    }
   }
 
   await git('clean', '-fd')
