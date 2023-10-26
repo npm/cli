@@ -315,14 +315,13 @@ t.test('link pkg already in global space', async t => {
   })
 
   // XXX: how to convert this to a config that gets passed in?
-  npm.config.find = () => 'default'
+  npm.config.find = () => '--save'
 
   await link.exec(['@myscope/linked'])
-
-  t.equal(
+  t.match(
     require(resolve(prefix, 'package.json')).dependencies,
-    undefined,
-    'should not save to package.json upon linking'
+    { '@myscope/linked': 'file:../other/scoped-linked' },
+    'should save to package.json upon linking'
   )
 
   t.matchSnapshot(await printLinks(), 'should create a local symlink to global pkg')
