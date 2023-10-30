@@ -316,8 +316,9 @@ t.test('link pkg already in global space', async t => {
 
   // XXX: how to convert this to a config that gets passed in?
   npm.config.find = () => 'default'
-  
+
   await link.exec(['@myscope/linked'])
+
   t.equal(
     require(resolve(prefix, 'package.json')).dependencies,
     undefined,
@@ -325,43 +326,6 @@ t.test('link pkg already in global space', async t => {
   )
 
   t.matchSnapshot(await printLinks(), 'should create a local symlink to global pkg')
-})
-
-
-t.test('saving link to package file', async t => {
-  const { npm, link, printLinks, prefix } = await mockLink(t, {
-    globalPrefixDir: {
-      node_modules: {
-        '@myscope': {
-          linked: t.fixture('symlink', '../../../other/scoped-linked'),
-        },
-      },
-    },
-    otherDirs: {
-      'scoped-linked': {
-        'package.json': JSON.stringify({
-          name: '@myscope/linked',
-          version: '1.0.0',
-        }),
-      },
-    },
-    prefixDir: {
-      'package.json': JSON.stringify({
-        name: 'my-project',
-        version: '1.0.0',
-      }),
-    },
-  })
-
-  // XXX: how to convert this to a config that gets passed in?
-  npm.config.find = () => '--save'
-
-  await link.exec(['@myscope/linked'])
-  t.match(
-    require(resolve(prefix, 'package.json')).dependencies,
-    { '@myscope/linked': 'file:../other/scoped-linked' },
-    'should save to package.json upon linking'
-  )
 })
 
 t.test('link pkg already in global space when prefix is a symlink', async t => {
@@ -403,6 +367,43 @@ t.test('link pkg already in global space when prefix is a symlink', async t => {
   )
 
   t.matchSnapshot(await printLinks(), 'should create a local symlink to global pkg')
+})
+
+t.test('saving link to package file', async t => {
+  const { npm, link, printLinks, prefix } = await mockLink(t, {
+    globalPrefixDir: {
+      node_modules: {
+        '@myscope': {
+          linked: t.fixture('symlink', '../../../other/scoped-linked'),
+        },
+      },
+    },
+    otherDirs: {
+      'scoped-linked': {
+        'package.json': JSON.stringify({
+          name: '@myscope/linked',
+          version: '1.0.0',
+        }),
+      },
+    },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'my-project',
+        version: '1.0.0',
+      }),
+    },
+  })
+
+  // XXX: how to convert this to a config that gets passed in?
+  npm.config.find = () => '--save'
+
+  await link.exec(['@myscope/linked'])
+  
+  t.match(
+    require(resolve(prefix, 'package.json')).dependencies,
+    { '@myscope/linked': 'file:../other/scoped-linked' },
+    'should save to package.json upon linking'
+  )
 })
 
 t.test('should not prune dependencies when linking packages', async t => {
