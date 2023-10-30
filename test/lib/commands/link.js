@@ -370,7 +370,7 @@ t.test('link pkg already in global space when prefix is a symlink', async t => {
 })
 
 t.test('should not saving link to package file', async t => {
-  const { npm, link, prefix } = await mockLink(t, {
+  const { link, prefix } = await mockLink(t, {
     globalPrefixDir: {
       node_modules: {
         '@myscope': {
@@ -395,7 +395,6 @@ t.test('should not saving link to package file', async t => {
     config: { save: false },
   })
 
-  console.log('222222222222222 ', npm.config.find('save'))
   await link.exec(['@myscope/linked'])
   t.match(
     require(resolve(prefix, 'package.json')).dependencies,
