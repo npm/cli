@@ -1,5 +1,16 @@
 # Changelog
 
+## [9.9.1](https://github.com/npm/cli/compare/v9.9.0...v9.9.1) (2023-10-30)
+
+### Bug Fixes
+
+* [`0dba79a`](https://github.com/npm/cli/commit/0dba79a848254ca5e7f02a2ea76f1d4d84dc95d8) [#6942](https://github.com/npm/cli/pull/6942) add back bin/node-gyp-bin/node-gyp files (@lukekarrys)
+* [`c93edb5`](https://github.com/npm/cli/commit/c93edb55f52532e666a9ba2719bee0da725fe6f0) [#6932](https://github.com/npm/cli/pull/6932) add back `bin/node-gyp-bin/node-gyp` files (@lukekarrys)
+
+### Documentation
+
+* [`e6cce28`](https://github.com/npm/cli/commit/e6cce28ddd300923f616be4a6fa3946d5e96480c) [#6925](https://github.com/npm/cli/pull/6925) use markdown links instead of html (@lukekarrys)
+
 ## [9.9.0](https://github.com/npm/cli/compare/v9.8.1...v9.9.0) (2023-10-06)
 
 ### Features
