@@ -1,22 +1,23 @@
 const t = require('tap')
 const { spawnSync } = require('child_process')
 const { resolve, join, extname, basename, sep } = require('path')
-const { readFileSync, chmodSync, readdirSync, statSync } = require('fs')
+const { readFileSync, chmodSync, readdirSync, rmSync, statSync } = require('fs')
 const Diff = require('diff')
 const { sync: which } = require('which')
 const { version } = require('../../package.json')
 
-const ROOT = resolve(__dirname, '../..')
-const BIN = join(ROOT, 'bin')
-const NODE = readFileSync(process.execPath)
-const SHIMS = readdirSync(BIN).reduce((acc, shim) => {
-  const p = join(BIN, shim)
+const readNonJsFiles = (dir) => readdirSync(dir).reduce((acc, shim) => {
+  const p = join(dir, shim)
   if (extname(p) !== '.js' && !statSync(p).isDirectory()) {
     acc[shim] = readFileSync(p, 'utf-8')
   }
   return acc
 }, {})
 
+const ROOT = resolve(__dirname, '../..')
+const BIN = join(ROOT, 'bin')
+const SHIMS = readNonJsFiles(BIN)
+const NODE_GYP = readNonJsFiles(join(BIN, 'node-gyp-bin'))
 const SHIM_EXTS = [...new Set(Object.keys(SHIMS).map(p => extname(p)))]
 
 // windows requires each segment of a command path to be quoted when using shell: true
@@ -63,6 +64,21 @@ t.test('shim contents', t => {
     t.strictSame([...letters], ['M', 'X'], 'all other changes are m->x')
     t.end()
   })
+})
+
+t.test('node-gyp', t => {
+  // these files need to exist to avoid breaking yarn 1.x
+
+  for (const [key, file] of Object.entries(NODE_GYP)) {
+    t.match(file, /npm_config_node_gyp/, `${key} contains env var`)
+    t.match(
+      file,
+      /[\\/]\.\.[\\/]\.\.[\\/]node_modules[\\/]node-gyp[\\/]bin[\\/]node-gyp\.js/,
+      `${key} contains path`
+    )
+  }
+
+  t.end()
 })
 
 t.test('run shims', t => {
