@@ -395,7 +395,7 @@ t.test('should not saving link to package file', async t => {
     config: { save: false },
   })
 
-  npm.config.find = () => 'cli'
+  console.log('222222222222222 ', npm.config.find('save'))
   await link.exec(['@myscope/linked'])
   t.match(
     require(resolve(prefix, 'package.json')).dependencies,
