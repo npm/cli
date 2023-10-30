@@ -369,7 +369,7 @@ t.test('link pkg already in global space when prefix is a symlink', async t => {
   t.matchSnapshot(await printLinks(), 'should create a local symlink to global pkg')
 })
 
-t.test('saving link to package file', async t => {
+t.test('should not saving link to package file', async t => {
   const { npm, link, prefix } = await mockLink(t, {
     globalPrefixDir: {
       node_modules: {
@@ -392,16 +392,15 @@ t.test('saving link to package file', async t => {
         version: '1.0.0',
       }),
     },
+    config: { save: false },
   })
 
-  // XXX: how to convert this to a config that gets passed in?
-  npm.config.find = () => '--save'
-
+  npm.config.find = () => 'cli'
   await link.exec(['@myscope/linked'])
   t.match(
     require(resolve(prefix, 'package.json')).dependencies,
-    { '@myscope/linked': 'file:../other/scoped-linked' },
-    'should save to package.json upon linking'
+    undefined,
+    'should not save to package.json upon linking'
   )
 })
 
