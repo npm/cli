@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.0.3](https://github.com/npm/cli/compare/libnpmdiff-v6.0.2...libnpmdiff-v6.0.3) (2023-10-31)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v7.2.1): `@npmcli/arborist@7.2.1`
+
 ## [6.0.2](https://github.com/npm/cli/compare/libnpmdiff-v6.0.1...libnpmdiff-v6.0.2) (2023-10-02)
 
 ### Dependencies

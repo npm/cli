@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.2.1](https://github.com/npm/cli/compare/arborist-v7.2.0...arborist-v7.2.1) (2023-10-31)
+
+### Dependencies
+
+* [`dfb6298`](https://github.com/npm/cli/commit/dfb6298c3eb9fb7ef452906765ac5f23ea6fec49) [#6937](https://github.com/npm/cli/pull/6937) `node-gyp@10.0.0` (#6937)
+
 ## [7.2.0](https://github.com/npm/cli/compare/arborist-v7.1.0...arborist-v7.2.0) (2023-10-02)
 
 ### Features

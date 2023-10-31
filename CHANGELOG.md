@@ -1,5 +1,28 @@
 # Changelog
 
+## [10.2.2](https://github.com/npm/cli/compare/v10.2.1...v10.2.2) (2023-10-31)
+
+### Bug Fixes
+
+* [`8ed6d28`](https://github.com/npm/cli/commit/8ed6d28fa14b40d7a05784ad0a1e80661256b466) [#6910](https://github.com/npm/cli/pull/6910) make npm link respect --no-save (#6910) (@Santoshraj2)
+* [`eacec5f`](https://github.com/npm/cli/commit/eacec5f49060d3dfcdc3c7043115619e4bb22864) [#6941](https://github.com/npm/cli/pull/6941) add back bin/node-gyp-bin/node-gyp files (#6941) (@lukekarrys)
+* [`b776753`](https://github.com/npm/cli/commit/b776753f9cfeab329169105f604bc55ed03bd0e1) [#6928](https://github.com/npm/cli/pull/6928) Grammar mistake in authentication error message (#6928) (@Gekuro, gek)
+
+### Documentation
+
+* [`c422a01`](https://github.com/npm/cli/commit/c422a01e1564d25148c821ee257196ebe60e8e6c) [#6924](https://github.com/npm/cli/pull/6924) use markdown links instead of html (@lukekarrys)
+* [`dd03aa0`](https://github.com/npm/cli/commit/dd03aa0b9acc535283daf39699de9831202348cb) [#6921](https://github.com/npm/cli/pull/6921) add v9 and above for lockfile version 3 (#6921) (@MikeMcC399)
+
+### Dependencies
+
+* [`dfb6298`](https://github.com/npm/cli/commit/dfb6298c3eb9fb7ef452906765ac5f23ea6fec49) [#6937](https://github.com/npm/cli/pull/6937) `node-gyp@10.0.0` (#6937)
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v7.2.1): `@npmcli/arborist@7.2.1`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v6.0.3): `libnpmdiff@6.0.3`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v7.0.3): `libnpmexec@7.0.3`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v5.0.1): `libnpmfund@5.0.1`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v6.0.3): `libnpmpack@6.0.3`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmversion-v5.0.1): `libnpmversion@5.0.1`
+
 ## [10.2.1](https://github.com/npm/cli/compare/v10.2.0...v10.2.1) (2023-10-18)
 
 ### Bug Fixes
