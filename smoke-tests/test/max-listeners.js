@@ -22,8 +22,11 @@ const runTest = async (t, { env } = {}) => {
   return npm('install', { stderr: true, env })
 }
 
-// https://github.com/npm/cli/issues/6763
-t.test('no max listeners', async t => {
+// See https://github.com/npm/cli/issues/6763 for initial reason for this test.
+// Edit: This test is very flaky in CI and is likely due to a Node.js bug
+// (https://github.com/nodejs/node/pull/50136). This test is being skipped for
+// now and will be revisited once the Node.js bugfix has landed across 18+.
+t.todo('no max listeners', async t => {
   // in node 20.4.0 and above (20.6.1 at the time of this test) installs show
   // MaxListenersExceeded warnings during some installs. these go away with the
   // --no-network-family-autoselection flag. this test documents this behavior
