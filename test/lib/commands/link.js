@@ -369,7 +369,7 @@ t.test('link pkg already in global space when prefix is a symlink', async t => {
   t.matchSnapshot(await printLinks(), 'should create a local symlink to global pkg')
 })
 
-t.test('should not saving link to package file', async t => {
+t.test('should not save link to package file', async t => {
   const { link, prefix } = await mockLink(t, {
     globalPrefixDir: {
       node_modules: {
