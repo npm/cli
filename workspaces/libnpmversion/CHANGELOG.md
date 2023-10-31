@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.0.1](https://github.com/npm/cli/compare/libnpmversion-v5.0.0...libnpmversion-v5.0.1) (2023-10-31)
+
+### Dependencies
+
+* [`dfb6298`](https://github.com/npm/cli/commit/dfb6298c3eb9fb7ef452906765ac5f23ea6fec49) [#6937](https://github.com/npm/cli/pull/6937) `node-gyp@10.0.0` (#6937)
+
 ## [5.0.0](https://github.com/npm/cli/compare/libnpmversion-v5.0.0-pre.0...libnpmversion-v5.0.0) (2023-08-31)
 
 ### Features

@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.0.3](https://github.com/npm/cli/compare/libnpmexec-v7.0.2...libnpmexec-v7.0.3) (2023-10-31)
+
+### Dependencies
+
+* [`dfb6298`](https://github.com/npm/cli/commit/dfb6298c3eb9fb7ef452906765ac5f23ea6fec49) [#6937](https://github.com/npm/cli/pull/6937) `node-gyp@10.0.0` (#6937)
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v7.2.1): `@npmcli/arborist@7.2.1`
+
 ## [7.0.2](https://github.com/npm/cli/compare/libnpmexec-v7.0.1...libnpmexec-v7.0.2) (2023-10-02)
 
 ### Dependencies
