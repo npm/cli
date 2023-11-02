@@ -1,5 +1,11 @@
 # Changelog
 
+## [10.2.3](https://github.com/npm/cli/compare/v10.2.2...v10.2.3) (2023-11-02)
+
+### Dependencies
+
+* [`b5dedf3`](https://github.com/npm/cli/commit/b5dedf39dd772192ed6639926ad4c99ff5dfd28a) [#6958](https://github.com/npm/cli/pull/6958) `node-gyp@10.0.1`
+
 ## [10.2.2](https://github.com/npm/cli/compare/v10.2.1...v10.2.2) (2023-10-31)
 
 ### Bug Fixes
