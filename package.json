@@ -75,7 +75,7 @@
     "hosted-git-info": "^7.0.1",
     "ini": "^4.1.1",
     "init-package-json": "^6.0.0",
-    "is-cidr": "^4.0.2",
+    "is-cidr": "^5.0.3",
     "json-parse-even-better-errors": "^3.0.0",
     "libnpmaccess": "^8.0.1",
     "libnpmdiff": "^6.0.3",
