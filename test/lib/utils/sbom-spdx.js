@@ -117,6 +117,20 @@ t.test('single node - with single license', t => {
   t.end()
 })
 
+t.test('single node - with license object', t => {
+  const pkg = {
+    ...rootPkg,
+    license: {
+      type: 'MIT',
+      url: 'http://github.com/kriskowal/q/raw/master/LICENSE',
+    },
+  }
+  const node = { ...root, package: pkg }
+  const res = spdxOutput({ npm, nodes: [node] })
+  t.matchSnapshot(JSON.stringify(res))
+  t.end()
+})
+
 t.test('single node - with license expression', t => {
   const pkg = { ...rootPkg, license: '(MIT OR Apache-2.0)' }
   const node = { ...root, package: pkg }
