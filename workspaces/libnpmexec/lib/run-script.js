@@ -15,6 +15,7 @@ const run = async ({
   binPaths,
   runPath,
   scriptShell,
+  stdio = 'inherit',
 }) => {
   // turn list of args into command string
   const script = call || args.shift() || scriptShell
@@ -31,7 +32,9 @@ const run = async ({
     },
   }
 
-  npmlog.disableProgress()
+  if (stdio === 'inherit') {
+    npmlog.disableProgress()
+  }
 
   try {
     if (script === scriptShell) {
@@ -60,11 +63,13 @@ const run = async ({
       binPaths,
       event: 'npx',
       args,
-      stdio: 'inherit',
+      stdio,
       scriptShell,
     })
   } finally {
-    npmlog.enableProgress()
+    if (stdio === 'inherit') {
+      npmlog.enableProgress()
+    }
   }
 }
 
