@@ -14,3 +14,17 @@ t.test('no args', async t => {
 
   await exec()
 })
+
+t.test('stdio value', async t => {
+  t.plan(1)
+
+  const { exec } = setup(t, {
+    mocks: {
+      '../../lib/run-script': ({ stdio }) => {
+        t.equal(stdio, 'pipe', 'should use expected stdio value')
+      },
+    },
+  })
+
+  await exec({ stdio: 'pipe' })
+})

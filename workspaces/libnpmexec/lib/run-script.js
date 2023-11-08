@@ -32,9 +32,7 @@ const run = async ({
     },
   }
 
-  if (stdio === 'inherit') {
-    npmlog.disableProgress()
-  }
+  npmlog.disableProgress()
 
   try {
     if (script === scriptShell) {
