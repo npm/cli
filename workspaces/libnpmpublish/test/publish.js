@@ -529,6 +529,9 @@ t.test('publish existing package with provenance in gha', async t => {
     t.hasStrict(provenance.predicate.buildDefinition.buildType,
       'https://slsa-framework.github.io/github-actions-buildtypes/workflow/v1',
       'buildType matches expectations')
+    t.hasStrict(provenance.predicate.buildDefinition.externalParameters.workflow.ref,
+      'refs/tags/pkg@1.0.0',
+      'workflowRef matches expectations')
     t.hasStrict(provenance.predicate.runDetails.builder.id,
       `https://github.com/actions/runner/${runnerEnv}`,
       'builder id matches expectations')
