@@ -1,5 +1,21 @@
 # Changelog
 
+## [9.9.2](https://github.com/npm/cli/compare/v9.9.1...v9.9.2) (2023-11-14)
+
+### Bug Fixes
+
+* [`4c9a5e1`](https://github.com/npm/cli/commit/4c9a5e15cdb7195a0781d765997eab49ef759d36) [#6993](https://github.com/npm/cli/pull/6993) look in workspace for exec commands (#6993) (@wraithgar)
+* [`bb6f496`](https://github.com/npm/cli/commit/bb6f4960caebfefa81bfb82bbee2a54ff2b3a8b4) [#6992](https://github.com/npm/cli/pull/6992) correctly handle object licenses in SBOM generation (#6992) (@bdehamer, @jamietanna)
+* [`10db3ca`](https://github.com/npm/cli/commit/10db3ca830408721c3d1ed108a4f04d9135a0598) [#6990](https://github.com/npm/cli/pull/6990) pkg: properly output in workspace mode (#6990) (@wraithgar)
+
+### Documentation
+
+* [`6ab06d7`](https://github.com/npm/cli/commit/6ab06d7a86614abb9b296feb85864e86f178f97e) [#6985](https://github.com/npm/cli/pull/6985) update npm-prune description (#6985) (@Eomm)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v7.5.1): `libnpmpublish@7.5.1`
+
 ## [9.9.1](https://github.com/npm/cli/compare/v9.9.0...v9.9.1) (2023-10-30)
 
 ### Bug Fixes
