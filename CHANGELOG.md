@@ -1,5 +1,35 @@
 # Changelog
 
+## [10.2.4](https://github.com/npm/cli/compare/v10.2.3...v10.2.4) (2023-11-14)
+
+### Bug Fixes
+
+* [`cd291e7`](https://github.com/npm/cli/commit/cd291e7aa52e56fc45f8245e67c77e0ed3711b07) [#6995](https://github.com/npm/cli/pull/6995) refactor search formatting code (#6995) (@wraithgar)
+* [`f3a7380`](https://github.com/npm/cli/commit/f3a7380a45323dbf6c74015e418de3963fb11a69) [#6973](https://github.com/npm/cli/pull/6973) look in workspace for exec commands (#6973) (@wraithgar)
+* [`d11496b`](https://github.com/npm/cli/commit/d11496b26dfee5957e7e2a1b328f346b2aca9348) [#6977](https://github.com/npm/cli/pull/6977) pkg: properly output in workspace mode (#6977) (@wraithgar)
+* [`0f70088`](https://github.com/npm/cli/commit/0f7008851f1c250405e8dc326f15d535e8fc1eae) [#6969](https://github.com/npm/cli/pull/6969) correctly handle object licenses in SBOM generation (#6969) (@jamietanna)
+* [`dce3b08`](https://github.com/npm/cli/commit/dce3b0896ba81b2109fea42ab32edd8a3193324c) [#6951](https://github.com/npm/cli/pull/6951) properly catch missing url opener error (#6951) (@wraithgar)
+
+### Documentation
+
+* [`a38836c`](https://github.com/npm/cli/commit/a38836ce9d703f5012ff4d4a8a4e3b9a9aedc025) [#6616](https://github.com/npm/cli/pull/6616) add path usage for view command (#6616) (@RobinKnipe)
+* [`da18e4f`](https://github.com/npm/cli/commit/da18e4f9baa180beeb325a384759a26a19ac2919) [#6987](https://github.com/npm/cli/pull/6987) update npm-prune description (#6987) (@Eomm)
+
+### Dependencies
+
+* [`e9ec2f7`](https://github.com/npm/cli/commit/e9ec2f7005e7326d9a819978b251cf0a05062538) [#6994](https://github.com/npm/cli/pull/6994) `lru-cache@10.0.2`
+* [`faf9eff`](https://github.com/npm/cli/commit/faf9efffb7bfe6efde6e53830cb054b34c3a6ea3) [#6994](https://github.com/npm/cli/pull/6994) `is-core-module@2.13.1`
+* [`b00e780`](https://github.com/npm/cli/commit/b00e7808e370513e79ca31c261958377984e7444) [#6994](https://github.com/npm/cli/pull/6994) `@sigstore/sign@2.2.0`
+* [`4613774`](https://github.com/npm/cli/commit/461377426d998ed79400501b09e1ee67c32bee23) [#6994](https://github.com/npm/cli/pull/6994) hoisting newer deps in favor of older ones
+* [`54c4f7b`](https://github.com/npm/cli/commit/54c4f7b8705b2c9d5b8bc5bb846f4e7863735b7e) [#6994](https://github.com/npm/cli/pull/6994) `signal-exit@4.1.0`
+* [`8c5882f`](https://github.com/npm/cli/commit/8c5882f3eed305bbd3514d7143f9d92e9577e1b9) [#6994](https://github.com/npm/cli/pull/6994) `strip-ansi@7.1.0`
+* [`cd0c649`](https://github.com/npm/cli/commit/cd0c649ec2b421b59012854e61788a11a77194f2) [#6994](https://github.com/npm/cli/pull/6994) `ci-info@4.0.0`
+* [`a0a58b7`](https://github.com/npm/cli/commit/a0a58b735c418d8555a06890b63098c68f53106e) [#6994](https://github.com/npm/cli/pull/6994) `@sigstore/tuf@2.2.0`
+* [`b3a53c6`](https://github.com/npm/cli/commit/b3a53c6ab5fd933fc7f8258c155ed31be834393e) [#6949](https://github.com/npm/cli/pull/6949) `is-cidr@5.0.3` (#6949)
+* [Workspace](https://github.com/npm/cli/releases/tag/config-v8.0.2): `@npmcli/config@8.0.2`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v7.0.4): `libnpmexec@7.0.4`
+* [Workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v9.0.2): `libnpmpublish@9.0.2`
+
 ## [10.2.3](https://github.com/npm/cli/compare/v10.2.2...v10.2.3) (2023-11-02)
 
 ### Dependencies
