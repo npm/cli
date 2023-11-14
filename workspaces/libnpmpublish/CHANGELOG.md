@@ -1,5 +1,15 @@
 # Changelog
 
+## [9.0.2](https://github.com/npm/cli/compare/libnpmpublish-v9.0.1...libnpmpublish-v9.0.2) (2023-11-14)
+
+### Bug Fixes
+
+* [`fff8698`](https://github.com/npm/cli/commit/fff8698169441a6398319f6d0510dde4090e01ce) [#6978](https://github.com/npm/cli/pull/6978) publish: split github workflow ref (#6978) (@sxzz)
+
+### Dependencies
+
+* [`cd0c649`](https://github.com/npm/cli/commit/cd0c649ec2b421b59012854e61788a11a77194f2) [#6994](https://github.com/npm/cli/pull/6994) `ci-info@4.0.0`
+
 ## [9.0.1](https://github.com/npm/cli/compare/libnpmpublish-v9.0.0...libnpmpublish-v9.0.1) (2023-10-02)
 
 ### Dependencies
