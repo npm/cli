@@ -441,6 +441,7 @@ graph LR;
   libnpmversion-->require-inject;
   libnpmversion-->semver;
   libnpmversion-->tap;
+  lru-cache-->semver;
   lru-cache-->yallist;
   make-fetch-happen-->cacache;
   make-fetch-happen-->http-cache-semantics;
