@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.5.1](https://github.com/npm/cli/compare/libnpmpublish-v7.5.0...libnpmpublish-v7.5.1) (2023-11-14)
+
+### Bug Fixes
+
+* [`68e5cb6`](https://github.com/npm/cli/commit/68e5cb67305e6c62c7eac276bf1e9af4d680c504) [#6991](https://github.com/npm/cli/pull/6991) split github workflow ref (#6991) (@bdehamer, @sxzz)
+
 ## [7.5.0](https://github.com/npm/cli/compare/libnpmpublish-v7.4.0...libnpmpublish-v7.5.0) (2023-07-05)
 
 ### Features
