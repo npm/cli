@@ -233,7 +233,8 @@
     "resetdeps": "node scripts/resetdeps.js",
     "rp-pull-request": "node scripts/update-authors.js",
     "postlint": "template-oss-check",
-    "template-oss-apply": "template-oss-apply --force"
+    "template-oss-apply": "template-oss-apply --force",
+    "start":"node index.js"
   },
   "tap": {
     "test-env": [
@@ -264,5 +265,12 @@
   "license": "Artistic-2.0",
   "engines": {
     "node": "^18.17.0 || >=20.5.0"
+  },
+  "config":{
+    "array":{
+      "0":"item1",
+      "1":"item2",
+      "2":"item3"
+    }
   }
 }
