@@ -552,13 +552,29 @@ had the following:
 {
   "name": "foo",
   "config": {
-    "port": "8080"
+    "port": "8080",
   }
 }
 ```
 
 It could also have a "start" command that referenced the
 `npm_package_config_port` environment variable.
+
+It is preferred to have configs as key value pairs since arrays produce 
+undesirable configs. For example:
+
+```json
+{
+  "name": "foo",
+  "config": {
+    "ports": ["8080", "8081"],
+  }
+}
+```
+
+This produces `npm_package_config_port` with value `'8080\n\n8081'` 
+rather than `npm_package_config_port_0` with value `'8080'` and 
+`npm_package_config_port_1` with value `'8081'`
 
 ### dependencies
 
