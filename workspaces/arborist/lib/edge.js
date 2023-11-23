@@ -258,7 +258,7 @@ class Edge {
     const newTo = this.#from.resolve(this.#name)
     if (newTo !== this.#to) {
       if (this.#to) {
-        this.#to.edgesIn.delete(this)
+        this.#to.deleteEdgeIn(this)
       }
       this.#to = newTo
       this.#error = null
@@ -273,7 +273,7 @@ class Edge {
   detach () {
     this.#explanation = null
     if (this.#to) {
-      this.#to.edgesIn.delete(this)
+      this.#to.deleteEdgeIn(this)
     }
     this.#from.edgesOut.delete(this.#name)
     this.#to = null

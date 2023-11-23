@@ -1344,9 +1344,95 @@ class Node {
     this.edgesOut.set(edge.name, edge)
   }
 
-  addEdgeIn (edge) {
+  recalculateOutEdgesOverrides () {
+    // For each edge out propogate the new overrides through.
+    for (const edgePair of this.edgesOut) {
+      const edge = edgePair[1]
+      edge.reload(true)
+      if (edge.to) {
+        edge.to.updateNodeOverrideSet(edge.overrides)
+      }
+    }
+  }
+
+  findSpecificOverrideSet (first, second) {
+    for (let overrideSet = second; overrideSet; overrideSet = overrideSet.parent) {
+      if (overrideSet == first) {
+        return second
+      }
+    }
+    for (let overrideSet = first; overrideSet; overrideSet = overrideSet.parent) {
+      if (overrideSet == second) {
+        return first
+      }
+    }
+    return undefined
+  }
+
+  updateNodeOverrideSetDueToEdgeRemoval (otherOverrideSet) {
+    // If this edge's overrides isn't equal to this node's overrides, then removing it won't change newOverrideSet later.
+    if (this.overrides != otherOverrideSet) {
+      return false
+    }
+    let newOverrideSet
+    for (const edge of this.edgesIn) {
+      if (newOverrideSet) {
+        newOverrideSet = this.findSpecificOverrideSet()
+      } else {
+        newOverrideSet = edge.overrides
+      }
+    }
+    if (this.overrides == newOverrideSet) {
+      return false
+    }
+    this.overrides = newOverrideSet
+    this.recalculateOutEdgesOverrides()
+    return true
+  }
+
+  // This logic isn't perfect either. When we have two edges in that have different override sets, then we have to decide which set is correct.
+  // This function assumes the more specific override set is applicable, so if we have dependencies A->B->C and A->C
+  // and an override set that specifies what happens for C under A->B, this will work even if the new A->C edge comes along and tries to change
+  // the override set.
+  // The strictly correct logic is not to allow two edges with different overrides to point to the same node, because even if this node can satisfy
+  // both, one of its dependencies might need to be different depending on the edge leading to it.
+  // However, this might cause a lot of duplication, because the conflict in the dependencies might never actually happen.
+  updateNodeOverrideSet (otherOverrideSet) {
+    if (this.overrides == otherOverrideSet) {
+      return false
+    }
+    if (!this.overrides) {
+      this.overrides = otherOverrideSet
+      this.recalculateOutEdgesOverrides()
+      return true
+    }
+    let newOverrideSet = this.findSpecificOverrideSet(this.overrides, otherOverrideSet)
+    if (!newOverrideSet) {
+      // There are conflicting relevant override sets here. We should keep the remaining override set and mark the incoming edge as invalid somehow.
+      console.log("Overrides are in conflict.")
+    } else {
+      if (this.overrides != newOverrideSet) {
+        this.overrides = newOverrideSet
+        this.recalculateOutEdgesOverrides()
+        return true
+      }
+      return false
+    }
+  }
+  
+  deleteEdgeIn (edge) {
+    this.edgesIn.delete(edge)
     if (edge.overrides) {
-      this.overrides = edge.overrides
+      this.updateNodeOverrideSetDueToEdgeRemoval(edge.overrides)
+    }
+  }
+
+  addEdgeIn (edge) {
+    // We need to handle the case where the new edge in has an overrides field which is different from the current value.
+    // Assuming there are any overrides at all, the overrides field is never undefined for any node at the end state of the tree.
+    // So if the new edge's overrides is undefined it will be updated later. So we can wait with updating the node's overrides field.
+    if (edge.overrides && this.overrides != edge.overrides) {
+      this.updateNodeOverrideSet(edge.overrides)
     }
 
     this.edgesIn.add(edge)
