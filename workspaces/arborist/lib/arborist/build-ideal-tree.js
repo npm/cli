@@ -4,7 +4,7 @@ const rpj = require('read-package-json-fast')
 const npa = require('npm-package-arg')
 const pacote = require('pacote')
 const cacache = require('cacache')
-const promiseCallLimit = require('promise-call-limit')
+const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const realpath = require('../../lib/realpath.js')
 const { resolve, dirname } = require('path')
 const treeCheck = require('../tree-check.js')
@@ -56,30 +56,52 @@ const _global = Symbol.for('global')
 const _idealTreePrune = Symbol.for('idealTreePrune')
 
 // Push items in, pop them sorted by depth and then path
+// Sorts physically shallower deps up to the front of the queue, because
+// they'll affect things deeper in, then alphabetical for consistency between
+// installs
 class DepsQueue {
+  // [{ sorted, items }] indexed by depth
   #deps = []
   #sorted = true
+  #minDepth = 0
+  #length = 0
 
   get length () {
-    return this.#deps.length
+    return this.#length
   }
 
   push (item) {
-    if (!this.#deps.includes(item)) {
-      this.#sorted = false
-      this.#deps.push(item)
+    if (!this.#deps[item.depth]) {
+      this.#length++
+      this.#deps[item.depth] = { sorted: true, items: [item] }
+      // no minDepth check needed, this branch is only reached when we are in
+      // the middle of a shallower depth and creating a new one
+      return
+    }
+    if (!this.#deps[item.depth].items.includes(item)) {
+      this.#length++
+      this.#deps[item.depth].sorted = false
+      this.#deps[item.depth].items.push(item)
+      if (item.depth < this.#minDepth) {
+        this.#minDepth = item.depth
+      }
     }
   }
 
   pop () {
-    if (!this.#sorted) {
-      // sort physically shallower deps up to the front of the queue, because
-      // they'll affect things deeper in, then alphabetical
-      this.#deps.sort((a, b) =>
-        (a.depth - b.depth) || localeCompare(a.path, b.path))
-      this.#sorted = true
+    let depth
+    while (!depth?.items.length) {
+      depth = this.#deps[this.#minDepth]
+      if (!depth?.items.length) {
+        this.#minDepth++
+      }
     }
-    return this.#deps.shift()
+    if (!depth.sorted) {
+      depth.items.sort((a, b) => localeCompare(a.path, b.path))
+      depth.sorted = true
+    }
+    this.#length--
+    return depth.items.shift()
   }
 }
 
@@ -1016,7 +1038,7 @@ This is a one-time fix-up, please be patient...
           // may well be an optional dep that has gone missing.  it'll
           // fail later anyway.
           for (const e of this.#problemEdges(placed)) {
-            promises.push(
+            promises.push(() =>
               this.#fetchManifest(npa.resolve(e.name, e.spec, fromPath(placed, e)))
                 .catch(er => null)
             )
@@ -1031,7 +1053,7 @@ This is a one-time fix-up, please be patient...
       }
     }
 
-    await Promise.all(promises)
+    await promiseCallLimit(promises)
     return this.#buildDepStep()
   }
 
