@@ -1365,6 +1365,7 @@ class Node {
         return first
       }
     }
+    console.log("Conflicting override sets")
   }
 
   updateNodeOverrideSetDueToEdgeRemoval (otherOverrideSet) {
@@ -1375,7 +1376,7 @@ class Node {
     let newOverrideSet
     for (const edge of this.edgesIn) {
       if (newOverrideSet) {
-        newOverrideSet = this.findSpecificOverrideSet()
+        newOverrideSet = this.findSpecificOverrideSet(edge.overrides, newOverrideSet)
       } else {
         newOverrideSet = edge.overrides
       }
@@ -1384,7 +1385,12 @@ class Node {
       return false
     }
     this.overrides = newOverrideSet
-    this.recalculateOutEdgesOverrides()
+    if (this.overrides) {
+      // Optimization: if there's any override set at all, then no non-extraneous node has an empty override set. So if we temporarily have no
+      // override set (for example, we removed all the edges in), there's no use updating all the edges out right now. Let's just wait until
+      // we have an actual override set later.
+      this.recalculateOutEdgesOverrides()
+    }
     return true
   }
 
@@ -1406,8 +1412,8 @@ class Node {
     }
     let newOverrideSet = this.findSpecificOverrideSet(this.overrides, otherOverrideSet)
     if (!newOverrideSet) {
-      // There are conflicting relevant override sets here. We should keep the remaining override set and mark the incoming edge as invalid somehow.
-      throw Object.assign(new Error(`Two conflicting override sets for ${this.name}`), { code: 'EOVERRIDE' })
+      // This is an error condition. We can only get here if the new override set is in conflict with the existing.
+      return false
     } else {
       if (this.overrides != newOverrideSet) {
         this.overrides = newOverrideSet
