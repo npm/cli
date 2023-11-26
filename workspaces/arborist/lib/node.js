@@ -1346,8 +1346,7 @@ class Node {
 
   recalculateOutEdgesOverrides () {
     // For each edge out propogate the new overrides through.
-    for (const edgePair of this.edgesOut) {
-      const edge = edgePair[1]
+    for (const [, edge] of this.edgesOut) {
       edge.reload(true)
       if (edge.to) {
         edge.to.updateNodeOverrideSet(edge.overrides)
@@ -1366,7 +1365,6 @@ class Node {
         return first
       }
     }
-    return undefined
   }
 
   updateNodeOverrideSetDueToEdgeRemoval (otherOverrideSet) {
@@ -1409,7 +1407,7 @@ class Node {
     let newOverrideSet = this.findSpecificOverrideSet(this.overrides, otherOverrideSet)
     if (!newOverrideSet) {
       // There are conflicting relevant override sets here. We should keep the remaining override set and mark the incoming edge as invalid somehow.
-      console.log("Overrides are in conflict.")
+      throw Object.assign(new Error(`Two conflicting override sets for ${this.name}`), { code: 'EOVERRIDE' })
     } else {
       if (this.overrides != newOverrideSet) {
         this.overrides = newOverrideSet
