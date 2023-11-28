@@ -1076,8 +1076,13 @@ class Node {
     }
 
     // if we prefer dedupe, or if the version is greater/equal, take the other
-    if (preferDedupe || semver.gte(other.version, this.version)) {
-      return true
+    try {
+      if (preferDedupe || semver.gte(other.version, this.version)) {
+        return true
+      }
+    } catch (err) {
+      const message = `${err.message}\nPackage Name: ${this.packageName}\nLocation: ${this.location}\nPath: ${this.path}`
+      throw new TypeError(message)
     }
 
     return false
