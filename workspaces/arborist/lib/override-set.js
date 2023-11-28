@@ -52,10 +52,10 @@ class OverrideSet {
       if (!other.children.has(key)) {
         return false
       }
-      if (!this.children[key].value === other.children[key].value) {
+      if (!this.children.get(key).value === other.children.get(key).value) {
         return false
       }
-      if (!this.children[key].childrenAreEqual(other.children[key])) {
+      if (!this.children.get(key).childrenAreEqual(other.children.get(key))) {
         return false
       }
     }
@@ -69,10 +69,16 @@ class OverrideSet {
     if (!other) {
       return false
     }
-    if (this.key !== other.key || this.value !== other.value || !this.childrenAreEqual(other) || !this.parent.isEqual(other.parent)) {
+    if (this.key !== other.key || this.value !== other.value) {
       return false
     }
-    return true
+    if (!this.childrenAreEqual(other)) {
+      return false
+    }
+    if (!this.parent) {
+      return !other.parent
+    }
+    return this.parent.isEqual(other.parent)
   }
 
   getEdgeRule (edge) {
