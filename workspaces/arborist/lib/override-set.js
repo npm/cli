@@ -66,6 +66,9 @@ class OverrideSet {
     if (this === other) {
       return true
     }
+    if (!other) {
+      return false
+    }
     if (this.key !== other.key || this.value !== other.value || !this.childrenAreEqual(other) || !this.parent.isEqual(other.parent)) {
       return false
     }

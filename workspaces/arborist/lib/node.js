@@ -1370,7 +1370,7 @@ class Node {
 
   updateNodeOverrideSetDueToEdgeRemoval (otherOverrideSet) {
     // If this edge's overrides isn't equal to this node's overrides, then removing it won't change newOverrideSet later.
-    if (!this.overrides.isEqual(otherOverrideSet)) {
+    if (!this.overrides || !this.overrides.isEqual(otherOverrideSet)) {
       return false
     }
     let newOverrideSet
@@ -1402,13 +1402,16 @@ class Node {
   // both, one of its dependencies might need to be different depending on the edge leading to it.
   // However, this might cause a lot of duplication, because the conflict in the dependencies might never actually happen.
   updateNodeOverrideSet (otherOverrideSet) {
-    if (this.overrides.isEqual(otherOverrideSet)) {
-      return false
-    }
     if (!this.overrides) {
+      if (!otherOverrideSet) {
+        return false
+      }
       this.overrides = otherOverrideSet
       this.recalculateOutEdgesOverrides()
-      return true
+      return true      
+    }
+    if (this.overrides.isEqual(otherOverrideSet)) {
+      return false
     }
     let newOverrideSet = this.findSpecificOverrideSet(this.overrides, otherOverrideSet)
     if (!newOverrideSet) {
