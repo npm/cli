@@ -1356,12 +1356,12 @@ class Node {
 
   findSpecificOverrideSet (first, second) {
     for (let overrideSet = second; overrideSet; overrideSet = overrideSet.parent) {
-      if (overrideSet == first) {
+      if (overrideSet.isEqual(first)) {
         return second
       }
     }
     for (let overrideSet = first; overrideSet; overrideSet = overrideSet.parent) {
-      if (overrideSet == second) {
+      if (overrideSet.isEqual(second)) {
         return first
       }
     }
@@ -1370,7 +1370,7 @@ class Node {
 
   updateNodeOverrideSetDueToEdgeRemoval (otherOverrideSet) {
     // If this edge's overrides isn't equal to this node's overrides, then removing it won't change newOverrideSet later.
-    if (this.overrides != otherOverrideSet) {
+    if (!this.overrides.isEqual(otherOverrideSet)) {
       return false
     }
     let newOverrideSet
@@ -1381,7 +1381,7 @@ class Node {
         newOverrideSet = edge.overrides
       }
     }
-    if (this.overrides == newOverrideSet) {
+    if (this.overrides.isEqual(newOverrideSet)) {
       return false
     }
     this.overrides = newOverrideSet
@@ -1402,7 +1402,7 @@ class Node {
   // both, one of its dependencies might need to be different depending on the edge leading to it.
   // However, this might cause a lot of duplication, because the conflict in the dependencies might never actually happen.
   updateNodeOverrideSet (otherOverrideSet) {
-    if (this.overrides == otherOverrideSet) {
+    if (this.overrides.isEqual(otherOverrideSet)) {
       return false
     }
     if (!this.overrides) {
@@ -1415,7 +1415,7 @@ class Node {
       // This is an error condition. We can only get here if the new override set is in conflict with the existing.
       return false
     } else {
-      if (this.overrides != newOverrideSet) {
+      if (!this.overrides.isEqual(newOverrideSet)) {
         this.overrides = newOverrideSet
         this.recalculateOutEdgesOverrides()
         return true
@@ -1435,7 +1435,7 @@ class Node {
     // We need to handle the case where the new edge in has an overrides field which is different from the current value.
     // Assuming there are any overrides at all, the overrides field is never undefined for any node at the end state of the tree.
     // So if the new edge's overrides is undefined it will be updated later. So we can wait with updating the node's overrides field.
-    if (edge.overrides && this.overrides != edge.overrides) {
+    if (edge.overrides && !this.overrides.isEqual(edge.overrides)) {
       this.updateNodeOverrideSet(edge.overrides)
     }
 
