@@ -344,7 +344,6 @@ t.test('no logs dir', async (t) => {
   const { exitHandler, logs } = await mockExitHandler(t, {
     config: { 'logs-max': 0 },
   })
-  console.warn('logs', logs);
   await exitHandler(new Error())
 
   t.match(logs.error.filter(([t]) => t === ''), [
