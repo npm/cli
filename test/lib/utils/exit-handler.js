@@ -349,7 +349,7 @@ t.test('no logs dir', async (t) => {
   t.match(logs.error.filter(([t]) => t === ''), [
     ['', 'Log files were not written due to the config logs-max=0'],
   ])
-  t.match(logs.filter(([_,task]) => task === 'npm.load.mkdirplogs'), [])
+  t.match(logs.filter(([_, task]) => task === 'npm.load.mkdirplogs'), [])
 })
 
 t.test('timers fail to write', async (t) => {
