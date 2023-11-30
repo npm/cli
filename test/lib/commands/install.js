@@ -294,6 +294,54 @@ t.test('exec commands', async t => {
       }
     )
   })
+
+  await t.test('Windows - npm install works in drive root directory', async t => {
+    if (process.platform !== 'win32') {
+      return t.skip('root directory install - test not relevant on platform')
+    }
+
+    let failed = false
+
+    const { npm } = await loadMockNpm(t, {
+      config: {
+        prefix: 'C:\\',
+        'dry-run': true,
+      },
+    })
+
+    try {
+      await npm.exec('install', ['fizzbuzz'])
+    } catch (error) {
+      failed = true
+      throw error
+    }
+
+    t.strictSame(failed, false, 'packages would install')
+  })
+
+  await t.test('Not Windows - npm install works in drive root directory', async t => {
+    if (process.platform === 'win32') {
+      return t.skip('root directory install - test not relevant on platform')
+    }
+
+    let failed = false
+
+    const { npm } = await loadMockNpm(t, {
+      config: {
+        prefix: '/',
+        'dry-run': true,
+      },
+    })
+
+    try {
+      await npm.exec('install', ['fizzbuzz'])
+    } catch (error) {
+      failed = true
+      throw error
+    }
+
+    t.strictSame(failed, false, 'packages would install')
+  })
 })
 
 t.test('completion', async t => {

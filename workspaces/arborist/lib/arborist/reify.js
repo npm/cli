@@ -18,6 +18,7 @@ const {
   mkdir,
   rm,
   symlink,
+  access,
 } = require('fs/promises')
 const { moveFile } = require('@npmcli/fs')
 const PackageJson = require('@npmcli/package-json')
@@ -192,7 +193,12 @@ module.exports = cls => class Reifier extends cls {
     // we do NOT want to set ownership on this folder, especially
     // recursively, because it can have other side effects to do that
     // in a project directory.  We just want to make it if it's missing.
-    await mkdir(resolve(this.path), { recursive: true })
+    try {
+      await access(resolve(this.path))
+    } catch {
+      //The project directory is missing so we make it.
+      await mkdir(resolve(this.path), { recursive: true })
+    }
 
     // do not allow the top-level node_modules to be a symlink
     await this[_validateNodeModules](resolve(this.path, 'node_modules'))
