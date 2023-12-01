@@ -11,9 +11,9 @@
     "test": "tap",
     "lint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",
     "postlint": "template-oss-check",
-    "lintfix": "node ../.. run lint -- --fix",
+    "lintfix": "npm run lint -- --fix",
     "snap": "tap",
-    "posttest": "node ../.. run lint",
+    "posttest": "npm run lint",
     "template-oss-apply": "template-oss-apply --force"
   },
   "repository": {

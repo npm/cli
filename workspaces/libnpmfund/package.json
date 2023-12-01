@@ -32,8 +32,8 @@
   "license": "ISC",
   "scripts": {
     "lint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",
-    "lintfix": "node ../.. run lint -- --fix",
-    "posttest": "node ../.. run lint",
+    "lintfix": "npm run lint -- --fix",
+    "posttest": "npm run lint",
     "test": "tap",
     "snap": "tap",
     "postlint": "template-oss-check",
