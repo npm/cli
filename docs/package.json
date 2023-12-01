@@ -5,7 +5,7 @@
   "private": true,
   "main": "lib/index.js",
   "scripts": {
-    "lint": "eslint \"**/*.js\"",
+    "lint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
     "lintfix": "node .. run lint -- --fix",
@@ -22,7 +22,7 @@
   "devDependencies": {
     "@isaacs/string-locale-compare": "^1.1.0",
     "@npmcli/eslint-config": "^4.0.0",
-    "@npmcli/template-oss": "4.19.0",
+    "@npmcli/template-oss": "4.21.2",
     "front-matter": "^4.0.2",
     "ignore-walk": "^6.0.1",
     "jsdom": "^21.1.0",
@@ -55,11 +55,11 @@
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
     "ciVersions": "latest",
-    "version": "4.19.0",
+    "version": "4.21.2",
     "content": "../scripts/template-oss/index.js",
     "workspaceRepo": {
       "add": {
-        ".github/workflows/ci-{{ pkgNameFs }}.yml": "ci-npmcli-docs.yml"
+        ".github/workflows/ci-{{ pkgNameFs }}.yml": "ci-npmcli-docs-yml.hbs"
       }
     }
   }

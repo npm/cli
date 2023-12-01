@@ -31,9 +31,9 @@
   ],
   "license": "ISC",
   "scripts": {
-    "lint": "eslint \"**/*.js\"",
-    "lintfix": "npm run lint -- --fix",
-    "posttest": "npm run lint",
+    "lint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",
+    "lintfix": "node ../.. run lint -- --fix",
+    "posttest": "node ../.. run lint",
     "test": "tap",
     "snap": "tap",
     "postlint": "template-oss-check",
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^4.0.0",
-    "@npmcli/template-oss": "4.19.0",
+    "@npmcli/template-oss": "4.21.2",
     "tap": "^16.3.8"
   },
   "dependencies": {
@@ -52,9 +52,8 @@
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.19.0",
-    "content": "../../scripts/template-oss/index.js",
-    "npm": "npm"
+    "version": "4.21.2",
+    "content": "../../scripts/template-oss/index.js"
   },
   "tap": {
     "nyc-arg": [

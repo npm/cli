@@ -8,4 +8,4 @@ strategy:
 uses: ./.github/workflows/node-integration.yml
 with:
   nodeVersion: $\{{ matrix.nodeVersion }}
-  npmVersion: $\{{ fromJSON(needs.release.outputs.release).version }}
+  npmVersion: $\{{ fromJSON(inputs.releases)[0].version }}

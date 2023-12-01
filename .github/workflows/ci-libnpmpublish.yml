@@ -39,7 +39,6 @@ jobs:
           node-version: 20.x
           check-latest: contains('20.x', '.x')
           cache: npm
-
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
@@ -89,7 +88,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           check-latest: contains(matrix.node-version, '.x')
           cache: npm
-
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
