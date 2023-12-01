@@ -9,9 +9,9 @@
     "lint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
-    "lintfix": "node .. run lint -- --fix",
+    "lintfix": "npm run lint -- --fix",
     "snap": "tap",
-    "posttest": "node .. run lint"
+    "posttest": "npm run lint"
   },
   "repository": {
     "type": "git",

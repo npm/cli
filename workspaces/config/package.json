@@ -19,8 +19,8 @@
     "snap": "tap",
     "lint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",
     "postlint": "template-oss-check",
-    "lintfix": "node ../.. run lint -- --fix",
-    "posttest": "node ../.. run lint",
+    "lintfix": "npm run lint -- --fix",
+    "posttest": "npm run lint",
     "template-oss-apply": "template-oss-apply --force"
   },
   "tap": {

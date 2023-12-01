@@ -39,14 +39,18 @@ jobs:
           node-version: 20.x
           check-latest: contains('20.x', '.x')
           cache: npm
+      - name: Install Latest npm
+        uses: ./.github/actions/install-latest-npm
+        with:
+          node: ${{ steps.node.outputs.node-version }}
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
         run: node scripts/resetdeps.js
       - name: Lint
-        run: node . run lint --ignore-scripts -w @npmcli/mock-globals
+        run: npm run lint --ignore-scripts -w @npmcli/mock-globals
       - name: Post Lint
-        run: node . run postlint --ignore-scripts -w @npmcli/mock-globals
+        run: npm run postlint --ignore-scripts -w @npmcli/mock-globals
 
   test:
     name: Test - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
@@ -87,6 +91,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
           check-latest: contains(matrix.node-version, '.x')
           cache: npm
+      - name: Install Latest npm
+        uses: ./.github/actions/install-latest-npm
+        with:
+          node: ${{ steps.node.outputs.node-version }}
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
@@ -94,6 +102,6 @@ jobs:
       - name: Add Problem Matcher
         run: echo "::add-matcher::.github/matchers/tap.json"
       - name: Test
-        run: node . test --ignore-scripts -w @npmcli/mock-globals
+        run: npm test --ignore-scripts -w @npmcli/mock-globals
       - name: Check Git Status
         run: node scripts/git-dirty.js
