@@ -1,14 +1,14 @@
-{{> ciRelease}}
+{{> ciReleaseYml }}
 
   smoke-publish:
     # This cant be tested on Windows because our node_modules directory
     # checks in symlinks which are not supported there. This should be
     # fixed somehow, because this means some forms of local development
     # are likely broken on Windows as well.
-    {{> jobMatrix
+    {{> jobMatrixYml
       jobName="Smoke Publish"
-      jobCheck=(obj sha="inputs.check-sha")
       jobCheckout=(obj ref="${{ inputs.ref }}")
+      jobCreateCheck=(obj sha="${{ inputs.check-sha }}")
       windowsCI=false
     }}
       - name: Pack
@@ -32,4 +32,10 @@
             echo "found: $NPM_GLOBAL_VERSION, expected: $NPM_VERSION"
             exit 1
           fi
-      {{> stepChecks jobCheck=true }}
+      - name: Conclude Check
+        uses: LouisBrunner/checks-action@v1.6.0
+        if: always()
+        with:
+          token: $\{{ secrets.GITHUB_TOKEN }}
+          conclusion: $\{{ job.status }}
+          check_id: $\{{ steps.create-check.outputs.check-id }}

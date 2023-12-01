@@ -1,12 +1,12 @@
-{{> ci }}
+{{> ciYml }}
 
   licenses:
-    {{> job jobName="Check Licenses" }}
+    {{> jobYml jobName="Check Licenses" }}
       - name: Check Licenses
         run: {{rootNpmPath}} run licenses
 
   smoke-tests:
-    {{> job jobName="Smoke Tests" }}
+    {{> jobYml jobName="Smoke Tests" }}
       - name: Run Smoke Tests
         run: {{rootNpmPath}} test -w smoke-tests --ignore-scripts
       - name: Check Git Status
@@ -19,7 +19,7 @@
       run:
         shell: cmd
     steps:
-      {{> stepsSetup }}
+      {{> stepsSetupYml }}
       - name: Setup WSL
         uses: Vampire/setup-wsl@v2.0.1
       - name: Setup Cygwin

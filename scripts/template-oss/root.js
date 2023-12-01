@@ -2,7 +2,7 @@ module.exports = {
   rootModule: {
     add: {
       'CONTRIBUTING.md': false,
-      'package.json': { file: 'pkg.json', overwrite: false },
+      'package.json': { file: 'package-json.hbs', overwrite: false },
     },
   },
   rootRepo: {
@@ -11,11 +11,11 @@ module.exports = {
       '.github/ISSUE_TEMPLATE/config.yml': false,
       '.github/dependabot.yml': false,
       '.github/settings.yml': false,
-      '.github/workflows/ci-release.yml': 'ci-release.yml',
-      '.github/workflows/ci.yml': 'ci.yml',
-      '.github/workflows/create-node-pr.yml': 'create-node-pr.yml',
-      '.github/workflows/node-integration.yml': 'node-integration.yml',
       '.github/workflows/post-dependabot.yml': false,
+      '.github/workflows/ci-release.yml': 'ci-release-yml.hbs',
+      '.github/workflows/ci.yml': 'ci-yml.hbs',
+      '.github/workflows/create-node-pr.yml': 'create-node-pr-yml.hbs',
+      '.github/workflows/node-integration.yml': 'node-integration-yml.hbs',
     },
   },
   workspaceRepo: {
@@ -30,7 +30,7 @@ module.exports = {
   },
   workspaceModule: {
     add: {
-      'package.json': { file: 'pkg.json', overwrite: false },
+      'package.json': { file: 'package-json.hbs', overwrite: false },
     },
   },
   lockfile: true,
@@ -42,7 +42,10 @@ module.exports = {
     'docs/output/',
     'man/',
   ],
+  allowDistPaths: false,
   allowPaths: [
+    '/bin/',
+    '/lib/',
     '/node_modules/',
     '/index.js',
     '/DEPENDENCIES.md',

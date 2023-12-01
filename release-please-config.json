@@ -1,66 +1,67 @@
 {
   "plugins": [
-    "node-workspace"
+    "node-workspace",
+    "node-workspace-format"
   ],
   "changelog-sections": [
     {
       "type": "feat",
       "section": "Features",
-      "hidden": false
+      "hidden": false,
+      "collapse": false
     },
     {
       "type": "fix",
       "section": "Bug Fixes",
-      "hidden": false
+      "hidden": false,
+      "collapse": false
     },
     {
       "type": "docs",
       "section": "Documentation",
-      "hidden": false
+      "hidden": false,
+      "collapse": false
     },
     {
       "type": "deps",
       "section": "Dependencies",
-      "hidden": false
+      "hidden": false,
+      "collapse": false
     },
     {
       "type": "chore",
-      "hidden": true
+      "section": "Chores",
+      "hidden": false,
+      "collapse": false
     }
   ],
   "packages": {
     ".": {
-      "package-name": ""
+      "package-name": "",
+      "exclude-paths": [
+        "docs",
+        "smoke-tests",
+        "mock-globals",
+        "mock-registry",
+        "workspaces"
+      ]
     },
-    "workspaces/arborist": {
-    },
-    "workspaces/config": {
-    },
-    "workspaces/libnpmaccess": {
-    },
-    "workspaces/libnpmdiff": {
-    },
-    "workspaces/libnpmexec": {
-    },
-    "workspaces/libnpmfund": {
-    },
-    "workspaces/libnpmhook": {
-    },
-    "workspaces/libnpmorg": {
-    },
-    "workspaces/libnpmpack": {
-    },
-    "workspaces/libnpmpublish": {
-    },
-    "workspaces/libnpmsearch": {
-    },
-    "workspaces/libnpmteam": {
-    },
-    "workspaces/libnpmversion": {
-    }
+    "workspaces/arborist": {},
+    "workspaces/config": {},
+    "workspaces/libnpmaccess": {},
+    "workspaces/libnpmdiff": {},
+    "workspaces/libnpmexec": {},
+    "workspaces/libnpmfund": {},
+    "workspaces/libnpmhook": {},
+    "workspaces/libnpmorg": {},
+    "workspaces/libnpmpack": {},
+    "workspaces/libnpmpublish": {},
+    "workspaces/libnpmsearch": {},
+    "workspaces/libnpmteam": {},
+    "workspaces/libnpmversion": {}
   },
   "prerelease": false,
-  "exclude-packages-from-root": true,
   "group-pull-request-title-pattern": "chore: release ${version}",
-  "pull-request-title-pattern": "chore: release${component} ${version}"
+  "pull-request-title-pattern": "chore: release${component} ${version}",
+  "prerelease-type": "pre"
 }
