@@ -1,0 +1,113 @@
+{
+  "bundleDependencies": true,
+  "_from": "has-package-exports@^1.2.3",
+  "_id": "has-package-exports@1.2.3",
+  "_inBundle": false,
+  "_integrity": "sha512-lkLLwrNNaRsmwj+TylZJh1o3YlzLfgrl9fZKOAMj4MHjbvt7wy1J0icE6jD36dzkA0aQGoNuqY0hVN2uuPfPBA==",
+  "_location": "/has-package-exports",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "has-package-exports@^1.2.3",
+    "name": "has-package-exports",
+    "escapedName": "has-package-exports",
+    "rawSpec": "^1.2.3",
+    "saveSpec": null,
+    "fetchSpec": "^1.2.3"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/has-package-exports/-/has-package-exports-1.2.3.tgz",
+  "_shasum": "4cd984c761140156e27aea7cae9473a3dd0cc4d9",
+  "_spec": "has-package-exports@^1.2.3",
+  "_where": "/Users/ljharb/tmp/list-exports/packages/tests",
+  "author": {
+    "name": "Jordan Harband",
+    "email": "ljharb@gmail.com"
+  },
+  "auto-changelog": {
+    "output": "CHANGELOG.md",
+    "template": "keepachangelog",
+    "unreleased": false,
+    "commitLimit": false,
+    "backfillLimit": false,
+    "hideCredit": true
+  },
+  "browser": {
+    "no": "./browser.js",
+    "yes": "./browser.js"
+  },
+  "bugs": {
+    "url": "https://github.com/inspect-js/has-package-exports/issues"
+  },
+  "dependencies": {
+    "@ljharb/has-package-exports-patterns": "0.0.1"
+  },
+  "deprecated": false,
+  "description": "Does the current node version have support for the \"exports\" field in package.json?",
+  "devDependencies": {
+    "@ljharb/eslint-config": "^17.6.0",
+    "aud": "^1.1.5",
+    "auto-changelog": "^2.2.1",
+    "eslint": "^7.25.0",
+    "has-package-exports": "file:.",
+    "nyc": "^10.3.2",
+    "safe-publish-latest": "^1.1.4",
+    "semver": "^6.3.0",
+    "tape": "^5.2.2"
+  },
+  "exports": {
+    ".": [
+      {
+        "browser": "./browser.js",
+        "default": "./yes.js"
+      },
+      "./yes.js"
+    ],
+    "./conditional": [
+      {
+        "browser": "./browser.js",
+        "import": "./yes.js",
+        "require": "./yes.js",
+        "node": "./yes.js",
+        "default": "./no.js"
+      },
+      "./no.js"
+    ],
+    "./pattern": "./pattern.js"
+  },
+  "funding": {
+    "url": "https://github.com/sponsors/ljharb"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "semver"
+    ]
+  },
+  "homepage": "https://github.com/inspect-js/has-package-exports#readme",
+  "keywords": [
+    "package.json",
+    "package",
+    "exports",
+    "field"
+  ],
+  "license": "MIT",
+  "main": "no",
+  "name": "has-package-exports",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inspect-js/has-package-exports.git"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "posttest": "aud --production || true",
+    "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\"",
+    "pretest": "npm run lint",
+    "test": "npm run tests-only",
+    "tests-only": "nyc tape 'test/**/*.js'",
+    "version": "auto-changelog && git add CHANGELOG.md"
+  },
+  "version": "1.2.3"
+}
