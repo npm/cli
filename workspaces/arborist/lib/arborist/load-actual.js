@@ -333,7 +333,8 @@ module.exports = cls => class ActualLoader extends cls {
 
   async #loadFSTree (node) {
     const did = this.#actualTreeLoaded
-    if (node.target && !did.has(node.target.realpath)) {
+    // if (node.target && !did.has(node.target.realpath)) {
+    if (!did.has(node.target.realpath)) {
       did.add(node.target.realpath)
       await this.#loadFSChildren(node.target)
       return Promise.all(
