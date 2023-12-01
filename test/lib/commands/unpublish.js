@@ -63,6 +63,23 @@ t.test('no args --force error reading package.json', async t => {
   )
 })
 
+t.test('with args --force error reading package.json', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: {
+      force: true,
+    },
+    prefixDir: {
+      'package.json': '{ not valid json ]',
+    },
+  })
+
+  await t.rejects(
+    npm.exec('unpublish', [pkg]),
+    /Invalid package.json/,
+    'should throw error from reading package.json'
+  )
+})
+
 t.test('no force entire project', async t => {
   const { npm } = await loadMockNpm(t)
 
