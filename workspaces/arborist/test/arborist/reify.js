@@ -160,6 +160,9 @@ const newArb = (opt) => new Arborist({
 
 const reify = (path, opt) => newArb({ path, ...(opt || {}) }).reify(opt)
 
+t.test('ljharb file dep', t =>
+  t.resolveMatchSnapshot(printReified(fixture(t, 'file-dep'))))
+
 t.test('tarball deps with transitive tarball deps', t =>
   t.resolveMatchSnapshot(printReified(fixture(t, 'tarball-dependencies'))))
 

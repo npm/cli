@@ -35,7 +35,6 @@ const roots = [
   'link-dep-nested',
   'link-dep-nested/root',
   'external-link-cached-dummy-dep/root',
-  'file-dep',
 ]
 
 const symlinks = {
