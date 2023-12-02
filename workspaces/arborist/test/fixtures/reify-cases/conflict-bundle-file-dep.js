@@ -2,9 +2,6 @@
 module.exports = t => {
   const path = t.testdir({
     "fixtures-has-package-exports": {
-      "node_modules": {
-        "has-package-exports": t.fixture('symlink', "..")
-      },
       "package.json": JSON.stringify({
         "bundleDependencies": true,
         "dependencies": {
