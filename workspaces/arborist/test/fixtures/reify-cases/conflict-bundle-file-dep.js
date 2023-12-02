@@ -1,7 +1,10 @@
-// generated from test/fixtures/file-dep
+// generated from test/fixtures/conflict-bundle-file-dep
 module.exports = t => {
   const path = t.testdir({
-    "fake": {
+    "fixtures-has-package-exports": {
+      "node_modules": {
+        "has-package-exports": t.fixture('symlink', "..")
+      },
       "package.json": JSON.stringify({
         "bundleDependencies": true,
         "dependencies": {
@@ -13,8 +16,8 @@ module.exports = t => {
       })
     },
     "package.json": JSON.stringify({
-      "devDependencies": {
-        "some-fake-name": "file:./fake",
+      "dependencies": {
+        "@fixtures/has-package-exports": "file:fixtures-has-package-exports",
         "has-package-exports": "^1.3.0"
       }
     })

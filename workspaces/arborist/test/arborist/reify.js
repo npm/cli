@@ -160,8 +160,10 @@ const newArb = (opt) => new Arborist({
 
 const reify = (path, opt) => newArb({ path, ...(opt || {}) }).reify(opt)
 
-t.test('ljharb file dep', t =>
-  t.resolveMatchSnapshot(printReified(fixture(t, 'file-dep'))))
+t.test('bundled file dep with same name as other dep', async t => {
+  const tree = await printReified(fixture(t, 'conflict-bundle-file-dep'))
+  t.matchSnapshot(tree)
+})
 
 t.test('tarball deps with transitive tarball deps', t =>
   t.resolveMatchSnapshot(printReified(fixture(t, 'tarball-dependencies'))))
