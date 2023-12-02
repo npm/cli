@@ -196,7 +196,7 @@ module.exports = cls => class Reifier extends cls {
     try {
       await access(resolve(this.path))
     } catch {
-      //The project directory is missing so we make it.
+      // The project directory is missing so we make it.
       await mkdir(resolve(this.path), { recursive: true })
     }
 
