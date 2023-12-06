@@ -209,7 +209,7 @@
     "ajv-formats-draft2019": "^1.6.1",
     "diff": "^5.1.0",
     "licensee": "^10.0.0",
-    "nock": "^13.3.8",
+    "nock": "^13.4.0",
     "npm-packlist": "^8.0.1",
     "remark": "^14.0.2",
     "remark-gfm": "^3.0.1",
