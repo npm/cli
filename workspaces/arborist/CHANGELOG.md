@@ -1,5 +1,18 @@
 # Changelog
 
+## [7.2.2](https://github.com/npm/cli/compare/arborist-v7.2.1...arborist-v7.2.2) (2023-12-06)
+
+### Bug Fixes
+
+* [`ae2d982`](https://github.com/npm/cli/commit/ae2d98292472897b8365829633cd47a6cb006d03) [#7027](https://github.com/npm/cli/pull/7027) arborist: `node.target` can be `null` when it is a file dep or symlink (#7027) (@ljharb, @lukekarrys)
+* [`f875caa`](https://github.com/npm/cli/commit/f875caa86900122819311dd77cde01c700fd1817) [#6998](https://github.com/npm/cli/pull/6998) clean up shrinkwrap code (#6998) (@wraithgar)
+
+### Chores
+
+* [`f656b66`](https://github.com/npm/cli/commit/f656b669e549286844f2071b9b62cf23f7958034) [#7062](https://github.com/npm/cli/pull/7062) `@npmcli/template-oss@4.21.3` (#7062) (@lukekarrys)
+* [`9754b17`](https://github.com/npm/cli/commit/9754b173de26f3173e7f41eab34733fe9ba50f1d) [#7051](https://github.com/npm/cli/pull/7051) use global npm for workspace tests (@lukekarrys)
+* [`3891757`](https://github.com/npm/cli/commit/3891757f54d6d960cbf5f0d93d183d6424e8bed6) [#7051](https://github.com/npm/cli/pull/7051) `@npmcli/template-oss@4.21.2` (@lukekarrys)
+
 ## [7.2.1](https://github.com/npm/cli/compare/arborist-v7.2.0...arborist-v7.2.1) (2023-10-31)
 
 ### Dependencies
