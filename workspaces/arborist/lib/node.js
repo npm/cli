@@ -1365,7 +1365,7 @@ class Node {
         return first
       }
     }
-    console.log("Conflicting override sets")
+    console.log('Conflicting override sets')
   }
 
   updateNodeOverrideSetDueToEdgeRemoval (otherOverrideSet) {
@@ -1408,12 +1408,12 @@ class Node {
       }
       this.overrides = otherOverrideSet
       this.recalculateOutEdgesOverrides()
-      return true      
+      return true
     }
     if (this.overrides.isEqual(otherOverrideSet)) {
       return false
     }
-    let newOverrideSet = this.findSpecificOverrideSet(this.overrides, otherOverrideSet)
+    const newOverrideSet = this.findSpecificOverrideSet(this.overrides, otherOverrideSet)
     if (!newOverrideSet) {
       // This is an error condition. We can only get here if the new override set is in conflict with the existing.
       return false
@@ -1426,7 +1426,7 @@ class Node {
       return false
     }
   }
-  
+
   deleteEdgeIn (edge) {
     this.edgesIn.delete(edge)
     if (edge.overrides) {

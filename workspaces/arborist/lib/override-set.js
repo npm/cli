@@ -48,7 +48,7 @@ class OverrideSet {
     if (this.children.size !== other.children.size) {
       return false
     }
-    for (const [key, ] of this.children) {
+    for (const [key,] of this.children) {
       if (!other.children.has(key)) {
         return false
       }
