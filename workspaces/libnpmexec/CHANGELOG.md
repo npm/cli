@@ -1,5 +1,17 @@
 # Changelog
 
+## [7.0.5](https://github.com/npm/cli/compare/libnpmexec-v7.0.4...libnpmexec-v7.0.5) (2023-12-06)
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.2.2): `@npmcli/arborist@7.2.2`
+
+### Chores
+
+* [`f656b66`](https://github.com/npm/cli/commit/f656b669e549286844f2071b9b62cf23f7958034) [#7062](https://github.com/npm/cli/pull/7062) `@npmcli/template-oss@4.21.3` (#7062) (@lukekarrys)
+* [`9754b17`](https://github.com/npm/cli/commit/9754b173de26f3173e7f41eab34733fe9ba50f1d) [#7051](https://github.com/npm/cli/pull/7051) use global npm for workspace tests (@lukekarrys)
+* [`3891757`](https://github.com/npm/cli/commit/3891757f54d6d960cbf5f0d93d183d6424e8bed6) [#7051](https://github.com/npm/cli/pull/7051) `@npmcli/template-oss@4.21.2` (@lukekarrys)
+
 ## [7.0.4](https://github.com/npm/cli/compare/libnpmexec-v7.0.3...libnpmexec-v7.0.4) (2023-11-14)
 
 ### Dependencies

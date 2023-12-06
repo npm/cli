@@ -1,5 +1,47 @@
 # Changelog
 
+## [10.2.5](https://github.com/npm/cli/compare/v10.2.4...v10.2.5) (2023-12-06)
+
+### Bug Fixes
+
+* [`c7a592c`](https://github.com/npm/cli/commit/c7a592c9c400e73dd27264c11ad6459616023e4c) [#7061](https://github.com/npm/cli/pull/7061) dont use cache for update notifier manifest request (@lukekarrys)
+* [`7b952f6`](https://github.com/npm/cli/commit/7b952f64b882bd891fab5c21c7c3b49838c8a995) [#7049](https://github.com/npm/cli/pull/7049) unpublish: bubble up all errors parsing local package.json (#7049) (@wraithgar)
+* [`be4741f`](https://github.com/npm/cli/commit/be4741f5bc20239f11842f780047d91fda23935d) [#7039](https://github.com/npm/cli/pull/7039) unpublish bugfixes (#7039) (@wraithgar)
+* [`bc7f53d`](https://github.com/npm/cli/commit/bc7f53db793d362d2015d3e55ce121e6b4d3d91f) [#7036](https://github.com/npm/cli/pull/7036) reverse direction of SPDX SBOM dependency rels (#7036) (@bdehamer, @antonbauhofer)
+* [`11ec231`](https://github.com/npm/cli/commit/11ec231e895300e5b7292ac16685d37d1d5df3b9) [#7033](https://github.com/npm/cli/pull/7033) skip creation of log directory if `logs-max` is set to 0 (#7033) (@JJ)
+* [`6267f54`](https://github.com/npm/cli/commit/6267f543c2ac134c0f8433f8b48659a3949bf210) [#7005](https://github.com/npm/cli/pull/7005) properly catch missing url opener error on interactive prompt (#7005) (@wraithgar)
+
+### Dependencies
+
+* [`ff1204a`](https://github.com/npm/cli/commit/ff1204aff0651e32679ecd09d0a2a62de49f4eac) [#7058](https://github.com/npm/cli/pull/7058) `lru-cache@10.1.0`
+* [`c648020`](https://github.com/npm/cli/commit/c648020cdc0fa0916bc618b6d1191e68dcfc8d73) [#7058](https://github.com/npm/cli/pull/7058) `json-parse-even-better-errors@3.0.1`
+* [`53aa8f2`](https://github.com/npm/cli/commit/53aa8f2c110f38a10f98f976cb40f54ea6d95844) [#7058](https://github.com/npm/cli/pull/7058) `pacote@17.0.5`
+* [`2e5331c`](https://github.com/npm/cli/commit/2e5331c75df8606b1f92bf61c8612f5e7b0274aa) [#7058](https://github.com/npm/cli/pull/7058) `npm-packlist@8.0.1`
+* [`937b7b7`](https://github.com/npm/cli/commit/937b7b7b11ec21fbe373ab93f4e4e170625dd6b1) [#7058](https://github.com/npm/cli/pull/7058) `ignore-walk@6.0.4`
+* [`35371c8`](https://github.com/npm/cli/commit/35371c8796a08a269ac3f7017c35e5fcb7ef0968) [#7058](https://github.com/npm/cli/pull/7058) `cacache@18.0.1`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.2.2): `@npmcli/arborist@7.2.2`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v8.0.3): `@npmcli/config@8.0.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmaccess-v8.0.2): `libnpmaccess@8.0.2`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v6.0.4): `libnpmdiff@6.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v7.0.5): `libnpmexec@7.0.5`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v5.0.2): `libnpmfund@5.0.2`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmhook-v10.0.1): `libnpmhook@10.0.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmorg-v6.0.2): `libnpmorg@6.0.2`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v6.0.4): `libnpmpack@6.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v9.0.3): `libnpmpublish@9.0.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmsearch-v7.0.1): `libnpmsearch@7.0.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmteam-v6.0.1): `libnpmteam@6.0.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmversion-v5.0.2): `libnpmversion@5.0.2`
+
+### Chores
+
+* [`f656b66`](https://github.com/npm/cli/commit/f656b669e549286844f2071b9b62cf23f7958034) [#7062](https://github.com/npm/cli/pull/7062) `@npmcli/template-oss@4.21.3` (#7062) (@lukekarrys)
+* [`9754b17`](https://github.com/npm/cli/commit/9754b173de26f3173e7f41eab34733fe9ba50f1d) [#7051](https://github.com/npm/cli/pull/7051) use global npm for workspace tests (@lukekarrys)
+* [`3891757`](https://github.com/npm/cli/commit/3891757f54d6d960cbf5f0d93d183d6424e8bed6) [#7051](https://github.com/npm/cli/pull/7051) `@npmcli/template-oss@4.21.2` (@lukekarrys)
+* [`71f70fa`](https://github.com/npm/cli/commit/71f70fa0e86448b20a63b9eec922ad25971a9377) [#7058](https://github.com/npm/cli/pull/7058) `nock@13.4.0` (@wraithgar)
+* [`43674a4`](https://github.com/npm/cli/commit/43674a449816e364265205e56270ad547718069c) [#7058](https://github.com/npm/cli/pull/7058) `tap@16.3.9` (@wraithgar)
+* [`4ba585c`](https://github.com/npm/cli/commit/4ba585ce0e1a2ea4591d64d7166b81b7fe92010b) [#7040](https://github.com/npm/cli/pull/7040) fix tests for zlib differences between node versions (#7040) (@wraithgar)
+
 ## [10.2.4](https://github.com/npm/cli/compare/v10.2.3...v10.2.4) (2023-11-14)
 
 ### Bug Fixes
