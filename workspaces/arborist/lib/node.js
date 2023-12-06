@@ -1403,6 +1403,8 @@ class Node {
   // However, this might cause a lot of duplication, because the conflict in the dependencies might never actually happen.
   updateNodeOverrideSet (otherOverrideSet) {
     if (!this.overrides) {
+      // Assuming there are any overrides at all, the overrides field is never undefined for any node at the end state of the tree.
+      // So if the new edge's overrides is undefined it will be updated later. So we can wait with updating the node's overrides field.
       if (!otherOverrideSet) {
         return false
       }
@@ -1414,10 +1416,7 @@ class Node {
       return false
     }
     const newOverrideSet = this.findSpecificOverrideSet(this.overrides, otherOverrideSet)
-    if (!newOverrideSet) {
-      // This is an error condition. We can only get here if the new override set is in conflict with the existing.
-      return false
-    } else {
+    if (newOverrideSet) {
       if (!this.overrides.isEqual(newOverrideSet)) {
         this.overrides = newOverrideSet
         this.recalculateOutEdgesOverrides()
@@ -1425,6 +1424,7 @@ class Node {
       }
       return false
     }
+    // This is an error condition. We can only get here if the new override set is in conflict with the existing.
   }
 
   deleteEdgeIn (edge) {
@@ -1436,9 +1436,7 @@ class Node {
 
   addEdgeIn (edge) {
     // We need to handle the case where the new edge in has an overrides field which is different from the current value.
-    // Assuming there are any overrides at all, the overrides field is never undefined for any node at the end state of the tree.
-    // So if the new edge's overrides is undefined it will be updated later. So we can wait with updating the node's overrides field.
-    if (edge.overrides && (!this.overrides || !this.overrides.isEqual(edge.overrides))) {
+    if (!this.overrides || !this.overrides.isEqual(edge.overrides)) {
       this.updateNodeOverrideSet(edge.overrides)
     }
 
