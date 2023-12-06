@@ -1,0 +1,9 @@
+{
+  "bundleDependencies": true,
+  "dependencies": {
+    "abbrev": "1.1.1"
+  },
+  "devDependencies": {
+    "has-package-exports": "file:."
+  }
+}
