@@ -30,7 +30,7 @@ const calcDepFlagsStep = (node) => {
   resetParents(node, 'optional')
 
   // for links, map their hierarchy appropriately
-  if (node.isLink) {
+  if (node.isLink && node.target) {
     node.target.dev = node.dev
     node.target.optional = node.optional
     node.target.devOptional = node.devOptional
