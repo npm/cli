@@ -696,6 +696,9 @@ The ${meta.type} file was created with an old version of npm,
 so supplemental metadata must be fetched from the registry.
 
 This is a one-time fix-up, please be patient...
+
+V1 lockfiles do not catch incorrect dependencies. Instead, run
+npm install again to catch them on the generated v2 lockfile
 `)
     }
 
