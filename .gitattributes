@@ -7,7 +7,7 @@
 /configure text eol=lf
 
 # our cmd scripts always need to be CRLF
-/bin/*.cmd text eol=crlf
+/bin/**/*.cmd text eol=crlf
 
 # ignore all line endings in node_modules since we dont control that
 /node_modules/** -text

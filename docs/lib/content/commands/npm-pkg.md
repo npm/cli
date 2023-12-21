@@ -182,5 +182,4 @@ npm pkg get name version --ws
 * [npm install](/commands/npm-install)
 * [npm init](/commands/npm-init)
 * [npm config](/commands/npm-config)
-* [npm set-script](/commands/npm-set-script)
 * [workspaces](/using-npm/workspaces)

@@ -252,6 +252,11 @@ class MockRegistry {
       .reply(200, { token })
   }
 
+  logout (token) {
+    this.nock = this.nock.delete(this.fullPath(`/-/user/token/${encodeURIComponent(token)}`))
+      .reply(200, { ok: true })
+  }
+
   // team can be a team or a username
   getPackages ({ user, team, packages = {}, times = 1, responseCode = 200 }) {
     let uri

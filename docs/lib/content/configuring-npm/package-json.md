@@ -93,8 +93,10 @@ It should look like this:
 
 ```json
 {
-  "url" : "https://github.com/owner/project/issues",
-  "email" : "project@hostname.com"
+  "bugs": {
+    "url": "https://github.com/owner/project/issues",
+    "email": "project@hostname.com"
+  }
 }
 ```
 
@@ -285,28 +287,44 @@ Certain files are always included, regardless of settings:
 * `README`
 * `LICENSE` / `LICENCE`
 * The file in the "main" field
+* The file(s) in the "bin" field
 
 `README` & `LICENSE` can have any case and extension.
 
-Conversely, some files are always ignored:
+Some files are always ignored by default:
 
-* `.git`
-* `CVS`
-* `.svn`
-* `.hg`
-* `.lock-wscript`
-* `.wafpickle-N`
+* `*.orig`
 * `.*.swp`
 * `.DS_Store`
 * `._*`
+* `.git`
+* `.npmrc`
+* `.hg`
+* `.lock-wscript`
+* `.npmrc`
+* `.svn`
+* `.wafpickle-N`
+* `CVS`
+* `config.gypi`
+* `node_modules`
 * `npm-debug.log`
+* `package-lock.json` (use
+  [`npm-shrinkwrap.json`](/configuring-npm/npm-shrinkwrap-json)
+  if you wish it to be published)
+* `pnpm-lock.yaml`
+* `yarn.lock`
+
+Most of these ignored files can be included specifically if included in
+the `files` globs.  Exceptions to this are:
+
+* `.git`
 * `.npmrc`
 * `node_modules`
-* `config.gypi`
-* `*.orig`
-* `package-lock.json` (use
-  [`npm-shrinkwrap.json`](/configuring-npm/npm-shrinkwrap-json) if you wish
-  it to be published)
+* `package-lock.json`
+* `pnpm-lock.yaml`
+* `yarn.lock`
+
+These can not be included.
 
 ### main
 

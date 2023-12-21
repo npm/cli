@@ -1,78 +1,67 @@
 {
-  "bootstrap-sha": "141faf0c19eae382d0e19833129f5545fc2355c8",
   "plugins": [
-    "node-workspace"
+    "node-workspace",
+    "node-workspace-format"
   ],
   "changelog-sections": [
     {
       "type": "feat",
       "section": "Features",
-      "hidden": false
+      "hidden": false,
+      "collapse": false
     },
     {
       "type": "fix",
       "section": "Bug Fixes",
-      "hidden": false
+      "hidden": false,
+      "collapse": false
     },
     {
       "type": "docs",
       "section": "Documentation",
-      "hidden": false
+      "hidden": false,
+      "collapse": false
     },
     {
       "type": "deps",
       "section": "Dependencies",
-      "hidden": false
+      "hidden": false,
+      "collapse": false
     },
     {
       "type": "chore",
-      "hidden": true
+      "section": "Chores",
+      "hidden": false,
+      "collapse": false
     }
   ],
   "packages": {
     ".": {
       "package-name": "",
-      "prerelease": false
+      "exclude-paths": [
+        "docs",
+        "smoke-tests",
+        "mock-globals",
+        "mock-registry",
+        "workspaces"
+      ]
     },
-    "workspaces/arborist": {
-      "prerelease": false
-    },
-    "workspaces/libnpmaccess": {
-      "prerelease": false
-    },
-    "workspaces/libnpmdiff": {
-      "prerelease": false
-    },
-    "workspaces/libnpmexec": {
-      "prerelease": false
-    },
-    "workspaces/libnpmfund": {
-      "prerelease": false
-    },
-    "workspaces/libnpmhook": {
-      "prerelease": false
-    },
-    "workspaces/libnpmorg": {
-      "prerelease": false
-    },
-    "workspaces/libnpmpack": {
-      "prerelease": false
-    },
-    "workspaces/libnpmpublish": {
-      "prerelease": false
-    },
-    "workspaces/libnpmsearch": {
-      "prerelease": false
-    },
-    "workspaces/libnpmteam": {
-      "prerelease": false
-    },
-    "workspaces/libnpmversion": {
-      "prerelease": false
-    },
-    "workspaces/config": {}
+    "workspaces/arborist": {},
+    "workspaces/config": {},
+    "workspaces/libnpmaccess": {},
+    "workspaces/libnpmdiff": {},
+    "workspaces/libnpmexec": {},
+    "workspaces/libnpmfund": {},
+    "workspaces/libnpmhook": {},
+    "workspaces/libnpmorg": {},
+    "workspaces/libnpmpack": {},
+    "workspaces/libnpmpublish": {},
+    "workspaces/libnpmsearch": {},
+    "workspaces/libnpmteam": {},
+    "workspaces/libnpmversion": {}
   },
-  "exclude-packages-from-root": true,
+  "prerelease": false,
   "group-pull-request-title-pattern": "chore: release ${version}",
-  "pull-request-title-pattern": "chore: release${component} ${version}"
+  "pull-request-title-pattern": "chore: release${component} ${version}",
+  "prerelease-type": "pre"
 }

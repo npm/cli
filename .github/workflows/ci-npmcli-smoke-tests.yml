@@ -9,8 +9,8 @@ on:
       - smoke-tests/**
   push:
     branches:
-      - main
       - latest
+      - release/v*
     paths:
       - smoke-tests/**
   schedule:
@@ -34,17 +34,23 @@ jobs:
           git config --global user.name "npm CLI robot"
       - name: Setup Node
         uses: actions/setup-node@v3
+        id: node
         with:
-          node-version: 18.x
+          node-version: 20.x
+          check-latest: contains('20.x', '.x')
           cache: npm
+      - name: Install Latest npm
+        uses: ./.github/actions/install-latest-npm
+        with:
+          node: ${{ steps.node.outputs.node-version }}
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
         run: node scripts/resetdeps.js
       - name: Lint
-        run: node . run lint --ignore-scripts -w @npmcli/smoke-tests
+        run: npm run lint --ignore-scripts -w @npmcli/smoke-tests
       - name: Post Lint
-        run: node . run postlint --ignore-scripts -w @npmcli/smoke-tests
+        run: npm run postlint --ignore-scripts -w @npmcli/smoke-tests
 
   test:
     name: Test - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
@@ -63,12 +69,10 @@ jobs:
             os: windows-latest
             shell: cmd
         node-version:
-          - 14.17.0
-          - 14.x
-          - 16.13.0
-          - 16.x
-          - 18.0.0
+          - 18.17.0
           - 18.x
+          - 20.5.0
+          - 20.x
     runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
@@ -82,9 +86,15 @@ jobs:
           git config --global user.name "npm CLI robot"
       - name: Setup Node
         uses: actions/setup-node@v3
+        id: node
         with:
           node-version: ${{ matrix.node-version }}
+          check-latest: contains(matrix.node-version, '.x')
           cache: npm
+      - name: Install Latest npm
+        uses: ./.github/actions/install-latest-npm
+        with:
+          node: ${{ steps.node.outputs.node-version }}
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
@@ -92,6 +102,6 @@ jobs:
       - name: Add Problem Matcher
         run: echo "::add-matcher::.github/matchers/tap.json"
       - name: Test
-        run: node . test --ignore-scripts -w @npmcli/smoke-tests
+        run: npm test --ignore-scripts -w @npmcli/smoke-tests
       - name: Check Git Status
         run: node scripts/git-dirty.js

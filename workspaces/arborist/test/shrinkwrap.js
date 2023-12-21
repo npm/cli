@@ -878,7 +878,7 @@ t.test('hidden lockfile only used if up to date', async t => {
     fs.utimesSync(resolve(path, hidden), time, time)
     const s = await Shrinkwrap.load({ path, hiddenLockfile: true })
     t.equal(s.loadedFromDisk, false, 'did not load from disk, updated nm')
-    t.equal(s.loadingError, 'out of date, updated: node_modules')
+    t.equal(s.loadingError.message, 'out of date, updated: node_modules')
   }
 
   // make the lockfile newer, but that new entry is still a problem
@@ -887,7 +887,7 @@ t.test('hidden lockfile only used if up to date', async t => {
     fs.utimesSync(resolve(path, hidden), new Date(later), new Date(later))
     const s = await Shrinkwrap.load({ path, hiddenLockfile: true })
     t.equal(s.loadedFromDisk, false, 'did not load, new entry')
-    t.equal(s.loadingError, 'missing from lockfile: node_modules/xyz')
+    t.equal(s.loadingError.message, 'missing from lockfile: node_modules/xyz')
   }
 
   // make the lockfile newer, but missing a folder from node_modules
@@ -898,7 +898,7 @@ t.test('hidden lockfile only used if up to date', async t => {
     fs.utimesSync(resolve(path, hidden), new Date(later), new Date(later))
     const s = await Shrinkwrap.load({ path, hiddenLockfile: true })
     t.equal(s.loadedFromDisk, false, 'did not load, missing entry')
-    t.equal(s.loadingError, 'missing from node_modules: node_modules/abbrev')
+    t.equal(s.loadingError.message, 'missing from node_modules: node_modules/abbrev')
   }
 })
 

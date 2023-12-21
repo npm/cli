@@ -1,5 +1,90 @@
 # Changelog
 
+## [8.0.3](https://github.com/npm/cli/compare/config-v8.0.2...config-v8.0.3) (2023-12-06)
+
+### Bug Fixes
+
+* [`bc7f53d`](https://github.com/npm/cli/commit/bc7f53db793d362d2015d3e55ce121e6b4d3d91f) [#7036](https://github.com/npm/cli/pull/7036) reverse direction of SPDX SBOM dependency rels (#7036) (@bdehamer, @antonbauhofer)
+
+### Chores
+
+* [`f656b66`](https://github.com/npm/cli/commit/f656b669e549286844f2071b9b62cf23f7958034) [#7062](https://github.com/npm/cli/pull/7062) `@npmcli/template-oss@4.21.3` (#7062) (@lukekarrys)
+* [`9754b17`](https://github.com/npm/cli/commit/9754b173de26f3173e7f41eab34733fe9ba50f1d) [#7051](https://github.com/npm/cli/pull/7051) use global npm for workspace tests (@lukekarrys)
+* [`3891757`](https://github.com/npm/cli/commit/3891757f54d6d960cbf5f0d93d183d6424e8bed6) [#7051](https://github.com/npm/cli/pull/7051) `@npmcli/template-oss@4.21.2` (@lukekarrys)
+
+## [8.0.2](https://github.com/npm/cli/compare/config-v8.0.1...config-v8.0.2) (2023-11-14)
+
+### Dependencies
+
+* [`cd0c649`](https://github.com/npm/cli/commit/cd0c649ec2b421b59012854e61788a11a77194f2) [#6994](https://github.com/npm/cli/pull/6994) `ci-info@4.0.0`
+
+## [8.0.1](https://github.com/npm/cli/compare/config-v8.0.0...config-v8.0.1) (2023-10-18)
+
+### Bug Fixes
+
+* [`8423d4f`](https://github.com/npm/cli/commit/8423d4f133a40c8ceb0e1a75d23aa95fbf4f5b65) [#6895](https://github.com/npm/cli/pull/6895) delete auth from proper location on logout (@wraithgar)
+
+### Documentation
+
+* [`92cd4ad`](https://github.com/npm/cli/commit/92cd4ad02bb2b802333a4d22ffd90a27e7fc4325) [#6913](https://github.com/npm/cli/pull/6913) added footnote about clearing argv (#6913) (@wesleytodd)
+* [`5508fe1`](https://github.com/npm/cli/commit/5508fe13531dced504054957a011419864ae8c0c) [#6911](https://github.com/npm/cli/pull/6911) update readme example (#6911) (@wesleytodd)
+
+## [8.0.0](https://github.com/npm/cli/compare/config-v7.2.0...config-v8.0.0) (2023-10-02)
+
+### ⚠️ BREAKING CHANGES
+
+* @npmcli/config now supports node ^16.14.0 || >=18.0.0
+
+### Features
+
+* [`7c459d2`](https://github.com/npm/cli/commit/7c459d28ca987264028d4d2ca21b0825493c1537) [#6801](https://github.com/npm/cli/pull/6801) add npm sbom command (#6801) (@bdehamer)
+
+### Bug Fixes
+
+* [`92e3f3f`](https://github.com/npm/cli/commit/92e3f3fccc4ed4ed0869731c3ef23f1fa7fa6b1d) [#6807](https://github.com/npm/cli/pull/6807) set engines to ^16.14.0 || >=18.0.0 (@lukekarrys)
+
+### Documentation
+
+* [`03912db`](https://github.com/npm/cli/commit/03912dbaeb92559270ab3f7df75b507b2f35a119) [#6819](https://github.com/npm/cli/pull/6819) add init-specific params to init docs/help (#6819) (@wraithgar)
+
+## [7.2.0](https://github.com/npm/cli/compare/config-v7.1.0...config-v7.2.0) (2023-09-08)
+
+### Features
+
+* [`1c93c44`](https://github.com/npm/cli/commit/1c93c4430300e3b3bd2cb5bab327c1732f470bca) [#6755](https://github.com/npm/cli/pull/6755) Add `--cpu` and `--os` option to override platform specific install  (#6755) (@yukukotani)
+
+### Bug Fixes
+
+* [`7bf2374`](https://github.com/npm/cli/commit/7bf2374a1dde0e9b4a4345eeaafb23316a9a5a0b) [#6762](https://github.com/npm/cli/pull/6762) make `$npm_execpath` always point to npm (@rotu)
+
+## [7.1.0](https://github.com/npm/cli/compare/config-v7.0.1...config-v7.1.0) (2023-08-31)
+
+### Features
+
+* [`fb31c7e`](https://github.com/npm/cli/commit/fb31c7e5f00ae39e67f9a5d6b6860c1d839c704b) trigger release process (@lukekarrys)
+
+## [7.0.1](https://github.com/npm/cli/compare/config-v7.0.0...config-v7.0.1) (2023-08-31)
+
+### Bug Fixes
+
+* [`ed9a461`](https://github.com/npm/cli/commit/ed9a4610facc39a629d4830553fd7779d28ccbed) [#6685](https://github.com/npm/cli/pull/6685) prefix in .npmrc error log (#6685) (@rahulio96, @AaronHamilton965)
+
+## [7.0.0](https://github.com/npm/cli/compare/config-v6.2.1...config-v7.0.0) (2023-07-26)
+
+### ⚠️ BREAKING CHANGES
+
+* the "ci-name" config has been removed
+* the hard-coded "hashAlgorithm" value is no longer being passed through flatOptions
+* the unused "tmp" config has been removed
+* the hard-coded "metrics-registry" config has been removed.
+
+### Bug Fixes
+
+* [`e0d3edd`](https://github.com/npm/cli/commit/e0d3edd9908f8303abb9941bdd2f6e9aa31bc9d7) [#6641](https://github.com/npm/cli/pull/6641) remove "ci-name" config (@wraithgar)
+* [`db91a77`](https://github.com/npm/cli/commit/db91a77032f4024878d56bde099b2b3765ff08d2) [#6641](https://github.com/npm/cli/pull/6641) remove "hashAlgorithm" from flatOptions (@wraithgar)
+* [`ece52a3`](https://github.com/npm/cli/commit/ece52a3dda09b1df960ae042d53560f18d446d5f) [#6641](https://github.com/npm/cli/pull/6641) remove "tmp" config (@wraithgar)
+* [`1f767aa`](https://github.com/npm/cli/commit/1f767aa306e3a550e2c0aefb16a0370e59b44ce3) [#6641](https://github.com/npm/cli/pull/6641) remove metric-registry config (@wraithgar)
+
 ## [6.2.1](https://github.com/npm/cli/compare/config-v6.2.0...config-v6.2.1) (2023-06-21)
 
 ### Bug Fixes

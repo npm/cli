@@ -4,12 +4,10 @@ const { CWD, run, pkg, fs, git, npm } = require('./util.js')
 
 const cleanup = async () => {
   await git('checkout', 'node_modules/')
-  for (const { name, path, pkg: wsPkg } of await pkg.mapWorkspaces()) {
-    if (!wsPkg.private) {
-      // add symlinks similar to how arborist does for our production
-      // workspaces, so they are in place before the initial install.
-      await symlink(path, join(CWD, 'node_modules', name), 'junction')
-    }
+  for (const { name, path } of await pkg.mapWorkspaces({ public: true })) {
+    // add symlinks similar to how arborist does for our production
+    // workspaces, so they are in place before the initial install.
+    await symlink(path, join(CWD, 'node_modules', name), 'junction')
   }
 }
 

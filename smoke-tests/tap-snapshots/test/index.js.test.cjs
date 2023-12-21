@@ -27,10 +27,10 @@ All commands:
     help-search, hook, init, install, install-ci-test,
     install-test, link, ll, login, logout, ls, org, outdated,
     owner, pack, ping, pkg, prefix, profile, prune, publish,
-    query, rebuild, repo, restart, root, run-script, search,
-    set, shrinkwrap, star, stars, start, stop, team, test,
-    token, uninstall, unpublish, unstar, update, version, view,
-    whoami
+    query, rebuild, repo, restart, root, run-script, sbom,
+    search, set, shrinkwrap, star, stars, start, stop, team,
+    test, token, uninstall, unpublish, unstar, update, version,
+    view, whoami
 
 Specify configs in the ini-formatted file:
     {NPM}/{TESTDIR}/home/.npmrc
@@ -57,6 +57,7 @@ npm ERR!
 npm ERR! Options:
 npm ERR! [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 npm ERR! [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm ERR! [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 npm ERR! [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
 npm ERR! [--no-bin-links] [--no-fund] [--dry-run]
 npm ERR! [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
