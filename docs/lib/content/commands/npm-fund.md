@@ -72,4 +72,4 @@ test-workspaces-fund@1.0.0
 * [npm docs](/commands/npm-docs)
 * [npm ls](/commands/npm-ls)
 * [npm config](/commands/npm-config)
-* [npm workspaces](/using-npm/workspaces)
+* [npm workspaces](/using-npm/workspaces) 
