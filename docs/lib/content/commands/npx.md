@@ -145,7 +145,7 @@ This resulted in some shifts in its functionality:
   always present in the executed process `PATH`.
 - The `--npm` option is removed.  `npx` will always use the `npm` it ships
   with.
-- The `--node-arg` and `-n` options have been removed. Use [`NODE_OPTIONS`]([url](https://nodejs.org/api/cli.html#node_optionsoptions)) instead: e.g., 
+- The `--node-arg` and `-n` options have been removed. Use [`NODE_OPTIONS`](https://nodejs.org/api/cli.html#node_optionsoptions) instead: e.g., 
  `NODE_OPTIONS="--trace-warnings --trace-exit" npx jasmine --random=true`
 - The `--always-spawn` option is redundant, and thus removed.
 - The `--shell` option is replaced with `--script-shell`, but maintained
