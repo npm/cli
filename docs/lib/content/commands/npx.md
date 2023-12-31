@@ -145,7 +145,7 @@ This resulted in some shifts in its functionality:
   always present in the executed process `PATH`.
 - The `--npm` option is removed.  `npx` will always use the `npm` it ships
   with.
-- The `--node-arg` and `-n` options are removed.
+- The `--node-arg` and `-n` options have been removed and replaced with <a new argument here>.
 - The `--always-spawn` option is redundant, and thus removed.
 - The `--shell` option is replaced with `--script-shell`, but maintained
   in the `npx` executable for backwards compatibility.
