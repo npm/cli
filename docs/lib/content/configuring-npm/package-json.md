@@ -298,7 +298,6 @@ Some files are always ignored by default:
 * `.DS_Store`
 * `._*`
 * `.git`
-* `.npmrc`
 * `.hg`
 * `.lock-wscript`
 * `.npmrc`
