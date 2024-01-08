@@ -210,7 +210,7 @@
     "diff": "^5.1.0",
     "licensee": "^10.0.0",
     "nock": "^13.4.0",
-    "npm-packlist": "^8.0.1",
+    "npm-packlist": "^8.0.2",
     "remark": "^14.0.2",
     "remark-gfm": "^3.0.1",
     "remark-github": "^11.2.4",
