@@ -1,5 +1,7 @@
 const t = require('tap')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
+const fs = require('node:fs')
+const path = require('node:path')
 
 t.test('exec commands', async t => {
   await t.test('with args, dev=true', async t => {
@@ -9,6 +11,9 @@ t.test('exec commands', async t => {
     let ARB_OBJ = null
 
     const { npm } = await loadMockNpm(t, {
+      prefixDir: {
+        'package.json': '{ "name": "does not matter" }',
+      },
       mocks: {
         '@npmcli/run-script': ({ event }) => {
           SCRIPTS.push(event)
@@ -53,6 +58,9 @@ t.test('exec commands', async t => {
     let ARB_OBJ = null
 
     const { npm } = await loadMockNpm(t, {
+      prefixDir: {
+        'package.json': '{ "name": "does not matter" }',
+      },
       mocks: {
         '@npmcli/run-script': ({ event }) => {
           SCRIPTS.push(event)
@@ -93,6 +101,9 @@ t.test('exec commands', async t => {
     const SCRIPTS = []
     let REIFY_CALLED = false
     const { npm } = await loadMockNpm(t, {
+      prefixDir: {
+        'package.json': '{ "name": "does not matter" }',
+      },
       mocks: {
         '{LIB}/utils/reify-finish.js': async () => {},
         '@npmcli/run-script': ({ event }) => {
@@ -162,6 +173,37 @@ t.test('exec commands', async t => {
       npm.exec('install', ['']),
       /Usage:/,
       'should not install invalid package name'
+    )
+  })
+
+  await t.test('should throw when package.json does not exist', async t => {
+    const { npm, prefix } = await loadMockNpm(t, {})
+    await t.rejects(
+      npm.exec('install'),
+      /ENOENT: no such file or directory/,
+      'should throw before reify'
+    )
+    t.notOk(
+      fs.existsSync(path.join(prefix, './package-lock.json')),
+      'should not generate package-lock.json'
+    )
+  })
+
+  await t.test('should throw when package.json is an empty object', async t => {
+    const { npm, prefix } = await loadMockNpm(t, {
+      prefixDir: {
+        'package.json': '{}',
+      },
+    })
+    await t.rejects(
+      npm.exec('install'),
+      /EEMPTYPKGJSON: package.json is empty object/,
+      'should throw before reify'
+    )
+
+    t.notOk(
+      fs.existsSync(path.join(prefix, './package-lock.json')),
+      'should not generate package-lock.json'
     )
   })
 
